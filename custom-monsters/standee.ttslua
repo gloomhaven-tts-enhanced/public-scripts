@@ -1,0 +1,484 @@
+StatNamesFHC = {Wound = false, Muddle = false, Immobilize = false, Invisible = false, Disarm = false, Strengthen = false, Stun = false, Poison = false, Regenerate = false, Brittle = false, Bane = false, Injure = false, WoundFH = false, Ward = false, TrackerDV = false, TrackerHA = false, TrackerDL = false, TrackerRG = false, TrackerVW = false, TrackerBR = false, TrackerSC = false, TrackerSW = false, TrackerMT = false, TrackerCH = false, TrackerTK = false, TrackerBS = false, TrackerDS = false, TrackerQM = false, TrackerSK = false, TrackerNS = false, TrackerSB = false, TrackerBE = false, TrackerSM = false, TrackerEL = false, TrackerPH = false, TrackerSS = false, TrackerBT = false}
+
+health = {
+   value = 10,
+   max = 10
+}
+
+move = {
+   base = 0,
+   mod = 0
+}
+
+attack = {
+   base = 0,
+   mod = 0
+}
+
+range = {
+   base = 0,
+   mod = 0
+}
+
+attributes = {
+   -- Implemented
+   flying = 0,
+   shield = 0,
+   retaliate = 0,
+   retaliateRange = 0,
+   target = 0,
+   muddle = 0,
+   poison = 0,
+   wound = 0,
+   immobilize = 0,
+   disarm = 0,
+   stun = 0,
+   strengthen = 0,
+   curse = 0,
+   pierce = 0,
+   push = 0,
+   Advantage = 0, -- has advantage
+
+   -- Not implemented
+   pull = 0,
+   bless = 0
+}
+attributes["Attackers gain Disadvantage"] = 0
+
+immunities = {
+   muddle = false,
+   poison = false,
+   wound = false,
+   immobilize = false,
+   disarm = false,
+   stun = false,
+   curse = false,
+   push = false,
+   pull = false
+}
+
+isBoss = false
+
+statsPanelStatWidth = 265
+
+statsObj = "6c1b20"
+
+function onLoad(save_state)
+   if save_state ~= "" and self.getDescription() ~= "" then
+      saved_data = JSON.decode(save_state)
+
+      -- Status conditions
+      if saved_data.StatNamesFHC then
+         for i, j in pairs(saved_data.StatNamesFHC) do
+            StatNamesFHC[i] = saved_data.StatNamesFHC[i]
+         end
+      end
+
+      --Immunities
+      if saved_data.immunities then
+         for i, j in pairs(saved_data.immunities) do
+            immunities[i] = saved_data.immunities[i]
+         end
+      end
+
+      -- Health
+      if saved_data.health then
+         health = saved_data.health
+         Wait.condition(updateHealthUI, checkLoaded)
+      end
+
+      -- Combat data
+      if saved_data.move then
+         move = saved_data.move
+         attack = saved_data.attack
+         range = saved_data.range
+         if saved_data.attributes then
+            for i, j in pairs(saved_data.attributes) do
+               attributes[i] = j
+            end
+         end
+         Wait.condition(updateCombatUI, checkLoaded)
+      end
+
+      -- Boss
+      isBoss = saved_data.isBoss or false
+   else
+      Wait.condition(function() setTyp({"normal"}) end, checkLoaded)
+   end
+   Wait.time(function() self.call("checkStats") end, 0.5)
+   Wait.time(function() self.call("updateHealthUI") end, 0.5)
+   Wait.time(function() self.call("updateCombatUI") end, 0.5)
+   createBtns()
+end
+
+function checkLoaded()
+   if not self.loading_custom and not self.spawning then
+      return true
+   end
+   return false
+end
+
+function onSave()
+   local save_state = JSON.encode({health = health, StatNamesFHC = StatNamesFHC, move = move, attack = attack, range = range, attributes = attributes, immunities = immunities, isBoss = isBoss})
+   -- local save_state = ""
+   self.script_state = save_state
+end
+
+function createBtns()
+  local buttonParameter = {click_function = "add", function_owner = self, position = {-0.2, 0.04, -0.3}, label = "+", width = 250, height = 250, font_size = 300, color = {0,0,0,0}, font_color = {0,0,0,100}}
+  self.createButton(buttonParameter)
+  buttonParameter.position = {0.2, 0.04, -0.3}
+  buttonParameter.click_function = "sub"
+  buttonParameter.label = "-"
+  self.createButton(buttonParameter)
+end
+
+-- Check current status effects
+function checkStats()
+   for i, j in pairs(StatNamesFHC) do
+      if j == true then
+         self.UI.setAttribute(i, "active", true)
+      end
+   end
+   updateUIStatPanel()
+   local num = self.getName():match("%d+")
+   if num ~= nil then
+      -- Wait.frames(function() self.UI.setAttribute("number", "image", num) end, 1)
+      self.UI.setAttribute("number", "image", num)
+   end
+end
+
+-- This interface is updated often enough to have multiple calls
+function updateUIStatPanel()
+   Wait.frames(function() self.UI.setAttribute("statePanel", "width", getStatsCount() * statsPanelStatWidth) end, 1)
+end
+
+-- Count the number of status effects on the monster
+function getStatsCount()
+   local count = 0
+   for i, j in pairs(StatNamesFHC) do
+      if self.UI.getAttribute(i, "active") == "True" then
+         count = count + 1
+      end
+   end
+   return count
+end
+
+-- Apply a status effect by dropping a token on the standee
+function onCollisionEnter(a)
+   local newState = a.collision_object.getName()
+   if a.collision_object.getQuantity() ~= -1 then return end
+   if newState == "Summon Marker" then
+      self.UI.setAttribute("summonIcon", "active", true)
+      a.collision_object.destruct()
+   else
+      if StatNamesFHC[newState] ~= nil and not immunities[newState:lower()] then
+         StatNamesFHC[newState] = true
+         a.collision_object.destruct()
+         self.UI.setAttribute(newState, "active", true)
+         updateUIStatPanel()
+      end
+   end
+end
+
+function add() hits(nil, "add") end
+function sub() hits(nil, "sub") end
+
+-- Do the appropriate healing / damaging
+function hits(player, change)
+   local oldHP = health.value
+   local tabInfo = getNotebookTabs()
+   local tab = ""
+
+   if change == "add" then
+      health.value = health.value + 1
+   elseif change == "addMax" then
+      health.value = health.value + 1
+      health.max = health.max + 1
+   elseif change == "sub" then
+      health.value = health.value - 1
+   elseif change == "subMax" then
+      health.value = health.value - 1
+      if health.max > 0 then health.max = health.max - 1 end
+   end
+
+   -- Boundary-check health values
+   if health.value > health.max then health.value = health.max end
+   if health.value < 0 then health.value = 0 end
+   updateHealthUI()
+
+   for _, t in pairs(tabInfo) do
+      if t.title == "Options" then tab = t.body end
+   end
+   if tab == "" then return end
+
+   local settings = tab:match("broadcast hp changes:(%a+)")
+
+   --all/chars/monster/none
+   if settings == "all" or settings == "monster" then
+      if change == "add" then
+         if oldHP == health.value then
+            broadcastToAll(self.getName() .. " is already at max HP.", "Orange")
+         else
+            broadcastToAll(self.getName() .. " gained 1 HP. From " .. oldHP .. "HP to " .. health.value .. "HP.", "Orange")
+         end
+      elseif change == "sub" then
+         if oldHP == health.value then
+            broadcastToAll(self.getName() .. " is already at 0 HP.", "Orange")
+         else
+            broadcastToAll(self.getName() .. " lost 1 HP. From " .. oldHP .. "HP to " .. health.value .. "HP.", "Orange")
+         end
+      end
+   end
+end
+
+-- Sets health in the UI
+function updateHealthUI()
+   -- Bosses don't have a number or summon icon
+   toggleUIActivity("monsterNumber", true ~= isBoss)
+
+   -- Activate defeat interface
+   if health.value < 1 then
+      self.UI.setAttribute("defeatPanel", "active", true)
+      self.UI.setAttribute("healthbar", "active", false)
+      self.UI.setAttribute("editButton", "active", false)
+   else
+      self.UI.setAttribute("defeatPanel", "active", false)
+      self.UI.setAttribute("healthbar", "active", true)
+      self.UI.setAttribute("editButton", "active", true)
+   end
+
+   self.UI.setAttribute("progressBar", "percentage", health.value / health.max * 100)
+   self.UI.setAttribute("healthbar", "text", health.value .. "/" .. health.max)
+   self.setDescription(health.value .. "/" .. health.max)
+   self.UI.setAttribute("panel", "position", "0 0 -" .. self.getBounds().size.y / self.getScale().y * 110 + getObjectFromGUID("75ab50").getTable("monsters")[getNameWoNumber()].HPBarOffset + getObjectFromGUID("75ab50").getTable("monsters")[getNameWoNumber()].HPBarOffset)
+end
+
+-- Toggle the customize monster interface (elite, max health, number)
+function toggleCustomMonsterUI()
+   -- Toggle the elite / normal monster panel
+   toggleUIActivity("elitePanel")
+
+   -- Toggle max health modifier panel
+   toggleUIActivity("healthAddPanel")
+   toggleUIActivity("healthSubPanel")
+
+   -- Toggle current HP buttons
+   toggleUIActivity("addHP")
+   toggleUIActivity("subHP")
+
+   -- Toggle monster number buttons
+   toggleUIActivity("addNumber")
+   toggleUIActivity("subNumber")
+end
+
+-- isUIElementActive(string:elementID)
+-- Returns boolean:True if element attribute "active" matches "True" or "true"
+-- Returns boolean:False for all other circumstances
+function isUIElementActive(elementID)
+   local attributeValue = self.UI.getAttribute(elementID, "active")
+   return (attributeValue == "True") or (attributeValue == "true")
+end
+
+-- toggleUIActivity(string:elementID)
+-- Toggle "active" attribute of UI element to opposite boolean value
+function toggleUIActivity(elementID) toggleUIActivity(elementID, nil) end
+
+-- toggleUIActivity(string:elementID, boolean:state)
+-- Set "active" attribute of UI element to given boolean value
+function toggleUIActivity(elementID, state)
+   if (nil == state) then state = (true ~= isUIElementActive(elementID)) end
+   self.UI.setAttribute(elementID, "active", state)
+   self.UI.setAttribute(elementID, "textColor", "#FFFFFF")
+end
+
+
+-- For other miscellaneous button clicks
+function onClick(player, value, id)
+   if StatNamesFHC[id] ~= nil then
+      self.UI.setAttribute(id, "active", false)
+      StatNamesFHC[id] = false
+      updateUIStatPanel()
+   elseif id == "normal" or id == "elite" then
+      setTyp({id})
+   else
+      -- nadda
+   end
+end
+
+-- Change monster number / summon number
+function addNumber() changeNumber(1) end
+function subNumber() changeNumber(-1) end
+function changeNumber(delta)
+   local number = tonumber(self.UI.getAttribute("number", "image")) + delta
+   if number > 10 then number = 10 end
+   if number < 1 then number = 1 end
+   self.UI.setAttribute("number", "image", number)
+   self.setName(self.getName():gsub("%d+", number))
+end
+
+-- Destroy an enemy and make a coin if appropriate
+function defeatClick(player, value, id)
+   if self.UI.getAttribute("summonIcon", "active") ~= "True" then
+      getObjectFromGUID("a41a54").takeObject({position = self.positionToWorld({0, 1, 0}), rotation = {0.00, 180.00, 0.00}, smooth = false})
+      broadcastToAll(self.getName() .. " was defeated and dropped a coin.", {0, 1, 0})
+   else
+      broadcastToAll(self.getName() .. " was defeated and was a summon.", {0, 1, 0})
+   end
+   destroyObject(self)
+end
+
+-- Sets combat stats in the UI
+function updateCombatUI()
+
+   -- Movement
+   local moveValue = move.base
+   self.UI.setValue("moveVal", moveValue == 0 and "-" or moveValue)
+   if (1 == attributes["flying"]) then
+      toggleUIActivity("moving", false)
+      toggleUIActivity("flying", true)
+   else
+      toggleUIActivity("flying", false)
+      toggleUIActivity("moving", true)
+   end
+   -- toggleUIActivity("movePanel", 0 < moveValue)
+   -- Attack
+   local attackValue = attack.base
+   self.UI.setValue("attackVal", attackValue == 0 and "-" or attackValue)
+
+   -- Range
+   local rangeValue = range.base
+   self.UI.setValue("rangeVal", rangeValue == 0 and "-" or rangeValue)
+   -- toggleUIActivity("rangePanel", 0 < rangeValue)
+
+   -- Shield
+   local shieldValue = attributes["shield"]
+   self.UI.setValue("shieldVal", shieldValue)
+   toggleUIActivity("shieldPanel", 0 < shieldValue)
+
+   -- Retaliate
+   local retaliateValue = attributes["retaliate"]
+   self.UI.setValue("retaliateVal", retaliateValue)
+   toggleUIActivity("retaliatePanel", 0 < retaliateValue)
+   local retaliateRangeValue = attributes["retaliateRange"]
+   self.UI.setValue("retaliateRangeVal", retaliateRangeValue)
+   toggleUIActivity("retaliateRangePanel", 0 < retaliateRangeValue)
+   toggleUIActivity("retaliateRangeVal", 0 < retaliateRangeValue)
+
+   -- Targets
+   local targetValue = attributes["target"]
+   self.UI.setValue("targetVal", targetValue)
+   toggleUIActivity("targetPanel", 0 < targetValue)
+
+   -- Attack Effects
+   local hasAttackEffect = false
+   for _, effect in pairs({"muddle", "poison", "wound", "immobilize", "disarm", "stun", "strengthen", "curse", "pierce", "push", "Advantage", "Attackers gain Disadvantage"}) do
+      local val = attributes[effect]
+      if (0 < val) then hasAttackEffect = true end
+      self.UI.setValue(effect.."Val", val)
+      toggleUIActivity(effect.."Effect", 0 < val)
+   end
+   toggleUIActivity("attackEffectsPanel", hasAttackEffect)
+
+
+   -- Attack Effects
+   local hasImmunity = false
+   for _, immunity in pairs({"muddle", "poison", "wound", "immobilize", "disarm", "stun", "curse", "pull", "push"}) do
+      if immunities[immunity] then hasImmunity = true end
+      toggleUIActivity(immunity.."Immunity", immunities[immunity])
+   end
+   toggleUIActivity("immunitiesPanel", hasImmunity)
+end
+
+function setBossFlag()
+   isBoss = true
+end
+
+-- Sets the type of monster, stats, and attributes
+function setTyp(typ)
+   if true ~= isBoss then
+      if typ[1] == "normal" then
+         self.setColorTint({1, 1, 1})
+      else
+         self.setColorTint({1, 1, 0})
+      end
+   end
+
+   local partySheet = nil
+   for _, obj in pairs(getAllObjects()) do
+      if obj.getDescription() == "Party Sheet" then
+         partySheet = obj
+      end
+   end
+   if partySheet ~= nil then
+      local level = tonumber(partySheet.UI.getAttribute("scenarioLevel", "text"))
+      local stats = getObjectFromGUID(statsObj).getTable("stats")[getNameWoNumber()][level + 1]
+
+      -- Boss standees have health calculated elsewhere
+      if true ~= isBoss then
+         stats = stats[typ[1]]
+         health.max = stats.health
+         health.value = health.max
+      end
+
+      -- Set base stats
+      move.base = stats.move;
+      attack.base = stats.attack;
+      range.base = stats.range;
+
+      -- Set attributes
+      mAttributes = {}
+      if(nil ~= stats.attributes) then
+         for _, attr in pairs(stats.attributes) do
+            local checkRange = false
+            if attr == "Advantage" or attr == "Attackers gain Disadvantage" then
+               mAttributes[attr] = 1
+            end
+            for key, val in string.gmatch(attr, "%%(%w+)%%%s*(%w*)") do
+               -- NOTE: retaliate is the only current attribute to use this structure, if more attributes use this structure, a new schema should be designed
+               -- Special case for formatting of ranged retaliate
+               if true == checkRange then key = "retaliateRange" end
+
+               -- If the attributes are in the list, the monster has them
+               mAttributes[key] = tonumber(val) or 1
+
+               -- If the attribute is retaliate, another value will be the range
+               if (key == "retaliate") then checkRange = true end
+            end
+         end
+      end
+
+
+      -- Set immunities
+      for k, v in pairs(immunities) do
+         immunities[k] = false
+      end
+      if(nil ~= stats.immunities) then
+         for _, attr in pairs(stats.immunities) do
+            for key, val in string.gmatch(attr, "%%(%w+)%%") do
+               -- If the attributes are in the list, the monster has them
+               immunities[key] = true
+            end
+         end
+      end
+
+      -- Old attributes either acquire new values or are set to zero
+      for k, v in pairs(attributes) do
+         newVal = mAttributes[k]
+         attributes[k] = newVal or 0
+      end
+
+      updateHealthUI()
+      updateCombatUI()
+   end
+end
+
+function getNameWoNumber()
+   local name = self.getName()
+   local num = name:match("%d+")
+   if num ~= nil then
+      return name:sub(1, name:find(num) - 2)
+   else
+      return name
+   end
+end
