@@ -1,0 +1,16 @@
+function onLoad()
+  bparams = {
+    bpos = bpos,
+    bown = getObjectFromGUID(self.getGUID())
+  }
+  getObjectsWithTag("Bag of Summons")[1].call("sButton", bparams)
+end
+
+function summon(_, _, rightclick)
+  params = {
+    name = summonname,
+    pos = self.getPosition(),
+  }
+  if not rightclick then return end
+  getObjectsWithTag("Bag of Summons")[1].call("csummon", params)
+end
