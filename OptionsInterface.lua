@@ -1,5 +1,14 @@
 local OptionsInterface = {}
 
+---@alias gloom_Options_Setup_ScenarioPage 'spawn' | 'change' | 'none'
+---@alias gloom_Options_Message_HpChanges 'all' | 'chars' | 'monster' | 'none'
+
+---@type table<string, gloom_Options_Setup_ScenarioPage>
+OptionsInterface.ScenarioPage = {
+    Spawn = "spawn", Change = "change", None = "none",
+}
+
+---@type table<string, gloom_Options_Message_HpChanges>
 OptionsInterface.HpChanges = {
     All = "all", Character = "chars", Monster = "monster", None = "none",
 }
