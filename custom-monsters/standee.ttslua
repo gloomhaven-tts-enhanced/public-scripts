@@ -1,3 +1,5 @@
+local Options = require("public-scripts.OptionsInterface")
+
 StatNamesFHC = {Wound = false, Muddle = false, Immobilize = false, Invisible = false, Disarm = false, Strengthen = false, Stun = false, Poison = false, Regenerate = false, Brittle = false, Bane = false, Injure = false, WoundFH = false, Ward = false, TrackerDV = false, TrackerHA = false, TrackerDL = false, TrackerRG = false, TrackerVW = false, TrackerBR = false, TrackerSC = false, TrackerSW = false, TrackerMT = false, TrackerCH = false, TrackerTK = false, TrackerBS = false, TrackerDS = false, TrackerQM = false, TrackerSK = false, TrackerNS = false, TrackerSB = false, TrackerBE = false, TrackerSM = false, TrackerEL = false, TrackerPH = false, TrackerSS = false, TrackerBT = false}
 
 health = {
@@ -187,9 +189,6 @@ function sub() hits(nil, "sub") end
 -- Do the appropriate healing / damaging
 function hits(player, change)
    local oldHP = health.value
-   local tabInfo = getNotebookTabs()
-   local tab = ""
-
    if change == "add" then
       health.value = health.value + 1
    elseif change == "addMax" then
@@ -207,15 +206,7 @@ function hits(player, change)
    if health.value < 0 then health.value = 0 end
    updateHealthUI()
 
-   for _, t in pairs(tabInfo) do
-      if t.title == "Options" then tab = t.body end
-   end
-   if tab == "" then return end
-
-   local settings = tab:match("broadcast hp changes:(%a+)")
-
-   --all/chars/monster/none
-   if settings == "all" or settings == "monster" then
+   if Options.broadcastHpChanges(Options.HpChanges.Monster) then
       if change == "add" then
          if oldHP == health.value then
             broadcastToAll(self.getName() .. " is already at max HP.", "Orange")
