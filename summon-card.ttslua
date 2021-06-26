@@ -14,8 +14,8 @@ function summon(_, playerColor, rightclick)
     if not rightclick then return end
 
     local params = {
+        card = self,
         name = summonname,
-        pos = self.getPosition(),
         playerColor = playerColor,
     }
 
