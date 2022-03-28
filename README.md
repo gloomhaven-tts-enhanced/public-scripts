@@ -1,1 +1,1 @@
-# public-scripts
+# Gloomhaven Enhanced
