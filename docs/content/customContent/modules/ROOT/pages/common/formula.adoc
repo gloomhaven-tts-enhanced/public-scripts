@@ -1,0 +1,105 @@
+= Formula
+
+Formulas are a way to describe dynamic values within the scenario.
+The most typical use-case would be HP values of obstacles or enemies that scale with the number of characters or the current scenario level.
+
+Formulas are defined with Lua tables.
+The first entry is the operator that is used and the following entries are the arguments for the operator, which itself are formulas.
+Every number is a formula in itself, so wherever a formula is required, a number can also be provided.
+Strings in formulas are considered to be variables and will be resolved in the given context (e.g. "L" or "C" like in the scenario book).
+Which variables are available depends on the context where the formula is used (see below).
+Arguments can be formulas, too which is used to
+
+E.g. the expression `2 + 4 * 5` would be defined as this formula;
+[source,lua]
+----
+{ "+", 2, { "*", 4, 5 } } --> resolves to 22
+----
+This shows that formulas are resolved from inner to outer.
+Before an operator can be executed all its arguments have to be resolved first.
+So in order for the addition to work, the multiplication formula will be resolved first.
+
+Looking at the <<Example_Formula>> the usage should get clearer. :-)
+
+== Available Operators
+[cols="1,2,3"]
+|===
+| Operator | Arguments | Description
+
+| +         | List<Formula> | Adds the resolved formula values.
+| -         | List<Formula> | Subtracts the resolved formula values (left to right).
+| *         | List<Formula> | Multiplies the resolved formula values.
+| /         | List<Formula> | Divides the resolved formula values (left to right).
+| roundUp   | Formula | Rounds the resolved formula value up.
+| roundDown | Formula | Rounds the resolved formula value down.
+| apply     | 2 or 3 | Calls a function and returns the function's value. The name of the function is the first argument. If the second argument is a String, this is the GUID of the object that contains the function. Then the third argument is the table of parameters passed to the function. Otherwise, the second argument is the table of parameters passed to the function and the function has to be on the object that defines the formula. Variables within the parameters will also be resolved.
+| if        | A List with 3 Formula | Checks if the first argument value is `true`. If this is the case, it will return the second argument's value, otherwise it will return the third argument's value.
+|===
+
+== Available Variables
+[cols="1,2,3"]
+|===
+| Variable | Context | Description
+
+| C         | All | The number of player characters.
+| L         | All | The current scenario level.
+| H         | Enemies | The standard HP value for the enemy at the current scenario level and difficulty.
+| self      | All | The GUID of the object for which the formula is calculated.
+| Global    | All | A reference to the Global object.
+|===
+
+
+[[Example_Formula]]
+== Examples
+
+Every number is a formula in itself, to it can be used directly.
+[source,lua]
+----
+hp = 4
+----
+
+Variables are also a formula in itself.
+[source,lua]
+----
+hp = "L"
+----
+
+The four basic arithmetic operators can be used like this:
+
+[source,lua]
+----
+hp = { "+", "C", 3} -- C + 3
+hp = { "-", "C", 3} -- C - 3
+hp = { "*", "H", 2} -- H * 2
+hp = { "/", "H", 2} -- H / 2
+----
+
+Multiple operators can be combined with an argument as a formula table.
+
+[source,lua]
+----
+hp = { "+", 20, "L", {"*", 2, "C"}, } -- 20 + L + (2 * C)
+----
+
+With division rounding is also relevant.
+[source,lua]
+----
+hp = { "roundUp", { "/", {"*", "H", "C"}, 2 } } -- (H * C) / 2, rounded up
+----
+
+Functions can be called, too.
+Since Strings are considered to be variables, they have to be prefixed with a `$` if the literal String is meant (e.g. for the function name to be called).
+This also applies for all values inside the parameters of the `apply` operator.
+E.g. this example will set the HP value of the object the formula is attached to, to the same value as the "Prime Demon" enemy has.
+
+[source,lua]
+----
+hp = { "apply", "$setHealthFromEnemy", "Global", { enemy = "$Prime Demon", object = "self" }, }
+----
+
+It might be useful to combine the `if` operator with the `apply` operator.
+E.g. this example will either resolve to the value 0 or 1, depending on whether the current party has the "Dimensional Equilibrium" achievement or not (which is checked by the `hasPartyAchievement` function).
+[source,lua]
+----
+levelModifier = { "if", { "apply", "$hasPartyAchievement", "Global", { name = "$Dimensional Equilibrium" }, }, 0, 1 }
+----

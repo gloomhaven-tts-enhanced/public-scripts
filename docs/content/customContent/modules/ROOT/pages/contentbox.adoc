@@ -1,0 +1,44 @@
+= Custom Content Box
+
+The mod supports automatically unpacking custom content and placing it where it is required by the mod.
+This makes it easier for users to set it up.
+In order to use that feature the custom content has to be placed inside a bag that has the tag `Gloomhaven Custom Content` applied.
+When this bag is spawned into the Gloomhaven Enhanced mod, it's content is checked and the objects are moved to where they are needed.
+This is driven by the tags that are attached to objects inside the bag.
+The following table lists the supported object types, as well as the required tags for them.
+
+|===
+| Object type | Tag | What happens
+
+| Class envelope | `Class Envelope` | The envelope is placed at the end of the row for the base classes. If the envelope also has the `Locked Content` tag, it will be placed inside the "Locked Classes" envelope inside the Gloomhaven game box instead.
+| Class Summon | `Summon` | It will be added to the bag of all summons. From there it can be spawned e.g. through the scripts from the Summon Cards.
+| Personal Quests | `PersonalQuest` | It will be added to the bag for Personal Quests (as well as its backup).
+| Scenario Token | `Scenario` | It will be registered as an available scenario. If the token als has the `Locked Content` tag, it will only be added internally as a locked scenario and has to be explicitly unlocked using the `ScenarioApi.unlockScenario` function.
+| Monster Bag | `Enemy Envelope` | The envelope is added to the list of available monsters.
+| City Event | `City Event` | The event is added to the Unlockable City Events bag (as well as its backup).
+| Road Event | `Road Event` | The event is added to the Unlockable Road Events bag (as well as its backup).
+| Corridor Overlay | `Corridor` | The overlay is added to the corridor bag on the table as well as the internal one required for scenario setup.
+| Difficult Terrain Overlay | `Difficult Terrain` | The overlay is added to the difficult terrain bag on the table as well as the internal one required for scenario setup.
+| Door Overlay | `Door` | The overlay is added to the door bag on the table as well as the internal one required for scenario setup.
+| Hazardous Terrain Overlay | `Hazardous Terrain` | The overlay is added to the hazardous terrain bag on the table as well as the internal one required for scenario setup.
+| Obstacle Overlay | `Obstacle` | The overlay is added to the obstacle bag on the table as well as the internal one required for scenario setup.
+| Trap Overlay | `Trap` | The overlay is added to the trap bag on the table as well as the internal one required for scenario setup.
+| Treasure Chest Overlay | `Treasure Chest` | The overlay is added to the treasure chest bag on the table as well as the internal one required for scenario setup.
+| Map Tiles | `Map` | The overlay is added to the map tile bag on the table as well as the internal one required for scenario setup.
+| Unlockable Treasure Cards | `Treasure` | The overlay is added to the internal bag required for scenario setup. It can be unlocked using the xref:common/action.adoc#Action_Treasure[Treasure-Action] within a scenario.
+| Scenario Books | `Book` | The book is added to the book stand next to the game box.
+| Reward Items | `Item` and `Item Reward` | The item will go into the reward items deck.
+| Solo Reward Items | `Item` and `Item Solo Reward` | The item will go into the solo reward items deck.
+| Item Designs | `Item` and `Item Design` | The item deck will go into the item designs deck. Item designs must be a deck of two items. The cards as well as the deck must have those tags.
+| Unlocked Items | `Item` and none of the 3 special tags above | The item will go into shop deck.
+|===
+
+Every object that hasn't one of those tags is ignored.
+Any object that has one of those tags together with the `Locked Content` tag is also ignored (except for scenarios and class envelopes as stated above).
+Objects within nested bags are also checked and moved accordingly.
+E.g. a Summon figure inside a class envelope will also be considered.
+
+NOTE: The objects won't actually be removed from the content box when this process happens.
+They are basically cloned and put into the correct places.
+If you have content that is automatically registered and content that isn't, you might consider separating them into different bags inside the content box.
+This way it's easier for users to see, what they still have to place manually and what is already done for them.

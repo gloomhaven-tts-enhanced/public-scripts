@@ -1,0 +1,13 @@
+{
+  "name": "@gloomhaven-enhanced/docs",
+  "version": "1.3.0",
+  "description": "Documentation for everything around the Gloomhaven Enhanced TTS mod.",
+  "scripts": {
+    "build": "antora generate --clean antora-playbook.yml",
+    "start": "npm run build && start ./build/site/index.html"
+  },
+  "devDependencies": {
+    "@antora/cli": "^3.0.1",
+    "@antora/site-generator": "^3.0.1"
+  }
+}

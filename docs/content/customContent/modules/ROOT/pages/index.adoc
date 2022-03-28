@@ -1,0 +1,3 @@
+= Custom Content Integration
+
+This documentation describes how custom content can be integrated into the Gloomhaven Enhanced mod.

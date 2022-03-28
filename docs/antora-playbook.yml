@@ -1,0 +1,17 @@
+site:
+  title: Gloomhaven Enhanced
+content:
+  sources:
+    - url: ..
+      start_path: documentation/content/customContent
+      branches: HEAD
+    - url: ..
+      start_path: documentation/content/development
+      branches: HEAD
+    - url: ..
+      start_path: documentation/content/mod
+      branches: HEAD
+ui:
+  bundle:
+    url: ./ui/build/ui-bundle.zip
+    snapshot: true

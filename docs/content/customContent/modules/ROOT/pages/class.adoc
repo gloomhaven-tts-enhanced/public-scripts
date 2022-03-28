@@ -1,0 +1,286 @@
+= Classes
+
+== Components
+
+=== Class Envelope
+
+The Class Envelope is the infinite bag that contains the <<Character Box>> to create new characters for that class.
+
+==== Properties
+[cols="1,2"]
+|===
+| Tags          | `Class Envelope`
+|===
+
+==== Lua Script
+
+The Class Envelope should register the class during the `onLoad` event.
+Details about the data format can be found at <<registerClass>>.
+// TODO correct link
+If the class also has custom conditions they should be registered here, too (see <<registerCondition>> for details about the data structure).
+
+.api/GloomApi.ttslua
+[source,lua]
+----
+local ClassApi = require("api.ClassApi")
+local ConditionApi = require("api.ConditionApi")
+
+function onLoad()
+    local classData = {
+        -- ...
+    }
+    ClassApi.registerClass("Name of the Class", classData)
+
+    -- if the class also has custom conditions, they should be registered here, too
+    local conditionInfo = {
+        -- ...
+    }
+    ConditionApi.registerCondition("Name of the condition", conditionInfo)
+end
+----
+
+=== Character Box
+
+The Character Box contains all the components for a new character of that class.
+Each Character Box should contain:
+
+* The <<Figure_Class>>.
+* A deck named `Starting Abilities` for abilities unlocked at level 1.
+* A deck named `Advanced Abilities` for abilities that are unlocked at level up.
+* A <<Character Sheet>>.
+* A Player Mat
+
+==== Properties
+[cols="1,2"]
+|===
+| Name          | Name of the class
+|===
+
+==== Lua Script
+
+[source,lua]
+----
+function onCollisionEnter(info)
+    if info.collision_object.getName():find("Player Mat") then
+        getObjectFromGUID("75ab50").call("cleanArea", { info.collision_object, self })
+    end
+end
+----
+
+[[Figure_Class]]
+=== Figure
+
+[cols="1,2"]
+|===
+| Name          | Full name of the class.
+| Tags          | Required tags will be set automatically through the script.
+|===
+
+==== Lua Script
+
+Add this script to figure's script and adjust the shown values to your need.
+
+.Figures/CharacterMini.ttslua
+[source,lua]
+----
+info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")
+----
+
+The value for `hpColour` is the background color of the HP bar over the figure.
+Similar `hpTextColour` is the color of the text appearing on the HP bar.
+This is optional and defaults to black.
+`startingHealth` is the HP value for the character on level 1.
+The `FrameOffset` is the position where the HP bar will appear relative to the figure.
+The correct value can be found by experimenting a bit and see what looks good.
+
+==== UI
+
+Add this script to figure's UI script.
+No other values need to be set.
+
+.Figures/CharacterMini.xml
+[source,xml]
+----
+<Include src="Figures/CharacterMini.xml" />
+----
+
+=== Player Mat
+
+=== Character Mat
+
+=== Character Sheet
+
+[cols="1,2"]
+|===
+| Name          | Character Sheet
+|===
+
+Use the https://steamcommunity.com/sharedfiles/filedetails/?id=2627289470[Character Sheet Creator] to generate the required script for the character sheet.
+
+=== Ability Cards
+
+[cols="1,2"]
+|===
+| Name          | Name of the ability followed by its initiative value
+| Description   | Full name of the class.
+|===
+
+The initiative value of a card has to be a two-digit number enclosed by parentheses (e.g. `Perverse Edge (08)`).
+When an ability has multiple initiative values (like the Blinkblade from Frosthaven), multiple parentheses can be used.
+The initiative tracker then shows all of them and the users can remove them if needed.
+
+Within the class box the ability cards then need to be placed into a deck.
+The deck needs to be named `Starting Abilities` for abilities that are unlocked by the class on level 1.
+All those cards will be put the players' hand when a new character is created.
+All other ability cards need to be in a deck named `Advanced Abilities`.
+This ensures that the Campaign Manager can correctly find them.
+
+
+==== Lua Script
+
+Abilities only need a script, when it's an ability that can spawn Summons.
+The script adds a button to the card that can be clicked and creates the Summon figure.
+The <<Summons,Summon>> also needs to be registered accordingly.
+
+.Component/SummonCard.ttslua
+[source,lua]
+----
+require("Component.SummonCard")
+    .forSummon("Rat Swarm", { -0.82, 0.05, -0.82 })
+----
+
+Change the name of the first parameter to the name of the Summon this card will spawn.
+The second parameter is the position of the button that will appear.
+The default values that should work in most cases or those:
+
+[source,lua]
+----
+{ -0.82, 0.05, -0.82 } -- top ability
+{ -0.82, 0.05, 0.52 } -- bottom ability
+{ -0.73, 0.05, 0.74 } -- item ability
+----
+
+=== Attack Modifiers
+
+=== Trackers
+
+=== Summons
+
+[cols="1,2"]
+|===
+| Name          | Unique name across all Summons.
+| Tags          | Required tags will be set automatically through the script.
+|===
+
+Summons need to be inside a <<Custom Content Box>> to be registered correctly.
+
+==== Lua Script
+
+Add this script to Summons' figure script and adjust the shown values to your need.
+
+.Figures/Summon.ttslua
+[source,lua]
+----
+stats = {
+   health = 2,
+   move = 3,
+   attack = 0,
+   range = 0,
+   attributes = {}
+}
+
+info = {
+  hpColour = "#AD735C"
+}
+
+FrameOffset = 230
+
+require("Figures.Summon")
+----
+
+The `stats` table describes the base stats for the Summon.
+The values should be self-explanatory.
+The `attributes` table describes the default attributes the summon has (like flying, shield or infusing an element).
+The format is the same as for <<Enemy Stats>>.
+
+The `info` table and the `FrameOffset` use the same format as the one for the class <<Figure_Class>>.
+
+
+==== UI
+
+.Figures/Summon.xml
+[source,xml]
+----
+<Include src="Figures/Summon.xml" />
+----
+
+=== Extra Components
+
+
+[[Data_Classes]]
+== Data
+
+[[Example_Class]]
+=== Examples
+
+==== Definition for Brute
+
+This example shows the registration of the Brute class.
+For perks and abilities, only some of them are shown for brevity.
+
+[source,lua]
+----
+local ClassApi = require("api.GloomApi").Class
+
+function onLoad()
+    ClassApi.registerClass("Brute", {
+        isStartingClass = true,
+        boxGuid = self.getGUID(),
+        hp = ClassApi.HpProgression.High,
+        tracker = {
+            image = "http://cloud-3.steamusercontent.com/ugc/83722391140264566/DC437F88C225F04C6CCE924EA4C3BB31FCD3F3A9/",
+        },
+        perks = {
+            [1] = { remove = { "(-1)", "(-1)" } },
+            [2] = { add = { "(+1)" }, remove = { "(-1)" } },
+            -- Perks 3 .. 14 would be here too
+            [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+            -- up to 18 perks are supported (for Frosthaven support)
+        },
+        abilities = {
+            ["Eye for an Eye"] = {
+                level = 1,
+                enhancements = {
+                    [1] = { position = { -0.46, -0.92 }, multi = false, side = "T", main = true, type = ClassApi.AbilityType.Retaliate },
+                    [2] = { position = { -0.35, 0.53 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+                    [3] = { position = { -0.50, 0.55 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+                }
+            },
+            ["Brute Force"] = {
+                level = 3,
+                enhancements = {
+                    [1] = { position = { -0.06, -0.75 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Attack },
+                    [2] = { position = { -0.25, -0.78 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 3 } },
+                    [3] = { position = { -0.26, -0.40 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 2 } },
+                    [4] = { position = { -0.41, 0.67 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Shield },
+                }
+            },
+        },
+    })
+end
+----
+
+[[Example_Class_Spawn]]
+==== Adding elements to the context menu
+
+This example shows how to add a <<Spawnable Element>> that will show up when the context menu for this class' figure is opened.
+You can also add other attributes of <<Spawnable Element>>s like HP bars, or <<Action>>s.
+Only the relevant parts of the class definition are shown.

@@ -1,0 +1,37 @@
+= Conditions
+
+== Data
+
+To register conditions, use the `registerCondition()` function within the `ConditionApi` module.
+
+=== registerCondition
+[cols="1,1,1,2"]
+|===
+| Name          | Required | Type   | Description
+
+| name          | required | String | The name of the condition.
+| conditionInfo | required | <<ConditionInfo>> | The information about the condition.
+|===
+
+=== ConditionInfo
+[cols="1,1,1,2"]
+|===
+| Name  | Required | Type   | Description
+
+| image | required | URL    | URL to the image that shows the condition.
+| max   | optional | Number | Determines how often the condition can be applied to a target. Defaults to 1 if not set.
+|===
+
+=== Example
+
+[source,lua]
+----
+local ConditionApi = require("api.ConditionApi")
+
+function onLoad()
+  ConditionApi.registerCondition("Attack", {
+    image = "http://cloud-3.steamusercontent.com/ugc/1699533601343910452/EBEEF4F2DD1735088BD6C74A0CFA29532D440ED8/",
+    max = 20
+  })
+end
+----
