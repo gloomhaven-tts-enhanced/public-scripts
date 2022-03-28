@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using the scripts :: Gloomhaven Enhanced</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Gloomhaven Enhanced</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://discord.gg/SA9hHVNkMf">Discord</a>
+            <a class="navbar-item" href="https://discord.gg/2kM4T6p">Custom Content Discord</a>
+            <a class="navbar-item" href="https://www.reddit.com/r/GloomhavenTTSEnhanced/">Reddit</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2402018642">Steam</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="CustomContent" data-version="1.3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Custom Content</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="scripts.html">How to use the scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="documentation.html">How to use this documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentbox.html">Content Box</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="class.html">Classes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="condition.html">Conditions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="enemy.html">Enemies</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scenario.html">Scenarios</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overlay.html">Overlays</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Common</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/formula.html">Formulas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/action.html">Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/spawnable.html">Spawnable Element</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Migration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migration/1.2.html">1.2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Custom Content</span>
+    <span class="version">1.3</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Custom Content</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../Development/1.3/index.html">Development</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../Development/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../GHE/1.3/index.html">Gloomhaven Enhanced</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../GHE/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Custom Content</a></li>
+    <li>Introduction</li>
+    <li><a href="scripts.html">How to use the scripts</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/scripts.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using the scripts</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most custom content requires some script, that is either added directly to the content or tells the mod about the content.
+Therefore, you first have to download the scripts from the latest release.
+TODO: Link to releases.
+This contains the scripts that you have to add to your components to make them work with the mod.
+It also contains so-called API scripts, which are used to further integrate the content into the mod (e.g. in order to register classes or conditions).
+How each API should be used is described in the relevant sections.</p>
+</div>
+<div class="paragraph">
+<p>Generally, you have two ways to work with the downloaded scripts.
+Either through an external tool (the Atom text editor), or the scripting window inside TTS.
+The first method is the preferred way.
+It requires a bit of setup, but will be easier to work with afterwards, especially if you later want to update the content for newer versions of the mod.</p>
+</div>
+<div class="paragraph">
+<p>After you downloaded the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
+Which one you need depends on the method you want to use.
+If you want to use the Atom editor, you need the <code>base</code> folder, otherwise you need the <code>bundled</code> folder.
+Extract the required folder somewhere in you file system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_atom_editor"><a class="anchor" href="#_using_the_atom_editor"></a>Using the Atom editor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Atom is a free text editor with a lot of features to simplify scripting.
+Berserk developed an official plugin for it which works with TTS.
+With the plugin installed, Atom will receive the scripts of the currently opened TTS mod.
+You can then edit the scripts in Atom directly and send them back to TTS, so you don&#8217;t have to use the TTS scripting editor (which is quite horrible&#8230;&#8203;).
+It also helps with things like auto-completion and finding errors.
+To use Atom, follow those steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Install the latest version of <a href="https://atom.io/">Atom</a></p>
+</li>
+<li>
+<p>Checkout the <a href="https://api.tabletopsimulator.com/atom/#installing-the-official-plugin">TTS knowledge base</a> on how to install the TTS plugin</p>
+</li>
+<li>
+<p>Open Atom and select menu:File[Settings] from to top menu</p>
+</li>
+<li>
+<p>Navigate to the settings for the TTS plugin <span class="image"><img src="_images/atom_settings.PNG" alt="atom settings"></span></p>
+</li>
+<li>
+<p>Find those settings: <span class="image"><img src="_images/atom_settings_tts.PNG" alt="atom settings tts"></span></p>
+</li>
+<li>
+<p>If not already done check <code>#include other files</code> and <code>require() other files</code></p>
+</li>
+<li>
+<p>Set the value for <code>Base path for files you wish to bundle or #include</code> to the path where you extracted the downloaded scripts (the <code>base</code> folder)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you now open your mod with Atom running, it will automatically download the scripts from TTS and show them in Atom.
+If this is not done automatically (e.g. if you started Atom after loading your mod), you can load them manually again using the <code>GetObjects</code> command.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>To find commands in Atom use the keyboard shortcut kbd:[Ctrl+Shift+P].
+This will open a small window where you can type the name of a command and Atom shows you a list of matching commands.
+Select the one you want with the keyboard and hit kbd:[Enter].
+<span class="image"><img src="_images/atom_command.png" alt="atom command"></span></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The list of available scripts will show on the left side of Atom
+<span class="image"><img src="_images/atom_files.png" alt="atom files"></span></p>
+</div>
+<div class="paragraph">
+<p>Edit the scripts to your need send them back using the <code>SaveAndPlay</code> command (keyboard shortcut kbd:[Ctrl+Shift+S])</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">INFO</dt>
+<dd>
+<p>If you change which components are on the table in your mod you have create a save in TTS again and load the created save right again.
+E.g. if you pull out a component from a bag and want to edit the script on that component, first save  and load the created save again.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_tts_script_editor"><a class="anchor" href="#_using_the_tts_script_editor"></a>Using the TTS script editor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using the TTS scripting editor, you have to use the <code>bundled</code> version of the scripts.
+We developed the mod by splitting the scripts into different files which makes it a lot easier to maintain.
+However, TTS doesn&#8217;t understand that splitting and requires to have one script per object.
+So all files need to be bundled together into one file again for TTS to work.
+Normally, this would be done by the Atom plugin automatically.
+The scripts within the <code>bundled</code> folder are the result of such a bundling.
+The scripts then are rather big and also contain code to make the bundling work.
+They always look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- Bundled by luabundle {"version":"1.6.0"}
+local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)
+	local loadingPlaceholder = {[{}] = true}
+
+    -- ..
+    -- lots more lines
+    -- ..
+end)(require)
+__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- This is the relevant part
+require("Figures/CharacterMini") -- this line also has to be removed
+-- The required code goes here
+end)
+__bundle_register("Figures/CharacterMini", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- ..
+-- even more lines here
+-- ..
+end)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you integrate those script you need to look for the line <code><em>bundle_register("</em>root", function(require, _LOADED, <em>bundle_register, </em>bundle_modules)</code>.
+Everything between this line and the first <code>end)</code> is the actual script for the object.
+The previous line are required for the bundling to work and the following lines are the previously split files that are now put together.
+You don&#8217;t need to touch those.</p>
+</div>
+<div class="paragraph">
+<p>Whenever this documentation mentions to include a script onto you object, you first have to locate the correct bundled file.
+This is given as the title of the script example.</p>
+</div>
+<div class="listingblock">
+<div class="title">Figures/CharacterMini.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>E.g. here it means you have to find the <code>Figures/CharacterMini.ttslua</code> script within the <code>bundled</code> folder.
+Open that script and find the previously mentioned <code><em>bundle_register("</em>root")</code> line.
+Copy the script the documentation mentioned after this line and remove everything till the first <code>end</code> (excluding the <code>end</code>).
+With this example, the final script would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- Bundled by luabundle {"version":"1.6.0"}
+local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)
+	local loadingPlaceholder = {[{}] = true}
+
+    -- ..
+    -- lots more lines
+    -- ..
+end)(require)
+__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)
+info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")
+end)
+__bundle_register("Figures/CharacterMini", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- ..
+-- even more lines here
+-- ..
+end)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the script you then have to add to the object in the TTS scripting window and use the btn:[Save and Play] button.
+The same logic applies for the UI scripts.</p>
+</div>
+<div class="paragraph">
+<p>If the example code doesn&#8217;t have a title it means there&#8217;s no bundled script available, and you have to include the script as it is provided in the example.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

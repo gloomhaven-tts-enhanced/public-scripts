@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Classes :: Gloomhaven Enhanced</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Gloomhaven Enhanced</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://discord.gg/SA9hHVNkMf">Discord</a>
+            <a class="navbar-item" href="https://discord.gg/2kM4T6p">Custom Content Discord</a>
+            <a class="navbar-item" href="https://www.reddit.com/r/GloomhavenTTSEnhanced/">Reddit</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2402018642">Steam</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="CustomContent" data-version="1.3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Custom Content</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scripts.html">How to use the scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="documentation.html">How to use this documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentbox.html">Content Box</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="class.html">Classes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="condition.html">Conditions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="enemy.html">Enemies</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scenario.html">Scenarios</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overlay.html">Overlays</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Common</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/formula.html">Formulas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/action.html">Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/spawnable.html">Spawnable Element</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Migration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migration/1.2.html">1.2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Custom Content</span>
+    <span class="version">1.3</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Custom Content</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../Development/1.3/index.html">Development</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../Development/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../GHE/1.3/index.html">Gloomhaven Enhanced</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../GHE/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Custom Content</a></li>
+    <li><a href="class.html">Classes</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/class.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Classes</h1>
+<div class="sect1">
+<h2 id="_components"><a class="anchor" href="#_components"></a>Components</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_class_envelope"><a class="anchor" href="#_class_envelope"></a>Class Envelope</h3>
+<div class="paragraph">
+<p>The Class Envelope is the infinite bag that contains the <a href="#_character_box">Character Box</a> to create new characters for that class.</p>
+</div>
+<div class="sect3">
+<h4 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Class Envelope</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_lua_script"><a class="anchor" href="#_lua_script"></a>Lua Script</h4>
+<div class="paragraph">
+<p>The Class Envelope should register the class during the <code>onLoad</code> event.
+Details about the data format can be found at <a href="#registerClass">[registerClass]</a>.
+If the class also has custom conditions they should be registered here, too (see <a href="#registerCondition">[registerCondition]</a> for details about the data structure).</p>
+</div>
+<div class="listingblock">
+<div class="title">api/GloomApi.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ClassApi = require("api.ClassApi")
+local ConditionApi = require("api.ConditionApi")
+
+function onLoad()
+    local classData = {
+        -- ...
+    }
+    ClassApi.registerClass("Name of the Class", classData)
+
+    -- if the class also has custom conditions, they should be registered here, too
+    local conditionInfo = {
+        -- ...
+    }
+    ConditionApi.registerCondition("Name of the condition", conditionInfo)
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_character_box"><a class="anchor" href="#_character_box"></a>Character Box</h3>
+<div class="paragraph">
+<p>The Character Box contains all the components for a new character of that class.
+Each Character Box should contain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="#Figure_Class">Figure</a>.</p>
+</li>
+<li>
+<p>A deck named <code>Starting Abilities</code> for abilities unlocked at level 1.</p>
+</li>
+<li>
+<p>A deck named <code>Advanced Abilities</code> for abilities that are unlocked at level up.</p>
+</li>
+<li>
+<p>A <a href="#_character_sheet">Character Sheet</a>.</p>
+</li>
+<li>
+<p>A Player Mat</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_properties_2"><a class="anchor" href="#_properties_2"></a>Properties</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the class</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_lua_script_2"><a class="anchor" href="#_lua_script_2"></a>Lua Script</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCollisionEnter(info)
+    if info.collision_object.getName():find("Player Mat") then
+        getObjectFromGUID("75ab50").call("cleanArea", { info.collision_object, self })
+    end
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Figure_Class"><a class="anchor" href="#Figure_Class"></a>Figure</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full name of the class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required tags will be set automatically through the script.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_lua_script_3"><a class="anchor" href="#_lua_script_3"></a>Lua Script</h4>
+<div class="paragraph">
+<p>Add this script to figure&#8217;s script and adjust the shown values to your need.</p>
+</div>
+<div class="listingblock">
+<div class="title">Figures/CharacterMini.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value for <code>hpColour</code> is the background color of the HP bar over the figure.
+Similar <code>hpTextColour</code> is the color of the text appearing on the HP bar.
+This is optional and defaults to black.
+<code>startingHealth</code> is the HP value for the character on level 1.
+The <code>FrameOffset</code> is the position where the HP bar will appear relative to the figure.
+The correct value can be found by experimenting a bit and see what looks good.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui"><a class="anchor" href="#_ui"></a>UI</h4>
+<div class="paragraph">
+<p>Add this script to figure&#8217;s UI script.
+No other values need to be set.</p>
+</div>
+<div class="listingblock">
+<div class="title">Figures/CharacterMini.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;Include src="Figures/CharacterMini.xml" /&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_player_mat"><a class="anchor" href="#_player_mat"></a>Player Mat</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_character_mat"><a class="anchor" href="#_character_mat"></a>Character Mat</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_character_sheet"><a class="anchor" href="#_character_sheet"></a>Character Sheet</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Character Sheet</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Use the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2627289470">Character Sheet Creator</a> to generate the required script for the character sheet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ability_cards"><a class="anchor" href="#_ability_cards"></a>Ability Cards</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the ability followed by its initiative value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full name of the class.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The initiative value of a card has to be a two-digit number enclosed by parentheses (e.g. <code>Perverse Edge (08)</code>).
+When an ability has multiple initiative values (like the Blinkblade from Frosthaven), multiple parentheses can be used.
+The initiative tracker then shows all of them and the users can remove them if needed.</p>
+</div>
+<div class="paragraph">
+<p>Within the class box the ability cards then need to be placed into a deck.
+The deck needs to be named <code>Starting Abilities</code> for abilities that are unlocked by the class on level 1.
+All those cards will be put the players' hand when a new character is created.
+All other ability cards need to be in a deck named <code>Advanced Abilities</code>.
+This ensures that the Campaign Manager can correctly find them.</p>
+</div>
+<div class="sect3">
+<h4 id="_lua_script_4"><a class="anchor" href="#_lua_script_4"></a>Lua Script</h4>
+<div class="paragraph">
+<p>Abilities only need a script, when it&#8217;s an ability that can spawn Summons.
+The script adds a button to the card that can be clicked and creates the Summon figure.
+The <a href="#_summons">Summon</a> also needs to be registered accordingly.</p>
+</div>
+<div class="listingblock">
+<div class="title">Component/SummonCard.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">require("Component.SummonCard")
+    .forSummon("Rat Swarm", { -0.82, 0.05, -0.82 })</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Change the name of the first parameter to the name of the Summon this card will spawn.
+The second parameter is the position of the button that will appear.
+The default values that should work in most cases or those:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">{ -0.82, 0.05, -0.82 } -- top ability
+{ -0.82, 0.05, 0.52 } -- bottom ability
+{ -0.73, 0.05, 0.74 } -- item ability</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attack_modifiers"><a class="anchor" href="#_attack_modifiers"></a>Attack Modifiers</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_trackers"><a class="anchor" href="#_trackers"></a>Trackers</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_summons"><a class="anchor" href="#_summons"></a>Summons</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique name across all Summons.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required tags will be set automatically through the script.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Summons need to be inside a <a href="#Custom Content Box">[Custom Content Box]</a> to be registered correctly.</p>
+</div>
+<div class="sect3">
+<h4 id="_lua_script_5"><a class="anchor" href="#_lua_script_5"></a>Lua Script</h4>
+<div class="paragraph">
+<p>Add this script to Summons' figure script and adjust the shown values to your need.</p>
+</div>
+<div class="listingblock">
+<div class="title">Figures/Summon.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">stats = {
+   health = 2,
+   move = 3,
+   attack = 0,
+   range = 0,
+   attributes = {}
+}
+
+info = {
+  hpColour = "#AD735C"
+}
+
+FrameOffset = 230
+
+require("Figures.Summon")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>stats</code> table describes the base stats for the Summon.
+The values should be self-explanatory.
+The <code>attributes</code> table describes the default attributes the summon has (like flying, shield or infusing an element).
+The format is the same as for <a href="#Enemy Stats">[Enemy Stats]</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>info</code> table and the <code>FrameOffset</code> use the same format as the one for the class <a href="#Figure_Class">Figure</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui_2"><a class="anchor" href="#_ui_2"></a>UI</h4>
+<div class="listingblock">
+<div class="title">Figures/Summon.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;Include src="Figures/Summon.xml" /&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extra_components"><a class="anchor" href="#_extra_components"></a>Extra Components</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Data_Classes"><a class="anchor" href="#Data_Classes"></a>Data</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Example_Class"><a class="anchor" href="#Example_Class"></a>Examples</h3>
+<div class="sect3">
+<h4 id="_definition_for_brute"><a class="anchor" href="#_definition_for_brute"></a>Definition for Brute</h4>
+<div class="paragraph">
+<p>This example shows the registration of the Brute class.
+For perks and abilities, only some of them are shown for brevity.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ClassApi = require("api.GloomApi").Class
+
+function onLoad()
+    ClassApi.registerClass("Brute", {
+        isStartingClass = true,
+        boxGuid = self.getGUID(),
+        hp = ClassApi.HpProgression.High,
+        tracker = {
+            image = "http://cloud-3.steamusercontent.com/ugc/83722391140264566/DC437F88C225F04C6CCE924EA4C3BB31FCD3F3A9/",
+        },
+        perks = {
+            [1] = { remove = { "(-1)", "(-1)" } },
+            [2] = { add = { "(+1)" }, remove = { "(-1)" } },
+            -- Perks 3 .. 14 would be here too
+            [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+            -- up to 18 perks are supported (for Frosthaven support)
+        },
+        abilities = {
+            ["Eye for an Eye"] = {
+                level = 1,
+                enhancements = {
+                    [1] = { position = { -0.46, -0.92 }, multi = false, side = "T", main = true, type = ClassApi.AbilityType.Retaliate },
+                    [2] = { position = { -0.35, 0.53 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+                    [3] = { position = { -0.50, 0.55 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+                }
+            },
+            ["Brute Force"] = {
+                level = 3,
+                enhancements = {
+                    [1] = { position = { -0.06, -0.75 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Attack },
+                    [2] = { position = { -0.25, -0.78 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 3 } },
+                    [3] = { position = { -0.26, -0.40 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 2 } },
+                    [4] = { position = { -0.41, 0.67 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Shield },
+                }
+            },
+        },
+    })
+end</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Example_Class_Spawn"><a class="anchor" href="#Example_Class_Spawn"></a>Adding elements to the context menu</h4>
+<div class="paragraph">
+<p>This example shows how to add a <a href="#Spawnable Element">[Spawnable Element]</a> that will show up when the context menu for this class' figure is opened.
+You can also add other attributes of <a href="#Spawnable Element">[Spawnable Element]</a>s like HP bars, or <a href="#Action">[Action]</a>s.
+Only the relevant parts of the class definition are shown.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
