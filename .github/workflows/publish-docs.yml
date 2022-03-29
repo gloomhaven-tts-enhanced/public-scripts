@@ -23,7 +23,7 @@ jobs:
       - name: Generate Site
         run: npx antora docs/antora-playbook.yml
       - name: Copy redirect index.html
-        run: sudo cp index.html docs/build/site
+        run: sudo cp docs/index.html docs/build/site
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
