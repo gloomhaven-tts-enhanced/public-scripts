@@ -6,10 +6,12 @@
   "typings": "./build/index.d.ts",
   "scripts": {
     "build": "rimraf build && tsc",
+    "build:lua": "tstl",
     "build:api": "api-extractor run --local --verbose"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.20.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "typescript-to-lua": "^1.4.2"
   }
 }

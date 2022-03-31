@@ -1,11 +1,9 @@
 {
-  // "$schema": "https://raw.githubusercontent.com/TypeScriptToLua/vscode-typescript-to-lua/master/tsconfig-schema.json",
+  "$schema": "https://raw.githubusercontent.com/TypeScriptToLua/vscode-typescript-to-lua/master/tsconfig-schema.json",
   "include": ["src/**/*"],
-  // "tstl": {
-  //   "noImplicitSelf": true,
-  //   "luaBundle": "Main.ttslua",
-  //   "luaBundleEntry": "src/index.ts"
-  // },
+  "tstl": {
+    "noImplicitSelf": true
+  },
   "compilerOptions": {
     "target": "esnext",
     "lib": ["ESNext"],
@@ -25,7 +23,7 @@
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     "typeRoots": ["./src/@types", "./node_modules/@types"],
-    // "types": ["typescript-to-lua/language-extensions"],
+    "types": ["typescript-to-lua/language-extensions"],
     "outDir": "./build" /* Specify an output folder for all emitted files. */,
     "strict": true
   }
