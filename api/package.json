@@ -1,0 +1,15 @@
+{
+  "name": "@gloomhaven-enhanced/api",
+  "version": "1.3.0",
+  "description": "APIs for the Gloomhaven Enhanced TTS mod.",
+  "main": "./build/index.js",
+  "typings": "./build/index.d.ts",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "build:api": "api-extractor run --local --verbose"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.20.0",
+    "rimraf": "^3.0.2"
+  }
+}
