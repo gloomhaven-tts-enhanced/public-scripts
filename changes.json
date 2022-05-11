@@ -1,0 +1,70 @@
+[
+  {
+    "version": "1.3.0",
+    "release": "",
+    "breaking": [
+      "Numpad Keys (aka scripting buttons) are removed in favor of TTS Game Keys.",
+      "Removed Hexagonal Monster option.",
+      "Changed how custom classes need to register."
+    ],
+    "feature": [
+      "Ability Summons will apply their Enhancements to their stats.",
+      "All figures health bars will now automatically rotate to face the bottom of the table.",
+      "Control Panel option to specify if you want the scenario's monster types reveal at the beginning or on demand.",
+      "Control panel option to specify if 3D or 2D models should be used.",
+      "Random Item designs are now stacked in their pairs within the bag.",
+      "Initiative Tracker no longer causes a UI re-render.",
+      "New Monster Mats.",
+      "Monster stats pulled according to Stat Sheet Level",
+      "New Context Menu for fast spawns, summons and conditions.",
+      "Scenario Aid Tokens spawned during setup.",
+      "HP bars on obstacles and doors etc.",
+      "Game Keys to quickly switch between characters (intended for solo/mutli-handed play).",
+      "HP changes are now grouped and only fire a single message after a short period of time",
+      "Named monsters have a purple base and set their HP accordingly to the scenario book.",
+      "Updated Envelope X content from the KS update.",
+      "More and better support for custom content (e.g. classes with resources/stances, auto-unpacking of items, personal quests cards, etc.)"
+    ],
+    "fix": [
+      "\"Random\" Bags now pull in a random order.",
+      "Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting deleted).",
+      "Changed options are now correctly saved."
+    ]
+  },
+  {
+    "version": "1.2.1",
+    "release": "2021-08-23",
+    "fix": [
+      "Prevent removal of Custom Class Personal Quests and Items",
+      "Demolitionist Perk #4 removes correct AMD cards"
+    ]
+  },
+  {
+    "version": "1.2.0",
+    "release": "2021-08-18",
+    "feature": [
+      "New 3D models for the GH starter classes.",
+      "New animated 3D doors.",
+      "Improvements to other 3D overlay tiles.",
+      "New Options Panel to control your settings.",
+      "New Scenario and Monster Setup menus (including access to Solo Scenarios)",
+      "Improved support for Custom Classes."
+    ],
+    "fix": [
+      "\"Hidden Rooms\" for scenarios will now spawn all monster types at the beginning, rather than room to room."
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "release": "2021-06-11",
+    "feature": [
+      "Complete aesthetic overhaul of all 3D overlay.",
+      "Fancy-pants Enhancement Calculator.",
+      "Convenient buttons on Summon cards (right-click on the summon token to bring out a standee).",
+      "New table art! Cycle through using NUM6-9.",
+      "Added support for Custom Class conditions; more custom class support to be added in the future.",
+      "Performance improvements with reworked deck mats and the 3D overlays.",
+      "Interactive Envelope X solution."
+    ]
+  }
+]
