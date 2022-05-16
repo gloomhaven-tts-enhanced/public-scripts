@@ -1,0 +1,56 @@
+= Options
+
+At the top right of the screen is a small drop-down prompt.
+Clicking on this will bring down the menu for the various Interface Panels.
+At the bottom is the selection for Options.
+The available options and their usage and behavior are listed in the following sections.
+
+Please be sure to discuss what sort of settings you would like to use while playing your campaign with your party.
+These can be changed at any time however, so if a particular option doesn't suit your liking, simply change it again!
+
+Feel free to send feedback or ideas for other options you'd like to see included.
+
+== Scenario Page
+This determines how the scenario book is treated, when a new scenario is loaded.
+It can be one of following options:
+
+Spawn:: When this options is set, a new tile will be spawned, whenever a scenario is loaded.
+This tile only contains the 1 or 2 pages for the scenario and not the complete scenario book.
+They can be deleted, once they are no longer needed.
+Change:: If the scenario book is already present somewhere on the table, it's page will be set to the page of the scenario, once it is loaded.
+If the scenario book is not on the table, nothing happens.
+None:: Nothing happens to the scenario book and you have to manually select the correct pages.
+
+== Default To Hidden Room Setup
+Specifies whether hidden room setup should be used, when setting up a scenario by clicking the sticker on the map.
+Using the setup from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
+
+== Use 3D Models
+Specifies for which overlay tokens 3D models should be used.
+These options are available:
+
+Closed Doors:: If set, all door token that is not opened yet use the 3D model, otherwise they use the 2D token.
+Opened Doors:: Once a door was opened, it switches to the 2D token if this is not set.
+Trees:: If not set, tree tokens will use the 2D token. Otherwise they will use one of available tree 3D on random.
+Other:: Specifies the behavior for all other types of overlays.
+
+== Preload Enemies
+When this options is set, all enemies will be prepared when starting a new scenario.
+This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room setup.
+If this option is not set, enemies will only prepared once a room is opened where they are present.
+
+== Deal Battle Goals
+When this is option set, Battle Goals will be dealt at the start of a scenario.
+Otherwise they have to be drawn manually.
+
+== Hide Ability Cards
+When this option is et, ability cards placed with the xref:hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
+Otherwise they are placed face-up.
+
+== Solo/Open Information
+This options can be used to specify playing a solo game or a coop game with open information.
+This will _reduce_ the gold conversion and bonus experience by one level at the end of a scenario while keeping the monster level and trap damage intact.
+So with solo play it's intended to add the +1 for the scenario level and use this option to reduce gold conversion and bonus experience down again (though it currently isn't shown on the Party Sheet).
+
+== Background Image
+This specified the image that is shown on the table surface.

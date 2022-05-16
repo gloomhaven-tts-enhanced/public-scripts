@@ -1,0 +1,23 @@
+= Monsters
+
+== Monster Mats
+
+Every monster type that is present in a scenario is represented by their monster mat.
+This mat contains all the information and material for this monster type like their stats and ability deck.
+
+image::monsterMat.png[]
+
+The current stats of a monster is shown in the center of the mat.
+Below the stats image, the current monster level is shown according to the scenario level set in the Party Sheet optionally adjusted by whatever the scenario specifies for that monster type.
+You can use the +/- buttons to increase/decrease the current monster level.
+This will not change the level of any existing monsters, but only the monster spawn after changing the level.
+
+To spawn new monster of that type, use the btn:[Normal] or btn:[Elite] button on the left of the stat sheet.
+This will spawn a new figure above the monster mat that then can be placed anywhere on the table.
+
+To the right of the stat sheet the ability deck for the monster type is placed.
+You can draw additional ability cards using the btn:[Draw] button here.
+Alternatively there's also a menu for this in the Enemy Interface, as well as a xref:hotkeys.adoc#_draw_monster_attack_modifier[Game Key].
+
+The btn:[Shuffle] button moves all ability cards from the discard pile into the ability deck and shuffles it.
+This also happens automatically, when you end a round using the Player Interface while the discard pile contains an ability card with a shuffle symbol.

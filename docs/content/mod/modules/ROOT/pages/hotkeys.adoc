@@ -1,0 +1,58 @@
+= Game Keys
+
+Game Keys are a concept of TTS, where players can assign a key on their keyboard to perform a specific action in the game.
+The list of available Game Keys can be found while accessing the menu:Options[Game Keys] menu.
+This section gives an overview of the available game actions that can be bound to a key.
+
+image::menu_gameKeys.png[]
+
+Each player has to assign the Game Key themself if they want to use it.
+There's no way to share assigned  Game Keys or assign default keys in the mod.
+Assigned keys will stay between mod versions.
+
+NOTE: Assigning a Game Key does not prevent the TTS default behavior for that key. E.g. if you assign the key "F" to a Game Key and use it while hovering over an object, it will still flip the object in addition to performing the game action.
+
+NOTE: Until version 1.2 of the mod, some of the Game Keys listed here where automatically bound to so-called scripting keys (typically the first numbers on the numpad).
+This was removed in version 1.3 in favor of using Game Keys.
+However, as stated above, this means those keys have to reassigned for each player, if they want to use them again.
+
+
+== Add/Remove Health
+While hovering over a figure or token with a health bar (e.g. including obstacles or doors in some scenarios), this action will add/remove one health from it.
+
+== Show Context Menu
+While hovering over a figure (enemy, character, summon) this action will show the xref:contextMenu.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
+
+== Loot
+While hovering over a coin or treasure chest token, this action will move it the the player mat of the player who used that action.
+This also means it currently doesn't work while using the Black player for solo play.
+
+== Defeat Monster
+While hovering over an enemy figure, this action will remove the figure and spawn a coin token in it's place (unless it was a summon).
+This is the same behavior as reducing the enemies health to 0 and then pressing the "Defeat" button in the center of it's health bar.
+However, this action will also be performed, if the enemies health is above 0.
+
+== Draw Monster Attack Modifier
+This action will draw a new Attack Modifier card from the enemy deck.
+
+
+== Play 1st/2nd Card
+While hovering over a card in a player's hand, this action will place this card in the 1st/2nd ability card slot on the Play Area.
+If there's already a card present, it will be moved to the player's hand again.
+This also works regardless of player color.
+E.g. if you are the Black player and use this hotkey while hovering over a hand zone card for the Blue player, it will move the cards to the slot for the Blue player.
+
+
+== Switch To Player 1/2/3/4/Solo Player
+These actions quickly switch to the player seat associated with this player number.
+For the Solo player it will switch to the Black player color.
+The switch is only successful if there isn't already another player seated for this player color.
+
+Unfortunately there's no way to preserve the current camera position before switching.
+So instead of defaulting to moving the camera far away like, the camera will focus on the character mat for this player instead.
+
+== Switch To Next Character
+This action switches the player color to the next available player color, that also has a character loaded.
+This is intended for solo or multi-handed play.
+
+The camera behavior is the same as the one mentioned in the "Switch To Player" section.

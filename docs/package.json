@@ -4,7 +4,7 @@
   "description": "Documentation for everything around the Gloomhaven Enhanced TTS mod.",
   "scripts": {
     "build": "antora generate --clean antora-playbook.yml",
-    "start": "npm run build && start ./build/site/index.html"
+    "build:local": "antora generate --clean antora-playbook-local.yml"
   },
   "devDependencies": {
     "@antora/cli": "^3.0.1",

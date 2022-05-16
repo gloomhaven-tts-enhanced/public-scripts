@@ -1,4 +1,5 @@
 = Gloomhaven Enhanced
 
 This documentation describes how to use the GHE mod.
-It's currently just a placeholder and doesn't have any content. :-(
+It currently only contains some documentation.
+More information can also be found in the rule book that is included in the mod.
