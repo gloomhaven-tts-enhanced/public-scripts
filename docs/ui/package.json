@@ -12,7 +12,7 @@
     "node": ">= 8.0.0"
   },
   "scripts": {
-    "build": "gulp bundle",
+    "build": "gulp bundle:dirty",
     "start": "gulp preview"
   },
   "browserslist": [
@@ -54,6 +54,7 @@
     "require-from-string": "~2.0",
     "stylelint": "~13.3",
     "stylelint-config-standard": "~20.0",
+    "typeface-pirata-one": "^1.1.13",
     "typeface-roboto": "0.0.75",
     "typeface-roboto-mono": "0.0.75",
     "vinyl-buffer": "~1.0",
