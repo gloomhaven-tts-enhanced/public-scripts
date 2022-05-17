@@ -1,0 +1,14 @@
+= Summons
+
+The mod contains an easy way to summon figures from ability or item cards.
+When right-clicking the summon symbol on those cards, a figure representing that summon is spawned.
+The stats for this summon are also updated according to the enhancements on the ability if there are any.
+
+By default summons start with the number 1 attached to the left of their HP bar.
+To keep track of the summon order, you can change this number.
+To do this, click into the middle of the HP bar to open a small settings menu for this figure.
+An up and down arrow will appear above and below the summon number.
+Click them to increase or decrease the summon number.
+Finish the editing mode by clicking on the middle of the HP bar again.
+
+image::summon.gif[]
