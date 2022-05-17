@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Context Menu :: Gloomhaven Enhanced</title>
+    <title>Summons :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="GHE" data-version="1.3">
+<div class="nav-container" data-component="mod" data-version="1.3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -70,7 +70,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="monsters.html">Monsters</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="summons.html">Summons</a>
   </li>
 </ul>
@@ -82,7 +82,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="hotkeys.html">Hotkeys</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="contextMenu.html">Context Menu</a>
   </li>
 </ul>
@@ -133,69 +133,35 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Gloomhaven Enhanced</a></li>
-    <li>Features</li>
-    <li><a href="contextMenu.html">Context Menu</a></li>
+    <li>Scenario Setup</li>
+    <li><a href="summons.html">Summons</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/contextMenu.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/summons.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Context Menu</h1>
+<h1 class="page">Summons</h1>
 <div class="paragraph">
-<p>The Context Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
-It can be access by pressing the key of the assigned <a href="hotkeys.html" class="xref page">Game Key</a> while hovering over a character, enemy or summon figure.</p>
+<p>The mod contains an easy way to summon figures from ability or item cards.
+When right-clicking the summon symbol on those cards, a figure representing that summon is spawned.
+The stats for this summon are also updated according to the enhancements on the ability if there are any.</p>
+</div>
+<div class="paragraph">
+<p>By default summons start with the number 1 attached to the left of their HP bar.
+To keep track of the summon order, you can change this number.
+To do this, click into the middle of the HP bar to open a small settings menu for this figure.
+An up and down arrow will appear above and below the summon number.
+Click them to increase or decrease the summon number.
+Finish the editing mode by clicking on the middle of the HP bar again.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/contextMenu.gif" alt="contextMenu">
+<img src="_images/summon.gif" alt="summon">
 </div>
-</div>
-<div class="paragraph">
-<p>This will show an overview of all conditions that are currently available in the mod.
-Clicking on any of the conditions will apply it to the figure for which to Context Menu was opened and closes the Context Menu again.
-Right-Clicking will do the same, but the Context Menu stays open afterwards, which is useful to apply multiple conditions.</p>
-</div>
-<div class="paragraph">
-<p>Above the icons for conditions, the icons for active classes are shown.
-This allows to apply the class tracker as a condition to the underlying figure.
-Only the trackers for classes are shown that are currently available on one of the player seats.</p>
-</div>
-<div class="paragraph">
-<p>Lastly, for some figures the top row shows icons for figure specific tokens that it can spawn.
-This includes monster summons, traps and obstacles.
-Traps will also spawn with the correct damage or conditions indicators on top of them.
-Clicking the icon will spawn the token above the figure&#8217;s head.
-From there it can be dragged to the place where it needs to be (without requiring to unlock it first).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This might be considered a slight spoiler for enemies.
-Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn was not drawn yet.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-In order for custom figures to make use of the Context Menu they need to have the latest script attached to them.
-Custom content can also specify which figure specific tokens are available to make the show up in the Context Menu.
-</td>
-</tr>
-</table>
 </div>
 </article>
   </div>

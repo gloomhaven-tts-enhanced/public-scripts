@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Gloomhaven Enhanced :: Gloomhaven Enhanced</title>
+    <title>Monsters :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="GHE" data-version="1.3">
+<div class="nav-container" data-component="mod" data-version="1.3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -48,7 +48,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -67,7 +67,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Scenario Setup</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="monsters.html">Monsters</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -133,31 +133,50 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Gloomhaven Enhanced</a></li>
-    <li><a href="index.html">Introduction</a></li>
+    <li>Scenario Setup</li>
+    <li><a href="monsters.html">Monsters</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/monsters.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Gloomhaven Enhanced</h1>
+<h1 class="page">Monsters</h1>
+<div class="sect1">
+<h2 id="_monster_mats"><a class="anchor" href="#_monster_mats"></a>Monster Mats</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This documentation describes how to use the GHE mod.
-It currently only contains some documentation.
-More information can also be found in the rule book that is included in the mod.</p>
+<p>Every monster type that is present in a scenario is represented by their monster mat.
+This mat contains all the information and material for this monster type like their stats and ability deck.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/monsterMat.png" alt="monsterMat">
+</div>
 </div>
 <div class="paragraph">
-<p>Checkout the <a href="updates.html" class="xref page">Updates</a> to find more about the features of each release.</p>
+<p>The current stats of a monster is shown in the center of the mat.
+Below the stats image, the current monster level is shown according to the scenario level set in the Party Sheet optionally adjusted by whatever the scenario specifies for that monster type.
+You can use the +/- buttons to increase/decrease the current monster level.
+This will not change the level of any existing monsters, but only the monster spawn after changing the level.</p>
 </div>
 <div class="paragraph">
-<p>If you want to integrate custom content into the mod, checkout <a href="../../custom/1.3/index.html" class="xref page">this page</a>.
-If you want to contribute to the documentation, checkout <a href="../../dev/1.3/documentation.html" class="xref page">this page</a>.</p>
+<p>To spawn new monster of that type, use the <b class="button">Normal</b> or <b class="button">Elite</b> button on the left of the stat sheet.
+This will spawn a new figure above the monster mat that then can be placed anywhere on the table.</p>
 </div>
 <div class="paragraph">
-<p>If you get stuck or things are unclear, feel free to ask on the official Discord server.</p>
+<p>To the right of the stat sheet the ability deck for the monster type is placed.
+You can draw additional ability cards using the <b class="button">Draw</b> button here.
+Alternatively there&#8217;s also a menu for this in the Enemy Interface, as well as a <a href="hotkeys.html#_draw_monster_attack_modifier" class="xref page">Game Key</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <b class="button">Shuffle</b> button moves all ability cards from the discard pile into the ability deck and shuffles it.
+This also happens automatically, when you end a round using the Player Interface while the discard pile contains an ability card with a shuffle symbol.</p>
+</div>
+</div>
 </div>
 </article>
   </div>

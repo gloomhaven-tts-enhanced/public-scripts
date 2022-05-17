@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Monsters :: Gloomhaven Enhanced</title>
+    <title>Context Menu :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="GHE" data-version="1.3">
+<div class="nav-container" data-component="mod" data-version="1.3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -67,7 +67,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Scenario Setup</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="monsters.html">Monsters</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -82,7 +82,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="hotkeys.html">Hotkeys</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="contextMenu.html">Context Menu</a>
   </li>
 </ul>
@@ -133,50 +133,69 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Gloomhaven Enhanced</a></li>
-    <li>Scenario Setup</li>
-    <li><a href="monsters.html">Monsters</a></li>
+    <li>Features</li>
+    <li><a href="contextMenu.html">Context Menu</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/monsters.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/contextMenu.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Monsters</h1>
-<div class="sect1">
-<h2 id="_monster_mats"><a class="anchor" href="#_monster_mats"></a>Monster Mats</h2>
-<div class="sectionbody">
+<h1 class="page">Context Menu</h1>
 <div class="paragraph">
-<p>Every monster type that is present in a scenario is represented by their monster mat.
-This mat contains all the information and material for this monster type like their stats and ability deck.</p>
+<p>The Context Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
+It can be access by pressing the key of the assigned <a href="hotkeys.html" class="xref page">Game Key</a> while hovering over a character, enemy or summon figure.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/monsterMat.png" alt="monsterMat">
+<img src="_images/contextMenu.gif" alt="contextMenu">
 </div>
 </div>
 <div class="paragraph">
-<p>The current stats of a monster is shown in the center of the mat.
-Below the stats image, the current monster level is shown according to the scenario level set in the Party Sheet optionally adjusted by whatever the scenario specifies for that monster type.
-You can use the +/- buttons to increase/decrease the current monster level.
-This will not change the level of any existing monsters, but only the monster spawn after changing the level.</p>
+<p>This will show an overview of all conditions that are currently available in the mod.
+Clicking on any of the conditions will apply it to the figure for which to Context Menu was opened and closes the Context Menu again.
+Right-Clicking will do the same, but the Context Menu stays open afterwards, which is useful to apply multiple conditions.</p>
 </div>
 <div class="paragraph">
-<p>To spawn new monster of that type, use the <b class="button">Normal</b> or <b class="button">Elite</b> button on the left of the stat sheet.
-This will spawn a new figure above the monster mat that then can be placed anywhere on the table.</p>
+<p>Above the icons for conditions, the icons for active classes are shown.
+This allows to apply the class tracker as a condition to the underlying figure.
+Only the trackers for classes are shown that are currently available on one of the player seats.</p>
 </div>
 <div class="paragraph">
-<p>To the right of the stat sheet the ability deck for the monster type is placed.
-You can draw additional ability cards using the <b class="button">Draw</b> button here.
-Alternatively there&#8217;s also a menu for this in the Enemy Interface, as well as a <a href="hotkeys.html#_draw_monster_attack_modifier" class="xref page">Game Key</a>.</p>
+<p>Lastly, for some figures the top row shows icons for figure specific tokens that it can spawn.
+This includes monster summons, traps and obstacles.
+Traps will also spawn with the correct damage or conditions indicators on top of them.
+Clicking the icon will spawn the token above the figure&#8217;s head.
+From there it can be dragged to the place where it needs to be (without requiring to unlock it first).</p>
 </div>
-<div class="paragraph">
-<p>The <b class="button">Shuffle</b> button moves all ability cards from the discard pile into the ability deck and shuffles it.
-This also happens automatically, when you end a round using the Player Interface while the discard pile contains an ability card with a shuffle symbol.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This might be considered a slight spoiler for enemies.
+Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn was not drawn yet.
+</td>
+</tr>
+</table>
 </div>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In order for custom figures to make use of the Context Menu they need to have the latest script attached to them.
+Custom content can also specify which figure specific tokens are available to make the show up in the Context Menu.
+</td>
+</tr>
+</table>
 </div>
 </article>
   </div>
