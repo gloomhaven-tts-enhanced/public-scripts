@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Gloomhaven Enhanced :: Gloomhaven Enhanced</title>
+    <title>Updates :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -48,10 +48,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="updates.html">Updates</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -125,31 +125,107 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Gloomhaven Enhanced</a></li>
-    <li><a href="index.html">Introduction</a></li>
+    <li><a href="updates.html">Updates</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/ROOT/pages/updates.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Gloomhaven Enhanced</h1>
-<div class="paragraph">
-<p>This documentation describes how to use the GHE mod.
-It currently only contains some documentation.
-More information can also be found in the rule book that is included in the mod.</p>
+<h1 class="page">Updates</h1>
+<div class="sect1">
+<h2 id="_whats_new_in_1_3"><a class="anchor" href="#_whats_new_in_1_3"></a>What&#8217;s new in 1.3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_breaking_changes"><a class="anchor" href="#_breaking_changes"></a>Breaking Changes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Numpad hotkey (aka scripting buttons) are removed in favor of TTS <a href="hotkeys.html" class="xref page">Game Keys</a>.
+This means all hotkeys have to be reassigned for each player.</p>
+</li>
+<li>
+<p>Removed Hexagonal Monster option."</p>
+</li>
+<li>
+<p>Changed how custom classes need to register.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Checkout the <a href="updates.html" class="xref page">Updates</a> to find more about the features of each release.</p>
 </div>
-<div class="paragraph">
-<p>If you want to integrate custom content into the mod, checkout <a href="../../custom/1.3/index.html" class="xref page">this page</a>.
-If you want to contribute to the documentation, checkout <a href="#dev:ROOT:documentation.adoc" class="xref unresolved">this page</a>.</p>
+<div class="sect2">
+<h3 id="_features"><a class="anchor" href="#_features"></a>Features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ability Summons will apply their Enhancements to their stats.</p>
+</li>
+<li>
+<p>All figures health bars will now automatically rotate to face the bottom of the table.</p>
+</li>
+<li>
+<p>A new <a href="options.html#_preload_enemies" class="xref page">option</a> to specify if you want the scenario&#8217;s monster types reveal at the beginning or on demand.</p>
+</li>
+<li>
+<p>A new <a href="options.html#_use_3d_models" class="xref page">option</a> to specify if 3D or 2D models should be used.</p>
+</li>
+<li>
+<p>Random Item designs are now stacked in their pairs within the bag.</p>
+</li>
+<li>
+<p>Initiative Tracker no longer causes a UI re-render.</p>
+</li>
+<li>
+<p>New <a href="monsters.html#_monster_mats" class="xref page">Monster Mats</a>.
+Monster stats are pulled according to the setting on those mats.</p>
+</li>
+<li>
+<p>New <a href="contextMenu.html" class="xref page">Context Menu</a> for fast spawns, summons and conditions.</p>
+</li>
+<li>
+<p>Scenario Aid Tokens spawned during setup.</p>
+</li>
+<li>
+<p>HP bars on obstacles and doors etc.</p>
+</li>
+<li>
+<p><a href="hotkeys.html#__switch_to_player_1234solo_player" class="xref page">Game Keys</a> to quickly switch between characters (intended for solo/multi-handed play).</p>
+</li>
+<li>
+<p>HP changes are now grouped and only fire a single message after a short period of time</p>
+</li>
+<li>
+<p>Named monsters have a purple base and set their HP accordingly to the scenario book.</p>
+</li>
+<li>
+<p>Updated Envelope X content from the Kickstarter update.</p>
+</li>
+<li>
+<p>More and better support for custom content (e.g. classes with resources/stances, auto-unpacking of items, personal quests cards, etc.)</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>If you get stuck or things are unclear, feel free to ask on the official Discord server.</p>
+</div>
+<div class="sect2">
+<h3 id="_fixes"><a class="anchor" href="#_fixes"></a>Fixes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>"Random" Bags now pull in a random order.</p>
+</li>
+<li>
+<p>Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting deleted).</p>
+</li>
+<li>
+<p>Changed options are now correctly saved.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>
