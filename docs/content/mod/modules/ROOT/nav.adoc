@@ -1,8 +1,10 @@
 * xref:index.adoc[Introduction]
-* Interfaces
+* xref:updates.adoc[Updates]
+* xref:interfaces.adoc[Interfaces]
 ** xref:options.adoc[Options]
 * Scenario Setup
 ** xref:monsters.adoc[Monsters]
+** xref:summons.adoc[Summons]
 * Features
 ** xref:hotkeys.adoc[Hotkeys]
 ** xref:contextMenu.adoc[Context Menu]

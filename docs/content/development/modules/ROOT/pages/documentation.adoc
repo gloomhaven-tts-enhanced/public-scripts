@@ -1,0 +1,28 @@
+= Documentation
+
+== Requirements
+* Install https://git-scm.com/[Git]
+* Install https://nodejs.org/en/[node.js]
+* Create a https://github.com/[GitHub accout]
+* Fork/clone the https://github.com/gloomhaven-tts-enhanced/public-scripts[public GHE repository] from GitHub
+
+== Writing content
+The documentation is written using https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc], which is an easy to write and read markup language.
+The documentation output is generated using https://docs.antora.org/antora/latest/[Antora].
+
+== Building/Viewing the documentation locally
+* Build the UI
+** Open a Command Line in the `docs/ui` directory (e.g. the GitBash that is automatically installed with Git).
+** Enter the command `npm install`.
+** Enter the command `npm run build:dirty`.
+** These steps are only required the first time you build the documentation
+* Build the documentation
+** Open the Command Line in the `docs` directory.
+** Enter the command `npm install`.
+** Enter the command `npm run build:local`. 
+** Open the `index.html` file inside the `build/site/GHE/1.3/` directory.
+
+== Publishing the documentation
+* Push to GitHub.
+* Create a Pull Request from fork to main repository.
+* Documentation is automatically updated after the PR was merged.

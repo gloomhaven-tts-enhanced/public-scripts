@@ -1,8 +1,5 @@
 = Options
 
-At the top right of the screen is a small drop-down prompt.
-Clicking on this will bring down the menu for the various Interface Panels.
-At the bottom is the selection for Options.
 The available options and their usage and behavior are listed in the following sections.
 
 Please be sure to discuss what sort of settings you would like to use while playing your campaign with your party.

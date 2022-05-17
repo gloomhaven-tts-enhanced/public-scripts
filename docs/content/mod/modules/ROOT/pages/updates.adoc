@@ -1,0 +1,32 @@
+= Updates
+
+== What's new in 1.3
+
+=== Breaking Changes
+- Numpad hotkey (aka scripting buttons) are removed in favor of TTS xref:hotkeys.adoc[Game Keys].
+  This means all hotkeys have to be reassigned for each player.
+- Removed Hexagonal Monster option."
+- Changed how custom classes need to register.
+
+=== Features
+- Ability Summons will apply their Enhancements to their stats.
+- All figures health bars will now automatically rotate to face the bottom of the table.
+- A new xref:options.adoc#_preload_enemies[option] to specify if you want the scenario's monster types reveal at the beginning or on demand.
+- A new xref:options.adoc#_use_3d_models[option] to specify if 3D or 2D models should be used.
+- Random Item designs are now stacked in their pairs within the bag.
+- Initiative Tracker no longer causes a UI re-render.
+- New xref:monsters.adoc#_monster_mats[Monster Mats]. 
+  Monster stats are pulled according to the setting on those mats.
+- New xref:contextMenu.adoc[Context Menu] for fast spawns, summons and conditions.
+- Scenario Aid Tokens spawned during setup.
+- HP bars on obstacles and doors etc.
+- xref:hotkeys.adoc#__switch_to_player_1234solo_player[Game Keys] to quickly switch between characters (intended for solo/multi-handed play).
+- HP changes are now grouped and only fire a single message after a short period of time
+- Named monsters have a purple base and set their HP accordingly to the scenario book.
+- Updated Envelope X content from the Kickstarter update.
+- More and better support for custom content (e.g. classes with resources/stances, auto-unpacking of items, personal quests cards, etc.)
+
+=== Fixes
+- "Random" Bags now pull in a random order.
+- Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting deleted).
+- Changed options are now correctly saved.

@@ -1,4 +1,4 @@
 = GHE Mod Development
 
 This documentation describes how to develop the GHE mod.
-It's currently just a placeholder and doesn't have any content. :-(
+This is very much still in development.

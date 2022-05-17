@@ -19,8 +19,8 @@
       "New Context Menu for fast spawns, summons and conditions.",
       "Scenario Aid Tokens spawned during setup.",
       "HP bars on obstacles and doors etc.",
-      "Game Keys to quickly switch between characters (intended for solo/mutli-handed play).",
-      "HP changes are now grouped and only fire a single message after a short period of time",
+      "Game Keys to quickly switch between characters (intended for solo/multi-handed play).",
+      "HP changes are now grouped and only fire a single message after a short period of time.",
       "Named monsters have a purple base and set their HP accordingly to the scenario book.",
       "Updated Envelope X content from the KS update.",
       "More and better support for custom content (e.g. classes with resources/stances, auto-unpacking of items, personal quests cards, etc.)"
