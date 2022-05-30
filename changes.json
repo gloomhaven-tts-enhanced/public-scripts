@@ -2,6 +2,7 @@
   {
     "version": "1.3.0",
     "release": "",
+    "guide": "http://cloud-3.steamusercontent.com/ugc/1700657979719738600/542FF801EF73EDB8330E408FAF4E24AFF9D5DAF4/",
     "breaking": [
       "Numpad Keys (aka scripting buttons) are removed in favor of TTS Game Keys.",
       "Removed Hexagonal Monster option.",
