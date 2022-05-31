@@ -1,4 +1,5 @@
 import { callApi } from "ApiUtil";
+import { Maybe } from "./model/base";
 import {
   Ability,
   AbilityType,
@@ -7,8 +8,8 @@ import {
   ExtraType,
   HpProgression as HpProg,
   PerkType,
-} from "./@types/class";
-import { SpawnableElement } from "./@types/spawn";
+} from "./model/class";
+import { SpawnableElement } from "./model/spawn";
 
 export const HpProgression: Record<string, HpProg> = {
   Low: [6, 7, 8, 9, 10, 11, 12, 13, 14],
@@ -22,6 +23,8 @@ type ClassRegister = Class;
 
 /**
  * Registers a class.
+ *
+ * @category Registration
  */
 export const registerClass = (className: string, classInfo: ClassRegister) => {
   callApi("registerClass", { className: className, classInfo: classInfo });
@@ -32,6 +35,8 @@ export const registerClass = (className: string, classInfo: ClassRegister) => {
  * If it isn't registered, `nil` will be returned instead.
  *
  * @param className The name of the class.
+ *
+ * @category Get
  */
 export const getClass = (className: string): Maybe<Class> => {
   return callApi("getClass", { className: className });
@@ -39,6 +44,8 @@ export const getClass = (className: string): Maybe<Class> => {
 
 /**
  * Returns all registered classes.
+ *
+ * @category Get
  */
 export const getClasses = (): Class[] => {
   return callApi("getClasses");
@@ -48,11 +55,12 @@ export const getClasses = (): Class[] => {
  * Returns the information about the given ability for a registered class.
  * If the class isn't registered, or has no such ability, `nil` will be returned instead.
  * This method also does to try to do some typo correction.
- * E.g. if the ability is named "Warding Strength" and the given abilityName is "Warding Strengt", the correct ability
- * will be returned, but a warning message will be printed to the game tab.
+ * E.g. if the ability is named "Warding Strength" and the given `abilityName` is "Warding Strengt", the correct ability will be returned, but a warning message will be printed to the game tab.
  *
  * @param className The name of the class.
  * @param abilityName The name of the ability.
+ *
+ * @category Get
  */
 export const getAbility = (className: string, abilityName: string): Maybe<Ability> => {
   return callApi("getAbility", { className: className, abilityName: abilityName });
@@ -63,6 +71,8 @@ export const getAbility = (className: string, abilityName: string): Maybe<Abilit
  * This is defined by the abilities that are registered for this class.
  *
  * @param className The name of the class.
+ *
+ * @category Get
  */
 export const getSpawnableElements = (className: string): SpawnableElement[] => {
   return callApi("getSpawnableElements", { className: className });

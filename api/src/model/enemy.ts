@@ -1,3 +1,4 @@
+import { URI } from "./base";
 import { SpawnableElement } from "./spawn";
 
 /**
@@ -11,9 +12,10 @@ export interface EnemyAbilityDeck {
 /**
  * Information about an enemy ability.
  */
-interface EnemyAbility {
+export interface EnemyAbility {
   /** The URI to the image of the card for this ability. */
   image?: URI;
+
   /** Defines which components can be spawned by this ability. */
   spawn?: SpawnableElement[];
 }
@@ -24,6 +26,7 @@ interface EnemyAbility {
 export interface Enemy {
   /** The URL that represents an icon of the enemy. */
   icon?: URI;
+
   /** The name of the ability deck this enemy uses. */
   abilityDeck: string;
 }
@@ -34,6 +37,7 @@ export interface Enemy {
 export interface BossEnemy {
   /** The URL that represents an icon of the enemy. */
   icon?: URI;
+
   /** Defines which components can be spawned by this boss. */
   spawn?: SpawnableElement[];
 }

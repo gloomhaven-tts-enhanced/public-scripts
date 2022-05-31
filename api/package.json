@@ -5,14 +5,15 @@
   "main": "./build/index.js",
   "typings": "./build/index.d.ts",
   "scripts": {
-    "build": "rimraf build && tsc",
+    "build": "rimraf dist && tsc",
     "build:lua": "tstl",
-    "build:api": "api-extractor run --local --verbose"
+    "build:api": "typedoc src/index.ts",
+    "build:api-watch": "typedoc --watch src/index.ts"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.20.0",
     "rimraf": "^3.0.2",
     "typedoc": "^0.22.13",
+    "typescript": "^4.6.0",
     "typescript-to-lua": "^1.4.2"
   }
 }

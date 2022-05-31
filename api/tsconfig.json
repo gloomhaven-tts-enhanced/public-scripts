@@ -8,23 +8,13 @@
     "target": "esnext",
     "lib": ["ESNext"],
     "declaration": true,
-    // "sourceMap": true,
     "declarationMap": true,
-    // "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */
-    // "reactNamespace": "",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */
-    // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
-    "module": "commonjs" /* Specify what module code is generated. */,
+    "module": "commonjs",
     "rootDir": "./src",
-    // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./src",
-    // "paths": {
-    //   "@mod/*": ["./*"]
-    // },
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
-    // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "typeRoots": ["src/model", "./node_modules/@types"],
     "types": ["typescript-to-lua/language-extensions"],
-    "outDir": "./build" /* Specify an output folder for all emitted files. */,
+    "outDir": "./dist",
     "strict": true
   }
 }
