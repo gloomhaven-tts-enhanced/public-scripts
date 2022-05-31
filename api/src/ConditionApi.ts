@@ -1,3 +1,7 @@
+/**
+ * The `ConditionApi` is used to register new conditions that can be applied to figures.
+ * @module
+ */
 import { callApi } from "ApiUtil";
 import { Condition } from "./@types/condition";
 

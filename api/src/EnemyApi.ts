@@ -1,3 +1,7 @@
+/**
+ * The `EnemyApi` is used to register new enemies and get information about registered enemies.
+ * @module
+ */
 import { callApi } from "ApiUtil";
 import { BossEnemy, Enemy, EnemyAbilityDeck } from "./@types/enemy";
 import { SpawnableElement } from "./@types/spawn";
