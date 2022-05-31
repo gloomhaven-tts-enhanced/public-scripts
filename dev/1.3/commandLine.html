@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>GHE Mod Development :: Gloomhaven Enhanced</title>
+    <title>Command Line :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -48,13 +48,13 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="documentation.html">Documentation</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="commandLine.html">Command Line</a>
   </li>
 </ul>
@@ -103,20 +103,109 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Development</a></li>
-    <li><a href="index.html">Introduction</a></li>
+    <li><a href="commandLine.html">Command Line</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/commandLine.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">GHE Mod Development</h1>
+<h1 class="page">Command Line</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>This documentation describes how to develop the GHE mod.
-This is very much still in development.</p>
+<p>The mod integrates a very basic command line feature, to simplify some steps during development.
+It can be used by typing a command into the chat window.
+Commands always start and end with <code>_</code> followed by a space.
+The text after the space is the argument that is passed to the command (if the command uses it).</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Example command named <code>logger-level</code>.
+The argument passed to the command will be <code>debug</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>_logger-level_ debug</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Every print is also send to the Atom plugin and the console in Atom (can be opened with <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span>).
+From there it can be copied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_the_logging_level"><a class="anchor" href="#_setting_the_logging_level"></a>Setting the Logging Level</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sets the level of all loggers.
+All log messages with a higher or equal level will be print to the game chat.
+The default level is <code>INFO</code>.</p>
+</div>
+<div class="paragraph">
+<p>Available level are (in descending order): <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>, <code>DEBUG</code> and <code>VERBOSE</code>.
+The values are case-insensitive.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>_log-level_ debug</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_position"><a class="anchor" href="#_get_position"></a>Get Position</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prints the position and rotation of the object the is currently hovered by the player entering the command.
+This might be useful to determine where a certain object is placed, e.g. if that is manually entered into a scenario definition.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>_position-get_</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Output</div>
+<div class="content">
+<pre>position = { -12.25, 1.65, -13.3 }
+rotation = { 0, 0, 0 }</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spawn_scenario"><a class="anchor" href="#_spawn_scenario"></a>Spawn scenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spawns a scenario with the given ID.
+Also deletes all objects in the scenario area.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>_scenario-spawn_ 10</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>
