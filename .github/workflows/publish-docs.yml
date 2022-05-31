@@ -24,6 +24,11 @@ jobs:
         run: npx antora docs/antora-playbook.yml
       - name: Copy redirect index.html
         run: sudo cp docs/index.html docs/build/site
+      - name: Build API docs
+        working-directory: api
+        run: npm install && npm run build:api
+      - name: Copy API docs
+        run: sudo cp api/docs docs/build/site/api
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
