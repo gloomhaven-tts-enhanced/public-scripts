@@ -28,7 +28,7 @@ jobs:
         working-directory: api
         run: npm install && npm run build:api
       - name: Copy API docs
-        run: sudo cp api/docs docs/build/site/api
+        run: sudo cp -r api/docs docs/build/site/api
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
