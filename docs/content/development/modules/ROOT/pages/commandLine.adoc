@@ -1,0 +1,61 @@
+= Command Line
+
+The mod integrates a very basic command line feature, to simplify some steps during development.
+It can be used by typing a command into the chat window.
+Commands always start and end with `_` followed by a space.
+The text after the space is the argument that is passed to the command (if the command uses it).
+
+====
+Example command named `logger-level`.
+The argument passed to the command will be `debug`.
+
+----
+_logger-level_ debug
+----
+====
+
+Every print is also send to the Atom plugin and the console in Atom (can be opened with kbd:[Ctrl+Shift+I]).
+From there it can be copied.
+
+== Setting the Logging Level
+
+Sets the level of all loggers.
+All log messages with a higher or equal level will be print to the game chat.
+The default level is `INFO`.
+
+Available level are (in descending order): `ERROR`, `WARNING`, `INFO`, `DEBUG` and `VERBOSE`.
+The values are case-insensitive.
+
+====
+----
+_log-level_ debug
+----
+====
+
+== Get Position
+
+Prints the position and rotation of the object the is currently hovered by the player entering the command.
+This might be useful to determine where a certain object is placed, e.g. if that is manually entered into a scenario definition.
+
+====
+----
+_position-get_
+----
+
+.Output
+----
+position = { -12.25, 1.65, -13.3 }
+rotation = { 0, 0, 0 }
+----
+====
+
+== Spawn scenario
+
+Spawns a scenario with the given ID.
+Also deletes all objects in the scenario area.
+
+====
+----
+_scenario-spawn_ 10
+----
+====

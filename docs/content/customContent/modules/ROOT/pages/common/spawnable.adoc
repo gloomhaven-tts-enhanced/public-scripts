@@ -1,1 +1,238 @@
 = Spawnable Element
+
+Spawnable elements are a way to define objects that can be spawned by certain actions.
+The define which objects spawns and what properties they have and the mod then pulls the correct object and applies the properties to it.
+Currently they can be used to define the content for the xref:mod:ROOT:contextMenu.adoc[Context Menu] as well as for the xref:common/action.adoc#_spawn[Spawn Action] within a scenario definition.
+
+== Defining a Spawnable Element
+
+Each element has two required properties: The type of the element (e.g. an obstacle, trap, enemy, etc.) and it's name.
+The type tells the mod where to look for the element when it should look for the element and the name determines which object it spawns.
+Both those properties are defined within the `element` property.
+To get access to the different types, use the `ResourceApi` like in the example below.
+
+.Definition for a Boulder obstacle
+====
+[source,lua]
+----
+local R = require("api.Resource")
+
+local spawnableElement = {
+  element = {
+    type = R.ElementType.Obstacle,
+    name = "Boulder",
+  }
+}
+----
+====
+
+There are also additional properties that can be set for all elements, like conditions, current/maximum HP or scenario aid tokens.
+
+.Additional properties for an element
+====
+[source,lua]
+----
+local R = require("api.Resource")
+
+local spawnableElement = {
+  element = {
+    type = R.ElementType.Obstacle,
+    name = "Boulder",
+    -- Add the scenario aid tokens A and B to the object
+    tokens = {"a", "b"},
+    -- Add the Wound condition to the object
+    conditions = {"Wound"},
+    -- sets the current HP. If hpMax is not used, this is also the maximum HP
+    hp = 3,
+    -- sets the maximum HP
+    hpMax = { "+", "C", 1},
+  }
+}
+----
+====
+
+The properties `hp` and `hpMax` can be a xref:common/formula.adoc[Formula].
+
+Some elements, like traps and enemies also have additional properties.
+
+.Definition for a trap with damage and conditions
+====
+[source,lua]
+----
+local R = require("api.Resource")
+
+local spawnableElement = {
+  element = {
+    type = R.ElementType.Trap,
+    name = "Bear Trap",
+    conditions = { "Stun" },
+    -- Defines the amount of damage this trap does
+    damage = 3,
+  }
+}
+----
+====
+
+.Definition for a summonable enemy
+====
+[source,lua]
+----
+local R = require("api.Resource")
+
+local spawnableElement = {
+  element = {
+    type = R.ElementType.Enemy,
+    name = "Bear Trap",
+    -- Spawns at elite difficulty. If not used, "normal" is the default
+    difficulty = "elite",
+  }
+}
+----
+====
+
+== Using Spawnable Elements for the Context Menu
+To make Spawnable Elements appear in the xref:mod:ROOT:contextMenu.adoc[Context Menu], they have to added to the ability information of the class or enemy which can create them, by using the `spawn` property.
+
+For classes this is part of the class information used for `registerClass`.
+
+.Definition inside a class ability
+====
+[source,lua]
+----
+local ClassApi = require("api.ClassApi")
+local R = require("api.Resource")
+
+ClassApi.registerClass("Doomstalker", {
+  abilities = {
+    ["Detonation"] = {
+      level = 1,
+      enhancements = {},
+      spawn = {
+        {
+          element = {
+            type = R.ElementType.Trap,
+            name = "Spike Trap",
+            damage = 3,
+          }
+        }
+      }
+    },
+  }
+}
+----
+====
+
+For enemies this is done in the ability deck definition used for `registerEnemyAbilityDeck`.
+
+.Definition inside a enemy ability deck
+====
+[source,lua]
+----
+local EnemyApi = require("api.EnemyApi")
+local R = require("api.Resource")
+
+EnemyApi.registerEnemyAbilityDeck("Archer", {
+  abilities = {
+    [7] = {
+      image = "...",
+      spawn = {
+        {
+          element = {
+            type = R.ElementType.Trap,
+            name = "Spike Trap",
+            damage = 3,
+          },
+        }
+      },
+    },
+----
+====
+
+Defining the elements for bosses works the same, though they use a different API.
+
+.Definition inside a boss deck
+====
+[source,lua]
+----
+local EnemyApi = require("api.EnemyApi")
+local R = require("api.Resource")
+
+EnemyApi.registerBossEnemy("Human Commander", {
+  icon = "...",
+  spawn = {
+    {
+      element = {
+        type = R.ElementType.Enemy,
+        name = "City Guard",
+      },
+    },
+    {
+      element = {
+        type = R.ElementType.Enemy,
+        name = "City Archer",
+      },
+    },
+  }
+})  
+----
+====
+
+NOTE: In all instances above, the `spawn` property is a list of elements, so its possible to put multiple elements in there (as can be seen in the boss example).
+Be sure to use the correct number of nesting levels for `{ }` even when using only 1 element.
+
+== Adding actions
+In addition to the `element` property, Spawnable Elements also have an optional `action` property, where you can define xref:common/action.adoc[Actions].
+
+This is useful, when using the xref:common/action.adoc#_spawn[Spawn Action] in a scenario definition.
+E.g. there are scenarios with secret rooms that get revealed at certain points.
+This is done by defining a spawn action for a door.
+The `action` of the Spawnable Element then defines, that the newly spawned door object will have a button that actually opens the secret room.
+
+.Definition of an overlay that also acts as a door
+====
+[source,lua]
+----
+local spawnableElement = {
+  element = {
+    type = Scenario.OverlayType.Door, 
+    name = "Stone Door Horizontal",
+  },
+  action = { 
+    -- open Room 2 and 6 of the scenario
+    rooms = {6, 2} 
+  },
+},
+----
+====
+
+While this is currently only used in scenario definitions, it's also possible to use that feature for the objects in the Context Menu (a class that can spawn doors, how cool would that be?).
+
+
+== Defining the placement of the new object
+
+The final property of a Spawnable Element is the `position` property.
+This is used to determine where and at what rotation the new object will be placed at.
+Is has two properties `position` and `rotation`, which each take a 3 dimensional vector of the absolute position/rotation within TTS.
+
+====
+[source,lua]
+----
+local spawnableElement = {
+  element = {
+    type = Scenario.OverlayType.Door, 
+    name = "Stone Door Horizontal",
+  },
+  action = { 
+    rooms = {6, 2} 
+  },
+  placement = { 
+    position = { -3.03, 1.77, 21.00},
+    rotation = { 0, 210, 0 },
+  },  
+},
+----
+====
+
+When using the element for the xref:mod:ROOT:contextMenu.adoc[Context Menu] this property is not required and actually ignored, because spawning from the Context Menu has it's own logic to determine the position for the object.
+
+To easily get that information, after you placed an object somewhere on the table, use the xref:dev:ROOT:commandLine.adoc#_get_position[Command Line], to print it to the screen (and the Atom console, where you can easily copy it from).
