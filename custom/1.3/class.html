@@ -186,9 +186,11 @@
 <h4 id="_lua_script"><a class="anchor" href="#_lua_script"></a>Lua Script</h4>
 <div class="paragraph">
 <p>The Class Envelope should register the class during the <code>onLoad</code> event.
-Details about the data format can be found at <a href="#registerClass">[registerClass]</a>.
-If the class also has custom conditions they should be registered here, too (see <a href="#registerCondition">[registerCondition]</a> for details about the data structure).</p>
+Details about the data format can be found at <a href="https://gloomhaven-tts-enhanced.github.io/public-scripts/api/modules/ClassApi.html#registerClass">registerClass</a>.
+If the class also has custom conditions they should be registered here, too (see <a href="https://gloomhaven-tts-enhanced.github.io/public-scripts/api/modules/ConditionApi.html#registerCondition">registerCondition</a> for details about the data structure).</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">api/GloomApi.ttslua</div>
 <div class="content">
@@ -196,17 +198,19 @@ If the class also has custom conditions they should be registered here, too (see
 local ConditionApi = require("api.ConditionApi")
 
 function onLoad()
-    local classData = {
-        -- ...
-    }
-    ClassApi.registerClass("Name of the Class", classData)
+  local classData = {
+       -- ...
+  }
+  ClassApi.registerClass("Name of the Class", classData)
 
-    -- if the class also has custom conditions, they should be registered here, too
-    local conditionInfo = {
-        -- ...
-    }
-    ConditionApi.registerCondition("Name of the condition", conditionInfo)
+  -- if the class also has custom conditions, they should be registered here, too
+  local conditionInfo = {
+      -- ...
+  }
+  ConditionApi.registerCondition("Name of the condition", conditionInfo)
 end</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -214,13 +218,16 @@ end</code></pre>
 <div class="sect2">
 <h3 id="_character_box"><a class="anchor" href="#_character_box"></a>Character Box</h3>
 <div class="paragraph">
+<p><a href="migration.html#_migration" class="xref page">migration.adoc#_migration</a></p>
+</div>
+<div class="paragraph">
 <p>The Character Box contains all the components for a new character of that class.
 Each Character Box should contain:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="#Figure_Class">Figure</a>.</p>
+<p>The <a href="#_figure">Figure</a>.</p>
 </li>
 <li>
 <p>A deck named <code>Starting Abilities</code> for abilities unlocked at level 1.</p>
@@ -253,19 +260,26 @@ Each Character Box should contain:</p>
 </div>
 <div class="sect3">
 <h4 id="_lua_script_2"><a class="anchor" href="#_lua_script_2"></a>Lua Script</h4>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This script ensures, that the character box is unpacked when it&#8217;s dropped onto a player mat.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCollisionEnter(info)
-    if info.collision_object.getName():find("Player Mat") then
-        getObjectFromGUID("75ab50").call("cleanArea", { info.collision_object, self })
-    end
+  if info.collision_object.getName():find("Player Mat") then
+    getObjectFromGUID("75ab50").call("cleanArea", { info.collision_object, self })
+  end
 end</code></pre>
 </div>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="Figure_Class"><a class="anchor" href="#Figure_Class"></a>Figure</h3>
+<h3 id="_figure"><a class="anchor" href="#_figure"></a>Figure</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -287,6 +301,8 @@ end</code></pre>
 <div class="paragraph">
 <p>Add this script to figure&#8217;s script and adjust the shown values to your need.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">Figures/CharacterMini.ttslua</div>
 <div class="content">
@@ -301,6 +317,8 @@ FrameOffset = 230
 require("Figures.CharacterMini")</code></pre>
 </div>
 </div>
+</div>
+</div>
 <div class="paragraph">
 <p>The value for <code>hpColour</code> is the background color of the HP bar over the figure.
 Similar <code>hpTextColour</code> is the color of the text appearing on the HP bar.
@@ -311,15 +329,19 @@ The correct value can be found by experimenting a bit and see what looks good.</
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ui"><a class="anchor" href="#_ui"></a>UI</h4>
+<h4 id="_xml_ui"><a class="anchor" href="#_xml_ui"></a>Xml Ui</h4>
 <div class="paragraph">
 <p>Add this script to figure&#8217;s UI script.
 No other values need to be set.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">Figures/CharacterMini.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;Include src="Figures/CharacterMini.xml" /&gt;</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -371,11 +393,11 @@ No other values need to be set.</p>
 <div class="paragraph">
 <p>The initiative value of a card has to be a two-digit number enclosed by parentheses (e.g. <code>Perverse Edge (08)</code>).
 When an ability has multiple initiative values (like the Blinkblade from Frosthaven), multiple parentheses can be used.
-The initiative tracker then shows all of them and the users can remove them if needed.</p>
+The initiative tracker then shows all of them and users can remove them if needed.</p>
 </div>
 <div class="paragraph">
 <p>Within the class box the ability cards then need to be placed into a deck.
-The deck needs to be named <code>Starting Abilities</code> for abilities that are unlocked by the class on level 1.
+The deck needs to be named <code>Starting Abilities</code> for abilities that are unlocked by the class at level 1.
 All those cards will be put the players' hand when a new character is created.
 All other ability cards need to be in a deck named <code>Advanced Abilities</code>.
 This ensures that the Campaign Manager can correctly find them.</p>
@@ -387,24 +409,22 @@ This ensures that the Campaign Manager can correctly find them.</p>
 The script adds a button to the card that can be clicked and creates the Summon figure.
 The <a href="#_summons">Summon</a> also needs to be registered accordingly.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">Component/SummonCard.ttslua</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">require("Component.SummonCard")
-    .forSummon("Rat Swarm", { -0.82, 0.05, -0.82 })</code></pre>
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local SummonCard = require("Component.SummonCard")
+
+SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop)</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="paragraph">
 <p>Change the name of the first parameter to the name of the Summon this card will spawn.
 The second parameter is the position of the button that will appear.
-The default values that should work in most cases or those:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">{ -0.82, 0.05, -0.82 } -- top ability
-{ -0.82, 0.05, 0.52 } -- bottom ability
-{ -0.73, 0.05, 0.74 } -- item ability</code></pre>
-</div>
+<code>SummonCard.Position</code> contains the default values for Gloomhaven and Frosthaven abilities and items you can use: <code>GHTop</code>, <code>GHBottom</code>, <code>FHTop</code>, <code>FHBottom</code> and <code>Item</code>.</p>
 </div>
 </div>
 </div>
@@ -435,13 +455,15 @@ The default values that should work in most cases or those:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Summons need to be inside a <a href="#Custom Content Box">[Custom Content Box]</a> to be registered correctly.</p>
+<p>Summons need to be inside a <a href="contentbox.html" class="xref page">Custom Content Box</a> to be registered correctly.</p>
 </div>
 <div class="sect3">
 <h4 id="_lua_script_5"><a class="anchor" href="#_lua_script_5"></a>Lua Script</h4>
 <div class="paragraph">
-<p>Add this script to Summons' figure script and adjust the shown values to your need.</p>
+<p>Add this script to a Summons' figure script and adjust the shown values to your need.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">Figures/Summon.ttslua</div>
 <div class="content">
@@ -462,18 +484,26 @@ FrameOffset = 230
 require("Figures.Summon")</code></pre>
 </div>
 </div>
+</div>
+</div>
 <div class="paragraph">
 <p>The <code>stats</code> table describes the base stats for the Summon.
 The values should be self-explanatory.
 The <code>attributes</code> table describes the default attributes the summon has (like flying, shield or infusing an element).
-The format is the same as for <a href="#Enemy Stats">[Enemy Stats]</a>.</p>
+The format is the same as for <a href="enemy.html#_stats" class="xref page">Enemy Stats</a>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>info</code> table and the <code>FrameOffset</code> use the same format as the one for the class <a href="#Figure_Class">Figure</a>.</p>
+<p>The <code>info</code> table and the <code>FrameOffset</code> use the same format as the one for the class <a href="#_figure">Figure</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ui_2"><a class="anchor" href="#_ui_2"></a>UI</h4>
+<h4 id="_xml_ui_2"><a class="anchor" href="#_xml_ui_2"></a>Xml Ui</h4>
+<div class="paragraph">
+<p>Add this script to figure&#8217;s UI script.
+No other values need to be set.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="title">Figures/Summon.xml</div>
 <div class="content">
@@ -482,72 +512,75 @@ The format is the same as for <a href="#Enemy Stats">[Enemy Stats]</a>.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_extra_components"><a class="anchor" href="#_extra_components"></a>Extra Components</h3>
 
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Data_Classes"><a class="anchor" href="#Data_Classes"></a>Data</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="Example_Class"><a class="anchor" href="#Example_Class"></a>Examples</h3>
-<div class="sect3">
-<h4 id="_definition_for_brute"><a class="anchor" href="#_definition_for_brute"></a>Definition for Brute</h4>
+<h3 id="_registration"><a class="anchor" href="#_registration"></a>Registration</h3>
 <div class="paragraph">
-<p>This example shows the registration of the Brute class.
-For perks and abilities, only some of them are shown for brevity.</p>
+<p>Registration of the class is done via the <code>ClassApi.registerClass</code> function.
+This function takes two parameters:
+* The name of the class
+* The information about the class, like abilities, perks, etc.</p>
 </div>
-<div class="listingblock">
+<div class="paragraph">
+<p>An example looks as follows:</p>
+</div>
+<div class="exampleblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ClassApi = require("api.GloomApi").Class
+<div class="listingblock">
+<div class="title">Brute class definition</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ClassApi = require("api.ClassApi")
 
 function onLoad()
-    ClassApi.registerClass("Brute", {
-        isStartingClass = true,
-        boxGuid = self.getGUID(),
-        hp = ClassApi.HpProgression.High,
-        tracker = {
-            image = "http://cloud-3.steamusercontent.com/ugc/83722391140264566/DC437F88C225F04C6CCE924EA4C3BB31FCD3F3A9/",
-        },
-        perks = {
-            [1] = { remove = { "(-1)", "(-1)" } },
-            [2] = { add = { "(+1)" }, remove = { "(-1)" } },
-            -- Perks 3 .. 14 would be here too
-            [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
-            -- up to 18 perks are supported (for Frosthaven support)
-        },
-        abilities = {
-            ["Eye for an Eye"] = {
-                level = 1,
-                enhancements = {
-                    [1] = { position = { -0.46, -0.92 }, multi = false, side = "T", main = true, type = ClassApi.AbilityType.Retaliate },
-                    [2] = { position = { -0.35, 0.53 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
-                    [3] = { position = { -0.50, 0.55 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
-                }
-            },
-            ["Brute Force"] = {
-                level = 3,
-                enhancements = {
-                    [1] = { position = { -0.06, -0.75 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Attack },
-                    [2] = { position = { -0.25, -0.78 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 3 } },
-                    [3] = { position = { -0.26, -0.40 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 2 } },
-                    [4] = { position = { -0.41, 0.67 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Shield },
-                }
-            },
-        },
-    })
+  ClassApi.registerClass("Brute", {
+    -- The GUID of the Class envelope object.
+    -- Since the registration script is on the envelope itselt, it can be referenced here
+    boxGuid = self.getGUID(),
+    -- Number of HP per level
+    -- Default values are available in ClassApi.HpProgression with Low, Medium and High
+    hp = ClassApi.HpProgression.High,
+    -- Definition for the tracker image
+    tracker = {
+      -- Link to the Asset for the tracker image
+      image = "http://cloud-3.steamusercontent.com/ugc/83722391140264566/DC437F88C225F04C6CCE924EA4C3BB31FCD3F3A9/",
+      -- any other property that is available to conditions can be used, too, e.g. max to make the tracker stackable
+    },
+    -- List of perk information
+    perks = {
+      [1] = { remove = { "(-1)", "(-1)" } },
+      [2] = { add = { "(+1)" }, remove = { "(-1)" } },
+      -- Perks 3 .. 14 would be here too
+      [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+      -- up to 18 perks are supported (for Frosthaven support)
+    },
+    abilities = {
+      ["Eye for an Eye"] = {
+        level = 1,
+        enhancements = {
+          [1] = { position = { -0.46, -0.92 }, multi = false, side = "T", main = true, type = ClassApi.AbilityType.Retaliate },
+          [2] = { position = { -0.35, 0.53 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+          [3] = { position = { -0.50, 0.55 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Heal },
+        }
+      },
+      ["Brute Force"] = {
+        level = 3,
+        enhancements = {
+          [1] = { position = { -0.06, -0.75 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Attack },
+          [2] = { position = { -0.25, -0.78 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 3 } },
+          [3] = { position = { -0.26, -0.40 }, multi = true, side = "T", main = true, type = ClassApi.AbilityType.Hex, baseHex = 3, otherHex = { 2 } },
+          [4] = { position = { -0.41, 0.67 }, multi = false, side = "B", main = true, type = ClassApi.AbilityType.Shield },
+        }
+      },
+    },
+  })
 end</code></pre>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="Example_Class_Spawn"><a class="anchor" href="#Example_Class_Spawn"></a>Adding elements to the context menu</h4>
-<div class="paragraph">
-<p>This example shows how to add a <a href="#Spawnable Element">[Spawnable Element]</a> that will show up when the context menu for this class' figure is opened.
-You can also add other attributes of <a href="#Spawnable Element">[Spawnable Element]</a>s like HP bars, or <a href="#Action">[Action]</a>s.
-Only the relevant parts of the class definition are shown.</p>
 </div>
 </div>
 </div>
