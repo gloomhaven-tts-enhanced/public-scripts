@@ -1,3 +1,9 @@
+# Node
 node_modules/
+
+# VS Code
 *.code-workspace
 .vscode/
+
+# IntelliJ
+.idea/

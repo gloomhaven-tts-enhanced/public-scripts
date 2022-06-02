@@ -141,12 +141,10 @@ local R = require("api.Resource")
 ClassApi.registerClass("Doomstalker", {
   spawn = {
     {
-      {
-        element = {
-          type = R.ElementType.Trap,
-          name = "Spike Trap",
-          damage = 3,
-        }
+      element = {
+        type = R.ElementType.Trap,
+        name = "Spike Trap",
+        damage = 3,
       }
     }
   }
