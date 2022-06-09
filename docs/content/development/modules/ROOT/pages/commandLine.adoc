@@ -2,15 +2,15 @@
 
 The mod integrates a very basic command line feature, to simplify some steps during development.
 It can be used by typing a command into the chat window.
-Commands always start and end with `_` followed by a space.
+Commands always start with an `>`.
 The text after the space is the argument that is passed to the command (if the command uses it).
 
 ====
-Example command named `logger-level`.
+Example command named `log-level`.
 The argument passed to the command will be `debug`.
 
 ----
-_logger-level_ debug
+>log-level debug
 ----
 ====
 
@@ -28,7 +28,7 @@ The values are case-insensitive.
 
 ====
 ----
-_log-level_ debug
+>log-level debug
 ----
 ====
 
@@ -39,13 +39,13 @@ This might be useful to determine where a certain object is placed, e.g. if that
 
 ====
 ----
-_position-get_
+>show-pos
 ----
 
 .Output
 ----
-position = { -12.25, 1.65, -13.3 }
-rotation = { 0, 0, 0 }
+position = { -12.25, 1.65, -13.3 },
+rotation = { 0, 0, 0 },
 ----
 ====
 
@@ -56,6 +56,6 @@ Also deletes all objects in the scenario area.
 
 ====
 ----
-_scenario-spawn_ 10
+>spawn-scenario 10
 ----
 ====
