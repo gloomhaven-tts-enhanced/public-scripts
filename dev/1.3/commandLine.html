@@ -119,18 +119,18 @@
 <div class="paragraph">
 <p>The mod integrates a very basic command line feature, to simplify some steps during development.
 It can be used by typing a command into the chat window.
-Commands always start and end with <code>_</code> followed by a space.
+Commands always start with an <code>&gt;</code>.
 The text after the space is the argument that is passed to the command (if the command uses it).</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Example command named <code>logger-level</code>.
+<p>Example command named <code>log-level</code>.
 The argument passed to the command will be <code>debug</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>_logger-level_ debug</pre>
+<pre>&gt;log-level debug</pre>
 </div>
 </div>
 </div>
@@ -157,7 +157,7 @@ The values are case-insensitive.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>_log-level_ debug</pre>
+<pre>&gt;log-level debug</pre>
 </div>
 </div>
 </div>
@@ -175,14 +175,14 @@ This might be useful to determine where a certain object is placed, e.g. if that
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>_position-get_</pre>
+<pre>&gt;show-pos</pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Output</div>
 <div class="content">
-<pre>position = { -12.25, 1.65, -13.3 }
-rotation = { 0, 0, 0 }</pre>
+<pre>position = { -12.25, 1.65, -13.3 },
+rotation = { 0, 0, 0 },</pre>
 </div>
 </div>
 </div>
@@ -200,7 +200,7 @@ Also deletes all objects in the scenario area.</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre>_scenario-spawn_ 10</pre>
+<pre>&gt;spawn-scenario 10</pre>
 </div>
 </div>
 </div>
