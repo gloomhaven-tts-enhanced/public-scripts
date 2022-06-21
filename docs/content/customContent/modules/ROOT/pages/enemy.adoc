@@ -1,4 +1,440 @@
 = Enemies
 
+== Components
+
+=== Enemy Envelope
+
+The enemy envelope is the bag that contains all components for a new enemy of that type.
+It will not be shown to the players, so a regular bag is sufficient, no extra model needed.
+
+The bag must contain the <<Enemy Bag>>, the <<Stats-Sheet>> and the <<Ability Deck>> in any order.
+
+The bag itself will never be placed on the table by the mod, so it shouldn't contain and scripts as those would never be executed.
+It's sole function is to group all objects belonging to a single enemy type.
+
+==== Properties
+
+[cols="1,2"]
+|===
+| Name          | Full name of the enemy.
+| Tags          | `Enemy Envelope`
+|===
+
+=== Enemy Bag
+
+This is an infinite bag containing the <<Figure>> for the enemy.
+It will be placed on the monster mat and new enemies will be spawned from the bag.
+
+==== Properties
+
+[cols="1,2"]
+|===
+| Name          | Full name of the enemy followed by " Standee", e.g. "Bandit Archer Standee"
+|===
+
+==== Lua Script
+
+The Enemy Bag is currently the best place to register the enemy.
+This is typically done in two steps.
+
+First the enemy's ability deck has to be registered.
+This is done by calling `EnemyApi.registerEnemyAbilityDeck`.
+It takes the name of the ability deck and the list of abilities it includes.
+The abilities can have two attributes:
+
+- An `image` with the link to the image for this ability card.
+This value isn't used for 1.3 yet, so it can also be ignored.
+It will be used for future versions, e.g. to the show the active ability card of an enemy in the initiative tracker.
+- A `spawn` element, describing which object the ability can spawn (like traps or summoning other enemies).
+Documentation about the proper attributes for this element can be found xref:common/spawnable.adoc[here]
+
+This part should be skipped, if the enemy uses an ability deck that is already registered in the game.
+This is the case for all decks from the Gloomhaven base game.
+
+.Registration for the "Archer" enemy ability deck
+====
+.api/GloomApi.ttslua
+[source,lua]
+----
+local EnemyApi = require("api.EnemyApi")
+local R = require("api.Resource")
+
+EnemyApi.registerEnemyAbilityDeck("Archer", {
+  abilities = {
+    [1] = {
+      image = "https://raw.githubusercontent.com/any2cards/gloomhaven/master/images/monster-ability-cards/archer/ma-ar-1.png",
+    },
+    -- abilities 2 till 6 would be here too
+    [7] = {
+      image = "https://raw.githubusercontent.com/any2cards/gloomhaven/master/images/monster-ability-cards/archer/ma-ar-7.png",
+      spawn = {
+        {
+          element = {
+            type = R.ElementType.Trap,
+            name = "Spike Trap",
+            damage = 3,
+          },
+        }
+      },
+    },
+    [8] = {
+      image = "https://raw.githubusercontent.com/any2cards/gloomhaven/master/images/monster-ability-cards/archer/ma-ar-8.png",
+    },
+  }
+}
+----
+====
+
+Once the ability deck is registered, the actual enemy type has to be registered, to connect the enemy to the ability deck.
+This is done by calling `EnemyApi.registerEnemy`.
+This function takes the name of the enemy type and two named parameters:
+
+- `icon` is the link to an image for an icon of this enemy type.
+This is currently used in the Context Menu, when the enemy can be summoned by other enemies.
+- `abilityDeck` is the name of a previously registered ability deck.
+This tells the mod that this enemy uses the ability deck with this name.
+
+.Registration of the "Bandit Archer" enemy.
+====
+.api/GloomApi.ttslua
+[source,lua]
+----
+local EnemyApi = require("api.EnemyApi")
+
+EnemyApi.registerEnemy("Bandit Archer", {
+    icon = "http://cloud-3.steamusercontent.com/ugc/1688272925075790807/F181B084F5CA91BC0E0F75C682C6993C4BCBDA43/",
+    abilityDeck = "Archer",
+})
+----
+====
+
+If the enemy is a boss enemy, another API has to be used instead: `EnemyApi.registerBossEnemy`.
+Since all bosses use the same ability deck, this is where their abilities are defined (e.g. which elements they can spawn).
+The `spawn` element works the same as for `registerEnemyAbilityDeck` and details can be found xref:common/spawnable.adoc[here].
+
+====
+.api/GloomApi.ttslua
+[source,lua]
+----
+local EnemyApi = require("api.EnemyApi")
+local R = require("api.Resource")
+
+EnemyApi.registerBossEnemy("Bandit Commander", {
+  icon = "http://cloud-3.steamusercontent.com/ugc/1688272925075790870/264D1A7A6C93A37894B204DD6CDB555F11B8B5BD/",
+  spawn = {
+    {
+      element = {
+        type = R.ElementType.Enemy,
+        name = "Living Bones",
+      },
+    },
+  },
+})
+----
+====
+
+=== Figure
+
+[cols="1,2"]
+|===
+| Name          | Full name of the enemy type.
+| Description   | **Must** be empty.
+| Tags          | `Enemy` (will also be set by the script).
+|===
+
+==== Lua Script
+
+Put the following Lua script on the Figure.
+The value for `FrameOffset` defines where the HP will be placed at.
+Adjust the value to fit the model.
+You can use https://steamcommunity.com/sharedfiles/filedetails/?id=2817408711[this tool] to easily try out different values.
+
+====
+.Figures/Monster.ttslua
+[source,lua]
+----
+FrameOffset = 260
+
+require("Figures.Monster")
+----
+====
+
+==== Xml Ui
+
+====
+.Figures/Monster.xml
+[source,xml]
+----
+<Include src="Figures/Monster.xml"/>
+----
+====
+
+=== Stats-Sheet
+
+==== Properties
+
+[cols="1,2"]
+|===
+| Name          | Full name of the enemy followed by " Stat Sheet", e.g. "Bandit Archer Stat Sheet".
+| Tags          | `MonsterStatSheet`
+|===
+
+
+==== Lua Script
+
+Within the script of the Stats-Sheet the stats for the different levels are defined as well as how many figures can be present for this enemy type.
+
+To define the maximum number of enemies, declare a variable named `count`.
+Put the following script on the Stats-Sheet and adjust the values accordingly.
+
+.Defining the maximum number of figures.
+====
+.StatSheet.ttslua
+[source,lua]
+----
+count = 4
+
+require("StatSheet")
+----
+====
+
+The stats per level are declared using the variable named `stats`.
+This variable is a table of stat entries, one per level.
+You can use a numeric index, to more easily set the values per level.
+
+.General structure of the `stats` variable
+====
+.StatSheet.ttslua
+[source,lua]
+----
+stats = {
+  [0] = {
+    -- Level 0 stats go here
+  [1] = {
+    -- Level 1 stats go here
+  }
+  -- etc.
+}
+
+require("StatSheet")
+----
+====
+
+The entry for each level has an attribute named `orientation` and the attributes `normal` and `elite`.
+In case of a boss enemy the level has an attribute `boss` instead of `normal` and `elite`.
+
+The `orientation` attribute defines the rotation of the Stat-Sheets object that shows that stats for this level.
+This is used by the mod to figure out which level is currently set on the Stats-Sheet by checking the current orientation of the object with the entries defined here.
+
+====
+.StatSheet.ttslua
+[source,lua]
+----
+stats = {
+  [0] = {
+    orientation = {0, 180, 0},
+    normal = {
+      -- stats for normal version go here
+    },
+    elite = {
+      -- stats for elite version go here
+    },
+    boss = {
+      -- this is used by bosses instead of the above two
+    }
+  },
+}
+
+require("StatSheet")
+----
+====
+
+Within `normal`, `elite` or `boss` the actual stats have to be defined.
+Checkout xref:_stats[] for the available attributes.
+
+.More complete example of the Stats-Sheet script.
+====
+.StatSheet.ttslua
+[source,lua]
+----
+-- maximum number of standees for this enemy type
+count = 4;
+
+-- stats per level
+stats = {
+  [0] = {
+    -- this is the orientation the stat that shows the level
+    orientation = {0, 180, 0},
+    -- stats for the normal version
+    normal = {
+      health = 8,
+      move = 3,
+      attack = 2,
+      range = 0,
+      attributes = {}
+    },
+    -- stats for the elite version
+    elite = {
+      health = 13,
+      move = 3,
+      attack = 3,
+      range = 0,
+      attributes = {}
+    }
+  },
+  -- same for level 1
+  [1] = {
+    orientation = {0, 90, 0},
+    normal = {
+      health = 9,
+      move = 3,
+      attack = 2,
+      range = 0,
+      attributes = {
+        "%poison%"
+      }
+    },
+    elite = {
+      health = 15,
+      move = 3,
+      attack = 3,
+      range = 0,
+      attributes = {
+        "%wound%"
+      }
+    }
+  },
+  -- level 2 and 3 omitted
+  [4] = {
+    -- level 4 is the same, but now the back of the stat sheet is used,
+    -- so the rotation on the z-axis has to be changed to account for that
+    orientation = {0, 180, 180},
+    normal = {
+      health = 16,
+      move = 3,
+      attack = 4,
+      range = 0,
+      attributes = {
+        "%poison%"
+      }
+    },
+    elite = {
+      health = 24,
+      move = 4,
+      attack = 4,
+      range = 0,
+      attributes = {
+        "%poison%",
+        "%wound%"
+      }
+    }
+  },
+  -- and so on until level 7
+}
+
+require("StatSheet");
+----
+====
+
+[#_ability_deck]
+=== Ability Deck
+
+The Ability Deck contains the different xref:_ability_card[Ability Cards].
+
+==== Properties
+
+[cols="1,2"]
+|===
+| Name          | Name of the Ability Deck (e.g. "Archer").
+|===
+
+
+[#_ability_card]
+=== Ability Card
+
+Each Ability Card within the xref:_ability_deck[] needs to have a special naming structure.
+
+[cols="1,2"]
+|===
+| Name          | Name of the Ability Deck (e.g. "Archer").
+| Description   | Definition of the initiative (see below).
+|===
+
+The description field is used to encode the initiative values(s) and the action(s) the enemy takes.
+
+Each entry has to start with an initiative value followed by a colon and a space.
+The initiative value needs to have a leading zero if it's below 10.
+
+After the colon, the textual description can be added.
+This is used in the initiative tracker to show what the enemy is doing.
+Multiple actions can be defined by using a semicolon.
+Those will show up as separate lines in the initiative tracker.
+
+----
+31: Move +0; Attack +0
+----
+
+If the ability grants multiple actions at different initiatives, you can use new lines.
+Each line will add an entry to the initiative tracker.
+
+----
+03: Attack +0
+11: Move +0
+20: Attack +0
+----
+
+
+[#_stats]
 == Stats
+
+Stats for enemies and summons have the following structure.
+
+====
+[source,lua]
+----
+local stats = {
+  -- The maximum health values
+  health = 8,
+  -- The base move value
+  move = 3,
+  -- The base attack value
+  attack = 2,
+  -- The base range value
+  range = 0,
+  -- A list of extra effect like retaliate or flying
+  attributes = { },
+  -- A list of immunities
+  immunities = { },
+  -- A text that will be shown below the healthbar
+  -- This can be used for describing what a variable means, e.g. on a boss
+  -- like, "V is the number of ..."
+  text = "",
+}
+----
+====
+
+The `attributes` field describes extra attributes for the enemy, like if it's flying or has retaliated damage.
+It's a list of strings with a special (really awkward...) format.
+The possible values are:
+
+- Innate advantage: `"Advantage"`
+- Innate disadvantage for attackers: `"Attackers gain Disadvantage"`
+- Flying: `"%flying%"`
+- Retaliate without range: `"%retaliate% 2"`
+- Retaliate with range: `"%retaliate% 2: %range% 2"`
+- Shield: `"%shield% 4"`
+- Innate status effect: `"%muddle%"`, `"%poison%"`, `"%wound%"`, `"%immobilize%"`, `"%disarm%"`, `"%stun%"`, `"%strengthen%"`, `"%curse%"`,
+- Multiple Targets: `"%target% 2"`
+- Innate attack modifier: `%pierce% 2%"`, `%push% 2%"`
+- Generate elements: `"%genAir%"`, `"%genEarth%"`, `"%genFire%"`, `"%genIce%"`, `"%genLight%"`, `"%genDark%"`, `"%genAny%"`,
+
+Immunities have the same format.
+Only the following values are currently supported:
+
+- `"%muddle%"`, `"%poison%"`, `"%wound%"`, `"%immobilize%"`, `"%disarm%"`, `"%stun%"`, `"%curse%"`, `"%pull%"`, `"%push%"`
+
+INFO::
+The current definition for `attributes` and `immunities` is really awkward and limiting (e.g. it doesn't work for custom conditions).
+This is due to the fact that this is inherited from Fantasy Setup.
+This will change to an easier and more supportive syntax in a future version.
 
