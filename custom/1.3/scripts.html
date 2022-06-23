@@ -163,93 +163,208 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most custom content requires some script, that is either added directly to the content or tells the mod about the content.
-Therefore, you first have to download the scripts from the latest release.
-TODO: Link to releases.
-This contains the scripts that you have to add to your components to make them work with the mod.
-It also contains so-called API scripts, which are used to further integrate the content into the mod (e.g. in order to register classes or conditions).
-How each API should be used is described in the relevant sections.</p>
+<p>Most custom content requires some script, that is either added directly to the content or tells the mod about the content.</p>
 </div>
 <div class="paragraph">
-<p>Generally, you have two ways to work with the downloaded scripts.
-Either through an external tool (the Atom text editor), or the scripting window inside TTS.
+<p>Generally, you have two ways to work with the scripts.
+Either through an external tool (the VS Code text editor), or the scripting window inside TTS.
 The first method is the preferred way.
-It requires a bit of setup, but will be easier to work with afterwards, especially if you later want to update the content for newer versions of the mod.</p>
+While it requires a bit of setup, it&#8217;s a lot easier to continuously work on custom content with it.
+E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpacking deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).</p>
 </div>
 <div class="paragraph">
-<p>After you downloaded the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
-Which one you need depends on the method you want to use.
-If you want to use the Atom editor, you need the <code>base</code> folder, otherwise you need the <code>bundled</code> folder.
+<p>The alternative is to use the TTS scripting window.
+For this you need to download the latest script from the <a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/tags">releases</a>.
+After you downloaded the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
+You&#8217;ll need the <code>bundled</code> folder to work with the TTS scripting window.
 Extract the required folder somewhere in you file system.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_the_atom_editor"><a class="anchor" href="#_using_the_atom_editor"></a>Using the Atom editor</h2>
+<h2 id="_using_vs_code"><a class="anchor" href="#_using_vs_code"></a>Using VS Code</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Atom is a free text editor with a lot of features to simplify scripting.
-Berserk developed an official plugin for it which works with TTS.
-With the plugin installed, Atom will receive the scripts of the currently opened TTS mod.
-You can then edit the scripts in Atom directly and send them back to TTS, so you don&#8217;t have to use the TTS scripting editor (which is quite horrible&#8230;&#8203;).
-It also helps with things like auto-completion and finding errors.
-To use Atom, follow those steps:</p>
+<div class="sect2">
+<h3 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Download and install <a href="https://nodejs.org/en/download/">Node.js</a>.</p>
+</li>
+<li>
+<p>Download and install <a href="https://code.visualstudio.com/Download">VS Code</a>.</p>
+</li>
+<li>
+<p>Create a new directory for your custom content project, where you want to work on it.</p>
+</li>
+<li>
+<p>Download the <a href="https://raw.githubusercontent.com/gloomhaven-tts-enhanced/public-scripts/main/packages/template/package.json">package.json</a> file and put that into the directory.</p>
+</li>
+<li>
+<p>Open VS Code and open the directory.
+This can be done by using the menu <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open Folder&#8230;&#8203;</b></span> or by dragging the directory onto the workspace in VS Code.</p>
+</li>
+<li>
+<p>Install the extension "npm" by clicking on the menu with four blocks on the left bar.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/extensions.png" alt="extensions">
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Install the latest version of <a href="https://atom.io/">Atom</a></p>
+<p>Locate the save file you want to edit inside the TTS save directory (checkout <a href="https://kb.tabletopsimulator.com/getting-started/technical-info/">the knowledge base</a> to find the default locations for your system).
+It can either be a regular save or a saved object.
+Copy the name of the save file (e.g. <code>TS_Save_1072</code> for regular saves or <code>Artificier</code> if you have a saved object with this name).</p>
 </li>
 <li>
-<p>Checkout the <a href="https://api.tabletopsimulator.com/atom/#installing-the-official-plugin">TTS knowledge base</a> on how to install the TTS plugin</p>
-</li>
-<li>
-<p>Open Atom and select <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Settings</b></span> from to top menu</p>
-</li>
-<li>
-<p>Navigate to the settings for the TTS plugin <span class="image"><img src="_images/atom_settings.PNG" alt="atom settings"></span></p>
-</li>
-<li>
-<p>Find those settings: <span class="image"><img src="_images/atom_settings_tts.PNG" alt="atom settings tts"></span></p>
-</li>
-<li>
-<p>If not already done check <code>#include other files</code> and <code>require() other files</code></p>
-</li>
-<li>
-<p>Set the value for <code>Base path for files you wish to bundle or #include</code> to the path where you extracted the downloaded scripts (the <code>base</code> folder)</p>
+<p>Open the <code>package.json</code> file in your working directory.
+Change the two occurrences of <code>&lt;save-name&gt;</code>, to the name of the save file.
+E.g. with the save file name <code>TS_Save_1072</code>, the section would look like this:</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/save-name.png" alt="save name">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>After you installed the above-mentioned npm extension, you&#8217;ll have the following section in the explorer in VS Code</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/npm.png" alt="npm">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It may be not at the top, but below other sections.
+You can reorder sections by using drag 'n' drop.
+If the section doesn&#8217;t show up at all, right-click on the heading of any other section and enable it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/header.png" alt="header">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hover over the <code>setup</code> entry and click the <b class="button">Play</b> button that show&#8217;s up.</p>
+</li>
+<li>
+<p>Afterwards, do the same with the <code>update</code> entry.
+This will download the latest scripts for the Gloomhaven enhanced mod.</p>
+</li>
+<li>
+<p>This completes the (rather-long) setup, and you&#8217;re good to go. :-)</p>
+</li>
+<li>
+<p>If you have multiple save files you are working on, it&#8217;s recommended to have a different directories for all of them.
+This way you don&#8217;t have to edit the <code>package.json</code> around.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h3>
 <div class="paragraph">
-<p>When you now open your mod with Atom running, it will automatically download the scripts from TTS and show them in Atom.
-If this is not done automatically (e.g. if you started Atom after loading your mod), you can load them manually again using the <code>GetObjects</code> command.</p>
+<p>To start working on the save file, press the <b class="button">Play</b> button on the entry <code>extract</code> inside the npm section.
+This will basically copy the save file from your TTS save file location and split it into multiple files inside the <code>Contents</code>  directory if your current working directory.
+E.g a (reduced) Artificier save file looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/extract.png" alt="extract">
+</div>
+</div>
+<div class="paragraph">
+<p>The save file has one bag that contains all objects of the Artificier.
+The <code>extract</code> command will create a new directory for all objects inside that bag.
+The name of the directory will be the name of the object followed by its GUID.
+If the object itself is a bag or deck it will create more nested directories to replicate the nesting structure from TTS.</p>
+</div>
+<div class="paragraph">
+<p>For each object multiple files are created inside their directory.
+A file named <code>Data.json</code> will contain all the data about the object, like its name, tags, etc..
+The file named <code>Script.ttslua</code> contains the attached script.
+The big advantage here is that the script only contains the relevant part.
+In the TTS script editor you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
+A file named <code>UI.xml</code> contains the XML UI attached to the object.
+The same logic as for the script applies, as it only contains a reduced view of the script (e.g. just some <code>&lt;Include src="Figures/CharacterMini" /&gt;</code>).</p>
+</div>
+<div class="paragraph">
+<p>When you use the <code>embed</code> command from the npm section, the reverse thing will happen.
+The files from your current working directory will be put together and create a new save file which then will be copied back to your TTS save file folder.
+While doing so, all the scripts of all contained objects are automatically updated with the currently downloaded GHE scripts.
+E.g. many scripts have command like <code>require("Figures.CharacterMini")</code>.
+What this means is: Please include the code from the file "Figures/CharacterMini.ttslua" at this place, computer (the same for <code>&lt;Include src="file" /&gt;</code> in case of XML files).
+And this is what <code>embed</code> does.
+It loads the downloaded scripts and embeds them at the correct places.</p>
+</div>
+<div class="paragraph">
+<p>So the advantage is, that you only need to edit the relevant scripts and all other parts are automatically updated for you.
+No need to unpack nested objects inside TTS and copy/paste the same scripts over and over.</p>
+</div>
+<div class="paragraph">
+<p>If there&#8217;s an update to the releases scripts, you can use the <code>update</code> command from the npm section to download them.
+Then use <code>embed</code> again und all scripts are updated in the save file.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">INFO</dt>
-<dd>
-<p>To find commands in Atom use the keyboard shortcut <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></span>.
-This will open a small window where you can type the name of a command and Atom shows you a list of matching commands.
-Select the one you want with the keyboard and hit <kbd>Enter</kbd>.
-<span class="image"><img src="_images/atom_command.png" alt="atom command"></span></p>
-</dd>
+<dt class="hdlist1">NOTE</dt>
 </dl>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>The list of available scripts will show on the left side of Atom
-<span class="image"><img src="_images/atom_files.png" alt="atom files"></span></p>
+<p>While working with scripts from a beta version, make sure the following line is in your <code>package.json</code>, inside the <code>devDependencies</code> section.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"@gloomhaven-enhanced/api": "beta",</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Edit the scripts to your need send them back using the <code>SaveAndPlay</code> command (keyboard shortcut <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></span>)</p>
+<p>If you are later working with the released scripts replace <code>beta</code> with <code>latest</code> und use the <code>update</code> command.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">INFO</dt>
-<dd>
-<p>If you change which components are on the table in your mod you have create a save in TTS again and load the created save right again.
-E.g. if you pull out a component from a bag and want to edit the script on that component, first save  and load the created save again.</p>
-</dd>
-</dl>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to changing the scripts, you can also change the for all nested objects (e.g. changing its name or adding tags), by editing the <code>Data.json</code> of it.
+Be aware though that the actual name (the one you can edit in the TTS UI) is called <code>"Nickname"</code> in the file, not <code>"Name"</code>.
+Changing <code>"Name"</code> will pretty much break the object.</p>
+</div>
+<div class="paragraph">
+<p>You can also add tags by adding and entry to the <code>Tags</code> property.
+If the data currently doesn&#8217;t have a <code>Tags</code> property, you can easily add one somewhere like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "GUID": "975b2e",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Nickname": "Tools",
+  "Tags": [
+    "Tag1",
+    "Tag2"
+  ],
+  "Description": ""
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
