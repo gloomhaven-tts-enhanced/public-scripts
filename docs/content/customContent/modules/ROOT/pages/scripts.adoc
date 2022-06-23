@@ -1,55 +1,126 @@
 = Using the scripts
 
 Most custom content requires some script, that is either added directly to the content or tells the mod about the content.
-Therefore, you first have to download the scripts from the latest release.
-TODO: Link to releases.
-This contains the scripts that you have to add to your components to make them work with the mod.
-It also contains so-called API scripts, which are used to further integrate the content into the mod (e.g. in order to register classes or conditions).
-How each API should be used is described in the relevant sections.
 
-Generally, you have two ways to work with the downloaded scripts.
-Either through an external tool (the Atom text editor), or the scripting window inside TTS.
+Generally, you have two ways to work with the scripts.
+Either through an external tool (the VS Code text editor), or the scripting window inside TTS.
 The first method is the preferred way.
-It requires a bit of setup, but will be easier to work with afterwards, especially if you later want to update the content for newer versions of the mod.
+While it requires a bit of setup, it's a lot easier to continuously work on custom content with it.
+E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpacking deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).
 
+The alternative is to use the TTS scripting window.
+For this you need to download the latest script from the https://github.com/gloomhaven-tts-enhanced/public-scripts/tags[releases].
 After you downloaded the scripts from the latest release, you'll find two folders inside there: `base` and `bundled`.
-Which one you need depends on the method you want to use.
-If you want to use the Atom editor, you need the `base` folder, otherwise you need the `bundled` folder.
+You'll need the `bundled` folder to work with the TTS scripting window.
 Extract the required folder somewhere in you file system.
 
-== Using the Atom editor
-Atom is a free text editor with a lot of features to simplify scripting.
-Berserk developed an official plugin for it which works with TTS.
-With the plugin installed, Atom will receive the scripts of the currently opened TTS mod.
-You can then edit the scripts in Atom directly and send them back to TTS, so you don't have to use the TTS scripting editor (which is quite horrible...).
-It also helps with things like auto-completion and finding errors.
-To use Atom, follow those steps:
+== Using VS Code
 
-* Install the latest version of https://atom.io/[Atom]
-* Checkout the https://api.tabletopsimulator.com/atom/#installing-the-official-plugin[TTS knowledge base] on how to install the TTS plugin
-* Open Atom and select menu:File[Settings] from to top menu
-* Navigate to the settings for the TTS plugin image:atom_settings.PNG[]
-* Find those settings: image:atom_settings_tts.PNG[]
-* If not already done check `#include other files` and `require() other files`
-* Set the value for `Base path for files you wish to bundle or #include` to the path where you extracted the downloaded scripts (the `base` folder)
+=== Setup
 
-When you now open your mod with Atom running, it will automatically download the scripts from TTS and show them in Atom.
-If this is not done automatically (e.g. if you started Atom after loading your mod), you can load them manually again using the `GetObjects` command.
+* Download and install https://nodejs.org/en/download/[Node.js].
+* Download and install https://code.visualstudio.com/Download[VS Code].
+* Create a new directory for your custom content project, where you want to work on it.
+* Download the https://raw.githubusercontent.com/gloomhaven-tts-enhanced/public-scripts/main/packages/template/package.json[package.json] file and put that into the directory.
+* Open VS Code and open the directory.
+This can be done by using the menu menu:File[Open Folder...] or by dragging the directory onto the workspace in VS Code.
+* Install the extension "npm" by clicking on the menu with four blocks on the left bar.
 
-INFO::
-To find commands in Atom use the keyboard shortcut kbd:[Ctrl+Shift+P].
-This will open a small window where you can type the name of a command and Atom shows you a list of matching commands.
-Select the one you want with the keyboard and hit kbd:[Enter].
-image:atom_command.png[]
+image::vscode/extensions.png[]
 
-The list of available scripts will show on the left side of Atom
-image:atom_files.png[]
+* Locate the save file you want to edit inside the TTS save directory (checkout https://kb.tabletopsimulator.com/getting-started/technical-info/[the knowledge base] to find the default locations for your system).
+It can either be a regular save or a saved object.
+Copy the name of the save file (e.g. `TS_Save_1072` for regular saves or `Artificier` if you have a saved object with this name).
+* Open the `package.json` file in your working directory.
+Change the two occurrences of `<save-name>`, to the name of the save file.
+E.g. with the save file name `TS_Save_1072`, the section would look like this:
 
-Edit the scripts to your need send them back using the `SaveAndPlay` command (keyboard shortcut kbd:[Ctrl+Shift+S])
+image::vscode/save-name.png[]
 
-INFO::
-If you change which components are on the table in your mod you have create a save in TTS again and load the created save right again.
-E.g. if you pull out a component from a bag and want to edit the script on that component, first save  and load the created save again.
+* After you installed the above-mentioned npm extension, you'll have the following section in the explorer in VS Code
+
+image::vscode/npm.png[]
+
+* It may be not at the top, but below other sections.
+You can reorder sections by using drag 'n' drop.
+If the section doesn't show up at all, right-click on the heading of any other section and enable it.
+
+image::vscode/header.png[]
+
+* Hover over the `setup` entry and click the btn:[Play] button that show's up.
+* Afterwards, do the same with the `update` entry.
+This will download the latest scripts for the Gloomhaven enhanced mod.
+* This completes the (rather-long) setup, and you're good to go. :-)
+* If you have multiple save files you are working on, it's recommended to have a different directories for all of them.
+This way you don't have to edit the `package.json` around.
+
+=== Usage
+
+To start working on the save file, press the btn:[Play] button on the entry `extract` inside the npm section.
+This will basically copy the save file from your TTS save file location and split it into multiple files inside the `Contents`  directory if your current working directory.
+E.g a (reduced) Artificier save file looks like this:
+
+image::vscode/extract.png[]
+
+The save file has one bag that contains all objects of the Artificier.
+The `extract` command will create a new directory for all objects inside that bag.
+The name of the directory will be the name of the object followed by its GUID.
+If the object itself is a bag or deck it will create more nested directories to replicate the nesting structure from TTS.
+
+For each object multiple files are created inside their directory.
+A file named `Data.json` will contain all the data about the object, like its name, tags, etc..
+The file named `Script.ttslua` contains the attached script.
+The big advantage here is that the script only contains the relevant part.
+In the TTS script editor you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
+A file named `UI.xml` contains the XML UI attached to the object.
+The same logic as for the script applies, as it only contains a reduced view of the script (e.g. just some `<Include src="Figures/CharacterMini" />`).
+
+When you use the `embed` command from the npm section, the reverse thing will happen.
+The files from your current working directory will be put together and create a new save file which then will be copied back to your TTS save file folder.
+While doing so, all the scripts of all contained objects are automatically updated with the currently downloaded GHE scripts.
+E.g. many scripts have command like `require("Figures.CharacterMini")`.
+What this means is: Please include the code from the file "Figures/CharacterMini.ttslua" at this place, computer (the same for `<Include src="file" />` in case of XML files).
+And this is what `embed` does.
+It loads the downloaded scripts and embeds them at the correct places.
+
+So the advantage is, that you only need to edit the relevant scripts and all other parts are automatically updated for you.
+No need to unpack nested objects inside TTS and copy/paste the same scripts over and over.
+
+If there's an update to the releases scripts, you can use the `update` command from the npm section to download them.
+Then use `embed` again und all scripts are updated in the save file.
+
+NOTE::
+====
+While working with scripts from a beta version, make sure the following line is in your `package.json`, inside the `devDependencies` section.
+
+[sourc]
+----
+"@gloomhaven-enhanced/api": "beta",
+----
+
+If you are later working with the released scripts replace `beta` with `latest` und use the `update` command.
+====
+
+In addition to changing the scripts, you can also change the for all nested objects (e.g. changing its name or adding tags), by editing the `Data.json` of it.
+Be aware though that the actual name (the one you can edit in the TTS UI) is called `"Nickname"` in the file, not `"Name"`.
+Changing `"Name"` will pretty much break the object.
+
+You can also add tags by adding and entry to the `Tags` property.
+If the data currently doesn't have a `Tags` property, you can easily add one somewhere like this:
+
+[source,json]
+----
+{
+  "GUID": "975b2e",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Nickname": "Tools",
+  "Tags": [
+    "Tag1",
+    "Tag2"
+  ],
+  "Description": ""
+}
+----
 
 
 == Using the TTS script editor
