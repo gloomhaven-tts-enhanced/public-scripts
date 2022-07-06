@@ -401,7 +401,7 @@ local stats = {
   attack = 2,
   -- The base range value
   range = 0,
-  -- A list of extra effect like retaliate or flying
+  -- A list of extra effect like retaliate shield
   attributes = { },
   -- A list of immunities
   immunities = { },
@@ -413,28 +413,92 @@ local stats = {
 ----
 ====
 
-The `attributes` field describes extra attributes for the enemy, like if it's flying or has retaliated damage.
-It's a list of strings with a special (really awkward...) format.
-The possible values are:
+=== Health
 
-- Innate advantage: `"Advantage"`
-- Innate disadvantage for attackers: `"Attackers gain Disadvantage"`
-- Flying: `"%flying%"`
-- Retaliate without range: `"%retaliate% 2"`
-- Retaliate with range: `"%retaliate% 2: %range% 2"`
-- Shield: `"%shield% 4"`
-- Innate status effect: `"%muddle%"`, `"%poison%"`, `"%wound%"`, `"%immobilize%"`, `"%disarm%"`, `"%stun%"`, `"%strengthen%"`, `"%curse%"`,
-- Multiple Targets: `"%target% 2"`
-- Innate attack modifier: `%pierce% 2%"`, `%push% 2%"`
-- Generate elements: `"%genAir%"`, `"%genEarth%"`, `"%genFire%"`, `"%genIce%"`, `"%genLight%"`, `"%genDark%"`, `"%genAny%"`,
+This attribute takes a single value.
+For Boss enemies this can also be a string in the form of "8xC", which will calculate the value based on player count.
+A xref:common/formula.adoc[Formula] is currently not supported.
 
-Immunities have the same format.
-Only the following values are currently supported:
+=== Move
 
-- `"%muddle%"`, `"%poison%"`, `"%wound%"`, `"%immobilize%"`, `"%disarm%"`, `"%stun%"`, `"%curse%"`, `"%pull%"`, `"%push%"`
+The `move` attribute can either be a simple value (a number or string like above), or a table with the attributes `value` and `type.`
+The attribute `value` determines how for the figure can move and the `type` determines the movement type (e.g. for flying enemies).
+The value for this field can the name of any registered xref:condition.adoc#_effects[Effect].
 
-INFO::
-The current definition for `attributes` and `immunities` is really awkward and limiting (e.g. it doesn't work for custom conditions).
-This is due to the fact that this is inherited from Fantasy Setup.
-This will change to an easier and more supportive syntax in a future version.
+====
+[source,lua]
+----
+-- A flying enemy
+move = {
+  value = 3,
+  type = "Flying"
+}
+----
+====
 
+=== Atack
+
+The `attack` attribute functions similar.
+It can take a simple value or a table with the attributes `value` and `area.`
+The attribute `value` determines the attack value of the figure the `area` attribute is the name of an xref:condition.adoc#_effects[Effect].
+The image for this Effect will be shown next to the attack value.
+Its purpose is to show the attack area for this figure, but it could be used for any other effect as well.
+
+====
+[source,lua]
+----
+-- An enemy with a special attack area
+attack = {
+  value = 3,
+  area = "Area X"
+}
+----
+====
+
+=== Immunities
+
+The `immunities` field is a list of xref:condition.adoc#_effects[Effects] this figure is immune to.
+
+====
+[source,lua]
+----
+immunities = { "Poison", "Pull", "Curse", "Stun" }
+----
+====
+
+=== Attributes
+
+The `attributes` field describes extra attributes for the enemy, like if it has a shield value, or retaliated damage or always applies a certain condition.
+It's a list that can contain three kinds of different values:
+
+* A simple string.
+This is the name of any registered xref:condition.adoc#_effects[Effect], e.g. "Generate Air", "Muddle" or "Curse"
+* A name, value pair.
+The name is the name of any registered effect and the value is the value for this Effect, e.g. "Shield = 2" or "Retaliate = 2".
+This will show the image for the Effect followed by a text with this value.
+* A name with a table that has the attributes `value` and `range`.
+This is used for retaliated damage that has a range.
+It will show the image for the Retaliate Effect and it's value, followed by the image for Range and it's value.
+While this is currently only used for Retaliate, this format can be used for any other Effect as well.
+
+====
+----
+attributes = {
+  -- the name of an Effect
+  "Generate Air",
+  -- the name of an Effect and it's value
+  Shield = 2,
+  -- short for for Retaliate, if the range is 1
+  Retaliate = 2,
+  -- special form for Retaliate, with a range greater than 1
+  Retaliate = {
+    value = 2,
+    range = 2
+  },
+}
+----
+====
+
+=== Text
+
+This text will be shown below the figure and can be used to describe special variables or specific effects for this figure.
