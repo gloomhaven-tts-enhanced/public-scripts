@@ -687,7 +687,7 @@ Each line will add an entry to the initiative tracker.</p>
   attack = 2,
   -- The base range value
   range = 0,
-  -- A list of extra effect like retaliate or flying
+  -- A list of extra effect like retaliate shield
   attributes = { },
   -- A list of immunities
   immunities = { },
@@ -700,65 +700,125 @@ Each line will add an entry to the initiative tracker.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_health"><a class="anchor" href="#_health"></a>Health</h3>
 <div class="paragraph">
-<p>The <code>attributes</code> field describes extra attributes for the enemy, like if it&#8217;s flying or has retaliated damage.
-It&#8217;s a list of strings with a special (really awkward&#8230;&#8203;) format.
-The possible values are:</p>
+<p>This attribute takes a single value.
+For Boss enemies this can also be a string in the form of "8xC", which will calculate the value based on player count.
+A <a href="common/formula.html" class="xref page">Formula</a> is currently not supported.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_move"><a class="anchor" href="#_move"></a>Move</h3>
+<div class="paragraph">
+<p>The <code>move</code> attribute can either be a simple value (a number or string like above), or a table with the attributes <code>value</code> and <code>type.</code>
+The attribute <code>value</code> determines how for the figure can move and the <code>type</code> determines the movement type (e.g. for flying enemies).
+The value for this field can the name of any registered <a href="condition.html#_effects" class="xref page">Effect</a>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- A flying enemy
+move = {
+  value = 3,
+  type = "Flying"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_atack"><a class="anchor" href="#_atack"></a>Atack</h3>
+<div class="paragraph">
+<p>The <code>attack</code> attribute functions similar.
+It can take a simple value or a table with the attributes <code>value</code> and <code>area.</code>
+The attribute <code>value</code> determines the attack value of the figure the <code>area</code> attribute is the name of an <a href="condition.html#_effects" class="xref page">Effect</a>.
+The image for this Effect will be shown next to the attack value.
+Its purpose is to show the attack area for this figure, but it could be used for any other effect as well.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- An enemy with a special attack area
+attack = {
+  value = 3,
+  area = "Area X"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_immunities"><a class="anchor" href="#_immunities"></a>Immunities</h3>
+<div class="paragraph">
+<p>The <code>immunities</code> field is a list of <a href="condition.html#_effects" class="xref page">Effects</a> this figure is immune to.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">immunities = { "Poison", "Pull", "Curse", "Stun" }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attributes"><a class="anchor" href="#_attributes"></a>Attributes</h3>
+<div class="paragraph">
+<p>The <code>attributes</code> field describes extra attributes for the enemy, like if it has a shield value, or retaliated damage or always applies a certain condition.
+It&#8217;s a list that can contain three kinds of different values:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Innate advantage: <code>"Advantage"</code></p>
+<p>A simple string.
+This is the name of any registered <a href="condition.html#_effects" class="xref page">Effect</a>, e.g. "Generate Air", "Muddle" or "Curse"</p>
 </li>
 <li>
-<p>Innate disadvantage for attackers: <code>"Attackers gain Disadvantage"</code></p>
+<p>A name, value pair.
+The name is the name of any registered effect and the value is the value for this Effect, e.g. "Shield = 2" or "Retaliate = 2".
+This will show the image for the Effect followed by a text with this value.</p>
 </li>
 <li>
-<p>Flying: <code>"%flying%"</code></p>
-</li>
-<li>
-<p>Retaliate without range: <code>"%retaliate% 2"</code></p>
-</li>
-<li>
-<p>Retaliate with range: <code>"%retaliate% 2: %range% 2"</code></p>
-</li>
-<li>
-<p>Shield: <code>"%shield% 4"</code></p>
-</li>
-<li>
-<p>Innate status effect: <code>"%muddle%"</code>, <code>"%poison%"</code>, <code>"%wound%"</code>, <code>"%immobilize%"</code>, <code>"%disarm%"</code>, <code>"%stun%"</code>, <code>"%strengthen%"</code>, <code>"%curse%"</code>,</p>
-</li>
-<li>
-<p>Multiple Targets: <code>"%target% 2"</code></p>
-</li>
-<li>
-<p>Innate attack modifier: <code>%pierce% 2%"</code>, <code>%push% 2%"</code></p>
-</li>
-<li>
-<p>Generate elements: <code>"%genAir%"</code>, <code>"%genEarth%"</code>, <code>"%genFire%"</code>, <code>"%genIce%"</code>, <code>"%genLight%"</code>, <code>"%genDark%"</code>, <code>"%genAny%"</code>,</p>
+<p>A name with a table that has the attributes <code>value</code> and <code>range</code>.
+This is used for retaliated damage that has a range.
+It will show the image for the Retaliate Effect and it&#8217;s value, followed by the image for Range and it&#8217;s value.
+While this is currently only used for Retaliate, this format can be used for any other Effect as well.</p>
 </li>
 </ul>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>attributes = {
+  -- the name of an Effect
+  "Generate Air",
+  -- the name of an Effect and it's value
+  Shield = 2,
+  -- short for for Retaliate, if the range is 1
+  Retaliate = 2,
+  -- special form for Retaliate, with a range greater than 1
+  Retaliate = {
+    value = 2,
+    range = 2
+  },
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_text"><a class="anchor" href="#_text"></a>Text</h3>
 <div class="paragraph">
-<p>Immunities have the same format.
-Only the following values are currently supported:</p>
+<p>This text will be shown below the figure and can be used to describe special variables or specific effects for this figure.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>"%muddle%"</code>, <code>"%poison%"</code>, <code>"%wound%"</code>, <code>"%immobilize%"</code>, <code>"%disarm%"</code>, <code>"%stun%"</code>, <code>"%curse%"</code>, <code>"%pull%"</code>, <code>"%push%"</code></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">INFO</dt>
-<dd>
-<p>The current definition for <code>attributes</code> and <code>immunities</code> is really awkward and limiting (e.g. it doesn&#8217;t work for custom conditions).
-This is due to the fact that this is inherited from Fantasy Setup.
-This will change to an easier and more supportive syntax in a future version.</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
