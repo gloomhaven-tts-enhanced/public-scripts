@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Working on Gloomhaven TTS Enhanced :: Gloomhaven Enhanced</title>
+    <meta name="generator" content="Antora 3.0.2">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Gloomhaven Enhanced</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://discord.gg/SA9hHVNkMf">Discord</a>
+            <a class="navbar-item" href="https://discord.gg/2kM4T6p">Custom Content Discord</a>
+            <a class="navbar-item" href="https://www.reddit.com/r/GloomhavenTTSEnhanced/">Reddit</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2402018642">Steam</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="dev" data-version="1.3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Development</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="build.html">Working on GHE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="documentation.html">Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="commandLine.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Development</span>
+    <span class="version">1.3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../custom/1.3/index.html">Custom Content</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../custom/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Development</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../mod/1.3/index.html">Gloomhaven Enhanced</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mod/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Development</a></li>
+    <li><a href="build.html">Working on GHE</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/build.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Working on Gloomhaven TTS Enhanced</h1>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Install <a href="https://nodejs.org/en/download/package-manager/">Node.js</a></p>
+</li>
+<li>
+<p>Install <a href="https://pnpm.io/installation">pnpm</a></p>
+</li>
+<li>
+<p>Download <a href="https://github.com/KillahPotatoes/KP-Steam/releases/tag/v1.1.1">kpsteam_1.1.1_with_deps.zip</a>. Extract the file into the directory <code>tools/workshop-upload</code>.</p>
+</li>
+<li>
+<p>Run <code>pnpm install</code> from the root directory of the mod.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_repository_structure"><a class="anchor" href="#_repository_structure"></a>Repository structure</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>imports</code></dt>
+<dd>
+<p>This directory contains all the scripts and XML files that are used in the various mods.</p>
+</dd>
+<dt class="hdlist1"><code>mods</code></dt>
+<dd>
+<p>This directory contains the different mods that we release.
+Each mod directory contains the extracted mod content inside a <code>content</code> directory.
+It also contains a <code>package.json</code>, where the scripts are defined that can be run to extract/embed/build and release that mod.
+Finally, there&#8217;s a <code>.ttsrc</code> file.
+This is a config file that defines the workshop item ids that are used for this mod.
+It&#8217;s used to upload the mod to the Steam workshop via a script.</p>
+</dd>
+<dt class="hdlist1"><code>tools</code></dt>
+<dd>
+<p>Contains various tools used. For now this should contain the <code>kpsteam</code> tool to easily upload files to the Steam workshop.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_workflow"><a class="anchor" href="#_basic_workflow"></a>Basic workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Whenever there are physical changes on the mod (e.g. adding new object, moving or deleting existing ones, etc.) the mod has to be extracted.
+This will read the mod&#8217;s save file and put its data into this repository by splitting it into multiple files.</p>
+</div>
+<div class="paragraph">
+<p>When the scripts are changed, a previously extracted save file can be embedded again.
+This will stitch the split files back together and update the script with the ones currently in the <code>imports</code> directory for all objects, even the ones in containers.</p>
+</div>
+<div class="paragraph">
+<p>If a mod is ready for release (either the main version, a beta version, or simply the current development version), it can be build and uploaded to the Steam workshop, all without starting TTS itself (Steam with the correct account needs to run, though).</p>
+</div>
+<div class="paragraph">
+<p>The following sections describe the different commands in more detail.
+The commands are typically run from the mod&#8217;s directory.
+However, they can also be run from the root directory.
+Check the <code>package.json</code> file in the root directory for possible aliases, e.g. <code>embed:ghe</code> will embed the GHE mod.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extracting_a_mod"><a class="anchor" href="#_extracting_a_mod"></a>Extracting a mod</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Run the command <code>pnpm extract</code> from the mod directory.
+This will find the save file for this mod on your local TTS save file directory and extract its content.
+The name of the save file that is looked for is defined inside the <code>.ttsrc</code> file of this mod.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_embedding_a_mod"><a class="anchor" href="#_embedding_a_mod"></a>Embedding a mod</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Run the command <code>pnpm embed</code> from the mod directory.
+This will embed a previously extracted save file again and update its scripts with the current versions from <code>imports</code>.
+It will write the embedded save file to your TTS save file directory if there&#8217;s already as save file with the targeted name.
+If not, it will write the save file to the root directory of the mod.
+The name of the save file that is looked for is defined inside the <code>.ttsrc</code> file of this mod.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_releasing_a_mod"><a class="anchor" href="#_releasing_a_mod"></a>Releasing a mod</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Run the command <code>pnpm build</code> from the mod directory.
+This will embed the latest version into a save file that can be uploaded to the Steam workshop.
+The file can be found in the <code>dist</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>To automatically upload the build save file, run the command <code>pnpm release [environment]</code>.
+Environment defines the target workshop item (e.g. <code>dev</code>, <code>beta</code> or <code>prod</code>).
+If the parameter is omitted, <code>dev</code> will be the default.
+Which environments are available and wich workshop id is associated with it, can be found in the <code>.ttsrc</code> file within the mod directory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_new_mods"><a class="anchor" href="#_adding_new_mods"></a>Adding new mods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To add a new mod that can be extracted, embedded and releases, add a new directory inside the <code>mods</code> directory.
+The name should be all lowercase and spaces should be replaced with hyphens.
+Copy fhe <code>package.json</code>, <code>.ttsrc</code> and <code>.gitignore</code> files from another mod into the new directory.</p>
+</div>
+<div class="paragraph">
+<p>Inside the <code>package.json</code>, change the <code>name</code> attribute to reflect the name of the mod directory (prefixed with <code>mod</code>, e.g. <code>mod-ghe</code>).
+You can also update the <code>description</code> field, though it&#8217;s currently not used.</p>
+</div>
+<div class="paragraph">
+<p>Inside the <code>.ttsrc</code> file, change the ids for the different workshop mod versions.
+You can add as many as you want and delete existing ones. but at least <code>prod</code> and <code>dev</code> should exist, where <code>prod</code> is the main mod and <code>dev</code> is the current development build.
+A <code>beta</code> version would also be useful for the open beta version of this mod.</p>
+</div>
+<div class="paragraph">
+<p>To make the command executable from the root directory, also modify the <code>package.json</code> in the root directory.
+Copy the lines of existing aliases.
+Replace the part after the colon with the new alias and the part after the <code>-F</code> with the name of the mod that was set as the <code>name</code> inside its <code>package.json</code>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
