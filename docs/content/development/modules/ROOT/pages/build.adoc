@@ -1,0 +1,81 @@
+= Working on Gloomhaven TTS Enhanced
+
+== Setup
+* Install https://nodejs.org/en/download/package-manager/[Node.js]
+* Install https://pnpm.io/installation[pnpm]
+* Download https://github.com/KillahPotatoes/KP-Steam/releases/tag/v1.1.1[kpsteam_1.1.1_with_deps.zip]. Extract the file into the directory `tools/workshop-upload`.
+* Run `pnpm install` from the root directory of the mod.
+
+== Repository structure
+
+`imports`::
+This directory contains all the scripts and XML files that are used in the various mods.
+
+`mods`::
+This directory contains the different mods that we release.
+Each mod directory contains the extracted mod content inside a `content` directory.
+It also contains a `package.json`, where the scripts are defined that can be run to extract/embed/build and release that mod.
+Finally, there's a `.ttsrc` file.
+This is a config file that defines the workshop item ids that are used for this mod.
+It's used to upload the mod to the Steam workshop via a script.
+
+`tools`::
+Contains various tools used. For now this should contain the `kpsteam` tool to easily upload files to the Steam workshop.
+
+== Basic workflow
+
+Whenever there are physical changes on the mod (e.g. adding new object, moving or deleting existing ones, etc.) the mod has to be extracted.
+This will read the mod's save file and put its data into this repository by splitting it into multiple files.
+
+When the scripts are changed, a previously extracted save file can be embedded again.
+This will stitch the split files back together and update the script with the ones currently in the `imports` directory for all objects, even the ones in containers.
+
+If a mod is ready for release (either the main version, a beta version, or simply the current development version), it can be build and uploaded to the Steam workshop, all without starting TTS itself (Steam with the correct account needs to run, though).
+
+The following sections describe the different commands in more detail.
+The commands are typically run from the mod's directory.
+However, they can also be run from the root directory.
+Check the `package.json` file in the root directory for possible aliases, e.g. `embed:ghe` will embed the GHE mod.
+
+== Extracting a mod
+
+Run the command `pnpm extract` from the mod directory.
+This will find the save file for this mod on your local TTS save file directory and extract its content.
+The name of the save file that is looked for is defined inside the `.ttsrc` file of this mod.
+
+== Embedding a mod
+
+Run the command `pnpm embed` from the mod directory.
+This will embed a previously extracted save file again and update its scripts with the current versions from `imports`.
+It will write the embedded save file to your TTS save file directory if there's already as save file with the targeted name.
+If not, it will write the save file to the root directory of the mod.
+The name of the save file that is looked for is defined inside the `.ttsrc` file of this mod.
+
+== Releasing a mod
+
+Run the command `pnpm build` from the mod directory.
+This will embed the latest version into a save file that can be uploaded to the Steam workshop.
+The file can be found in the `dist` directory.
+
+To automatically upload the build save file, run the command `pnpm release [environment]`.
+Environment defines the target workshop item (e.g. `dev`, `beta` or `prod`).
+If the parameter is omitted, `dev` will be the default.
+Which environments are available and wich workshop id is associated with it, can be found in the `.ttsrc` file within the mod directory.
+
+
+== Adding new mods
+
+To add a new mod that can be extracted, embedded and releases, add a new directory inside the `mods` directory.
+The name should be all lowercase and spaces should be replaced with hyphens.
+Copy fhe `package.json`, `.ttsrc` and `.gitignore` files from another mod into the new directory.
+
+Inside the `package.json`, change the `name` attribute to reflect the name of the mod directory (prefixed with `mod`, e.g. `mod-ghe`).
+You can also update the `description` field, though it's currently not used.
+
+Inside the `.ttsrc` file, change the ids for the different workshop mod versions.
+You can add as many as you want and delete existing ones. but at least `prod` and `dev` should exist, where `prod` is the main mod and `dev` is the current development build.
+A `beta` version would also be useful for the open beta version of this mod.
+
+To make the command executable from the root directory, also modify the `package.json` in the root directory.
+Copy the lines of existing aliases.
+Replace the part after the colon with the new alias and the part after the `-F` with the name of the mod that was set as the `name` inside its `package.json`.

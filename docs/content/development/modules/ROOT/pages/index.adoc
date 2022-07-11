@@ -1,4 +1,5 @@
 = GHE Mod Development
 
 This documentation describes how to develop the GHE mod.
-This is very much still in development.
+
+Checkout xref:build.adoc[Working on GHE] to find out how to build and release the GHE workshop mods.
