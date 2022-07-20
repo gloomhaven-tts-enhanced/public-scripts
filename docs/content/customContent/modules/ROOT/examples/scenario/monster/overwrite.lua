@@ -20,18 +20,21 @@ local scenario = {
           name = "Bandit Guard",
           tiles = {
             {
-              -- This Bandit Guard will get the Posion immunity from all
+              -- This Bandit Guard will get the Position immunity from all
               numCharacters = { [2] = Scenario.MonsterLevel.Normal },
             },
             {
               -- This Bandit Guard will get the Wound immunity from elite
               -- and the Muddle attack effect from elite.
-              -- The immunity from all is overwritten by the immunities from elite
+              -- The immunity from all is overwritten by the immunities from
+              -- elite
               numCharacters = { [2] = Scenario.MonsterLevel.Elite },
             },
             {
-              -- This Bandit Guard will get the Muddle attack from elite and a Stun immunity.
-              -- The immunities from all and elite are overwritten by its own definition
+              -- This Bandit Guard will get the Muddle attack effect from elite
+              -- and a Stun immunity from its own definition.
+              -- The immunities from all and elite are overwritten by its own
+              -- definition
               numCharacters = { [2] = Scenario.MonsterLevel.Elite },
               stats = {
                 immunities = { add = { "Stun" } },

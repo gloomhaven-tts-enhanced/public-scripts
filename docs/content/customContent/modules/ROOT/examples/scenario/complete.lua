@@ -1,9 +1,12 @@
 {
+  -- The name of the scenario
   name = "Black Barrow",
+  -- The scenario book used by this scenario
   scenarioBook = {
     name = "Gloomhaven",
     page = 3,
   },
+  -- A list of scenario conclusion tiles that can be revealed, when the scenario is finished
   scenarioConclusions = {
     {
       image = "http://cloud-3.steamusercontent.com/ugc/1752439086837779719/8C6A36C4FDB88BCB7B012F7121A2DB8E1876D0B3/",
@@ -11,7 +14,26 @@
       buttonLabel = "Reveal Conclusion (36)"
     },
   },
+  -- Whether the overlays are placed on a horizontal or vertical grid
   gridType = ScenarioApi.GridType.Horizontal,
+  -- Adjustments to monsters inside the scenario, e.g. a changed ability deck,
+  -- another monster level or different stats
+  monsters = {
+    ["Bandit Guard"] = {
+      all = {
+        levelModifier = 1,
+      }
+    }
+  },
+  -- Registered extra content that should be placed when the scenario loads.
+  -- Used as a fallback to include all kind of crazyness
+  extraContent = {
+    {
+      name = "Extra Stuff",
+      position = { 0, 3, 0 },
+    }
+  },
+  -- The list of doors connecting the different rooms
   doorTiles = {
     {
       name = "Stone Door Horizontal",
@@ -31,8 +53,10 @@
       }
     }
   },
+  -- The list of rooms in the scenario, each containing their overlays, monsters and map tiles
   rooms = {
     [1] = {
+      -- The list of used map tiles
       mapTiles = {
         {
           tile = "L1",
@@ -40,6 +64,7 @@
           rotation = { x = 0, y = 180, z = 0 }
         }
       },
+      -- The list of scenario section tiles that will be placed for this room
       scenarioSections = {
         {
           image = "http://cloud-3.steamusercontent.com/ugc/1752439086836487818/4256434230672E8FBFFA1CBE7C1A93984DF2EA95/",
@@ -49,6 +74,7 @@
           buttonLabel = "Section 02",
         },
       },
+      -- The list of overlays that are start tiles
       startTiles = {
         name = "Stone Corridor 1",
         tiles = {
@@ -58,6 +84,7 @@
           },
         }
       },
+      -- The list of placed monsters
       monsters = {
         {
           name = "Bandit Guard",
@@ -73,6 +100,7 @@
           }
         }
       },
+      -- The list of placed overlays
       overlayTiles = {
         {
           bag = ScenarioApi.OverlayType.Trap,
@@ -94,6 +122,7 @@
       -- another room
     }
   },
+  -- A list of all monster types that are included in this scenario (including summons)
   monsterList = {
     "Bandit Archer",
     "Bandit Guard",

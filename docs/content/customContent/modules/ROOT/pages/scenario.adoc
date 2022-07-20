@@ -6,6 +6,10 @@ The mod itself contains the information of how to use the builder to generate a 
 However, the builder currently only supports a subset of features the scenario definition is able to provide.
 E.g. it can't set HP values for overlays, named enemies or loot effects from treasure chests.
 To add those features to a scenario, you can edit the generated scenario definition from the Scenario Builder.
+This, this section contains the documentation about the structure of the scenario definition.
+When you want to add or change some features, you need to understand this structure and make those changes accordingly.
+
+In the xref:_concrete_use_cases[] section you can also find examples for specific use-cases to give you an idea on where to start.
 
 NOTE: This section is currently not well documented.
 A lot of features are missing...
@@ -13,22 +17,34 @@ A lot of features are missing...
 == Basics
 
 The scenario builder creates a token, that contains the scenario definition within its script.
-To adjust the scenario definition, the script has to be changed accordingly.
-The script of the tokens looks like this:
+To adjust the scenario definition, the script has to be changed.
+The script on the tokens looks like this:
 
 [source,lua]
 ----
-include::example$scenario/monster/start.lua[]
+include::example$scenario/start.lua[]
 ----
+
+To change the scenario definition, change the content between `{}` in the function call to `registerScenario`.
+You should also change the scenario ID (the first parameter of the function call, e.g. `Custom Scenario` in the example above).
+This ID needs to be unique across all scenarios.
+
+TIP: The ID can also be used to quickly spawn the scenario without using the Game Setup menu.
+Enter `>spawn-scenario <scenario-id>` into the chat window (e.g. `>spawn-scenario Custom Scenario` given the example above).
+This will delete everything in the scenario play area as well as all monsters and then spawn the new scenario after a short delay.
+While this is mainly used for developing purposes, there's nothing stopping you from using it in your gaming sessions as well.
 
 == General scenario definition structure
 
-.Big example of all the different parts
+Collapse the following example to get an overview of the overall scenario definition structure.
+The different parts are explained in more details in the following sections.
+
+.Example of all the general scenario definition structure
 [%collapsible]
 ====
 [,lua]
 ----
-include::example$scenario/complete_structure.lua[]
+include::example$scenario/complete.lua[]
 ----
 ====
 
@@ -64,3 +80,46 @@ include::example$scenario/monster/overwrite.lua[]
 NOTE: While it is possible to define the used ability deck on all levels presented above, it's only useful to use it within the definition of `all`.
 It's not possible to have the same monster type with different ability decks, so the first monster that spawns defines the used ability deck for all monsters of that type.
 And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters is only defined by `all` (as those don't have a difficulty setting).
+
+[#_extra_content]
+=== Extra content
+
+As a fallback mechanism extra scenario components can be defined.
+This is meant to easily supply objects that are currently not supported through scripting (e.g. monsters that use different attack modifier decks).
+Those first have to be registered inside a xref:contentbox.adoc[Custom Content Box].
+Then inside the scenario definition, they can be references by their name and be placed at a specific position.
+
+It's possible to define the extra components on the top-level of the scenario and also on each room.
+When defined on the top-level the components will spawn, once the scenario is loaded.
+Components defined on a room are loaded once the rooms is opened.
+
+Both entries are lists, so they can define multiple components.
+
+[,lua]
+----
+include::example$scenario/extra/usage.lua[]
+----
+
+[#_concrete_use_cases]
+== Concrete use-cases
+
+The examples in this section create a `local` variable named `scenario`.
+This contains the relevant part of the scenario definition for the example and is the part that would be passed to `registerScenario`.
+
+=== Custom monster ability decks
+
+Changes the ability deck monsters will use.
+
+[,lua]
+----
+include::example$scenario/use-case/ability-deck.lua[]
+----
+
+=== Extra content
+
+Loads additional components as a fall-back that are currently not supported with scripting (also known as "asshole bags").
+
+[,lua]
+----
+include::example$scenario/use-case/extra-content.lua[]
+----

@@ -17,5 +17,5 @@ local scenario = {
       -- same structure as above
     }
   }
-  -- rest of scenario definiton
+  -- rest of scenario definition
 }
