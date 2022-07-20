@@ -31,7 +31,8 @@ The following table lists the supported object types, as well as the required ta
 | Solo Reward Items | `Item` and `Item Solo Reward` | The item will go into the solo reward items deck.
 | Item Designs | `Item` and `Item Design` | The item deck will go into the item designs deck. Item designs must be a deck of two items. The cards as well as the deck must have those tags.
 | Unlocked Items | `Item` and none of the 3 special tags above | The item will go into shop deck
-| Extra scenario content | `Scenario Extra Content` | The object will go in in internal bag that can be used as xref:scenario.adoc#_extra_content[Extra content] inside scenario definitions.
+| Extra scenario content | `Scenario Extra Content` | The object will go into internal bag that can be used as xref:scenario.adoc#_extra_content[Extra content] inside scenario definitions.
+| Monster ability decks | `Monster Ability Deck` | The object will go into an internal bag that can be used to change the ability deck used by monsters in a scenario
 |===
 
 Every object that hasn't one of those tags is ignored.
