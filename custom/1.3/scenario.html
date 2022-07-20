@@ -168,7 +168,12 @@ The mod itself contains the information of how to use the builder to generate a 
 <div class="paragraph">
 <p>However, the builder currently only supports a subset of features the scenario definition is able to provide.
 E.g. it can&#8217;t set HP values for overlays, named enemies or loot effects from treasure chests.
-To add those features to a scenario, you can edit the generated scenario definition from the Scenario Builder.</p>
+To add those features to a scenario, you can edit the generated scenario definition from the Scenario Builder.
+This, this section contains the documentation about the structure of the scenario definition.
+When you want to add or change some features, you need to understand this structure and make those changes accordingly.</p>
+</div>
+<div class="paragraph">
+<p>In the <a href="#_concrete_use_cases">Concrete use-cases</a> section you can also find examples for specific use-cases to give you an idea on where to start.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -190,30 +195,77 @@ A lot of features are missing&#8230;&#8203;
 <div class="sectionbody">
 <div class="paragraph">
 <p>The scenario builder creates a token, that contains the scenario definition within its script.
-To adjust the scenario definition, the script has to be changed accordingly.
-The script of the tokens looks like this:</p>
+To adjust the scenario definition, the script has to be changed.
+The script on the tokens looks like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">Unresolved include directive in modules/ROOT/pages/scenario.adoc - include::example$scenario/monster/start.lua[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- some more lines above this one
+__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)
+  -- this is where the actual code lies
+  local ScenarioApi = require("api.ScenarioApi")
+
+  function onLoad()
+    -- when the token is placed on the table, the scenario will be added
+    -- to the list of available scenarios
+    -- the first parameter "Custom Scenario" here is a unique id across all
+    -- scenarios. In the scenario setup this will be the prefix in the list,
+    -- e.g. "SoX1 - The Name of SoX1 Scenario"
+    ScenarioApi.registerScenario("Custom Scenario", {
+      -- this is the scenario definition from the scenario builder
+      -- it can be adjusted to add new features
+    })
+
+    return
+  end
+end)
+__bundle_register("api.ScenarioApi", function(require, _LOADED, __bundle_register, __bundle_modules)
+  -- more stuff after this one as well, that must be untouched</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>To change the scenario definition, change the content between <code>{}</code> in the function call to <code>registerScenario</code>.
+You should also change the scenario ID (the first parameter of the function call, e.g. <code>Custom Scenario</code> in the example above).
+This ID needs to be unique across all scenarios.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The ID can also be used to quickly spawn the scenario without using the Game Setup menu.
+Enter <code>&gt;spawn-scenario &lt;scenario-id&gt;</code> into the chat window (e.g. <code>&gt;spawn-scenario Custom Scenario</code> given the example above).
+This will delete everything in the scenario play area as well as all monsters and then spawn the new scenario after a short delay.
+While this is mainly used for developing purposes, there&#8217;s nothing stopping you from using it in your gaming sessions as well.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_general_scenario_definition_structure"><a class="anchor" href="#_general_scenario_definition_structure"></a>General scenario definition structure</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Collapse the following example to get an overview of the overall scenario definition structure.
+The different parts are explained in more details in the following sections.</p>
+</div>
 <details>
-<summary class="title">Big example of all the different parts</summary>
+<summary class="title">Example of all the general scenario definition structure</summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">{
+  -- The name of the scenario
   name = "Black Barrow",
+  -- The scenario book used by this scenario
   scenarioBook = {
     name = "Gloomhaven",
     page = 3,
   },
+  -- A list of scenario conclusion tiles that can be revealed, when the scenario is finished
   scenarioConclusions = {
     {
       image = "http://cloud-3.steamusercontent.com/ugc/1752439086837779719/8C6A36C4FDB88BCB7B012F7121A2DB8E1876D0B3/",
@@ -221,7 +273,26 @@ The script of the tokens looks like this:</p>
       buttonLabel = "Reveal Conclusion (36)"
     },
   },
+  -- Whether the overlays are placed on a horizontal or vertical grid
   gridType = ScenarioApi.GridType.Horizontal,
+  -- Adjustments to monsters inside the scenario, e.g. a changed ability deck,
+  -- another monster level or different stats
+  monsters = {
+    ["Bandit Guard"] = {
+      all = {
+        levelModifier = 1,
+      }
+    }
+  },
+  -- Registered extra content that should be placed when the scenario loads.
+  -- Used as a fallback to include all kind of crazyness
+  extraContent = {
+    {
+      name = "Extra Stuff",
+      position = { 0, 3, 0 },
+    }
+  },
+  -- The list of doors connecting the different rooms
   doorTiles = {
     {
       name = "Stone Door Horizontal",
@@ -241,8 +312,10 @@ The script of the tokens looks like this:</p>
       }
     }
   },
+  -- The list of rooms in the scenario, each containing their overlays, monsters and map tiles
   rooms = {
     [1] = {
+      -- The list of used map tiles
       mapTiles = {
         {
           tile = "L1",
@@ -250,6 +323,7 @@ The script of the tokens looks like this:</p>
           rotation = { x = 0, y = 180, z = 0 }
         }
       },
+      -- The list of scenario section tiles that will be placed for this room
       scenarioSections = {
         {
           image = "http://cloud-3.steamusercontent.com/ugc/1752439086836487818/4256434230672E8FBFFA1CBE7C1A93984DF2EA95/",
@@ -259,6 +333,7 @@ The script of the tokens looks like this:</p>
           buttonLabel = "Section 02",
         },
       },
+      -- The list of overlays that are start tiles
       startTiles = {
         name = "Stone Corridor 1",
         tiles = {
@@ -268,6 +343,7 @@ The script of the tokens looks like this:</p>
           },
         }
       },
+      -- The list of placed monsters
       monsters = {
         {
           name = "Bandit Guard",
@@ -283,6 +359,7 @@ The script of the tokens looks like this:</p>
           }
         }
       },
+      -- The list of placed overlays
       overlayTiles = {
         {
           bag = ScenarioApi.OverlayType.Trap,
@@ -304,6 +381,7 @@ The script of the tokens looks like this:</p>
       -- another room
     }
   },
+  -- A list of all monster types that are included in this scenario (including summons)
   monsterList = {
     "Bandit Archer",
     "Bandit Guard",
@@ -342,7 +420,7 @@ The general structure looks like this:</p>
       -- same structure as above
     }
   }
-  -- rest of scenario definiton
+  -- rest of scenario definition
 }</code></pre>
 </div>
 </div>
@@ -356,17 +434,21 @@ Settings in <code>normal</code>/<code>elite</code> then are additionally applied
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">all = {
-  -- The ability deck to use. If not use it will use the monsters default ability deck
+  -- The ability deck to use. If not used it will use the monsters default
+  -- ability deck
   abilityDeck = "Archer",
   -- A modifier that should be applied to the current scenario level.
   -- This will make the monsters stronger/weaker. It can be a Formula.
   levelModifier = 1,
-  -- The current HP value for the monster. If hpMax is not used, this is also the maximum HP value.
-  -- It can be a Formula. Use the variable "H" to reference the default HP value for this monster.
+  -- The current HP value for the monster. If hpMax is not used, this is also
+  -- the maximum HP value.
+  -- It can be a Formula. Use the variable "H" or "this" to reference the
+  -- default HP value for this monster.
   hp = { "+", "H", 3 },
   -- The maximum HP value for the monster.
-  -- It can be a Formula. Use the variable "H" to reference the default HP value for this monster.
-  hpMax = { "+", "H", 3 },
+  -- It can be a Formula. Use the variable "H" or "this" to reference the
+  -- default maximum HP value for this monster.
+  hpMax = { "+", "this", 3 },
   -- Adjusted stats for the monster
   stats = {
     -- Adjusted immunities
@@ -377,7 +459,8 @@ Settings in <code>normal</code>/<code>elite</code> then are additionally applied
       remove = { "Curse" },
     },
     attributes = {
-      -- Attributes that will be added/overwritten to the monster.
+      -- Attributes that will be added to the monster. If the monster already
+      -- has the attribute, it will be overwritten with this definition.
       -- The format is the same as for general Stats.
       -- The values currently can not be Formula, only fixed values.
       add = {
@@ -391,9 +474,17 @@ Settings in <code>normal</code>/<code>elite</code> then are additionally applied
       -- Attributes that will be removed from the monster.
       remove = { "Shield", "Wound" },
     },
-    attack = 10,
-    range = 2,
-    move = 10,
+    -- The adjusted attack value. Can be a formula, where the variable "this"
+    -- refers to the default attack value for this monster (at its current
+    -- level).
+    attack = { "+", "this", 1 },
+    range = { "+", "this", 1 },
+    -- The adjusted move value. Can be a formula, where the variable "this"
+    -- refers to the default move value for this monster (at its current
+    -- level).
+    move = {
+      type = "Flying",
+    },
     -- The text that will show below the monster.
     text = "New Text",
   }
@@ -428,18 +519,21 @@ The following example demonstrates this:</p>
           name = "Bandit Guard",
           tiles = {
             {
-              -- This Bandit Guard will get the Posion immunity from all
+              -- This Bandit Guard will get the Position immunity from all
               numCharacters = { [2] = Scenario.MonsterLevel.Normal },
             },
             {
               -- This Bandit Guard will get the Wound immunity from elite
               -- and the Muddle attack effect from elite.
-              -- The immunity from all is overwritten by the immunities from elite
+              -- The immunity from all is overwritten by the immunities from
+              -- elite
               numCharacters = { [2] = Scenario.MonsterLevel.Elite },
             },
             {
-              -- This Bandit Guard will get the Muddle attack from elite and a Stun immunity.
-              -- The immunities from all and elite are overwritten by its own definition
+              -- This Bandit Guard will get the Muddle attack effect from elite
+              -- and a Stun immunity from its own definition.
+              -- The immunities from all and elite are overwritten by its own
+              -- definition
               numCharacters = { [2] = Scenario.MonsterLevel.Elite },
               stats = {
                 immunities = { add = { "Stun" } },
@@ -466,6 +560,113 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extra_content"><a class="anchor" href="#_extra_content"></a>Extra content</h3>
+<div class="paragraph">
+<p>As a fallback mechanism extra scenario components can be defined.
+This is meant to easily supply objects that are currently not supported through scripting (e.g. monsters that use different attack modifier decks).
+Those first have to be registered inside a <a href="contentbox.html" class="xref page">Custom Content Box</a>.
+Then inside the scenario definition, they can be references by their name and be placed at a specific position.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s possible to define the extra components on the top-level of the scenario and also on each room.
+When defined on the top-level the components will spawn, once the scenario is loaded.
+Components defined on a room are loaded once the rooms is opened.</p>
+</div>
+<div class="paragraph">
+<p>Both entries are lists, so they can define multiple components.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local scenario = {
+  -- can be defined on the top level
+  extraContent = {
+    -- one entry
+    {
+      -- The name of the registered extra component
+      name = "Extra Stuff",
+      -- The position where the content will spawn
+      position = { 10, 2, 10 },
+    },
+    -- a second entry
+    {
+      -- ..
+    },
+  },
+  rooms = {
+    [2] = {
+      -- Or as part of a room
+      extraContent = {
+        {
+          name = "More Extra Stuff",
+          position = { 10, 2, 10 },
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concrete_use_cases"><a class="anchor" href="#_concrete_use_cases"></a>Concrete use-cases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The examples in this section create a <code>local</code> variable named <code>scenario</code>.
+This contains the relevant part of the scenario definition for the example and is the part that would be passed to <code>registerScenario</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_custom_monster_ability_decks"><a class="anchor" href="#_custom_monster_ability_decks"></a>Custom monster ability decks</h3>
+<div class="paragraph">
+<p>Changes the ability deck monsters will use.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- The Bandit Guards use the Archer ability deck instead of their own Guard deck
+local scenario = {
+  monsters = {
+    ["Bandit Guard"] = {
+      all = {
+        abilityDeck = "Archer"
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extra_content_2"><a class="anchor" href="#_extra_content_2"></a>Extra content</h3>
+<div class="paragraph">
+<p>Loads additional components as a fall-back that are currently not supported with scripting (also known as "asshole bags").</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local scenario = {
+  -- This will be placed together with the scenario
+  extraContent = {
+    {
+      name = "Extra Stuff",
+      position = { 10, 2, 10 },
+    }
+  },
+  rooms = {
+    [2] = {
+      -- This will be placed, once the room 2 will be opened
+      extraContent = {
+        {
+          name = "More Extra Stuff",
+          position = { 10, 2, 10 },
+        }
+      }
+    }
+  }
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
