@@ -48,6 +48,21 @@ include::example$scenario/complete.lua[]
 ----
 ====
 
+=== Scenario books
+
+The `scenarioBook` property defines which scenario book should be used for the scenario.
+It has a `name` property which must match the tag of a registered scenario book.
+The `page` property defines which page will be opened, inside the scenario book.
+This page will be offset by 1 as it assumes each scenario book has a front cover that is not included in the page numbering.
+E.g. if the scenario book is opened with a PDF viewer, the viewer would show page number 4, but the definition would include page number 3.
+If the scenario spawns two pages of the scenario book, the property `pageCount` can be set to 2.
+More than 2 pages are currently not supported and are probably never required anyway.
+
+[,lua]
+----
+include::example$scenario/scenario-book/usage.lua[]
+----
+
 === Default monster settings
 
 It's possible to define extra attributes, stats, immunities or their used ability deck for all monsters of a given type as part of the scenario definition.
