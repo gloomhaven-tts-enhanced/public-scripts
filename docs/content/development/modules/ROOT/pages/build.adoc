@@ -51,11 +51,10 @@ It will write the embedded save file to your TTS save file directory if there's 
 If not, it will write the save file to the root directory of the mod.
 The name of the save file that is looked for is defined inside the `.ttsrc` file of this mod.
 
-== Releasing a mod
+The embedded save file will also be written to `dist/Save.json`.
+The command also creates a releasable file inside the `dist` directory of the mod called `Save.bson`.
 
-Run the command `pnpm build` from the mod directory.
-This will embed the latest version into a save file that can be uploaded to the Steam workshop.
-The file can be found in the `dist` directory.
+== Releasing a mod
 
 To automatically upload the build save file, run the command `pnpm release [environment]`.
 Environment defines the target workshop item (e.g. `dev`, `beta` or `prod`).
