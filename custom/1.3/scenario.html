@@ -393,6 +393,30 @@ The different parts are explained in more details in the following sections.</p>
 </div>
 </details>
 <div class="sect2">
+<h3 id="_scenario_books"><a class="anchor" href="#_scenario_books"></a>Scenario books</h3>
+<div class="paragraph">
+<p>The <code>scenarioBook</code> property defines which scenario book should be used for the scenario.
+It has a <code>name</code> property which must match the tag of a registered scenario book.
+The <code>page</code> property defines which page will be opened, inside the scenario book.
+This page will be offset by 1 as it assumes each scenario book has a front cover that is not included in the page numbering.
+E.g. if the scenario book is opened with a PDF viewer, the viewer would show page number 4, but the definition would include page number 3.
+If the scenario spawns two pages of the scenario book, the property <code>pageCount</code> can be set to 2.
+More than 2 pages are currently not supported and are probably never required anyway.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">scenarioBook = {
+  -- The scenario book to use
+  name = "Gloomhaven",
+  -- The page that will be opened inside the book
+  page = 3,
+  -- If 2 pages should be shown, set this value as well
+  pageCount = 2,
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_default_monster_settings"><a class="anchor" href="#_default_monster_settings"></a>Default monster settings</h3>
 <div class="paragraph">
 <p>It&#8217;s possible to define extra attributes, stats, immunities or their used ability deck for all monsters of a given type as part of the scenario definition.
