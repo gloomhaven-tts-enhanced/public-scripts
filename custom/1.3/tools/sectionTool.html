@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>1.2 &#8594; 1.3 :: Gloomhaven Enhanced</title>
+    <title>Section Tool :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -97,8 +97,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Migration</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="1.2.html">1.2</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../migration/1.2.html">1.2</a>
   </li>
 </ul>
   </li>
@@ -110,8 +110,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Tools</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../tools/sectionTool.html">Section Tool</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="sectionTool.html">Section Tool</a>
   </li>
 </ul>
   </li>
@@ -161,86 +161,63 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Custom Content</a></li>
-    <li>Migration</li>
-    <li><a href="1.2.html">1.2</a></li>
+    <li>Tools</li>
+    <li><a href="sectionTool.html">Section Tool</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/migration/1.2.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/tools/pages/sectionTool.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">1.2 &#8594; 1.3</h1>
+<h1 class="page">Section Tool</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Add the information for the tracker image directly to the <a href="#ClassInfo">class' data</a>.</p>
-</li>
-<li>
-<p>Change the registration of the class data to use the <a href="#registerClass">[registerClass]</a> function.</p>
-</li>
-<li>
-<p>Update the script on the <a href="#Figure_Class">class figure</a></p>
-</li>
-<li>
-<p>If your class' abilities can spawn additional elements (like obstacles or traps), you can add them to the <a href="#Example_Class_Spawn">class data</a>, so the context menu knows about them.</p>
-</li>
-<li>
-<p>You can now add <a href="#Summons">custom summons</a>.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The section tool can be used to create PDF books with hidden sections that need to revealed via a button press.
+The tool is directly integrated into the GHE mod and can be used from there.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conditions"><a class="anchor" href="#_conditions"></a>Conditions</h2>
+<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Change the registration of custom conditions to use the <a href="#registerCondition">[registerCondition]</a> function.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>To get started using the tool you first need a suitable object to work with.
+The object needs to have a <code>required("Components.SectionBook")</code> Lua script attached, and it needs to be a custom PDF.</p>
 </div>
+<div class="paragraph">
+<p>To get started, you should first assign a hotkey for the tool.
+Open the <span class="menuseq"><b class="menu">Options</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Game Keys</b></span> menu and assign a hotkey for "Section Tool Add Point" and "Section Tool Undo Last Action".</p>
 </div>
+<div class="paragraph">
+<p>Once this is done, place the book somewhere on the table and enter <code>&gt;section-tool-start</code> into the chat window, while hovering over the book.
+This will start the edit mode for this book.
+You can now create hidden sections by "drawing" a rectangle with the "Add Point" hotkey.
+Move your cursor to the top left position of the rectangle you want to create and hit the "Add Point" hotkey.
+The ping arrow will show up to signal it was registered.
+Then move your cursor to the bottom right position of the rectangle and press the hotkey again.
+Again, the ping arrow will show up.
+Additionally, the created rectangle will now show up in the book as a black section with a button in its center.
+The button contains the id of the section and is auto-generated.
+The first part of the id is the current page number of the book and the second part is a letter.
+This letter will always count up by one to represent the number of created sections for this page.
+You can switch between the pages of the book, to create sections for the different pages.</p>
 </div>
-<div class="sect1">
-<h2 id="_scenarios"><a class="anchor" href="#_scenarios"></a>Scenarios</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You can now add <a href="#_scenarios">custom scenarios</a>.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Once all sections you want to create are created, or you simply want to save your progress, enter <code>&gt;section-tool-save</code> into the chat window while hovering over the book.
+This will save the created sections in the book, otherwise those are always temporary.</p>
 </div>
+<div class="paragraph">
+<p>The "Section Tool Undo Last Action" hotkey is useful to quickly undo small mistakes.
+When pressed after you created a rectangle it will remove the rectangle again, so you can redraw it.
+When pressed after setting the top left point of the rectangle it will remove the point internally, and you need to set it again.
+It&#8217;s currently not possible to undo more than one rectangle creation.</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_enemies"><a class="anchor" href="#_enemies"></a>Enemies</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You can now add <a href="#_enemies">custom enemies</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_overlays"><a class="anchor" href="#_overlays"></a>Overlays</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>You can add <a href="#_overlays">custom overlays</a>.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The created section book can then be used in <a href="../scenario.html#_section_books" class="xref page">scenario definitions</a>.</p>
 </div>
 </div>
 </div>
