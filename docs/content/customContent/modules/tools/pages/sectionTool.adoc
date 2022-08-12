@@ -1,0 +1,35 @@
+= Section Tool
+
+The section tool can be used to create PDF books with hidden sections that need to revealed via a button press.
+The tool is directly integrated into the GHE mod and can be used from there.
+
+== Usage
+
+To get started using the tool you first need a suitable object to work with.
+The object needs to have a `required("Components.SectionBook")` Lua script attached, and it needs to be a custom PDF.
+
+To get started, you should first assign a hotkey for the tool.
+Open the menu:Options[Game Keys] menu and assign a hotkey for "Section Tool Add Point" and "Section Tool Undo Last Action".
+
+Once this is done, place the book somewhere on the table and enter `>section-tool-start` into the chat window, while hovering over the book.
+This will start the edit mode for this book.
+You can now create hidden sections by "drawing" a rectangle with the "Add Point" hotkey.
+Move your cursor to the top left position of the rectangle you want to create and hit the "Add Point" hotkey.
+The ping arrow will show up to signal it was registered.
+Then move your cursor to the bottom right position of the rectangle and press the hotkey again.
+Again, the ping arrow will show up.
+Additionally, the created rectangle will now show up in the book as a black section with a button in its center.
+The button contains the id of the section and is auto-generated.
+The first part of the id is the current page number of the book and the second part is a letter.
+This letter will always count up by one to represent the number of created sections for this page.
+You can switch between the pages of the book, to create sections for the different pages.
+
+Once all sections you want to create are created, or you simply want to save your progress, enter `>section-tool-save` into the chat window while hovering over the book.
+This will save the created sections in the book, otherwise those are always temporary.
+
+The "Section Tool Undo Last Action" hotkey is useful to quickly undo small mistakes.
+When pressed after you created a rectangle it will remove the rectangle again, so you can redraw it.
+When pressed after setting the top left point of the rectangle it will remove the point internally, and you need to set it again.
+It's currently not possible to undo more than one rectangle creation.
+
+The created section book can then be used in xref:ROOT:scenario.adoc#_section_books[scenario definitions].

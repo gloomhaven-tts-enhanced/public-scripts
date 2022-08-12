@@ -19,7 +19,7 @@ A lot of features are missing...
 The scenario builder creates a token, that contains the scenario definition within its script.
 To adjust the scenario definition, the script has to be changed.
 The script on the tokens looks like this:
-
+##
 [source,lua]
 ----
 include::example$scenario/start.lua[]
@@ -63,7 +63,22 @@ More than 2 pages are currently not supported and are probably never required an
 include::example$scenario/scenario-book/usage.lua[]
 ----
 
-=== Default monster settings
+[#_section_books]
+=== Section Books
+
+The `sectionBook` property defines which section book should be used for the scenario.
+It has a `name` property which must match the tag of a registered section book.
+The `sections` property defines which sections from the book are relevant for this scenario.
+The mod will use this information to figure out which pages it needs to spawn from the book.
+Each determined page will spawn as a separate book at a fixed position.
+Only the buttons for the defined sections will be active, all other sections in the book will simply be black without a button.
+
+[,lua]
+----
+include::example$scenario/section-book/usage.lua[]
+----
+
+=== Default Monster Settings
 
 It's possible to define extra attributes, stats, immunities or their used ability deck for all monsters of a given type as part of the scenario definition.
 It is possible to distinguish between normal and elite monsters as well.
