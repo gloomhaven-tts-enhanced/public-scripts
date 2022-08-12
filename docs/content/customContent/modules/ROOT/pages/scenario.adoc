@@ -96,6 +96,11 @@ NOTE: While it is possible to define the used ability deck on all levels present
 It's not possible to have the same monster type with different ability decks, so the first monster that spawns defines the used ability deck for all monsters of that type.
 And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters is only defined by `all` (as those don't have a difficulty setting).
 
+=== Randomly placed objects
+
+Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card.
+
+
 [#_extra_content]
 === Extra content
 
