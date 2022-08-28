@@ -67,11 +67,7 @@ Each Character Box should contain:
 This script ensures, that the character box is unpacked when it's dropped onto a player mat.
 [source,lua]
 ----
-function onCollisionEnter(info)
-  if info.collision_object.getName():find("Player Mat") then
-    getObjectFromGUID("75ab50").call("cleanArea", { info.collision_object, self })
-  end
-end
+require("Component.CharacterBox")
 ----
 ====
 
