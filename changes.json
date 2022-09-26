@@ -41,15 +41,15 @@
     "feature": [
       "All buttons with custom fonts have been replaced to use text instead of images.",
       "The effect 'Teleport' has been added to allow for the Teleport move type.",
-      "The monster ability card preview in the Initiative Tracker now shows icons instead of plain Text.",
-      "The area of effect for monster abilities is now shown as an image as well next to the ability card preview.",
+      "The monster ability card preview in the Initiative Tracker now shows icons instead of plain text.",
+      "The area of effect for monster abilities is now shown as an image next to the ability card preview.",
       "The Frosthaven theme also effects the icons shown in the Initiative Tracker.",
-      "The update check for new mod version now also works for beta versions."
+      "The update check for a new mod version now also works for beta versions."
     ],
     "fix": [
-      "Adding face-up cards to the Attack Modifier deck now draws the top-card again, instead of the bottom one (e.g. for Diviner's Scry ability).",
+      "Adding face-up cards to the Attack Modifier deck now draws the top-card again, instead of the bottom one (e.g. for Diviner's Scry abilities).",
       "FC section now show the correct section image again.",
-      "Sun Solo scenario uses the correct scenario level modifier.",
+      "Sun Solo scenario uses the correct scenario level modifier for enemies.",
       "Context Menu on Two Minis works again.",
       "The 'Show' button for the Campaign Manager floppy disc now always shows up when loaded into the mod."
     ]
