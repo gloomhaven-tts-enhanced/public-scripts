@@ -33,6 +33,28 @@
     ]
   },
   {
+    "version": "1.3.0.beta.16",
+    "release": "",
+    "breaking": [
+      "The effects for 'Moving', 'Jumping' and 'Flying' have been renamed to 'Move', 'Jump' and 'Fly'. This might effect some custom content that isn't updated yet."
+    ],
+    "feature": [
+      "All buttons with custom fonts have been replaced to use text instead of images.",
+      "The effect 'Teleport' has been added to allow for the Teleport move type.",
+      "The monster ability card preview in the Initiative Tracker now shows icons instead of plain Text.",
+      "The area of effect for monster abilities is now shown as an image as well next to the ability card preview.",
+      "The Frosthaven theme also effects the icons shown in the Initiative Tracker.",
+      "The update check for new mod version now also works for beta versions."
+    ],
+    "fix": [
+      "Adding face-up cards to the Attack Modifier deck now draws the top-card again, instead of the bottom one (e.g. for Diviner's Scry ability).",
+      "FC section now show the correct section image again.",
+      "Sun Solo scenario uses the correct scenario level modifier.",
+      "Context Menu on Two Minis works again.",
+      "The 'Show' button for the Campaign Manager floppy disc now always shows up when loaded into the mod."
+    ]
+  },
+  {
     "version": "1.2.1",
     "release": "2021-08-23",
     "fix": [
