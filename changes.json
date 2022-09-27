@@ -34,7 +34,7 @@
   },
   {
     "version": "1.3.0.beta.16",
-    "release": "",
+    "release": "2022-09-27",
     "breaking": [
       "The effects for 'Moving', 'Jumping' and 'Flying' have been renamed to 'Move', 'Jump' and 'Fly'. This might effect some custom content that isn't updated yet."
     ],
