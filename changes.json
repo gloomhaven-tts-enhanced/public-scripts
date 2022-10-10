@@ -33,6 +33,27 @@
     ]
   },
   {
+    "version": "1.3.0.beta.17",
+    "release": "2022-10-10",
+    "nickname": "Repacked",
+    "breaking": [
+      "Extra content defined in a custom class registration is now searched by full name while unpacking a character box. E.g. an exta content with name 'Rubble Tokens' isn't unpacked anymore if the extra in the class is only named 'Rubble'."
+    ],
+    "feature": [
+      "All summons now have new AI generated artwork thanks to @Nerdhaven.",
+      "The markup for {e.Damage} was added to show the damage icon in the ability preview.",
+      "The ability preview was improved for all monsters. Removed all commas and added line breaks where appropiate",
+      "The dials for HP and XP are now single objects instead of having gazillion states. This also means the XP dials isn't limited to 30 anymore.",
+      "Unpacking a fresh character box is now the same as unpacking an already packed character box. This also means that extra components defined in a class registration are now unpacked for a fresh character box.",
+      "Placing an extra component from a class definition is not limited to its type anymore. Instead there's a new target property where a component can define where it wants to be placed. Placing multiple components at the same targets lines them up next to each other instead of at the same place."
+    ],
+    "fix": [
+      "Fixes the Start of Round button not recognizing missing ability cards.",
+      "Fixes the warning for overlays spawned from the Context Menu about missing conditions traits.",
+      "Fixes removing Curses/Blesses at the end of round even when the decks don't need shuffling."
+    ]
+  },
+  {
     "version": "1.3.0.beta.16",
     "release": "2022-09-27",
     "breaking": [

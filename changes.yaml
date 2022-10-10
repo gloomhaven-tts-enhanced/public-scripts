@@ -1,0 +1,109 @@
+---
+- version: 1.3.0
+  release: ""
+  guide: http://cloud-3.steamusercontent.com/ugc/1700657979719738600/542FF801EF73EDB8330E408FAF4E24AFF9D5DAF4/
+  breaking:
+    - Numpad Keys (aka scripting buttons) are removed in favor of TTS Game Keys.
+    - Removed Hexagonal Monster option.
+    - Changed how custom classes need to register.
+  feature:
+    - Ability Summons will apply their Enhancements to their stats.
+    - All figures health bars will now automatically rotate to face the bottom of the
+      table.
+    - Control Panel option to specify if you want the scenario's monster types reveal
+      at the beginning or on demand.
+    - Control panel option to specify if 3D or 2D models should be used.
+    - Random Item designs are now stacked in their pairs within the bag.
+    - Initiative Tracker no longer causes a UI re-render.
+    - New Monster Mats.
+    - Monster stats pulled according to Stat Sheet Level
+    - New Context Menu for fast spawns, summons and conditions.
+    - Scenario Aid Tokens spawned during setup.
+    - HP bars on obstacles and doors etc.
+    - Game Keys to quickly switch between characters (intended for solo/multi-handed
+      play).
+    - HP changes are now grouped and only fire a single message after a short period
+      of time.
+    - Named monsters have a purple base and set their HP accordingly to the scenario
+      book.
+    - Updated Envelope X content from the KS update.
+    - More and better support for custom content (e.g. classes with resources/stances,
+      auto-unpacking of items, personal quests cards, etc.)
+  fix:
+    - '"Random" Bags now pull in a random order.'
+    - Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting
+      deleted).
+    - Changed options are now correctly saved.
+- version: 1.3.0.beta.17
+  release: "2022-10-10"
+  nickname: Repacked
+  breaking:
+    - Extra content defined in a custom class registration is now searched by full name while unpacking a character box.
+      E.g. an exta content with name 'Rubble Tokens' isn't unpacked anymore if the extra in the class is only named 'Rubble'.
+  feature:
+    - All summons now have new AI generated artwork thanks to @Nerdhaven.
+    - The markup for {e.Damage} was added to show the damage icon in the ability preview.
+    - The ability preview was improved for all monsters.
+      Removed all commas and added line breaks where appropiate
+    - The dials for HP and XP are now single objects instead of having gazillion states.
+      This also means the XP dials isn't limited to 30 anymore.
+    - Unpacking a fresh character box is now the same as unpacking an already packed character box.
+      This also means that extra components defined in a class registration are now unpacked for a fresh character box.
+    - Placing an extra component from a class definition is not limited to its type anymore.
+      Instead there's a new target property where a component can define where it wants to be placed.
+      Placing multiple components at the same targets lines them up next to each other instead of at the same place.
+  fix:
+    - Fixes the Start of Round button not recognizing missing ability cards.
+    - Fixes the warning for overlays spawned from the Context Menu about missing conditions traits.
+    - Fixes removing Curses/Blesses at the end of round even when the decks don't need shuffling.
+- version: 1.3.0.beta.16
+  release: "2022-09-27"
+  breaking:
+    - The effects for 'Moving', 'Jumping' and 'Flying' have been renamed to 'Move',
+      'Jump' and 'Fly'. This might effect some custom content that isn't updated yet.
+  feature:
+    - All buttons with custom fonts have been replaced to use text instead of images.
+    - The effect 'Teleport' has been added to allow for the Teleport move type.
+    - The monster ability card preview in the Initiative Tracker now shows icons instead
+      of plain Text.
+    - The area of effect for monster abilities is now shown as an image as well next
+      to the ability card preview.
+    - The Frosthaven theme also effects the icons shown in the Initiative Tracker.
+    - The update check for new mod version now also works for beta versions.
+  fix:
+    - Adding face-up cards to the Attack Modifier deck now draws the top-card again,
+      instead of the bottom one (e.g. for Diviner's Scry ability).
+    - FC section now show the correct section image again.
+    - Sun Solo scenario uses the correct scenario level modifier.
+    - Context Menu on Two Minis works again.
+    - The 'Show' button for the Campaign Manager floppy disc now always shows up when
+      loaded into the mod.
+- version: 1.2.1
+  release: "2021-08-23"
+  fix:
+    - Prevent removal of Custom Class Personal Quests and Items
+    - "Demolitionist Perk #4 removes correct AMD cards"
+- version: 1.2.0
+  release: "2021-08-18"
+  feature:
+    - New 3D models for the GH starter classes.
+    - New animated 3D doors.
+    - Improvements to other 3D overlay tiles.
+    - New Options Panel to control your settings.
+    - New Scenario and Monster Setup menus (including access to Solo Scenarios)
+    - Improved support for Custom Classes.
+  fix:
+    - '"Hidden Rooms" for scenarios will now spawn all monster types at the beginning,
+      rather than room to room.'
+- version: 1.1.0
+  release: "2021-06-11"
+  feature:
+    - Complete aesthetic overhaul of all 3D overlay.
+    - Fancy-pants Enhancement Calculator.
+    - Convenient buttons on Summon cards (right-click on the summon token to bring out
+      a standee).
+    - New table art! Cycle through using NUM6-9.
+    - Added support for Custom Class conditions; more custom class support to be added
+      in the future.
+    - Performance improvements with reworked deck mats and the 3D overlays.
+    - Interactive Envelope X solution.
