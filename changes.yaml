@@ -34,6 +34,15 @@
     - Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting
       deleted).
     - Changed options are now correctly saved.
+- version: 1.3.0.beta.18
+  release: "2022-17-10"
+  nickname: Premature Release
+  feature:
+    - Characters can now have up to three resource bars.
+    - Characters can have both resource bars and a stance bar at the same time.
+    - Resource bars can use an image as an icon like the stance bar as well.
+  fix:
+    - The scenario builder creates the correct scripts again.
 - version: 1.3.0.beta.17
   release: "2022-10-10"
   nickname: Repacked
