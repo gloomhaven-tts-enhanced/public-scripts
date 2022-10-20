@@ -17,7 +17,7 @@ jobs:
           node-version: "16"
       - name: Build UI bundle
         working-directory: docs/ui
-        run: npm install && npm run build
+        run: npm ci && npm run build
       - name: Install Antora
         run: npm install antora
       - name: Generate Site
@@ -26,7 +26,7 @@ jobs:
         run: sudo cp docs/index.html docs/build/site
       - name: Build API docs
         working-directory: api
-        run: npm install && npm run build:api
+        run: npm ci && npm run build:api
       - name: Copy API docs
         run: sudo cp -r api/docs docs/build/site/api
       - name: Publish to GitHub Pages
