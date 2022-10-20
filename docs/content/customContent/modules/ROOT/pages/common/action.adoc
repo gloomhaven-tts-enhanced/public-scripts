@@ -238,7 +238,7 @@ action = {
     compound = {
         { section = 68 },
         { spawn = {
-            element = { type = Scenario.OverlayType.DifficultTerrain, name = "Stairs Horizontal" },
+            element = { type = ScenarioApi.OverlayType.DifficultTerrain, name = "Stairs Horizontal" },
             placement = { position = { -2.27, 1.89, 3.94 }, rotation = { 0, 270, 0 } },
         }},
     }
