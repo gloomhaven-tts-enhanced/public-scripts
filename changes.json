@@ -33,6 +33,25 @@
     ]
   },
   {
+    "version": "1.3.0.beta.19",
+    "release": "2022-27-10",
+    "nickname": "Feature Creep",
+    "feature": [
+      "The mod now supports the non-permanent enhancement mode knowm from Digital. In this mode most enhancements are cheaper but they are only tied to a single character instead of all characters of the same class. The active mode can be changed from the Options menu.",
+      "A new shop window based on the work from @Rita is added that allows to sort the items layed out in the shop area.",
+      "All summons now show up with their icon in the Context Menu thanks to @Nerdhaven.",
+      "The scenario chart below the Party Sheet now also shows the updated information when using the Solo/Open Information option.",
+      "The Solo scenario book is now an actual book instead of a stated object."
+    ],
+    "fix": [
+      "Item descriptions are not required to be numbers anymore.",
+      "The Diviner's Rift doesn't show a warning anymore when spawned from the Context Menu.",
+      "The M cards from CS don't throw an error anymore when imported with the Campaign Manager.",
+      "The locked classes box isn't stuck in the air anymore when importing a Campaign where locked classes already exist on the table.",
+      "Summons also show up the Context Menu of a character when their summon card is placed on one of the ability cards slot for the character."
+    ]
+  },
+  {
     "version": "1.3.0.beta.18",
     "release": "2022-17-10",
     "nickname": "Premature Release",
@@ -41,7 +60,9 @@
       "Characters can have both resource bars and a stance bar at the same time.",
       "Resource bars can use an image as an icon like the stance bar as well."
     ],
-    "fix": ["The scenario builder creates the correct scripts again."]
+    "fix": [
+      "The scenario builder creates the correct scripts again."
+    ]
   },
   {
     "version": "1.3.0.beta.17",
@@ -73,15 +94,15 @@
     "feature": [
       "All buttons with custom fonts have been replaced to use text instead of images.",
       "The effect 'Teleport' has been added to allow for the Teleport move type.",
-      "The monster ability card preview in the Initiative Tracker now shows icons instead of plain text.",
-      "The area of effect for monster abilities is now shown as an image next to the ability card preview.",
+      "The monster ability card preview in the Initiative Tracker now shows icons instead of plain Text.",
+      "The area of effect for monster abilities is now shown as an image as well next to the ability card preview.",
       "The Frosthaven theme also effects the icons shown in the Initiative Tracker.",
-      "The update check for a new mod version now also works for beta versions."
+      "The update check for new mod version now also works for beta versions."
     ],
     "fix": [
-      "Adding face-up cards to the Attack Modifier deck now draws the top-card again, instead of the bottom one (e.g. for Diviner's Scry abilities).",
+      "Adding face-up cards to the Attack Modifier deck now draws the top-card again, instead of the bottom one (e.g. for Diviner's Scry ability).",
       "FC section now show the correct section image again.",
-      "Sun Solo scenario uses the correct scenario level modifier for enemies.",
+      "Sun Solo scenario uses the correct scenario level modifier.",
       "Context Menu on Two Minis works again.",
       "The 'Show' button for the Campaign Manager floppy disc now always shows up when loaded into the mod."
     ]
