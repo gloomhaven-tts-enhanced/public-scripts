@@ -5,28 +5,38 @@
 === Breaking Changes
 - Numpad hotkey (aka scripting buttons) are removed in favor of TTS xref:hotkeys.adoc[Game Keys].
   This means all hotkeys have to be reassigned for each player.
-- Removed Hexagonal Monster option."
+- Removed Hexagonal Monster option.
 - Changed how custom classes need to register.
 
 === Features
+- A new xref:contextMenu.adoc[Context Menu] for fast spawns, summons and conditions.
 - Ability Summons will apply their Enhancements to their stats.
 - All figures health bars will now automatically rotate to face the bottom of the table.
+- The monster xref:initativeTracker.adoc#preview[ability card preview] in the Initiative Tracker now shows icons instead of text and the actual area of effect of attack.
 - A new xref:options.adoc#_preload_enemies[option] to specify if you want the scenario's monster types reveal at the beginning or on demand.
 - A new xref:options.adoc#_use_3d_models[option] to specify if 3D or 2D models should be used.
+  It also includes an option to disable particle effects of models.
+- A new option to switch to the xref:options.adoc#enhancement_system[non-permanent enhancement system] known from GH Digital, where most enhancements are cheaper but only apply to a single character instead of all characters of the same class.
+- A new xref:shop.adoc[Shop] window was added that allows to sort the laid out items by type, cost or name.
+- New, AI generated artwork for all summons thanks to Nerdhaven.
 - Random Item designs are now stacked in their pairs within the bag.
 - Initiative Tracker no longer causes a UI re-render.
 - New xref:monsters.adoc#_monster_mats[Monster Mats]. 
   Monster stats are pulled according to the setting on those mats.
-- New xref:contextMenu.adoc[Context Menu] for fast spawns, summons and conditions.
 - Scenario Aid Tokens spawned during setup.
 - HP bars on obstacles and doors etc.
-- xref:hotkeys.adoc#__switch_to_player_1234solo_player[Game Keys] to quickly switch between characters (intended for solo/multi-handed play).
+- xref:hotkeys.adoc#switch_player[Game Keys] to quickly switch between characters (intended for solo/multi-handed play).
 - HP changes are now grouped and only fire a single message after a short period of time
 - Named monsters have a purple base and set their HP accordingly to the scenario book.
+- Allied monsters now shop up with a blue base color.
 - Updated Envelope X content from the Kickstarter update.
+- Right-clicking the add/remove HP/XP buttons on the Play Area now add/remove by 5
+- The xref:monsterSetup.adoc[Monster Setup] now has the default option "Auto" as the scenario level.
+  This will spawn the monster according to the current scenario level on the scenario chart.
 - More and better support for custom content (e.g. classes with resources/stances, auto-unpacking of items, personal quests cards, etc.)
 
 === Fixes
 - "Random" Bags now pull in a random order.
 - Bless/Curse/-1*s are now put back on packing a character (prevents the cards getting deleted).
 - Changed options are now correctly saved.
+- The xref:enhancementCalculator.adoc[Enhancement Calculator] now also works for other Physics settings than "Full".

@@ -1,5 +1,6 @@
 = Monsters
 
+[#_monster_mats]
 == Monster Mats
 
 Every monster type that is present in a scenario is represented by their monster mat.

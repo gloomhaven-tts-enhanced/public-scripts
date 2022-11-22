@@ -22,15 +22,17 @@ None:: Nothing happens to the scenario book and you have to manually select the 
 Specifies whether hidden room setup should be used, when setting up a scenario by clicking the sticker on the map.
 Using the setup from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
 
+[#_use_3d_models]
 == Use 3D Models
 Specifies for which overlay tokens 3D models should be used.
 These options are available:
 
 Closed Doors:: If set, all door token that is not opened yet use the 3D model, otherwise they use the 2D token.
 Opened Doors:: Once a door was opened, it switches to the 2D token if this is not set.
-Trees:: If not set, tree tokens will use the 2D token. Otherwise they will use one of available tree 3D on random.
+Trees:: If not set, tree tokens will use the 2D token.Otherwise they will use one of available tree 3D on random.
 Other:: Specifies the behavior for all other types of overlays.
 
+[#_preload_enemies]
 == Preload Enemies
 When this options is set, all enemies will be prepared when starting a new scenario.
 This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room setup.
@@ -49,5 +51,11 @@ This options can be used to specify playing a solo game or a coop game with open
 This will _reduce_ the gold conversion and bonus experience by one level at the end of a scenario while keeping the monster level and trap damage intact.
 So with solo play it's intended to add the +1 for the scenario level and use this option to reduce gold conversion and bonus experience down again (though it currently isn't shown on the Party Sheet).
 
+[#enhancement_system]
+== Enhancement System
+
+
 == Background Image
 This specified the image that is shown on the table surface.
+
+== Themes
