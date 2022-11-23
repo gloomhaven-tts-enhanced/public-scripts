@@ -1,6 +1,8 @@
 {
   -- The name of the scenario
   name = "Black Barrow",
+  -- Optional icon which shows to the left of the scenario name in the Game Setup menu, typically for Solo Scenarios
+  icon = "http://cloud-3.steamusercontent.com/ugc/111111111111111111/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/",
   -- The scenario book used by this scenario
   scenarioBook = {
     name = "Gloomhaven",
