@@ -1,0 +1,6 @@
+* xref:interfaces.adoc[Interfaces]
+** xref:scenarioSetup.adoc[]
+** xref:monsterSetup.adoc[]
+** xref:options.adoc[]
+** xref:shop.adoc[Item Shop]
+** xref:initiativeTracker.adoc[]

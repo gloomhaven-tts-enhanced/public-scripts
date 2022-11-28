@@ -1,5 +1,7 @@
 = Options
 
+image::options.png[]
+
 The available options and their usage and behavior are listed in the following sections.
 
 Please be sure to discuss what sort of settings you would like to use while playing your campaign with your party.
@@ -16,9 +18,9 @@ This tile only contains the 1 or 2 pages for the scenario and not the complete s
 They can be deleted, once they are no longer needed.
 Change:: If the scenario book is already present somewhere on the table, it's page will be set to the page of the scenario, once it is loaded.
 If the scenario book is not on the table, nothing happens.
-None:: Nothing happens to the scenario book and you have to manually select the correct pages.
+None:: Nothing happens to the scenario book, and you have to manually select the correct pages.
 
-== Default To Hidden Room Setup
+== Hidden Setup
 Specifies whether hidden room setup should be used, when setting up a scenario by clicking the sticker on the map.
 Using the setup from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
 
@@ -31,31 +33,45 @@ Closed Doors:: If set, all door token that is not opened yet use the 3D model, o
 Opened Doors:: Once a door was opened, it switches to the 2D token if this is not set.
 Trees:: If not set, tree tokens will use the 2D token.Otherwise they will use one of available tree 3D on random.
 Other:: Specifies the behavior for all other types of overlays.
+Use particle effects:: When this is unchecked, particle effects (animations) are removed from all 3D models.
 
 [#_preload_enemies]
-== Preload Enemies
+== Preload Monsters
 When this options is set, all enemies will be prepared when starting a new scenario.
 This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room setup.
 If this option is not set, enemies will only prepared once a room is opened where they are present.
 
 == Deal Battle Goals
-When this is option set, Battle Goals will be dealt at the start of a scenario.
-Otherwise they have to be drawn manually.
+Defined how many Battle Goals will be dealt at the start of a scenario.
+Can be set to 0 so that they have to be drawn manually.
 
 == Hide Ability Cards
-When this option is et, ability cards placed with the xref:hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
+When this option is et, ability cards placed with the xref:ROOT:hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
 Otherwise they are placed face-up.
 
 == Solo/Open Information
 This options can be used to specify playing a solo game or a coop game with open information.
 This will _reduce_ the gold conversion and bonus experience by one level at the end of a scenario while keeping the monster level and trap damage intact.
-So with solo play it's intended to add the +1 for the scenario level and use this option to reduce gold conversion and bonus experience down again (though it currently isn't shown on the Party Sheet).
+So with solo play it's intended to add the +1 for the scenario level and use this option to reduce gold conversion and bonus experience down again.
+This is also shown own the scenario level chart below the Party Sheet.
 
 [#enhancement_system]
-== Enhancement System
+== Enhancement
+Defines the enhancement system to use.
+This influences the prices on the xref:tool:enhancementCalculator.adoc[].
+
+Classic:: The prices from base Gloomhaven.
+When this is used, all enhancements are also applied to the class box of a character, when the character is packed up
+Non-permant:: This is the version from Gloomhaven Digital.
+Most prices for enhancements are reduced, but enhancements only apply to a single character instead of the whole class
 
 
 == Background Image
 This specified the image that is shown on the table surface.
 
 == Themes
+Can be used to change the appearance of some game components.
+
+Frosthaven::
+Changes the condition image for Wound to the new FH style.
+Also, some icons in the ability card preview for monsters are changed to the FH style.

@@ -1,0 +1,3 @@
+= Monster Setup
+
+image::monsterSetup.png[]
