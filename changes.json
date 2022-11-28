@@ -2,7 +2,6 @@
   {
     "version": "1.3.0",
     "release": "",
-    "guide": "",
     "breaking": [
       "Numpad Keys (aka scripting buttons) are removed in favor of TTS Game Keys.",
       "Removed Hexagonal Monster option.",
