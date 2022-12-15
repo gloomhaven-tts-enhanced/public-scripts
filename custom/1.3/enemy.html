@@ -726,7 +726,7 @@ A <a href="common/formula.html" class="xref page">Formula</a> is currently not s
 <div class="paragraph">
 <p>The <code>move</code> attribute can either be a simple value (a number or string like above), or a table with the attributes <code>value</code> and <code>type.</code>
 The attribute <code>value</code> determines how for the figure can move and the <code>type</code> determines the movement type (e.g. for flying enemies).
-The value for this field can the name of any registered <a href="condition.html#_effects" class="xref page">Effect</a>.</p>
+The value for this field can the name of any registered <a href="condition.html#_effects" class="xref page">Effect</a>, but generally should be "Fly", "Jump", or "Teleport".</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -735,7 +735,7 @@ The value for this field can the name of any registered <a href="condition.html#
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- A flying enemy
 move = {
   value = 3,
-  type = "Flying"
+  type = "Fly"
 }</code></pre>
 </div>
 </div>
