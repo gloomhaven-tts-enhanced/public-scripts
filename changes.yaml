@@ -1,5 +1,10 @@
+- version: 1.4.0.beta.1
+  release: ""
+  breaking:
+    - The API getClassTracker() returns a different value now
 - version: 1.3.1
   release: 2022-12-05
+  guide: http://cloud-3.steamusercontent.com/ugc/1974296545152002225/8A7A91FF0F1C1B59E8EC3CDAA34B868CDF0F73AD/
   feature:
     - Adds an option to change the monster ability card preview to use text only instead of the icons.
   fix:
@@ -8,6 +13,7 @@
     - Party Sheet reputation correctly shows the -4 modifier for a reputation above 15
 - version: 1.3.0
   release: 2022-11-28
+  guide: http://cloud-3.steamusercontent.com/ugc/1974296545152002225/8A7A91FF0F1C1B59E8EC3CDAA34B868CDF0F73AD/
   breaking:
     - Numpad Keys (aka scripting buttons) are removed in favor of TTS Game Keys.
     - Removed Hexagonal Monster option.
