@@ -423,7 +423,7 @@ A xref:common/formula.adoc[Formula] is currently not supported.
 
 The `move` attribute can either be a simple value (a number or string like above), or a table with the attributes `value` and `type.`
 The attribute `value` determines how for the figure can move and the `type` determines the movement type (e.g. for flying enemies).
-The value for this field can the name of any registered xref:condition.adoc#_effects[Effect].
+The value for this field can the name of any registered xref:condition.adoc#_effects[Effect], but generally should be "Fly", "Jump", or "Teleport".
 
 ====
 [source,lua]
@@ -431,7 +431,7 @@ The value for this field can the name of any registered xref:condition.adoc#_eff
 -- A flying enemy
 move = {
   value = 3,
-  type = "Flying"
+  type = "Fly"
 }
 ----
 ====
