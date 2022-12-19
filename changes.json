@@ -7,6 +7,14 @@
     ]
   },
   {
+    "version": "1.3.2",
+    "release": "2022-12-19",
+    "fix": [
+      "Fixes named monsters sometimes not getting a monster number",
+      "Fixes the Enhancement Calculator showing white images for some enhancement dots"
+    ]
+  },
+  {
     "version": "1.3.1",
     "release": "2022-12-05",
     "guide": "http://cloud-3.steamusercontent.com/ugc/1974296545152002225/8A7A91FF0F1C1B59E8EC3CDAA34B868CDF0F73AD/",
