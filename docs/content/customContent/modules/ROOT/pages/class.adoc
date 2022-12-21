@@ -163,13 +163,14 @@ The <<Summons,Summon>> also needs to be registered accordingly.
 ----
 local SummonCard = require("Component.SummonCard")
 
-SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop)
+SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop, "http://imageurl.com/example1")
 ----
 ====
 
 Change the name of the first parameter to the name of the Summon this card will spawn.
 The second parameter is the position of the button that will appear.
 `SummonCard.Position` contains the default values for Gloomhaven and Frosthaven abilities and items you can use: `GHTop`, `GHBottom`, `FHTop`, `FHBottom` and `Item`.
+The third parameter is a thumbnail image for the summon to be used in the Context Menu.
 
 === Attack Modifiers
 
@@ -269,7 +270,9 @@ function onLoad()
       [1] = { remove = { "(-1)", "(-1)" } },
       [2] = { add = { "(+1)" }, remove = { "(-1)" } },
       -- Perks 3 .. 14 would be here too
-      [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+      [14] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+      [15] = { ignore = ClassApi.PerkType.IgnoreScenario },
+      [16] = { unlock = "Perk 16 Reminder Cardname" },
       -- up to 18 perks are supported (for Frosthaven support)
     },
     abilities = {
