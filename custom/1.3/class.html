@@ -425,7 +425,7 @@ The <a href="#_summons">Summon</a> also needs to be registered accordingly.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local SummonCard = require("Component.SummonCard")
 
-SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop)</code></pre>
+SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop, "http://imageurl.com/example1")</code></pre>
 </div>
 </div>
 </div>
@@ -433,7 +433,8 @@ SummonCard.forSummon("Rat Swarm", SummonCard.Position.GHTop)</code></pre>
 <div class="paragraph">
 <p>Change the name of the first parameter to the name of the Summon this card will spawn.
 The second parameter is the position of the button that will appear.
-<code>SummonCard.Position</code> contains the default values for Gloomhaven and Frosthaven abilities and items you can use: <code>GHTop</code>, <code>GHBottom</code>, <code>FHTop</code>, <code>FHBottom</code> and <code>Item</code>.</p>
+<code>SummonCard.Position</code> contains the default values for Gloomhaven and Frosthaven abilities and items you can use: <code>GHTop</code>, <code>GHBottom</code>, <code>FHTop</code>, <code>FHBottom</code> and <code>Item</code>.
+The third parameter is a thumbnail image for the summon to be used in the Context Menu.</p>
 </div>
 </div>
 </div>
@@ -564,7 +565,9 @@ function onLoad()
       [1] = { remove = { "(-1)", "(-1)" } },
       [2] = { add = { "(+1)" }, remove = { "(-1)" } },
       -- Perks 3 .. 14 would be here too
-      [15] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+      [14] = { add = { "(+1)" }, ignore = ClassApi.PerkType.IgnoreItem },
+      [15] = { ignore = ClassApi.PerkType.IgnoreScenario },
+      [16] = { unlock = "Perk 16 Reminder Cardname" },
       -- up to 18 perks are supported (for Frosthaven support)
     },
     abilities = {
