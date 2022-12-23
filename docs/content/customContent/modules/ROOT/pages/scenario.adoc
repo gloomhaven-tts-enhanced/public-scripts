@@ -152,10 +152,10 @@ When playing a figure within a room, you can also exclude it from spawning with 
 figures = {
   [1] = {
    	name = "Sacred Monk",
-  	position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
-  	rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
-  	characterCount = {
-  	  [2] = R.Remove,
+    position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
+    rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
+    characterCount = {
+      [2] = R.Remove,
       [3] = R.Remove,
     },
   },
