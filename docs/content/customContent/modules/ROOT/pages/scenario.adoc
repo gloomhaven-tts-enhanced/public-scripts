@@ -151,13 +151,13 @@ When playing a figure within a room, you can also exclude it from spawning with 
 ----
 figures = {
   [1] = {
-  	name = "Sacred Monk",
-		position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
-		rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
-		characterCount = {
-		  [2] = R.Remove,
+   	name = "Sacred Monk",
+  	position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
+  	rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
+  	characterCount = {
+  	  [2] = R.Remove,
       [3] = R.Remove,
-		},
+    },
   },
 },
 ----
@@ -172,13 +172,13 @@ You can define the conditions and name for overlays, commonly used for traps:
 [source,lua]
 ----
 overlays = {
---This is the original overlay tile's name.
+  --This is the original overlay tile's name.
   ["Bear Trap"] = {
     --These are the trape conditions applied when triggered.
     conditions = { "Damage" },
-  --This is the new name given to all overlays of this type when spawned durign scenario setup.
-	name = "Damage Trap",
-  }
+    --This is the new name given to all overlays of this type when spawned durign scenario setup.
+    name = "Damage Trap",
+  },
 },
 ----
 ====
@@ -207,7 +207,7 @@ overlayTiles = {
           },
         },
       },
-	  },
+    },
   },
 },
 ----
@@ -249,7 +249,7 @@ You can add an action to an objective to act as a door. Triggering this can be u
 [source,lua]
 ----
 action = {
-    rooms = { 6, 2 }
+  rooms = { 6, 2 }
 }
 ----
 ====
