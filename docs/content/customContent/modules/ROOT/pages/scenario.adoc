@@ -121,9 +121,9 @@ Similar to the Monsters option, you can spawn scenario specific figures which pe
 ----
 figures = {
   ["Mechanical Turret"] = {
-	--name of the Summon, Enemy, or registered Figure object to use as a standee
+    --name of the Summon, Enemy, or registered Figure object to use as a standee
     basedOn = "Ancient Artillary",
-	--possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple) 
+    --possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple) 
     base = "Normal",
     stats = {
 	  health = 10,
@@ -138,6 +138,26 @@ figures = {
       initiative = 50,
       ability = "{e.Attack}3 {e.Range}4",
     },
+  },
+},
+----
+====
+
+When playing a figure within a room, you can also exclude it from spawning with different player counts.
+
+====
+.Placed Figures
+[source,lua]
+----
+figures = {
+  [1] = {
+  	name = "Sacred Monk",
+		position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
+		rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
+		characterCount = {
+		  [2] = R.Remove,
+      [3] = R.Remove,
+		},
   },
 },
 ----
@@ -206,8 +226,8 @@ You can add a Treasure action to an object (typically a treasure chest) to spawn
 [source,lua]
 ----
 action = {
-	name = "50",
-	treasure = "Treasure 50",
+  name = "50",
+  treasure = "Treasure 50",
 },
 ----
 ====
@@ -218,7 +238,7 @@ You can set the chest as a scenario goal as well:
 [source,lua]
 ----
 action = {
-	treasure = "G",
+  treasure = "G",
 },
 ----
 ====
