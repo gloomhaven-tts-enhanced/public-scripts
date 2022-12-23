@@ -632,6 +632,155 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 </div>
 </div>
 <div class="sect2">
+<h3 id="_figures"><a class="anchor" href="#_figures"></a>Figures</h3>
+<div class="paragraph">
+<p>Similar to the Monsters option, you can spawn scenario specific figures which perform the same action each round. This is commonly used for named allies or unique basic enemies. These figures require a standee model which can be based on any existing summon or enemy, or you can register a custom figure (objects with the "Figure" tag included within a "Gloomhaven Custom Content" bag).</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Figures</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">figures = {
+  ["Mechanical Turret"] = {
+	--name of the Summon, Enemy, or registered Figure object to use as a standee
+    basedOn = "Ancient Artillary",
+	--possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple)
+    base = "Normal",
+    stats = {
+	  health = 10,
+	  attributes = {
+	    add = { Shield = 1 },
+	  },
+	  immunities = {
+	    add = { "Poison" },
+	  },
+    },
+    ability = {
+      initiative = 50,
+      ability = "{e.Attack}3 {e.Range}4",
+    },
+  },
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overlays"><a class="anchor" href="#_overlays"></a>Overlays</h3>
+<div class="paragraph">
+<p>You can define the conditions and name for overlays, commonly used for traps:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Overlays</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">overlays = {
+--This is the original overlay tile's name.
+  ["Bear Trap"] = {
+    --These are the trape conditions applied when triggered.
+    conditions = { "Damage" },
+  --This is the new name given to all overlays of this type when spawned durign scenario setup.
+	name = "Damage Trap",
+  }
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_objectives"><a class="anchor" href="#_objectives"></a>Objectives</h3>
+<div class="paragraph">
+<p>You can add a Scenario Aid token to an object&#8217;s UI, or even include a health bar:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Objectives</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">overlayTiles = {
+  {
+    bag = R.ElementType.Obstacle,
+    type = {
+      {
+        name = "Rock Column",
+        tiles = {
+          {
+            position = { x = -1.31, y = 1.87, z = 9.85, },
+            rotation = { x = 0, y = 0, z = 0, },
+            name = "Summoning Stone",
+            tokens = { "a" },
+            hp = {"+", "C", 1},
+          },
+        },
+      },
+	  },
+  },
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actions"><a class="anchor" href="#_actions"></a>Actions</h3>
+<div class="paragraph">
+<p>For a complete list of actions available, see Common &gt; Actions: <a href="https://gloomhaven-tts-enhanced.github.io/public-scripts/custom/1.3/common/action.html" class="bare">https://gloomhaven-tts-enhanced.github.io/public-scripts/custom/1.3/common/action.html</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_frequently_used_actions"><a class="anchor" href="#_frequently_used_actions"></a>Frequently used actions</h3>
+<div class="paragraph">
+<p>You can add a Treasure action to an object (typically a treasure chest) to spawn the card defined as treasure:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Treasure</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
+	name = "50",
+	treasure = "Treasure 50",
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can set the chest as a scenario goal as well:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Treasure (G)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
+	treasure = "G",
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can add an action to an objective to act as a door. Triggering this can be used to reveal hidden rooms or spawn additional enemies:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Door/Rooms</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
+    rooms = { 6, 2 }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_randomly_placed_objects"><a class="anchor" href="#_randomly_placed_objects"></a>Randomly placed objects</h3>
 <div class="paragraph">
 <p>Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card.</p>
