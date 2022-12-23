@@ -643,9 +643,9 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">figures = {
   ["Mechanical Turret"] = {
-	--name of the Summon, Enemy, or registered Figure object to use as a standee
+    --name of the Summon, Enemy, or registered Figure object to use as a standee
     basedOn = "Ancient Artillary",
-	--possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple)
+    --possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple)
     base = "Normal",
     stats = {
 	  health = 10,
@@ -660,6 +660,29 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
       initiative = 50,
       ability = "{e.Attack}3 {e.Range}4",
     },
+  },
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>When playing a figure within a room, you can also exclude it from spawning with different player counts.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Placed Figures</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">figures = {
+  [1] = {
+  	name = "Sacred Monk",
+		position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
+		rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
+		characterCount = {
+		  [2] = R.Remove,
+      [3] = R.Remove,
+		},
   },
 },</code></pre>
 </div>
@@ -742,8 +765,8 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="title">Treasure</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
-	name = "50",
-	treasure = "Treasure 50",
+  name = "50",
+  treasure = "Treasure 50",
 },</code></pre>
 </div>
 </div>
@@ -758,7 +781,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="title">Treasure (G)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
-	treasure = "G",
+  treasure = "G",
 },</code></pre>
 </div>
 </div>
