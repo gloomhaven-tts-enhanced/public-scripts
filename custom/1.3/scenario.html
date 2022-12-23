@@ -676,13 +676,13 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">figures = {
   [1] = {
-  	name = "Sacred Monk",
-		position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
-		rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
-		characterCount = {
-		  [2] = R.Remove,
+   	name = "Sacred Monk",
+  	position = { x = '15.155600', y = '1.766300', z = '-8.750200', },
+  	rotation = { x = '0.008800', y = '180.010193', z = '359.990692', },
+  	characterCount = {
+  	  [2] = R.Remove,
       [3] = R.Remove,
-		},
+    },
   },
 },</code></pre>
 </div>
@@ -701,13 +701,13 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="title">Overlays</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">overlays = {
---This is the original overlay tile's name.
+  --This is the original overlay tile's name.
   ["Bear Trap"] = {
     --These are the trape conditions applied when triggered.
     conditions = { "Damage" },
-  --This is the new name given to all overlays of this type when spawned durign scenario setup.
-	name = "Damage Trap",
-  }
+    --This is the new name given to all overlays of this type when spawned durign scenario setup.
+    name = "Damage Trap",
+  },
 },</code></pre>
 </div>
 </div>
@@ -740,7 +740,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
           },
         },
       },
-	  },
+    },
   },
 },</code></pre>
 </div>
@@ -796,7 +796,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="title">Door/Rooms</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">action = {
-    rooms = { 6, 2 }
+  rooms = { 6, 2 }
 }</code></pre>
 </div>
 </div>
