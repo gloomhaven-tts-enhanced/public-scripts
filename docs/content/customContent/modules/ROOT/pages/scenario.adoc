@@ -174,7 +174,7 @@ You can define the conditions and name for overlays, commonly used for traps:
 overlays = {
   --This is the original overlay tile's name.
   ["Bear Trap"] = {
-    --These are the trape conditions applied when triggered.
+    --These are the trap conditions applied when triggered.
     conditions = { "Damage" },
     --This is the new name given to all overlays of this type when spawned durign scenario setup.
     name = "Damage Trap",
