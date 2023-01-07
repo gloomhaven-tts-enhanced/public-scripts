@@ -8,7 +8,7 @@
   },
   {
     "version": "1.3.4",
-    "release": null,
+    "release": "2023-01-07",
     "feature": [
       "Adds hotkeys to add/remove XP when hovering over a character figure."
     ],

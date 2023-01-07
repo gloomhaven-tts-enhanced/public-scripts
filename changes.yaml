@@ -3,7 +3,7 @@
   breaking:
     - The API getClassTracker() returns a different value now
 - version: 1.3.4
-  release:
+  release: 2023-01-07
   feature:
     - Adds hotkeys to add/remove XP when hovering over a character figure.
   fix:
