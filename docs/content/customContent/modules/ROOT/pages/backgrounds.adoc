@@ -1,0 +1,64 @@
+= Backgrounds
+
+It's possible to change the background for the table to a custom image you like.
+It requires to adjust the existing script a bit.
+Also, the background image itself needs to fullfill certain requirements to work correctly.
+E.g. the dimensions need to be same as the existing background images, and it needs to be rotated upside-down.
+Basically, just like the (e.g. like http://cloud-3.steamusercontent.com/ugc/1751317540805826116/76A381381F9C02D0032F7A0174564D659E6EE75B/[default one])
+
+To adjust the script, open the scripting editor in TTS.
+You can find it by using the top menu under menu:Modding[Scripting].
+It takes a while as the editor is very slow and the script in the mod is rather big.
+After the edtior opens, click into the editor and wait for the cursor to appear.
+Use kbd:[CTRL+A] to select the whole script and then kbd:[CTRL+C] to copy it.
+Paste it into a text editor of your choice (e.g. Notepad++, Atom, Visual Studio Code or similar).
+
+In the pasted code search for text that looks like this
+
+[source,lua]
+----
+this.registerOption({
+  group = "appearance",
+  name = "background",
+  type = OptionsApi.OptionType.Image,
+  displayName = "Background",
+  value = "http://cloud-3.steamusercontent.com/ugc/1751317540805826116/76A381381F9C02D0032F7A0174564D659E6EE75B/",
+  choices = {
+-- more line afterwards
+----
+
+Within `choices` the available background images are listed.
+To add the custom background, append a new entry to the list of choices, which would look like this:
+
+[source,lua]
+----
+    -- this is an existing entry
+    {
+      name = "JotL Poker Table (Grey)",
+      image = "http://cloud-3.steamusercontent.com/ugc/1751317540805807917/9D581E20638E82B61E27C9B8451F0E5D0D55437A/",
+      thumbnail = "http://cloud-3.steamusercontent.com/ugc/1692776269029816504/17CE4CE6C3A2CD904E980AA7706731E72E34E3B6/",
+    },
+    -- this is your new entry
+    {
+      name = "My custom image",
+      -- this is the link to the background image
+      image = "http://cloud-3.steamusercontent.com/ugc/1751317540805807917/9D581E20638E82B61E27C9B8451F0E5D0D55437A/",
+      -- this is the link to the thumbnail image shown in the options menu
+      -- it's required but can basically be anything you want
+      -- when you reuse the existing image of another entry it will show a warning during load
+      -- but will still work
+      thumbnail = "http://cloud-3.steamusercontent.com/ugc/1692776269029816504/17CE4CE6C3A2CD904E980AA7706731E72E34E3B6/",
+    },
+  -- this part below already exists, so don't add it twice
+  },
+  event = Event.EventType.BackgroundChanged,
+  description = [[
+The image displayed on the table.]]
+})
+----
+
+After the change, open the scripting editor in TTS again, use kbd:[CTRL+A] to select the whole script again and then delete it.
+Afterwards copy and paste your changed script into the editor and press the btn:[Save & Play] button there.
+Again, this could take a while.
+
+You can change your custom background as you would any other background by opening the Options menu and changing it.
