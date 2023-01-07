@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Custom Content Integration :: Gloomhaven Enhanced</title>
+    <title>Backgrounds :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -82,7 +82,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Other</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="backgrounds.html">Backgrounds</a>
   </li>
 </ul>
@@ -170,19 +170,86 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Custom Content</a></li>
-    <li><a href="index.html">Custom Content Integration</a></li>
+    <li>Other</li>
+    <li><a href="backgrounds.html">Backgrounds</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/backgrounds.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Custom Content Integration</h1>
+<h1 class="page">Backgrounds</h1>
 <div class="paragraph">
-<p>This documentation describes how custom content can be integrated into the Gloomhaven Enhanced mod.</p>
+<p>It&#8217;s possible to change the background for the table to a custom image you like.
+It requires to adjust the existing script a bit.
+Also, the background image itself needs to fullfill certain requirements to work correctly.
+E.g. the dimensions need to be same as the existing background images, and it needs to be rotated upside-down.
+Basically, just like the (e.g. like <a href="http://cloud-3.steamusercontent.com/ugc/1751317540805826116/76A381381F9C02D0032F7A0174564D659E6EE75B/">default one</a>)</p>
+</div>
+<div class="paragraph">
+<p>To adjust the script, open the scripting editor in TTS.
+You can find it by using the top menu under <span class="menuseq"><b class="menu">Modding</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Scripting</b></span>.
+It takes a while as the editor is very slow and the script in the mod is rather big.
+After the edtior opens, click into the editor and wait for the cursor to appear.
+Use <span class="keyseq"><kbd>CTRL</kbd>+<kbd>A</kbd></span> to select the whole script and then <span class="keyseq"><kbd>CTRL</kbd>+<kbd>C</kbd></span> to copy it.
+Paste it into a text editor of your choice (e.g. Notepad++, Atom, Visual Studio Code or similar).</p>
+</div>
+<div class="paragraph">
+<p>In the pasted code search for text that looks like this</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">this.registerOption({
+  group = "appearance",
+  name = "background",
+  type = OptionsApi.OptionType.Image,
+  displayName = "Background",
+  value = "http://cloud-3.steamusercontent.com/ugc/1751317540805826116/76A381381F9C02D0032F7A0174564D659E6EE75B/",
+  choices = {
+-- more line afterwards</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Within <code>choices</code> the available background images are listed.
+To add the custom background, append a new entry to the list of choices, which would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">    -- this is an existing entry
+    {
+      name = "JotL Poker Table (Grey)",
+      image = "http://cloud-3.steamusercontent.com/ugc/1751317540805807917/9D581E20638E82B61E27C9B8451F0E5D0D55437A/",
+      thumbnail = "http://cloud-3.steamusercontent.com/ugc/1692776269029816504/17CE4CE6C3A2CD904E980AA7706731E72E34E3B6/",
+    },
+    -- this is your new entry
+    {
+      name = "My custom image",
+      -- this is the link to the background image
+      image = "http://cloud-3.steamusercontent.com/ugc/1751317540805807917/9D581E20638E82B61E27C9B8451F0E5D0D55437A/",
+      -- this is the link to the thumbnail image shown in the options menu
+      -- it's required but can basically be anything you want
+      -- when you reuse the existing image of another entry it will show a warning during load
+      -- but will still work
+      thumbnail = "http://cloud-3.steamusercontent.com/ugc/1692776269029816504/17CE4CE6C3A2CD904E980AA7706731E72E34E3B6/",
+    },
+  -- this part below already exists, so don't add it twice
+  },
+  event = Event.EventType.BackgroundChanged,
+  description = [[
+The image displayed on the table.]]
+})</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the change, open the scripting editor in TTS again, use <span class="keyseq"><kbd>CTRL</kbd>+<kbd>A</kbd></span> to select the whole script again and then delete it.
+Afterwards copy and paste your changed script into the editor and press the <b class="button">Save &amp; Play</b> button there.
+Again, this could take a while.</p>
+</div>
+<div class="paragraph">
+<p>You can change your custom background as you would any other background by opening the Options menu and changing it.</p>
 </div>
 </article>
   </div>
