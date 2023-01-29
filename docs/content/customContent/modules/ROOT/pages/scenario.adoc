@@ -122,7 +122,7 @@ Similar to the Monsters option, you can spawn scenario specific figures which pe
 figures = {
   ["Mechanical Turret"] = {
     --name of the Summon, Enemy, or registered Figure object to use as a standee
-    basedOn = "Ancient Artillary",
+    basedOn = "Ancient Artillery",
     --possible base values are "Normal" (White), "Elite" (Yellow), "Ally" (Blue), "Boss" (Red) and "Named" (Purple) 
     base = "Normal",
     stats = {
