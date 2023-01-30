@@ -13,10 +13,10 @@
     "update": "pnpm install && pnpm update",
     "clean": "rimraf Contents",
     "extract": "pnpm clean && tts-save extract -o . -n \"<save-name>\"",
-    "embed": "tts-save embed -o \"<save-name>\" -i \"./node_modules/@gloomhaven-enhanced/api/dist\" ."
+    "embed": "tts-save embed -o \"<save-name>\" -i \"./node_modules/@gloomhaven-enhanced/api/dist/base\" ."
   },
   "devDependencies": {
-    "@gloomhaven-enhanced/api": "beta",
+    "@gloomhaven-enhanced/api": "latest",
     "@tts-tools/cli": "latest",
     "rimraf": "^3.0.2"
   }
