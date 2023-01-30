@@ -7,6 +7,8 @@
 * xref:enemy.adoc[Enemies]
 * xref:scenario.adoc[Scenarios]
 * xref:overlay.adoc[Overlays]
+* Other
+** xref:backgrounds.adoc[Backgrounds]
 * Common
 ** xref:common/formula.adoc[Formulas]
 ** xref:common/action.adoc[Actions]
