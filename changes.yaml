@@ -1,7 +1,14 @@
-- version: 1.4.0.beta.1
+- version: 2.0.0.alpha.1
   release: ""
   breaking:
     - The API getClassTracker() returns a different value now
+- version: 1.3.5
+  release: 2023-02-02
+  fix:
+    - Increases the size of the shop area.
+    - Fixes the Diviner's summon ability card "Envision the Course".
+    - Fixes the name of scenario 55.
+    - Fixes disabling particle effects. It now already effects minis before reloading them.
 - version: 1.3.4
   release: 2023-01-07
   guide: http://cloud-3.steamusercontent.com/ugc/2002446038662650433/8A7A91FF0F1C1B59E8EC3CDAA34B868CDF0F73AD/
