@@ -235,6 +235,42 @@ No other values need to be set.
 
 === Extra Components
 
+Within the class envelope LUA, you can define other objects contained in the tuck box to automatically unpack with the class.
+This function takes two parameters:
+* The NAME of the object
+* The TARGET area within the player zone where the object should be placed
+* Valid values for TARGET are "Hand", "HandTwo", "CharacterMat", and "CharacterSheet"
+* You can specify a specific position relative to their target
+
+To easily get the position in the local coordinate system you can place the object where you want it and then paste that into the chat window:
+
+====
+.How to find a relative position value
+[source,lua]
+----
+--Replace "targetObjectGUID" with the GUID where you want to place your object (e.g. the Player Mat) and "objectGUID" with the GUID of the extra object
+/execute print(logString(getObjectFromGUID("targetObjectGUID").positionToLocal(getObjectFromGUID("objectGUID").getPosition()))
+----
+====
+
+An example looks as follows:
+
+====
+.Extra class content
+[source,lua]
+----
+extra = {
+  {
+    name = "Special Rules",
+    target = "CharacterSheet",
+  },
+  {
+    name = "Special Overlay Tokens",
+    target = { PlayerMat = { 1, 0, 1 }}
+  },
+},
+----
+====
 
 === Registration
 
