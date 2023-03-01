@@ -422,8 +422,9 @@ You can use the following text for icons:
 
 You can also include an icon for any custom registered effect or condition using `{e.<Effect>}` or `{c.<Condition>}` respectively.
 
-You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText, between the \u{}. And also the color for the condition as hex value as the second parameter.
+You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText `\u{<Glyph>}`. The color for the condition as hex value is the second parameter.
 
+.Example of how to add Disarm if it were a custom condition:
 ====
 [source,lua]
 ----
