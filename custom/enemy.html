@@ -640,7 +640,7 @@ require("StatSheet");</code></pre>
 <div class="sect2">
 <h3 id="_ability_card"><a class="anchor" href="#_ability_card"></a>Ability Card</h3>
 <div class="paragraph">
-<p>Each Ability Card within the <a href="#_ability_deck">Ability Deck</a> needs to have a special naming structure.</p>
+<p>Each Ability Card within the <a href="#_ability_deck">Ability Deck</a> needs to have a special naming structure and the <code>Monster Ability Card</code> tag.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -677,6 +677,14 @@ Those will show up as separate lines in the initiative tracker.</p>
 </div>
 </div>
 <div class="paragraph">
+<p>For abilities that shuffle the ability cards, add <code>shuffle</code> after the initiative.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>15 shuffle: Move +1; Attack +1</pre>
+</div>
+</div>
+<div class="paragraph">
 <p>If the ability grants multiple actions at different initiatives, you can use new lines.
 Each line will add an entry to the initiative tracker.</p>
 </div>
@@ -685,6 +693,81 @@ Each line will add an entry to the initiative tracker.</p>
 <pre>03: Attack +0
 11: Move +0
 20: Attack +0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To use icons in the initiative tracker, you must change your player color to black and update the GM Note instead of the Description field.
+You can use the following text for icons:
+-{e.Attack}
+-{e.Move}
+-{e.Heal}
+-{e.Loot}
+-{e.Shield}
+-{e.Retaliate}
+-{e.Range}
+-{e.Target}
+-{e.Damage}
+-{e.Jump}
+-{e.Fly}
+-{e.Teleport}
+-{e.Generate Fire}
+-{e.Generate Ice}
+-{e.Generate Air}
+-{e.Generate Earth}
+-{e.Generate Light}
+-{e.Generate Dark}
+-{e.Generate Any}
+-{e.Consume Fire}
+-{e.Consume Ice}
+-{e.Consume Air}
+-{e.Consume Earth}
+-{e.Consume Light}
+-{e.Consume Dark}
+-{e.Consume Any}</p>
+</div>
+<div class="paragraph">
+<p>You can also include an icon for any custom registered effect or condition using {e.<strong>} or {c.</strong>} respectively.</p>
+</div>
+<div class="paragraph">
+<p>You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText, between the \u{}. And also the color for the condition as hex value as the second parameter.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local UiApi = require("api.UiApi")
+
+ConditionApi.registerCondition("Disarm", {
+  image = "...",
+  immunity = { ... },
+  renderedMarkup = UiApi.conditionText("\u{E0A3}", "#69797C"),
+})</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern.
+-<code>s</code> will create a grey "self" hex
+-<code>t</code> will create a red "enemy" hex
+-<code>a</code> will create a blue "ally" hex
+-<code>e</code> will create a blank space with no hex
+-<code>_</code> will create a line break, every other line will be automatically intented by half a hex</p>
+</div>
+<div class="paragraph">
+<p>Example of Wind Demon&#8217;s two area ability:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- first row: empty hex and two target hexes
+-- second row: the self hex and a target hex
+{area.ett_st}
+-- second area
+{area.ett_stt_ett}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
