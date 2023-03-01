@@ -702,87 +702,87 @@ You can use the following text for icons:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>{e.Attack}</p>
+<p><code>{e.Attack}</code></p>
 </li>
 <li>
-<p>{e.Move}</p>
+<p><code>{e.Move}</code></p>
 </li>
 <li>
-<p>{e.Heal}</p>
+<p><code>{e.Heal}</code></p>
 </li>
 <li>
-<p>{e.Loot}</p>
+<p><code>{e.Loot}</code></p>
 </li>
 <li>
-<p>{e.Shield}</p>
+<p><code>{e.Shield}</code></p>
 </li>
 <li>
-<p>{e.Retaliate}</p>
+<p><code>{e.Retaliate}</code></p>
 </li>
 <li>
-<p>{e.Range}</p>
+<p><code>{e.Range}</code></p>
 </li>
 <li>
-<p>{e.Target}</p>
+<p><code>{e.Target}</code></p>
 </li>
 <li>
-<p>{e.Damage}</p>
+<p><code>{e.Damage}</code></p>
 </li>
 <li>
-<p>{e.Jump}</p>
+<p><code>{e.Jump}</code></p>
 </li>
 <li>
-<p>{e.Fly}</p>
+<p><code>{e.Fly}</code></p>
 </li>
 <li>
-<p>{e.Teleport}</p>
+<p><code>{e.Teleport}</code></p>
 </li>
 <li>
-<p>{e.Generate Fire}</p>
+<p><code>{e.Generate Fire}</code></p>
 </li>
 <li>
-<p>{e.Generate Ice}</p>
+<p><code>{e.Generate Ice}</code></p>
 </li>
 <li>
-<p>{e.Generate Air}</p>
+<p><code>{e.Generate Air}</code></p>
 </li>
 <li>
-<p>{e.Generate Earth}</p>
+<p><code>{e.Generate Earth}</code></p>
 </li>
 <li>
-<p>{e.Generate Light}</p>
+<p><code>{e.Generate Light}</code></p>
 </li>
 <li>
-<p>{e.Generate Dark}</p>
+<p><code>{e.Generate Dark}</code></p>
 </li>
 <li>
-<p>{e.Generate Any}</p>
+<p><code>{e.Generate Any}</code></p>
 </li>
 <li>
-<p>{e.Consume Fire}</p>
+<p><code>{e.Consume Fire}</code></p>
 </li>
 <li>
-<p>{e.Consume Ice}</p>
+<p><code>{e.Consume Ice}</code></p>
 </li>
 <li>
-<p>{e.Consume Air}</p>
+<p><code>{e.Consume Air}</code></p>
 </li>
 <li>
-<p>{e.Consume Earth}</p>
+<p><code>{e.Consume Earth}</code></p>
 </li>
 <li>
-<p>{e.Consume Light}</p>
+<p><code>{e.Consume Light}</code></p>
 </li>
 <li>
-<p>{e.Consume Dark}</p>
+<p><code>{e.Consume Dark}</code></p>
 </li>
 <li>
-<p>{e.Consume Any}</p>
+<p><code>{e.Consume Any}</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You can also include an icon for any custom registered effect or condition using {e.<strong>} or {c.</strong>} respectively.</p>
+<p>You can also include an icon for any custom registered effect or condition using {e.&lt;Effect&gt;} or {c.&lt;Condition&gt;} respectively.</p>
 </div>
 <div class="paragraph">
 <p>You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText, between the \u{}. And also the color for the condition as hex value as the second parameter.</p>
@@ -803,7 +803,7 @@ ConditionApi.registerCondition("Disarm", {
 </div>
 </div>
 <div class="paragraph">
-<p>You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern:</p>
+<p>You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.&lt;Rows&gt;} with specific syntax to create the intended pattern:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -820,7 +820,7 @@ ConditionApi.registerCondition("Disarm", {
 <p><code>e</code> will create a blank space with no hex</p>
 </li>
 <li>
-<p><code>_</code> will create a line break, every other line will be automatically intented by half a hex</p>
+<p><code>_</code> will begin a new row, every even row will be automatically intented by half a hex</p>
 </li>
 </ul>
 </div>
