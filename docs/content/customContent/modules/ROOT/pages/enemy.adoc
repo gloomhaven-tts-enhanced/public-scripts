@@ -352,7 +352,7 @@ The Ability Deck contains the different xref:_ability_card[Ability Cards].
 [#_ability_card]
 === Ability Card
 
-Each Ability Card within the xref:_ability_deck[] needs to have a special naming structure.
+Each Ability Card within the xref:_ability_deck[] needs to have a special naming structure and the `Monster Ability Card` tag.
 
 [cols="1,2"]
 |===
@@ -374,6 +374,13 @@ Those will show up as separate lines in the initiative tracker.
 31: Move +0; Attack +0
 ----
 
+For abilities that shuffle the ability cards, add `shuffle` after the initiative.
+
+----
+15 shuffle: Move +1; Attack +1
+----
+
+
 If the ability grants multiple actions at different initiatives, you can use new lines.
 Each line will add an entry to the initiative tracker.
 
@@ -382,6 +389,71 @@ Each line will add an entry to the initiative tracker.
 11: Move +0
 20: Attack +0
 ----
+
+To use icons in the initiative tracker, you must change your player color to black and update the GM Note instead of the Description field.
+You can use the following text for icons:
+-{e.Attack}
+-{e.Move}
+-{e.Heal}
+-{e.Loot}
+-{e.Shield}
+-{e.Retaliate}
+-{e.Range}
+-{e.Target}
+-{e.Damage}
+-{e.Jump}
+-{e.Fly}
+-{e.Teleport}
+-{e.Generate Fire}
+-{e.Generate Ice}
+-{e.Generate Air}
+-{e.Generate Earth}
+-{e.Generate Light}
+-{e.Generate Dark}
+-{e.Generate Any}
+-{e.Consume Fire}
+-{e.Consume Ice}
+-{e.Consume Air}
+-{e.Consume Earth}
+-{e.Consume Light}
+-{e.Consume Dark}
+-{e.Consume Any}
+
+You can also include an icon for any custom registered effect or condition using {e.*} or {c.*} respectively.
+
+You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText, between the \u{}. And also the color for the condition as hex value as the second parameter.
+
+====
+[source,lua]
+----
+local UiApi = require("api.UiApi")
+
+ConditionApi.registerCondition("Disarm", {
+  image = "...",
+  immunity = { ... },
+  renderedMarkup = UiApi.conditionText("\u{E0A3}", "#69797C"),
+})
+----
+====
+
+You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern.
+-`s` will create a grey "self" hex
+-`t` will create a red "enemy" hex
+-`a` will create a blue "ally" hex
+-`e` will create a blank space with no hex
+-`_` will create a line break, every other line will be automatically intented by half a hex
+
+Example of Wind Demon's two area ability:
+====
+[source,lua]
+----
+-- first row: empty hex and two target hexes
+-- second row: the self hex and a target hex
+{area.ett_st}
+-- second area
+{area.ett_stt_ett}
+----
+====
 
 
 [#_stats]
