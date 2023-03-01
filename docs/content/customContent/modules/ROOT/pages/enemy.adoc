@@ -424,7 +424,7 @@ You can also include an icon for any custom registered effect or condition using
 
 You can add other custom conditions/effects, as long as they are already part of the Markazi Gloom Color font (by Dimon_II). To add them, the registerCondition and registerEffect functions allow a new entry called renderedMarkup which takes any string. Whatever you put there will be shown in the preview whenever the markup for this Condition/Effect is used. There are already helper via the new UiApi where you only need to provide the glyph and color used for the condition. E.g. for a condition, all you need to do is to find the correct glyph in the font and insert it into the first parameter of UiApi.conditionText `\u{<Glyph>}`. The color for the condition as hex value is the second parameter.
 
-.Example of how to add Disarm if it were a custom condition:
+.How to add Disarm if it were a custom condition:
 ====
 [source,lua]
 ----
@@ -446,7 +446,7 @@ You can include an AoE "Area" which will display an AoE pattern in the initiativ
 * `e` will create a blank space with no hex
 * `_` will begin a new row, every even row will be automatically intented by half a hex
 
-Example of Wind Demon's two area ability:
+.Wind Demon's ability with two areas:
 ====
 [source,lua]
 ----
