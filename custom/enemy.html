@@ -697,33 +697,89 @@ Each line will add an entry to the initiative tracker.</p>
 </div>
 <div class="paragraph">
 <p>To use icons in the initiative tracker, you must change your player color to black and update the GM Note instead of the Description field.
-You can use the following text for icons:
-* {e.Attack}
-* {e.Move}
-* {e.Heal}
-* {e.Loot}
-* {e.Shield}
-* {e.Retaliate}
-* {e.Range}
-* {e.Target}
-* {e.Damage}
-* {e.Jump}
-* {e.Fly}
-* {e.Teleport}
-* {e.Generate Fire}
-* {e.Generate Ice}
-* {e.Generate Air}
-* {e.Generate Earth}
-* {e.Generate Light}
-* {e.Generate Dark}
-* {e.Generate Any}
-* {e.Consume Fire}
-* {e.Consume Ice}
-* {e.Consume Air}
-* {e.Consume Earth}
-* {e.Consume Light}
-* {e.Consume Dark}
-* {e.Consume Any}</p>
+You can use the following text for icons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>{e.Attack}</p>
+</li>
+<li>
+<p>{e.Move}</p>
+</li>
+<li>
+<p>{e.Heal}</p>
+</li>
+<li>
+<p>{e.Loot}</p>
+</li>
+<li>
+<p>{e.Shield}</p>
+</li>
+<li>
+<p>{e.Retaliate}</p>
+</li>
+<li>
+<p>{e.Range}</p>
+</li>
+<li>
+<p>{e.Target}</p>
+</li>
+<li>
+<p>{e.Damage}</p>
+</li>
+<li>
+<p>{e.Jump}</p>
+</li>
+<li>
+<p>{e.Fly}</p>
+</li>
+<li>
+<p>{e.Teleport}</p>
+</li>
+<li>
+<p>{e.Generate Fire}</p>
+</li>
+<li>
+<p>{e.Generate Ice}</p>
+</li>
+<li>
+<p>{e.Generate Air}</p>
+</li>
+<li>
+<p>{e.Generate Earth}</p>
+</li>
+<li>
+<p>{e.Generate Light}</p>
+</li>
+<li>
+<p>{e.Generate Dark}</p>
+</li>
+<li>
+<p>{e.Generate Any}</p>
+</li>
+<li>
+<p>{e.Consume Fire}</p>
+</li>
+<li>
+<p>{e.Consume Ice}</p>
+</li>
+<li>
+<p>{e.Consume Air}</p>
+</li>
+<li>
+<p>{e.Consume Earth}</p>
+</li>
+<li>
+<p>{e.Consume Light}</p>
+</li>
+<li>
+<p>{e.Consume Dark}</p>
+</li>
+<li>
+<p>{e.Consume Any}</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>You can also include an icon for any custom registered effect or condition using {e.<strong>} or {c.</strong>} respectively.</p>
@@ -747,12 +803,26 @@ ConditionApi.registerCondition("Disarm", {
 </div>
 </div>
 <div class="paragraph">
-<p>You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern.
-* <code>s</code> will create a grey "self" hex
-* <code>t</code> will create a red "enemy" hex
-* <code>a</code> will create a blue "ally" hex
-* <code>e</code> will create a blank space with no hex
-* <code>_</code> will create a line break, every other line will be automatically intented by half a hex</p>
+<p>You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>s</code> will create a grey "self" hex</p>
+</li>
+<li>
+<p><code>t</code> will create a red "enemy" hex</p>
+</li>
+<li>
+<p><code>a</code> will create a blue "ally" hex</p>
+</li>
+<li>
+<p><code>e</code> will create a blank space with no hex</p>
+</li>
+<li>
+<p><code>_</code> will create a line break, every other line will be automatically intented by half a hex</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example of Wind Demon&#8217;s two area ability:</p>
