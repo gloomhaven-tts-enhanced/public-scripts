@@ -511,7 +511,7 @@ move = {
 ----
 ====
 
-=== Atack
+=== Attack
 
 The `attack` attribute functions similar.
 It can take a simple value or a table with the attributes `value` and `area.`
