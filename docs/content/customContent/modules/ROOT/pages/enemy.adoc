@@ -392,32 +392,32 @@ Each line will add an entry to the initiative tracker.
 
 To use icons in the initiative tracker, you must change your player color to black and update the GM Note instead of the Description field.
 You can use the following text for icons:
--{e.Attack}
--{e.Move}
--{e.Heal}
--{e.Loot}
--{e.Shield}
--{e.Retaliate}
--{e.Range}
--{e.Target}
--{e.Damage}
--{e.Jump}
--{e.Fly}
--{e.Teleport}
--{e.Generate Fire}
--{e.Generate Ice}
--{e.Generate Air}
--{e.Generate Earth}
--{e.Generate Light}
--{e.Generate Dark}
--{e.Generate Any}
--{e.Consume Fire}
--{e.Consume Ice}
--{e.Consume Air}
--{e.Consume Earth}
--{e.Consume Light}
--{e.Consume Dark}
--{e.Consume Any}
+- {e.Attack}
+- {e.Move}
+- {e.Heal}
+- {e.Loot}
+- {e.Shield}
+- {e.Retaliate}
+- {e.Range}
+- {e.Target}
+- {e.Damage}
+- {e.Jump}
+- {e.Fly}
+- {e.Teleport}
+- {e.Generate Fire}
+- {e.Generate Ice}
+- {e.Generate Air}
+- {e.Generate Earth}
+- {e.Generate Light}
+- {e.Generate Dark}
+- {e.Generate Any}
+- {e.Consume Fire}
+- {e.Consume Ice}
+- {e.Consume Air}
+- {e.Consume Earth}
+- {e.Consume Light}
+- {e.Consume Dark}
+- {e.Consume Any}
 
 You can also include an icon for any custom registered effect or condition using {e.*} or {c.*} respectively.
 
@@ -437,11 +437,11 @@ ConditionApi.registerCondition("Disarm", {
 ====
 
 You can include an AoE "Area" which will display an AoE pattern in the initiative tracker. This can be designated using {area.*} with specific syntax to create the intended pattern.
--`s` will create a grey "self" hex
--`t` will create a red "enemy" hex
--`a` will create a blue "ally" hex
--`e` will create a blank space with no hex
--`_` will create a line break, every other line will be automatically intented by half a hex
+- `s` will create a grey "self" hex
+- `t` will create a red "enemy" hex
+- `a` will create a blue "ally" hex
+- `e` will create a blank space with no hex
+- `_` will create a line break, every other line will be automatically intented by half a hex
 
 Example of Wind Demon's two area ability:
 ====
