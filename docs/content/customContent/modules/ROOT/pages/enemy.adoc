@@ -457,7 +457,7 @@ You can include an AoE "Area" which will display an AoE pattern in the initiativ
 {area.ett_stt_ett}
 ----
 ====
-
+image::https://raw.githubusercontent.com/any2cards/gloomhaven/master/images/monster-ability-cards/gloomhaven/wind-demon/gh-ma-wd-5.png[]
 
 [#_stats]
 == Stats
