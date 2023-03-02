@@ -22,18 +22,19 @@ So in order for the addition to work, the multiplication formula will be resolve
 Looking at the <<Example_Formula>> the usage should get clearer. :-)
 
 == Available Operators
-[cols="1,2,3"]
+[cols="1,1,2"]
 |===
 | Operator | Arguments | Description
 
-| +         | List<Formula> | Adds the resolved formula values.
-| -         | List<Formula> | Subtracts the resolved formula values (left to right).
-| *         | List<Formula> | Multiplies the resolved formula values.
-| /         | List<Formula> | Divides the resolved formula values (left to right).
-| roundUp   | Formula | Rounds the resolved formula value up.
-| roundDown | Formula | Rounds the resolved formula value down.
-| apply     | 2 or 3 | Calls a function and returns the function's value. The name of the function is the first argument. If the second argument is a String, this is the GUID of the object that contains the function. Then the third argument is the table of parameters passed to the function. Otherwise, the second argument is the table of parameters passed to the function and the function has to be on the object that defines the formula. Variables within the parameters will also be resolved.
-| if        | A List with 3 Formula | Checks if the first argument value is `true`. If this is the case, it will return the second argument's value, otherwise it will return the third argument's value.
+| `+` | List<Formula> | Adds the resolved formula values.
+| `-` | List<Formula> | Subtracts the resolved formula values (left to right).
+| `*` | List<Formula> | Multiplies the resolved formula values.
+| `/` | List<Formula> | Divides the resolved formula values (left to right).
+| `roundUp` | Formula | Rounds the resolved formula value up.
+| `roundDown` | Formula | Rounds the resolved formula value down.
+| `apply` | 2 or 3 | Calls a function and returns the function's value. The name of the function is the first argument. If the second argument is a String, this is the GUID of the object that contains the function. Then the third argument is the table of parameters passed to the function. Otherwise, the second argument is the table of parameters passed to the function and the function has to be on the object that defines the formula. Variables within the parameters will also be resolved.
+| `if` | A List with 3 Formula | Checks if the first argument value is `true`. If this is the case, it will return the second argument's value, otherwise it will return the third argument's value.
+| `byScenarioLevel` | List<Formula> | Return the formula
 |===
 
 == Available Variables
@@ -85,6 +86,15 @@ With division rounding is also relevant.
 [source,lua]
 ----
 hp = { "roundUp", { "/", {"*", "H", "C"}, 2 } } -- (H * C) / 2, rounded up
+----
+
+To mimic monster stats it's possible to use the `byScenarioLevel` operator.
+It  returns the value from the argument afterwards, that matches the current scenario level.
+E.g. the following formula would return 1 for scenario level 0 and 1, 2 for scenario level 2 and so forth:
+
+[source,lua]
+----
+hp = { "byScenarioLevel", 1, 1, 2, 2, 3, 4, 5, 6 }
 ----
 
 Functions can be called, too.
