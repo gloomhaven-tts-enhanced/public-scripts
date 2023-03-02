@@ -219,9 +219,9 @@ So in order for the addition to work, the multiplication formula will be resolve
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 33.3333%;">
-<col style="width: 50.0001%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
@@ -232,44 +232,49 @@ So in order for the addition to work, the multiplication formula will be resolve
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Formula&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Adds the resolved formula values.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Formula&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subtracts the resolved formula values (left to right).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Formula&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplies the resolved formula values.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Formula&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Divides the resolved formula values (left to right).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">roundUp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundUp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Formula</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the resolved formula value up.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">roundDown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundDown</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Formula</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the resolved formula value down.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apply</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apply</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2 or 3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Calls a function and returns the function&#8217;s value. The name of the function is the first argument. If the second argument is a String, this is the GUID of the object that contains the function. Then the third argument is the table of parameters passed to the function. Otherwise, the second argument is the table of parameters passed to the function and the function has to be on the object that defines the formula. Variables within the parameters will also be resolved.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">if</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>if</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A List with 3 Formula</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Checks if the first argument value is <code>true</code>. If this is the case, it will return the second argument&#8217;s value, otherwise it will return the third argument&#8217;s value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>byScenarioLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List&lt;Formula&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return the formula</p></td>
 </tr>
 </tbody>
 </table>
@@ -365,6 +370,16 @@ hp = { "/", "H", 2} -- H / 2</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">hp = { "roundUp", { "/", {"*", "H", "C"}, 2 } } -- (H * C) / 2, rounded up</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To mimic monster stats it&#8217;s possible to use the <code>byScenarioLevel</code> operator.
+It  returns the value from the argument afterwards, that matches the current scenario level.
+E.g. the following formula would return 1 for scenario level 0 and 1, 2 for scenario level 2 and so forth:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">hp = { "byScenarioLevel", 1, 1, 2, 2, 3, 4, 5, 6 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
