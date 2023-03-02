@@ -254,6 +254,33 @@ action = {
 ----
 ====
 
+=== Tags
+
+You may need to add `tags` to an overlay or standee when it's spawned so that you can build actions to interact with it. A common use is to remove the object as part of an action.
+====
+.Adding tags to an object
+[source,lua]
+----
+overlayTiles = {
+  {
+    bag = R.ElementType.Obstacle,
+    type = {
+      {
+        name = "Nest",
+        tiles = {
+          {
+            position = { x = 3.94, y = 1.86, z = 6.82, },
+            rotation = { x = 0, y = 0, z = 0, },
+            tags = {"Scenario X Nest 1"},
+          },
+        },
+      },
+    },
+  },
+},
+----
+====
+
 === Randomly placed objects
 
 Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card.
