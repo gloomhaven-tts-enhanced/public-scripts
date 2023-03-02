@@ -24,6 +24,7 @@ The following table lists the supported object types, as well as the required ta
 | Obstacle Overlay | `Obstacle` | The overlay is added to the obstacle bag on the table as well as the internal one required for scenario setup.
 | Trap Overlay | `Trap` | The overlay is added to the trap bag on the table as well as the internal one required for scenario setup.
 | Treasure Chest Overlay | `Treasure Chest` | The overlay is added to the treasure chest bag on the table as well as the internal one required for scenario setup.
+| Loot Token | `Loot` | The overlay is added to the internal bag required for scenario setup
 | Map Tiles | `Map` | The overlay is added to the map tile bag on the table as well as the internal one required for scenario setup.
 | Unlockable Treasure Cards | `Treasure` | The overlay is added to the internal bag required for scenario setup. It can be unlocked using the xref:common/action.adoc#Action_Treasure[Treasure-Action] within a scenario.
 | Scenario Books | `Book` | The book is added to the book stand next to the game box.
