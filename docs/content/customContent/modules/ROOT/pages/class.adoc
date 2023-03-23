@@ -106,6 +106,58 @@ This is optional and defaults to black.
 The `FrameOffset` is the position where the HP bar will appear relative to the figure.
 The correct value can be found by experimenting a bit and see what looks good.
 
+===== Stances/Resources
+
+.Figures/CharacterMini.ttslua
+[source,lua]
+----
+info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+    stances = {
+      {
+        label = "First Stance",
+        color = "Red",
+        textColor = "Black",
+      },
+      {
+        label = "Second Stance",
+        color = "Blue",
+        textColor = "Black",
+      },
+      {
+        label = "Third Stance",
+        color = "Green",
+        textColor = "Black",
+      }
+    },
+    startingStance = 2,
+    resources = {
+      {
+        name = "Resource 1",
+        starting = 0,
+        max = 5,
+        color = "Red",
+        textColor = "Black"
+      },
+      {
+        name = "Resource 2",
+        starting = 3,
+        max = 5,
+        color = "Blue",
+        textColor = "Black"
+      },
+      -- up to 3 resources are supported
+    }
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")
+----
+====
+
 ==== Xml Ui
 
 Add this script to figure's UI script.

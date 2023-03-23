@@ -21,7 +21,14 @@ However, as stated above, this means those keys have to reassigned for each play
 While hovering over a figure or token with a health bar (e.g. including obstacles or doors in some scenarios), this action will add/remove one health from it.
 
 == Show Context Menu
-While hovering over a figure (enemy, character, summon) this action will show the xref:contextMenu.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
+While hovering over a figure (enemy, character, summon) this action will show the xref:contextMenu
+.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
+
+== Next Stance/Previous Stance
+While hovering over a character figure that has a stance bar, this will move the active stance to the left or right.
+
+== Add/Remove Resource 1/2/3
+While hovering over a character figure that has a resource bar, this will add or remove a resource from the specific resource bar.
 
 == Loot
 While hovering over a coin or treasure chest token, this action will move it the player mat of the player who used that action.
@@ -35,6 +42,7 @@ However, this action will also be performed, if the enemy's health is above 0.
 == Draw Monster Attack Modifier
 This action will draw a new Attack Modifier card from the enemy deck.
 
+[#_play_1st2nd_card]
 == Play 1st/2nd Card
 While hovering over a card in a player's hand, this action will place this card in the 1st/2nd ability card slot on the Play Area.
 If there's already a card present, it will be moved to the player's hand again.

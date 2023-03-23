@@ -9,7 +9,9 @@ These can be changed at any time however, so if a particular option doesn't suit
 
 Feel free to send feedback or ideas for other options you'd like to see included.
 
-== Scenario Page
+== Setup
+
+=== Scenario Page
 This determines how the scenario book is treated, when a new scenario is loaded.
 It can be one of following options:
 
@@ -20,12 +22,12 @@ Change:: If the scenario book is already present somewhere on the table, it's pa
 If the scenario book is not on the table, nothing happens.
 None:: Nothing happens to the scenario book, and you have to manually select the correct pages.
 
-== Hidden Setup
+=== Hidden Setup
 Specifies whether hidden room setup should be used, when setting up a scenario by clicking the sticker on the map.
 Using the setup from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
 
 [#_use_3d_models]
-== Use 3D Models
+=== Use 3D Models
 Specifies for which overlay tokens 3D models should be used.
 These options are available:
 
@@ -36,27 +38,42 @@ Other:: Specifies the behavior for all other types of overlays.
 Use particle effects:: When this is unchecked, particle effects (animations) are removed from all 3D models.
 
 [#_preload_enemies]
-== Preload Monsters
+=== Preload Monsters
 When this options is set, all enemies will be prepared when starting a new scenario.
 This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room setup.
 If this option is not set, enemies will only prepared once a room is opened where they are present.
 
-== Deal Battle Goals
+== Scenario
+
+=== Deal Battle Goals
 Defined how many Battle Goals will be dealt at the start of a scenario.
 Can be set to 0 so that they have to be drawn manually.
 
-== Hide Ability Cards
+=== Hide Ability Cards
 When this option is et, ability cards placed with the xref:ROOT:hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
-Otherwise they are placed face-up.
+Otherwise, they are placed face-up.
 
-== Solo/Open Information
+== Rules
+
+=== Summons Drop Loot
+
+Determines if summoned monsters should drop loot (e.g. coins) or not.
+
+Always:: Summoned monsters will always drop loot, e.g. also for Gloomhaven scenarios.
+Never:: Summoned monsters will never drop any loot.
+Campaign Based:: Summoned monsters will drop loot based on the rules of the scenario for the current campaign.
+As of now, this is the same as "Never" as the default rules are the Gloomhaven ones, but this will be adjustable in the future.
+
+== Variants
+
+=== Solo/Open Information
 This options can be used to specify playing a solo game or a coop game with open information.
 This will _reduce_ the gold conversion and bonus experience by one level at the end of a scenario while keeping the monster level and trap damage intact.
 So with solo play it's intended to add the +1 for the scenario level and use this option to reduce gold conversion and bonus experience down again.
 This is also shown own the scenario level chart below the Party Sheet.
 
 [#enhancement_system]
-== Enhancement
+=== Enhancement
 Defines the enhancement system to use.
 This influences the prices on the xref:tool:enhancementCalculator.adoc[].
 
@@ -66,10 +83,12 @@ Non-permant:: This is the version from Gloomhaven Digital.
 Most prices for enhancements are reduced, but enhancements only apply to a single character instead of the whole class
 
 
-== Background Image
+== Appearance
+
+=== Background Image
 This specified the image that is shown on the table surface.
 
-== Themes
+=== Themes
 Can be used to change the appearance of some game components.
 
 Frosthaven::

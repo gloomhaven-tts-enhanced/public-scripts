@@ -2,6 +2,19 @@
   release: ""
   breaking:
     - The API getClassTracker() returns a different value now
+- version: 1.3.7
+  release: 2023-03-23
+  breaking:
+    - Monsters can not be drawn from their monsters bags directly anymore.
+      They need to be spawned using the "Normal" or "Elite" buttons.
+  feature:
+    - Adds a new option to set if summoned monsters should drop loot or not.
+    - Adds hotkeys to change the resource and stance bars for character figures.
+    - Adds support for scenario aid tokens for monster figures and custom figures.
+    - Adds support to adjust the starting stance for a character.
+  fix:
+    - Fixes monster spawning after reaching the maximum monster limit.
+    - Fixes Music Note solo scenario missing scenario special rules.
 - version: 1.3.6
   release: 2023-03-02
   breaking:
