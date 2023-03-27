@@ -224,6 +224,60 @@ However, as stated above, this means those keys have to reassigned for each play
 </div>
 </div>
 <div class="sect1">
+<h2 id="delete-action"><a class="anchor" href="#delete-action"></a>Delete action</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, deleting objects in the mod is not possible.
+When the delete key or the delete menu option is used for an object, it will not be removed.
+Some object types have special delete behavior defined for them instead (see table below).
+When your try to delete an object of this type it performs the action instead.
+E.g. a character figure is exhausted instead of deleted.</p>
+</div>
+<div class="paragraph">
+<p>This allows for an easy to use and consistent hotkey behavior and prevents accidentally deleting objects.
+If you actually want to delete an object and bypass this handling, you need to assign the "Modifier Key" Game Key and hold it, while deleting the object.
+E.g. you could assign the left and/or right shift key to the "Modifier Key" Game Key and then hold it, while also pressing the delete key (or using the delete menu option).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object</th>
+<th class="tableblock halign-left valign-top">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coins, Treasure Chests and objects with the <code>Loot</code> tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will move to the player mat of the player who used that action.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The character will exhaust by setting its HP to zero and moving the figure to the player mat of the player who used that action.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monsters, Summons and overlays with a health bar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be removed.
+If it was a monster or summon (and the <a href="interface/options.html#summons_drop_loot" class="xref page">current rules</a> drop loot for 't drop loot for summons), it will also drop a coin.
+This is the same behavior as reducing the objects' health to 0 and then pressing the <b class="button">Defeat</b> button in the center of it&#8217;s health bar.
+However, this action will also be performed, if the objects' health is above 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Battle Goals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The battle goal will be returned to the battle goals deck.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Traps and objects with the <code>Removable</code> tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be deleted and a message will be printed in the chat.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_addremove_health"><a class="anchor" href="#_addremove_health"></a>Add/Remove Health</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -253,25 +307,6 @@ However, as stated above, this means those keys have to reassigned for each play
 <div class="sectionbody">
 <div class="paragraph">
 <p>While hovering over a character figure that has a resource bar, this will add or remove a resource from the specific resource bar.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_loot"><a class="anchor" href="#_loot"></a>Loot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>While hovering over a coin or treasure chest token, this action will move it the player mat of the player who used that action.
-This also means it currently doesn&#8217;t work while using the Black player for solo play.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_defeat_monster"><a class="anchor" href="#_defeat_monster"></a>Defeat Monster</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>While hovering over an enemy or summon figure, this action will remove the figure and spawn a coin token in its place (unless it was a summon).
-This is the same behavior as reducing the enemy&#8217;s health to 0 and then pressing the "Defeat" button in the center of it&#8217;s health bar.
-However, this action will also be performed, if the enemy&#8217;s health is above 0.</p>
 </div>
 </div>
 </div>
