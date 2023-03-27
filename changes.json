@@ -7,6 +7,22 @@
     ]
   },
   {
+    "version": "1.3.8",
+    "release": "2023-03-07",
+    "breaking": [
+      "The explicit \"Loot\" and \"Defeat Monster\" Game Keys have been removed. You can use the delete key instead.",
+      "It's no longer possible to delete any object with the delete key on its own. Instead this key now has special handling for different object types (see below). To delete objects normally, use the new \"Modifier Key\" Game Key in combination with the delete key.",
+      "The wound icon and the icons used in the ability preview now use icons from Frosthaven by default. If you want to use the ones from Gloomhaven instead, select the \"Classic\" theme from the \"Themes\" option. This does not yet apply to the icons for attack, movement and range shown above monsters."
+    ],
+    "feature": [
+      "The delete key can now be used for general purpose actions, e.g. to loot tokens, defeat monsters or exhaust characters. Check the docs (https://gloomhaven-tts-enhanced.github.io/public-scripts/mod/1.3/hotkeys.html#delete-action) for more info.",
+      "The Campaign Manager also looks inside the \"Retired Characters\" and \"Inactive Characters\" boxes when creating a save file. Importing them will handle them like any other inactive character and not place them back into those bags."
+    ],
+    "fix": [
+      "Using Open Information now increases monster level and trap damage instead of reducing gold and XP reward."
+    ]
+  },
+  {
     "version": "1.3.7",
     "release": "2023-03-23",
     "breaking": [
