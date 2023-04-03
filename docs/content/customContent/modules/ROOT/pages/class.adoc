@@ -109,6 +109,7 @@ The correct value can be found by experimenting a bit and see what looks good.
 ===== Stances/Resources
 
 .Figures/CharacterMini.ttslua
+====
 [source,lua]
 ----
 info = {
