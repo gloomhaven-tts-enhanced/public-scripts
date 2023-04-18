@@ -14,4 +14,4 @@
 ** xref:common/action.adoc[Actions]
 ** xref:common/spawnable.adoc[Spawnable Element]
 * Migration
-** xref:migration/1.2.adoc[1.2]
+** xref:migration/1.3.adoc[1.3]
