@@ -283,7 +283,49 @@ overlayTiles = {
 
 === Randomly placed objects
 
-Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card.
+Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card. To handle this, you need to define a `randomPools`, and `randomObjects` within a room.
+
+Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the `values` attributes you can define the list of tokens you want to use.
+
+====
+.Adding a pool of random tokens
+[source,lua]
+----
+randomPools = {
+  {
+    name = "Some name",
+    type = ScenarioApi.RandomType.Tokens,
+    values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+  }
+},
+----
+====
+
+Then inside a room, you can add the new `randomObjects` property and add a list of things that can randomly be placed there. Use the property `pool` to reference the pool of random objects from above and the `position` where the object shall be placed.
+
+====
+.Define the locations where the random objects may be spawned
+[source,lua]
+----
+rooms = {
+  [1] = {
+    randomObjects = {
+      {
+        -- one possible position for a token from Pool "Some name"
+        pool = "Some name",
+        position = { ... },
+      },
+      {
+        -- another possible position for a token from Pool "Some name"
+        pool = "Some name",
+        position = { ... },
+      },
+      -- and so on
+    }
+  }
+},
+----
+====
 
 [#_extra_content]
 === Extra content
