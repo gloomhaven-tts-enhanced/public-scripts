@@ -847,7 +847,55 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="sect2">
 <h3 id="_randomly_placed_objects"><a class="anchor" href="#_randomly_placed_objects"></a>Randomly placed objects</h3>
 <div class="paragraph">
-<p>Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card.</p>
+<p>Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card. To handle this, you need to define a <code>randomPools</code>, and <code>randomObjects</code> within a room.</p>
+</div>
+<div class="paragraph">
+<p>Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the <code>values</code> attributes you can define the list of tokens you want to use.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Adding a pool of random tokens</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">randomPools = {
+  {
+    name = "Some name",
+    type = ScenarioApi.RandomType.Tokens,
+    values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+  }
+},</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Then inside a room, you can add the new <code>randomObjects</code> property and add a list of things that can randomly be placed there. Use the property <code>pool</code> to reference the pool of random objects from above and the <code>position</code> where the object shall be placed.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Define the locations where the random objects may be spawned</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">rooms = {
+  [1] = {
+    randomObjects = {
+      {
+        -- one possible position for a token from Pool "Some name"
+        pool = "Some name",
+        position = { ... },
+      },
+      {
+        -- another possible position for a token from Pool "Some name"
+        pool = "Some name",
+        position = { ... },
+      },
+      -- and so on
+    }
+  }
+},</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
