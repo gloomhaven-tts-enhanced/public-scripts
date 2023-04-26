@@ -2,6 +2,13 @@
   release: ""
   breaking:
     - The API getClassTracker() returns a different value now
+- version: 1.3.10
+  release:
+  feature:
+    - Custom figures can now have stance bars and resource bars
+    - The extra text for summons and monsters now uses the Gloomhaven icon font
+  fix:
+    - Summoned monsters are saved correctly with their summon marker
 - version: 1.3.9
   release: 2023-04-05
   breaking:
