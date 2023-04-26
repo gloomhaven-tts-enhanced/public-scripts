@@ -5,7 +5,7 @@ local scenario = {
   randomPools = {
     {
       name = "Pool 1",
-      type = ScenarioApi.RandomType.Tokens,
+      type = ScenarioApi.RandomType.Objects,
       objects = {
         {
           -- a trap element
@@ -16,6 +16,11 @@ local scenario = {
             damage = "Auto",
             conditions = { "Stun" }
           },
+          placement = {
+            rotation = { 0, 180, 0 },
+          }
+        },
+        {
           element = {
             type = R.ElementType.Enemy,
             name = "Forest Imp",
@@ -26,10 +31,14 @@ local scenario = {
               [4] = { difficulty = "elite" },
             }
           },
+        },
+        {
           element = {
             type = R.ElementType.Treasure,
             name = "Treasure Chest Vertical",
           },
+        },
+        {
           element = {
             type = R.ElementType.Coin,
             name = "Coin 1",
