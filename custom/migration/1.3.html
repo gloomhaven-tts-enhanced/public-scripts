@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>1.3 &#8594; 1.4 :: Gloomhaven Enhanced</title>
+    <title>1.2 &#8594; 1.3 :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -106,8 +106,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Migration</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="1.2.html">1.2</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="1.3.html">1.3</a>
   </li>
 </ul>
   </li>
@@ -170,7 +170,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Custom Content</a></li>
-    <li><a href="1.3.html">1.3 &#8594; 1.4</a></li>
+    <li>Migration</li>
+    <li><a href="1.3.html">1.3</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/migration/1.3.adoc">Edit this Page</a></div>
@@ -180,13 +181,76 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">1.3 &#8594; 1.4</h1>
-<div class="literalblock">
-<div class="content">
-<pre>Those will be ignored from the box.
-The tracker token will be generated from the tracker image in the class definition.
-The summon tokens and player mat will be generated from default components in the mod.
-The image for the player mat can be changed by defining one or multiple portraits for the class (see below).</pre>
+<h1 class="page">1.2 &#8594; 1.3</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Add the information for the tracker image directly to the <a href="#ClassInfo">class' data</a>.</p>
+</li>
+<li>
+<p>Change the registration of the class data to use the <a href="#registerClass">[registerClass]</a> function.</p>
+</li>
+<li>
+<p>Update the script on the <a href="#Figure_Class">class figure</a></p>
+</li>
+<li>
+<p>If your class' abilities can spawn additional elements (like obstacles or traps), you can add them to the <a href="#Example_Class_Spawn">class data</a>, so the context menu knows about them.</p>
+</li>
+<li>
+<p>You can now add <a href="#Summons">custom summons</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conditions"><a class="anchor" href="#_conditions"></a>Conditions</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Change the registration of custom conditions to use the <a href="#registerCondition">[registerCondition]</a> function.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scenarios"><a class="anchor" href="#_scenarios"></a>Scenarios</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You can now add <a href="#_scenarios">custom scenarios</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enemies"><a class="anchor" href="#_enemies"></a>Enemies</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You can now add <a href="#_enemies">custom enemies</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overlays"><a class="anchor" href="#_overlays"></a>Overlays</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>You can add <a href="#_overlays">custom overlays</a>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </article>
