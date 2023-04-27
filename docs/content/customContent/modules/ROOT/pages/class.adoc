@@ -302,7 +302,7 @@ To easily get the position in the local coordinate system you can place the obje
 [source,lua]
 ----
 --Replace "targetObjectGUID" with the GUID where you want to place your object (e.g. the Player Mat) and "objectGUID" with the GUID of the extra object
-/execute print(logString(getObjectFromGUID("targetObjectGUID").positionToLocal(getObjectFromGUID("objectGUID").getPosition()))
+/execute print(logString(getObjectFromGUID("targetObjectGUID").positionToLocal(getObjectFromGUID("objectGUID").getPosition())))
 ----
 ====
 
