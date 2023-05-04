@@ -7,7 +7,20 @@
     ]
   },
   {
+    "version": "1.3.10",
+    "release": "2023-05-04",
+    "feature": [
+      "Custom figures can now have stance bars and resource bars",
+      "The extra text for summons and monsters now uses the Gloomhaven icon font",
+      "Adds a new extension point that triggers before a character box is unpacked. This can be used to alter the character box content before unpacking it begins."
+    ],
+    "fix": [
+      "Summoned monsters are saved correctly with their summon marker"
+    ]
+  },
+  {
     "version": "1.3.9",
+    "release": "2023-04-05",
     "breaking": [
       "The default font for Global UI was changed to Germania One. You can change back to Pirata One in the Options menu, if you prefer that. It doesn't effect other parts yet (like tokens or the scenario chart)."
     ],
