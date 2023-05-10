@@ -2,15 +2,24 @@
   release: ""
   breaking:
     - The API getClassTracker() returns a different value now
+- version: 1.3.11
+  release: 2023-05-10
+  feature:
+    - The menu containing the different interfaces is now draggable and shows only for the players that activated the menu.
+  fix:
+    - Summoned monsters spawned from the Context Menu keep their summon marker again.
+    - Extra text for summons and monsters is now bigger and correctly shows colored icons.
+    - Items migrated with the Campaign Manager are loaded using their full name instead of a partial match.
+      E.g. saving the item "Item" won't unlock the item "Refined Item" anymore.
 - version: 1.3.10
   release: 2023-05-04
   feature:
-    - Custom figures can now have stance bars and resource bars
-    - The extra text for summons and monsters now uses the Gloomhaven icon font
+    - Custom figures can now have stance bars and resource bars.
+    - The extra text for summons and monsters now uses the Gloomhaven icon font.
     - Adds a new extension point that triggers before a character box is unpacked.
       This can be used to alter the character box content before unpacking it begins.
   fix:
-    - Summoned monsters are saved correctly with their summon marker
+    - Summoned monsters are saved correctly with their summon marker.
 - version: 1.3.9
   release: 2023-04-05
   breaking:
