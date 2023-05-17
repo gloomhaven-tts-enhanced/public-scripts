@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Germania One";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Germania One"),
+    url("../font/germania-one-latin-400-normal.woff2") format("woff2"),
+    url("../font/germania-one-latin-400-normal.woff") format("woff");
+}
