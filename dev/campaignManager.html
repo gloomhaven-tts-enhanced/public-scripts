@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Command Line :: Gloomhaven Enhanced</title>
+    <title>Campaign Manager :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
@@ -54,13 +54,13 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="build.html">Working on GHE</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="campaignManager.html">Campaign Manager</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="documentation.html">Documentation</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="commandLine.html">Command Line</a>
   </li>
 </ul>
@@ -109,106 +109,108 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Development</a></li>
-    <li><a href="commandLine.html">Command Line</a></li>
+    <li><a href="campaignManager.html">Campaign Manager</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/commandLine.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/campaignManager.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Command Line</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>The mod integrates a very basic command line feature, to simplify some steps during development.
-It can be used by typing a command into the chat window.
-Commands always start with an <code>&gt;</code>.
-The text after the space is the argument that is passed to the command (if the command uses it).</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Example command named <code>log-level</code>.
-The argument passed to the command will be <code>debug</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>&gt;log-level debug</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Every print is also send to the Atom plugin and the console in Atom (can be opened with <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span>).
-From there it can be copied.</p>
-</div>
-</div>
-</div>
+<h1 class="page">Campaign Manager</h1>
 <div class="sect1">
-<h2 id="_setting_the_logging_level"><a class="anchor" href="#_setting_the_logging_level"></a>Setting the Logging Level</h2>
+<h2 id="_frosthaven"><a class="anchor" href="#_frosthaven"></a>Frosthaven</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Sets the level of all loggers.
-All log messages with a higher or equal level will be print to the game chat.
-The default level is <code>INFO</code>.</p>
-</div>
-<div class="paragraph">
-<p>Available level are (in descending order): <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>, <code>DEBUG</code> and <code>VERBOSE</code>.
-The values are case-insensitive.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre>&gt;log-level debug</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_get_position"><a class="anchor" href="#_get_position"></a>Get Position</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Prints the position and rotation of the object the is currently hovered by the player entering the command.
-This might be useful to determine where a certain object is placed, e.g. if that is manually entered into a scenario definition.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre>&gt;show-pos</pre>
+<div class="sect2">
+<h3 id="_done"><a class="anchor" href="#_done"></a>Done</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Scenario Flowchart</p>
+</li>
+<li>
+<p>Alchemy Chart</p>
+</li>
+<li>
+<p>Campaign Sheet</p>
+</li>
+<li>
+<p>Characters</p>
+</li>
+<li>
+<p>Class enhancements</p>
+</li>
+<li>
+<p>Unlocked classes</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Output</div>
-<div class="content">
-<pre>position = { -12.25, 1.65, -13.3 },
-rotation = { 0, 0, 0 },</pre>
+<div class="sect2">
+<h3 id="_todo"><a class="anchor" href="#_todo"></a>ToDo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Campaign Sheet campaign stickers</p>
+</li>
+<li>
+<p>Retired characters</p>
+</li>
+<li>
+<p>Map (loading stickers)</p>
+</li>
+<li>
+<p>Buildings</p>
+</li>
+<li>
+<p>Events</p>
+</li>
+<li>
+<p>Items</p>
+</li>
+<li>
+<p>Character resources</p>
+</li>
+<li>
+<p>Trial cards</p>
+</li>
+<li>
+<p>Challenges</p>
+</li>
+<li>
+<p>Pets</p>
+</li>
+<li>
+<p>Loot deck (with enhancements)</p>
+</li>
+<li>
+<p>Anything special about certain events</p>
+</li>
+<li>
+<p>Special things about buildings</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Boat name</p>
+</li>
+<li>
+<p>Garden</p>
+</li>
+</ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_spawn_scenario"><a class="anchor" href="#_spawn_scenario"></a>Spawn scenario</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Spawns a scenario with the given ID.
-Also deletes all objects in the scenario area.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre>&gt;spawn-scenario 10</pre>
-</div>
-</div>
+</li>
+<li>
+<p>Looted scenario treasures/random treasures</p>
+</li>
+<li>
+<p>Rule stickers</p>
+</li>
+<li>
+<p>Townguard am deck</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
