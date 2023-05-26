@@ -3,3 +3,5 @@
 This documentation describes how to develop the GHE mod.
 
 Checkout xref:build.adoc[Working on GHE] to find out how to build and release the GHE workshop mods.
+
+It also may contain heavy spoilers for all things about Gloomhaven, Frosthaven or any other related content.

@@ -1,0 +1,33 @@
+= Campaign Manager
+
+== Frosthaven
+
+=== Done
+
+* Scenario Flowchart
+* Alchemy Chart
+* Campaign Sheet
+* Characters
+* Class enhancements
+* Unlocked classes
+
+=== ToDo
+
+* Campaign Sheet campaign stickers
+* Retired characters
+* Map (loading stickers)
+* Buildings
+* Events
+* Items
+* Character resources
+* Trial cards
+* Challenges 
+* Pets
+* Loot deck (with enhancements)
+* Anything special about certain events
+* Special things about buildings
+** Boat name
+** Garden
+* Looted scenario treasures/random treasures
+* Rule stickers
+* Townguard am deck
