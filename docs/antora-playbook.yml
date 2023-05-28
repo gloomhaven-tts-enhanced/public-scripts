@@ -4,15 +4,15 @@ content:
   sources:
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
       start_path: docs/content/customContent
-      branches: 
-        - maintain/1.3
-        - HEAD
+      branches: HEAD
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
       start_path: docs/content/development
       branches: HEAD
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
       start_path: docs/content/mod
-      branches: HEAD
+      branches: 
+        - maintain/1.3
+        - HEAD
 ui:
   bundle:
     url: ./ui/build/ui-bundle.zip
