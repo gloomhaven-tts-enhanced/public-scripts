@@ -4,7 +4,9 @@ content:
   sources:
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
       start_path: docs/content/customContent
-      branches: HEAD
+      branches: 
+        - maintain/1.3
+        - HEAD
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
       start_path: docs/content/development
       branches: HEAD
