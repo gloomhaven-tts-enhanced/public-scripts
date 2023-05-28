@@ -6,4 +6,6 @@ nav:
   - modules/ROOT/nav.adoc
   - modules/interface/nav.adoc
   - modules/setup/nav.adoc
+  - modules/frosthaven/nav.adoc
+  - modules/gloomhaven/nav.adoc
   - modules/tool/nav.adoc
