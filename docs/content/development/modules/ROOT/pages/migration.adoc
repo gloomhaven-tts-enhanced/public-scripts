@@ -1,0 +1,6 @@
+= Migration
+
+Things that need to be done for GH/CS for 2.0
+
+* tags for event decks
+* fixing the CM
