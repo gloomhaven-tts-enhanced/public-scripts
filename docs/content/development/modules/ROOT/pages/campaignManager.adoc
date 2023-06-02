@@ -10,6 +10,7 @@
 * Characters
 * Class enhancements
 * Unlocked classes
+* Events
 
 === ToDo
 
@@ -17,7 +18,6 @@
 * Retired characters
 * Map (loading stickers)
 * Buildings
-* Events
 * Items
 * Character resources
 * Trial cards
@@ -30,4 +30,4 @@
 ** Garden
 * Looted scenario treasures/random treasures
 * Rule stickers
-* Townguard am deck
+* Town guard am deck
