@@ -2,32 +2,41 @@
 
 == Frosthaven
 
-=== Done
+=== Characters
+* [x] Basic data 
+* [ ] Resources
+* [ ] Trial Card
+* [ ] Geminate second name
 
-* Scenario Flowchart
-* Alchemy Chart
-* Campaign Sheet
-* Characters
-* Class enhancements
-* Unlocked classes
-* Events
+=== Buildings
+* [ ] Unlocked buildings with level 
+* [ ] Garden
+* [ ] Boat name
 
-=== ToDo
+=== Events
+* [x] Outpost
+* [x] Road
+* [x] Boat 
 
-* Campaign Sheet campaign stickers
-* Retired characters
-* Map (loading stickers)
-* Buildings
-* Items
-* Character resources
-* Trial cards
-* Challenges 
-* Pets
-* Loot deck (with enhancements)
-* Anything special about certain events
-* Special things about buildings
-** Boat name
-** Garden
-* Looted scenario treasures/random treasures
-* Rule stickers
-* Town guard am deck
+=== Scenarios
+* [x] Scenario flowchart
+* [ ] Unlocked treasures
+* [ ] Unlocked random treasure
+* [x] Map
+
+=== Campaign Sheet
+* [x] Calendar
+* [x] Tracks 
+* [ ] Campaign stickers
+* [ ] Retired characters 
+
+=== Other
+* [x] Alchemy Flowchart
+* [x] Unlocked classes
+* [x] Enhancements
+* [ ] Items
+* [ ] Loot deck
+* [ ] Pets
+* [ ] Challenges 
+* [ ] Rule stickers
+* [ ] Town guard AMD
