@@ -4,9 +4,10 @@
 
 === Characters
 * [x] Basic data 
-* [ ] Resources
+* [x] Resources
+* [x] Masteries
 * [ ] Trial Card
-* [ ] Geminate second name
+* [x] Geminate second name
 
 === Buildings
 * [ ] Unlocked buildings with level 
