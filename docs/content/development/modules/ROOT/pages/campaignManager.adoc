@@ -35,9 +35,10 @@
 * [x] Alchemy Flowchart
 * [x] Unlocked classes
 * [x] Enhancements
-* [ ] Items
-* [ ] Loot deck
+* [x] Items
+* [ ] Loot card enhancements
 * [ ] Pets
 * [ ] Challenges 
 * [ ] Rule stickers
 * [ ] Town guard AMD
+* [ ] Section links on loot cards
