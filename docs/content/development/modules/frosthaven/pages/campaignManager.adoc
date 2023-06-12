@@ -4,7 +4,7 @@
 * [x] Basic data 
 * [x] Resources
 * [x] Masteries
-* [ ] Trial Card
+* [x] Trial Card
 * [x] Geminate second name
 
 == Buildings
@@ -34,6 +34,7 @@
 * [x] Unlocked classes
 * [x] Enhancements
 * [x] Items
+* [ ] Available trials
 * [ ] Loot card enhancements
 * [ ] Pets
 * [ ] Challenges 
