@@ -1,7 +1,35 @@
 = Sources of Truth
 
-== Scenario Flowchart
+List of objects/scripts that are responsible to keep track of information.
 
+== Scenario Flowchart
 * unlocked scenarios
 * completed scenarios
 * unlocked treasures per scenario (including random items)
+
+== Alchemy flowchart
+* unlock herb combinations 
+
+== Campaign Sheet
+* party name
+* morale
+* current week and week notes
+* prosperity 
+* unlocked town guard perks
+* town guard perk checkmarks
+* total defense
+* inspiration
+* soldiers
+
+== Trial deck mat
+* active trial deck
+* completed trials 
+
+== Event Mats
+* active events
+* unlockable events
+* removed events
+
+== Challenge mat
+* actice challenge deck
+* completed challenges 
