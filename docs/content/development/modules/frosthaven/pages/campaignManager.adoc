@@ -1,37 +1,35 @@
 = Campaign Manager
 
-== Frosthaven
-
-=== Characters
+== Characters
 * [x] Basic data 
 * [x] Resources
 * [x] Masteries
 * [ ] Trial Card
 * [x] Geminate second name
 
-=== Buildings
+== Buildings
 * [ ] Unlocked buildings with level 
 * [ ] Garden
 * [ ] Boat name
 
-=== Events
+== Events
 * [x] Outpost
 * [x] Road
 * [x] Boat 
 
-=== Scenarios
+== Scenarios
 * [x] Scenario flowchart
-* [ ] Unlocked treasures
-* [ ] Unlocked random treasure
+* [x] Unlocked treasures
+* [x] Unlocked random treasure
 * [x] Map
 
-=== Campaign Sheet
+== Campaign Sheet
 * [x] Calendar
 * [x] Tracks 
 * [ ] Campaign stickers
 * [ ] Retired characters 
 
-=== Other
+== Other
 * [x] Alchemy Flowchart
 * [x] Unlocked classes
 * [x] Enhancements

@@ -4,3 +4,4 @@ version: ~
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
+  - modules/frosthaven/nav.adoc

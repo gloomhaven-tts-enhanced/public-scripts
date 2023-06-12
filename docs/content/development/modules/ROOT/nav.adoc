@@ -1,5 +1,4 @@
 * xref:index.adoc[Introduction]
 * xref:build.adoc[Working on GHE]
-* xref:campaignManager.adoc[]
 * xref:documentation.adoc[Documentation]
 * xref:commandLine.adoc[Command Line]

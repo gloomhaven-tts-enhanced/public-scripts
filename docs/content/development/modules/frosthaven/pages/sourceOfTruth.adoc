@@ -1,0 +1,7 @@
+= Sources of Truth
+
+== Scenario Flowchart
+
+* unlocked scenarios
+* completed scenarios
+* unlocked treasures per scenario (including random items)
