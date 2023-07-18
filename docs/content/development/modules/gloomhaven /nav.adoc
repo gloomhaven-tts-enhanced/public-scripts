@@ -1,3 +1,0 @@
-* Gloomhaven
-** xref:campaignManager.adoc[]
-** xref:sourceOfTruth.adoc[]
