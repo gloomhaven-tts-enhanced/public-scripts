@@ -1,0 +1,5 @@
+digraph D {
+    Start -> 197.1;
+    Door1 -> 2.1;
+    Complete -> 2.2;
+}
