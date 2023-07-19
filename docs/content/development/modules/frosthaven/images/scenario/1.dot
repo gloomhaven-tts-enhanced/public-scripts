@@ -1,0 +1,7 @@
+digraph D {
+    Door1 -> 5.3;
+    Complete -> 9.1;
+    9.1 -> 9.10;
+    
+    9.10 [shape = record;label = "{Morale = 2+X|Scenario 2|Scenario 3}";];
+}
