@@ -34,10 +34,10 @@
 * [x] Unlocked classes
 * [x] Enhancements
 * [x] Items
-* [ ] Available trials
+* [x] Trials
 * [ ] Loot card enhancements
 * [ ] Pets
-* [ ] Challenges 
+* [x] Challenges
 * [ ] Rule stickers
-* [ ] Town guard AMD
+* [x] Town guard AMD
 * [ ] Section links on loot cards
