@@ -4,4 +4,5 @@ Things that need to be done for GH/CS for 2.0
 
 * tags for event decks
 * fixing the CM
-* simplify extension usage
+* Updated Character Sheets
+* Fix solo open information calculation
