@@ -1,0 +1,32 @@
+= Campaign Manager
+
+== Testing
+
+There's a test suite that runs automatic tests for the campaign manager.
+Given an input file with campaign data, it loads the campaign and then saves it afterward.
+It then compares the created save file with an expected output.
+If both match, the test is OK, otherwise it will show which parts of didn't match.
+
+The test suite can be found in the `test\campaign-manager` directory of the repository.
+
+=== Executing the tests
+
+* Load the latest enginehaven mod.
+* Additively load the game box to test into the mod.
+* Save the game and load it again.
+* Execute the command `pnpm test:<game>` (e.g. `pnpm test:frosthaven`) from the test directory.
+* This will run all the test cases for this game as defined by the respective `test.ts` file.
+
+=== Adding new tests
+* Create a new directory in the `res/test` directory for the specific game with the name of the test (e.g. `res/test/frosthaven/basic`).
+* Create a file `input.json` and a file `expected.json` inside this new directory.
+* Add the campaign data that should be loaded into `input.json` and the expected output after saving into `expected.json`.
+* Add a new test into the `src/test/<game>.test.ts` file like this:
++
+[source,ts]
+----
+test("basic campaign", async () => {
+  await testHandler.runTest("basic");
+});
+----
+The name of the test must match the name of the directory created in the first step.
