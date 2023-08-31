@@ -3,6 +3,9 @@
 * Campaign stickers (the ones for the Campaign Sheet) are currently missing.
 * Enhancements are missing for all but the starter classes.
 * The enhancement calculator is not part of the mod yet (but could be copied from a GHE save).
+* Retired characters can not be entered on the Campaign Sheet.
+* Retired characters do not transfer when using the Campaign Manager.
+* Enhancements on loot cards do not transfer when using the Campaign Manager.
 
 .Envelope A
 [%collapsible]
