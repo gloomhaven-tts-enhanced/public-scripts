@@ -8,7 +8,7 @@
 * [x] Geminate second name
 
 == Buildings
-* [ ] Unlocked buildings with level 
+* [x] Unlocked buildings with level
 * [ ] Garden
 * [ ] Boat name
 
@@ -36,8 +36,9 @@
 * [x] Items
 * [x] Trials
 * [ ] Loot card enhancements
-* [ ] Pets
+* [x] Pets
 * [x] Challenges
-* [ ] Rule stickers
+* [x] Rule stickers
 * [x] Town guard AMD
 * [ ] Section links on loot cards
+* [x] Unlocked envelopes
