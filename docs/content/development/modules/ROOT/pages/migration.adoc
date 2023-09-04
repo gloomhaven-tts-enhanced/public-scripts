@@ -1,8 +1,13 @@
 = Migration
 
-Things that need to be done for GH/CS for 2.0
+== Things that need to be done for GH/CS for 2.0
 
 * tags for event decks
 * fixing the CM
 * Updated Character Sheets
 * Fix solo open information calculation
+
+== Things that need to be done for migrating v3/v4 saves
+* Quests are string only now
+* Notes are not array anymore
+* Notes/quests are not base64 encoded anymore
