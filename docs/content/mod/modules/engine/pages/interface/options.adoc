@@ -1,6 +1,6 @@
 = Options
 
-image::options.png[]
+image::interface/options.png[]
 
 The available options and their usage and behavior are listed in the following sections.
 
@@ -15,7 +15,7 @@ Feel free to send feedback or ideas for other options you'd like to see included
 This determines how the scenario book is treated, when a new scenario is loaded.
 It can be one of following options:
 
-Spawn:: When this options is set, a new tile will be spawned, whenever a scenario is loaded.
+Spawn:: When this option is set, a new tile will be spawned, whenever a scenario is loaded.
 This tile only contains the 1 or 2 pages for the scenario and not the complete scenario book.
 They can be deleted, once they are no longer needed.
 Change:: If the scenario book is already present somewhere on the table, it's page will be set to the page of the scenario, once it is loaded.
@@ -23,8 +23,8 @@ If the scenario book is not on the table, nothing happens.
 None:: Nothing happens to the scenario book, and you have to manually select the correct pages.
 
 === Hidden Setup
-Specifies whether hidden room setup should be used, when setting up a scenario by clicking the sticker on the map.
-Using the setup from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
+Specifies whether hidden room scenario should be used, when setting up a scenario by clicking the sticker on the map.
+Using the scenario from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
 
 [#_use_3d_models]
 === Use 3D Models
@@ -33,15 +33,16 @@ These options are available:
 
 Closed Doors:: If set, all door token that is not opened yet use the 3D model, otherwise they use the 2D token.
 Opened Doors:: Once a door was opened, it switches to the 2D token if this is not set.
-Trees:: If not set, tree tokens will use the 2D token.Otherwise they will use one of available tree 3D on random.
+Trees:: If not set, tree tokens will use the 2D token.
+Otherwise, they will use one of available tree 3D on random.
 Other:: Specifies the behavior for all other types of overlays.
 Use particle effects:: When this is unchecked, particle effects (animations) are removed from all 3D models.
 
 [#_preload_enemies]
 === Preload Monsters
-When this options is set, all enemies will be prepared when starting a new scenario.
-This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room setup.
-If this option is not set, enemies will only prepared once a room is opened where they are present.
+When this option is set, all enemies will be prepared when starting a new scenario.
+This will speed up the flow of the scenario, but might spoil some parts if used together with the hidden room scenario.
+If this option is not set, enemies will only be prepared once a room is opened where they are present.
 
 == Scenario
 
@@ -50,7 +51,7 @@ Defined how many Battle Goals will be dealt at the start of a scenario.
 Can be set to 0 so that they have to be drawn manually.
 
 === Hide Ability Cards
-When this option is et, ability cards placed with the xref:ROOT:hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
+When this option is et, ability cards placed with the xref:feature/hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
 Otherwise, they are placed face-up.
 
 == Rules
@@ -80,7 +81,7 @@ This influences the prices on the xref:tool:enhancementCalculator.adoc[].
 
 Classic:: The prices from base Gloomhaven.
 When this is used, all enhancements are also applied to the class box of a character, when the character is packed up
-Non-permant:: This is the version from Gloomhaven Digital.
+Non-permanent:: This is the version from Gloomhaven Digital.
 Most prices for enhancements are reduced, but enhancements only apply to a single character instead of the whole class
 
 

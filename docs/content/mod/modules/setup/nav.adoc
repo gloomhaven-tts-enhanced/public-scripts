@@ -1,3 +1,0 @@
-* Scenario Setup
-** xref:monsters.adoc[Monsters]
-** xref:summons.adoc[Summons]

@@ -1,5 +1,3 @@
-* Frosthaven
-+
---
+= Gloomhaven
+
 include::partial$nav.adoc[]
---

@@ -1,13 +1,19 @@
 = Gloomhaven Enhanced
 
 This documentation describes how to use the GHE mod.
-It currently only contains some documentation.
-More information can also be found in the rule book that is included in the mod.
+The mod can be used to play the different games from the "Haven" universe (Gloomhaven, Frosthaven, Jaws of the Lion, etc).
+
+This documentation is divided into information about xref:engine:index.adoc[general mod functions] that are independent of the actual game.
+Each game also has specific information
+
+* xref:frosthaven:index.adoc[]
+* xref:gloomhaven:index.adoc[]
 
 Checkout the xref:updates.adoc[Updates] to find more about the features of each release.
 
 If you want to integrate custom content into the mod, checkout xref:custom:ROOT:index.adoc[this page].
+
+The documentation is still work in progress and doesn't contain all features.
 If you want to contribute to the documentation, checkout xref:dev:ROOT:documentation.adoc[this page].
 
 If you get stuck or things are unclear, feel free to ask on the official Discord server.
-

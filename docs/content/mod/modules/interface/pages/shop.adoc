@@ -1,3 +1,0 @@
-= Shop
-
-image::shop.png[]

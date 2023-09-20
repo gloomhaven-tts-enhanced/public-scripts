@@ -2,7 +2,7 @@
 
 The Initiative Tracker shows the initiative for all characters and monsters, once a new round was started.
 
-image::initiativeTracker.png[]
+image::interface/initiativeTracker.png[]
 
 Clicking on an entry in the tracker marks it red which indicates that the turn of the character is monster type was completed.
 Doing so for a character will also trigger end of turn looting for it.
@@ -13,4 +13,4 @@ Clicking on the right arrow icon on a monster entry will show a preview of the a
 Each row is a separate action the monster performs.
 If an area of effect attack is happening, another window will show the area.
 
-image::initiativeTracker_aoe.png[]
+image::interface/initiativeTracker_aoe.png[]

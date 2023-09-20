@@ -5,13 +5,13 @@ Those can be found at the top right of the screen.
 There is a small drop-down prompt which will bring down the menu for the various panels once clicked.
 Clicking the drop-down another time, will hide the menu again.
 
-image::interfaces.png[Interfaces]
+image::interface/interfaces.png[Interfaces]
 
 Player Interface:: Has buttons to control the scenario as well as the player character.
 Enemy Interface:: Allows to easily control the enemies attack modifier deck.
-Game Setup:: You can load xref:scenarioSetup.adoc[scenarios] and xref:monsterSetup.adoc[monsters] from here.
-xref:options.adoc[Options]:: Allows you to change some of the mod's behavior.
+Game Setup:: You can load xref:interface/scenarioSetup.adoc[scenarios] and xref:interface/monsterSetup.adoc[monsters] from here.
+xref:interface/options.adoc[Options]:: Allows you to change some of the mod's behavior.
 Camera Controls:: A panel which allows to switch to certain fixed camera positions.
-xref:shop.adoc[Item Shop]:: A panel to sort the item card currently laid out on the table.
+xref:interface/shop.adoc[Item Shop]:: A panel to sort the item card currently laid out on the table.
 
-Another important interface can be found on the top left of the window: The xref:initiativeTracker.adoc[Initiative Tracker].
+Another important interface can be found on the top left of the window: The xref:interface/initiativeTracker.adoc[Initiative Tracker].

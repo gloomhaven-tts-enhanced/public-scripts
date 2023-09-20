@@ -3,7 +3,7 @@
 The mod contains an easy way to summon figures from ability or item cards.
 When right-clicking the summon symbol on those cards, a figure representing that summon is spawned.
 The stats for this summon are also updated according to the enhancements on the ability if there are any.
-The same can be achieved when using the xref:ROOT:contextMenu.adoc[Context Menu] on a character that has a summon ability card. The summon will show up in the Context Menu and spawn above the character's head when spawned.
+The same can be achieved when using the xref:engine:feature/contextMenu.adoc[Context Menu] on a character that has a summon ability card. The summon will show up in the Context Menu and spawn above the character's head when spawned.
 
 By default, summons start with the number 1 attached to the left of their HP bar.
 To keep track of the summon order, you can change this number.

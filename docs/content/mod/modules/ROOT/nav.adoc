@@ -1,5 +1,2 @@
 * xref:index.adoc[Introduction]
 * xref:updates.adoc[Updates]
-* Features
-** xref:hotkeys.adoc[Hotkeys]
-** xref:contextMenu.adoc[Context Menu]

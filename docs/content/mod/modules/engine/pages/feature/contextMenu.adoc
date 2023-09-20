@@ -1,13 +1,13 @@
 = Context Menu
 
 The Context Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
-It can be access by pressing the key of the assigned xref:hotkeys.adoc[Game Key] while hovering over a character, enemy or summon figure.
+It can be accessed by pressing the key of the assigned xref:feature/hotkeys.adoc[Game Key] while hovering over a character, enemy or summon figure.
 
-image::contextMenu.gif[]
+image::engine:feature/contextMenu.gif[]
 
 This will show an overview of all conditions that are currently available in the mod.
 Clicking on any of the conditions will apply it to the figure for which to Context Menu was opened and closes the Context Menu again.
-Right-Clicking will do the same, but the Context Menu stays open afterwards, which is useful to apply multiple conditions.
+Right-Clicking will do the same, but the Context Menu stays open afterward, which is useful to apply multiple conditions.
 
 Above the icons for conditions, the icons for active classes are shown.
 This allows to apply the class tracker as a condition to the underlying figure.

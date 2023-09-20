@@ -1,3 +1,5 @@
 * Gloomhaven
-** xref:partySheet.adoc[]
-** xref:map.adoc[]
++
+--
+include::partial$nav.adoc[]
+--

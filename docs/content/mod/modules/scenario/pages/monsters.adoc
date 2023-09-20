@@ -18,7 +18,7 @@ This will spawn a new figure above the monster mat that then can be placed anywh
 
 To the right of the stat sheet the ability deck for the monster type is placed.
 You can draw additional ability cards using the btn:[Draw] button here.
-Alternatively there's also a menu for this in the Enemy Interface, as well as a xref:ROOT:hotkeys.adoc#_draw_monster_attack_modifier[Game Key].
+Alternatively there's also a menu for this in the Enemy Interface, as well as a xref:engine:feature/hotkeys.adoc#_draw_monster_attack_modifier[Game Key].
 
 The btn:[Shuffle] button moves all ability cards from the discard pile into the ability deck and shuffles it.
 This also happens automatically, when you end a round using the Player Interface while the discard pile contains an ability card with a shuffle symbol.

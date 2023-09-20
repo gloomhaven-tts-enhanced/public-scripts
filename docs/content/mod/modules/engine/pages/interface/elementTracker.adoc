@@ -1,0 +1,20 @@
+= Element Tracker
+
+The element tracker is a global UI on the screen that lets you change the currently active elements.
+
+By default, the UI shows up horizontally at the top of the screen.
+
+image::interface/element-tracker-horizontal.png[]
+
+However, it's also possible to show a vertical version of the tracker, by adjusting the respective option in the xref:interface/options.adoc[Options Menu].
+After reloading the game, the tracker shows vertically on the right of the screen.
+
+image::interface/element-tracker-vertical.png[]
+
+The interface can be dragged to other places on the screen as well.
+
+When an element is inert, its icon is greyed out.
+Left-clicking an element icon create the element and the icon will become fully colored.
+Right-clicked an icon will consume the element and the icon will return to it's greyed out state.
+When an element is waning, the icon is only filled by halve.
+Using the middle mouse click will fill an element by halve.

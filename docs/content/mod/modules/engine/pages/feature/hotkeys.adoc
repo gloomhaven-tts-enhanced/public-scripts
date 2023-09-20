@@ -4,7 +4,7 @@ Game Keys are a concept of TTS, where players can assign a key on their keyboard
 The list of available Game Keys can be found while accessing the menu:Options[Game Keys] menu.
 This section gives an overview of the available game actions that can be bound to a key.
 
-image::menu_gameKeys.png[]
+image::feature/menu_gameKeys.png[]
 
 Each player has to assign the Game Key themselves if they want to use it.
 There's no way to share assigned  Game Keys or assign default keys in the mod.
@@ -41,7 +41,7 @@ E.g. you could assign the left and/or right shift key to the "Modifier Key" Game
 
 | Monsters, Summons and overlays with a health bar
 | The object will be removed.
-If it was a monster or summon (and the xref:interface:options.adoc#summons_drop_loot[current rules] drop loot for 't drop loot for summons), it will also drop a coin.
+If it was a monster or summon (and the xref:interface/options.adoc#summons_drop_loot[current rules] drop loot for 't drop loot for summons), it will also drop a coin.
 This is the same behavior as reducing the objects' health to 0 and then pressing the btn:[Defeat] button in the center of it's health bar.
 However, this action will also be performed, if the objects' health is above 0.
 
@@ -56,8 +56,7 @@ However, this action will also be performed, if the objects' health is above 0.
 While hovering over a figure or token with a health bar (e.g. including obstacles or doors in some scenarios), this action will add/remove one health from it.
 
 == Show Context Menu
-While hovering over a figure (enemy, character, summon) this action will show the xref:contextMenu
-.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
+While hovering over a figure (enemy, character, summon) this action will show the xref:feature/contextMenu.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
 
 == Next Stance/Previous Stance
 While hovering over a character figure that has a stance bar, this will move the active stance to the left or right.
