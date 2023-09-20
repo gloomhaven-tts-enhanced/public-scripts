@@ -68,8 +68,8 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Engine</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../engine/campaignManager.html">Campaign Manager</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="campaignManager.html">Campaign Manager</a>
   </li>
 </ul>
   </li>
@@ -97,11 +97,11 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Gloomhaven</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="campaignManager.html">Campaign Manager</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gloomhaven/campaignManager.html">Campaign Manager</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="sourceOfTruth.html">Sources of Truth</a>
+    <a class="nav-link" href="../gloomhaven/sourceOfTruth.html">Sources of Truth</a>
   </li>
 </ul>
   </li>
@@ -154,11 +154,11 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Development</a></li>
-    <li>Gloomhaven</li>
+    <li>Engine</li>
     <li><a href="campaignManager.html">Campaign Manager</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/gloomhaven/pages/campaignManager.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/engine/pages/campaignManager.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -166,7 +166,71 @@
 </aside>
 <article class="doc">
 <h1 class="page">Campaign Manager</h1>
-
+<div class="sect1">
+<h2 id="_testing"><a class="anchor" href="#_testing"></a>Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There&#8217;s a test suite that runs automatic tests for the campaign manager.
+Given an input file with campaign data, it loads the campaign and then saves it afterward.
+It then compares the created save file with an expected output.
+If both match, the test is OK, otherwise it will show which parts of didn&#8217;t match.</p>
+</div>
+<div class="paragraph">
+<p>The test suite can be found in the <code>test\campaign-manager</code> directory of the repository.</p>
+</div>
+<div class="sect2">
+<h3 id="_executing_the_tests"><a class="anchor" href="#_executing_the_tests"></a>Executing the tests</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Load the latest enginehaven mod.</p>
+</li>
+<li>
+<p>Additively load the game box to test into the mod.</p>
+</li>
+<li>
+<p>Save the game and load it again.</p>
+</li>
+<li>
+<p>Execute the command <code>pnpm test:&lt;game&gt;</code> (e.g. <code>pnpm test:frosthaven</code>) from the test directory.</p>
+</li>
+<li>
+<p>This will run all the test cases for this game as defined by the respective <code>test.ts</code> file.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_new_tests"><a class="anchor" href="#_adding_new_tests"></a>Adding new tests</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a new directory in the <code>res/test</code> directory for the specific game with the name of the test (e.g. <code>res/test/frosthaven/basic</code>).</p>
+</li>
+<li>
+<p>Create a file <code>input.json</code> and a file <code>expected.json</code> inside this new directory.</p>
+</li>
+<li>
+<p>Add the campaign data that should be loaded into <code>input.json</code> and the expected output after saving into <code>expected.json</code>.</p>
+</li>
+<li>
+<p>Add a new test into the <code>src/test/&lt;game&gt;.test.ts</code> file like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">test("basic campaign", async () =&gt; {
+  await testHandler.runTest("basic");
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The name of the test must match the name of the directory created in the first step.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>
