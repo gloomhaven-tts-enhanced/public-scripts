@@ -1,4 +1,4 @@
-= Missing Features
+= Missing Features & Known Bugs
 
 * Campaign stickers (the ones for the Campaign Sheet) are currently missing.
 * Enhancements are missing for all but the starter classes.
@@ -6,6 +6,8 @@
 * Retired characters can not be entered on the Campaign Sheet.
 * Retired characters do not transfer when using the Campaign Manager.
 * Enhancements on loot cards do not transfer when using the Campaign Manager.
+* Boss monster stat sheets don't work for level 4+ yet.
+Their sleeve also doesn't match the new format yet and the rotation follows to 4 sided logic for base stat sheets.
 
 .Envelope A
 [%collapsible]
