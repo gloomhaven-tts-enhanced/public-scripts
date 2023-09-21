@@ -10,6 +10,7 @@
 Their sleeve also doesn't match the new format yet and the rotation follows to 4 sided logic for base stat sheets.
 * The shop can not be packed up again automatically.
 Currently, the best way is the select all cards in the shop and hit the "G" button to group the cards, then drop them manually into the item bag.
+* The tracker image on a spawned Shadow from Deathwalker is distorted.
 
 .Envelope A
 [%collapsible]
