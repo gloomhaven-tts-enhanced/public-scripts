@@ -7,7 +7,20 @@
     ]
   },
   {
+    "version": "1.3.12",
+    "nickname": "Give me back my freedom",
+    "release": "2023-10-09",
+    "breaking": [
+      "The delete key/backspace key doesn't perform the delete action anymore (like looting coins, defeating enemies, etc.). Use the dedicated Game Key for this instead.",
+      "Objects are also no longer protected being deleted."
+    ],
+    "feature": [
+      "Deleting objects can now be undone, by entering >undo into the chat window."
+    ]
+  },
+  {
     "version": "1.3.11",
+    "release": "2023-05-10",
     "feature": [
       "The menu containing the different interfaces is now draggable and shows only for the players that activated the menu."
     ],
