@@ -6,6 +6,7 @@
 * fixing the CM
 * Updated Character Sheets
 * Fix solo open information calculation
+* Fix `setHealthFromEnemy`
 
 == Things that need to be done for migrating v3/v4 saves
 * Quests are string only now
