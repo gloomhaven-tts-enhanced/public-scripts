@@ -7,6 +7,7 @@
 * Updated Character Sheets
 * Fix solo open information calculation
 * Fix `setHealthFromEnemy`
+* extra target is limited to hand/handtwo/playermat (no more type information, no more relative to)
 
 == Things that need to be done for migrating v3/v4 saves
 * Quests are string only now
