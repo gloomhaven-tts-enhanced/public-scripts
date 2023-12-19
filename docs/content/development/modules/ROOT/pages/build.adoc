@@ -1,10 +1,44 @@
-= Working on Gloomhaven TTS Enhanced
+= Working on Gloomhaven Enhanced
+
+Gloomhaven Enhanced (GHE) is split into different mods that support each other.
+There's a base mod called "Enginehaven" that contains the basic engine of the mod.
+So all the scripts for the scenario engine, the round tracking, campaign manager, etc.
+It doesn't contain any actual content, like scenarios, classes or items.
+Those are added from other mods, so-called content boxes.
+
+Each actual game (Gloomhaven, Frosthaven, Crimson Scales, etc.) is a separate mod that contains such a content box.
+The box then contains the actual game components for that specific game.
+Loading the content box into Enginehaven analyzes and unpacks its content into the places where the engine needs them, so the game can be used.
+
+The current state of each mod is stored in a directory inside the `mods` directory of the repository.
+A mod in TTS is a JSON file that contains the data of each object in the game, which includes it scripts and content for things like bags and decks.
+The repository doesn't store the complete JSON file though.
+Instead, the JSON file is split into a directory structure, where each object in the mod has its own files that only contains the data for this specific object.
+This makes it easier to track and update individual objects.
+It also makes sure that saved data is smaller than it would be in a complete save file.
+
+In the complete save file each object would contain its complete script.
+Since many objects use the `require()` syntax to load a specific script, which in turn typically also ``require``s other scripts, TTS needs, a complete, bundled version of the script where each `require` is replaced with the actual script content.
+This would lead to lots of redundant scripts.
+Instead, for each object only the top-level script is saved.
+
+The complete save file that can then be used in TTS can be recreated from this file structure, using a specific tool.
+To get this tool working, some setup needs to be done first.
 
 == Setup
-* Install https://nodejs.org/en/download/package-manager/[Node.js]
-* Install https://pnpm.io/installation[pnpm]
-* Download https://github.com/KillahPotatoes/KP-Steam/releases/tag/v1.1.1[kpsteam_1.1.1_with_deps.zip]. Extract the file into the directory `tools/workshop-upload`.
+* Having git installed and a clone of the `enhanced` repository is already assumed.
+* Install https://nodejs.org/en/download/package-manager/[node.js].
+This is a tool that can execute JavaScript code on your machine without a browser.
+The tools mentioned above a written in JavaScript (or TypeScript to be more precise) and need node.js to run.
+* Install https://pnpm.io/installation[pnpm].
+This is a package manager for node.js tools that manages dependencies the tools require.
+// * Download https://github.com/KillahPotatoes/KP-Steam/releases/tag/v1.1.1[kpsteam_1.1.1_with_deps.zip]. Extract the file into the directory `tools/workshop-upload`.
 * Run `pnpm install` from the root directory of the mod.
+This will download all dependencies that the tools need in order to run
+
+== Building the mods
+
+In order to build the working mods from the files in the repository, 
 
 == Repository structure
 
