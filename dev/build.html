@@ -3,17 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Working on Gloomhaven TTS Enhanced :: Gloomhaven Enhanced</title>
-    <meta name="generator" content="Antora 3.1.5">
+    <title>Working on Gloomhaven Enhanced :: Gloomhaven Enhanced</title>
+    <meta name="generator" content="Antora 3.1.6">
     <link rel="stylesheet" href="../_/css/site.css">
-    <script>var uiRootPath = '../_'</script>
+    <link rel="stylesheet" href="../_/css/gh-site.css">
   </head>
   <body class="article">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="..">Gloomhaven Enhanced</a>
-      <button class="navbar-burger" data-target="topbar-nav">
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
         <span></span>
         <span></span>
         <span></span>
@@ -21,17 +26,26 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <div class="navbar-link">Community</div>
+          <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://discord.gg/SA9hHVNkMf">Discord</a>
-            <a class="navbar-item" href="https://discord.gg/2kM4T6p">Custom Content Discord</a>
-            <a class="navbar-item" href="https://www.reddit.com/r/GloomhavenTTSEnhanced/">Reddit</a>
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
           </div>
         </div>
         <div class="navbar-item">
           <span class="control">
-            <a class="button is-primary" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2402018642">Steam</a>
+            <a class="button is-primary" href="#">Download</a>
           </span>
         </div>
       </div>
@@ -44,6 +58,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
     <h3 class="title"><a href="index.html">Development</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
@@ -113,33 +128,31 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Development</span>
-    <span class="version">default</span>
+    <span class="version"></span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../custom/index.html">Custom Content</a>
+      <a class="title" href="../custom/latest/index.html">Custom Content</a>
       <ul class="versions">
+        <li class="version">
+          <a href="../custom/next/index.html">2-beta</a>
+        </li>
         <li class="version is-latest">
-          <a href="../custom/index.html">default</a>
+          <a href="../custom/latest/index.html">1.3</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <a class="title" href="index.html">Development</a>
-      <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">default</a>
-        </li>
-      </ul>
     </li>
     <li class="component">
-      <a class="title" href="../mod/2/index.html">Gloomhaven Enhanced</a>
+      <a class="title" href="../mod/latest/index.html">Gloomhaven Enhanced</a>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../mod/2/index.html">2</a>
-        </li>
         <li class="version">
-          <a href="../mod/1.3/index.html">1.3</a>
+          <a href="../mod/next/index.html">2-beta</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../mod/latest/index.html">1.3</a>
         </li>
       </ul>
     </li>
@@ -157,32 +170,78 @@
     <li><a href="build.html">Working on GHE</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/build.adoc">Edit this Page</a></div>
-  </div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/build.adoc">Edit this Page</a></div>
+</div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Working on Gloomhaven TTS Enhanced</h1>
+<h1 class="page">Working on Gloomhaven Enhanced</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gloomhaven Enhanced (GHE) is split into different mods that support each other.
+There&#8217;s a base mod called "Enginehaven" that contains the basic engine of the mod.
+So all the scripts for the scenario engine, the round tracking, campaign manager, etc.
+It doesn&#8217;t contain any actual content, like scenarios, classes or items.
+Those are added from other mods, so-called content boxes.</p>
+</div>
+<div class="paragraph">
+<p>Each actual game (Gloomhaven, Frosthaven, Crimson Scales, etc.) is a separate mod that contains such a content box.
+The box then contains the actual game components for that specific game.
+Loading the content box into Enginehaven analyzes and unpacks its content into the places where the engine needs them, so the game can be used.</p>
+</div>
+<div class="paragraph">
+<p>The current state of each mod is stored in a directory inside the <code>mods</code> directory of the repository.
+A mod in TTS is a JSON file that contains the data of each object in the game, which includes it scripts and content for things like bags and decks.
+The repository doesn&#8217;t store the complete JSON file though.
+Instead, the JSON file is split into a directory structure, where each object in the mod has its own files that only contains the data for this specific object.
+This makes it easier to track and update individual objects.
+It also makes sure that saved data is smaller than it would be in a complete save file.</p>
+</div>
+<div class="paragraph">
+<p>In the complete save file each object would contain its complete script.
+Since many objects use the <code>require()</code> syntax to load a specific script, which in turn typically also <code>require</code>s other scripts, TTS needs, a complete, bundled version of the script where each <code>require</code> is replaced with the actual script content.
+This would lead to lots of redundant scripts.
+Instead, for each object only the top-level script is saved.</p>
+</div>
+<div class="paragraph">
+<p>The complete save file that can then be used in TTS can be recreated from this file structure, using a specific tool.
+To get this tool working, some setup needs to be done first.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Install <a href="https://nodejs.org/en/download/package-manager/">Node.js</a></p>
+<p>Having git installed and a clone of the <code>enhanced</code> repository is already assumed.</p>
 </li>
 <li>
-<p>Install <a href="https://pnpm.io/installation">pnpm</a></p>
+<p>Install <a href="https://nodejs.org/en/download/package-manager/">node.js</a>.
+This is a tool that can execute JavaScript code on your machine without a browser.
+The tools mentioned above a written in JavaScript (or TypeScript to be more precise) and need node.js to run.</p>
 </li>
 <li>
-<p>Download <a href="https://github.com/KillahPotatoes/KP-Steam/releases/tag/v1.1.1">kpsteam_1.1.1_with_deps.zip</a>. Extract the file into the directory <code>tools/workshop-upload</code>.</p>
+<p>Install <a href="https://pnpm.io/installation">pnpm</a>.
+This is a package manager for node.js tools that manages dependencies the tools require.</p>
 </li>
 <li>
-<p>Run <code>pnpm install</code> from the root directory of the mod.</p>
+<p>Run <code>pnpm install</code> from the root directory of the mod.
+This will download all dependencies that the tools need in order to run</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_mods"><a class="anchor" href="#_building_the_mods"></a>Building the mods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to build the working mods from the files in the repository,</p>
 </div>
 </div>
 </div>
@@ -302,10 +361,11 @@ Replace the part after the colon with the new alias and the part after the <code
 <footer class="footer">
   <p>This page was built using the Antora default UI.</p>
   <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
-  <p>This page use the Germania One font which is licended under the <a href=https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL>OFL license</a></p>
-  <p>This page is not associate with Cephalofair Games. All rights to the Gloomhaven game or anything related to it are reserved to its creators Isaac Childres & Cephalofair Games.</p>
 </footer>
-<script src="../_/js/site.js"></script>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
 <script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="200" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
   </body>
 </html>

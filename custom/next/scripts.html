@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using the scripts :: Gloomhaven Enhanced</title>
+    <meta name="generator" content="Antora 3.1.6">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/gh-site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">Gloomhaven Enhanced</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="custom" data-version="2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Custom Content</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="scripts.html">How to use the scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="documentation.html">How to use this documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contentbox.html">Content Box</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="class.html">Classes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="condition.html">Conditions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="enemy.html">Enemies</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="scenario.html">Scenarios</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overlay.html">Overlays</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Other</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backgrounds.html">Backgrounds</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Common</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/formula.html">Formulas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/action.html">Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="common/spawnable.html">Spawnable Element</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Migration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migration/1.3.html">1.3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tools/sectionTool.html">Section Tool</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Custom Content</span>
+    <span class="version">2-beta</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../latest/index.html">Custom Content</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="index.html">2-beta</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../latest/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dev/index.html">Development</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../mod/latest/index.html">Gloomhaven Enhanced</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../mod/next/index.html">2-beta</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../mod/latest/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Custom Content</a></li>
+    <li>Introduction</li>
+    <li><a href="scripts.html">How to use the scripts</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2-beta</button>
+  <div class="version-menu">
+    <a class="version is-current" href="scripts.html">2-beta</a>
+    <a class="version" href="../latest/scripts.html">1.3</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/scripts.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using the scripts</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most custom content requires some script, that is either added directly to the content or tells the mod about the content.</p>
+</div>
+<div class="paragraph">
+<p>Generally, you have two ways to work with the scripts.
+Either through an external tool (the VS Code text editor), or the scripting window inside TTS.
+The first method is the preferred way.
+While it requires a bit of setup, it&#8217;s a lot easier to continuously work on custom content with it.
+E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpacking deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).</p>
+</div>
+<div class="paragraph">
+<p>The alternative is to use the TTS scripting window.
+For this you need to download the latest script from the <a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/tags">releases</a>.
+After you downloaded the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
+You&#8217;ll need the <code>bundled</code> folder to work with the TTS scripting window.
+Extract the required folder somewhere in you file system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_vs_code"><a class="anchor" href="#_using_vs_code"></a>Using VS Code</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Download and install <a href="https://nodejs.org/en/download/">Node.js</a>.</p>
+</li>
+<li>
+<p>Download and install <a href="https://code.visualstudio.com/Download">VS Code</a>.</p>
+</li>
+<li>
+<p>Create a new directory for your custom content project, where you want to work on it.</p>
+</li>
+<li>
+<p>Download the <a href="https://raw.githubusercontent.com/gloomhaven-tts-enhanced/public-scripts/main/packages/template/package.json">package.json</a> file and put that into the directory.</p>
+</li>
+<li>
+<p>Open VS Code and open the directory.
+This can be done by using the menu <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Open Folder&#8230;&#8203;</b></span> or by dragging the directory onto the workspace in VS Code.</p>
+</li>
+<li>
+<p>Install the extension "npm" by clicking on the menu with four blocks on the left bar.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/extensions.png" alt="extensions">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Locate the save file you want to edit inside the TTS save directory (checkout <a href="https://kb.tabletopsimulator.com/getting-started/technical-info/">the knowledge base</a> to find the default locations for your system).
+It can either be a regular save or a saved object.
+Copy the name of the save file (e.g. <code>TS_Save_1072</code> for regular saves or <code>Artificier</code> if you have a saved object with this name).</p>
+</li>
+<li>
+<p>Open the <code>package.json</code> file in your working directory.
+Change the two occurrences of <code>&lt;save-name&gt;</code>, to the name of the save file.
+E.g. with the save file name <code>TS_Save_1072</code>, the section would look like this:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/save-name.png" alt="save name">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>After you installed the above-mentioned npm extension, you&#8217;ll have the following section in the explorer in VS Code</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/npm.png" alt="npm">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It may be not at the top, but below other sections.
+You can reorder sections by using drag 'n' drop.
+If the section doesn&#8217;t show up at all, right-click on the heading of any other section and enable it.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/header.png" alt="header">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hover over the <code>setup</code> entry and click the <b class="button">Play</b> button that show&#8217;s up.</p>
+</li>
+<li>
+<p>Afterwards, do the same with the <code>update</code> entry.
+This will download the latest scripts for the Gloomhaven enhanced mod.</p>
+</li>
+<li>
+<p>This completes the (rather-long) setup, and you&#8217;re good to go. :-)</p>
+</li>
+<li>
+<p>If you have multiple save files you are working on, it&#8217;s recommended to have a different directories for all of them.
+This way you don&#8217;t have to edit the <code>package.json</code> around.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h3>
+<div class="paragraph">
+<p>To start working on the save file, press the <b class="button">Play</b> button on the entry <code>extract</code> inside the npm section.
+This will basically copy the save file from your TTS save file location and split it into multiple files inside the <code>Contents</code>  directory if your current working directory.
+E.g a (reduced) Artificier save file looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vscode/extract.png" alt="extract">
+</div>
+</div>
+<div class="paragraph">
+<p>The save file has one bag that contains all objects of the Artificier.
+The <code>extract</code> command will create a new directory for all objects inside that bag.
+The name of the directory will be the name of the object followed by its GUID.
+If the object itself is a bag or deck it will create more nested directories to replicate the nesting structure from TTS.</p>
+</div>
+<div class="paragraph">
+<p>For each object multiple files are created inside their directory.
+A file named <code>Data.json</code> will contain all the data about the object, like its name, tags, etc..
+The file named <code>Script.ttslua</code> contains the attached script.
+The big advantage here is that the script only contains the relevant part.
+In the TTS script editor you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
+A file named <code>UI.xml</code> contains the XML UI attached to the object.
+The same logic as for the script applies, as it only contains a reduced view of the script (e.g. just some <code>&lt;Include src="Figures/CharacterMini" /&gt;</code>).</p>
+</div>
+<div class="paragraph">
+<p>When you use the <code>embed</code> command from the npm section, the reverse thing will happen.
+The files from your current working directory will be put together and create a new save file which then will be copied back to your TTS save file folder.
+While doing so, all the scripts of all contained objects are automatically updated with the currently downloaded GHE scripts.
+E.g. many scripts have command like <code>require("Figures.CharacterMini")</code>.
+What this means is: Please include the code from the file "Figures/CharacterMini.ttslua" at this place, computer (the same for <code>&lt;Include src="file" /&gt;</code> in case of XML files).
+And this is what <code>embed</code> does.
+It loads the downloaded scripts and embeds them at the correct places.</p>
+</div>
+<div class="paragraph">
+<p>So the advantage is, that you only need to edit the relevant scripts and all other parts are automatically updated for you.
+No need to unpack nested objects inside TTS and copy/paste the same scripts over and over.</p>
+</div>
+<div class="paragraph">
+<p>If there&#8217;s an update to the releases scripts, you can use the <code>update</code> command from the npm section to download them.
+Then use <code>embed</code> again und all scripts are updated in the save file.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">NOTE</dt>
+</dl>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>While working with scripts from a beta version, make sure the following line is in your <code>package.json</code>, inside the <code>devDependencies</code> section.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"@gloomhaven-enhanced/api": "beta",</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are later working with the released scripts replace <code>beta</code> with <code>latest</code> und use the <code>update</code> command.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to changing the scripts, you can also change the for all nested objects (e.g. changing its name or adding tags), by editing the <code>Data.json</code> of it.
+Be aware though that the actual name (the one you can edit in the TTS UI) is called <code>"Nickname"</code> in the file, not <code>"Name"</code>.
+Changing <code>"Name"</code> will pretty much break the object.</p>
+</div>
+<div class="paragraph">
+<p>You can also add tags by adding and entry to the <code>Tags</code> property.
+If the data currently doesn&#8217;t have a <code>Tags</code> property, you can easily add one somewhere like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "GUID": "975b2e",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Nickname": "Tools",
+  "Tags": [
+    "Tag1",
+    "Tag2"
+  ],
+  "Description": ""
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_tts_script_editor"><a class="anchor" href="#_using_the_tts_script_editor"></a>Using the TTS script editor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using the TTS scripting editor, you have to use the <code>bundled</code> version of the scripts.
+We developed the mod by splitting the scripts into different files which makes it a lot easier to maintain.
+However, TTS doesn&#8217;t understand that splitting and requires to have one script per object.
+So all files need to be bundled together into one file again for TTS to work.
+Normally, this would be done by the Atom plugin automatically.
+The scripts within the <code>bundled</code> folder are the result of such a bundling.
+The scripts then are rather big and also contain code to make the bundling work.
+They always look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- Bundled by luabundle {"version":"1.6.0"}
+local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)
+	local loadingPlaceholder = {[{}] = true}
+
+    -- ..
+    -- lots more lines
+    -- ..
+end)(require)
+__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- This is the relevant part
+require("Figures/CharacterMini") -- this line also has to be removed
+-- The required code goes here
+end)
+__bundle_register("Figures/CharacterMini", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- ..
+-- even more lines here
+-- ..
+end)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you integrate those script you need to look for the line <code><em>bundle_register("</em>root", function(require, _LOADED, <em>bundle_register, </em>bundle_modules)</code>.
+Everything between this line and the first <code>end)</code> is the actual script for the object.
+The previous line are required for the bundling to work and the following lines are the previously split files that are now put together.
+You don&#8217;t need to touch those.</p>
+</div>
+<div class="paragraph">
+<p>Whenever this documentation mentions to include a script onto you object, you first have to locate the correct bundled file.
+This is given as the title of the script example.</p>
+</div>
+<div class="listingblock">
+<div class="title">Figures/CharacterMini.ttslua</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>E.g. here it means you have to find the <code>Figures/CharacterMini.ttslua</code> script within the <code>bundled</code> folder.
+Open that script and find the previously mentioned <code><em>bundle_register("</em>root")</code> line.
+Copy the script the documentation mentioned after this line and remove everything till the first <code>end</code> (excluding the <code>end</code>).
+With this example, the final script would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- Bundled by luabundle {"version":"1.6.0"}
+local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (function(superRequire)
+	local loadingPlaceholder = {[{}] = true}
+
+    -- ..
+    -- lots more lines
+    -- ..
+end)(require)
+__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)
+info = {
+    hpColour = "#5080C1",
+    hpTextColour = "#B70F0F",
+    startingHealth = 10,
+}
+
+FrameOffset = 230
+
+require("Figures.CharacterMini")
+end)
+__bundle_register("Figures/CharacterMini", function(require, _LOADED, __bundle_register, __bundle_modules)
+-- ..
+-- even more lines here
+-- ..
+end)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the script you then have to add to the object in the TTS scripting window and use the <b class="button">Save and Play</b> button.
+The same logic applies for the UI scripts.</p>
+</div>
+<div class="paragraph">
+<p>If the example code doesn&#8217;t have a title it means there&#8217;s no bundled script available, and you have to include the script as it is provided in the example.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="200" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
