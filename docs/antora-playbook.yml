@@ -3,20 +3,29 @@ site:
 content:
   sources:
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
-      start_path: docs/content/customContent
+      # - url: ..
       branches: HEAD
+      start_paths:
+        - docs/content/*
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
-      start_path: docs/content/development
-      branches: HEAD
-    - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
-      start_path: docs/content/mod
-      branches: 
-        - maintain/1.3
-        - HEAD
+      # - url: ..
+      branches: maintain/1.3
+      start_paths:
+        - docs/content/*
+        - "!docs/content/development"
+urls:
+  latest_version_segment: latest
+  latest_prerelease_version_segment: next
 ui:
   bundle:
-    url: ./ui/build/ui-bundle.zip
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  supplemental_files: ./ui
+antora:
+  extensions:
+    - require: "@antora/lunr-extension"
+      index_latest_only: true
+      snippet_length: 200
 asciidoc:
   attributes:
     experimental: true
