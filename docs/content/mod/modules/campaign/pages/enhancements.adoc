@@ -1,0 +1,30 @@
+= Enhancing Abilities
+
+Right-click an ability card and access the tool by using the "Enhance Ability" menu.
+
+image::enhance-menu.png[]
+
+This will open an on-screen UI that shows the selected ability card and a short description.
+
+image::enhancement-tool.png[]
+
+Click one of the enhancement marks on the card to see which options are available for this mark according to the rules.
+It also shows the prices for each enhancement.
+While hovering the enhancement the bottom left text also shows the reasoning for the selected price.
+
+image::enhancement-tool-selected.png[]
+
+Clicking the available enhancement on the right will apply the enhancement sticker to the ability card which is also reflected in the tool.
+
+NOTE: The gold is not actually reduced from any character.
+
+Removing enhancements works the same way, by selecting an existing enhancement on the card and using the btn:[Remove Enhancement] button.
+
+image::enhancement-tool-remove.png[]
+
+The bottom left part on the screen also shows the reasoning for the total cost of the enhancement on the right side according to the rules.
+
+image::enhancement-tool-reason.png[]
+
+If there's an error in the reasoning it probably means the ability card is encoded wrongly in the mod.
+So please let us know, so we can fix that.

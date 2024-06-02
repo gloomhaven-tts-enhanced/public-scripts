@@ -1,0 +1,22 @@
+= Unlocking Classes
+
+The currently available classes can be found on the left side of the table.
+They are tightly placed together into their envelopes.
+By using drag 'n' drop on the envelope, you can pull out a fresh character of the class to place on a player mat.
+
+image::class-boxes.png[]
+
+Next to the envelopes, there's a small tile with a seal on it.
+This tile is used to add a new class envelope to the already existing ones.
+
+image::classs-unlock.png[]
+
+Clicking the seal on the tile will open an on-screen list of all available classes in the played mod.
+The list will use the class icon as well as the official spoiler name for the class.
+
+image::class-list.png[]
+
+Clicking an entry in the list will then place the new envelope to the left of the existing ones.
+
+NOTE: The tile with the seal is actually a regular bag.
+If for some reason you need to actually access the bag to remove or add stuff manually, right-click it (while not hovering the seal) and use the "Search" context menu entry to get the basic TTS container search window.
