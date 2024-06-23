@@ -1,15 +1,9 @@
 = Missing Features & Known Bugs
 
-* Campaign stickers (the ones for the Campaign Sheet) are currently missing.
-* Enhancements are missing for all but the starter classes.
-* The enhancement calculator is not part of the mod yet (but could be copied from a GHE save).
+* Campaign stickers (the ones for the Campaign Sheet) are currently missing
 * Retired characters can not be entered on the Campaign Sheet.
 * Retired characters do not transfer when using the Campaign Manager.
 * Enhancements on loot cards do not transfer when using the Campaign Manager.
-* Boss monster stat sheets don't work for level 4+ yet.
-Their sleeve also doesn't match the new format yet and the rotation follows to 4 sided logic for base stat sheets.
-* The shop can not be packed up again automatically.
-Currently, the best way is the select all cards in the shop and hit the "G" button to group the cards, then drop them manually into the item bag.
 * The tracker image on a spawned Shadow from Deathwalker is distorted.
 
 .Envelope A
