@@ -5,6 +5,13 @@
 * Retired characters do not transfer when using the Campaign Manager.
 * Enhancements on loot cards do not transfer when using the Campaign Manager.
 * The tracker image on a spawned Shadow from Deathwalker is distorted.
+* Enhancements on loot cards do not transfer when using the Campaign Manager.
+
+.Scenario 77
+[%collapsible]
+====
+* Dark Fog overlays show up as walls instead of obstacles.
+====
 
 .Envelope A
 [%collapsible]
