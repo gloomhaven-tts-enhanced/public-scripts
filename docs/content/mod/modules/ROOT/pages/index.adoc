@@ -1,6 +1,6 @@
-= Gloomhaven Enhanced
+= Haven Enhanced
 
-This documentation describes how to use the GHE mod.
+This documentation describes how to use the Haven Enhanced mods.
 The mod can be used to play the different games from the "Haven" universe (Gloomhaven, Frosthaven, Jaws of the Lion, etc).
 
 This documentation is divided into information about xref:engine:index.adoc[general mod functions] that are independent of the actual game.
@@ -8,6 +8,8 @@ Each game also has specific information
 
 * xref:frosthaven:index.adoc[]
 * xref:gloomhaven:index.adoc[]
+
+Checkout xref:guide:index.adoc[] to start using the mod.
 
 Checkout the xref:updates.adoc[Updates] to find more about the features of each release.
 
@@ -17,3 +19,4 @@ The documentation is still work in progress and doesn't contain all features.
 If you want to contribute to the documentation, checkout xref:dev:ROOT:documentation.adoc[this page].
 
 If you get stuck or things are unclear, feel free to ask on the official Discord server.
+

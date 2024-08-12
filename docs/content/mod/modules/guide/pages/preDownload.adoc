@@ -1,0 +1,32 @@
+= Pre-Downloading Assets
+
+It's recommended to pre-download all the assets from the mod before starting the game, especially if you are playing multiplayer.
+Otherwise, TTS will download assets when you first encounter them.
+This is typically a bit slower than downloading an asset manually, and can lead to de-syncs or weird behavior in multiplayer games Each player downloads the assets individually, but players that already finished downloading can interact with the game pieces which may make things for the loading players not working correctly afterward.
+By pre-downloading the assets this problem can be circumvented and loading new content (like encountering new monsters, unlocking classes, etc.) is a bit smoother in general.
+The whole assets of the mod are around 4GB in total.
+
+To pre-download the assets, go to https://drive.google.com/drive/folders/1I136KhBufKiaWh8nCGrk-gxLIBnMhNSO and download the `fhe-assets.zip` archive there.
+Visit the https://kb.tabletopsimulator.com/getting-started/technical-info/#configuration-files-location[TTS knowledge base] to find the directory path where TTS stores its game data for your system and navigate to that directory.
+Open the directory `Mods`, this is where TTS stores its file cache, based on the object type (e.g. `Images` contains all cards, textures, etc.) Extract the downloaded `.zip` archive inside the `Mods` directory, to put the assets directly into the TTS cache.
+
+So, in the end the final directory structure looks like this:
+
+[source]
+----
+TTS directory
+└─ Mods/
+   ├─ Images/
+   │  ├─ httpssteamusercontentaakamaihdnetugc83721958669665131CDB9DDDBF02571C13143E28E25F3971C5E1F00E7.jpg
+   │  ├─ ...
+   │  └─ httpssteamusercontentaakamaihdnetugc1719786285766650742006AE5584AEB4E7E7343E14C0749B0B8F5D0CF62.jpg
+   ├─ Models/
+   │  └── ...
+   ├─ ...
+   └─ PDF/
+      └── ...
+----
+
+There are probably already lots of files inside there (and additional directories) if you used TTS before and played other mods.
+Just make sure the assets from the `.zip` file end up in the correct directories.
+After extracting, you can also delete the `.zip` file again.

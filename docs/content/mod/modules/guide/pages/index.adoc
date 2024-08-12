@@ -1,0 +1,5 @@
+= Getting Started
+
+It's recommended to pre-download all the assets from the mod before starting the game, especially if you are playing multiplayer.
+This should ensure a smoother experience when loading the mod for the first time and when encountering new content.
+Checkout xref:preDownload.adoc[the guide] on how to do that.
