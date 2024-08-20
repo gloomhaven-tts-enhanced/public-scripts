@@ -1,2 +1,3 @@
 * Tools
+** xref:enhancementTool.adoc[]
 ** xref:sectionTool.adoc[]
