@@ -1,7 +1,7 @@
 = Enhancement Tool
 
 The Enhancement Tool helps in creating the data for enhancements marks on class abilities.
-It generates the required scripts that needs to be added to a class registration, so that it can be picked up by the xref:mod:campaign:enhancements.adoc[Enhancement Calculator].
+It generates the required scripts that needs to be added to a class registration, so that it can be picked up by the xref:next@mod:campaign:enhancements.adoc[Enhancement Calculator].
 
 * Additively load https://steamcommunity.com/sharedfiles/filedetails/?id=3307944513[the tool] into FHE or GHE while the class envelope is also on the table.
 * Open the menu menu:Options[Game Keys] and bind die Game Key "Enhancement Tool: Add location".
