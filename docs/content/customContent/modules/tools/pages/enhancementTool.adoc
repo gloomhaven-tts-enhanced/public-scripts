@@ -4,7 +4,7 @@ The Enhancement Tool helps in creating the data for enhancements marks on class 
 It generates the required scripts that needs to be added to a class registration, so that it can be picked up by the xref:next@mod:campaign:enhancements.adoc[Enhancement Calculator].
 
 * Additively load https://steamcommunity.com/sharedfiles/filedetails/?id=3307944513[the tool] into FHE or GHE while the class envelope is also on the table.
-* Open the menu menu:Options[Game Keys] and bind die Game Key "Enhancement Tool: Add location".
+* Open the menu menu:Options[Game Keys] and bind the Game Key "Enhancement Tool: Add location".
 This key is used to mark a location on an ability card while hovering it with the mouse.
 So something like left btn:[CTRL] might work well.
 * Right-click the class envelope and use the menu:Setup Enhancements[] menu.
