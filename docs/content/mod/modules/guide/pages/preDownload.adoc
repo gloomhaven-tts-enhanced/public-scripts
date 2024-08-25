@@ -6,9 +6,9 @@ This is typically a bit slower than downloading an asset manually, and can lead 
 By pre-downloading the assets this problem can be circumvented and loading new content (like encountering new monsters, unlocking classes, etc.) is a bit smoother in general.
 The whole assets of the mod are around 4GB in total.
 
-To pre-download the assets, go to https://drive.google.com/drive/folders/1I136KhBufKiaWh8nCGrk-gxLIBnMhNSO and download the `fhe-assets.zip` archive there.
+To pre-download the assets, go to https://drive.google.com/drive/folders/1I136KhBufKiaWh8nCGrk-gxLIBnMhNSO and download all files there by downloading the individual directories.
 Visit the https://kb.tabletopsimulator.com/getting-started/technical-info/#configuration-files-location[TTS knowledge base] to find the directory path where TTS stores its game data for your system and navigate to that directory.
-Open the directory `Mods`, this is where TTS stores its file cache, based on the object type (e.g. `Images` contains all cards, textures, etc.) Extract the downloaded `.zip` archive inside the `Mods` directory, to put the assets directly into the TTS cache.
+Open the directory `Mods`, this is where TTS stores its file cache, based on the object type (e.g. `Images` contains all cards, textures, etc.) Copy the content of each downloaded directory into the same one inside the `Mods` directory, to put the assets directly into the TTS cache.
 
 So, in the end the final directory structure looks like this:
 
@@ -28,5 +28,4 @@ TTS directory
 ----
 
 There are probably already lots of files inside there (and additional directories) if you used TTS before and played other mods.
-Just make sure the assets from the `.zip` file end up in the correct directories.
-After extracting, you can also delete the `.zip` file again.
+Just make sure the downloaded assets up in the correct directories.
