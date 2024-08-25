@@ -1,0 +1,6 @@
+name: creator
+title: Content Creator
+version: ~
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc
