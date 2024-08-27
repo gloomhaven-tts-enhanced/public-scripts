@@ -8,11 +8,11 @@ The following aspects of looting are not currently scripted
 
 The following aspects of looting are currently scripted
 
-===End of turn loot token collection.
+=== End of turn loot token collection.
 When a character ends their turn in the Initiative Tracker,
 any loot tokens under them are moved to their character mat.
 
 [#_random_item]
-===Random items
+=== Random items
 When a character draws the Random Item loot card, they can click "open", to automatically gain a random Random Item.
 image::random_item.png[]
