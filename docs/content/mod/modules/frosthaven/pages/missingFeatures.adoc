@@ -1,13 +1,14 @@
 = Missing/Upcoming Features & Known Bugs
 
-== Looting
+.Looting
 * For each scenario, the loot deck is prepared correctly per the scenario book
 * If a character ends their turn in the Initiative Tracker while on loot token(s), the token is sent to the character's mat
 * Loot cards must be drawn manually
 * Loot must be calculated and tallied at the end of a scenario manually
 * Loot cards will be removed when "Delete Map" button is clicked in Game Setup
 
-== Other Missing/Upcoming Features
+[%hardbreaks]
+.Other Missing/Upcoming Features
 * New Initiative Tracker UI is in the works!
 * Lockout stickers for scenario flowchart
 * Condition expiration (in discussion)
