@@ -17,7 +17,8 @@ To the left side of the play area are three bins of items:
 image::items.png[]
 
 Available Items:: This is where the unlocked items are stored. Left click btn:[Unpack/Recall] to place all available items in the shop area, which is above the play area.
-Check out the btn:[Item Shop] for sorting the available items in the shop area.
+Check out the btn:[Item Shop] for sorting the available items in the shop area. Be sure to right click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
+This allows for fewer images to load and allows the mod to perform better.
 //add link to Item Shop button
 
 Random Blueprints and Items:: This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
