@@ -2,7 +2,7 @@
 
 .Looting
 * For each scenario, the loot deck is prepared correctly per the scenario book
-* If a character ends their turn in the Initiative Tracker while on loot token(s), the token is sent to the character's mat
+* If a character ends their turn in the Initiative Tracker while occupying a hex with a loot token, the token is sent to the character's mat
 * Loot cards must be drawn manually
 * Loot must be calculated and tallied at the end of a scenario manually
 * Loot cards will be removed when "Delete Map" button is clicked in Game Setup
