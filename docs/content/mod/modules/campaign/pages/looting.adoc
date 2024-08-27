@@ -8,7 +8,7 @@ The following aspects of looting are not currently scripted
 
 The following aspects of looting are currently scripted
 
-=== End of turn loot token collection.
+=== End of turn loot token collection
 When a character ends their turn in the Initiative Tracker,
 any loot tokens under them are moved to their character mat.
 
