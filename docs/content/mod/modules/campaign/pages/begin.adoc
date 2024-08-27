@@ -1,6 +1,6 @@
 = Beginning of Campaign
 
-==Starting a Campaign
+== Starting a Campaign
 To begin a campaign from a fresh file of Frosthaven Enhanced, select btn:[New Campaign] in the middle of the table as shown below.
 
 image::campaign-start.png[]
@@ -11,7 +11,7 @@ and a set of the sealed envelopes.
 
 image::campaign-starting-pieces.png[]
 
-===Items
+=== Items
 To the left side of the play area are three bins of items:
 
 image::items.png[]
@@ -25,7 +25,7 @@ Click btn:[Unlock] and select between btn:[Random Blueprint] and [Random Item]. 
 
 Locked Items::This is where all other locked items are kept. Click btn:[Unlock] to bring up an input box. Enter an item's number or name to unlock it.
 
-===Add Players
+=== Add Players
 Below the play area are 5 Player Areas, each with a btn:[Add Player] button. Once clicked, a player mat will apear for the player. 
 
 image::player_mat.png[]
