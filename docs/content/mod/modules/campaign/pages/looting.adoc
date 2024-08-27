@@ -15,4 +15,5 @@ any loot tokens under them are moved to their character mat.
 [#_random_item]
 === Random items
 When a character draws the Random Item loot card, they can click "open", to automatically gain a random Random Item.
+
 image::random-item.png[]
