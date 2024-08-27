@@ -7,7 +7,7 @@
 * Loot must be calculated and tallied at the end of a scenario manually
 * Loot cards will be removed when "Delete Map" button is clicked in Game Setup
 
-
+== Other Missing/Upcoming Features
 * New Initiative Tracker UI is in the works!
 * Lockout stickers for scenario flowchart
 * Condition expiration (in discussion)
