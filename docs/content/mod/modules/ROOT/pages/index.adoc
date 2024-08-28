@@ -7,11 +7,8 @@ This documentation is divided into information about xref:engine:index.adoc[gene
 Each game also has specific information
 
 * xref:frosthaven:index.adoc[]
-* xref:gloomhaven:index.adoc[]
 
 Checkout xref:guide:index.adoc[] to start using the mod.
-
-Checkout the xref:updates.adoc[Updates] to find more about the features of each release.
 
 If you want to integrate custom content into the mod, checkout xref:custom:ROOT:index.adoc[this page].
 

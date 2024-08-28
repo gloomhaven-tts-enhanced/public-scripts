@@ -1,4 +1,4 @@
 * Playing a Scenarios
 ** xref:looting.adoc[]
-** xref:monsters.adoc[Monsters]
+// ** xref:monsters.adoc[Monsters]
 ** xref:summons.adoc[Summons]

@@ -1,7 +1,6 @@
 name: mod
 title: Gloomhaven Enhanced
 version: 2.0
-prerelease: -beta
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
@@ -9,5 +8,5 @@ nav:
   - modules/campaign/nav.adoc
   - modules/scenario/nav.adoc
   - modules/frosthaven/nav.adoc
-  - modules/gloomhaven/nav.adoc
+#  - modules/gloomhaven/nav.adoc
   - modules/tool/nav.adoc
