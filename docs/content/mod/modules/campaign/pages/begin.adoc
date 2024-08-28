@@ -29,12 +29,13 @@ Locked Items:: This is where all other locked items are kept.
 Click btn:[Unlock] to bring up an input box.
 Enter an item's number or name to unlock it.
 
+[#_add_players]
 === Add Players
 Below the play area are 5 Player Areas, each with an btn:[Add Player] button.
 Once clicked, a player mat will appear for the player.
 
 image::player-mat.png[]
 
-To add a character class to an active play mat, xref:scenario:class.adoc[drag and drop] a small class box onto the player mat.
+To add a character class to an active play mat, drag and drop a small class box onto the player mat.
 
 image::bspear-to-mat.png[]
