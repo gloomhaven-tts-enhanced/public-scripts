@@ -35,6 +35,6 @@ Once clicked, a player mat will appear for the player.
 
 image::player-mat.png[]
 
-To add a character class to an active play mat, drag and drop a small class box onto the player mat.
+To add a character class to an active play mat, xref:scenario:class.adoc#FILL[drag and drop] a small class box onto the player mat.
 
 image::bspear-to-mat.png[]
