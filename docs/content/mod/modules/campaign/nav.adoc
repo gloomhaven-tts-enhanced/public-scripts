@@ -1,3 +1,4 @@
 * Playing a Campaign
+** xref:begin.adoc[]
 ** xref:class.adoc[]
 ** xref:enhancements.adoc[]

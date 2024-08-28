@@ -1,13 +1,11 @@
 = Beginning of Campaign
 
-== Starting a Campaign
+== Starting a new Campaign
 To begin a campaign from a fresh file of Frosthaven Enhanced, select btn:[New Campaign] in the middle of the table as shown below.
 
 image::campaign-start.png[]
 
-This will spawn in the starting classes, assign the appropriate locked items to the Available Items and to the Random Blueprints and Items,
-spawn the Frosthaven map, a campaign sheet, the starting event decks and buildings, town guard deck, the alchemy board, the scenario flowcharts,
-and a set of the sealed envelopes.
+This will spawn in the starting classes, assign the appropriate locked items to the Available Items and to the Random Blueprints and Items, spawn the Frosthaven map, a campaign sheet, the starting event decks and buildings, town guard deck, the alchemy board, the scenario flowcharts, and a set of the sealed envelopes.
 
 image::campaign-starting-pieces.png[]
 
@@ -16,20 +14,27 @@ To the left side of the play area are three bins of items:
 
 image::items.png[]
 
-Available Items:: This is where the unlocked items are stored. Left click btn:[Unpack/Recall] to place all available items in the shop area, which is above the play area.
-Check out the btn:[Item Shop] for sorting the available items in the shop area. Be sure to right click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
+Available Items:: This is where the unlocked items are stored.
+Left click btn:[Unpack/Recall] to place all available items in the shop area, which is above the play area.
+Check out the btn:[Item Shop] for sorting the available items in the shop area.
+Be sure to right-click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
 This allows for fewer images to load and allows the mod to perform better.
 //add link to Item Shop button
 
 Random Blueprints and Items:: This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
-Click btn:[Unlock] and select between btn:[Random Blueprint] and [Random Item]. Note that xref:looting.adoc#_random_item[Random Items] are assigned by clicking the button on the loot card drawn.
+Click btn:[Unlock] and select between btn:[Random Blueprint] and [Random Item].
+Note that xref:scenario:looting.adoc#random_item[Random Items] are assigned by clicking the button on the loot card drawn.
 
-Locked Items:: This is where all other locked items are kept. Click btn:[Unlock] to bring up an input box. Enter an item's number or name to unlock it.
+Locked Items:: This is where all other locked items are kept.
+Click btn:[Unlock] to bring up an input box.
+Enter an item's number or name to unlock it.
 
 === Add Players
-Below the play area are 5 Player Areas, each with an btn:[Add Player] button. Once clicked, a player mat will apear for the player. 
+Below the play area are 5 Player Areas, each with an btn:[Add Player] button.
+Once clicked, a player mat will appear for the player.
 
-image::player_mat.png[]
+image::player-mat.png[]
 
+To add a character class to an active play mat, drag and drop a small class box onto the player mat.
 
-To add a character class to an active play mat, xref:class.adoc#_playing_a_character[drag and drop] a small class box.
+image::bspear-to-mat.png[]

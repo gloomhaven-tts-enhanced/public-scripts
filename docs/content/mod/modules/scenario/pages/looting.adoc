@@ -1,0 +1,18 @@
+= Looting
+
+== Currently scripted
+
+* End of turn loot token collection
+** When a character ends their turn in the Initiative Tracker,
+any loot tokens under them are moved to their character mat.
+
+== Not currently scripted
+
+* Drawing loot cards
+* Adding looted cards to appropriate character sheets at the end of a scenario
+
+[#random_item]
+* Random items
+** When a character draws the Random Item loot card, they can click "open", to automatically gain a random Random Item.
+
+image::random-item.png[]
