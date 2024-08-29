@@ -1,0 +1,3 @@
+= Game Setup
+
+image::interface/game-setup.png[]

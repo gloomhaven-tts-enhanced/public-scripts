@@ -1,3 +1,0 @@
-= Scenario Setup
-
-image::interface/scenarioSetup.png[]
