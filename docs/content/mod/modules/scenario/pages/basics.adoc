@@ -1,0 +1,5 @@
+= Scenario Basics
+
+Before a round can start, every character must place cards into their 1 and 2 slots on their player mat.
+A shortcut for this is to press 1 when hovering over a card in your hand you would like to play as your initiative, and press 2 when hovering over a card you'd like to play as your second card.
+If they instead wish to long rest, they must click btn:[Long Rest] in their xref:engine:interface:interface.adoc#player_interface[Player Interface].
