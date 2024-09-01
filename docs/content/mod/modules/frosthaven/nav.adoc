@@ -1,4 +1,4 @@
-* Frosthaven
+* Frosthaven Outpost
 +
 --
 include::partial$nav.adoc[]
