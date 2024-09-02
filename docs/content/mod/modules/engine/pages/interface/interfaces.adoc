@@ -1,15 +1,16 @@
 = Interfaces
 
-There are various interfaces you can enable on the screen to help you manage and playing your campaign.
+There are various interfaces you can enable on the screen to help you manage and play your campaign.
 Those can be found at the top right of the screen.
 There is a small drop-down prompt which will bring down the menu for the various panels once clicked.
 Clicking the drop-down another time, will hide the menu again.
 
 image::interface/interfaces.png[Interfaces]
 
-Player Interface:: Has buttons to control the scenario as well as the player character.
-Enemy Interface:: Allows to easily control the enemies attack modifier deck.
-Game Setup:: You can load xref:interface/scenarioSetup.adoc[scenarios] and xref:interface/monsterSetup.adoc[monsters] from here.
+[#player_interface]
+Player Interface:: Buttons to start the round, end the round, draw a player's attack modifier, add a curse to the player's attack modifier deck, add a bless to the player's attack modifier deck, sort hand numerically, and to declare a long rest for the round.
+Enemy Interface:: Buttons to draw from the enemy attack modifier deck, add a curse to the enemy attack modifier deck, or add a bless to the enemy attack modifier deck
+Game Setup:: You can load xref:interface/scenarioSetup.adoc[scenarios] or just xref:interface/monsterSetup.adoc[monsters] from here.
 xref:interface/options.adoc[Options]:: Allows you to change some of the mod's behavior.
 Camera Controls:: A panel which allows to switch to certain fixed camera positions.
 xref:interface/shop.adoc[Item Shop]:: A panel to sort the item card currently laid out on the table.
