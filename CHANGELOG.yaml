@@ -4,10 +4,16 @@
       Clicking an inert element will make it strong.
       Clicking a strong or waning element will make it inert.
       Right-clicking an element will make it waning.
+    - Using the "Change Text" menu option on aid tokens lets you now directly enter the new value for a token.
+    - The Context Menu has been renamed to Quick Menu. This also means the Game Key has to be bound again by all players.
   add:
     - Hotkeys for playing 1st, 2nd and 3rd ability card have been added again. The numbers 1, 2, 3 still works as before.
     - A hotkey to sort the player's hand has been added.
     - The player mat has a spot for a 5th active ability card as well as buttons to draw/suffle the AMD and add Curse/Bless to it.
+    - The AMD mats have buttons to add Curse/Shuffle cards and have an indicator icon to distinguish them.
+    - Inspiration will be automatically added after winning a scenario.
+    - The rule book has some default bookmarks. You can also add your own.
+    - The cleanup action on an ability card will move it to the lost pile.
   fix:
     - Abilities that also have persistent trackers can be opened with the Enhancement Calculator.
     - Prism and Blinkblade solo scenario spawn the correct obstacle.
