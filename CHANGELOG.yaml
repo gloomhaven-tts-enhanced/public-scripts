@@ -6,6 +6,7 @@
       Right-clicking an element will make it waning.
     - Using the "Change Text" menu option on aid tokens lets you now directly enter the new value for a token.
     - The Context Menu has been renamed to Quick Menu. This also means the Game Key has to be bound again by all players.
+    - The "Hidden Setup" toggle has been removed from the Game Setup menu. It is now driven by the setting in the Option menu. The default value for this option is set to "false", so the revealed room layout is the default setup.
   add:
     - Hotkeys for playing 1st, 2nd and 3rd ability card have been added again. The numbers 1, 2, 3 still works as before.
     - A hotkey to sort the player's hand has been added.
@@ -25,6 +26,7 @@
     - Scenario aid tokens and objective tokens use the correct FH images.
     - 3D traps can be removed with the Cleanup Action
     - Character multi perks have the correct order/position. When migrating you probably see a different order (bottom to top) for multi perks, so be sure to correct them after the migration.
+    - Banner Spear's perks 5 and 6 add the correct amount of cards.
 - version: 2.0.1
   release: 2024-08-25
   fix:
