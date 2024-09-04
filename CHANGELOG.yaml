@@ -2,11 +2,18 @@
   change:
     - The element tracker uses a different control schema. Clicking an inert element will make it strong. Clicking a strong or waning element will make it inert. Right-clicking an element will make it waning.
     - The "Delete Action" has been renamed to "Cleanup Action". This means it has to be rebound by all players.
+    - The Context Menu has been renamed to Quick Menu. This also means the Game Key has to be bound again by all players.
+    - The "Hidden Setup" toggle has been removed from the Game Setup menu. It is now driven by the setting in the Option menu. The default value for this option is set to "false", so the revealed room layout is the default setup.
+    - Using the "Change Text" menu option on aid tokens lets you now directly enter the new value for a token.
   add:
     - Hotkeys for playing 1st, 2nd and 3rd ability card have been added. The numbers 1, 2, 3 still works as before.
     - A hotkey to sort the player's hand has been added.
     - Right clicking a +/- button for counters on the character sheet will add/remove a value by 5. Middle click will add/remove by 10.
     - The player mat has a spot for a 5th active ability card as well as buttons to draw/suffle the AMD and add Curse/Bless to it.
+    - The AMD mats have buttons to add Curse/Shuffle cards and have an indicator icon to distinguish them.
+    - Inspiration will be automatically added after winning a scenario.
+    - The rule book has some default bookmarks. You can also add your own.
+    - The cleanup action on an ability card will move it to the lost pile.
   fix:
     - Abilities that also have persistent trackers can be opened with the Enhancement Calculator.
     - Prism and Blinkblade solo scenario spawn the correct obstacle.
@@ -19,6 +26,7 @@
     - Scenario aid tokens and objective tokens use the correct FH images.
     - 3D traps can be removed with the Cleanup Action
     - Character multi perks have the correct order/position. When migrating you probably see a different order (bottom to top) for multi perks, so be sure to correct them after the migration.
+    - Banner Spear's perks 5 and 6 add the correct amount of cards.
   custom:
     - Custom condition tokens need the new tag "Condition" in order apply conditions on token collisions.
 - version: 2.0.1
