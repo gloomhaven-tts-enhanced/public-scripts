@@ -3,16 +3,22 @@
     - The element tracker uses a different control schema. Clicking an inert element will make it strong. Clicking a strong or waning element will make it inert. Right-clicking an element will make it waning.
     - The "Delete Action" has been renamed to "Cleanup Action". This means it has to be rebound by all players.
   add:
-    - Hotkeys for playing 1st, 2nd and 3rd ability card have been added again.
+    - Hotkeys for playing 1st, 2nd and 3rd ability card have been added. The numbers 1, 2, 3 still works as before.
     - A hotkey to sort the player's hand has been added.
     - Right clicking a +/- button for counters on the character sheet will add/remove a value by 5. Middle click will add/remove by 10.
+    - The player mat has a spot for a 5th active ability card as well as buttons to draw/suffle the AMD and add Curse/Bless to it.
   fix:
     - Abilities that also have persistent trackers can be opened with the Enhancement Calculator.
     - Prism and Blinkblade solo scenario spawn the correct obstacle.
     - Loot Cards 1418 and 1419 get added to the scenario loot deck automatically, if they are in the master loot deck.
-    - PQ have the correct name/image combinations.
+    - Personal Quests have the correct name/image combinations again.
     - Summons have their class color as the standee color.
     - The damage tokens won't be added as a condition to figures anymore.
+    - The scenario flowchart automatically checks a scenario if it was won.
+    - Campaign Manager can save and load inactive characters again from now on. You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
+    - Scenario aid tokens and objective tokens use the correct FH images.
+    - 3D traps can be removed with the Cleanup Action
+    - Character multi perks have the correct order/position. When migrating you probably see a different order (bottom to top) for multi perks, so be sure to correct them after the migration.
   custom:
     - Custom condition tokens need the new tag "Condition" in order apply conditions on token collisions.
 - version: 2.0.1
