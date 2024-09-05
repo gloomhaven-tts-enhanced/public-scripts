@@ -16,7 +16,7 @@ image::items.png[]
 
 Available Items:: This is where the unlocked items are stored.
 Left click btn:[Unpack/Recall] to place all available items in the shop area, which is above the play area.
-Check out the xref:engine:shop.adoc[Item Shop] for sorting the available items in the shop area.
+Check out the xref:engine:interface:shop.adoc[Item Shop] for sorting the available items in the shop area.
 Be sure to right-click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
 This allows for fewer images to load and allows the mod to perform better.
 
