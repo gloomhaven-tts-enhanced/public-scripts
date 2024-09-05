@@ -19,6 +19,7 @@
     - Event deck mats now show an image for their corresponding deck type
     - A tips mat shows at the start of the game highlighting the Quick Menu and Cleanup Action as well as a button to bring up the mod's documentation. After a campaign is started, this will be moved to the book stand.
     - Added a Game Key for undoing the accidental deletion of objects (which previously was only doable by entering `undo` into the chat window).
+    - Applied +1 stickers on loot cards in the master loot deck are migrated with the Campaign Manager.
   fix:
     - Abilities that also have persistent trackers can be opened with the Enhancement Calculator.
     - Prism and Blinkblade solo scenario spawn the correct obstacle.
