@@ -2,6 +2,7 @@
 
 == Starting a New Campaign
 To begin a campaign from a fresh file of Frosthaven Enhanced, select btn:[New Campaign] in the middle of the table as shown below.
+The btn:[Save Campaign] and Load Campaign portions of the Campaign Manager are used for xref:migrate.adoc#migrating[migrating a campaign].
 
 image::campaign-start.png[]
 
@@ -16,7 +17,7 @@ image::items.png[]
 
 Available Items:: This is where the unlocked items are stored.
 Left click btn:[Unpack/Recall] to place all available items in the shop area, which is above the play area.
-Check out the xref:engine:shop.adoc[Item Shop] for sorting the available items in the shop area.
+Check out the xref:engine:interface:shop.adoc[Item Shop] for sorting the available items in the shop area.
 Be sure to right-click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
 This allows for fewer images to load and allows the mod to perform better.
 
