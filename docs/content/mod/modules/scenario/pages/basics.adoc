@@ -1,8 +1,8 @@
 = Scenario Basics
 
-*Click xref:campaign:start.adoc[here] to review setting up a scenario.
-*Additional Notes
-**Before a round can start, every character must place cards into their 1 and 2 slots on their player mat.
-***Press 1 when hovering on a card to put it in slot 1, and Press 2 to do so for slot 2.
-**If they instead wish to long rest, they must click btn:[Long Rest] in their xref:engine:interface:interfaces.adoc#player_interface[Player Interface].
+* Click xref:campaign:start.adoc[here] to review setting up a scenario.
+* Additional Notes
+** Before a round can start, every character must place cards into their 1 and 2 slots on their player mat.
+*** Press 1 when hovering on a card to put it in slot 1, and Press 2 to do so for slot 2.
+** If they instead wish to long rest, they must click btn:[Long Rest] in their xref:engine:interface:interfaces.adoc#player_interface[Player Interface].
 
