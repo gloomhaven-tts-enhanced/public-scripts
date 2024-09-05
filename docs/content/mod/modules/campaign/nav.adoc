@@ -3,3 +3,4 @@
 ** xref:start.adoc[]
 ** xref:class.adoc[]
 ** xref:enhancements.adoc[]
+** xref:migrate.adoc[]
