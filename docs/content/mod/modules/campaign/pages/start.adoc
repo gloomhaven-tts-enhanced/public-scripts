@@ -15,7 +15,7 @@ image::scenario-level-mat.png[]
 [#select_scenario]
 == Select a Scenario
 Once you've determined a scenario level, it's time to pick a scenario.
-Be sure all previously completed scenarios have been marked completed, then click the drop-down and select xref:engine:interface:scenarioSetup.adoc[Game Setup].
+Be sure all previously completed scenarios have been marked completed, then click the drop-down and select xref:engine:interface/scenarioSetup.adoc[Game Setup].
 
 Here you can select the scenario you'd like to spawn.
 
@@ -39,4 +39,4 @@ When you're ready to begin, the starting hexes can all be removed by clicking on
 
 image::room-one.png[]
 
-Now it's time to begin xref:scenario:basics.adoc[Playing a Scenario]!
+Now it's time to begin xref:scenario:nav.adoc[Playing a Scenario]!

@@ -28,6 +28,7 @@
 * Unlocking it will always be built the Hall of Revelry level 2, although in solo mode you would need to pay its upgrade cost first.
 ====
 
+[#envelope_24]
 .Envelope 24
 [%collapsible]
 ====
