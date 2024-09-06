@@ -39,4 +39,4 @@ When you're ready to begin, the starting hexes can all be removed by clicking on
 
 image::room-one.png[]
 
-Now it's time to begin xref:scenario:basics.adoc[Playing a Scenario]!
+Now it's time to begin xref:scenario:nav.adoc[Playing a Scenario]!
