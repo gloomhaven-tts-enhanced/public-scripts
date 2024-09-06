@@ -1,4 +1,5 @@
-- version: unreleased
+- version: 2.1.0
+  release: 2024-09-06
   change:
     - The element tracker uses a different control schema. Clicking an inert element will make it strong. Clicking a strong or waning element will make it inert. Right-clicking an element will make it waning.
     - The "Delete Action" has been renamed to "Cleanup Action". This means it has to be rebound by all players.

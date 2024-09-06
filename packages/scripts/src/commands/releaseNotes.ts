@@ -61,12 +61,12 @@ const writeChanges = (changes: ChangeVersion) => {
 };
 
 const createSteamNotes = (change: ChangeVersion, dir: string) => {
-  let text = `Version ${change.version}\n\n`;
+  let text = `[h1]Version ${change.version}[/h1]\n\n`;
 
   const appendCategory = (name: string, key: ChangeCategory) => {
     const entries = change[key];
     if (entries) {
-      text += `${name}\n[list]\n`;
+      text += `[h3]${name}[/h3]\n[list]\n`;
 
       for (const entry of entries) {
         text += `[*] ${entry}\n`;
@@ -82,18 +82,15 @@ const createSteamNotes = (change: ChangeVersion, dir: string) => {
 };
 
 const createDiscordNotes = (change: ChangeVersion, dir: string) => {
-  const date = parseISO(change.release ?? "1970-01-01");
-  const dateOut = format(date, "MMMM dd, yyyy");
-
-  let text = `**v${change.version}** - ${dateOut}\n`;
+  let text = `**v${change.version}**\n`;
 
   const appendCategory = (name: string, key: ChangeCategory) => {
     const entries = change[key];
     if (entries) {
-      text += `_${name}_\n`;
+      text += `__${name}__\n`;
 
       for (const entry of entries) {
-        text += `* ${entry}\n`;
+        text += `- ${entry}\n`;
       }
 
       text += "\n";
