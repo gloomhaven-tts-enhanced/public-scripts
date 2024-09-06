@@ -2,7 +2,7 @@
   {
     "version": "2.1.0",
     "release": "2024-09-06",
-    "change": [
+    "feature": [
       "The element tracker uses a different control schema. Clicking an inert element will make it strong. Clicking a strong or waning element will make it inert. Right-clicking an element will make it waning.",
       "The \"Delete Action\" has been renamed to \"Cleanup Action\". This means it has to be rebound by all players.",
       "The Context Menu has been renamed to Quick Menu. This also means the Game Key has to be bound again by all players.",
@@ -10,9 +10,7 @@
       "Using the \"Change Text\" menu option on aid tokens lets you now directly enter the new value for a token.",
       "Campaign Manager objects are now blue to differentiate them from Gloomhaven Enhanced campaign saves",
       "The scale of monster mats and monster ability cards was reduced to match the physical components.",
-      "Monsters keep their current HP when switching between normal and elite."
-    ],
-    "add": [
+      "Monsters keep their current HP when switching between normal and elite.",
       "Game Keys for playing 1st, 2nd and 3rd ability card have been added. The numbers 1, 2, 3 still works as before.",
       "A Game Key to sort the player's hand has been added.",
       "Right clicking a +/- button for counters on the character sheet will add/remove a value by 5. Middle click will add/remove by 10.",
@@ -58,16 +56,12 @@
       "You can copy/paste inactive characters from the previous version to the new one to transfer them for now.",
       "Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button."
     ],
-    "custom": [
-      "Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."
-    ]
+    "custom": ["Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."]
   },
   {
     "version": "2.0.1",
     "release": "2024-08-25",
-    "fix": [
-      "Treasure cards are placed in their deck again so treasures can be looted."
-    ]
+    "fix": ["Treasure cards are placed in their deck again so treasures can be looted."]
   },
   {
     "version": "2.0.0",
