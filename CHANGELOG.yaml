@@ -7,6 +7,7 @@
     - Using the "Change Text" menu option on aid tokens lets you now directly enter the new value for a token.
     - Campaign Manager objects are now blue to differentiate them from Gloomhaven Enhanced campaign saves
     - The scale of monster mats and monster ability cards was reduced to match the physical components.
+    - Monsters keep their current HP when switching between normal and elite.
   add:
     - Game Keys for playing 1st, 2nd and 3rd ability card have been added. The numbers 1, 2, 3 still works as before.
     - A Game Key to sort the player's hand has been added.
@@ -18,30 +19,30 @@
     - The Cleanup Action on an ability card will move it to the lost pile.
     - Event deck mats now show an image for their corresponding deck type
     - A tips mat shows at the start of the game highlighting the Quick Menu and Cleanup Action as well as a button to bring up the mod's documentation. After a campaign is started, this will be moved to the book stand.
-    - Added a Game Key for undoing the accidental deletion of objects (which previously was only doable by entering `undo` into the chat window).
+    - Added a Game Key for undoing the accidental deletion of objects (which previously was only doable by entering `>undo` into the chat window).
     - Applied +1 stickers on loot cards in the master loot deck are migrated with the Campaign Manager.
   fix:
     - Abilities that also have persistent trackers can be opened with the Enhancement Calculator.
     - Prism and Blinkblade solo scenario spawn the correct obstacle.
-    - Loot Cards 1418 and 1419 get added to the scenario loot deck automatically, if they are in the master loot deck.
+    - Loot Cards 1418 and 1419 get added to the scenario loot deck automatically, if they are in the Master Loot Deck.
     - Personal Quests have the correct name/image combinations again.
     - Summons have their class color as the standee color.
-    - The damage tokens won't be added as a condition to figures anymore.
+    - The damage token won't be added as a condition to figures anymore.
     - The scenario flowchart automatically checks a scenario if it was won.
-    - Campaign Manager can save and load inactive characters again from now on. You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
-    - Scenario aid tokens and objective tokens use the correct FH images.
+    - The Campaign Manager can save and load inactive characters again from now on. You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
+    - Scenario aid tokens and objective tokens use the correct FH images and font.
     - 3D traps can be removed with the Cleanup Action
-    - Character multi perks have the correct order/position. When migrating you probably see a different order (bottom to top) for multi perks, so be sure to correct them after the migration.
+    - Character multi perks have the correct order/position.
     - Banner Spear's perks 5 and 6 add the correct amount of cards.
     - The Enhancement Calculator now shows up and can be used for each player individually.
     - The checkmark for solo shows its text again.
-    - Fixed a cost calculation mistake on Banner Spear's "Regroup"
-    - Fixed a typo on the name of item 224
+    - Fixed a cost calculation mistake on Banner Spear's "Regroup".
+    - Fixed a typo on the name of item 224.
     - Unpacking a character with every perk unlocked no longer duplicates the characters' components.
-    - Fixed a double-digit display issue with the round tracker
+    - Fixed a double-digit display issue with the round tracker.
     - Font errors on the Character Sheets would be less likely or completly done (which resulted in some players seeing bigger text than others). If not, please report again.
-    - Fixed missing treasure for scenario 86
-    - Fixed scenario 11's boss missing overlay and summon options in the Quick Menu
+    - Fixed missing treasure for scenario 86.
+    - Fixed scenario 11's boss missing overlay and summon options in the Quick Menu.
     - The Savvas Icestorm ability "Frozen Shell" shows the correct preview text.
     - Fixes a clipping issue for some stickers on the map.
   migration:
