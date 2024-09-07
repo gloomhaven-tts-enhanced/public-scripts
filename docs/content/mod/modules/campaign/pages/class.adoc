@@ -2,7 +2,7 @@
 
 The currently available classes can be found on the left side of the table.
 They are tightly placed together into their envelopes.
-By using xref:scenario:class.adoc#add_players[drag and drop] on the envelope, you can pull out a fresh character of the class to place on a player mat.
+By using xref:start.adoc#add_players[drag and drop] on the envelope, you can pull out a fresh character of the class to place on a player mat.
 
 image::class-boxes.png[]
 
