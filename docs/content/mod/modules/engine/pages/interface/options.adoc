@@ -24,10 +24,11 @@ None:: Nothing happens to the scenario book, and you have to manually select the
 
 === Hidden Setup
 Specifies whether hidden room scenario should be used, when setting up a scenario by clicking the sticker on the map.
-Using the scenario from the Game Setup menu is not effected by this setting, because there's an additional option within this menu.
 
 [#_use_3d_models]
 === Use 3D Models
+NOTE: 3D Models are expected to be incorporated in a future version of Frosthaven Enhanced.
+
 Specifies for which overlay tokens 3D models should be used.
 These options are available:
 
@@ -48,10 +49,11 @@ If this option is not set, enemies will only be prepared once a room is opened w
 
 === Deal Battle Goals
 Defined how many Battle Goals will be dealt at the start of a scenario.
+Frosthaven rules call for 3 to be dealt at the start of a scenario, which is the default setting.
 Can be set to 0 so that they have to be drawn manually.
 
 === Hide Ability Cards
-When this option is et, ability cards placed with the xref:feature/hotkeys.adoc#_play_1st2nd_card[play ability card Game Key] are placed face-down.
+When this option is set, ability cards placed with the xref:feature/gameKeys.adoc#_play_1st2nd_card[play ability card Game Keys] are placed face-down.
 Otherwise, they are placed face-up.
 
 == Rules
@@ -67,6 +69,7 @@ Campaign Based:: Summoned monsters will drop loot based on the rules of the scen
 As of now, this is the same as "Never" as the default rules are the Gloomhaven ones, but this will be adjustable in the future.
 
 == Variants
+More information on Variants found on page 69 of the rulebook.
 
 === Solo/Open Information
 This options can be used to specify playing a solo game or a coop game with open information.
@@ -75,24 +78,35 @@ So with solo play it's intended to add the +1 for the scenario level and use thi
 This is also shown own the scenario level chart below the Party Sheet.
 
 [#enhancement_system]
-=== Enhancement
+=== Enhancements
 Defines the enhancement system to use.
-This influences the prices on the xref:tool:enhancementCalculator.adoc[].
+This influences the prices on the xref:campaign/enhancements.adoc[Enhancement Calculator].
 
-Classic:: The prices from base Gloomhaven.
+Classic:: The prices from Frosthaven.
 When this is used, all enhancements are also applied to the class box of a character, when the character is packed up
-Non-permanent:: This is the version from Gloomhaven Digital.
-Most prices for enhancements are reduced, but enhancements only apply to a single character instead of the whole class
-
+Non-permanent:: These take the final cost of an enhancement as a starting point. Then, if the card is already enhanced, the card cost reduces by 20 gold. Finally, cut the cost by 20%.
 
 == Appearance
 
 === Background Image
 This specified the image that is shown on the table surface.
 
+=== Background Color
+The background color of the table can be changed to any color you'd like.
+
+=== Ability Preview
+This changes how monster ability cards are shown in the xref:initiativeTracker.adoc[Initiative Tracker].
+
+Icons:: The attack, move, shield, etc. icons are used when previewing the monster type's abilities for the round.
+Text:: The words "attack", "move", "shield", etc. are used when previewing the monster type's abilities for the round.
+
+=== UI Font
+Change your Interface font. Reload mod to update interface fonts.
+Germania One:: Default font
+Pirata One:: Font that was default in Gloomhaven Enhanced.
+
+=== Element Interface Orientation
+Change the orientation of the stack of elements. Select between horizontal and vertical.
+
 === Themes
 Can be used to change the appearance of some game components.
-
-Frosthaven::
-Changes the condition image for Wound to the new FH style.
-Also, some icons in the ability card preview for monsters are changed to the FH style.

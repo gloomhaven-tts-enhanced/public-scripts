@@ -42,3 +42,9 @@ IMPORTANT: Please review the Manual Migration Steps below. At this time, not all
 
 * If you've unlocked Building 24, take note of xref:frosthaven:missingFeatures.adoc#envelope_24[the missing information].
 * Any enhanced loot cards
+** Any campaigns saved in v2.1.0 and on will carry enhanced loot cards to future mod versions
+* Item 224 may not be found during migration due to a type fix. You need to unlock it again manually
+* Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.
+* Personal Quests are migrated by name, so make sure the names of unlocked/available PQ match the ones you expect to migrate, not the maybe wrong image.
+* You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
+* Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button.

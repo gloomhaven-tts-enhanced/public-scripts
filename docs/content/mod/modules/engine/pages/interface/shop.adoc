@@ -1,3 +1,17 @@
-= Shop
+= Item Shop
 
 image::interface/shop.png[]
+
+== Sorting options
+=== Group by
+Type:: Will group items by the slot they fill (i.e. head, feet, chest)
+None:: Will fill in the item shop from left to right, extending up as needed. The bottom left item will be first in order.
+
+=== Sort by
+Name:: Will sort by name of item and will group based on the grouping option selected
+Item Number:: Will sort by item number and will group based on the grouping option selected. Note that this also functions as a sort for purchasable vs craftable items
+Cost:: Will sort by cost of item and will group based on the grouping option selected
+
+=== Filter
+Enter any text in the text box to filter for an item.
+Any item with a portion of its name matching the text entered will remain visible in place, while other items will be hidden.

@@ -1,0 +1,75 @@
+= Game Keys
+
+Game Keys are a concept of TTS, where players can assign a key on their keyboard to perform a specific action in the game.
+The list of available Game Keys can be found while accessing the menu:Options[Game Keys] menu.
+This section gives an overview of the available game actions that can be bound to a key.
+
+image::feature/menu_gameKeys.png[]
+
+Each player has to assign the Game Key themselves if they want to use it.
+There's no way to share assigned Game Keys or assign default keys in the mod.
+Assigned keys will stay between mod versions.
+When migrating from 2.0.0 to v2.1.0 or beyond, the xref:quickMenu.adoc[Quick Menu] and the xref:cleanupAction.adoc[Cleanup Action] have been renamed and must be re-mapped by all users.
+
+NOTE: Assigning a Game Key does not prevent the TTS default behavior for that key. E.g. if you assign the key "F" to a Game Key and use it while hovering over an object, it will still flip the object in addition to performing the game action.
+
+However, as stated above, this means those keys have to reassigned for each player, if they want to use them again.
+
+== The 2 Most Useful Game Keys: Quick Menu and Cleanup Action
+The two most useful Game Keys are the xref:quickMenu.adoc[Quick Menu] and the xref:cleanupAction.adoc[Cleanup Action].
+
+== Modifier Key
+This is a carryover from Gloomhaven Enhanced and is no longer useful.
+
+== Enhance Ability
+While hovering over a character ability card, this will open the xref:campaign/enhancements.adoc[Enhancement Calculator].
+
+[#_play_1st2nd_card]
+== Play 1st/2nd/3rd Ability Card
+While hovering over a card in a player's hand, these keys will place this card in the 1st/2nd/3rd ability card slot on the Play Area.
+If there's already a card present, it will be moved to the player's hand again. This also works regardless of player color.
+E.g. if you are the Black player and use this Game Key while hovering over a hand zone card for the Blue player, it will move the cards to the slot for the Blue player.
+In addition to the Game Key you set here, the numbers at the top of the keyboard 1, 2, and 3 will set cards in their respective card slots on the Play Area.
+
+== Sort Hand
+This key will sort your hand in numerical order. When playing solo, it will sort only the active hand when pressed.
+Geminate's hand does not split the sort into its two forms at this time.
+
+== Undo Deletion
+This key will undo the most recent deletion. Accidentally delete a battle goal instead of returning it to the deck? Hit this key.
+
+== Toggle Terrain Outline
+This key will toggle the terrain type highlighted. At this time, the function is not extended beyond use in Scenario 0.
+
+== Add/Remove Health
+While hovering over a figure or token with a health bar, this key will add/remove one health from it.
+
+== Add/Remove XP
+While hovering over a character, this key will add/remove one XP.
+
+== Next Stance/Previous Stance
+While hovering over a character figure that has a stance bar, this key will move the active stance to the left or right.
+
+== Add/Remove Resource 1/2/3
+While hovering over a character figure that has a resource bar, this key will add or remove a resource from the specific resource bar.
+
+== Draw Monster Attack Modifier
+This action will draw a new Attack Modifier card from the enemy deck.
+
+== Switch To Next Character
+This key switches the player color to the next available player color that has a character loaded.
+This is intended for solo or multi-handed play.
+
+[#switch_player]
+== Switch To Player 1/2/3/4/Solo Player
+These actions quickly switch to the player seat associated with this player number.
+For the Solo player it will switch to the Black player color.
+The switch is only successful if there isn't already another player seated for this player color.
+
+Unfortunately there's no way to preserve the current camera position before switching.
+So instead of defaulting to moving the camera far away like, the camera will focus on the character mat for this player instead.
+
+The camera behavior is the same as the one mentioned in the "Switch To Player" section.
+
+== Section Tools
+Useful for behind the scenes scripting and tinkering, particularly with blocking out specific section reads.

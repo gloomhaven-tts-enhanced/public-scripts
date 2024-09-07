@@ -14,7 +14,6 @@ image::interface/element-tracker-vertical.png[]
 The interface can be dragged to other places on the screen as well.
 
 When an element is inert, its icon is greyed out.
-Left-clicking an element icon create the element and the icon will become fully colored.
-Right-clicked an icon will consume the element and the icon will return to it's greyed out state.
-When an element is waning, the icon is only filled by halve.
-Using the middle mouse click will fill an element by halve.
+Left-clicking an inert element will make it strong and the icon will become fully colored.
+Left-clicking a strong or waning element will make it inert and the icon will return to its greyed out state.
+Right-clicked an element will set it to waning and half its icon will be colored.
