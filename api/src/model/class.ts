@@ -134,7 +134,7 @@ export interface Ability {
 
   /**
    * Describes the elements that can be spawned when this ability is used.
-   * This is used by the context menu to quickly spawn those components (e.g. Cragheart's Boulders).
+   * This is used by the quick menu to quickly spawn those components (e.g. Cragheart's Boulders).
    */
   spawn?: SpawnableElement[];
 }

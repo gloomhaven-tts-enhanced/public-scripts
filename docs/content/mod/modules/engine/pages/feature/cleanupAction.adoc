@@ -1,0 +1,29 @@
+= Cleanup action
+
+This xref:gameKeys.adoc[Game Key] is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.
+
+[cols="1,2"]
+|===
+| Object | Action
+
+| Coins, Treasure Chests and objects with the `Loot` tag
+| The object will move to the player mat of the player who used that action.
+
+| Ability Card 
+| Moved to lost pile
+
+| Characters
+| The character will exhaust by setting its HP to zero and moving the figure to the player mat of the player who used that action.
+
+| Monsters, Summons and overlays with a health bar
+| The object will be removed.
+If it was a monster or summon (and the xref:interface/options.adoc#summons_drop_loot[current rules] drop loot for 't drop loot for summons), it will also drop a coin.
+This is the same behavior as reducing the objects' health to 0 and then pressing the btn:[Defeat] button in the center of it's health bar.
+However, this action will also be performed, if the objects' health is above 0.
+
+| Battle Goals
+| The battle goal will be returned to the battle goals deck.
+
+| Traps and objects with the `Removable` tag
+| The object will be deleted and a message will be printed in the chat.
+|===
