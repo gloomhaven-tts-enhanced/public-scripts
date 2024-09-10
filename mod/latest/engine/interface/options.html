@@ -103,10 +103,10 @@
     <span class="nav-text">Features</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../feature/hotkeys.html">Hotkeys</a>
+    <a class="nav-link" href="../feature/gameKeys.html">Game Keys</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../feature/contextMenu.html">Context Menu</a>
+    <a class="nav-link" href="../feature/quickMenu.html">Quick Menu</a>
   </li>
 </ul>
   </li>
@@ -293,12 +293,23 @@ If the scenario book is not on the table, nothing happens.</p>
 <div class="sect2">
 <h3 id="_hidden_setup"><a class="anchor" href="#_hidden_setup"></a>Hidden Setup</h3>
 <div class="paragraph">
-<p>Specifies whether hidden room scenario should be used, when setting up a scenario by clicking the sticker on the map.
-Using the scenario from the Game Setup menu is not effected by this setting, because there&#8217;s an additional option within this menu.</p>
+<p>Specifies whether hidden room scenario should be used, when setting up a scenario by clicking the sticker on the map.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_use_3d_models"><a class="anchor" href="#_use_3d_models"></a>Use 3D Models</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+3D Models are expected to be incorporated in a future version of Frosthaven Enhanced.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Specifies for which overlay tokens 3D models should be used.
 These options are available:</p>
@@ -346,13 +357,14 @@ If this option is not set, enemies will only be prepared once a room is opened w
 <h3 id="_deal_battle_goals"><a class="anchor" href="#_deal_battle_goals"></a>Deal Battle Goals</h3>
 <div class="paragraph">
 <p>Defined how many Battle Goals will be dealt at the start of a scenario.
+Frosthaven rules call for 3 to be dealt at the start of a scenario, which is the default setting.
 Can be set to 0 so that they have to be drawn manually.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_hide_ability_cards"><a class="anchor" href="#_hide_ability_cards"></a>Hide Ability Cards</h3>
 <div class="paragraph">
-<p>When this option is et, ability cards placed with the <a href="../feature/hotkeys.html#_play_1st2nd_card" class="xref page">play ability card Game Key</a> are placed face-down.
+<p>When this option is set, ability cards placed with the <a href="../feature/gameKeys.html#_play_1st2nd_card" class="xref page">play ability card Game Keys</a> are placed face-down.
 Otherwise, they are placed face-up.</p>
 </div>
 </div>
@@ -389,6 +401,9 @@ As of now, this is the same as "Never" as the default rules are the Gloomhaven o
 <div class="sect1">
 <h2 id="_variants"><a class="anchor" href="#_variants"></a>Variants</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>More information on Variants found on page 69 of the rulebook.</p>
+</div>
 <div class="sect2">
 <h3 id="_soloopen_information"><a class="anchor" href="#_soloopen_information"></a>Solo/Open Information</h3>
 <div class="paragraph">
@@ -399,22 +414,21 @@ This is also shown own the scenario level chart below the Party Sheet.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement_system"><a class="anchor" href="#enhancement_system"></a>Enhancement</h3>
+<h3 id="enhancement_system"><a class="anchor" href="#enhancement_system"></a>Enhancements</h3>
 <div class="paragraph">
 <p>Defines the enhancement system to use.
-This influences the prices on the <a href="#tool:enhancementCalculator.adoc" class="xref unresolved">tool:enhancementCalculator.adoc</a>.</p>
+This influences the prices on the <a href="#campaign/enhancements.adoc" class="xref unresolved">Enhancement Calculator</a>.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Classic</dt>
 <dd>
-<p>The prices from base Gloomhaven.
+<p>The prices from Frosthaven.
 When this is used, all enhancements are also applied to the class box of a character, when the character is packed up</p>
 </dd>
 <dt class="hdlist1">Non-permanent</dt>
 <dd>
-<p>This is the version from Gloomhaven Digital.
-Most prices for enhancements are reduced, but enhancements only apply to a single character instead of the whole class</p>
+<p>These take the final cost of an enhancement as a starting point. Then, if the card is already enhanced, the card cost reduces by 20 gold. Finally, cut the cost by 20%.</p>
 </dd>
 </dl>
 </div>
@@ -431,18 +445,47 @@ Most prices for enhancements are reduced, but enhancements only apply to a singl
 </div>
 </div>
 <div class="sect2">
-<h3 id="_themes"><a class="anchor" href="#_themes"></a>Themes</h3>
+<h3 id="_background_color"><a class="anchor" href="#_background_color"></a>Background Color</h3>
 <div class="paragraph">
-<p>Can be used to change the appearance of some game components.</p>
+<p>The background color of the table can be changed to any color you&#8217;d like.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ability_preview"><a class="anchor" href="#_ability_preview"></a>Ability Preview</h3>
+<div class="paragraph">
+<p>This changes how monster ability cards are shown in the <a href="#initiativeTracker.adoc" class="xref unresolved">Initiative Tracker</a>.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Frosthaven</dt>
+<dt class="hdlist1">Icons</dt>
 <dd>
-<p>Changes the condition image for Wound to the new FH style.
-Also, some icons in the ability card preview for monsters are changed to the FH style.</p>
+<p>The attack, move, shield, etc. icons are used when previewing the monster type&#8217;s abilities for the round.</p>
+</dd>
+<dt class="hdlist1">Text</dt>
+<dd>
+<p>The words "attack", "move", "shield", etc. are used when previewing the monster type&#8217;s abilities for the round.</p>
 </dd>
 </dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ui_font"><a class="anchor" href="#_ui_font"></a>UI Font</h3>
+<div class="paragraph">
+<p>Change your Interface font. Reload mod to update interface fonts.
+Germania One:: Default font
+Pirata One:: Font that was default in Gloomhaven Enhanced.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_element_interface_orientation"><a class="anchor" href="#_element_interface_orientation"></a>Element Interface Orientation</h3>
+<div class="paragraph">
+<p>Change the orientation of the stack of elements. Select between horizontal and vertical.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_themes"><a class="anchor" href="#_themes"></a>Themes</h3>
+<div class="paragraph">
+<p>Can be used to change the appearance of some game components.</p>
 </div>
 </div>
 </div>

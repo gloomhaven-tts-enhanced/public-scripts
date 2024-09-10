@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Item Shop :: Gloomhaven Enhanced</title>
+    <title>Quick Menu :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/gh-site.css">
@@ -76,25 +76,25 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="interfaces.html">Interfaces</a>
+    <a class="nav-link" href="../interface/interfaces.html">Interfaces</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="scenarioSetup.html">Scenario Setup</a>
+    <a class="nav-link" href="../interface/scenarioSetup.html">Scenario Setup</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="monsterSetup.html">Monster Setup</a>
+    <a class="nav-link" href="../interface/monsterSetup.html">Monster Setup</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="options.html">Options</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="shop.html">Item Shop</a>
+    <a class="nav-link" href="../interface/options.html">Options</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="initiativeTracker.html">Initiative Tracker</a>
+    <a class="nav-link" href="../interface/shop.html">Item Shop</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="elementTracker.html">Element Tracker</a>
+    <a class="nav-link" href="../interface/initiativeTracker.html">Initiative Tracker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../interface/elementTracker.html">Element Tracker</a>
   </li>
 </ul>
   </li>
@@ -103,10 +103,10 @@
     <span class="nav-text">Features</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../feature/gameKeys.html">Game Keys</a>
+    <a class="nav-link" href="gameKeys.html">Game Keys</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../feature/quickMenu.html">Quick Menu</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="quickMenu.html">Quick Menu</a>
   </li>
 </ul>
   </li>
@@ -223,79 +223,76 @@
   <ul>
     <li><a href="../../index.html">Gloomhaven Enhanced</a></li>
     <li>Common Functionality</li>
-    <li><a href="interfaces.html">Interfaces</a></li>
-    <li><a href="shop.html">Item Shop</a></li>
+    <li>Features</li>
+    <li><a href="quickMenu.html">Quick Menu</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">2</button>
   <div class="version-menu">
-    <a class="version is-current" href="shop.html">2</a>
+    <a class="version is-current" href="quickMenu.html">2</a>
     <a class="version is-missing" href="../../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/interface/shop.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/feature/quickMenu.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Item Shop</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Quick Menu</h1>
+<div class="paragraph">
+<p>The Quick Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
+It can be accessed by pressing the key of the assigned <a href="#feature/gamekeys.adoc" class="xref unresolved">Game Key</a> while hovering over a character, enemy or summon figure.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/interface/shop.png" alt="shop">
+<img src="../_images/feature/contextMenu.gif" alt="contextMenu">
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_sorting_options"><a class="anchor" href="#_sorting_options"></a>Sorting options</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_group_by"><a class="anchor" href="#_group_by"></a>Group by</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Type</dt>
-<dd>
-<p>Will group items by the slot they fill (i.e. head, feet, chest)</p>
-</dd>
-<dt class="hdlist1">None</dt>
-<dd>
-<p>Will fill in the item shop from left to right, extending up as needed. The bottom left item will be first in order.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_sort_by"><a class="anchor" href="#_sort_by"></a>Sort by</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Name</dt>
-<dd>
-<p>Will sort by name of item and will group based on the grouping option selected</p>
-</dd>
-<dt class="hdlist1">Item Number</dt>
-<dd>
-<p>Will sort by item number and will group based on the grouping option selected. Note that this also functions as a sort for purchasable vs craftable items</p>
-</dd>
-<dt class="hdlist1">Cost</dt>
-<dd>
-<p>Will sort by cost of item and will group based on the grouping option selected</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_filter"><a class="anchor" href="#_filter"></a>Filter</h3>
 <div class="paragraph">
-<p>Enter any text in the text box to filter for an item.
-Any item with a portion of its name matching the text entered will remain visible in place, while other items will be hidden.</p>
+<p>This will show an overview of all conditions that are currently available in the mod.
+Clicking on any of the conditions will apply it to the figure for which to Quick Menu was opened and closes the Quick Menu again.
+Right-Clicking will do the same, but the Quick Menu stays open afterward, which is useful to apply multiple conditions.</p>
 </div>
+<div class="paragraph">
+<p>Above the icons for conditions, the icons for active classes are shown.
+This allows to apply the class tracker as a condition to the underlying figure.
+Only the trackers for classes are shown that are currently available on one of the player seats.</p>
 </div>
+<div class="paragraph">
+<p>Lastly, for some figures the top row shows icons for figure specific items that can be spawned.
+This includes summons for characters and monsters, any overlay tiles created by the character or monster, or any character-specific tokens (i.e. Deathwalker Shadows).
+Enemies that create traps will also spawn traps from the Quick Menu with the correct damage or conditions indicators on top of them.
+Clicking the icon will spawn the token above the figure&#8217;s head.
+From there it can be dragged to the place where it needs to be (without requiring to unlock it first).</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This might be considered a slight spoiler for enemies.
+Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn was not drawn yet.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In order for custom figures to make use of the Quick Menu they need to have the latest script attached to them.
+Custom content can also specify which figure specific tokens are available to make the show up in the Quick Menu.
+</td>
+</tr>
+</table>
 </div>
 </article>
   </div>

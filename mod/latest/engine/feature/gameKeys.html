@@ -103,10 +103,10 @@
     <span class="nav-text">Features</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="hotkeys.html">Hotkeys</a>
+    <a class="nav-link" href="gameKeys.html">Game Keys</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="contextMenu.html">Context Menu</a>
+    <a class="nav-link" href="quickMenu.html">Quick Menu</a>
   </li>
 </ul>
   </li>
@@ -224,17 +224,17 @@
     <li><a href="../../index.html">Gloomhaven Enhanced</a></li>
     <li>Common Functionality</li>
     <li>Features</li>
-    <li><a href="hotkeys.html">Hotkeys</a></li>
+    <li><a href="gameKeys.html">Game Keys</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">2</button>
   <div class="version-menu">
-    <a class="version is-current" href="hotkeys.html">2</a>
+    <a class="version is-current" href="gameKeys.html">2</a>
     <a class="version is-missing" href="../../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/feature/hotkeys.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/feature/gameKeys.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -256,8 +256,9 @@ This section gives an overview of the available game actions that can be bound t
 </div>
 <div class="paragraph">
 <p>Each player has to assign the Game Key themselves if they want to use it.
-There&#8217;s no way to share assigned  Game Keys or assign default keys in the mod.
-Assigned keys will stay between mod versions.</p>
+There&#8217;s no way to share assigned Game Keys or assign default keys in the mod.
+Assigned keys will stay between mod versions.
+When migrating from 2.0.0 to v2.1.0 or beyond, the <a href="#quickMenu.adoc" class="xref unresolved">Quick Menu</a> and the <a href="#cleanupAction.adoc" class="xref unresolved">Cleanup Action</a> have been renamed and must be re-mapped by all users.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -271,89 +272,84 @@ Assigning a Game Key does not prevent the TTS default behavior for that key. E.g
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Until version 1.2 of the mod, some Game Keys listed here where automatically bound to so-called scripting keys (typically the first numbers on the numpad).
-This was removed in version 1.3 in favor of using Game Keys.
-However, as stated above, this means those keys have to reassigned for each player, if they want to use them again.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>However, as stated above, this means those keys have to reassigned for each player, if they want to use them again.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="delete-action"><a class="anchor" href="#delete-action"></a>Delete action</h2>
+<h2 id="_the_2_most_useful_game_keys_quick_menu_and_cleanup_action"><a class="anchor" href="#_the_2_most_useful_game_keys_quick_menu_and_cleanup_action"></a>The 2 Most Useful Game Keys: Quick Menu and Cleanup Action</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, deleting objects in the mod is not possible.
-When the delete key or the delete menu option is used for an object, it will not be removed.
-Some object types have special delete behavior defined for them instead (see table below).
-When your try to delete an object of this type it performs the action instead.
-E.g. a character figure is exhausted instead of deleted.</p>
+<p>The two most useful Game Keys are the <a href="#quickMenu.adoc" class="xref unresolved">Quick Menu</a> and the <a href="#cleanupAction.adoc" class="xref unresolved">Cleanup Action</a>.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modifier_key"><a class="anchor" href="#_modifier_key"></a>Modifier Key</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This allows for an easy to use and consistent hotkey behavior and prevents accidentally deleting objects.
-If you actually want to delete an object and bypass this handling, you need to assign the "Modifier Key" Game Key and hold it, while deleting the object.
-E.g. you could assign the left and/or right shift key to the "Modifier Key" Game Key and then hold it, while also pressing the delete key (or using the delete menu option).</p>
+<p>This is a carryover from Gloomhaven Enhanced and is no longer useful.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Object</th>
-<th class="tableblock halign-left valign-top">Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Coins, Treasure Chests and objects with the <code>Loot</code> tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The object will move to the player mat of the player who used that action.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Characters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The character will exhaust by setting its HP to zero and moving the figure to the player mat of the player who used that action.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Monsters, Summons and overlays with a health bar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be removed.
-If it was a monster or summon (and the <a href="../interface/options.html#summons_drop_loot" class="xref page">current rules</a> drop loot for 't drop loot for summons), it will also drop a coin.
-This is the same behavior as reducing the objects' health to 0 and then pressing the <b class="button">Defeat</b> button in the center of it&#8217;s health bar.
-However, this action will also be performed, if the objects' health is above 0.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Battle Goals</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The battle goal will be returned to the battle goals deck.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Traps and objects with the <code>Removable</code> tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be deleted and a message will be printed in the chat.</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enhance_ability"><a class="anchor" href="#_enhance_ability"></a>Enhance Ability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While hovering over a character ability card, this will open the <a href="#campaign/enhancements.adoc" class="xref unresolved">Enhancement Calculator</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_play_1st2nd_card"><a class="anchor" href="#_play_1st2nd_card"></a>Play 1st/2nd/3rd Ability Card</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While hovering over a card in a player&#8217;s hand, these keys will place this card in the 1st/2nd/3rd ability card slot on the Play Area.
+If there&#8217;s already a card present, it will be moved to the player&#8217;s hand again. This also works regardless of player color.
+E.g. if you are the Black player and use this Game Key while hovering over a hand zone card for the Blue player, it will move the cards to the slot for the Blue player.
+In addition to the Game Key you set here, the numbers at the top of the keyboard 1, 2, and 3 will set cards in their respective card slots on the Play Area.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sort_hand"><a class="anchor" href="#_sort_hand"></a>Sort Hand</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This key will sort your hand in numerical order. When playing solo, it will sort only the active hand when pressed.
+Geminate&#8217;s hand does not split the sort into its two forms at this time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_undo_deletion"><a class="anchor" href="#_undo_deletion"></a>Undo Deletion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This key will undo the most recent deletion. Accidentally delete a battle goal instead of returning it to the deck? Hit this key.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_toggle_terrain_outline"><a class="anchor" href="#_toggle_terrain_outline"></a>Toggle Terrain Outline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This key will toggle the terrain type highlighted. At this time, the function is not extended beyond use in Scenario 0.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_addremove_health"><a class="anchor" href="#_addremove_health"></a>Add/Remove Health</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While hovering over a figure or token with a health bar (e.g. including obstacles or doors in some scenarios), this action will add/remove one health from it.</p>
+<p>While hovering over a figure or token with a health bar, this key will add/remove one health from it.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_show_context_menu"><a class="anchor" href="#_show_context_menu"></a>Show Context Menu</h2>
+<h2 id="_addremove_xp"><a class="anchor" href="#_addremove_xp"></a>Add/Remove XP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While hovering over a figure (enemy, character, summon) this action will show the <a href="contextMenu.html" class="xref page">Context Menu</a> for it which allows to quickly apply conditions or summon figure relevant tokens.</p>
+<p>While hovering over a character, this key will add/remove one XP.</p>
 </div>
 </div>
 </div>
@@ -361,7 +357,7 @@ However, this action will also be performed, if the objects' health is above 0.<
 <h2 id="_next_stanceprevious_stance"><a class="anchor" href="#_next_stanceprevious_stance"></a>Next Stance/Previous Stance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While hovering over a character figure that has a stance bar, this will move the active stance to the left or right.</p>
+<p>While hovering over a character figure that has a stance bar, this key will move the active stance to the left or right.</p>
 </div>
 </div>
 </div>
@@ -369,7 +365,7 @@ However, this action will also be performed, if the objects' health is above 0.<
 <h2 id="_addremove_resource_123"><a class="anchor" href="#_addremove_resource_123"></a>Add/Remove Resource 1/2/3</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While hovering over a character figure that has a resource bar, this will add or remove a resource from the specific resource bar.</p>
+<p>While hovering over a character figure that has a resource bar, this key will add or remove a resource from the specific resource bar.</p>
 </div>
 </div>
 </div>
@@ -382,13 +378,11 @@ However, this action will also be performed, if the objects' health is above 0.<
 </div>
 </div>
 <div class="sect1">
-<h2 id="_play_1st2nd_card"><a class="anchor" href="#_play_1st2nd_card"></a>Play 1st/2nd Card</h2>
+<h2 id="_switch_to_next_character"><a class="anchor" href="#_switch_to_next_character"></a>Switch To Next Character</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While hovering over a card in a player&#8217;s hand, this action will place this card in the 1st/2nd ability card slot on the Play Area.
-If there&#8217;s already a card present, it will be moved to the player&#8217;s hand again.
-This also works regardless of player color.
-E.g. if you are the Black player and use this hotkey while hovering over a hand zone card for the Blue player, it will move the cards to the slot for the Blue player.</p>
+<p>This key switches the player color to the next available player color that has a character loaded.
+This is intended for solo or multi-handed play.</p>
 </div>
 </div>
 </div>
@@ -404,17 +398,16 @@ The switch is only successful if there isn&#8217;t already another player seated
 <p>Unfortunately there&#8217;s no way to preserve the current camera position before switching.
 So instead of defaulting to moving the camera far away like, the camera will focus on the character mat for this player instead.</p>
 </div>
+<div class="paragraph">
+<p>The camera behavior is the same as the one mentioned in the "Switch To Player" section.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_switch_to_next_character"><a class="anchor" href="#_switch_to_next_character"></a>Switch To Next Character</h2>
+<h2 id="_section_tools"><a class="anchor" href="#_section_tools"></a>Section Tools</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This action switches the player color to the next available player color, that also has a character loaded.
-This is intended for solo or multi-handed play.</p>
-</div>
-<div class="paragraph">
-<p>The camera behavior is the same as the one mentioned in the "Switch To Player" section.</p>
+<p>Useful for behind the scenes scripting and tinkering, particularly with blocking out specific section reads.</p>
 </div>
 </div>
 </div>

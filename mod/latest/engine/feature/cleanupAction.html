@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Context Menu :: Gloomhaven Enhanced</title>
+    <title>Cleanup action :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/gh-site.css">
@@ -103,10 +103,10 @@
     <span class="nav-text">Features</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="hotkeys.html">Hotkeys</a>
+    <a class="nav-link" href="gameKeys.html">Game Keys</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="contextMenu.html">Context Menu</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickMenu.html">Quick Menu</a>
   </li>
 </ul>
   </li>
@@ -222,78 +222,68 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Gloomhaven Enhanced</a></li>
-    <li>Common Functionality</li>
-    <li>Features</li>
-    <li><a href="contextMenu.html">Context Menu</a></li>
+    <li><a href="cleanupAction.html">Cleanup action</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">2</button>
   <div class="version-menu">
-    <a class="version is-current" href="contextMenu.html">2</a>
+    <a class="version is-current" href="cleanupAction.html">2</a>
     <a class="version is-missing" href="../../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/feature/contextMenu.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/engine/pages/feature/cleanupAction.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Context Menu</h1>
+<h1 class="page">Cleanup action</h1>
 <div class="paragraph">
-<p>The Context Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
-It can be accessed by pressing the key of the assigned <a href="hotkeys.html" class="xref page">Game Key</a> while hovering over a character, enemy or summon figure.</p>
+<p>This <a href="#gameKeys.adoc" class="xref unresolved">Game Key</a> is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/feature/contextMenu.gif" alt="contextMenu">
-</div>
-</div>
-<div class="paragraph">
-<p>This will show an overview of all conditions that are currently available in the mod.
-Clicking on any of the conditions will apply it to the figure for which to Context Menu was opened and closes the Context Menu again.
-Right-Clicking will do the same, but the Context Menu stays open afterward, which is useful to apply multiple conditions.</p>
-</div>
-<div class="paragraph">
-<p>Above the icons for conditions, the icons for active classes are shown.
-This allows to apply the class tracker as a condition to the underlying figure.
-Only the trackers for classes are shown that are currently available on one of the player seats.</p>
-</div>
-<div class="paragraph">
-<p>Lastly, for some figures the top row shows icons for figure specific tokens that it can spawn.
-This includes monster summons, traps and obstacles.
-Traps will also spawn with the correct damage or conditions indicators on top of them.
-Clicking the icon will spawn the token above the figure&#8217;s head.
-From there it can be dragged to the place where it needs to be (without requiring to unlock it first).</p>
-</div>
-<div class="admonitionblock note">
-<table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This might be considered a slight spoiler for enemies.
-Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn was not drawn yet.
-</td>
+<th class="tableblock halign-left valign-top">Object</th>
+<th class="tableblock halign-left valign-top">Action</th>
 </tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
+</thead>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-In order for custom figures to make use of the Context Menu they need to have the latest script attached to them.
-Custom content can also specify which figure specific tokens are available to make the show up in the Context Menu.
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coins, Treasure Chests and objects with the <code>Loot</code> tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will move to the player mat of the player who used that action.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ability Card</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moved to lost pile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The character will exhaust by setting its HP to zero and moving the figure to the player mat of the player who used that action.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monsters, Summons and overlays with a health bar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be removed.
+If it was a monster or summon (and the <a href="../interface/options.html#summons_drop_loot" class="xref page">current rules</a> drop loot for 't drop loot for summons), it will also drop a coin.
+This is the same behavior as reducing the objects' health to 0 and then pressing the <b class="button">Defeat</b> button in the center of it&#8217;s health bar.
+However, this action will also be performed, if the objects' health is above 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Battle Goals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The battle goal will be returned to the battle goals deck.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Traps and objects with the <code>Removable</code> tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The object will be deleted and a message will be printed in the chat.</p></td>
+</tr>
+</tbody>
 </table>
-</div>
 </article>
   </div>
 </main>
