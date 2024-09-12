@@ -5,6 +5,8 @@
   add:
     - Loading a save file from Frosthaven Assissted is now supported.
       Most things are supported, but be aware of the [limitations and manual steps](...) still required.
+    - Adds a Game Key to open the search window on the currently hovered container.
+    - Adds A Game Key to discard an Ability Card and one to move it to the active area.
   fix:
     - Class figures have the same collider as monsters which fixes some weird collisions for them.
     - The active ability button works for the 5th card slot.

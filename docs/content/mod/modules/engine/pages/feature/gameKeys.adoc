@@ -18,9 +18,6 @@ However, as stated above, this means those keys have to reassigned for each play
 == The 2 Most Useful Game Keys: Quick Menu and Cleanup Action
 The two most useful Game Keys are the xref:quickMenu.adoc[Quick Menu] and the xref:cleanupAction.adoc[Cleanup Action].
 
-== Modifier Key
-This is a carryover from Gloomhaven Enhanced and is no longer useful.
-
 == Enhance Ability
 While hovering over a character ability card, this will open the xref:campaign/enhancements.adoc[Enhancement Calculator].
 
@@ -31,9 +28,19 @@ If there's already a card present, it will be moved to the player's hand again. 
 E.g. if you are the Black player and use this Game Key while hovering over a hand zone card for the Blue player, it will move the cards to the slot for the Blue player.
 In addition to the Game Key you set here, the numbers at the top of the keyboard 1, 2, and 3 will set cards in their respective card slots on the Play Area.
 
+== Discard Ability/Make Ability Active
+
+While hovering over an ability card, this Game Key will move the card to the discard pile or the next free spot in the active area.
+Those Game Keys are mainly meant when using Picture in Picture mode on the player mat.
+Buttons don't work inside the PiP window, but Game Keys do.
+
 == Sort Hand
 This key will sort your hand in numerical order. When playing solo, it will sort only the active hand when pressed.
 Geminate's hand does not split the sort into its two forms at this time.
+
+== Open Search
+
+While hovering a deck or a bag, this Game Key will open the Search Window for this container.
 
 == Undo Deletion
 This key will undo the most recent deletion. Accidentally delete a battle goal instead of returning it to the deck? Hit this key.
@@ -61,7 +68,7 @@ This key switches the player color to the next available player color that has a
 This is intended for solo or multi-handed play.
 
 [#switch_player]
-== Switch To Player 1/2/3/4/Solo Player
+== Switch To Player 1/2/3/4/5/Solo Player
 These actions quickly switch to the player seat associated with this player number.
 For the Solo player it will switch to the Black player color.
 The switch is only successful if there isn't already another player seated for this player color.
