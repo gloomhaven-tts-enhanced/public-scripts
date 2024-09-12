@@ -2,42 +2,122 @@
 
 The mod supports automatically unpacking custom content and placing it where it is required by the mod.
 This makes it easier for users to set it up.
-In order to use that feature the custom content has to be placed inside a bag that has the tag `Gloomhaven Custom Content` applied.
-When this bag is spawned into the Gloomhaven Enhanced mod, it's content is checked and the objects are moved to where they are needed.
+In order to use that feature the custom content has to be placed inside a bag that has the tag `Content Box` applied.
+When this bag is spawned into the mod, it's content is checked and the objects are moved to where they are needed.
 This is driven by the tags that are attached to objects inside the bag.
-The following table lists the supported object types, as well as the required tags for them.
+The <<object-types, table below>> lists the supported object types, as well as the required tags for them.
 
+Additionally, each content box needs to have a simple script attached to it, which describes some metadata for the content.
+The mod uses this metadata to determine if the content is compatible with the current version or check for updates for the content.
+
+[#metadata]
+== Metadata
+
+The content box needs to have (at least) the following script attached in order to work with the mod.
+The script defines a function named `getMetadata` which returns a table with the basic metadata of the content.
+
+[source,lua]
+----
+function getMetadata()
+  return {
+    -- The version of the content
+    version = "1.0.0",
+    -- The author of the content. Will be shown when the content is added to the mod.
+    author = "My Name",
+    -- optional, Requirements this content has in regards to the mod
+    requires = {
+      -- optional, The minimum version of the main mod this content requires
+      -- Users will get a warning if they load the content into a mod with a lower version, since it will
+      -- probably not work correctly
+      minimum = "2.2.0",
+      -- optional, The maximum version of the main mod this content requires
+      -- Users will get a warning if they load the content into a mod with a higher version, since it will
+      -- probably not work correctly
+      maximum = "2.3.0",
+      -- optional, a list of other content boxes this content requires and their minimum version
+      -- Users will get a warning if the content is missing or has a lower version, since it will
+      -- probably not work correctly
+      content = {
+        {
+          name = "Frosthaven",
+          version = "1.0.0",
+        }
+      }
+    },
+    -- optional, URL to the changelog for this content
+    -- The mod will load this file when it loads and check if it contains a newer version than the current content
+    -- If there's a newer version, an update notification will show up
+    -- See below for the required format for this file.
+    changeLog = "https://myserver/log/changelog.json"
+  }
+end
+----
+
+[#object-types]
+== Object Types
 |===
 | Object type | Tag | What happens
 
-| Class envelope | `Class Envelope` | The envelope is placed at the end of the row for the base classes. If the envelope also has the `Locked Content` tag, it will be placed inside the "Locked Classes" envelope inside the Gloomhaven game box instead.
-| Class Summon | `Summon` | It will be added to the bag of all summons. From there it can be spawned e.g. through the scripts from the Summon Cards.
-| Personal Quests | `PersonalQuest` | It will be added to the bag for Personal Quests (as well as its backup).
-| Scenario Token | `Scenario` | It will be registered as an available scenario. If the token als has the `Locked Content` tag, it will only be added internally as a locked scenario and has to be explicitly unlocked using the `ScenarioApi.unlockScenario` function.
-| Monster Bag | `Enemy Envelope` | The envelope is added to the list of available monsters.
-| City Event | `City Event` | The event is added to the Unlockable City Events bag (as well as its backup).
-| Road Event | `Road Event` | The event is added to the Unlockable Road Events bag (as well as its backup).
-| Corridor Overlay | `Corridor` | The overlay is added to the corridor bag on the table as well as the internal one required for scenario setup.
-| Difficult Terrain Overlay | `Difficult Terrain` | The overlay is added to the difficult terrain bag on the table as well as the internal one required for scenario setup.
-| Door Overlay | `Door` | The overlay is added to the door bag on the table as well as the internal one required for scenario setup.
-| Hazardous Terrain Overlay | `Hazardous Terrain` | The overlay is added to the hazardous terrain bag on the table as well as the internal one required for scenario setup.
-| Obstacle Overlay | `Obstacle` | The overlay is added to the obstacle bag on the table as well as the internal one required for scenario setup.
-| Trap Overlay | `Trap` | The overlay is added to the trap bag on the table as well as the internal one required for scenario setup.
-| Treasure Chest Overlay | `Treasure Chest` | The overlay is added to the treasure chest bag on the table as well as the internal one required for scenario setup.
-| Loot Token | `Loot` | The overlay is added to the internal bag required for scenario setup
-| Map Tiles | `Map` | The overlay is added to the map tile bag on the table as well as the internal one required for scenario setup.
-| Unlockable Treasure Cards | `Treasure` | The overlay is added to the internal bag required for scenario setup. It can be unlocked using the xref:common/action.adoc#Action_Treasure[Treasure-Action] within a scenario.
-| Scenario Books | `Book` | The book is added to the book stand next to the game box.
-| Reward Items | `Item` and `Item Reward` | The item will go into the reward items deck.
-| Solo Reward Items | `Item` and `Item Solo Reward` | The item will go into the solo reward items deck.
-| Item Designs | `Item` and `Item Design` | The item deck will go into the item designs deck. Item designs must be a deck of two items. The cards as well as the deck must have those tags.
-| Unlocked Items | `Item` and none of the 3 special tags above | The item will go into shop deck
-| Extra scenario content | `Scenario Extra Content` | The object will go into internal bag that can be used as xref:scenario.adoc#_extra_content[Extra content] inside scenario definitions.
-| Monster ability decks | `Monster Ability Deck` | The object will go into an internal bag that can be used to change the ability deck used by monsters in a scenario
+| Class envelope | `Class Envelope`
+| The envelope is placed into the unlockable classes bag.
+
+| Class Summon | `Summon`
+| It will be added to the bag of all summons. From there it can be spawned e.g. through the scripts from the Summon Cards.
+
+| Personal Quests | `PersonalQuest`
+| It will be added to the bag for Personal Quests (as well as its backup).
+
+| Scenario Token | `Scenario`
+| It will be registered as an available scenario. If the token als has the `Locked Content` tag, it will only be added internally as a locked scenario and has to be explicitly unlocked using the `ScenarioApi.unlockScenario` function.
+
+| Monster Bag | `Enemy Envelope`
+| The envelope is added to the list of available monsters.
+
+| Corridor Overlay | `Corridor`
+| The overlay is added to the corridor bag on the table as well as the internal one required for scenario setup.
+
+| Difficult Terrain Overlay
+| `Difficult Terrain` | The overlay is added to the difficult terrain bag on the table as well as the internal one required for scenario setup.
+
+| Door Overlay | `Door`
+| The overlay is added to the door bag on the table as well as the internal one required for scenario setup.
+
+| Hazardous Terrain Overlay | `Hazardous Terrain`
+| The overlay is added to the hazardous terrain bag on the table as well as the internal one required for scenario setup.
+
+| Obstacle Overlay | `Obstacle`
+| The overlay is added to the obstacle bag on the table as well as the internal one required for scenario setup.
+
+| Trap Overlay | `Trap`
+| The overlay is added to the trap bag on the table as well as the internal one required for scenario setup.
+
+| Treasure Chest Overlay | `Treasure Chest`
+| The overlay is added to the treasure chest bag on the table as well as the internal one required for scenario setup.
+
+| Loot Token | `Loot`
+| The overlay is added to the internal bag required for scenario setup
+
+| Map Tiles | `Map`
+| The overlay is added to the map tile bag on the table as well as the internal one required for scenario setup.
+
+| Unlockable Treasure Cards | `Treasure`
+| The overlay is added to the internal bag required for scenario setup. It can be unlocked using the xref:common/action.adoc#Action_Treasure[Treasure-Action] within a scenario.
+
+| Scenario Books | `Book`
+| The book is added to the book stand next to the game box.
+
+| Reward Items | `Item`
+| The item will go into the reward items deck.
+
+| Extra scenario content | `Scenario Extra Content`
+| The object will go into internal bag that can be used as xref:scenario.adoc#_extra_content[Extra content] inside scenario definitions.
+
+| Monster ability decks | `Monster Ability Deck`
+| The object will go into an internal bag that can be used to change the ability deck used by monsters in a scenario
 |===
 
 Every object that hasn't one of those tags is ignored.
-Any object that has one of those tags together with the `Locked Content` tag is also ignored (except for scenarios and class envelopes as stated above).
+Any object that has one of those tags together with the `Locked Content` tag is also ignored (except for scenarios as stated above).
 Objects within nested bags are also checked and moved accordingly.
 E.g. a Summon figure inside a class envelope will also be considered.
 
@@ -45,3 +125,86 @@ NOTE: The objects won't actually be removed from the content box when this proce
 They are basically cloned and put into the correct places.
 If you have content that is automatically registered and content that isn't, you might consider separating them into different bags inside the content box.
 This way it's easier for users to see, what they still have to place manually and what is already done for them.
+
+== Changelog
+
+If the <<metadata>> contains a URL to the changelog of a content, the mod will load it to check for the latest version of a content.
+If there's a newer version for the content than the currently loaded one, the users will get an update notification (just like a regular mod update).
+
+The file **MUST** be a JSON file and have a specific format.
+If the format doesn't match, the mod might raise errors during load.
+
+The JSON file contains of a single list, where each entry in the list represents one version of the content (so it keeps on growing with each release).
+Each release entry has some metadata about the released version, like the release date, the version number and the actual changes.
+
+Below is an example file for a changelog.
+Another (real live) example is the https://github.com/gloomhaven-tts-enhanced/public-scripts/blob/main/changelog/frosthaven-enhanced.json[changelog for the mod] itself.
+
+[source,json5]
+----
+[
+  {
+    // The version of the content. Must follow semantic versioning (https://semver.org/) as the mod assumes this format.
+    "version": "1.2.0",
+    // Release date of the content. Must have the Format YYYY-MM-DD.
+    // If empty, the mod ignores this entry. This is useful to expand the file while developing the content
+    // without the mod showing up a notification.
+    "release": "",
+    // A list of changes with different keys (here add for added features).
+    // See below for supported keys
+    "add": [
+      "This is the text that will show up in the notification window."
+    ]
+  },
+  // example of the latest released version
+  {
+    "version": "1.1.0",
+    "nickname": "My cool name",
+    "release": "2024-09-12",
+    "change": [
+      "The thing now works differently"
+    ],
+    "add": [
+      "A new thing was added.",
+      "Another cool thing was added."
+    ],
+    // Another list of changes to describe fixes
+    "fix": [
+      "Fixed that thing",
+    ],
+    "migration": [
+      "Change the name of that thing before migrating."
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "nickname": "Initial Release",
+    "release": "",
+  }
+]
+----
+
+Changes can be described in list with different keys.
+Each key has a different role to group changes into certain categories.
+
+The following keys are supported:
+
+`breaking`:: List any breaking changes of the content.
+This means the users typically needs to actively change something in order for the content to still function.
+E.g. this could mean the content now requires a new minimum version of the mod, so the user needs to migrate to that new mod version first, before continuing using the content.
+Following semantic versioning, a breaking change also means the major version needs to be increased for this version (e.g. going from 1.2.0 to 2.0.0).
+
+`deprecate`:: Describes features that shouldn't be used anymore.
+A future version of the content will remove that feature so this give users a heads-up.
+Typically, this also means there's a new way or new feature that replaces the old one, and it should be described here.
+
+`change`:: A feature that changed compared to the previous version.
+
+`add`:: A feature that was added to this version.
+
+`fix`:: A bug that was fixed with this version.
+
+`known`:: A list of known bugs/behavior for this version.
+
+`migration`:: Additional information that is relevant for migration the content to the new version.
+E.g. to hint users that certain aspects of the content will not yet migrate or need to be adjusted in order to be migrated.
