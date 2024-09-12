@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Conditions :: Gloomhaven Enhanced</title>
+    <title>Using this documentation :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="stylesheet" href="../../_/css/gh-site.css">
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="custom" data-version="2">
+<div class="nav-container" data-component="custom" data-version="1.3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -56,7 +56,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="scripts.html">How to use the scripts</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="documentation.html">How to use this documentation</a>
   </li>
 </ul>
@@ -67,7 +67,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="class.html">Classes</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="condition.html">Conditions</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -121,9 +121,6 @@
     <span class="nav-text">Tools</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="tools/enhancementTool.html">Enhancement Tool</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="tools/sectionTool.html">Section Tool</a>
   </li>
 </ul>
@@ -136,7 +133,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Custom Content</span>
-    <span class="version">2-beta</span>
+    <span class="version">1.3</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -145,11 +142,11 @@
     <li class="component is-current">
       <div class="title"><a href="../latest/index.html">Custom Content</a></div>
       <ul class="versions">
-        <li class="version is-current">
-          <a href="index.html">2-beta</a>
-        </li>
         <li class="version is-latest">
-          <a href="../latest/index.html">1.3</a>
+          <a href="../latest/index.html">2</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">1.3</a>
         </li>
       </ul>
     </li>
@@ -178,176 +175,36 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Custom Content</a></li>
-    <li><a href="condition.html">Conditions</a></li>
+    <li>Introduction</li>
+    <li><a href="documentation.html">How to use this documentation</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2-beta</button>
+  <button class="version-menu-toggle" title="Show other versions of page">1.3</button>
   <div class="version-menu">
-    <a class="version is-current" href="condition.html">2-beta</a>
-    <a class="version" href="../latest/condition.html">1.3</a>
+    <a class="version" href="../latest/documentation.html">2</a>
+    <a class="version is-current" href="documentation.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/condition.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/maintain/1.3/docs/content/customContent/modules/ROOT/pages/documentation.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Conditions</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Using this documentation</h1>
 <div class="paragraph">
-<p>Conditions have to be registered in order for them to show up on a figure or in the Context Menu.</p>
-</div>
-<div class="paragraph">
-<p>This is done by using the <code>ConditionApi</code>.
-At least a name and the link to the image for this condition have to be provided.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ConditionApi = require("api.ConditionApi")
-
-ConditionApi.registerCondition("My Condition", {
-  -- the link to the image for this condition
-  image = "http://..."
-})</code></pre>
-</div>
-</div>
-</div>
+<p>Each different type of custom content that can be added to the mod has its own section.
+Each such section starts with a short checklist of things you need to do in order to integrate that content.
+This checklist also contains links to more details.
+Furthermore, each section is split into two parts: Components and Data.
+The Components section describes the TTS objects you need to have, which attributes they need, and what scripts you have to add to them.
+The Data section contains the information about the data format you need to provide if you want to register the custom content.
+Some custom content my only require one of those two, so the other section is left out.</p>
 </div>
 <div class="paragraph">
-<p>If the condition is stackable, the attribute <code>max</code> can be used as well.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ConditionApi = require("api.ConditionApi")
-
-ConditionApi.registerCondition("My Condition", {
-  image = "http://...",
-  -- The condition can be stacked up to 5 times
-  max = 5,
-})</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>If an image for the immunity to that condition also exists, it can be provided as well.
-Also Condition immunities can be shared.
-E.g. you can define that a figure is always immune to this new condition, when it also has immunity to "Stun".
-When a figure with a "Stun" immunity spawns, the immunity image for this new condition is applied as well.
-This can be done by providing an <code>immunity</code> attribute.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ConditionApi = require("api.ConditionApi")
-
-ConditionApi.registerCondition("My Condition", {
-  image = "http://...",
-  max = 5,
-  immunity = {
-    -- The image for the immunity
-    image = "http://...",
-    -- A list of other conditions or effects
-    -- When the figure is immune to one of those, it will also be immune to "My Condition"
-    sharedWith = { "Stun", "Pull" }
-  }
-})</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Effects are any special effect that a figure has.
-They can be registered, so that an image (or text) can be shown below the figure&#8217;s HP bar.
-When an Effect&#8217;s name is then added to its <a href="enemy.html#_stats" class="xref page">Stats</a>, it will show the registered image (or text).
-Effects can also be used to add additional images for movement types, or area of effects.</p>
-</div>
-<div class="paragraph">
-<p>Registering an Effect is similar to a condition.
-In fact, every Condition is also an Effect (so you don&#8217;t have to register it twice).
-The registration is done via the <code>registerEffect</code> function in the <code>ConditionApi</code>.
-The attributes are similar to registering a Condition.
-A difference is that the <code>name</code> is part of the table and not the first parameter to the function call.
-Also Effects currently don&#8217;t use the <code>max</code> attribute.
-Either an <code>image</code> or a <code>text</code> has to be supplied.
-If the <code>image</code> is supplied, it will be shown when the Effect is active.
-Otherwise, the <code>text</code> will be used (e.g. "AgD" is used for the Effect "Attacker gain Disadvantage").
-Immunities work the same as for Conditions.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ConditionApi = require("api.ConditionApi")
-
-ConditionApi.registerEffect({
-  -- The name is part of the table, instead of an extra function parameter
-  name = "My Effect",
-  -- Either an image or a text has to be provided
-  image = "http://...",
-  text = "MyEff",
-  -- Works the same as for conditions
-  immunity = {
-    image = "http://...",
-    sharedWith = { "Stun", "Pull" }
-  }
-})</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>The following Effects already exist:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Advantage</code> (shown as an <code>A</code>)</p>
-</li>
-<li>
-<p><code>Attackers gain Disadvantage</code> (shown as <code>AgD</code>)</p>
-</li>
-<li>
-<p><code>Curse</code></p>
-</li>
-<li>
-<p><code>Flying</code>, <code>Jumping</code>, <code>Moving</code> (used for the default move icon)</p>
-</li>
-<li>
-<p><code>Generate Any</code>, <code>Generate Air</code>, <code>Generate Dark</code>, <code>Generate Earth</code>, <code>Generate Fire</code>, <code>Generate Ice</code>, <code>Generate Light</code>, <code>Generate Light or Dark</code></p>
-</li>
-<li>
-<p><code>Pierce</code></p>
-</li>
-<li>
-<p><code>Pull</code>, <code>Push</code></p>
-</li>
-<li>
-<p><code>Range</code> (used as the range icon for ranged Retaliate)</p>
-</li>
-<li>
-<p><code>Retaliate</code>, <code>Shield</code></p>
-</li>
-<li>
-<p><code>Target</code> (number of targets)</p>
-</li>
-</ul>
-</div>
-</div>
+<p>If you already have added custom content for a previous version of the mod, you can check out <a href="migration.html" class="xref page">Migration</a> to see what you should change to use the new features of the current version.</p>
 </div>
 </article>
   </div>
