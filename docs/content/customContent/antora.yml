@@ -1,7 +1,6 @@
 name: custom
 title: Custom Content
 version: 2.0
-prerelease: -beta
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc

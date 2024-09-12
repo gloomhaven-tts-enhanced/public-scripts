@@ -1,0 +1,104 @@
+[
+  {
+    "version": "unreleased",
+    "change": [
+      "The start tile has been changed to match the icon from the scenario book."
+    ],
+    "fix": [
+      "Class figures have the same collider as monsters which fixes some weird collisions for them.",
+      "The active ability button works for the 5th card slot.",
+      "Townguard AMD has correct snap points.",
+      "Quick Menu usage information doesn't show for all players anymore.",
+      "Fixes Shard Seeker sticker name.",
+      "Fixes Shards AM name.",
+      "Scenario 109: ||Boss deck is drawn regardless of which room is opened first.||",
+      "Switching to other player colors using the Game Keys works again.",
+      "The loot deck will be created if Loot Cards 1418 or 1419 are present.",
+      "Classes show a preview image in the Quick Menu for overlays they can spawn."
+    ]
+  },
+  {
+    "version": "2.1.1",
+    "release": "2024-09-07",
+    "fix": [
+      "Add missing campaign stickers for Brummix and Friends of the Snowspeakers.",
+      "Quick Menu shows per player again.",
+      "Blinkblade character mat shows the correct retirement section."
+    ]
+  },
+  {
+    "version": "2.1.0",
+    "release": "2024-09-06",
+    "change": [
+      "The element tracker uses a different control schema. Clicking an inert element will make it strong. Clicking a strong or waning element will make it inert. Right-clicking an element will make it waning.",
+      "The \"Delete Action\" has been renamed to \"Cleanup Action\". This means it has to be rebound by all players.",
+      "The Context Menu has been renamed to Quick Menu. This also means the Game Key has to be bound again by all players.",
+      "The \"Hidden Setup\" toggle has been removed from the Game Setup menu. It is now driven by the setting in the Option menu. The default value for this option is set to \"false\", so the revealed room layout is the default setup.",
+      "Using the \"Change Text\" menu option on aid tokens lets you now directly enter the new value for a token.",
+      "Campaign Manager objects are now blue to differentiate them from Gloomhaven Enhanced campaign saves",
+      "The scale of monster mats and monster ability cards was reduced to match the physical components.",
+      "Monsters keep their current HP when switching between normal and elite."
+    ],
+    "add": [
+      "Game Keys for playing 1st, 2nd and 3rd ability card have been added. The numbers 1, 2, 3 still works as before.",
+      "A Game Key to sort the player's hand has been added.",
+      "Right clicking a +/- button for counters on the character sheet will add/remove a value by 5. Middle click will add/remove by 10.",
+      "The player mat has a spot for a 5th active ability card as well as buttons to draw/suffle the AMD and add a Curse/Bless to it.",
+      "The AMD mats have buttons to add a Curse/Shuffle card and have an indicator icon to distinguish them.",
+      "Inspiration will be automatically added after winning a scenario.",
+      "The rule book has some default bookmarks. You can also add your own.",
+      "The Cleanup Action on an ability card will move it to the lost pile.",
+      "Event deck mats now show an image for their corresponding deck type",
+      "A tips mat shows at the start of the game highlighting the Quick Menu and Cleanup Action as well as a button to bring up the mod's documentation. After a campaign is started, this will be moved to the book stand.",
+      "Added a Game Key for undoing the accidental deletion of objects (which previously was only doable by entering `>undo` into the chat window).",
+      "Applied +1 stickers on loot cards in the master loot deck are migrated with the Campaign Manager."
+    ],
+    "fix": [
+      "Abilities that also have persistent trackers can be opened with the Enhancement Calculator.",
+      "Prism and Blinkblade solo scenario spawn the correct obstacle.",
+      "Loot Cards 1418 and 1419 get added to the scenario loot deck automatically, if they are in the Master Loot Deck.",
+      "Personal Quests have the correct name/image combinations again.",
+      "Summons have their class color as the standee color.",
+      "The damage token won't be added as a condition to figures anymore.",
+      "The scenario flowchart automatically checks a scenario if it was won.",
+      "The Campaign Manager can save and load inactive characters again from now on. You can copy/paste inactive characters from the previous version to the new one to transfer them for now.",
+      "Scenario aid tokens and objective tokens use the correct FH images and font.",
+      "3D traps can be removed with the Cleanup Action",
+      "Character multi perks have the correct order/position.",
+      "Banner Spear's perks 5 and 6 add the correct amount of cards.",
+      "The Enhancement Calculator now shows up and can be used for each player individually.",
+      "The checkmark for solo shows its text again.",
+      "Fixed a cost calculation mistake on Banner Spear's \"Regroup\".",
+      "Fixed a typo on the name of item 224.",
+      "Unpacking a character with every perk unlocked no longer duplicates the characters' components.",
+      "Fixed a double-digit display issue with the round tracker.",
+      "Font errors on the Character Sheets would be less likely or completly done (which resulted in some players seeing bigger text than others). If not, please report again.",
+      "Fixed missing treasure for scenario 86.",
+      "Fixed scenario 11's boss missing overlay and summon options in the Quick Menu.",
+      "The Savvas Icestorm ability \"Frozen Shell\" shows the correct preview text.",
+      "Fixes a clipping issue for some stickers on the map."
+    ],
+    "migration": [
+      "Item 224 may not be found during migration due to a type fix. You need to unlock it again manually",
+      "Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.",
+      "Personal Quests are migrated by name, so make sure the names of unlocked/available PQ match the ones you expect to migrate, not the maybe wrong image.",
+      "You can copy/paste inactive characters from the previous version to the new one to transfer them for now.",
+      "Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button."
+    ],
+    "custom": [
+      "Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."
+    ]
+  },
+  {
+    "version": "2.0.1",
+    "release": "2024-08-25",
+    "fix": [
+      "Treasure cards are placed in their deck again so treasures can be looted."
+    ]
+  },
+  {
+    "version": "2.0.0",
+    "nickname": "Winter is here",
+    "release": "2024-08-25"
+  }
+]
