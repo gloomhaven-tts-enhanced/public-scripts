@@ -107,6 +107,3 @@ Pirata One:: Font that was default in Gloomhaven Enhanced.
 
 === Element Interface Orientation
 Change the orientation of the stack of elements. Select between horizontal and vertical.
-
-=== Themes
-Can be used to change the appearance of some game components.

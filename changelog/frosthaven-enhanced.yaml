@@ -1,6 +1,10 @@
 - version: unreleased
   change:
     - The start tile has been changed to match the icon from the scenario book.
+    - The immunity icons on monster figures have been changed to match the ones on the monster mats.
+  add:
+    - Loading a save file from Frosthaven Assissted is now supported.
+      Most things are supported, but be aware of the [limitations and manual steps](...) still required.
   fix:
     - Class figures have the same collider as monsters which fixes some weird collisions for them.
     - The active ability button works for the 5th card slot.
@@ -12,6 +16,13 @@
     - Switching to other player colors using the Game Keys works again.
     - The loot deck will be created if Loot Cards 1418 or 1419 are present.
     - Classes show a preview image in the Quick Menu for overlays they can spawn.
+  custom:
+    - The tag "Gloomhaven Custom Content" is deprecated now and it's handling will be removed in the next version.
+      Instead use the new tag "Content Box" now.
+      The content in the bag functions the same, but the bag itself has some additional requirements (checkout the [documentation](https://gloomhaven-tts-enhanced.github.io/public-scripts/custom/latest/contentbox.html#metadata).)
+    - Adding a content box into the game will now override most content if there's already one with the same name instead of raising a warning.
+    - Custom conditions can no longer register an image for the immunity to that condition.
+      Instead it will now always default to the condition image with the x-icon just like regular conditions.
 - version: 2.1.1
   release: 2024-09-07
   fix:
