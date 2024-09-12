@@ -401,6 +401,15 @@ Another (real live) example is the <a href="https://github.com/gloomhaven-tts-en
 ]</code></pre>
 </div>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">NOTE</dt>
+<dd>
+<p>Be sure to <strong>NOT</strong> include any comments in the JSON like in the example above.
+Those are just for documentation purpose and parsing the JSON file will break, if it contains any comments.</p>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
 <p>Changes can be described in list with different keys.
 Each key has a different role to group changes into certain categories.</p>
@@ -441,7 +450,7 @@ Typically, this also means there&#8217;s a new way or new feature that replaces 
 </dd>
 <dt class="hdlist1"><code>migration</code></dt>
 <dd>
-<p>Additional information that is relevant for migration the content to the new version.
+<p>Additional information that is relevant for migrating the content to the new version.
 E.g. to hint users that certain aspects of the content will not yet migrate or need to be adjusted in order to be migrated.</p>
 </dd>
 </dl>
