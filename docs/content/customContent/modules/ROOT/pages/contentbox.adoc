@@ -1,4 +1,4 @@
-= Custom Content Box
+= Content Box
 
 The mod supports automatically unpacking custom content and placing it where it is required by the mod.
 This makes it easier for users to set it up.

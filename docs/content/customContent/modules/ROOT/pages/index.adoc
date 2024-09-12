@@ -4,3 +4,5 @@ This documentation describes how custom content can be integrated into the Frost
 
 A lot has changes since the 1.3 version of the mod on how custom content could and should be created.
 Therefore, this documentation is still work in progress.
+
+The main concept to add any custom content to the mod is using a xref:contentbox.adoc[content box].
