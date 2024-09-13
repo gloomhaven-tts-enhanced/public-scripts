@@ -1,11 +1,11 @@
 import { Argv } from "yargs";
 
-import { format, parseISO } from "date-fns";
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { parse } from "yaml";
 import { ChangeCategory, Changelog, ChangeVersion } from "../model/changelog";
+import path from "path";
 
-const OUTDIR = "./tmp";
+const OUTDIR = `${__dirname}/../../../../changelog/tmp`;
 const CATEGORY_NAMES: [ChangeCategory, string][] = [
   ["change", "Changed"],
   ["add", "Added"],
@@ -32,17 +32,24 @@ const commandOptions = (yargs: Argv) => {
     alias: "c",
     type: "string",
     demandOption: true,
-    description: "Path to the change log.",
+    description: "Path to the change log directory.",
   });
 };
 
 const runCommand = (args: Arguments) => {
   prepare();
 
-  const fileContent = readFileSync(args.changeLog, { encoding: "utf-8" });
-  const changeLog = parse(fileContent) as Changelog;
+  for (const file of readdirSync(args.changeLog)) {
+    if (file.endsWith(".yaml")) {
+      const contentName = path.parse(file).name;
+      mkdirSync(`${OUTDIR}/${contentName}`);
 
-  changeLog.forEach(writeChanges);
+      const fileContent = readFileSync(`${args.changeLog}/${file}`, { encoding: "utf-8" });
+      const changeLog = parse(fileContent) as Changelog;
+
+      changeLog.forEach((version) => writeChanges(contentName, version));
+    }
+  }
 };
 
 const prepare = () => {
@@ -52,8 +59,8 @@ const prepare = () => {
   mkdirSync(OUTDIR);
 };
 
-const writeChanges = (changes: ChangeVersion) => {
-  const dir = `${OUTDIR}/${changes.version}`;
+const writeChanges = (contentName: string, changes: ChangeVersion) => {
+  const dir = `${OUTDIR}/${contentName}/${changes.version}`;
   mkdirSync(dir);
 
   createSteamNotes(changes, dir);
