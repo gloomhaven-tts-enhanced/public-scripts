@@ -1,4 +1,5 @@
-- version: unreleased
+- version: 2.2.0
+  release: 2024-09-13
   change:
     - The start tile has been changed to match the icon from the scenario book.
     - The immunity icons on monster figures have been changed to match the ones on the monster mats.
