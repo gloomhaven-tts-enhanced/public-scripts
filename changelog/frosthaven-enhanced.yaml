@@ -4,9 +4,10 @@
     - The immunity icons on monster figures have been changed to match the ones on the monster mats.
   add:
     - Loading a save file from Frosthaven Assissted is now supported.
-      Most things are supported, but be aware of the [limitations and manual steps](...) still required.
+      Most things are supported, but be aware of the [limitations and manual steps](https://gloomhaven-tts-enhanced.github.io/public-scripts/mod/latest/campaign/migrate.html#assissted) still required.
     - Adds a Game Key to open the search window on the currently hovered container.
     - Adds A Game Key to discard an Ability Card and one to move it to the active area.
+    - The information if the special coin loot cards are present in the master loot deck is not migrated with the Campaign Manager.
   fix:
     - Class figures have the same collider as monsters which fixes some weird collisions for them.
     - The active ability button works for the 5th card slot.
@@ -18,6 +19,9 @@
     - Switching to other player colors using the Game Keys works again.
     - The loot deck will be created if Loot Cards 1418 or 1419 are present.
     - Classes show a preview image in the Quick Menu for overlays they can spawn.
+    - The Brummix campaign sticker can now be added multiple times and shows the section link information.
+  migation:
+    - You have to manually add the Brummix stickers.
   custom:
     - The tag "Gloomhaven Custom Content" is deprecated now and it's handling will be removed in the next version.
       Instead use the new tag "Content Box" now.
