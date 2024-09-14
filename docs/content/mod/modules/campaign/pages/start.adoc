@@ -30,9 +30,9 @@ image::algox-archer-sleeve.png[]
 image::archer-abilities.png[]
 
 == Books and Loot
-Scenario Book::The scenario book will spawn, opened to the first page of the scenario. 
-Section Book::The section book will spawn, closed, with shortcuts to the sections you will need throughout the scenario.
-Loot Deck::The xref:scenario:looting.adoc[loot deck] will spawn, but take note of the current scripting limitations for looting while playing the scenario.
+Scenario Book:: The scenario book will spawn, opened to the first page of the scenario. 
+Section Book:: The section book will spawn, closed, with shortcuts to the sections you will need throughout the scenario.
+Loot Deck:: The xref:scenario:looting.adoc[loot deck] will spawn, but take note of the current scripting limitations for looting while playing the scenario.
 
 Finally, the first room will be generated. All overlay tiles, appropriate enemies for the number of active player mats, and icons signifying the starting hexes will spawn.
 When you're ready to begin, the starting hexes can all be removed by clicking one instance of btn:[Start].
