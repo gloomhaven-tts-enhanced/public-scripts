@@ -1,3 +1,6 @@
+- version: 2.3.0
+  add:
+    - Scenarios can now be marked as locked out by clicking at the center position on the scenario tracker for this scenario.
 - version: 2.2.0
   release: 2024-09-13
   change:
