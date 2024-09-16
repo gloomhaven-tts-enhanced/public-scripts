@@ -80,7 +80,7 @@ This is also shown own the scenario level chart below the Party Sheet.
 [#enhancement_system]
 === Enhancements
 Defines the enhancement system to use.
-This influences the prices on the xref:campaign/enhancements.adoc[Enhancement Calculator].
+This influences the prices on the xref:campaign:enhancements.adoc[Enhancement Calculator].
 
 Classic:: The prices from Frosthaven.
 When this is used, all enhancements are also applied to the class box of a character, when the character is packed up
@@ -95,7 +95,7 @@ This specified the image that is shown on the table surface.
 The background color of the table can be changed to any color you'd like.
 
 === Ability Preview
-This changes how monster ability cards are shown in the xref:initiativeTracker.adoc[Initiative Tracker].
+This changes how monster ability cards are shown in the xref:interface/initiativeTracker.adoc[Initiative Tracker].
 
 Icons:: The attack, move, shield, etc. icons are used when previewing the monster type's abilities for the round.
 Text:: The words "attack", "move", "shield", etc. are used when previewing the monster type's abilities for the round.

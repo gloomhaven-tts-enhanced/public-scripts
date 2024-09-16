@@ -9,17 +9,17 @@ image::feature/menu_gameKeys.png[]
 Each player has to assign the Game Key themselves if they want to use it.
 There's no way to share assigned Game Keys or assign default keys in the mod.
 Assigned keys will stay between mod versions.
-When migrating from 2.0.0 to v2.1.0 or beyond, the xref:quickMenu.adoc[Quick Menu] and the xref:cleanupAction.adoc[Cleanup Action] have been renamed and must be re-mapped by all users.
+When migrating from 2.0.0 to v2.1.0 or beyond, the xref:feature/quickMenu.adoc[Quick Menu] and the xref:feature/cleanupAction.adoc[Cleanup Action] have been renamed and must be re-mapped by all users.
 
 NOTE: Assigning a Game Key does not prevent the TTS default behavior for that key. E.g. if you assign the key "F" to a Game Key and use it while hovering over an object, it will still flip the object in addition to performing the game action.
 
 However, as stated above, this means those keys have to reassigned for each player, if they want to use them again.
 
 == The 2 Most Useful Game Keys: Quick Menu and Cleanup Action
-The two most useful Game Keys are the xref:quickMenu.adoc[Quick Menu] and the xref:cleanupAction.adoc[Cleanup Action].
+The two most useful Game Keys are the xref:feature/quickMenu.adoc[Quick Menu] and the xref:feature/cleanupAction.adoc[Cleanup Action].
 
 == Enhance Ability
-While hovering over a character ability card, this will open the xref:campaign/enhancements.adoc[Enhancement Calculator].
+While hovering over a character ability card, this will open the xref:campaign:enhancements.adoc[Enhancement Calculator].
 
 [#_play_1st2nd_card]
 == Play 1st/2nd/3rd Ability Card
