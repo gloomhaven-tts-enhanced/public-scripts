@@ -2,7 +2,7 @@
 
 There are two reasons to migrate a campaign:
 
-* Importing a campaign from Frosthaven Assisted
+* Importing a campaign from Frosthaven Assisted, a mod not affiliated with Frosthaven Enhanced or Cephalofair
 * Migrating from a previous version of Frosthaven Enhanced
 
 

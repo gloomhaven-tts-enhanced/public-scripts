@@ -1,7 +1,7 @@
 = Quick Menu
 
 The Quick Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
-It can be accessed by pressing the key of the assigned xref:feature/gamekeys.adoc[Game Key] while hovering over a character, enemy or summon figure.
+It can be accessed by pressing the key of the assigned xref:feature/gameKeys.adoc[Game Key] while hovering over a character, enemy or summon figure.
 
 image::engine:feature/contextMenu.gif[]
 

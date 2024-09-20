@@ -1,6 +1,6 @@
 = Scenario Setup
 
-Be sure to review xref:campaign/start.adoc[Starting a Scenario] for any pre-scenario steps.
+Be sure to review xref:campaign:start.adoc[Starting a Scenario] for any pre-scenario steps.
 
 image::interface/game-setup.png[]
 
@@ -10,7 +10,7 @@ Be sure to check the boxes for "Show Locked" or "Show Completed" if you'd like t
 When the scenario is complete, return to this menu and select btn:[Scenario Won] or btn:[Scenario Lost] to execute the post-scenario scripting.
 All characters will return to full HP and XP will be tallied. Bonus XP will be added if btn:[Scenario Won] was selected.
 
-Please check out xref:scenario/looting.adoc[Looting] for post-scenario loot bookkeeping required in the current mod version.
+Please check out xref:scenario:looting.adoc[Looting] for post-scenario loot bookkeeping required in the current mod version.
 
 Once all loot is tallied, be sure to account for all post-scenario rewards or section links.
 Once this is all complete, click btn:[Delete Map] and begin an Outpost Phase.
