@@ -1,6 +1,10 @@
 - version: 2.3.0
+  change:
+    - The cleanup action for figures move the figure to their respective player mat independent of the player who used the cleanup action.
   add:
     - Scenarios can now be marked as locked out by clicking at the center position on the scenario tracker for this scenario.
+    - The books are now saved from being deleted during "Delete Map".
+      You can also add any other object from being deleted this way by giving them the "Permanent" tag.
 - version: 2.2.0
   release: 2024-09-13
   change:

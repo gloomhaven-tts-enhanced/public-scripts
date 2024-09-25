@@ -1,5 +1,19 @@
 [
   {
+    "version": "1.1.1",
+    "release": "2024-09-25",
+    "fix": [
+      "Monsters drop loot pouches instead of coins."
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "release": "2024-09-20",
+    "add": [
+      "Adds Scenario 5."
+    ]
+  },
+  {
     "version": "1.0.0",
     "release": "2024-09-13",
     "nickname": "Initial Release"
