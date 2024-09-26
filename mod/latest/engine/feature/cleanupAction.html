@@ -94,6 +94,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="quickMenu.html">Quick Menu</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="cleanupAction.html">Cleanup Action</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -208,7 +211,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Frosthaven Enhanced</a></li>
-    <li><a href="cleanupAction.html">Cleanup action</a></li>
+    <li>Common Functionality</li>
+    <li>Features</li>
+    <li><a href="cleanupAction.html">Cleanup Action</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -227,7 +232,7 @@
 <article class="doc">
 <h1 class="page">Cleanup action</h1>
 <div class="paragraph">
-<p>This <a href="#gameKeys.adoc" class="xref unresolved">Game Key</a> is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.</p>
+<p>This <a href="gameKeys.html" class="xref page">Game Key</a> is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -256,9 +261,9 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Monsters, Summons and overlays with a health bar</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The object will be removed.
-If it was a monster or summon (and the <a href="../interface/options.html#summons_drop_loot" class="xref page">current rules</a> drop loot for 't drop loot for summons), it will also drop a coin.
+If it was a monster, it will also drop a coin. If it is a summoned monster, the mod checks the <a href="../interface/options.html#summons_drop_loot" class="xref page">current rules</a> setting to determine whether to drop a coin or not.
 This is the same behavior as reducing the objects' health to 0 and then pressing the <b class="button">Defeat</b> button in the center of it&#8217;s health bar.
-However, this action will also be performed, if the objects' health is above 0.</p></td>
+This action will be performed if the objects' health is above 0.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Battle Goals</p></td>
