@@ -61,12 +61,12 @@ Otherwise, they are placed face-up.
 [#summons_drop_loot]
 === Summons Drop Loot
 
-Determines if summoned monsters should drop loot (e.g. coins) or not.
+Determines if summoned monsters should drop loot (e.g. coins) or not. All Frosthaven 
 
-Always:: Summoned monsters will always drop loot, e.g. also for Gloomhaven scenarios.
+Always:: Summoned monsters will always drop loot.
 Never:: Summoned monsters will never drop any loot.
-Campaign Based:: Summoned monsters will drop loot based on the rules of the scenario for the current campaign.
-As of now, this is the same as "Never" as the default rules are the Gloomhaven ones, but this will be adjustable in the future.
+Campaign Based:: Summoned monsters will drop loot based on the rules of the scenario for the current campaign (Are you playing Gloomhaven or Frosthaven?).
+If you are playing Gloomhaven, summoned mosnters will not drop loot. If you are playing Frosthaven, summoned monsters will drop loot tokens.
 
 == Variants
 More information on Variants found on page 69 of the rulebook.
