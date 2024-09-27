@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FHE Mod Development :: Gloomhaven Enhanced</title>
+    <title>Setup :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="stylesheet" href="../_/css/gh-site.css">
@@ -49,7 +49,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -156,36 +156,90 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Development</a></li>
-    <li><a href="index.html">Introduction</a></li>
+    <li><a href="setup.html">Setup</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/setup.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">FHE Mod Development</h1>
+<h1 class="page">Setup</h1>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This documentation describes details about developing the Frosthaven Enhanced mod.
-Checkout the following guides:</p>
+<p>The following tools need to be present on your system to effectively work with the mod and its tools.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://git-scm.com/">git</a></dt>
+<dd>
+<p>To synchronize changes on the local file system with the one on GitHub.
+By default, this comes with a command line tool and a bare-bones UI.
+It&#8217;s recommended to also install other tools that offer better UIs to effectively work with git, like <a href="https://github.com/apps/desktop">GitHub Desktop</a> or the integration in editors like <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+</dd>
+<dt class="hdlist1"><a href="https://nodejs.org/">node.js</a></dt>
+<dd>
+<p>An engine to execute JavaScript/TypeScript code.
+Most tools surrounding the mod are written with TypeScript so this needs to be installed to execute them.</p>
+</dd>
+<dt class="hdlist1"><a href="https://pnpm.io/">pnpm</a></dt>
+<dd>
+<p>A package manager for external libraries used by the tools.
+Also mainly used to actually start the different tools from a command line.</p>
+</dd>
+<dt class="hdlist1"><a href="https://code.visualstudio.com/">Visual Studio Code</a></dt>
+<dd>
+<p>A multipurpose text-editor/development tool.
+Makes it easier to read and write the mod&#8217;s code and work with the tools.
+Also has extensions that make it integrate into TTS directly, like <a href="https://marketplace.visualstudio.com/items?itemName=sebaestschjin.tts-editor">this one</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Inside the <a href="https://kb.tabletopsimulator.com/getting-started/technical-info/#save-game-data-location">TTS save game directory</a> create the following files:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="setup.html" class="xref page">Setup</a> to find out which tools to install and how to get started.</p>
+<p>Enginehaven_Dev.json</p>
 </li>
 <li>
-<p><a href="repository.html" class="xref page">Repository Structure</a> to find out how the different parts are structured.</p>
-</li>
-<li>
-<p><a href="tools.html" class="xref page">Tools</a> to learn more about the different tools to use.</p>
-</li>
-<li>
-<p><a href="commandLine.html" class="xref page">Command Line</a> to learn more about development tools inside the mod itself.</p>
+<p>Frosthaven_Dev.json</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The content doesn&#8217;t matter, just their existence is important.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_workflow"><a class="anchor" href="#_basic_workflow"></a>Basic workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After installing everything, clone the repository with git somewhere on your local filesystem.
+Then run the command <code>pnpm install</code> via a command line.
+This will install the external dependencies required for the tools in the repository.
+Finally, run the command <code>pnpm compile</code> via a command line.
+This will build the tools on your local file system so they are ready to use.</p>
+</div>
+<div class="paragraph">
+<p>Whenever you perform a <code>git pull</code> to get the latest changes from GitHub, a <code>pnpm install</code> will typically be automatically executed if it is required.
+It&#8217;s also recommended to execute the <code>pnpm compile</code> command again then to build any updates to the tools.
+This is not done automatically.</p>
+</div>
+<div class="paragraph">
+<p>To create the latest save games of the mod based on the current state of the repository, run the command <code>pnpm embed:fh</code>.
+This will fill the previously created files <code>Enginehaven_Dev.json</code> and <code>Frosthaven_Dev.json</code> with actual TTS save files.
+Load the save <code>Enginehaven_Dev</code> inside TTS.
+Then additively load <code>Frosthaven_Dev</code>.
+Save the game and load it again, you now have the current copy of Frosthaven Enhanced.</p>
+</div>
+</div>
 </div>
 </article>
   </div>
