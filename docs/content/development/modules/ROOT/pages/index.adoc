@@ -1,7 +1,9 @@
-= GHE Mod Development
+= FHE Mod Development
 
-This documentation describes how to develop the GHE mod.
+This documentation describes details about developing the Frosthaven Enhanced mod.
+Checkout the following guides:
 
-Checkout xref:build.adoc[Working on GHE] to find out how to build and release the GHE workshop mods.
-
-It also may contain heavy spoilers for all things about Gloomhaven, Frosthaven or any other related content.
+* xref:setup.adoc[] to find out which tools to install and how to get started.
+* xref:repository.adoc[] to find out how the different parts are structured.
+* xref:tools.adoc[] to learn more about the different tools to use.
+* xref:commandLine.adoc[] to learn more about development tools inside the mod itself.
