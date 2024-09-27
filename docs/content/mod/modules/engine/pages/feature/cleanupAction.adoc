@@ -1,6 +1,6 @@
 = Cleanup action
 
-This xref:gameKeys.adoc[Game Key] is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.
+This xref:feature/gameKeys.adoc[Game Key] is a catch-all for returning things to their home. The table below outlines the uses for the Cleanup Action.
 
 [cols="1,2"]
 |===
@@ -17,9 +17,9 @@ This xref:gameKeys.adoc[Game Key] is a catch-all for returning things to their h
 
 | Monsters, Summons and overlays with a health bar
 | The object will be removed.
-If it was a monster or summon (and the xref:interface/options.adoc#summons_drop_loot[current rules] drop loot for 't drop loot for summons), it will also drop a coin.
+If it was a monster, it will also drop a coin. If it is a summoned monster, the mod checks the xref:interface/options.adoc#summons_drop_loot[current rules] setting to determine whether to drop a coin or not.
 This is the same behavior as reducing the objects' health to 0 and then pressing the btn:[Defeat] button in the center of it's health bar.
-However, this action will also be performed, if the objects' health is above 0.
+This action will be performed if the objects' health is above 0.
 
 | Battle Goals
 | The battle goal will be returned to the battle goals deck.

@@ -1,2 +1,3 @@
 * xref:engine:feature/gameKeys.adoc[Game Keys]
 * xref:engine:feature/quickMenu.adoc[Quick Menu]
+* xref:engine:feature/cleanupAction.adoc[Cleanup Action]
