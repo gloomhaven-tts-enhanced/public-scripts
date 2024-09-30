@@ -11,7 +11,7 @@ On this page all commands and syntax for the Card Creator will be explained.
 === Basic Actions
 
 |===
-|{set:cellbgcolor:rgb(80,80,80)} Syntax | Description | Example | Result
+|{set:cellbgcolor:rgb(180,180,180)} Syntax | Description | Example | Result
 
 | - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:icons/attack.svg[width=20px] 3
 
@@ -105,11 +105,18 @@ You can add modifieres to help with fineplacement, relocation, manipulating the 
 |===
 | Syntax | Description | Example | Result
 
-| margin | Adds a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+| margin | Adds a buffer space on all sides of an element. First value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
 [source]
 ----
 - earth: ''
-  margin: 0px 0px 0px 0px
+  margin: 5px 0px 0px 0px
+----|
+
+| margin[direction] | Adds a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+[source]
+----
+- earth: ''
+  marginTop: 5px
 ----|
 
 | padding | Include a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
@@ -117,6 +124,26 @@ You can add modifieres to help with fineplacement, relocation, manipulating the 
 ----
 - earth: ''
   padding: 0px 0px 0px 0px
+----|
+
+| padding[direction] | Include a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+[source]
+----
+- earth: ''
+  paddingTop: 5px
+----|
+|===
+
+An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also margin can take negative values to make the element take less space then the boundingbox of the element.
+
+|===
+| Syntax | Description | Example | Result
+
+| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not allways be changed with this. a|
+[source]
+----
+- earth: ''
+  fontSize: 10px
 ----|
 
 |===
