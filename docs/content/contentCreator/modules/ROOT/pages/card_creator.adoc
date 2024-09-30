@@ -1,7 +1,6 @@
 = Card Creator
 :icons: image
 :icontype: svg
-:iconsdir: ../images/icons
 
 On this page all commands and syntax for the Card Creator will be explained.
 
