@@ -224,12 +224,14 @@ Also has extensions that make it integrate into TTS directly, like <a href="http
 <p>After installing everything, clone the repository with git somewhere on your local filesystem.
 Then run the command <code>pnpm install</code> via a command line.
 This will install the external dependencies required for the tools in the repository.
-Finally, run the command <code>pnpm compile</code> via a command line.
-This will build the tools on your local file system so they are ready to use.</p>
+It will also probably show some warnings which will be fixed automatically later on.
+Then, run the command <code>pnpm build</code> via a command line.
+This will build the tools on your local file system so they are ready to use.
+Finally, run the command <code>pnpm install</code> again.</p>
 </div>
 <div class="paragraph">
 <p>Whenever you perform a <code>git pull</code> to get the latest changes from GitHub, a <code>pnpm install</code> will typically be automatically executed if it is required.
-It&#8217;s also recommended to execute the <code>pnpm compile</code> command again then to build any updates to the tools.
+It&#8217;s also recommended to execute the <code>pnpm build</code> command again then to build any updates to the tools.
 This is not done automatically.</p>
 </div>
 <div class="paragraph">
