@@ -222,7 +222,23 @@ Also has extensions that make it integrate into TTS directly, like <a href="http
 <div class="sectionbody">
 <div class="paragraph">
 <p>After installing everything, clone the repository with git somewhere on your local filesystem.
-Then run the command <code>pnpm install</code> via a command line.
+If you use the command line to clone, be sure to include the following flag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">git clone --recurse-submodules</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otherwise, run the following command after cloning the repository:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">git submodule update --init --recursive</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then run the command <code>pnpm install</code> via a command line.
 This will install the external dependencies required for the tools in the repository.
 It will also probably show some warnings which will be fixed automatically later on.
 Then, run the command <code>pnpm build</code> via a command line.
