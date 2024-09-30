@@ -1,6 +1,7 @@
 = Card Creator
 :icons: image
 :icontype: svg
+:iconsdir: ../images/icons
 
 On this page all commands and syntax for the Card Creator will be explained.
 
@@ -13,7 +14,110 @@ On this page all commands and syntax for the Card Creator will be explained.
 |===
 | Syntax | Description | Example | Result
 
-| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | icon:attack[role=gray] 3, icon:attack.svg[role=gray] 3, image:icons/attack.svg[role=gray] 3
+| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | icon:attack[width=20px] 3
+
+| - move: [value] | Creates a move ability with a value of [value] | - move: 3 | icon:move[width=20px] 3
+
+| - teleport: [value] | Creates a teleport ability with a value of [value] | - teleport: 3 | icon:teleport[width=20px] 3
+
+| - shield: [value] | Creates a shield ability with a value of [value] | - shield: 1 | icon:shield[width=20px] 1
+
+| - retaliate: [value] | Creates a retaliate ability with a value of [value] | - retaliate: 1 | icon:retaliate[width=20px] 1
+
+| - loot: [value] | Creates a loot ability with a value of [value] | - loot: 1 | icon:loot[width=20px] 1
+
+| - heal: [value] | Creates a heal ability with a value of [value] | - heal: 1 | icon:heal[width=20px] 1
+|===
+
+[#conditions]
+=== Conditions
+
+The [condition] can take any of the following values:
+
+- bane
+- bless
+- brittle
+- chill
+- curse
+- disarm
+- dodge
+- empower
+- enfeeble
+- immobilize
+- impair
+- infect
+- invisible
+- muddle
+- pierce
+- poison
+- pull
+- push
+- regenerate
+- rupture
+- safeguard
+- strengthen
+- stun
+- swing
+- ward
+- wound
+
+|===
+| - [condition] : [value] | Creates a [condition] with the value [value]. +
+If [value] is omitted only [condition] is rendered | - poison +
+- pierce: 1 | icon:poison[width=20px] +
+icon:pierce[width=20px] 1 +
 
 |===
 
+
+[#elements]
+=== Elements
+
+
+The [element] in this section can take any of the following values:
+
+- earth
+- fire
+- air (or wind)
+- ice
+- light
+- dark
+- wild
+- any combination of elements seperated by '/' will generate an or element
+
+|===
+| Syntax | Description | Example | Result
+
+| - [element] | Renders the icon for the element [element]. | - earth | icon:earth[width=20px]
+
+| - [element]: consume | Renders the icon for the element [element], aswell as adding a consume x. This is usally used within an optional block. | - earth: consume | icon:earth[width=20px]icon:consume[width=10px]
+
+|   infuse: [ [elements..] ] | This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list. +
+ +
+As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] | [!icon:earth[width=20px]icon:wild[width=20px]]
+
+|===
+
+[#styles]
+=== Styles
+
+You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. Here is a list of styles each elements can take:
+
+|===
+| Syntax | Description | Example | Result
+
+| margin | Adds a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+[source]
+----
+- earth: ''
+  margin: 0px 0px 0px 0px
+----|
+
+| padding | Include a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+[source]
+----
+- earth: ''
+  padding: 0px 0px 0px 0px
+----|
+
+|===
