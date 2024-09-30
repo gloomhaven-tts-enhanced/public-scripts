@@ -28,6 +28,20 @@ The content doesn't matter, just their existence is important.
 == Basic workflow
 
 After installing everything, clone the repository with git somewhere on your local filesystem.
+If you use the command line to clone, be sure to include the following flag:
+
+[source]
+----
+git clone --recurse-submodules
+----
+
+Otherwise, run the following command after cloning the repository:
+
+[source]
+----
+git submodule update --init --recursive
+----
+
 Then run the command `pnpm install` via a command line.
 This will install the external dependencies required for the tools in the repository.
 It will also probably show some warnings which will be fixed automatically later on.
