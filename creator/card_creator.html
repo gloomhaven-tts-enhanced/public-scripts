@@ -148,7 +148,268 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">- attack: [value]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Creates an attack ability with a value of [value]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">- attack: 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon gray"><i class="fa fa-attack"></i></span> 3, <span class="icon gray"><i class="fa fa-attack.svg"></i></span> 3, <span class="image gray"><img src="_images/icons/attack.svg" alt="attack"></span> 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-attack"></i></span> 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- move: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a move ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- move: 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-move"></i></span> 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- teleport: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a teleport ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- teleport: 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-teleport"></i></span> 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- shield: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a shield ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- shield: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-shield"></i></span> 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- retaliate: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a retaliate ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- retaliate: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-retaliate"></i></span> 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- loot: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a loot ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- loot: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-loot"></i></span> 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- heal: [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a heal ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- heal: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-heal"></i></span> 1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="conditions"><a class="anchor" href="#conditions"></a>Conditions</h3>
+<div class="paragraph">
+<p>The [condition] can take any of the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>bane</p>
+</li>
+<li>
+<p>bless</p>
+</li>
+<li>
+<p>brittle</p>
+</li>
+<li>
+<p>chill</p>
+</li>
+<li>
+<p>curse</p>
+</li>
+<li>
+<p>disarm</p>
+</li>
+<li>
+<p>dodge</p>
+</li>
+<li>
+<p>empower</p>
+</li>
+<li>
+<p>enfeeble</p>
+</li>
+<li>
+<p>immobilize</p>
+</li>
+<li>
+<p>impair</p>
+</li>
+<li>
+<p>infect</p>
+</li>
+<li>
+<p>invisible</p>
+</li>
+<li>
+<p>muddle</p>
+</li>
+<li>
+<p>pierce</p>
+</li>
+<li>
+<p>poison</p>
+</li>
+<li>
+<p>pull</p>
+</li>
+<li>
+<p>push</p>
+</li>
+<li>
+<p>regenerate</p>
+</li>
+<li>
+<p>rupture</p>
+</li>
+<li>
+<p>safeguard</p>
+</li>
+<li>
+<p>strengthen</p>
+</li>
+<li>
+<p>stun</p>
+</li>
+<li>
+<p>swing</p>
+</li>
+<li>
+<p>ward</p>
+</li>
+<li>
+<p>wound</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- [condition] : [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a [condition] with the value [value].<br>
+If [value] is omitted only [condition] is rendered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- poison<br>
+- pierce: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-poison"></i></span><br>
+<span class="icon"><i class="fa fa-pierce"></i></span> 1<br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="elements"><a class="anchor" href="#elements"></a>Elements</h3>
+<div class="paragraph">
+<p>The [element] in this section can take any of the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>earth</p>
+</li>
+<li>
+<p>fire</p>
+</li>
+<li>
+<p>air (or wind)</p>
+</li>
+<li>
+<p>ice</p>
+</li>
+<li>
+<p>light</p>
+</li>
+<li>
+<p>dark</p>
+</li>
+<li>
+<p>wild</p>
+</li>
+<li>
+<p>any combination of elements seperated by '/' will generate an or element</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- [element]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders the icon for the element [element].</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- earth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-earth"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- [element]: consume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders the icon for the element [element], aswell as adding a consume x. This is usally used within an optional block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- earth: consume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-earth"></i></span><span class="icon"><i class="fa fa-consume"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">infuse: [ [elements..] ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list.<br>
+<br>
+As a modifier, this does not use a '-' in front of it</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">infuse: [earth, wild]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[!<span class="icon"><i class="fa fa-earth"></i></span><span class="icon"><i class="fa fa-wild"></i></span>]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="styles"><a class="anchor" href="#styles"></a>Styles</h3>
+<div class="paragraph">
+<p>You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. Here is a list of styles each elements can take:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">margin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  margin: 0px 0px 0px 0px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">padding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  padding: 0px 0px 0px 0px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
