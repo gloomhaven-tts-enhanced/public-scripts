@@ -11,7 +11,7 @@ On this page all commands and syntax for the Card Creator will be explained.
 === Basic Actions
 
 |===
-| Syntax | Description | Example | Result
+|{set:cellbgcolor:rgb(80,80,80)} Syntax | Description | Example | Result
 
 | - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:icons/attack.svg[width=20px] 3
 
