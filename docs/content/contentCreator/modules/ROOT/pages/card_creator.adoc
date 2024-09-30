@@ -13,8 +13,7 @@ On this page all commands and syntax for the Card Creator will be explained.
 |===
 | Syntax | Description | Example | Result
 
-| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | icon:attack[] 3
+| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:attack.svg[] 3
 
 |===
-image::dalle_reaper.png[]
 
