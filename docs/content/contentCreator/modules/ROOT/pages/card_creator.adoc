@@ -1,5 +1,5 @@
 = Card Creator
-:icons:
+:icons: image
 :icontype: svg
 
 On this page all commands and syntax for the Card Creator will be explained.
@@ -11,9 +11,139 @@ On this page all commands and syntax for the Card Creator will be explained.
 === Basic Actions
 
 |===
-| Syntax | Description | Example | Result
+|{set:cellbgcolor:rgb(180,180,180)} Syntax | Description | Example | Result
 
-| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | icon:attack[] 3, image:icons/attack.svg[] 3
+| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:icons/attack.svg[width=20px] 3
+
+| - move: [value] | Creates a move ability with a value of [value] | - move: 3 | image:icons/move.svg[width=20px] 3
+
+| - teleport: [value] | Creates a teleport ability with a value of [value] | - teleport: 3 | image:icons/teleport.svg[width=20px] 3
+
+| - shield: [value] | Creates a shield ability with a value of [value] | - shield: 1 | image:icons/shield.svg[width=20px] 1
+
+| - retaliate: [value] | Creates a retaliate ability with a value of [value] | - retaliate: 1 | image:icons/retaliate.svg[width=20px] 1
+
+| - loot: [value] | Creates a loot ability with a value of [value] | - loot: 1 | image:icons/loot.svg[width=20px] 1
+
+| - heal: [value] | Creates a heal ability with a value of [value] | - heal: 1 | image:icons/heal.svg[width=20px] 1
+|===
+
+[#conditions]
+=== Conditions
+
+The [condition] can take any of the following values:
+
+- bane
+- bless
+- brittle
+- chill
+- curse
+- disarm
+- dodge
+- empower
+- enfeeble
+- immobilize
+- impair
+- infect
+- invisible
+- muddle
+- pierce
+- poison
+- pull
+- push
+- regenerate
+- rupture
+- safeguard
+- strengthen
+- stun
+- swing
+- ward
+- wound
+
+|===
+| - [condition] : [value] | Creates a [condition] with the value [value]. +
+If [value] is omitted only [condition] is rendered | - poison +
+- pierce: 1 | image:icons/poison.svg[width=20px] +
+image:icons/pierce.svg[width=20px] 1 +
 
 |===
 
+
+[#elements]
+=== Elements
+
+
+The [element] in this section can take any of the following values:
+
+- earth
+- fire
+- air (or wind)
+- ice
+- light
+- dark
+- wild
+- any combination of elements seperated by '/' will generate an or element
+
+|===
+| Syntax | Description | Example | Result
+
+| - [element] | Renders the icon for the element [element]. | - earth | image:icons/earth.svg[width=20px]
+
+| - [element]: consume | Renders the icon for the element [element], aswell as adding a consume x. This is usally used within an optional block. | - earth: consume | image:icons/earth.svg[width=20px]image:icons/consume.svg[width=10px]
+
+|   infuse: [ [elements..] ] | This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list. +
+ +
+As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] | [!image:icons/earth.svg[width=20px]image:icons/wild.svg[width=20px]]
+
+|===
+
+[#styles]
+=== Styles
+
+You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. Here is a list of styles each elements can take:
+
+|===
+| Syntax | Description | Example | Result
+
+| margin | Adds a buffer space on all sides of an element. First value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+[source]
+----
+- earth: ''
+  margin: 5px 0px 0px 0px
+----|
+
+| margin[direction] | Adds a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+[source]
+----
+- earth: ''
+  marginTop: 5px
+----|
+
+| padding | Include a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+[source]
+----
+- earth: ''
+  padding: 0px 0px 0px 0px
+----|
+
+| padding[direction] | Include a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+[source]
+----
+- earth: ''
+  paddingTop: 5px
+----|
+|===
+
+An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also margin can take negative values to make the element take less space then the boundingbox of the element.
+
+|===
+| Syntax | Description | Example | Result
+
+| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not allways be changed with this. a|
+[source]
+----
+- earth: ''
+  fontSize: 10px
+----|
+
+|===
