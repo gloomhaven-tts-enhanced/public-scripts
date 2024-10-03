@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Command Line :: Gloomhaven Enhanced</title>
+    <title>Upgrading Scenarios :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="stylesheet" href="../_/css/gh-site.css">
@@ -55,14 +55,14 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="documentation.html">Documentation</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="commandLine.html">Command Line</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Workflows</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="scenarioUpgrade.html">Upgrading Scenarios</a>
   </li>
 </ul>
@@ -162,107 +162,184 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Development</a></li>
-    <li><a href="commandLine.html">Command Line</a></li>
+    <li>Workflows</li>
+    <li><a href="scenarioUpgrade.html">Upgrading Scenarios</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/commandLine.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/development/modules/ROOT/pages/scenarioUpgrade.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Command Line</h1>
+<h1 class="page">Upgrading Scenarios</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The mod integrates a very basic command line feature, to simplify some steps during development.
-It can be used by typing a command into the chat window.
-Commands always start with an <code>&gt;</code>.
-The text after the space is the argument that is passed to the command (if the command uses it).</p>
+<p>This describes the process of upgrading scenarios from the old scenario format to the new scenario format.
+The following terms are used to describe specific directories inside the repository:</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Example command named <code>log-level</code>.
-The argument passed to the command will be <code>debug</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>&gt;log-level debug</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Every print is also send to the Atom plugin and the console in Atom (can be opened with <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></span>).
-From there it can be copied.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Code directory</dt>
+<dd>
+<p>The directory <code>packages/code</code>.</p>
+</dd>
+<dt class="hdlist1">Mod directory</dt>
+<dd>
+<p>The directory <code>mods/game/Frosthaven</code>.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_setting_the_logging_level"><a class="anchor" href="#_setting_the_logging_level"></a>Setting the Logging Level</h2>
+<h2 id="_convert_the_old_scenario_definition"><a class="anchor" href="#_convert_the_old_scenario_definition"></a>Convert the old scenario definition</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sets the level of all loggers.
-All log messages with a higher or equal level will be print to the game chat.
-The default level is <code>INFO</code>.</p>
-</div>
-<div class="paragraph">
-<p>Available level are (in descending order): <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>, <code>DEBUG</code> and <code>VERBOSE</code>.
-The values are case-insensitive.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre>&gt;log-level debug</pre>
-</div>
-</div>
-</div>
+<p>Execute the command <code>pnpm scenario &lt;index&gt;</code> (e.g. <code>pnpm scenario 4</code>) inside the <code>packages/script</code> directory of the repository.
+This will read the file <code>FH_&lt;index&gt;.lua</code> (e.g. <code>FH_004.lua</code>) and convert it to the new scenario format.
+It will create a file <code>fh-&lt;index&gt;.ts</code> (e.g. <code>fh-4.ts</code>) inside the <code>src/game/frosthaven/scenario</code> directory of the code directory.
+This file needs to be updated to change the scenario.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_position"><a class="anchor" href="#_get_position"></a>Get Position</h2>
+<h2 id="convert"><a class="anchor" href="#convert"></a>Convert the scenario definition to a <code>.lua</code> file</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Prints the position and rotation of the object the is currently hovered by the player entering the command.
-This might be useful to determine where a certain object is placed, e.g. if that is manually entered into a scenario definition.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre>&gt;show-pos</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Output</div>
-<div class="content">
-<pre>position = { -12.25, 1.65, -13.3 },
-rotation = { 0, 0, 0 },</pre>
-</div>
-</div>
-</div>
+<p>The generated scenario definition is a TypeScript file.
+To make it usable inside TTS, it needs to be a Lua file.
+Run the command <code>pnpm build</code> inside the code directory to convert all TypeScript files to Lua files.
+Alternatively, you could execute the command <code>pnpm dev</code> inside the same directory and keep the command line open where this command was executed.
+This will start a watching process on the all TypeScript files.
+Whenever a TypeScript file is saved, it&#8217;s automatically converted to the Lua file as long as this process is running.
+Otherwise, the <code>pnpm build</code> command needs to be executed each time.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spawn_scenario"><a class="anchor" href="#_spawn_scenario"></a>Spawn scenario</h2>
+<h2 id="_add_the_scenario_to_the_frosthaven_game_box"><a class="anchor" href="#_add_the_scenario_to_the_frosthaven_game_box"></a>Add the scenario to the Frosthaven game box</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spawns a scenario with the given ID.
-Also deletes all objects in the scenario area.</p>
+<p>The above steps only create the scenario script itself, but not the token that holds that scenario.
+Open the file <code>campaign.yaml</code> inside the <code>data</code> directory of the mod directory.
+Add the index of the new scenario to the existing list.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
 <div class="listingblock">
+<div class="title">Example content of the <code>campaign.yaml</code> file</div>
 <div class="content">
-<pre>&gt;spawn-scenario 10</pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">kind: campaign
+name: Frosthaven
+scenarios:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  # new scenarios are added here, should be sorted</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Be sure to surround the numbers with <code>"</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then execute the <code>pnpm embed</code> command from the mod directory (or the <code>pnpm embed:fh</code> command from the root directory which also includes this command).
+This will generate the token that holds the scenario script and add it to the game box.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_remove_the_old_scenario"><a class="anchor" href="#_remove_the_old_scenario"></a>Remove the old scenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Inside the mod directory, find the directory  <code>content/Frosthaven.frosthaven/AutoAssets.assets/Scenarios.scenarios</code>.
+Open the <code>Contents.json</code> file inside this directory and remove the entry for the removed scenario.
+It can be identified by checking the scenario index.</p>
+</div>
+<div class="listingblock">
+<div class="title">Before</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  {
+    "path": "./FH-000.9911c9"
+  },
+  {
+    "path": "./FH-004.831416"
+  },
+  {
+    "path": "./FH-005.5f8908"
+  }
+]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">After</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+  {
+    "path": "./FH-000.9911c9"
+  },
+  {
+    "path": "./FH-005.5f8908"
+  }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also delete the directory of the same name inside that directory.
+Embedding again will remove the old scenario from the game box.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_and_changing_the_scenario"><a class="anchor" href="#_testing_and_changing_the_scenario"></a>Testing and changing the scenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, load FHE as usual and start a new campaign.
+Then, spawn the new scenario.
+This is easiest by entering <code>&gt;spawn-scenario fh-&lt;index&gt;</code> (e.g. <code>&gt;spawn-scenario fh-4</code>) into the chat window.
+Now save the game and load it again.</p>
+</div>
+<div class="paragraph">
+<p>If everything already works as intended and is correctly placed, that&#8217;s great.
+If not, make adjustments to the scenario definition.
+In order to not do the whole embedding and loading process all the time, it&#8217;s easier to use VS Code with the TTS Editor extension (as mentioned <a href="setup.html#vs-code" class="xref page">here</a>).</p>
+</div>
+<div class="paragraph">
+<p>First, make sure the <code>pnpm dev</code> command is running somewhere (as mentioned <a href="#convert">above</a>).
+This makes sure that any changes to the scenario definition are directly converted to Lua.
+Then use the VS Code command palette (<span class="keyseq"><kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd></span> by default).
+Search for the command "Update Object"</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/scenario/command-palette.png" alt="command palette">
+</div>
+</div>
+<div class="paragraph">
+<p>Selecting this command will open another popup where you can select an object currently on the table of the loaded TTS save.
+Search for the scenario token (which always has the name <code>fh-&lt;index&gt;</code>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/scenario/update-object.png" alt="update object">
+</div>
+</div>
+<div class="paragraph">
+<p>Select that again and now the object will be updated in the background with the current script.
+Now simply spawn the scenario again to get the latest scenario definition.
+Again, use the chat window to make this faster as this also includes clearing the current map.
+Use the <kbd>Arrow Up</kbd> key to easily get to the last entered chat message again instead of typing it again.</p>
 </div>
 </div>
 </div>
