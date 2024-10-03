@@ -1,0 +1,115 @@
+= Upgrading Scenarios
+
+This describes the process of upgrading scenarios from the old scenario format to the new scenario format.
+The following terms are used to describe specific directories inside the repository:
+
+Code directory:: The directory `packages/code`.
+Mod directory:: The directory `mods/game/Frosthaven`.
+
+== Convert the old scenario definition
+
+Execute the command `pnpm scenario <index>` (e.g. `pnpm scenario 4`) inside the `packages/script` directory of the repository.
+This will read the file `FH_<index>.lua` (e.g. `FH_004.lua`) and convert it to the new scenario format.
+It will create a file `fh-<index>.ts` (e.g. `fh-4.ts`) inside the `src/game/frosthaven/scenario` directory of the code directory.
+This file needs to be updated to change the scenario.
+
+[#convert]
+== Convert the scenario definition to a `.lua` file
+
+The generated scenario definition is a TypeScript file.
+To make it usable inside TTS, it needs to be a Lua file.
+Run the command `pnpm build` inside the code directory to convert all TypeScript files to Lua files.
+Alternatively, you could execute the command `pnpm dev` inside the same directory and keep the command line open where this command was executed.
+This will start a watching process on the all TypeScript files.
+Whenever a TypeScript file is saved, it's automatically converted to the Lua file as long as this process is running.
+Otherwise, the `pnpm build` command needs to be executed each time.
+
+== Add the scenario to the Frosthaven game box
+
+The above steps only create the scenario script itself, but not the token that holds that scenario.
+Open the file `campaign.yaml` inside the `data` directory of the mod directory.
+Add the index of the new scenario to the existing list.
+
+.Example content of the `campaign.yaml` file
+[source,yaml]
+----
+kind: campaign
+name: Frosthaven
+scenarios:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  # new scenarios are added here, should be sorted
+----
+
+IMPORTANT: Be sure to surround the numbers with `"`.
+
+Then execute the `pnpm embed` command from the mod directory (or the `pnpm embed:fh` command from the root directory which also includes this command).
+This will generate the token that holds the scenario script and add it to the game box.
+
+== Remove the old scenario
+
+Inside the mod directory, find the directory  `content/Frosthaven.frosthaven/AutoAssets.assets/Scenarios.scenarios`.
+Open the `Contents.json` file inside this directory and remove the entry for the removed scenario.
+It can be identified by checking the scenario index.
+
+.Before
+[source,json]
+----
+[
+  {
+    "path": "./FH-000.9911c9"
+  },
+  {
+    "path": "./FH-004.831416"
+  },
+  {
+    "path": "./FH-005.5f8908"
+  }
+]
+----
+
+.After
+[source,json]
+----
+[
+  {
+    "path": "./FH-000.9911c9"
+  },
+  {
+    "path": "./FH-005.5f8908"
+  }
+]
+----
+
+Also delete the directory of the same name inside that directory.
+Embedding again will remove the old scenario from the game box.
+
+== Testing and changing the scenario
+
+First, load FHE as usual and start a new campaign.
+Then, spawn the new scenario.
+This is easiest by entering `>spawn-scenario fh-<index>` (e.g. `>spawn-scenario fh-4`) into the chat window.
+Now save the game and load it again.
+
+If everything already works as intended and is correctly placed, that's great.
+If not, make adjustments to the scenario definition.
+In order to not do the whole embedding and loading process all the time, it's easier to use VS Code with the TTS Editor extension (as mentioned xref:setup.adoc#vs-code[here]).
+
+First, make sure the `pnpm dev` command is running somewhere (as mentioned <<convert, above>>).
+This makes sure that any changes to the scenario definition are directly converted to Lua.
+Then use the VS Code command palette (kbd:[CTRL+SHIFT+P] by default).
+Search for the command "Update Object"
+
+image::scenario/command-palette.png[]
+
+Selecting this command will open another popup where you can select an object currently on the table of the loaded TTS save.
+Search for the scenario token (which always has the name `fh-<index>`).
+
+image::scenario/update-object.png[]
+
+Select that again and now the object will be updated in the background with the current script.
+Now simply spawn the scenario again to get the latest scenario definition.
+Again, use the chat window to make this faster as this also includes clearing the current map.
+Use the kbd:[Arrow Up] key to easily get to the last entered chat message again instead of typing it again.
