@@ -1,0 +1,53 @@
+= Overlays
+
+[source,js]
+----
+include::example$overlay/base.ts[]
+----
+
+[cols="m,3a"]
+|===
+| type | The type of the overlay, which defines how the outline will show for this overlay.
+Can be one of:
+
+* `"corridor"`
+* `"difficult-terrain"`
+* `"door"`
+* `"hazardous-terrain"`
+* `"icy-terrain"`
+* `"objective"`
+* `"obstacle"`
+* `"pressure-plate"`
+* `"trap"`
+* `"treasure"`
+* `"wall"`
+
+| object | The name of the overlay tile to use.
+This is optional and default to the name of the overlay in the definition.
+| rotation | The default rotation for this overlay.
+If the overlays defined in a xref:index.adoc#rooms[room] don't set their own rotation this value is used.
+| tags | An optional list of tags that will be added to each overlay of this type.
+Can be useful to actions.
+| stats | Stats that should be added to the overlay.
+See <<stats>>.
+| actions | Actions that should be added to the overlay.
+This will add a button to the overlay, which when pressed executed the given action(s).
+See <<actions>>.
+|===
+
+
+[#stats]
+== Stats
+
+The `stats` attribute can be used to define stats like health, attack, movement, etc. for the overlay.
+Each value is an xref:expressions.adoc[expression] that will be calculated during the scenario to take into account variables like current scenario level or player count.
+
+[source,js]
+----
+include::example$overlay/stats.ts[]
+----
+
+NOTE: Currently only `health` is supported for overlays.
+
+[#actions]
+== Actions

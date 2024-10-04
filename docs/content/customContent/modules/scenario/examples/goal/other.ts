@@ -1,0 +1,3 @@
+goal: {
+  type: "other",
+}

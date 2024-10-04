@@ -1,7 +1,8 @@
 name: custom
 title: Custom Content
-version: 2.0
+version: 2.3
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
+  - modules/scenario/nav.adoc
   - modules/tools/nav.adoc

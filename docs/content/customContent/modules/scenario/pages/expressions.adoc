@@ -1,0 +1,60 @@
+= Expressions
+
+== Operators
+
+[cols="m,4"]
+|===
+| Operator | Description
+
+| + | Addition of numerical values.
+| - | Subtraction of numerical values.
+| * | Multiplication of numerical values.
+| / | Division of numerical values.
+|===
+
+== Variables
+
+[cols="m,4a"]
+|===
+| Name | Description
+
+| C | The current player count in the party.
+| L | The current scenario level selected on the level chart.
+|===
+
+For expressions on monster stats it's also possible to reference the current value of the stat, e.g. in order to increase it by 1.
+This is done by using the variable `stat.` followed by the name of the stat, e.g.:
+
+[source,js]
+----
+include::example$monster/stats.ts[]
+----
+
+NOTE: The name oft the variable implies that other stats can also be referenced (e.g. to set the attack value +1 of the movement value).
+This is also intended in the future but currently not possible.
+For now only the stat with the same name as the one being changed can be referenced.
+
+== Functions
+
+Functions can be used in expression by writing their name and a pair of parentheses.
+Inside the parentheses the list of arguments are listed, separated by `,`.
+
+The following functions are available for expressions:
+
+[cols="m,1,1,3"]
+|===
+| Name | Arguments | Returns | Description
+
+| roundDown | `number` | `number`
+| Rounds the given number to the nearest integer.
+Rounds to the lower integer if the decimal value is 0.5.
+
+| roundUp | `number` | `number`
+| Rounds the given number to the nearest integer.
+Rounds to the higher integer if the decimal value is 0.5.
+|===
+
+
+== Examples
+
+`roundDown(L * 3 / 2)`
