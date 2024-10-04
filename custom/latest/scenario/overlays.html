@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>1.3 &#8594; 2.0 :: Gloomhaven Enhanced</title>
+    <title>Overlays :: Gloomhaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.9">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
@@ -61,19 +61,19 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../scenario/index.html">Scenarios</a>
+    <a class="nav-link" href="index.html">Scenarios</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../scenario/monsters.html">Monsters</a>
+    <a class="nav-link" href="monsters.html">Monsters</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="overlays.html">Overlays</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../scenario/overlays.html">Overlays</a>
+    <a class="nav-link" href="grid.html">Grid</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../scenario/grid.html">Grid</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../scenario/expressions.html">Expressions</a>
+    <a class="nav-link" href="expressions.html">Expressions</a>
   </li>
 </ul>
   </li>
@@ -143,30 +143,161 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Custom Content</a></li>
-    <li><a href="2.0.html">1.3 &#8594; 2.0</a></li>
+    <li><a href="index.html">Scenarios</a></li>
+    <li><a href="overlays.html">Overlays</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">2.3</button>
   <div class="version-menu">
-    <a class="version is-current" href="2.0.html">2.3</a>
-    <a class="version" href="../../1.3/migration/2.0.html">1.3</a>
+    <a class="version is-current" href="overlays.html">2.3</a>
+    <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/ROOT/pages/migration/2.0.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/scenario/pages/overlays.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">1.3 &#8594; 2.0</h1>
-<div class="literalblock">
+<h1 class="page">Overlays</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="listingblock">
 <div class="content">
-<pre>Those will be ignored from the box.
-The tracker token will be generated from the tracker image in the class definition.
-The summon tokens and player mat will be generated from default components in the mod.
-The image for the player mat can be changed by defining one or multiple portraits for the class (see below).</pre>
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">"Ice Sheet": {
+  type: "objective",
+  object: "Large Ice Corridor",
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The type of the overlay, which defines how the outline will show for this overlay.
+Can be one of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"corridor"</code></p>
+</li>
+<li>
+<p><code>"difficult-terrain"</code></p>
+</li>
+<li>
+<p><code>"door"</code></p>
+</li>
+<li>
+<p><code>"hazardous-terrain"</code></p>
+</li>
+<li>
+<p><code>"icy-terrain"</code></p>
+</li>
+<li>
+<p><code>"objective"</code></p>
+</li>
+<li>
+<p><code>"obstacle"</code></p>
+</li>
+<li>
+<p><code>"pressure-plate"</code></p>
+</li>
+<li>
+<p><code>"trap"</code></p>
+</li>
+<li>
+<p><code>"treasure"</code></p>
+</li>
+<li>
+<p><code>"wall"</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>object</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The name of the overlay tile to use.
+This is optional and default to the name of the overlay in the definition.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rotation</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The default rotation for this overlay.
+If the overlays defined in a <a href="index.html#rooms" class="xref page">room</a> don&#8217;t set their own rotation this value is used.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tags</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An optional list of tags that will be added to each overlay of this type.
+Can be useful to actions.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stats</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Stats that should be added to the overlay.
+See <a href="#stats">Stats</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>actions</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Actions that should be added to the overlay.
+This will add a button to the overlay, which when pressed executed the given action(s).
+See <a href="#actions">Actions</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="stats"><a class="anchor" href="#stats"></a>Stats</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>stats</code> attribute can be used to define stats like health, attack, movement, etc. for the overlay.
+Each value is an <a href="expressions.html" class="xref page">expression</a> that will be calculated during the scenario to take into account variables like current scenario level or player count.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">"Ice Sheet": {
+  type: "objective",
+  object: "Large Ice Corridor",
+  stats: {
+    health: "C * (L + 2)",
+  },
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently only <code>health</code> is supported for overlays.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="actions"><a class="anchor" href="#actions"></a>Actions</h2>
+<div class="sectionbody">
+
 </div>
 </div>
 </article>
