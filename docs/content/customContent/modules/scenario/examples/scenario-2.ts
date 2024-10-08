@@ -294,15 +294,8 @@ const scenario: ScenarioNew = {
       ],
     // tag::rooms-loot[]
       loot: [
-        {
-          name: "Treasure Chest",
-          position: [-2, 0],
-          treasure: "32",
-        },
-        {
-          name: "Loot Pouch",
-          position: [6, -1],
-        },
+        [-2, 0],
+        [6, -1],
       ],
 // end::rooms-loot[]
     },

@@ -201,7 +201,7 @@ Otherwise, the mapping needs to define either `"normal"` or `"elite"` for the di
 If there are overlays for this room, those can be defined with the `overlays` attribute.
 This is a list of overlays which will be spawned when this room is opened.
 
-NOTE: Loot tokens and treasure chests are _not_ overlays and are defined in their own section.
+NOTE: Loot tokens are _not_ overlays and are defined in their own section.
 
 [source,js]
 ----
@@ -219,7 +219,7 @@ This must match one of the defined overlays in the <<overlays>> section.
 This is optional and will default to the rotation of the defined overlay or 0 if there's also nothing defined.
 |===
 
-Loot tokens and treasure chests are defined with the `loot` attribute.
+Loot tokens defined with the `loot` attribute by simply defining their position on the grid.
 
 [source,js]
 ----

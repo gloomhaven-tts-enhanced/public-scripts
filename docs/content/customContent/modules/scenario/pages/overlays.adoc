@@ -35,6 +35,19 @@ This will add a button to the overlay, which when pressed executed the given act
 See <<actions>>.
 |===
 
+== Traps
+
+[source,js]
+----
+include::example$overlay/trap.ts[]
+----
+
+== Treasure Chests
+
+[source,js]
+----
+include::example$overlay/treasureChest.ts[]
+----
 
 [#stats]
 == Stats
