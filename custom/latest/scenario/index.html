@@ -596,7 +596,7 @@ This is a list of overlays which will be spawned when this room is opened.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Loot tokens and treasure chests are <em>not</em> overlays and are defined in their own section.
+Loot tokens are <em>not</em> overlays and are defined in their own section.
 </td>
 </tr>
 </table>
@@ -638,20 +638,13 @@ This is optional and will default to the rotation of the defined overlay or 0 if
 </tbody>
 </table>
 <div class="paragraph">
-<p>Loot tokens and treasure chests are defined with the <code>loot</code> attribute.</p>
+<p>Loot tokens defined with the <code>loot</code> attribute by simply defining their position on the grid.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">loot: [
-  {
-    name: "Treasure Chest",
-    position: [-2, 0],
-    treasure: "32",
-  },
-  {
-    name: "Loot Pouch",
-    position: [6, -1],
-  },
+  [-2, 0],
+  [6, -1],
 ],</code></pre>
 </div>
 </div>
