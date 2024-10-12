@@ -2,6 +2,7 @@
 
 == Operators
 
+.Arithmetic operators
 [cols="m,4"]
 |===
 | Operator | Description
@@ -12,6 +13,18 @@
 | / | Division of numerical values.
 |===
 
+.Comparison operators
+[cols="m,4"]
+|===
+| Operator | Description
+
+| < | Compares if the left operand is smaller than the right operand.
+| \<= | Compares if the left operand is smaller than or equal to the right operand.
+| > | Compares if the left operand is bigger than the right operand.
+| >= | Compares if the left operand is bigger than or equal to the right operand.
+| == | Compares if the left operand is equal to the right operand.
+|===
+
 == Variables
 
 [cols="m,4a"]
@@ -20,6 +33,11 @@
 
 | C | The current player count in the party.
 | L | The current scenario level selected on the level chart.
+| M | The current monster level according to the scenario level chart.
+| Trap | The current trap damage according to the scenario level chart.
+| Hazard | The current hazardous terrain damage according to the scenario level chart.
+| Gold | The current gold bonus according to the scenario level chart.
+| XP | The current experience bonus according to the scenario level chart.
 |===
 
 For expressions on monster stats it's also possible to reference the current value of the stat, e.g. in order to increase it by 1.
