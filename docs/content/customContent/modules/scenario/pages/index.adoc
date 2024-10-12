@@ -103,7 +103,7 @@ The `amount` attribute defines how many of that card type should be added.
 
 [source,js]
 ----
-include::example$goal/escape.ts[]
+example pending
 ----
 
 If the effect is for the characters to suffer damage, the `type` attribute needs to be set to `damage`.
@@ -111,7 +111,7 @@ The `amount` attribute defines how damage should be suffered.
 
 [source,js]
 ----
-include::example$goal/escape.ts[]
+example pending
 ----
 
 If the effect is to add one or more conditions to the characters, the `type` attribute needs to be set to `condition`.
@@ -119,7 +119,7 @@ The `conditions` string defines a list of each condition that should be added.
 
 [source,js]
 ----
-include::example$goal/escape.ts[]
+example pending
 ----
 
 NOTE: This currently has no effect at all and also not complete.
