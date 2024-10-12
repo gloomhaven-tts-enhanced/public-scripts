@@ -296,6 +296,15 @@ The <code>section</code> attribute defines the section that should be read once 
 </div>
 </div>
 <div class="paragraph">
+<p>If the goal is to defeat a specific enemy in the scenario, the <code>type</code> attribute needs to be set to <code>defeat</code>.
+The <code>name</code> attribute defines the name of the enemy that must be defeated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">example pending</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>If the goal is to escape the scenario, the <code>type</code> attribute needs to be set to <code>escape</code>.
 The <code>section</code> attribute defines the section that should be read once the goal is achieved.</p>
 </div>
@@ -305,6 +314,15 @@ The <code>section</code> attribute defines the section that should be read once 
   type: "escape",
   section: "8.3",
 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the goal is to destroy one or more objectives in the scenario, the <code>type</code> attribute needs to be set to <code>destroy</code>.
+The <code>marker</code> attribute defines (pending).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">example pending</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -333,6 +351,65 @@ It&#8217;s already included for possible later features, like showing and tracki
 </div>
 </div>
 <div class="sect1">
+<h2 id="_scenario_effects"><a class="anchor" href="#_scenario_effects"></a>Scenario effects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scenario effects can be defined using the <code>scenarioEffect</code> attribute.
+Depending on the type of effect, different attributes are available.</p>
+</div>
+<div class="paragraph">
+<p>If the effect is to add -1 modifiers to the characters' attack modifier deck, the <code>type</code> attribute needs to be set to <code>attack-modifier</code>.
+The <code>card</code> attribute defines the type of modifier added, which would only be <code>-1</code>,<code>curse</code>, or <code>bless</code> (note: curse and bless are not yet supported).
+The <code>amount</code> attribute defines how many of that card type should be added.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">goal: {
+  type: "escape",
+  section: "8.3",
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the effect is for the characters to suffer damage, the <code>type</code> attribute needs to be set to <code>damage</code>.
+The <code>amount</code> attribute defines how damage should be suffered.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">goal: {
+  type: "escape",
+  section: "8.3",
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the effect is to add one or more conditions to the characters, the <code>type</code> attribute needs to be set to <code>condition</code>.
+The <code>conditions</code> string defines a list of each condition that should be added.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">goal: {
+  type: "escape",
+  section: "8.3",
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This currently has no effect at all and also not complete.
+It&#8217;s already included for possible later features, like automatically applying scenario effects unless the character has a perk to ignore them.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="monsters"><a class="anchor" href="#monsters"></a>Monsters</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -342,7 +419,8 @@ This information can be empty if there&#8217;s nothing special about the monster
 </div>
 <div class="paragraph">
 <p>The name doesn&#8217;t have to match the actual name of the monster and can possibly be anything.
-When monsters are placed in <a href="#rooms">Rooms</a> the names used there must match one of the monster names defined in this section.</p>
+When monsters are placed in <a href="#rooms">Rooms</a> the names used there must match one of the monster names defined in this section.
+Whenever a named version of a monster exists, it must have the <code>monster</code> attribute to define the original type of that monster, and the <code>name</code> attribute to define the name that should be used on the figure.</p>
 </div>
 <div class="listingblock">
 <div class="content">
