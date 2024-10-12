@@ -152,6 +152,7 @@ Each overlay at least needs to define their `type` which determines the outline 
 
 The name doesn't have to match the actual name of the overlay object and can possibly be anything.
 When overlays are placed in <<rooms>> the names used there must match one of the overlay names defined in this section.
+A specific overlay can include the `unless` attribute, which allows you to definte criteria in which the overlay will not be spawned when true.
 
 [source,js]
 ----
