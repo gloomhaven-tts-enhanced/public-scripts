@@ -1,9 +1,9 @@
-import { ScenarioNew } from "@gloomhaven-enhanced/data";
+import { Scenario } from "@gloomhaven-enhanced/data";
 
 import { Location } from "./location";
 
 // tag::base[]
-const scenario: ScenarioNew = {
+const scenario: Scenario = {
   campaign: "Frosthaven",
   index: "2",
   name: "Algox Scouting",
@@ -15,11 +15,11 @@ const scenario: ScenarioNew = {
   sectionBook: {
     sections: ["27.1", "6.1", "77.3"],
   },
-// end::base[]
+  // end::base[]
   goal: {
     type: "other",
   },
-// tag::loot[]
+  // tag::loot[]
   loot: {
     coins: 4,
     lumber: 4,
@@ -29,8 +29,8 @@ const scenario: ScenarioNew = {
     rockroot: 1,
     randomItem: true,
   },
-// end::loot[]
-// tag::monster[]
+  // end::loot[]
+  // tag::monster[]
   monsters: {
     "Algox Archer": {},
     "Algox Guard": {},
@@ -39,8 +39,8 @@ const scenario: ScenarioNew = {
     },
     "Algox Scout": {},
   },
-// end::monster[]
-// tag::overlays[]
+  // end::monster[]
+  // tag::overlays[]
   overlays: {
     "Ice Sheet": {
       type: "objective",
@@ -53,8 +53,8 @@ const scenario: ScenarioNew = {
       type: "obstacle",
     },
   },
-// end::overlays[]
-// tag::doors[]
+  // end::overlays[]
+  // tag::doors[]
   doors: [
     {
       name: "Snow Door",
@@ -69,13 +69,13 @@ const scenario: ScenarioNew = {
       position: [0, 8],
     },
   ],
-// end::doors[]
-// tag::rooms-base[]
+  // end::doors[]
+  // tag::rooms-base[]
   rooms: [
     {
       index: "1",
-// end::rooms-base[]
-// tag::rooms-map[]
+      // end::rooms-base[]
+      // tag::rooms-map[]
       map: [
         {
           name: "11-A-new",
@@ -83,8 +83,8 @@ const scenario: ScenarioNew = {
           rotation: 0,
         },
       ],
-// end::rooms-map[]
-// tag::rooms-start[]
+      // end::rooms-map[]
+      // tag::rooms-start[]
       startArea: [
         [-6, 5],
         [-5, 6],
@@ -92,24 +92,24 @@ const scenario: ScenarioNew = {
         [-7, 7],
         [-7, 6],
       ],
-// end::rooms-start[]
-// tag::rooms-overlays[]
+      // end::rooms-start[]
+      // tag::rooms-overlays[]
       overlays: [
         {
           name: "Snow Rock",
           position: [-3, 10],
           rotation: 180,
         },
-// end::rooms-overlays[]
+        // end::rooms-overlays[]
         {
           name: "Snow Rock",
           position: [-1, 11],
           rotation: 180,
         },
-// tag::rooms-overlays[]
+        // tag::rooms-overlays[]
       ],
-// end::rooms-overlays[]
-// tag::rooms-monsters[]
+      // end::rooms-overlays[]
+      // tag::rooms-monsters[]
       monsters: [
         {
           name: "Algox Archer",
@@ -120,7 +120,7 @@ const scenario: ScenarioNew = {
             "4": "elite",
           },
         },
-// end::rooms-monsters[]
+        // end::rooms-monsters[]
         {
           name: "Algox Archer",
           position: [0, 9],
@@ -155,13 +155,13 @@ const scenario: ScenarioNew = {
             "4": "normal",
           },
         },
-// tag::rooms-monsters[]
+        // tag::rooms-monsters[]
       ],
-// end::rooms-monsters[]
+      // end::rooms-monsters[]
       loot: [],
-// tag::rooms-base[]
+      // tag::rooms-base[]
     },
-// end::rooms-base[]
+    // end::rooms-base[]
     {
       index: "2",
       map: [
@@ -292,17 +292,17 @@ const scenario: ScenarioNew = {
           },
         },
       ],
-    // tag::rooms-loot[]
+      // tag::rooms-loot[]
       loot: [
         [-2, 0],
         [6, -1],
       ],
-// end::rooms-loot[]
+      // end::rooms-loot[]
     },
-// tag::rooms-base[]
+    // tag::rooms-base[]
   ],
-// end::rooms-base[]
-// tag::base[]
+  // end::rooms-base[]
+  // tag::base[]
 };
 // end::base[]
 
