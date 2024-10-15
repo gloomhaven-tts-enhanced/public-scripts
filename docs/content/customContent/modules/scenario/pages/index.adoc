@@ -58,12 +58,28 @@ The `section` attribute defines the section that should be read once the goal is
 include::example$goal/defeat-all.ts[]
 ----
 
+If the goal is to defeat a specific enemy in the scenario, the `type` attribute needs to be set to `defeat`.
+The `name` attribute defines the name of the enemy that must be defeated.
+
+[source,js]
+----
+example pending
+----
+
 If the goal is to escape the scenario, the `type` attribute needs to be set to `escape`.
 The `section` attribute defines the section that should be read once the goal is achieved.
 
 [source,js]
 ----
 include::example$goal/escape.ts[]
+----
+
+If the goal is to destroy one or more objectives in the scenario, the `type` attribute needs to be set to `destroy`.
+The `marker` attribute defines (pending).
+
+[source,js]
+----
+example pending
 ----
 
 If no specific type matches the goal, use the `other` `type`.
@@ -76,6 +92,39 @@ include::example$goal/other.ts[]
 NOTE: This currently has no effect at all and also not complete.
 It's already included for possible later features, like showing and tracking the current scenario goal or to add the correct sections to the section book.
 
+== Scenario effects
+
+Scenario effects can be defined using the `scenarioEffect` attribute.
+Depending on the type of effect, different attributes are available.
+
+If the effect is to add -1 modifiers to the characters' attack modifier deck, the `type` attribute needs to be set to `attack-modifier`.
+The `card` attribute defines the type of modifier added, which would only be `-1`,`curse`, or `bless` (note: curse and bless are not yet supported).
+The `amount` attribute defines how many of that card type should be added.
+
+[source,js]
+----
+example pending
+----
+
+If the effect is for the characters to suffer damage, the `type` attribute needs to be set to `damage`.
+The `amount` attribute defines how damage should be suffered.
+
+[source,js]
+----
+example pending
+----
+
+If the effect is to add one or more conditions to the characters, the `type` attribute needs to be set to `condition`.
+The `conditions` string defines a list of each condition that should be added.
+
+[source,js]
+----
+example pending
+----
+
+NOTE: This currently has no effect at all and also not complete.
+It's already included for possible later features, like automatically applying scenario effects unless the character has a perk to ignore them.
+
 [#monsters]
 == Monsters
 
@@ -85,6 +134,7 @@ This information can be empty if there's nothing special about the monster.
 
 The name doesn't have to match the actual name of the monster and can possibly be anything.
 When monsters are placed in <<rooms>> the names used there must match one of the monster names defined in this section.
+Whenever a named version of a monster exists, it must have the `monster` attribute to define the original type of that monster, and the `name` attribute to define the name that should be used on the figure.
 
 [source,js]
 ----
@@ -102,6 +152,7 @@ Each overlay at least needs to define their `type` which determines the outline 
 
 The name doesn't have to match the actual name of the overlay object and can possibly be anything.
 When overlays are placed in <<rooms>> the names used there must match one of the overlay names defined in this section.
+A specific overlay can include the `unless` attribute, which allows you to definte criteria in which the overlay will not be spawned when true.
 
 [source,js]
 ----
