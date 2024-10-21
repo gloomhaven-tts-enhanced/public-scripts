@@ -16,20 +16,20 @@
 |===
 
 If you want to also add a 3D representation for the overlay you have to add a new state for it (see https://kb.tabletopsimulator.com/host-guides/creating-states/[the TTS knowledge base] for more info).
-By convention the first state is for the 2D token and the second state for the 3D token.
+By convention, the first state is for the 2D token and the second state is for the 3D token.
 You can also have more than 2 states.
 In this case, when the overlay is placed a random state is determined for each overlay during load.
-E.g. in the mod the tree overlay has 3 different 3D models and one will be chosen randomly for each tree overlay token placed in a scenario.
+E.g. in the mod, the tree overlay has 3 different 3D models and one will be chosen randomly for each tree overlay token placed in a scenario.
 
 [[Script_Overlay]]
 ==== Script
 
-There are two kind of overlay scripts: `Overlay` and `BasicOverlay`.
+There are two kinds of overlay scripts: `Overlay` and `BasicOverlay`.
 The difference between them is that the first one supports adding HP bars to the overlay whereas the second one only supports adding buttons for <<Actions>> (like the "Open" button for doors).
-Traps have their own script that has to added.
+Traps have their own script that has to be added.
 The script has to be added to all object states of the overlay token (possibly with different parameters).
 
-Within the script two parameters have to be adjusted.
+Within the script, two parameters have to be adjusted.
 The parameter for `withFrameOffset` is the height where an HP bar will appear.
 The parameter for `withButtonPosition` is the height where a button for <<Actions>> will appear.
 The correct position probably has to be found through testing.
@@ -80,7 +80,7 @@ Again, traps have their own UI script.
 
 [[Overlay_Type]]
 Overlay Type::
-Tags required for overlays, so that the mod can move the tokens to the correct place.
+Tags are required for overlays so that the mod can move the tokens to the correct place.
 
 |===
 | Overlay Type | Tag
@@ -97,6 +97,6 @@ Tags required for overlays, so that the mod can move the tokens to the correct p
 
 === Treasure
 Treasure are the objects that are drawn when opening a treasure chest.
-In the mod these are typically cards that show what reward the chest contains, but can be anything.
+In the mod, these are typically cards that show what reward the chest contains, but can be anything.
 In order to support custom treasures, you simply need to add a unique name to the object and add the tag `Treasure` on the object.
 To draw the treasure, within a scenario, you have to add it to the <<Scenario>> definition using a <<Action_Treasure, Treasure Action>>.
