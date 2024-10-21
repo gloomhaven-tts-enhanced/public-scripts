@@ -9,7 +9,7 @@ image::feature/menu_gameKeys.png[]
 Each player has to assign the Game Key themselves if they want to use it.
 There's no way to share assigned Game Keys or assign default keys in the mod.
 Assigned keys will stay between mod versions.
-When migrating from 2.0.0 to v2.1.0 or beyond, the xref:feature/quickMenu.adoc[Quick Menu] and the xref:feature/cleanupAction.adoc[Cleanup Action] have been renamed and must be re-mapped by all users.
+When migrating from 2.0.0 to v2.1.0 or beyond, the xref:feature/quickMenu.adoc[Quick Menu] and the xref:feature/cleanupAction.adoc[Cleanup Action] has been renamed and must be re-mapped by all users.
 
 NOTE: Assigning a Game Key does not prevent the TTS default behavior for that key. E.g. if you assign the key "F" to a Game Key and use it while hovering over an object, it will still flip the object in addition to performing the game action.
 
@@ -70,13 +70,13 @@ This is intended for solo or multi-handed play.
 [#switch_player]
 == Switch To Player 1/2/3/4/5/Solo Player
 These actions quickly switch to the player seat associated with this player number.
-For the Solo player it will switch to the Black player color.
+For the Solo player, it will switch to the Black player color.
 The switch is only successful if there isn't already another player seated for this player color.
 
-Unfortunately there's no way to preserve the current camera position before switching.
+Unfortunately, there's no way to preserve the current camera position before switching.
 So instead of defaulting to moving the camera far away like, the camera will focus on the character mat for this player instead.
 
 The camera behavior is the same as the one mentioned in the "Switch To Player" section.
 
 == Section Tools
-Useful for behind the scenes scripting and tinkering, particularly with blocking out specific section reads.
+Useful for behind-the-scenes scripting and tinkering, particularly with blocking out specific section reads.
