@@ -10,16 +10,16 @@ There are two reasons to migrate a campaign:
 == Migrating from Frosthaven Assisted
 
 To migrate an existing save bundle from Frosthaven Assisted, drop the object it creates onto the Campaign Manager object.
-This will convert the save data from Assisted to the one for Enhanced and then perform a regular migration.
+This will convert the saved data from Assisted to Enhanced and then perform a regular migration.
 
-However, some info currently doesn't migrate over and needs to be adjusted manually afterward:
+However, some info currently doesn't migrate over and needs to be adjusted manually afterwards:
 
 * Only the envelopes of starting classes and classes with active characters will be placed on the table.
 Other unlocked classes need to be manually unlocked.
 * Abilities for each active character.
 Each character will start with the starting cards and additional abilities have to be taken from the "Advanced Abilities" deck.
 * All enhancements for ability cards need to be applied again.
-* The difficulty settings needs to be set on the scenario info sheet.
+* The difficulty settings need to be set on the scenario info sheet.
 * If you ever reached a morale value of 0 you need to update the respective consequences.
 * All existing buildings are loaded with their built state, so they need to be set to wrecked manually if they have been wrecked in Assisted.
 * The treasure cards (which represent which treasures have been looted) might not all be removed correctly.
@@ -62,6 +62,6 @@ IMPORTANT: Please review the Manual Migration Steps below. At this time, not all
 ** Any campaigns saved in v2.1.0 and on will carry enhanced loot cards to future mod versions
 * Item 224 may not be found during migration due to a type fix. You need to unlock it again manually
 * Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.
-* Personal Quests are migrated by name, so make sure the names of unlocked/available PQ match the ones you expect to migrate, not the maybe wrong image.
+* Personal Quests are migrated by name, so make sure the names of unlocked/available PQs match the ones you expect to migrate, not the maybe wrong image.
 * You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
-* Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button.
+* Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove invalid ones and then add them via the Add button.
