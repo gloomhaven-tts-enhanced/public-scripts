@@ -6,7 +6,7 @@ The btn:[Save Campaign] and Load Campaign portions of the Campaign Manager are u
 
 image::campaign-start.png[]
 
-This will spawn in the starting classes, assign the appropriate locked items to the Available Items and to the Random Blueprints and Items, spawn the Frosthaven map, a campaign sheet, the starting event decks and buildings, town guard deck, the alchemy board, the scenario flowcharts, and a set of the sealed envelopes.
+This will spawn in the starting classes, assign the appropriate locked items to the Available Items and to the Random Blueprints and Items, spawn the Frosthaven map, a campaign sheet, the starting event decks and buildings, the town guard deck, the alchemy board, the scenario flowcharts, and a set of the sealed envelopes.
 
 image::campaign-starting-pieces.png[]
 
@@ -44,5 +44,5 @@ image::bspear-to-mat.png[]
 The btn:[Add Player] button now reads "Remove Player" and is activated with a right-click.
 
 Character max HP and perks are scripted based on the selected perks and level on the character sheet at the time of unpacking a character.
-To update your character's max HP, attack modifier deck, or non-attack modifier perk reminders following a level up or perk addition, just remove and re-add the character.
+To update your character's max HP, attack modifier deck, or non-attack modifier perk reminders following a level-up or perk addition, just remove and re-add the character.
 For smoothness, please refrain from doing so during a scenario. Cards, conditions, and current HP are not maintained in the correct places (discard, hand, active, lost) when packed up. 
