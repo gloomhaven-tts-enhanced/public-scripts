@@ -1,7 +1,7 @@
 = Scenarios
 
 To start building a custom scenario use the https://steamcommunity.com/sharedfiles/filedetails/?id=2494451797[Scenario Builder] mod.
-The mod itself contains the information of how to use the builder to generate a scenario.
+The mod itself contains the information on how to use the builder to generate a scenario.
 
 However, the builder currently only supports a subset of features the scenario definition is able to provide.
 E.g. it can't set HP values for overlays, named enemies or loot effects from treasure chests.
@@ -9,7 +9,7 @@ To add those features to a scenario, you can edit the generated scenario definit
 This, this section contains the documentation about the structure of the scenario definition.
 When you want to add or change some features, you need to understand this structure and make those changes accordingly.
 
-In the xref:_concrete_use_cases[] section you can also find examples for specific use-cases to give you an idea on where to start.
+In the xref:_concrete_use_cases[] section you can also find examples for specific use cases to give you an idea of where to start.
 
 NOTE: This section is currently not well documented.
 A lot of features are missing...
@@ -37,7 +37,7 @@ While this is mainly used for developing purposes, there's nothing stopping you 
 == General scenario definition structure
 
 Collapse the following example to get an overview of the overall scenario definition structure.
-The different parts are explained in more details in the following sections.
+The different parts are explained in more detail in the following sections.
 
 .Example of all the general scenario definition structure
 [%collapsible]
@@ -109,11 +109,11 @@ include::example$scenario/monster/overwrite.lua[]
 
 NOTE: While it is possible to define the used ability deck on all levels presented above, it's only useful to use it within the definition of `all`.
 It's not possible to have the same monster type with different ability decks, so the first monster that spawns defines the used ability deck for all monsters of that type.
-And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters is only defined by `all` (as those don't have a difficulty setting).
+And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters are only defined by `all` (as those don't have a difficulty setting).
 
 === Figures
 
-Similar to the Monsters option, you can spawn scenario specific figures which perform the same action each round. This is commonly used for named allies or unique basic enemies. These figures require a standee model which can be based on any existing summon or enemy, or you can register a custom figure (objects with the "Figure" tag included within a "Gloomhaven Custom Content" bag).
+Similar to the Monsters option, you can spawn scenario-specific figures which perform the same action each round. This is commonly used for named allies or unique basic enemies. These figures require a standee model which can be based on any existing summon or enemy, or you can register a custom figure (objects with the "Figure" tag included within a "Gloomhaven Custom Content" bag).
 
 ====
 .Figures
@@ -165,7 +165,7 @@ figures = {
 
 === Overlays
 
-You can define the conditions and name for overlays, commonly used for traps:
+You can define the conditions and names for overlays, commonly used for traps:
 
 ====
 .Overlays
@@ -176,7 +176,7 @@ overlays = {
   ["Bear Trap"] = {
     --These are the trap conditions applied when triggered.
     conditions = { "Damage" },
-    --This is the new name given to all overlays of this type when spawned durign scenario setup.
+    --This is the new name given to all overlays of this type when spawned during scenario setup.
     name = "Damage Trap",
   },
 },
@@ -283,9 +283,9 @@ overlayTiles = {
 
 === Randomly placed objects
 
-Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card. To handle this, you need to define a `randomPools`, and `randomObjects` within a room.
+Some scenarios require placing some objects randomly during setup, e.g. placing objective tokens face down or spawning the content of a random dungeon card. To handle this, you need to define `randomPools`, and `randomObjects` within a room.
 
-Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the `values` attributes you can define the list of tokens you want to use.
+Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the `values` attributes, you can define the list of tokens you want to use.
 
 ====
 .Adding a pool of random tokens
@@ -333,11 +333,11 @@ rooms = {
 As a fallback mechanism extra scenario components can be defined.
 This is meant to easily supply objects that are currently not supported through scripting (e.g. monsters that use different attack modifier decks).
 Those first have to be registered inside a xref:contentbox.adoc[Custom Content Box].
-Then inside the scenario definition, they can be references by their name and be placed at a specific position.
+Then inside the scenario definition, they can be referenced by their name and be placed at a specific position.
 
-It's possible to define the extra components on the top-level of the scenario and also on each room.
-When defined on the top-level the components will spawn, once the scenario is loaded.
-Components defined on a room are loaded once the rooms is opened.
+It's possible to define the extra components on the top level of the scenario and also in each room.
+When defined on the top level the components will spawn, once the scenario is loaded.
+Components defined on a room are loaded once the room is opened.
 
 Both entries are lists, so they can define multiple components.
 
