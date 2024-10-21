@@ -1,27 +1,27 @@
 = Quick Menu
 
-The Quick Menu is a quick access menu to easily apply conditions to figures and summon figure specific tokens (like traps, enemies or obstacles).
+The Quick Menu is a quick-access menu to easily apply conditions to figures and summon figure-specific tokens (like traps, enemies or obstacles).
 It can be accessed by pressing the key of the assigned xref:feature/gameKeys.adoc[Game Key] while hovering over a character, enemy or summon figure.
 
 image::engine:feature/contextMenu.gif[]
 
 This will show an overview of all conditions that are currently available in the mod.
 Clicking on any of the conditions will apply it to the figure for which to Quick Menu was opened and closes the Quick Menu again.
-Right-Clicking will do the same, but the Quick Menu stays open afterward, which is useful to apply multiple conditions.
+Right-clicking will do the same, but the Quick Menu stays open afterwards, which is useful to apply multiple conditions.
 
 Above the icons for conditions, the icons for active classes are shown.
-This allows to apply the class tracker as a condition to the underlying figure.
+This allows applying the class tracker as a condition to the underlying figure.
 Only the trackers for classes are shown that are currently available on one of the player seats.
 
-Lastly, for some figures the top row shows icons for figure specific items that can be spawned.
-This includes summons for characters and monsters, any overlay tiles created by the character or monster, or any character-specific tokens (i.e. Deathwalker Shadows).
+Lastly, for some figures, the top row shows icons for figure-specific items that can be spawned.
+This includes a summons for characters and monsters, any overlay tiles created by the character or monster, or any character-specific tokens (i.e. Deathwalker Shadows).
 Enemies that create traps will also spawn traps from the Quick Menu with the correct damage or conditions indicators on top of them.
 Clicking the icon will spawn the token above the figure's head.
 From there it can be dragged to the place where it needs to be (without requiring to unlock it first).
 
 NOTE: This might be considered a slight spoiler for enemies.
-Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn was not drawn yet.
+Summonable monsters will always show up for an enemy, even if the ability card that allows the spawn has not drawn yet.
 
 NOTE: In order for custom figures to make use of the Quick Menu they need to have the latest script attached to them.
-Custom content can also specify which figure specific tokens are available to make the show up in the Quick Menu.
+Custom content can also specify which figure-specific tokens are available to make the show up in the Quick Menu.
 
