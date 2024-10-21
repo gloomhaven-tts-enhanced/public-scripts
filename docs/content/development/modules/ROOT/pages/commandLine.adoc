@@ -14,16 +14,16 @@ The argument passed to the command will be `debug`.
 ----
 ====
 
-Every print is also send to the Atom plugin and the console in Atom (can be opened with kbd:[Ctrl+Shift+I]).
+Every print is also sent to the Atom plugin and the console in Atom (can be opened with kbd:[Ctrl+Shift+I]).
 From there it can be copied.
 
 == Setting the Logging Level
 
 Sets the level of all loggers.
-All log messages with a higher or equal level will be print to the game chat.
+All log messages with a higher or equal level will be printed to the game chat.
 The default level is `INFO`.
 
-Available level are (in descending order): `ERROR`, `WARNING`, `INFO`, `DEBUG` and `VERBOSE`.
+Available levels are (in descending order): `ERROR`, `WARNING`, `INFO`, `DEBUG` and `VERBOSE`.
 The values are case-insensitive.
 
 ====
@@ -34,7 +34,7 @@ The values are case-insensitive.
 
 == Get Position
 
-Prints the position and rotation of the object the is currently hovered by the player entering the command.
+Prints the position and rotation of the object that is currently hovered by the player entering the command.
 This might be useful to determine where a certain object is placed, e.g. if that is manually entered into a scenario definition.
 
 ====
