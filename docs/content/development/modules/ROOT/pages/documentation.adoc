@@ -7,7 +7,7 @@
 * Fork/clone the https://github.com/gloomhaven-tts-enhanced/public-scripts[public GHE repository] from GitHub
 
 == Writing content
-The documentation is written using https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc], which is an easy to write and read markup language.
+The documentation is written using https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc], which is an easy-to-write and read markup language.
 The documentation output is generated using https://docs.antora.org/antora/latest/[Antora].
 
 == Building/Viewing the documentation locally
@@ -24,5 +24,5 @@ The documentation output is generated using https://docs.antora.org/antora/lates
 
 == Publishing the documentation
 * Push to GitHub.
-* Create a Pull Request from fork to main repository.
-* Documentation is automatically updated after the PR was merged.
+* Create a Pull Request from the fork to the main repository.
+* Documentation is automatically updated after the PR is merged.
