@@ -20,7 +20,7 @@ The generated scenario definition is a TypeScript file.
 To make it usable inside TTS, it needs to be a Lua file.
 Run the command `pnpm build` inside the code directory to convert all TypeScript files to Lua files.
 Alternatively, you could execute the command `pnpm dev` inside the same directory and keep the command line open where this command was executed.
-This will start a watching process on the all TypeScript files.
+This will start a watching process on all TypeScript files.
 Whenever a TypeScript file is saved, it's automatically converted to the Lua file as long as this process is running.
 Otherwise, the `pnpm build` command needs to be executed each time.
 
@@ -40,7 +40,7 @@ scenarios:
   - "2"
   - "3"
   - "4"
-  # new scenarios are added here, should be sorted
+  # New scenarios are added here, and should be sorted
 ----
 
 IMPORTANT: Be sure to surround the numbers with `"`.
@@ -83,7 +83,7 @@ It can be identified by checking the scenario index.
 ]
 ----
 
-Also delete the directory of the same name inside that directory.
+Also, delete the directory of the same name inside that directory.
 Embedding again will remove the old scenario from the game box.
 
 == Testing and changing the scenario

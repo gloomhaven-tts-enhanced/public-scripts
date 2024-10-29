@@ -22,7 +22,7 @@ Removing enhancements works the same way, by selecting an existing enhancement o
 
 image::enhancement-tool-remove.png[]
 
-The bottom left part on the screen also shows the reasoning for the total cost of the enhancement on the right side according to the rules.
+The bottom left part of the screen also shows the reasoning for the total cost of the enhancement on the right side according to the rules.
 
 image::enhancement-tool-reason.png[]
 

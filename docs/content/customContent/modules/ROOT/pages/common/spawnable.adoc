@@ -3,11 +3,11 @@
 Spawnable elements are a way to define objects that can be spawned by certain actions.
 They define which objects should be created and what properties they should have.
 The mod uses the information to pull the correct object and apply the properties to it.
-Currently they can be used to define the content for the xref:mod:engine:feature/contextMenu.adoc[Context Menu] as well as for the xref:common/action.adoc#_spawn[Spawn Action] within a scenario definition.
+Currently, they can be used to define the content for the xref:mod:engine:feature/contextMenu.adoc[Context Menu] as well as for the xref:common/action.adoc#_spawn[Spawn Action] within a scenario definition.
 
 == Defining a Spawnable Element
 
-Each Spawnable Element definition has two required properties: The type of the element (e.g. an obstacle, trap, enemy, etc.) and it's name.
+Each Spawnable Element definition has two required properties: The type of the element (e.g. an obstacle, trap, enemy, etc.) and its name.
 The type tells the mod where to look for the object and the name determines which object from that place it spawns.
 Both those properties are defined within the `element` property.
 To get access to the different types, use the `ElementType` table in the `ResourceApi` (as seen in the example).
@@ -53,7 +53,7 @@ local spawnableElement = {
 ----
 ====
 
-The properties `hp` and `hpMax` can be a xref:common/formula.adoc[Formula].
+The properties `hp` and `hpMax` can be an xref:common/formula.adoc[Formula].
 
 Some elements, like traps and enemies, also have additional properties.
 
@@ -95,7 +95,7 @@ local spawnableElement = {
 == Using Spawnable Elements for the Context Menu
 To make Spawnable Elements appear in the xref:mod:engine:feature/contextMenu.adoc[Context Menu], they have to be added to the ability information of the class or enemy which can create them, by using the `spawn` property.
 
-For classes this is part of the class information used for `registerClass`.
+For classes, this is part of the class information used for `registerClass`.
 
 .Definition within a class ability
 ====
@@ -128,7 +128,7 @@ The tooltip in the Context Menu will show which ability defined the element, so 
 
 It's also possible to define Spawnable Elements on the top level of a class definition.
 Then the element will always show up in the Context Menu regardless of which ability is present.
-This is useful if the class has lots abilities that spawn the same element.
+This is useful if the class has lots of abilities that spawn the same element.
 Using the definition in the abilities would clutter the Context Menu with multiple entries of the same element, so this is a way to prevent that.
 
 .Definition within a class
@@ -213,11 +213,11 @@ Be sure to use the correct number of nesting levels of `{ }` even when using onl
 == Adding actions
 In addition to the `element` property, Spawnable Elements also have an optional `action` property, where you can define xref:common/action.adoc[Actions].
 
-This can be useful, when using the xref:common/action.adoc#_spawn[Spawn Action] in a scenario definition.
+This can be useful when using the xref:common/action.adoc#_spawn[Spawn Action] in a scenario definition.
 E.g. there are scenarios with secret rooms that get revealed when a button is pressed.
 The button creates a door object to the new secret room, by using the Spawn Action.
 The `action` within the Spawnable Element then defines, that the newly spawned door object will really have the "Open" button attached to it.
-Otherwise it would just be a token.
+Otherwise, it would just be a token.
 
 .Definition of an overlay that also acts as a door
 ====
@@ -242,8 +242,8 @@ While this is currently only used in scenario definitions, it's also possible to
 == Defining the placement of the new object
 
 The final property of a Spawnable Element is the `placement` property.
-This is used to determine where and at what rotation the new object will be spawned at.
-Is has two properties `position` and `rotation`, which each take a 3 dimensional vector of the absolute position/rotation within TTS.
+This is used to determine where and at what rotation the new object will be spawned.
+It has two properties `position` and `rotation`, which each take a 3 dimensional vector of the absolute position/rotation within TTS.
 
 .Defining the placement of an object
 ====
@@ -265,6 +265,6 @@ local spawnableElement = {
 ----
 ====
 
-When using the element for the xref:mod:engine:feature/contextMenu.adoc[Context Menu] this property is not required and actually ignored, because spawning from the Context Menu has it's own logic to determine the position for the object.
+When using the element for the xref:mod:engine:feature/contextMenu.adoc[Context Menu] this property is not required and actually ignored because spawning from the Context Menu has its own logic to determine the position for the object.
 
-To easily get that information, after you placed an object somewhere on the table, use the xref:dev:ROOT:commandLine.adoc#_get_position[Command Line], to print it to the screen (and the Atom console, where you can easily copy it from).
+To easily get that information, after you place an object somewhere on the table, use the xref:dev:ROOT:commandLine.adoc#_get_position[Command Line], to print it to the screen (and the Atom console, where you can easily copy it from).

@@ -5,17 +5,17 @@ So you can define what you want to do and the mod then figures out how it will d
 It will also figure out, how an action is represented (e.g. through a button the user can click on).
 
 Currently, the only place where actions can be defined is in the scenario definition for overlay tiles.
-When an action is defined there, the overlay will automatically create a button which executes the action when a user clicks on them. You'll probably know those button from doors and treasure chests, but they can be on any other overlay as well and do any other action as well (e.g. a treasure chest can be a door).
-In the future there will probably be other places as well where actions can be defined, e.g. a typical use-case would be something happens when an enemy is defeated.
+When an action is defined there, the overlay will automatically create a button which executes the action when a user clicks on it. You'll probably know those buttons from doors and treasure chests, but they can be on any other overlay as well and do any other action as well (e.g. a treasure chest can be a door).
+In the future there will probably be other places as well where actions can be defined, e.g. a typical use-case would be something that happens when an enemy is defeated.
 
-Every action can set following attributes which defines how the button for the action will be shown.
+Every action can set the following attributes which defines how the button for the action will be shown.
 Each action type also defines defaults for those values, so you don't have to always set them (e.g. the `name` for a door action will be "Open" by default).
 The different types of actions will be listed in the following sections.
 
 Attributes::
 [%noheader,cols="1,2"]
 |===
-| name      | The name of the action, which will also be shown as the text on the button.
+| name      | The name of the action, will also be shown as the text on the button.
 | style     | Defines the visual style for the button. This defines the background color, the font size and the width of the button that is created for the action.
 | confirm   | If set to `true`, a user has to confirm the action again, after clicking the button for this action. Otherwise, clicking the button directly executes the action.
 |===
@@ -23,7 +23,7 @@ Attributes::
 Example::
 The following example shows an action in the context of a scenario definition.
 Here the action is attached to a pressure plate tile.
-It will create a button with the text "Clockwise" that executes a `call` action, when clicked.
+It will create a button with the text "Clockwise" that executes a `call` action when clicked.
 [source,lua]
 ----
 rooms = {
@@ -56,10 +56,10 @@ The door action is used to open rooms within the current scenario, just like the
 
 [NOTE]
 Objects with a door action attached are still only considered to be part of the room they are defined in.
-E.g. a regular door defined in the `doorTiles` section of a scenario will also spawn, when one of the adjacent rooms is opened.
-An object with the door action will only spawn, when the room where it is defined is opened.
+E.g. a regular door defined in the `doorTiles` section of a scenario will also spawn when one of the adjacent rooms is opened.
+An object with the door action will only spawn when the room where it is defined is opened.
 To get the regular door behaviour the object has to be defined in multiple rooms with the same settings.
-It will still only spawn once, since a spawning object will be ignored, when there's already an object with the same name at the target location.
+It will still only spawn once since a spawning object will be ignored when there's already an object with the same name at the target location.
 
 Defaults::
 [%noheader,cols="1,1"]
@@ -116,7 +116,7 @@ action = {
 ----
 
 == Spawn
-This action can be used to spawn addition elements into the scenario.
+This action can be used to spawn additional elements into the scenario.
 
 Defaults::
 [%noheader,cols="1,1"]
@@ -190,7 +190,7 @@ action = {
 
 == Section
 This action is used for scenario sections.
-Currently, the only thing it does is to set the color tint of the object it is attached to, so a black colored section tile will be revealed.
+Currently, the only thing it does is to set the color tint of the object it is attached to, so a black-colored section tile will be revealed.
 
 Defaults::
 [%noheader,cols="1,1"]
@@ -221,7 +221,7 @@ This is a container action that combines multiple actions into one action.
 The content of this action is a list of the containing actions.
 
 Defaults::
-The action will take its defaults values from the first defined action.
+The action will take its default values from the first defined action.
 
 Attributes::
 [cols="1,1,1,2"]
@@ -272,7 +272,7 @@ Attributes::
 
 | functionName  | required | String | The name of the function that will be called.
 | owner         | optional | GUID | The GUID of the game object where the function is located. If not set, it will default to "faad27" (which is the object containing the setup scripts).
-| parameters    | optional | Table | Parameters for the function to call. By default this table will contain the values `player` (the player color performing the action), `object` (the GUID of the element where this action is defined) and `button` (-1 if the action was performed using a Left click, -2 in all other cases).
+| parameters    | optional | Table | Parameters for the function to call. By default, this table will contain the values `player` (the player color performing the action), `object` (the GUID of the element where this action is defined) and `button` (-1 if the action was performed using a Left click, -2 in all other cases).
 |===
 
 Example::

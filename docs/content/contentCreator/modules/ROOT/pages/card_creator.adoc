@@ -2,7 +2,7 @@
 :icons: image
 :icontype: svg
 
-On this page all commands and syntax for the Card Creator will be explained.
+On this page, all commands and syntax for the Card Creator will be explained.
 
 [#syntax]
 == Syntax
@@ -82,14 +82,14 @@ The [element] in this section can take any of the following values:
 - light
 - dark
 - wild
-- any combination of elements seperated by '/' will generate an or element
+- any combination of elements separated by '/' will generate an or element
 
 |===
 | Syntax | Description | Example | Result
 
 | - [element] | Renders the icon for the element [element]. | - earth | image:icons/earth.svg[width=20px]
 
-| - [element]: consume | Renders the icon for the element [element], aswell as adding a consume x. This is usally used within an optional block. | - earth: consume | image:icons/earth.svg[width=20px]image:icons/consume.svg[width=10px]
+| - [element]: consume | Renders the icon for the element [element] and adds a consume x. This is usually used within an optional block. | - earth: consume | image:icons/earth.svg[width=20px]image:icons/consume.svg[width=10px]
 
 |   infuse: [ [elements..] ] | This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list. +
  +
@@ -100,12 +100,12 @@ As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] 
 [#styles]
 === Styles
 
-You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. Here is a list of styles each elements can take:
+You can add modifiers to help with fine placement, relocation, manipulating the element and much more. Here is a list of styles each element can take:
 
 |===
 | Syntax | Description | Example | Result
 
-| margin | Adds a buffer space on all sides of an element. First value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+| margin | Adds a buffer space on all sides of an element. The first value is for spacing on top, then right, bottom and the last one is for spacing to the left. a| 
 [source]
 ----
 - earth: ''
@@ -119,7 +119,7 @@ You can add modifieres to help with fineplacement, relocation, manipulating the 
   marginTop: 5px
 ----|
 
-| padding | Include a buffer space on all sides of an element. first value is for spacing on top, then right, bottom and last one is for spacing to the left. a| 
+| padding | Include a buffer space on all sides of an element. the first value is for spacing on top, then right, and bottom and the last one is for spacing to the left. a| 
 [source]
 ----
 - earth: ''
@@ -134,12 +134,12 @@ You can add modifieres to help with fineplacement, relocation, manipulating the 
 ----|
 |===
 
-An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also margin can take negative values to make the element take less space then the boundingbox of the element.
+An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also, the margin can take negative values to make the element take less space than the boundingbox of the element.
 
 |===
 | Syntax | Description | Example | Result
 
-| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not allways be changed with this. a|
+| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not always be changed with this. a|
 [source]
 ----
 - earth: ''

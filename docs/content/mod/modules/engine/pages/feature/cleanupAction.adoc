@@ -17,8 +17,8 @@ This xref:feature/gameKeys.adoc[Game Key] is a catch-all for returning things to
 
 | Monsters, Summons and overlays with a health bar
 | The object will be removed.
-If it was a monster, it will also drop a coin. If it is a summoned monster, the mod checks the xref:interface/options.adoc#summons_drop_loot[current rules] setting to determine whether to drop a coin or not.
-This is the same behavior as reducing the objects' health to 0 and then pressing the btn:[Defeat] button in the center of it's health bar.
+If it was a monster, it would also drop a coin. If it is a summoned monster, the mod checks the xref:interface/options.adoc#summons_drop_loot[current rules] setting to determine whether to drop a coin or not.
+This is the same behaviour as reducing the objects' health to 0 and then pressing the btn:[Defeat] button in the center of its health bar.
 This action will be performed if the objects' health is above 0.
 
 | Battle Goals

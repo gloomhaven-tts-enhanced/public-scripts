@@ -51,7 +51,7 @@ This will build the tools on your local file system so they are ready to use.
 Finally, run the command `pnpm install` again.
 
 Whenever you perform a `git pull` to get the latest changes from GitHub, a `pnpm install` will typically be automatically executed if it is required.
-It's also recommended to execute the `pnpm build` command again then to build any updates to the tools.
+It's also recommended to execute the `pnpm build` command again and then to build any updates to the tools.
 This is not done automatically.
 
 To create the latest save games of the mod based on the current state of the repository, run the command `pnpm embed:fh`.

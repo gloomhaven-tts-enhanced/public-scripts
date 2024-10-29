@@ -12,7 +12,7 @@ Checkout xref:guide:index.adoc[] to start using the mod.
 
 If you want to integrate custom content into the mod, checkout xref:custom:ROOT:index.adoc[this page].
 
-The documentation is still work in progress and doesn't contain all features.
+The documentation is still a work in progress and doesn't contain all features.
 If you want to contribute to the documentation, checkout xref:dev:ROOT:documentation.adoc[this page].
 
 If you get stuck or things are unclear, feel free to ask on the official Discord server.
