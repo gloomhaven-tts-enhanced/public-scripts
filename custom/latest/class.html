@@ -510,7 +510,7 @@ The third parameter is a thumbnail image for the summon to be used in the Contex
 </tbody>
 </table>
 <div class="paragraph">
-<p>Summons need to be inside a <a href="contentbox.html" class="xref page">Custom Content Box</a> to be registered correctly.</p>
+<p>Summons need to be inside an <a href="contentbox.html" class="xref page">Custom Content Box</a> to be registered correctly.</p>
 </div>
 <div class="sect3">
 <h4 id="_lua_script_5"><a class="anchor" href="#_lua_script_5"></a>Lua Script</h4>
@@ -554,7 +554,7 @@ The format is the same as for <a href="enemy.html#_stats" class="xref page">Enem
 <div class="sect3">
 <h4 id="_xml_ui_2"><a class="anchor" href="#_xml_ui_2"></a>Xml Ui</h4>
 <div class="paragraph">
-<p>Add this script to figure&#8217;s UI script.
+<p>Add this script to the figure&#8217;s UI script.
 No other values need to be set.</p>
 </div>
 <div class="exampleblock">
@@ -637,7 +637,7 @@ This function takes two parameters:
 function onLoad()
   ClassApi.registerClass("Brute", {
     -- The GUID of the Class envelope object.
-    -- Since the registration script is on the envelope itselt, it can be referenced here
+    -- Since the registration script is on the envelope itself, it can be referenced here
     boxGuid = self.getGUID(),
     -- Number of HP per level
     -- Default values are available in ClassApi.HpProgression with Low, Medium and High

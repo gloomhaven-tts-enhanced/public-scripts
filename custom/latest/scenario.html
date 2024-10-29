@@ -165,7 +165,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>To start building a custom scenario use the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2494451797">Scenario Builder</a> mod.
-The mod itself contains the information of how to use the builder to generate a scenario.</p>
+The mod itself contains the information on how to use the builder to generate a scenario.</p>
 </div>
 <div class="paragraph">
 <p>However, the builder currently only supports a subset of features the scenario definition is able to provide.
@@ -175,7 +175,7 @@ This, this section contains the documentation about the structure of the scenari
 When you want to add or change some features, you need to understand this structure and make those changes accordingly.</p>
 </div>
 <div class="paragraph">
-<p>In the <a href="#_concrete_use_cases">Concrete use-cases</a> section you can also find examples for specific use-cases to give you an idea on where to start.</p>
+<p>In the <a href="#_concrete_use_cases">Concrete use-cases</a> section you can also find examples for specific use cases to give you an idea of where to start.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -253,7 +253,7 @@ While this is mainly used for developing purposes, there&#8217;s nothing stoppin
 <div class="sectionbody">
 <div class="paragraph">
 <p>Collapse the following example to get an overview of the overall scenario definition structure.
-The different parts are explained in more details in the following sections.</p>
+The different parts are explained in more detail in the following sections.</p>
 </div>
 <details>
 <summary class="title">Example of all the general scenario definition structure</summary>
@@ -614,7 +614,7 @@ The following example demonstrates this:</p>
 <td class="content">
 While it is possible to define the used ability deck on all levels presented above, it&#8217;s only useful to use it within the definition of <code>all</code>.
 It&#8217;s not possible to have the same monster type with different ability decks, so the first monster that spawns defines the used ability deck for all monsters of that type.
-And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters is only defined by <code>all</code> (as those don&#8217;t have a difficulty setting).
+And if the "Preload Enemies" option is used to prepare all monsters in a scenario at its start, the settings for those prepared monsters are only defined by <code>all</code> (as those don&#8217;t have a difficulty setting).
 </td>
 </tr>
 </table>
@@ -623,7 +623,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="sect2">
 <h3 id="_figures"><a class="anchor" href="#_figures"></a>Figures</h3>
 <div class="paragraph">
-<p>Similar to the Monsters option, you can spawn scenario specific figures which perform the same action each round. This is commonly used for named allies or unique basic enemies. These figures require a standee model which can be based on any existing summon or enemy, or you can register a custom figure (objects with the "Figure" tag included within a "Gloomhaven Custom Content" bag).</p>
+<p>Similar to the Monsters option, you can spawn scenario-specific figures which perform the same action each round. This is commonly used for named allies or unique basic enemies. These figures require a standee model which can be based on any existing summon or enemy, or you can register a custom figure (objects with the "Figure" tag included within a "Gloomhaven Custom Content" bag).</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -682,7 +682,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="sect2">
 <h3 id="_overlays"><a class="anchor" href="#_overlays"></a>Overlays</h3>
 <div class="paragraph">
-<p>You can define the conditions and name for overlays, commonly used for traps:</p>
+<p>You can define the conditions and names for overlays, commonly used for traps:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -694,7 +694,7 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
   ["Bear Trap"] = {
     --These are the trap conditions applied when triggered.
     conditions = { "Damage" },
-    --This is the new name given to all overlays of this type when spawned durign scenario setup.
+    --This is the new name given to all overlays of this type when spawned during scenario setup.
     name = "Damage Trap",
   },
 },</code></pre>
@@ -827,10 +827,10 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <div class="sect2">
 <h3 id="_randomly_placed_objects"><a class="anchor" href="#_randomly_placed_objects"></a>Randomly placed objects</h3>
 <div class="paragraph">
-<p>Some scenarios require to place some objects randomly during setup, e.g. placing objective tokens face down or spawn the content of a random dungeon card. To handle this, you need to define a <code>randomPools</code>, and <code>randomObjects</code> within a room.</p>
+<p>Some scenarios require placing some objects randomly during setup, e.g. placing objective tokens face down or spawning the content of a random dungeon card. To handle this, you need to define <code>randomPools</code>, and <code>randomObjects</code> within a room.</p>
 </div>
 <div class="paragraph">
-<p>Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the <code>values</code> attributes you can define the list of tokens you want to use.</p>
+<p>Random pools are defined at the top level of the scenario. Give them a name, and the type shown below. In the <code>values</code> attributes, you can define the list of tokens you want to use.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -884,12 +884,12 @@ And if the "Preload Enemies" option is used to prepare all monsters in a scenari
 <p>As a fallback mechanism extra scenario components can be defined.
 This is meant to easily supply objects that are currently not supported through scripting (e.g. monsters that use different attack modifier decks).
 Those first have to be registered inside a <a href="contentbox.html" class="xref page">Custom Content Box</a>.
-Then inside the scenario definition, they can be references by their name and be placed at a specific position.</p>
+Then inside the scenario definition, they can be referenced by their name and be placed at a specific position.</p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s possible to define the extra components on the top-level of the scenario and also on each room.
-When defined on the top-level the components will spawn, once the scenario is loaded.
-Components defined on a room are loaded once the rooms is opened.</p>
+<p>It&#8217;s possible to define the extra components on the top level of the scenario and also in each room.
+When defined on the top level the components will spawn, once the scenario is loaded.
+Components defined on a room are loaded once the room is opened.</p>
 </div>
 <div class="paragraph">
 <p>Both entries are lists, so they can define multiple components.</p>

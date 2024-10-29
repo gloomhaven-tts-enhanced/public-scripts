@@ -205,21 +205,21 @@
 </table>
 <div class="paragraph">
 <p>If you want to also add a 3D representation for the overlay you have to add a new state for it (see <a href="https://kb.tabletopsimulator.com/host-guides/creating-states/">the TTS knowledge base</a> for more info).
-By convention the first state is for the 2D token and the second state for the 3D token.
+By convention, the first state is for the 2D token and the second state is for the 3D token.
 You can also have more than 2 states.
 In this case, when the overlay is placed a random state is determined for each overlay during load.
-E.g. in the mod the tree overlay has 3 different 3D models and one will be chosen randomly for each tree overlay token placed in a scenario.</p>
+E.g. in the mod, the tree overlay has 3 different 3D models and one will be chosen randomly for each tree overlay token placed in a scenario.</p>
 </div>
 <div class="sect3">
 <h4 id="Script_Overlay"><a class="anchor" href="#Script_Overlay"></a>Script</h4>
 <div class="paragraph">
-<p>There are two kind of overlay scripts: <code>Overlay</code> and <code>BasicOverlay</code>.
+<p>There are two kinds of overlay scripts: <code>Overlay</code> and <code>BasicOverlay</code>.
 The difference between them is that the first one supports adding HP bars to the overlay whereas the second one only supports adding buttons for <a href="#Actions">[Actions]</a> (like the "Open" button for doors).
-Traps have their own script that has to added.
+Traps have their own script that has to be added.
 The script has to be added to all object states of the overlay token (possibly with different parameters).</p>
 </div>
 <div class="paragraph">
-<p>Within the script two parameters have to be adjusted.
+<p>Within the script, two parameters have to be adjusted.
 The parameter for <code>withFrameOffset</code> is the height where an HP bar will appear.
 The parameter for <code>withButtonPosition</code> is the height where a button for <a href="#Actions">[Actions]</a> will appear.
 The correct position probably has to be found through testing.
@@ -275,7 +275,7 @@ For a non 3D-token a frame offset of <code>90</code> and a button position of <c
 <dl>
 <dt class="hdlist1">Overlay Type</dt>
 <dd>
-<p>Tags required for overlays, so that the mod can move the tokens to the correct place.</p>
+<p>Tags are required for overlays so that the mod can move the tokens to the correct place.</p>
 </dd>
 </dl>
 </div>
@@ -331,7 +331,7 @@ For a non 3D-token a frame offset of <code>90</code> and a button position of <c
 <h3 id="_treasure"><a class="anchor" href="#_treasure"></a>Treasure</h3>
 <div class="paragraph">
 <p>Treasure are the objects that are drawn when opening a treasure chest.
-In the mod these are typically cards that show what reward the chest contains, but can be anything.
+In the mod, these are typically cards that show what reward the chest contains, but can be anything.
 In order to support custom treasures, you simply need to add a unique name to the object and add the tag <code>Treasure</code> on the object.
 To draw the treasure, within a scenario, you have to add it to the <a href="#Scenario">[Scenario]</a> definition using a <a href="#Action_Treasure">Treasure Action</a>.</p>
 </div>

@@ -203,9 +203,9 @@ ConditionApi.registerCondition("My Condition", {
 </div>
 </div>
 <div class="paragraph">
-<p>If an image for the immunity to that condition also exists, it can be provided as well.
-Also Condition immunities can be shared.
-E.g. you can define that a figure is always immune to this new condition, when it also has immunity to "Stun".
+<p>If an image for immunity to that condition also exists, it can be provided as well.
+Also, Condition immunities can be shared.
+E.g. you can define that a figure is always immune to this new condition when it also has immunity to "Stun".
 When a figure with a "Stun" immunity spawns, the immunity image for this new condition is applied as well.
 This can be done by providing an <code>immunity</code> attribute.</p>
 </div>
@@ -236,8 +236,8 @@ ConditionApi.registerCondition("My Condition", {
 <h2 id="_effects"><a class="anchor" href="#_effects"></a>Effects</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Effects are any special effect that a figure has.
-They can be registered, so that an image (or text) can be shown below the figure&#8217;s HP bar.
+<p>Effects are any special effects that a figure has.
+They can be registered so that an image (or text) can be shown below the figure&#8217;s HP bar.
 When an Effect&#8217;s name is then added to its <a href="enemy.html#_stats" class="xref page">Stats</a>, it will show the registered image (or text).
 Effects can also be used to add additional images for movement types, or area of effects.</p>
 </div>
@@ -247,7 +247,7 @@ In fact, every Condition is also an Effect (so you don&#8217;t have to register 
 The registration is done via the <code>registerEffect</code> function in the <code>ConditionApi</code>.
 The attributes are similar to registering a Condition.
 A difference is that the <code>name</code> is part of the table and not the first parameter to the function call.
-Also Effects currently don&#8217;t use the <code>max</code> attribute.
+Also, Effects currently don&#8217;t use the <code>max</code> attribute.
 Either an <code>image</code> or a <code>text</code> has to be supplied.
 If the <code>image</code> is supplied, it will be shown when the Effect is active.
 Otherwise, the <code>text</code> will be used (e.g. "AgD" is used for the Effect "Attacker gain Disadvantage").

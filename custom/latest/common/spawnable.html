@@ -167,7 +167,7 @@
 <p>Spawnable elements are a way to define objects that can be spawned by certain actions.
 They define which objects should be created and what properties they should have.
 The mod uses the information to pull the correct object and apply the properties to it.
-Currently they can be used to define the content for the <a href="#mod:engine:feature/contextMenu.adoc" class="xref unresolved">Context Menu</a> as well as for the <a href="action.html#_spawn" class="xref page">Spawn Action</a> within a scenario definition.</p>
+Currently, they can be used to define the content for the <a href="#mod:engine:feature/contextMenu.adoc" class="xref unresolved">Context Menu</a> as well as for the <a href="action.html#_spawn" class="xref page">Spawn Action</a> within a scenario definition.</p>
 </div>
 </div>
 </div>
@@ -175,7 +175,7 @@ Currently they can be used to define the content for the <a href="#mod:engine:fe
 <h2 id="_defining_a_spawnable_element"><a class="anchor" href="#_defining_a_spawnable_element"></a>Defining a Spawnable Element</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each Spawnable Element definition has two required properties: The type of the element (e.g. an obstacle, trap, enemy, etc.) and it&#8217;s name.
+<p>Each Spawnable Element definition has two required properties: The type of the element (e.g. an obstacle, trap, enemy, etc.) and its name.
 The type tells the mod where to look for the object and the name determines which object from that place it spawns.
 Both those properties are defined within the <code>element</code> property.
 To get access to the different types, use the <code>ElementType</code> table in the <code>ResourceApi</code> (as seen in the example).</p>
@@ -227,7 +227,7 @@ local spawnableElement = {
 </div>
 </div>
 <div class="paragraph">
-<p>The properties <code>hp</code> and <code>hpMax</code> can be a <a href="formula.html" class="xref page">Formula</a>.</p>
+<p>The properties <code>hp</code> and <code>hpMax</code> can be an <a href="formula.html" class="xref page">Formula</a>.</p>
 </div>
 <div class="paragraph">
 <p>Some elements, like traps and enemies, also have additional properties.</p>
@@ -280,7 +280,7 @@ local spawnableElement = {
 <p>To make Spawnable Elements appear in the <a href="#mod:engine:feature/contextMenu.adoc" class="xref unresolved">Context Menu</a>, they have to be added to the ability information of the class or enemy which can create them, by using the <code>spawn</code> property.</p>
 </div>
 <div class="paragraph">
-<p>For classes this is part of the class information used for <code>registerClass</code>.</p>
+<p>For classes, this is part of the class information used for <code>registerClass</code>.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example 5. Definition within a class ability</div>
@@ -318,7 +318,7 @@ The tooltip in the Context Menu will show which ability defined the element, so 
 <div class="paragraph">
 <p>It&#8217;s also possible to define Spawnable Elements on the top level of a class definition.
 Then the element will always show up in the Context Menu regardless of which ability is present.
-This is useful if the class has lots abilities that spawn the same element.
+This is useful if the class has lots of abilities that spawn the same element.
 Using the definition in the abilities would clutter the Context Menu with multiple entries of the same element, so this is a way to prevent that.</p>
 </div>
 <div class="exampleblock">
@@ -427,11 +427,11 @@ Be sure to use the correct number of nesting levels of <code>{ }</code> even whe
 <p>In addition to the <code>element</code> property, Spawnable Elements also have an optional <code>action</code> property, where you can define <a href="action.html" class="xref page">Actions</a>.</p>
 </div>
 <div class="paragraph">
-<p>This can be useful, when using the <a href="action.html#_spawn" class="xref page">Spawn Action</a> in a scenario definition.
+<p>This can be useful when using the <a href="action.html#_spawn" class="xref page">Spawn Action</a> in a scenario definition.
 E.g. there are scenarios with secret rooms that get revealed when a button is pressed.
 The button creates a door object to the new secret room, by using the Spawn Action.
 The <code>action</code> within the Spawnable Element then defines, that the newly spawned door object will really have the "Open" button attached to it.
-Otherwise it would just be a token.</p>
+Otherwise, it would just be a token.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example 9. Definition of an overlay that also acts as a door</div>
@@ -462,8 +462,8 @@ Otherwise it would just be a token.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The final property of a Spawnable Element is the <code>placement</code> property.
-This is used to determine where and at what rotation the new object will be spawned at.
-Is has two properties <code>position</code> and <code>rotation</code>, which each take a 3 dimensional vector of the absolute position/rotation within TTS.</p>
+This is used to determine where and at what rotation the new object will be spawned.
+It has two properties <code>position</code> and <code>rotation</code>, which each take a 3 dimensional vector of the absolute position/rotation within TTS.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example 10. Defining the placement of an object</div>
@@ -488,10 +488,10 @@ Is has two properties <code>position</code> and <code>rotation</code>, which eac
 </div>
 </div>
 <div class="paragraph">
-<p>When using the element for the <a href="#mod:engine:feature/contextMenu.adoc" class="xref unresolved">Context Menu</a> this property is not required and actually ignored, because spawning from the Context Menu has it&#8217;s own logic to determine the position for the object.</p>
+<p>When using the element for the <a href="#mod:engine:feature/contextMenu.adoc" class="xref unresolved">Context Menu</a> this property is not required and actually ignored because spawning from the Context Menu has its own logic to determine the position for the object.</p>
 </div>
 <div class="paragraph">
-<p>To easily get that information, after you placed an object somewhere on the table, use the <a href="../../../dev/commandLine.html#_get_position" class="xref page">Command Line</a>, to print it to the screen (and the Atom console, where you can easily copy it from).</p>
+<p>To easily get that information, after you place an object somewhere on the table, use the <a href="../../../dev/commandLine.html#_get_position" class="xref page">Command Line</a>, to print it to the screen (and the Atom console, where you can easily copy it from).</p>
 </div>
 </div>
 </div>

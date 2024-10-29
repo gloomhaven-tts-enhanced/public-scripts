@@ -171,14 +171,14 @@
 Either through an external tool (the VS Code text editor), or the scripting window inside TTS.
 The first method is the preferred way.
 While it requires a bit of setup, it&#8217;s a lot easier to continuously work on custom content with it.
-E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpacking deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).</p>
+E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpack deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).</p>
 </div>
 <div class="paragraph">
 <p>The alternative is to use the TTS scripting window.
-For this you need to download the latest script from the <a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/tags">releases</a>.
-After you downloaded the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
+For this, you need to download the latest script from the <a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/tags">releases</a>.
+After you download the scripts from the latest release, you&#8217;ll find two folders inside there: <code>base</code> and <code>bundled</code>.
 You&#8217;ll need the <code>bundled</code> folder to work with the TTS scripting window.
-Extract the required folder somewhere in you file system.</p>
+Extract the required folder somewhere in your file system.</p>
 </div>
 </div>
 </div>
@@ -249,7 +249,7 @@ E.g. with the save file name <code>TS_Save_1072</code>, the section would look l
 <div class="ulist">
 <ul>
 <li>
-<p>It may be not at the top, but below other sections.
+<p>It may be not at the top but below other sections.
 You can reorder sections by using drag 'n' drop.
 If the section doesn&#8217;t show up at all, right-click on the heading of any other section and enable it.</p>
 </li>
@@ -263,17 +263,17 @@ If the section doesn&#8217;t show up at all, right-click on the heading of any o
 <div class="ulist">
 <ul>
 <li>
-<p>Hover over the <code>setup</code> entry and click the <b class="button">Play</b> button that show&#8217;s up.</p>
+<p>Hover over the <code>setup</code> entry and click the <b class="button">Play</b> button that shows up.</p>
 </li>
 <li>
 <p>Afterwards, do the same with the <code>update</code> entry.
 This will download the latest scripts for the Gloomhaven enhanced mod.</p>
 </li>
 <li>
-<p>This completes the (rather-long) setup, and you&#8217;re good to go. :-)</p>
+<p>This completes the (rather long) setup, and you&#8217;re good to go. :-)</p>
 </li>
 <li>
-<p>If you have multiple save files you are working on, it&#8217;s recommended to have a different directories for all of them.
+<p>If you have multiple save files you are working on, it&#8217;s recommended to have different directories for all of them.
 This way you don&#8217;t have to edit the <code>package.json</code> around.</p>
 </li>
 </ul>
@@ -292,17 +292,17 @@ E.g a (reduced) Artificier save file looks like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The save file has one bag that contains all objects of the Artificier.
+<p>The save file has one bag that contains all objects of the Artificer.
 The <code>extract</code> command will create a new directory for all objects inside that bag.
 The name of the directory will be the name of the object followed by its GUID.
 If the object itself is a bag or deck it will create more nested directories to replicate the nesting structure from TTS.</p>
 </div>
 <div class="paragraph">
-<p>For each object multiple files are created inside their directory.
+<p>For each object, multiple files are created inside their directory.
 A file named <code>Data.json</code> will contain all the data about the object, like its name, tags, etc..
 The file named <code>Script.ttslua</code> contains the attached script.
-The big advantage here is that the script only contains the relevant part.
-In the TTS script editor you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
+The big advantage here is that the script only contains the relevant parts.
+In the TTS script editor, you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
 A file named <code>UI.xml</code> contains the XML UI attached to the object.
 The same logic as for the script applies, as it only contains a reduced view of the script (e.g. just some <code>&lt;Include src="Figures/CharacterMini" /&gt;</code>).</p>
 </div>
@@ -310,18 +310,18 @@ The same logic as for the script applies, as it only contains a reduced view of 
 <p>When you use the <code>embed</code> command from the npm section, the reverse thing will happen.
 The files from your current working directory will be put together and create a new save file which then will be copied back to your TTS save file folder.
 While doing so, all the scripts of all contained objects are automatically updated with the currently downloaded GHE scripts.
-E.g. many scripts have command like <code>require("Figures.CharacterMini")</code>.
+E.g. many scripts have commands like <code>require("Figures.CharacterMini")</code>.
 What this means is: Please include the code from the file "Figures/CharacterMini.ttslua" at this place, computer (the same for <code>&lt;Include src="file" /&gt;</code> in case of XML files).
 And this is what <code>embed</code> does.
-It loads the downloaded scripts and embeds them at the correct places.</p>
+It loads the downloaded scripts and embeds them in the correct places.</p>
 </div>
 <div class="paragraph">
 <p>So the advantage is, that you only need to edit the relevant scripts and all other parts are automatically updated for you.
 No need to unpack nested objects inside TTS and copy/paste the same scripts over and over.</p>
 </div>
 <div class="paragraph">
-<p>If there&#8217;s an update to the releases scripts, you can use the <code>update</code> command from the npm section to download them.
-Then use <code>embed</code> again und all scripts are updated in the save file.</p>
+<p>If there&#8217;s an update to the release scripts, you can use the <code>update</code> command from the npm section to download them.
+Then use <code>embed</code> again and all scripts are updated in the save file.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -405,13 +405,13 @@ end)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When you integrate those script you need to look for the line <code><em>bundle_register("</em>root", function(require, _LOADED, <em>bundle_register, </em>bundle_modules)</code>.
+<p>When you integrate those scripts you need to look for the line <code><em>bundle_register("</em>root", function(require, _LOADED, <em>bundle_register, </em>bundle_modules)</code>.
 Everything between this line and the first <code>end)</code> is the actual script for the object.
-The previous line are required for the bundling to work and the following lines are the previously split files that are now put together.
+The previous line is required for the bundling to work and the following lines are the previously split files that are now put together.
 You don&#8217;t need to touch those.</p>
 </div>
 <div class="paragraph">
-<p>Whenever this documentation mentions to include a script onto you object, you first have to locate the correct bundled file.
+<p>Whenever this documentation mentions including a script onto your object, you first have to locate the correct bundled file.
 This is given as the title of the script example.</p>
 </div>
 <div class="listingblock">
@@ -431,7 +431,7 @@ require("Figures.CharacterMini")</code></pre>
 <div class="paragraph">
 <p>E.g. here it means you have to find the <code>Figures/CharacterMini.ttslua</code> script within the <code>bundled</code> folder.
 Open that script and find the previously mentioned <code><em>bundle_register("</em>root")</code> line.
-Copy the script the documentation mentioned after this line and remove everything till the first <code>end</code> (excluding the <code>end</code>).
+Copy the script of the documentation mentioned after this line and remove everything till the first <code>end</code> (excluding the <code>end</code>).
 With this example, the final script would look like this:</p>
 </div>
 <div class="listingblock">
