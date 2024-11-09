@@ -283,6 +283,14 @@
 <col style="width: 25%;">
 <col style="width: 25%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- [condition] : [value]</p></td>
@@ -371,7 +379,7 @@ As a modifier, this does not use a '-' in front of it</p></td>
 <div class="sect2">
 <h3 id="styles"><a class="anchor" href="#styles"></a>Styles</h3>
 <div class="paragraph">
-<p>You can add modifiers to help with fine placement, relocation, manipulating the element and much more. Here is a list of styles each element can take:</p>
+<p>You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. To use modifiers all blocks need to be an object, this means it needs a ':'' in the block. Single word blocks like - earth will need to add a ':' to use modifiers. - earth: '' Here is a list of styles each block can take:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -459,14 +467,259 @@ As a modifier, this does not use a '-' in front of it</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not always be changed with this.</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
   fontSize: 10px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">color</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the font color of the section, this will not impact icons.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
+  color: red</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">background</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the background of the block.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
+  background: red</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lineHeight</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the space between lines to give either more space or make the text more compact. This is usful for adding icons into text where the lines would render different heights.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text to adjust lineheight, should have enought to atleast fill two lines.'
+  lineHeight: 20px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">wordSpacing</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the space between words relative to the current spacing.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text to show wordSpacing'
+  wordSpacing: 5px</code></pre>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="position"><a class="anchor" href="#position"></a>Position</h4>
+<div class="paragraph">
+<p>To change a blocks position or orientation or size use these:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">position</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">To change a blocks position this must be set to either 'relative' or 'absolute'.</p>
+<p class="tableblock">relative: will change the position of the element based on its relative position to other elements rendered.</p>
+<p class="tableblock">absolute: will change the position of the element based on the parent elements position.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  position: relative</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">top</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Sets the value of its placement on the card either from its relative postion or from the top of the current action.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  position: relative
+  top: 10px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">left</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Sets the value of its placement on the card either from its relative postion or from the left side of the current action.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  position: absolute
+  left: 10px</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">transform</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This modifier is more complex and takes a string as input as shown here: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">documentation css transform</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
+  transform: rotate(90deg)</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_special_blocks"><a class="anchor" href="#_special_blocks"></a>Special blocks</h3>
+<div class="sect3">
+<h4 id="_tokens"><a class="anchor" href="#_tokens"></a>Tokens</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- tokens</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_modifiers"><a class="anchor" href="#_modifiers"></a>Modifiers</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lines</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]
+  lines: 1</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tokens_2"><a class="anchor" href="#_tokens_2"></a>Tokens</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- tokens</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_modifiers_2"><a class="anchor" href="#_modifiers_2"></a>Modifiers</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
+<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lines</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]
+  lines: 1</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
