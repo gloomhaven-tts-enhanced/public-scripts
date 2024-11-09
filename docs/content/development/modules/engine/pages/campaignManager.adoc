@@ -3,9 +3,9 @@
 == Testing
 
 There's a test suite that runs automatic tests for the campaign manager.
-Given an input file with campaign data, it loads the campaign and then saves it afterward.
+Given an input file with campaign data, it loads the campaign and then saves it afterwards.
 It then compares the created save file with an expected output.
-If both match, the test is OK, otherwise it will show which parts of didn't match.
+If both match, the test is OK, otherwise, it will show which parts didn't match.
 
 The test suite can be found in the `test\campaign-manager` directory of the repository.
 

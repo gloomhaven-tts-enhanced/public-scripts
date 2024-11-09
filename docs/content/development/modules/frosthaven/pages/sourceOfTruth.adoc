@@ -1,6 +1,6 @@
 = Sources of Truth
 
-List of objects/scripts that are responsible to keep track of information.
+List of objects/scripts that are responsible for keeping track of information.
 
 == Scenario Flowchart
 * unlocked scenarios
@@ -17,7 +17,7 @@ List of objects/scripts that are responsible to keep track of information.
 * prosperity 
 * unlocked town guard perks
 * town guard perk checkmarks
-* total defense
+* total defence
 * inspiration
 * soldiers
 
@@ -31,5 +31,5 @@ List of objects/scripts that are responsible to keep track of information.
 * removed events
 
 == Challenge mat
-* actice challenge deck
+* active challenge deck
 * completed challenges 

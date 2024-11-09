@@ -6,6 +6,6 @@ This checklist also contains links to more details.
 Furthermore, each section is split into two parts: Components and Data.
 The Components section describes the TTS objects you need to have, which attributes they need, and what scripts you have to add to them.
 The Data section contains the information about the data format you need to provide if you want to register the custom content.
-Some custom content my only require one of those two, so the other section is left out.
+Some custom content may only require one of those two, so the other section is left out.
 
 If you already have added custom content for a previous version of the mod, you can check out xref:migration.adoc[] to see what you should change to use the new features of the current version.

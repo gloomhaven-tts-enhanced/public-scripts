@@ -237,7 +237,7 @@ The third parameter is a thumbnail image for the summon to be used in the Contex
 | Tags          | Required tags will be set automatically through the script.
 |===
 
-Summons need to be inside a xref:contentbox.adoc[Custom Content Box] to be registered correctly.
+Summons need to be inside an xref:contentbox.adoc[Custom Content Box] to be registered correctly.
 
 ==== Lua Script
 
@@ -275,7 +275,7 @@ The `info` table and the `FrameOffset` use the same format as the one for the cl
 
 ==== Xml Ui
 
-Add this script to figure's UI script.
+Add this script to the figure's UI script.
 No other values need to be set.
 
 ====
@@ -343,7 +343,7 @@ local ClassApi = require("api.ClassApi")
 function onLoad()
   ClassApi.registerClass("Brute", {
     -- The GUID of the Class envelope object. 
-    -- Since the registration script is on the envelope itselt, it can be referenced here
+    -- Since the registration script is on the envelope itself, it can be referenced here
     boxGuid = self.getGUID(),
     -- Number of HP per level
     -- Default values are available in ClassApi.HpProgression with Low, Medium and High

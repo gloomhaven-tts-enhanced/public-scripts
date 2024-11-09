@@ -1,7 +1,7 @@
 = Formula
 
 Formulas are a way to describe dynamic values within the scenario.
-The most typical use-case would be HP values of obstacles or enemies that scale with the number of characters or the current scenario level.
+The most typical use case would be HP values of obstacles or enemies that scale with the number of characters or the current scenario level.
 
 Formulas are defined with Lua tables.
 The first entry is the operator that is used and the following entries are the arguments for the operator, which itself are formulas.
@@ -53,7 +53,7 @@ Looking at the <<Example_Formula>> the usage should get clearer. :-)
 [[Example_Formula]]
 == Examples
 
-Every number is a formula in itself, to it can be used directly.
+Every number is a formula in itself, so it can be used directly.
 [source,lua]
 ----
 hp = 4
@@ -82,7 +82,7 @@ Multiple operators can be combined with an argument as a formula table.
 hp = { "+", 20, "L", {"*", 2, "C"}, } -- 20 + L + (2 * C)
 ----
 
-With division rounding is also relevant.
+With division, rounding is also relevant.
 [source,lua]
 ----
 hp = { "roundUp", { "/", {"*", "H", "C"}, 2 } } -- (H * C) / 2, rounded up
@@ -99,7 +99,7 @@ hp = { "byScenarioLevel", 1, 1, 2, 2, 3, 4, 5, 6 }
 
 Functions can be called, too.
 Since Strings are considered to be variables, they have to be prefixed with a `$` if the literal String is meant (e.g. for the function name to be called).
-This also applies for all values inside the parameters of the `apply` operator.
+This also applies to all values inside the parameters of the `apply` operator.
 E.g. this example will set the HP value of the object the formula is attached to, to the same value as the "Prime Demon" enemy has.
 
 [source,lua]

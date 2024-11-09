@@ -1,4 +1,5 @@
 * xref:index.adoc[Introduction]
-* xref:build.adoc[Working on GHE]
 * xref:documentation.adoc[Documentation]
 * xref:commandLine.adoc[Command Line]
+* Workflows
+** xref:scenarioUpgrade.adoc[]

@@ -32,9 +32,9 @@ ConditionApi.registerCondition("My Condition", {
 ----
 ====
 
-If an image for the immunity to that condition also exists, it can be provided as well.
-Also Condition immunities can be shared.
-E.g. you can define that a figure is always immune to this new condition, when it also has immunity to "Stun".
+If an image for immunity to that condition also exists, it can be provided as well.
+Also, Condition immunities can be shared.
+E.g. you can define that a figure is always immune to this new condition when it also has immunity to "Stun".
 When a figure with a "Stun" immunity spawns, the immunity image for this new condition is applied as well.
 This can be done by providing an `immunity` attribute.
 
@@ -60,8 +60,8 @@ ConditionApi.registerCondition("My Condition", {
 [#_effects]
 == Effects
 
-Effects are any special effect that a figure has.
-They can be registered, so that an image (or text) can be shown below the figure's HP bar.
+Effects are any special effects that a figure has.
+They can be registered so that an image (or text) can be shown below the figure's HP bar.
 When an Effect's name is then added to its xref:enemy.adoc#_stats[Stats], it will show the registered image (or text).
 Effects can also be used to add additional images for movement types, or area of effects.
 
@@ -70,7 +70,7 @@ In fact, every Condition is also an Effect (so you don't have to register it twi
 The registration is done via the `registerEffect` function in the `ConditionApi`.
 The attributes are similar to registering a Condition.
 A difference is that the `name` is part of the table and not the first parameter to the function call.
-Also Effects currently don't use the `max` attribute.
+Also, Effects currently don't use the `max` attribute.
 Either an `image` or a `text` has to be supplied.
 If the `image` is supplied, it will be shown when the Effect is active.
 Otherwise, the `text` will be used (e.g. "AgD" is used for the Effect "Attacker gain Disadvantage").

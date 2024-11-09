@@ -6,13 +6,13 @@ Generally, you have two ways to work with the scripts.
 Either through an external tool (the VS Code text editor), or the scripting window inside TTS.
 The first method is the preferred way.
 While it requires a bit of setup, it's a lot easier to continuously work on custom content with it.
-E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpacking deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).
+E.g. it will be a lot easier to update the scripts of the content to the latest version used by the mod without the need to copy and paste a lot of code and unpack deeply nested bags in TTS (heck you can do everything without TTS if you want, even releasing the custom content mod).
 
 The alternative is to use the TTS scripting window.
-For this you need to download the latest script from the https://github.com/gloomhaven-tts-enhanced/public-scripts/tags[releases].
-After you downloaded the scripts from the latest release, you'll find two folders inside there: `base` and `bundled`.
+For this, you need to download the latest script from the https://github.com/gloomhaven-tts-enhanced/public-scripts/tags[releases].
+After you download the scripts from the latest release, you'll find two folders inside there: `base` and `bundled`.
 You'll need the `bundled` folder to work with the TTS scripting window.
-Extract the required folder somewhere in you file system.
+Extract the required folder somewhere in your file system.
 
 == Using VS Code
 
@@ -41,17 +41,17 @@ image::vscode/save-name.png[]
 
 image::vscode/npm.png[]
 
-* It may be not at the top, but below other sections.
+* It may be not at the top but below other sections.
 You can reorder sections by using drag 'n' drop.
 If the section doesn't show up at all, right-click on the heading of any other section and enable it.
 
 image::vscode/header.png[]
 
-* Hover over the `setup` entry and click the btn:[Play] button that show's up.
+* Hover over the `setup` entry and click the btn:[Play] button that shows up.
 * Afterwards, do the same with the `update` entry.
 This will download the latest scripts for the Gloomhaven enhanced mod.
-* This completes the (rather-long) setup, and you're good to go. :-)
-* If you have multiple save files you are working on, it's recommended to have a different directories for all of them.
+* This completes the (rather long) setup, and you're good to go. :-)
+* If you have multiple save files you are working on, it's recommended to have different directories for all of them.
 This way you don't have to edit the `package.json` around.
 
 === Usage
@@ -62,32 +62,32 @@ E.g a (reduced) Artificier save file looks like this:
 
 image::vscode/extract.png[]
 
-The save file has one bag that contains all objects of the Artificier.
+The save file has one bag that contains all objects of the Artificer.
 The `extract` command will create a new directory for all objects inside that bag.
 The name of the directory will be the name of the object followed by its GUID.
 If the object itself is a bag or deck it will create more nested directories to replicate the nesting structure from TTS.
 
-For each object multiple files are created inside their directory.
+For each object, multiple files are created inside their directory.
 A file named `Data.json` will contain all the data about the object, like its name, tags, etc..
 The file named `Script.ttslua` contains the attached script.
-The big advantage here is that the script only contains the relevant part.
-In the TTS script editor you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
+The big advantage here is that the script only contains the relevant parts.
+In the TTS script editor, you have the whole script which contains a lot of unrelated stuff and you have to find the correct place where to put the actual scripts.
 A file named `UI.xml` contains the XML UI attached to the object.
 The same logic as for the script applies, as it only contains a reduced view of the script (e.g. just some `<Include src="Figures/CharacterMini" />`).
 
 When you use the `embed` command from the npm section, the reverse thing will happen.
 The files from your current working directory will be put together and create a new save file which then will be copied back to your TTS save file folder.
 While doing so, all the scripts of all contained objects are automatically updated with the currently downloaded GHE scripts.
-E.g. many scripts have command like `require("Figures.CharacterMini")`.
+E.g. many scripts have commands like `require("Figures.CharacterMini")`.
 What this means is: Please include the code from the file "Figures/CharacterMini.ttslua" at this place, computer (the same for `<Include src="file" />` in case of XML files).
 And this is what `embed` does.
-It loads the downloaded scripts and embeds them at the correct places.
+It loads the downloaded scripts and embeds them in the correct places.
 
 So the advantage is, that you only need to edit the relevant scripts and all other parts are automatically updated for you.
 No need to unpack nested objects inside TTS and copy/paste the same scripts over and over.
 
-If there's an update to the releases scripts, you can use the `update` command from the npm section to download them.
-Then use `embed` again und all scripts are updated in the save file.
+If there's an update to the release scripts, you can use the `update` command from the npm section to download them.
+Then use `embed` again and all scripts are updated in the save file.
 
 NOTE::
 ====
@@ -156,12 +156,12 @@ __bundle_register("Figures/CharacterMini", function(require, _LOADED, __bundle_r
 end)
 ----
 
-When you integrate those script you need to look for the line `__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)`.
+When you integrate those scripts you need to look for the line `__bundle_register("__root", function(require, _LOADED, __bundle_register, __bundle_modules)`.
 Everything between this line and the first `end)` is the actual script for the object.
-The previous line are required for the bundling to work and the following lines are the previously split files that are now put together.
+The previous line is required for the bundling to work and the following lines are the previously split files that are now put together.
 You don't need to touch those.
 
-Whenever this documentation mentions to include a script onto you object, you first have to locate the correct bundled file.
+Whenever this documentation mentions including a script onto your object, you first have to locate the correct bundled file.
 This is given as the title of the script example.
 
 [source,lua]
@@ -180,7 +180,7 @@ require("Figures.CharacterMini")
 
 E.g. here it means you have to find the `Figures/CharacterMini.ttslua` script within the `bundled` folder.
 Open that script and find the previously mentioned `__bundle_register("__root")` line.
-Copy the script the documentation mentioned after this line and remove everything till the first `end` (excluding the `end`).
+Copy the script of the documentation mentioned after this line and remove everything till the first `end` (excluding the `end`).
 With this example, the final script would look like this:
 
 [source,lua]

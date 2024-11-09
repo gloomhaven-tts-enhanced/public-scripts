@@ -5,12 +5,12 @@
 === Enemy Envelope
 
 The enemy envelope is the bag that contains all components for a new enemy of that type.
-It will not be shown to the players, so a regular bag is sufficient, no extra model needed.
+It will not be shown to the players, so a regular bag is sufficient, no extra model is needed.
 
 The bag must contain the <<Enemy Bag>>, the <<Stats-Sheet>> and the <<Ability Deck>> in any order.
 
-The bag itself will never be placed on the table by the mod, so it shouldn't contain and scripts as those would never be executed.
-It's sole function is to group all objects belonging to a single enemy type.
+The bag itself will never be placed on the table by the mod, so it shouldn't contain scripts as those would never be executed.
+Its sole function is to group all objects belonging to a single enemy type.
 
 ==== Properties
 
@@ -37,14 +37,14 @@ It will be placed on the monster mat and new enemies will be spawned from the ba
 The Enemy Bag is currently the best place to register the enemy.
 This is typically done in two steps.
 
-First the enemy's ability deck has to be registered.
+First, the enemy's ability deck has to be registered.
 This is done by calling `EnemyApi.registerEnemyAbilityDeck`.
 It takes the name of the ability deck and the list of abilities it includes.
 The abilities can have two attributes:
 
 - An `image` with the link to the image for this ability card.
 This value isn't used for 1.3 yet, so it can also be ignored.
-It will be used for future versions, e.g. to the show the active ability card of an enemy in the initiative tracker.
+It will be used for future versions, e.g. to show the active ability card of an enemy in the initiative tracker.
 - A `spawn` element, describing which object the ability can spawn (like traps or summoning other enemies).
 Documentation about the proper attributes for this element can be found xref:common/spawnable.adoc[here]
 
@@ -90,7 +90,7 @@ This is done by calling `EnemyApi.registerEnemy`.
 This function takes the name of the enemy type and two named parameters:
 
 - `icon` is the link to an image for an icon of this enemy type.
-This is currently used in the Context Menu, when the enemy can be summoned by other enemies.
+This is currently used in the Context Menu when the enemy can be summoned by other enemies.
 - `abilityDeck` is the name of a previously registered ability deck.
 This tells the mod that this enemy uses the ability deck with this name.
 
@@ -182,7 +182,7 @@ require("Figures.Monster")
 
 ==== Lua Script
 
-Within the script of the Stats-Sheet the stats for the different levels are defined as well as how many figures can be present for this enemy type.
+Within the script of the Stats-Sheet, the stats for the different levels are defined as well as how many figures can be present for this enemy type.
 
 To define the maximum number of enemies, declare a variable named `count`.
 Put the following script on the Stats-Sheet and adjust the values accordingly.
@@ -221,9 +221,9 @@ require("StatSheet")
 ====
 
 The entry for each level has an attribute named `orientation` and the attributes `normal` and `elite`.
-In case of a boss enemy the level has an attribute `boss` instead of `normal` and `elite`.
+In the case of a boss enemy, the level has an attribute `boss` instead of `normal` and `elite`.
 
-The `orientation` attribute defines the rotation of the Stat-Sheets object that shows that stats for this level.
+The `orientation` attribute defines the rotation of the Stat-Sheets object that shows the stats for this level.
 This is used by the mod to figure out which level is currently set on the Stats-Sheet by checking the current orientation of the object with the entries defined here.
 
 ====
@@ -234,10 +234,10 @@ stats = {
   [0] = {
     orientation = {0, 180, 0},
     normal = {
-      -- stats for normal version go here
+      -- stats for the normal version go here
     },
     elite = {
-      -- stats for elite version go here
+      -- stats for the elite version go here
     },
     boss = {
       -- this is used by bosses instead of the above two
@@ -450,7 +450,7 @@ You can include an AoE "Area" which will display an AoE pattern in the initiativ
 * `t` will create a red "enemy" hex
 * `a` will create a blue "ally" hex
 * `e` will create a blank space with no hex
-* `_` will begin a new row, every even row will be automatically intented by half a hex
+* `_` will begin a new row, and every even row will be automatically indented by half a hex
 
 .Wind Demon's ability with two areas:
 ====
@@ -482,7 +482,7 @@ local stats = {
   attack = 2,
   -- The base range value
   range = 0,
-  -- A list of extra effect like retaliate shield
+  -- A list of extra effects like retaliate shield
   attributes = { },
   -- A list of immunities
   immunities = { },
@@ -497,14 +497,14 @@ local stats = {
 === Health
 
 This attribute takes a single value.
-For Boss enemies this can also be a string in the form of "8xC", which will calculate the value based on player count.
+For Boss enemies, this can also be a string in the form of "8xC", which will calculate the value based on player count.
 A xref:common/formula.adoc[Formula] is currently not supported.
 
 === Move
 
-The `move` attribute can either be a simple value (a number or string like above), or a table with the attributes `value` and `type.`
-The attribute `value` determines how for the figure can move and the `type` determines the movement type (e.g. for flying enemies).
-The value for this field can the name of any registered xref:condition.adoc#_effects[Effect], but generally should be "Fly", "Jump", or "Teleport".
+The `move` attribute can either be a simple value (a number or string like the above), or a table with the attributes `value` and `type.`
+The attribute `value` determines how the figure can move and the `type` determines the movement type (e.g. for flying enemies).
+The value for this field can be the name of any registered xref:condition.adoc#_effects[Effect], but generally should be "Fly", "Jump", or "Teleport".
 
 ====
 [source,lua]
@@ -519,7 +519,7 @@ move = {
 
 === Attack
 
-The `attack` attribute functions similar.
+The `attack` attribute functions similarly.
 It can take a simple value or a table with the attributes `value` and `area.`
 The attribute `value` determines the attack value of the figure the `area` attribute is the name of an xref:condition.adoc#_effects[Effect].
 The image for this Effect will be shown next to the attack value.
