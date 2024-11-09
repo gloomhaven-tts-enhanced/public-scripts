@@ -61,6 +61,8 @@ The [condition] can take any of the following values:
 - wound
 
 |===
+| Syntax | Description | Example | Result
+
 | - [condition] : [value] | Creates a [condition] with the value [value]. +
 If [value] is omitted only [condition] is rendered | - poison +
 - pierce: 1 | image:icons/poison.svg[width=20px] +
@@ -100,7 +102,7 @@ As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] 
 [#styles]
 === Styles
 
-You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. Here is a list of styles each elements can take:
+You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. To use modifiers all blocks need to be an object, this means it needs a ':'' in the block. Single word blocks like - earth will need to add a ':' to use modifiers. - earth: '' Here is a list of styles each block can take:
 
 |===
 | Syntax | Description | Example | Result
@@ -142,8 +144,137 @@ An important difference between padding and margin is that padding extends the b
 | fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not allways be changed with this. a|
 [source]
 ----
-- earth: ''
+- custom: 'Text'
   fontSize: 10px
 ----|
 
+| color | Changes the font color of the section, this will not impact icons. a|
+[source]
+----
+- custom: 'Text'
+  color: red
+----|
+
+| background | Changes the background of the block. a|
+[source]
+----
+- custom: 'Text'
+  background: red
+----|
+
+| lineHeight | Changes the space between lines to give either more space or make the text more compact. This is usful for adding icons into text where the lines would render different heights. a|
+[source]
+----
+- custom: 'Text to adjust lineheight, should have enought to atleast fill two lines.'
+  lineHeight: 20px
+----|
+
+| wordSpacing | Changes the space between words relative to the current spacing. a|
+[source]
+----
+- custom: 'Text to show wordSpacing'
+  wordSpacing: 5px
+----|
+
+|===
+
+[#position]
+==== Position
+
+To change a blocks position or orientation or size use these:
+
+|===
+| Syntax | Description | Example | Result
+
+| position | To change a blocks position this must be set to either 'relative' or 'absolute'.
+
+relative: will change the position of the element based on its relative position to other elements rendered.
+
+absolute: will change the position of the element based on the parent elements position.
+ a|
+[source]
+----
+- earth: ''
+  position: relative
+----|
+
+| top | Sets the value of its placement on the card either from its relative postion or from the top of the current action.
+ a|
+[source]
+----
+- earth: ''
+  position: relative
+  top: 10px
+----|
+
+| left | Sets the value of its placement on the card either from its relative postion or from the left side of the current action.
+ a|
+[source]
+----
+- earth: ''
+  position: absolute
+  left: 10px
+----|
+
+| transform | This modifier is more complex and takes a string as input as shown here: https://developer.mozilla.org/en-US/docs/Web/CSS/transform[documentation css transform]
+ a|
+[source]
+----
+- earth: ''
+  transform: rotate(90deg)
+----|
+|===
+
+
+[#Special blocks]
+=== Special blocks
+
+==== Tokens
+
+|===
+| Syntax | Description | Example | Result
+
+| - tokens | This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.
+ a|
+[source]
+----
+- tokens: [0,1,0,1]
+----|
+|===
+===== Modifiers
+|===
+| Syntax | Description | Example | Result
+
+| lines | This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)
+ a|
+[source]
+----
+- tokens: [0,1,0,1]
+  lines: 1
+----|
+|===
+
+==== Tokens
+
+|===
+| Syntax | Description | Example | Result
+
+| - tokens | This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.
+ a|
+[source]
+----
+- tokens: [0,1,0,1]
+----|
+|===
+===== Modifiers
+|===
+| Syntax | Description | Example | Result
+
+| lines | This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)
+ a|
+[source]
+----
+- tokens: [0,1,0,1]
+  lines: 1
+----|
 |===
