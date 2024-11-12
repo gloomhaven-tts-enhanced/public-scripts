@@ -78,7 +78,7 @@ const scenario: Scenario = {
       // tag::rooms-map[]
       map: [
         {
-          name: "11-A-new",
+          name: "11-A",
           position: [-4, 9],
           rotation: 0,
         },
@@ -166,7 +166,7 @@ const scenario: Scenario = {
       index: "2",
       map: [
         {
-          name: "11-C-new",
+          name: "11-C",
           position: [2, 5],
           rotation: 60,
         },
@@ -234,7 +234,7 @@ const scenario: Scenario = {
       index: "3",
       map: [
         {
-          name: "14-B-new",
+          name: "14-B",
           position: [-1, -2],
           rotation: 60,
         },
