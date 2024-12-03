@@ -42,3 +42,22 @@
 * The name of the boat can not be entered and is not shown in event cards.
 * The name of the boat does not transfer using the Campaign Manager.
 ====
+
+[#known-bugs]
+== Known bugs and workarounds
+
+[#invalid-sort-order]
+=== Error `invalid order function for sorting` during campaign migration
+
+This error can show up in versions prior to 2.3 when trying to migrate the campaign to a newer version.
+It will prevent some parts of the campaign to be migrated.
+The following steps can be done to work around this problem:
+
+* Find your TTS save file on your hard drive (check https://kb.tabletopsimulator.com/getting-started/technical-info/#save-game-data-location[the knowledge base] to find the location for your system).
+* Open the file with a text editor (any editor that supports a find and replace function is enough).
+* Search for the following text `a.index \<= b.index` and replace it with `a.index < b.index`.
+The search should show up 3 matches.
+* Search for the text `a.name \<= b.name` and replace it with `a.name < b.name`.
+The search should show up 1 match.
+* Save the TTS save file and load it again in TTS
+* The migration will all information is now possible.
