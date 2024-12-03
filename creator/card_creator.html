@@ -124,10 +124,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="syntax"><a class="anchor" href="#syntax"></a>Syntax</h2>
+<h2 id="Syntax"><a class="anchor" href="#Syntax"></a>Syntax</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="base_actions"><a class="anchor" href="#base_actions"></a>Basic Actions</h3>
+<h3 id="Base_actions"><a class="anchor" href="#Base_actions"></a>Basic Actions</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -190,7 +190,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="conditions"><a class="anchor" href="#conditions"></a>Conditions</h3>
+<h3 id="Conditions"><a class="anchor" href="#Conditions"></a>Conditions</h3>
 <div class="paragraph">
 <p>The [condition] can take any of the following values:</p>
 </div>
@@ -305,7 +305,7 @@ If [value] is omitted only [condition] is rendered</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="elements"><a class="anchor" href="#elements"></a>Elements</h3>
+<h3 id="Elements"><a class="anchor" href="#Elements"></a>Elements</h3>
 <div class="paragraph">
 <p>The [element] in this section can take any of the following values:</p>
 </div>
@@ -520,7 +520,7 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="position"><a class="anchor" href="#position"></a>Position</h4>
+<h4 id="Position"><a class="anchor" href="#Position"></a>Position</h4>
 <div class="paragraph">
 <p>To change a blocks position or orientation or size use these:</p>
 </div>
@@ -592,10 +592,16 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </table>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Special_blocks"><a class="anchor" href="#Special_blocks"></a>Special blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section is for explaning different special code blocks.</p>
+</div>
 <div class="sect2">
-<h3 id="_special_blocks"><a class="anchor" href="#_special_blocks"></a>Special blocks</h3>
-<div class="sect3">
-<h4 id="_tokens"><a class="anchor" href="#_tokens"></a>Tokens</h4>
+<h3 id="Tokens"><a class="anchor" href="#Tokens"></a>Tokens</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -624,8 +630,8 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </tr>
 </tbody>
 </table>
-<div class="sect4">
-<h5 id="_modifiers"><a class="anchor" href="#_modifiers"></a>Modifiers</h5>
+<div class="sect3">
+<h4 id="Token_modifiers"><a class="anchor" href="#Token_modifiers"></a>Token modifiers</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -655,70 +661,6 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_tokens_2"><a class="anchor" href="#_tokens_2"></a>Tokens</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- tokens</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-</tbody>
-</table>
-<div class="sect4">
-<h5 id="_modifiers_2"><a class="anchor" href="#_modifiers_2"></a>Modifiers</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lines</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]
-  lines: 1</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
