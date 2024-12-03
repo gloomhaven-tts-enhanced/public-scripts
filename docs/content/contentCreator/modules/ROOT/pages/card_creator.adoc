@@ -4,10 +4,10 @@
 
 On this page, all commands and syntax for the Card Creator will be explained.
 
-[#syntax]
+[#Syntax]
 == Syntax
 
-[#base_actions]
+[#Base_actions]
 === Basic Actions
 
 |===
@@ -28,7 +28,7 @@ On this page, all commands and syntax for the Card Creator will be explained.
 | - heal: [value] | Creates a heal ability with a value of [value] | - heal: 1 | image:icons/heal.svg[width=20px] 1
 |===
 
-[#conditions]
+[#Conditions]
 === Conditions
 
 The [condition] can take any of the following values:
@@ -71,7 +71,7 @@ image:icons/pierce.svg[width=20px] 1 +
 |===
 
 
-[#elements]
+[#Elements]
 === Elements
 
 
@@ -178,7 +178,7 @@ An important difference between padding and margin is that padding extends the b
 
 |===
 
-[#position]
+[#Position]
 ==== Position
 
 To change a blocks position or orientation or size use these:
@@ -226,35 +226,13 @@ absolute: will change the position of the element based on the parent elements p
 |===
 
 
-[#Special blocks]
-=== Special blocks
+[#Special_blocks]
+== Special blocks
 
-==== Tokens
+This section is for explaning different special code blocks.
 
-|===
-| Syntax | Description | Example | Result
-
-| - tokens | This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.
- a|
-[source]
-----
-- tokens: [0,1,0,1]
-----|
-|===
-===== Modifiers
-|===
-| Syntax | Description | Example | Result
-
-| lines | This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)
- a|
-[source]
-----
-- tokens: [0,1,0,1]
-  lines: 1
-----|
-|===
-
-==== Tokens
+[#Tokens]
+=== Tokens
 
 |===
 | Syntax | Description | Example | Result
@@ -266,7 +244,10 @@ absolute: will change the position of the element based on the parent elements p
 - tokens: [0,1,0,1]
 ----|
 |===
-===== Modifiers
+
+[#Token_modifiers]
+==== Token modifiers
+
 |===
 | Syntax | Description | Example | Result
 
