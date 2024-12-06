@@ -101,7 +101,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Custom Content</span>
-    <span class="version">2.3</span>
+    <span class="version">2.3 next</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -111,7 +111,7 @@
       <div class="title"><a href="../../latest/index.html">Custom Content</a></div>
       <ul class="versions">
         <li class="version is-current">
-          <a href="../index.html">2.3</a>
+          <a href="../index.html">2.3 next</a>
         </li>
         <li class="version is-latest">
           <a href="../../latest/index.html">2.2</a>
@@ -128,7 +128,7 @@
       <div class="title"><a href="../../../mod/latest/index.html">Frosthaven Enhanced</a></div>
       <ul class="versions">
         <li class="version">
-          <a href="../../../mod/next/index.html">2.3</a>
+          <a href="../../../mod/next/index.html">2.3 next</a>
         </li>
         <li class="version is-latest">
           <a href="../../../mod/latest/index.html">2.2</a>
@@ -154,9 +154,9 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.3</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.3 next</button>
   <div class="version-menu">
-    <a class="version is-current" href="expressions.html">2.3</a>
+    <a class="version is-current" href="expressions.html">2.3 next</a>
     <a class="version" href="../../latest/scenario/expressions.html">2.2</a>
     <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
@@ -339,33 +339,33 @@ Inside the parentheses the list of arguments are listed, separated by <code>,</c
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 50.0002%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Arguments</th>
-<th class="tableblock halign-left valign-top">Returns</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundDown</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the given number to the nearest integer.
-Rounds to the lower integer if the decimal value is 0.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>max(number, number): number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the maximum of two values.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundUp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>min(number, number): number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the minimum of two values.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundDown(number): number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the given number to the nearest integer.
-Rounds to the higher integer if the decimal value is 0.5.</p></td>
+Rounds to the lower integer if the decimal value is .5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundUp(number): number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the given number to the nearest integer.
+Rounds to the higher integer if the decimal value is .5.</p></td>
 </tr>
 </tbody>
 </table>
