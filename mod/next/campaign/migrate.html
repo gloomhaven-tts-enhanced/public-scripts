@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Migrating a Campaign :: Frosthaven Enhanced</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/gh-site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Frosthaven Enhanced</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Steam</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3307604810">Frosthaven Enhanced</a>
+            <a class="navbar-item" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2891465199">Gloomhaven Enhanced</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://discord.com/channels/847227635892224020/847987593747496990/848737045089615894">Discord</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mod" data-version="2.3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Frosthaven Enhanced</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Common Functionality</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../engine/interface/interfaces.html">Interfaces</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/scenarioSetup.html">Scenario Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/monsterSetup.html">Monster Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/options.html">Options</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/shop.html">Item Shop</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/initiativeTracker.html">Initiative Tracker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/interface/elementTracker.html">Element Tracker</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Features</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/feature/gameKeys.html">Game Keys</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/feature/quickMenu.html">Quick Menu</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../engine/feature/cleanupAction.html">Cleanup Action</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Playing a Campaign</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="begin.html">Beginning of Campaign</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="start.html">Starting a Scenario</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="class.html">Unlocking Classes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="enhancements.html">Enhancing Abilities</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="migrate.html">Migrating a Campaign</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Playing a Scenario</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../scenario/basics.html">Scenario Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../scenario/looting.html">Loot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../scenario/summons.html">Summons</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../scenario/monsters.html">Monsters</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Frosthaven Outpost</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frosthaven/missingFeatures.html">Missing/Upcoming Features &amp; Known Bugs</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Frosthaven Enhanced</span>
+    <span class="version">2.3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <div class="title"><a href="../../../creator/index.html">Custom Class Creator</a></div>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../../custom/latest/index.html">Custom Content</a></div>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../custom/next/index.html">2.3</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../custom/latest/index.html">2.2</a>
+        </li>
+        <li class="version">
+          <a href="../../../custom/1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <div class="title"><a href="../../../dev/index.html">Development</a></div>
+    </li>
+    <li class="component is-current">
+      <div class="title"><a href="../../latest/index.html">Frosthaven Enhanced</a></div>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">2.3</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">2.2</a>
+        </li>
+        <li class="version">
+          <a href="../../1.3/index.html">1.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Frosthaven Enhanced</a></li>
+    <li>Playing a Campaign</li>
+    <li><a href="migrate.html">Migrating a Campaign</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.3</button>
+  <div class="version-menu">
+    <a class="version is-current" href="migrate.html">2.3</a>
+    <a class="version" href="../../latest/campaign/migrate.html">2.2</a>
+    <a class="version is-missing" href="../../1.3/index.html">1.3</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/next/docs/content/mod/modules/campaign/pages/migrate.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Migrating a Campaign</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two reasons to migrate a campaign:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Importing a campaign from Frosthaven Assisted, a mod not affiliated with Frosthaven Enhanced or Cephalofair</p>
+</li>
+<li>
+<p>Migrating from a previous version of Frosthaven Enhanced</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assissted"><a class="anchor" href="#assissted"></a>Migrating from Frosthaven Assisted</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To migrate an existing save bundle from Frosthaven Assisted, drop the object it creates onto the Campaign Manager object.
+This will convert the saved data from Assisted to Enhanced and then perform a regular migration.</p>
+</div>
+<div class="paragraph">
+<p>However, some info currently doesn&#8217;t migrate over and needs to be adjusted manually afterwards:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only the envelopes of starting classes and classes with active characters will be placed on the table.
+Other unlocked classes need to be manually unlocked.</p>
+</li>
+<li>
+<p>Abilities for each active character.
+Each character will start with the starting cards and additional abilities have to be taken from the "Advanced Abilities" deck.</p>
+</li>
+<li>
+<p>All enhancements for ability cards need to be applied again.</p>
+</li>
+<li>
+<p>The difficulty settings need to be set on the scenario info sheet.</p>
+</li>
+<li>
+<p>If you ever reached a morale value of 0 you need to update the respective consequences.</p>
+</li>
+<li>
+<p>All existing buildings are loaded with their built state, so they need to be set to wrecked manually if they have been wrecked in Assisted.</p>
+</li>
+<li>
+<p>The treasure cards (which represent which treasures have been looted) might not all be removed correctly.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="migrating"><a class="anchor" href="#migrating"></a>Migrating from a previous version of Frosthaven Enhanced</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When playing Frosthaven Enhanced, simply create a Tabletop Simulator save file and re-load every time you need to close Tabletop Simulator.
+This will be kept under the "Save and Load" tab of Games.
+When a new version of Frosthaven Enhanced is released, and you would like to migrate to the newer version of Frosthaven Enhanced, use the Campaign Manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/campaign-start.png" alt="campaign start">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_by_step"><a class="anchor" href="#_step_by_step"></a>Step by step</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Load your existing save file of the old version of Frosthaven Enhanced.</p>
+</li>
+<li>
+<p>Click <b class="button">Save Campaign</b> in the Campaign Manager</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/migrate-object.png" alt="migrate object">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An object will be created, which will be the key to migrating to the new version of Frosthaven Enhanced</p>
+</li>
+<li>
+<p>Right-click and select "Save Object", saving the object to your files</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/saving-object.png" alt="saving object">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on "Games" on the top menu, and load a new Frosthaven Enhanced mod from the Workshop tab</p>
+</li>
+<li>
+<p>In an empty Frosthaven Enhanced mod, select "Objects" from the top menu, then Saved Objects, and track down the Object you saved in step 4</p>
+</li>
+<li>
+<p>Place one instance of the object on the table and right-click to return to basic mouse use/movement</p>
+</li>
+<li>
+<p>Click and drag the object into the skull spot in the center of the Campaign Manager and the new version of Frosthaven Enhanced</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once completed, all information will be migrated to the current version of Frosthaven Enhanced!</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Please review the Manual Migration Steps below. At this time, not all information is migrated.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_manual_migration_steps"><a class="anchor" href="#_manual_migration_steps"></a>Manual Migration Steps</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>If you&#8217;ve unlocked Building 24, take note of <a href="../frosthaven/missingFeatures.html#envelope_24" class="xref page">the missing information</a>.</p>
+</li>
+<li>
+<p>Any enhanced loot cards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Any campaigns saved in v2.1.0 and on will carry enhanced loot cards to future mod versions</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Item 224 may not be found during migration due to a type fix. You need to unlock it again manually</p>
+</li>
+<li>
+<p>Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.</p>
+</li>
+<li>
+<p>Personal Quests are migrated by name, so make sure the names of unlocked/available PQs match the ones you expect to migrate, not the maybe wrong image.</p>
+</li>
+<li>
+<p>You can copy/paste inactive characters from the previous version to the new one to transfer them for now.</p>
+</li>
+<li>
+<p>Campaign Stickers might show up as an empty space if the entered text doesn&#8217;t match the one the mod now expects. Use the Remove Button to remove invalid ones and then add them via the Add button.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="200" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
