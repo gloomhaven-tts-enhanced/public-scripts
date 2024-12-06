@@ -59,19 +59,24 @@ Inside the parentheses the list of arguments are listed, separated by `,`.
 
 The following functions are available for expressions:
 
-[cols="m,1,1,3"]
+[cols="2m,3"]
 |===
-| Name | Arguments | Returns | Description
+| Name  | Description
 
-| roundDown | `number` | `number`
-| Rounds the given number to the nearest integer.
-Rounds to the lower integer if the decimal value is 0.5.
+| max(number, number): number
+| Returns the maximum of two values.
 
-| roundUp | `number` | `number`
+| min(number, number): number
+| Returns the minimum of two values.
+
+| roundDown(number): number
 | Rounds the given number to the nearest integer.
-Rounds to the higher integer if the decimal value is 0.5.
+Rounds to the lower integer if the decimal value is .5.
+
+| roundUp(number): number
+| Rounds the given number to the nearest integer.
+Rounds to the higher integer if the decimal value is .5.
 |===
-
 
 == Examples
 

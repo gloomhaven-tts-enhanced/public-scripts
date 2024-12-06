@@ -1,10 +1,34 @@
 - version: 2.3.0
   change:
-    - The cleanup action for figures move the figure to their respective player mat independent of the player who used the cleanup action.
+    - All map tiles and overlay tiles have been updated to a higher quality.
+      The overlays now match their physical counterpart instead of being a hexagon with white background.
+      All overlays can now also have any outline colors.
+    - The cleanup action for characters moves the character to their respective player mat independent of the player who used the cleanup action.
+    - The Campaign Manager layout changed to make it more clear when and how to use it.
+    - The class unlock menu only shows up for the player selecting it. The layout also changed.
+    - The back of AM cards was changed to the FH image.
   add:
+    - Overlays now also have a 3D variant.
     - Scenarios can now be marked as locked out by clicking at the center position on the scenario tracker for this scenario.
     - The books are now saved from being deleted during "Delete Map".
       You can also add any other object from being deleted this way by giving them the "Permanent" tag.
+    - "Building 90: ||The Challenge deck bag isn't randomized anymore.
+      The Cleanup Action now puts Challenge Cards at the bottom of the deck bag.
+      There's also a right-click context menu on Challenge Cards to do the same thing.||"
+    - The loot deck mat has a button to draw a loot card.
+    - Looting with the Cleanup Action automatically draws a loot card for the looting player.
+      If it's a random item the item will automatically be drawn and added to the player mat.
+      At the end of a scenario, loot is automatically added to the player's character sheets.
+    - No more crate dummies!
+      All placeholders have been replaced with actual figures.
+    - The summons from GH items are now included.
+  fix:
+    - Using the cleanup action on a deck of Battle Goals will split it into individual cards just like putting the deck manually.
+    - Inspiration gained at the end of a scenario is saved correctly.
+    - Lurker Wavethrower has Lightning Eels in their Quick Menu.
+    - Living Doom has Living Spirit in their Quick Menu.
+    - Lots of scenario fixes.
+      Basically, the whole scenario engine and all scenario definitions files have been rewritten to make future changes easier.
 - version: 2.2.0
   release: 2024-09-13
   change:

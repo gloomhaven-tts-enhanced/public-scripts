@@ -1,9 +1,11 @@
 site:
-  title: Gloomhaven Enhanced
+  title: Frosthaven Enhanced
 content:
   sources:
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
-      branches: HEAD
+      branches:
+        - HEAD
+        - next
       start_paths:
         - docs/content/*
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
