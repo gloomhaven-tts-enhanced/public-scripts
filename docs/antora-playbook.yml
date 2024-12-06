@@ -6,13 +6,15 @@ content:
       branches:
         - HEAD
         - next
+        - maintain/1.3
       start_paths:
-        - docs/content/*
+        - docs/content/customContent
+        - docs/content/mod
     - url: https://github.com/gloomhaven-tts-enhanced/public-scripts
-      branches: maintain/1.3
+      branches: HEAD
       start_paths:
-        - docs/content/*
-        - "!docs/content/development"
+        - docs/content/contentCreator
+        - docs/content/development
 urls:
   latest_version_segment: latest
   latest_prerelease_version_segment: next

@@ -7,6 +7,7 @@ import path from "path";
 
 const OUTDIR = `${__dirname}/../../../../changelog/tmp`;
 const CATEGORY_NAMES: [ChangeCategory, string][] = [
+  ["breaking", "Breaking Changes"],
   ["change", "Changed"],
   ["add", "Added"],
   ["fix", "Fixed"],
