@@ -32,6 +32,7 @@ The values are case-insensitive.
 ----
 ====
 
+[#get-position]
 == Get Position
 
 Prints the position and rotation of the object that is currently hovered by the player entering the command.

@@ -115,6 +115,7 @@ action = {
 }
 ----
 
+[#spawn]
 == Spawn
 This action can be used to spawn additional elements into the scenario.
 
