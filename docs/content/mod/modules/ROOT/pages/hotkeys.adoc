@@ -57,8 +57,7 @@ While hovering over a figure or token with a health bar (e.g. including obstacle
 
 == Show Context Menu
 
-While hovering over a figure (enemy, character, summon) this action will show the xref:1.3@mod:ROOT:contextMenu
-.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
+While hovering over a figure (enemy, character, summon) this action will show the xref:contextMenu.adoc[Context Menu] for it which allows to quickly apply conditions or summon figure relevant tokens.
 
 == Next Stance/Previous Stance
 While hovering over a character figure that has a stance bar, this will move the active stance to the left or right.
