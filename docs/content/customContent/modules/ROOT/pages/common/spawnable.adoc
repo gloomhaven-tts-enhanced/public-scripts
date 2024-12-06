@@ -3,7 +3,7 @@
 Spawnable elements are a way to define objects that can be spawned by certain actions.
 They define which objects should be created and what properties they should have.
 The mod uses the information to pull the correct object and apply the properties to it.
-Currently they can be used to define the content for the xref:mod:ROOT:contextMenu.adoc[Context Menu] as well as for the xref:common/action.adoc#_spawn[Spawn Action] within a scenario definition.
+Currently they can be used to define the content for the xref:1.3@mod:ROOT:contextMenu.adoc[Context Menu] as well as for the xref:common/action.adoc#_spawn[Spawn Action] within a scenario definition.
 
 == Defining a Spawnable Element
 
@@ -93,7 +93,8 @@ local spawnableElement = {
 ====
 
 == Using Spawnable Elements for the Context Menu
-To make Spawnable Elements appear in the xref:mod:ROOT:contextMenu.adoc[Context Menu], they have to be added to the ability information of the class or enemy which can create them, by using the `spawn` property.
+
+To make Spawnable Elements appear in the xref:1.3@mod:ROOT:contextMenu.adoc[Context Menu], they have to be added to the ability information of the class or enemy which can create them, by using the `spawn` property.
 
 For classes this is part of the class information used for `registerClass`.
 
@@ -265,6 +266,6 @@ local spawnableElement = {
 ----
 ====
 
-When using the element for the xref:mod:ROOT:contextMenu.adoc[Context Menu] this property is not required and actually ignored, because spawning from the Context Menu has it's own logic to determine the position for the object.
+When using the element for the xref:1.3@mod:ROOT:contextMenu.adoc[Context Menu] this property is not required and actually ignored, because spawning from the Context Menu has it's own logic to determine the position for the object.
 
 To easily get that information, after you placed an object somewhere on the table, use the xref:dev:ROOT:commandLine.adoc#_get_position[Command Line], to print it to the screen (and the Atom console, where you can easily copy it from).
