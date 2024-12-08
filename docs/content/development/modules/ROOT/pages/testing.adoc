@@ -1,0 +1,88 @@
+= Testing
+
+Describes the tests that should be performed before each release to ensure general functionality.
+
+== Setup
+
+=== Starting a new campaign
+
+* [ ] No errors are shown.
+* [ ] All 6 starting classes are present.
+* [ ] All 4 events decks have 20 starting events.
+* [ ] Scenario 0, 1 and solo scenarios are unlocked, all others are locked.
+* [ ] The stickers for scenario 0 and 1 are placed on the map.
+* [ ] Alchemy chart is placed and all boxes are locked.
+* [ ] Scenario flow chart is placed and scenario 0 and 1 are opened.
+* [ ] Town guard deck is placed with 20 active and 35 available cards.
+* [ ] Buildings Craftsman, Alchemist, Workshop and Barracks are unlocked.
+* [ ] Buildings Mining Camp, Hunting Lodge, Logging Camp and Wall J-N are available to build.
+* [ ] The master loot deck is placed with 57 cards.
+* [ ] The random item deck is filled with 33 items.
+* [ ] The unlockable item deck is filled with 455 items.
+* [ ] The unlocked item deck is filled with 38 items.
+
+=== Basics
+
+* [ ] Placing a player mat at each player slot is possible.
+* [ ] Removing a player mat from each player slot is possible.
+* [ ] A class can be dropped onto a player mat.
+
+== Players
+
+* [ ] All objects are placed at the correct position (figure, hp dial, xp dial, class trackers, AMD, character mat, character sheet, advanced abilities, character box, unlockable AM).
+* [ ] All level 1 abilities are in the players starting hand.
+* [ ] Adding bless/curse card to AMD is possible.
+* [ ] Drawing am cards is possible.
+* [ ] Shuffling the AMD is possible.
+* [ ] Name, XP, gold, level, resources, perks and masteries can be changed on the character sheet.
+* [ ] Changed values on the character sheet persist through save and load.
+
+== New content
+
+=== Unlock a class
+
+* [ ] Opening the class unlock dialog is possible.
+The dialog shows per player color.
+* [ ] The unlock dialog shows all classes.
+Each icon is shown and the classes are listed with their spoiler name.
+* [ ] Clicking an entry in the unlock dialog puts the new class at the end of the existing classes.
+* [ ] Unlocking a class announces the actual name of a class and renames the envelope to the actual name.
+
+=== Items
+
+* [ ] Entering a number will unlock all instances of a item.
+* [ ] Entering a name will unlock all instances of a item.
+
+=== Random items
+
+* [ ] Opening the unlock item unlock is possible.
+* [ ] The dialog shows both options: Random Blueprint and Random Item
+* [ ] Using the Random Blueprint option unlocks a blueprint and their respective item and moves it next to the item deck.
+* [ ] Using the Random Item option unlocks a random item an moves it next to the item deck.
+* [ ] If either card type is not present in the deck anymore a message is shown when the option is used.
+
+== Scenarios
+
+=== Loading a scenario
+
+* [ ] Game Setup menu shows the available scenarios.
+* [ ] Clicking an entry loads the scenario.
+* [ ] All monster mats are placed.
+* [ ] All monster ability decks are placed.
+* [ ] All map tiles are revealed.
+* [ ] The loot deck is set up and shuffled.
+* [ ] Clicking a start tile removes all start tile tokens.
+* [ ] Each player draws battle goals.
+
+=== Playing a scenario
+
+* [ ] The start round button can be pressed if all characters placed ability cards.
+* [ ] The player's ability cards are revealed and an entry is added to the initiative tracker.
+* [ ] All monster ability cards are revealed and added to the initiative tracker.
+* [ ] Clicking a monster entry in the initiative tracker marks it.
+* [ ] Clicking a player entry in the initiative tracker, while the player's figure is not on a loot tile, marks it.
+* [ ] Clicking a player entry in the initiative tracker, while the player's figure is on a loot tile, marks it and performs looting of the tile.
+
+=== Special scenario features
+
+* [ ] Scenario 1, inactive ability decks: No ability card is drawn for the City Guard.
