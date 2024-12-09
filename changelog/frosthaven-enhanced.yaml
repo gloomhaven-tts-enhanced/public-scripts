@@ -7,6 +7,7 @@
     - The Campaign Manager layout changed to make it more clear when and how to use it.
     - The class unlock menu only shows up for the player selecting it. The layout also changed.
     - The back of AM cards was changed to the FH image.
+    - Treasure cards spawn above opned treasure chests instead of at the side of the scenario.
   add:
     - Overlays now also have a 3D variant.
     - Scenarios can now be marked as locked out by clicking at the center position on the scenario tracker for this scenario.
@@ -22,6 +23,7 @@
     - No more crate dummies!
       All placeholders have been replaced with actual figures.
     - The summons from GH items are now included.
+    - "Building 88: ||Pet cards are not removed by map cleanup.||"
   fix:
     - Using the cleanup action on a deck of Battle Goals will split it into individual cards just like putting the deck manually.
     - Inspiration gained at the end of a scenario is saved correctly.
