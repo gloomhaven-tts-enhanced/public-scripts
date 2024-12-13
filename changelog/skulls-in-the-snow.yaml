@@ -1,5 +1,5 @@
 - version: 2.0.0
-  release:
+  release: 2024-09-13
   breaking:
     - Raises minimum FHE version to 2.3.0
   add:

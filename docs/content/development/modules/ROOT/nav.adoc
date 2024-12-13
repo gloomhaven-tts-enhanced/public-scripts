@@ -3,3 +3,4 @@
 * xref:commandLine.adoc[Command Line]
 * Workflows
 ** xref:scenarioUpgrade.adoc[]
+** xref:testing.adoc[]

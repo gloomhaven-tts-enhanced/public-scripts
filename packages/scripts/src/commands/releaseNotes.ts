@@ -77,7 +77,8 @@ const createSteamNotes = (change: ChangeVersion, dir: string) => {
       text += `[h3]${name}[/h3]\n[list]\n`;
 
       for (const entry of entries) {
-        text += `[*] ${entry}\n`;
+        const actualEntry = entry.replace(/\|\|(.+)\|\|/, "[spoiler]$1[/spoiler]");
+        text += `[*] ${actualEntry}\n`;
       }
 
       text += "[/list]\n\n";
