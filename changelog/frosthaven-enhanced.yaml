@@ -1,4 +1,5 @@
 - version: 2.3.0
+  release: 2024-12-13
   change:
     - All map tiles and overlay tiles have been updated to a higher quality.
       The overlays now match their physical counterpart instead of being a hexagon with white background.
@@ -31,6 +32,9 @@
     - Living Doom has Living Spirit in their Quick Menu.
     - Lots of scenario fixes.
       Basically, the whole scenario engine and all scenario definitions files have been rewritten to make future changes easier.
+  custom:
+    - Internally, the resource "wood" has been renamed to the correct word "lumber".
+      This influences the character sheets scripts and might break loading a custom character.
 - version: 2.2.0
   release: 2024-09-13
   change:
