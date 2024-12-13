@@ -1,6 +1,6 @@
 name: mod
 title: Frosthaven Enhanced
-version: 2.2
+version: 2.3
 start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
