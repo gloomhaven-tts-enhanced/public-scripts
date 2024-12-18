@@ -24,8 +24,6 @@ image::town-guard-deck.png[]
 In order to achieve this, you first have to right-click the deck and remove the "Snap" and "Grid" options from the "Toggles" menu.
 Otherwise, the deck will move right back to its original place.
 
-== Versions prior to 2.3
-
 [#invalid-sort-order]
 === Error `invalid order function for sorting` during campaign migration
 
