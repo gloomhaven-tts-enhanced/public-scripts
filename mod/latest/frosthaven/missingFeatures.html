@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Missing/Upcoming Features &amp; Known Bugs :: Frosthaven Enhanced</title>
+    <title>Missing/Upcoming Features :: Frosthaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
@@ -154,10 +154,13 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Frosthaven Outpost</span>
+    <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="missingFeatures.html">Missing/Upcoming Features &amp; Known Bugs</a>
+    <a class="nav-link" href="missingFeatures.html">Missing/Upcoming Features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../knownBugs.html">Known bugs and workarounds</a>
   </li>
 </ul>
   </li>
@@ -217,8 +220,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Frosthaven Enhanced</a></li>
-    <li>Frosthaven Outpost</li>
-    <li><a href="missingFeatures.html">Missing/Upcoming Features &amp; Known Bugs</a></li>
+    <li>Troubleshooting</li>
+    <li><a href="missingFeatures.html">Missing/Upcoming Features</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -236,29 +239,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Missing/Upcoming Features &amp; Known Bugs</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<div class="title">Looting</div>
-<ul>
-<li>
-<p>For each scenario, the loot deck is prepared correctly per the scenario book</p>
-</li>
-<li>
-<p>If a character ends their turn in the Initiative Tracker while occupying a hex with a loot token, the token is sent to the character&#8217;s mat</p>
-</li>
-<li>
-<p>Loot cards must be drawn manually</p>
-</li>
-<li>
-<p>Loot must be calculated and tallied at the end of a scenario manually</p>
-</li>
-<li>
-<p>Loot cards will be removed when "Delete Map" button is clicked in Game Setup</p>
-</li>
-</ul>
-</div>
+<h1 class="page">Missing/Upcoming Features</h1>
 <div class="ulist">
 <div class="title">Other Missing/Upcoming Features</div>
 <ul>
@@ -266,37 +247,13 @@
 <p>New Initiative Tracker UI is in the works!</p>
 </li>
 <li>
-<p>Lockout stickers for scenario flowchart</p>
-</li>
-<li>
 <p>Condition expiration (in discussion)</p>
-</li>
-<li>
-<p>Inspiration automatically tallying</p>
-</li>
-<li>
-<p>Campaign stickers (the ones for the Campaign Sheet)</p>
-</li>
-<li>
-<p>Enhancements on loot cards do not transfer when using the Campaign Manager.</p>
 </li>
 <li>
 <p>New Puzzle Book tools</p>
 </li>
 </ul>
 </div>
-<details>
-<summary class="title">Scenario 77</summary>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Dark Fog overlays show up as walls instead of obstacles.</p>
-</li>
-</ul>
-</div>
-</div>
-</details>
 <details>
 <summary class="title">Envelope A</summary>
 <div class="content">
@@ -339,45 +296,6 @@
 </div>
 </div>
 </details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="known-bugs"><a class="anchor" href="#known-bugs"></a>Known bugs and workarounds</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="invalid-sort-order"><a class="anchor" href="#invalid-sort-order"></a>Error <code>invalid order function for sorting</code> during campaign migration</h3>
-<div class="paragraph">
-<p>This error can show up in versions prior to 2.3 when trying to migrate the campaign to a newer version.
-It will prevent some parts of the campaign to be migrated.
-The following steps can be done to work around this problem:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Find your TTS save file on your hard drive (check <a href="https://kb.tabletopsimulator.com/getting-started/technical-info/#save-game-data-location">the knowledge base</a> to find the location for your system).</p>
-</li>
-<li>
-<p>Open the file with a text editor (any editor that supports a find and replace function is enough).</p>
-</li>
-<li>
-<p>Search for the following text <code>a.index &lt;= b.index</code> and replace it with <code>a.index &lt; b.index</code>.
-The search should show up 3 matches.</p>
-</li>
-<li>
-<p>Search for the text <code>a.name &lt;= b.name</code> and replace it with <code>a.name &lt; b.name</code>.
-The search should show up 1 match.</p>
-</li>
-<li>
-<p>Save the TTS save file and load it again in TTS</p>
-</li>
-<li>
-<p>The migration will all information is now possible.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </article>
   </div>
 </main>
