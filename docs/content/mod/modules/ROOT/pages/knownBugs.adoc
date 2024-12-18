@@ -1,0 +1,35 @@
+[#known-bugs]
+= Known bugs and workarounds
+
+== Version 2.2
+
+[#town-guard-empty]
+=== Migrating to a newer version leaves an empty town guard deck
+
+When a migration is started from version 2.2 to a newer version, the town guard deck might be wrong in the new version.
+This is due to the fact that the town guard mat was wrong in this version and the deck is misaligned on its mat.
+
+To work around this, slightly move the active town guard deck lower on its mat, like shown here:
+
+image::town-guard-deck.png[]
+
+In order to achieve this, you first have to right-click the deck and remove the "Snap" and "Grid" options from the "Toggles" menu.
+Otherwise, the deck will move right back to its original place.
+
+== Versions prior to 2.3
+
+[#invalid-sort-order]
+=== Error `invalid order function for sorting` during campaign migration
+
+This error can show up in versions prior to 2.3 when trying to migrate the campaign to a newer version.
+It will prevent some parts of the campaign to be migrated.
+The following steps can be done to work around this problem:
+
+* Find your TTS save file on your hard drive (check https://kb.tabletopsimulator.com/getting-started/technical-info/#save-game-data-location[the knowledge base] to find the location for your system).
+* Open the file with a text editor (any editor that supports a find and replace function is enough).
+* Search for the following text `a.index \<= b.index` and replace it with `a.index < b.index`.
+The search should show up 3 matches.
+* Search for the text `a.name \<= b.name` and replace it with `a.name < b.name`.
+The search should show up 1 match.
+* Save the TTS save file and load it again in TTS
+* The migration will all information is now possible.

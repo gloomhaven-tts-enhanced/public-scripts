@@ -1,3 +1,7 @@
+- version: 2.3.1
+  fix:
+    - Item cards have their item number at the back again.
+    - Overlays spawned by monsters work again.
 - version: 2.3.0
   release: 2024-12-13
   change:
