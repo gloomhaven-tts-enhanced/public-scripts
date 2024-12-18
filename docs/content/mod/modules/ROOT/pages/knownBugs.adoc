@@ -1,6 +1,14 @@
 [#known-bugs]
 = Known bugs and workarounds
 
+== Common TTS problems
+
+=== Buttons show up at weird places for non-host players
+
+This is a syncing issue with TTS.
+All players should restart TTS and restart the game.
+Unfortunately, there's nothing the mod itself can do about it.
+
 == Version 2.2
 
 [#town-guard-empty]

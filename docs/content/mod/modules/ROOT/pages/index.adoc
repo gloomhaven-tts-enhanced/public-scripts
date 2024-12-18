@@ -9,6 +9,7 @@ Each game also has specific information
 * xref:frosthaven:index.adoc[]
 
 Checkout xref:guide:index.adoc[] to start using the mod.
+Also, checkout the xref:knownBugs.adoc[] if you're experiencing issues with the mod.
 
 If you want to integrate custom content into the mod, checkout xref:custom:ROOT:index.adoc[this page].
 
