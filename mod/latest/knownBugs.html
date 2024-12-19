@@ -240,15 +240,53 @@
 </aside>
 <article class="doc">
 <h1 class="page">Known bugs and workarounds</h1>
-<div class="sect1">
-<h2 id="_common_tts_problems"><a class="anchor" href="#_common_tts_problems"></a>Common TTS problems</h2>
+<div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section contains a list of common problems/know issues separated by mod version.
+Some issues are independent of the mod version or can happen in different versions and are listed in the first section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_independent"><a class="anchor" href="#_version_independent"></a>Version independent</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_missing_objects_after_migration"><a class="anchor" href="#_missing_objects_after_migration"></a>Missing objects after migration</h3>
+<div class="paragraph">
+<p>Sometimes it can happen that the migration from a previous version fails and some items are missing in the new version without any specific error messages.
+This typically means the previous version had some kind of bug that prevented to create the full save game.
+First check out the version specific sections here for hints (for both the version to migrate from and the version to migrate to).
+If the mod fails to fill some containers with all objects (e.g. missing cards in the town guard or personal quest deck), you can find extra copies of all objects in the Frosthaven game box.
+There&#8217;s a bag called "AutoAssets" inside which contains copies of all used assets in the game.
+Inside are multiple other bags grouped by their function.
+Get the one you need and find the objects you are missing.
+Be aware of spoilers!</p>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_buttons_show_up_at_weird_places_for_non_host_players"><a class="anchor" href="#_buttons_show_up_at_weird_places_for_non_host_players"></a>Buttons show up at weird places for non-host players</h3>
 <div class="paragraph">
 <p>This is a syncing issue with TTS.
 All players should restart TTS and restart the game.
 Unfortunately, there&#8217;s nothing the mod itself can do about it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_some_assets_show_up_as_completely_white_or_yellow_for_some_players"><a class="anchor" href="#_some_assets_show_up_as_completely_white_or_yellow_for_some_players"></a>Some assets show up as completely white or yellow for some players</h3>
+<div class="paragraph">
+<p>Some players might experience an issue with cards or other assets showing up like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cache-error.png" alt="cache error">
+</div>
+</div>
+<div class="paragraph">
+<p>This is a TTS cache error which can be resolved by downloading all the assets again.
+The effected players either need to disable mod caching in TTS to it downloads the broken assets again.
+Or they can <a href="guide/preDownload.html" class="xref page">pre download</a> all the mod&#8217;s assets and replaced their current cached files.
+Afterward, mod caching can be enabled again to improve performance.</p>
 </div>
 </div>
 </div>
