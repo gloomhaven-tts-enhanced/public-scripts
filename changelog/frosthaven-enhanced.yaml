@@ -1,16 +1,25 @@
 - version: 2.3.1
+  release: 2024-12-19
+  add:
+    - Curse, Bless, Heal and Damage can be applied as conditions to any overlay/figure/class/monster via the Quick Menu.
+    - Adds a right-click menu for overlays to toggle outlines individually per object.
   fix:
     - Item cards have their item number at the back again.
     - Overlays spawned by monsters work again.
     - Treasure cards spawn higher so they should collide with figures.
     - Fixes missing overlay image for Coral.
-    - "Repair" has been renamed to "Rebuild" on the buildings mat.
+    - "'Repair' has been renamed to 'Rebuild' on the buildings mat."
     - "Building 81: ||The name of the cards match their image again and the order of the deck is fixed.||"
     - Figures and overlays with a HP bar react to the "Add/Remove Health" Game Keys.
-    - Figures and overlays with a HP bar react to the Cleanup Action.
+    - Figures and overlays react to the Cleanup Action.
+    - Figures and overlays can be used with Quick Menu.
+    - Traps show their damage number.
+    - Setting character HP during unpack is based on actual level checkmarks instead of current XP value.
+    - "Trap: The figure has the correct collider, so clicking the HP bar is possible."
+    - "Meteor: ||The animated variant (2nd state) of the lava token matches the size of the non-animated one||"
   migration:
-    - "Building 81: ||When migrating the trials deck the mod goes by the name of the card, regardless of what is actually shown on the card."
-      So when migrating from 2.3.0 (where the wrong name is given to the cards) make sure you check for the correct name on the object instead of the one on the image.||
+    - "Building 81: ||When migrating the trials deck the mod goes by the name of the card, regardless of what is actually shown on the card.
+      So when migrating from 2.3.0 (where the wrong name is given to the cards) make sure you check for the correct name on the object instead of the one on the image.||"
 - version: 2.3.0
   release: 2024-12-13
   change:
