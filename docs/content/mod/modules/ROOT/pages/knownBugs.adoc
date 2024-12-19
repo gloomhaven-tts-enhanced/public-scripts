@@ -6,6 +6,7 @@ Some issues are independent of the mod version or can happen in different versio
 
 == Version independent
 
+[#missing-objects]
 === Missing objects after migration
 
 Sometimes it can happen that the migration from a previous version fails and some items are missing in the new version without any specific error messages.
@@ -17,12 +18,14 @@ Inside are multiple other bags grouped by their function.
 Get the one you need and find the objects you are missing.
 Be aware of spoilers!
 
+[#weird-buttons]
 === Buttons show up at weird places for non-host players
 
 This is a syncing issue with TTS.
 All players should restart TTS and restart the game.
 Unfortunately, there's nothing the mod itself can do about it.
 
+[#broken-assets]
 === Some assets show up as completely white or yellow for some players
 
 Some players might experience an issue with cards or other assets showing up like this:
