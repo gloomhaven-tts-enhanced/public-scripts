@@ -1,13 +1,38 @@
 [#known-bugs]
 = Known bugs and workarounds
 
-== Common TTS problems
+This section contains a list of common problems/know issues separated by mod version.
+Some issues are independent of the mod version or can happen in different versions and are listed in the first section.
+
+== Version independent
+
+=== Missing objects after migration
+
+Sometimes it can happen that the migration from a previous version fails and some items are missing in the new version without any specific error messages.
+This typically means the previous version had some kind of bug that prevented to create the full save game.
+First check out the version specific sections here for hints (for both the version to migrate from and the version to migrate to).
+If the mod fails to fill some containers with all objects (e.g. missing cards in the town guard or personal quest deck), you can find extra copies of all objects in the Frosthaven game box.
+There's a bag called "AutoAssets" inside which contains copies of all used assets in the game.
+Inside are multiple other bags grouped by their function.
+Get the one you need and find the objects you are missing.
+Be aware of spoilers!
 
 === Buttons show up at weird places for non-host players
 
 This is a syncing issue with TTS.
 All players should restart TTS and restart the game.
 Unfortunately, there's nothing the mod itself can do about it.
+
+=== Some assets show up as completely white or yellow for some players
+
+Some players might experience an issue with cards or other assets showing up like this:
+
+image::cache-error.png[]
+
+This is a TTS cache error which can be resolved by downloading all the assets again.
+The effected players either need to disable mod caching in TTS to it downloads the broken assets again.
+Or they can xref:guide:preDownload.adoc[pre download] all the mod's assets and replaced their current cached files.
+Afterward, mod caching can be enabled again to improve performance.
 
 == Version 2.2
 
