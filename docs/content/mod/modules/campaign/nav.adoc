@@ -4,3 +4,4 @@
 ** xref:class.adoc[]
 ** xref:enhancements.adoc[]
 ** xref:migrate.adoc[]
+** xref:buildings.adoc[]

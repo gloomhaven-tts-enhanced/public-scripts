@@ -3,13 +3,10 @@
 This documentation describes how to use the Haven Enhanced mods.
 The mod can be used to play the different games from the "Haven" universe (Gloomhaven, Frosthaven, Jaws of the Lion, etc).
 
-This documentation is divided into information about xref:engine:index.adoc[general mod functions] that are independent of the actual game.
-Each game also has specific information
-
-* xref:frosthaven:index.adoc[]
-
-Checkout xref:guide:index.adoc[] to start using the mod.
+For Frosthaven Enhanced, checkout xref:guide:index.adoc[] to start using the mod, or review xref:engine:index.adoc[general mod functions] for quality of life features.
 Also, checkout the xref:knownBugs.adoc[] if you're experiencing issues with the mod.
+
+Please click https://gloomhaven-tts-enhanced.github.io/public-scripts/mod/1.3/index.html[here] for documentation for Gloomhaven Enhanced.
 
 If you want to integrate custom content into the mod, checkout xref:custom:ROOT:index.adoc[this page].
 

@@ -7,7 +7,7 @@ This xref:feature/gameKeys.adoc[Game Key] is a catch-all for returning things to
 | Object | Action
 
 | Coins, Treasure Chests and objects with the `Loot` tag
-| The object will move to the player mat of the player who used that action.
+| The object will move to the player mat of the player who used that action. As of v2.3.0, a loot card will be drawn for the player.
 
 | Ability Card 
 | Moved to lost pile

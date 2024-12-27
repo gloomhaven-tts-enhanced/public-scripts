@@ -1,8 +1,9 @@
 = Beginning of Campaign
 
 == Starting a New Campaign
-To begin a campaign from a fresh file of Frosthaven Enhanced, select btn:[New Campaign] in the middle of the table as shown below.
-The btn:[Save Campaign] and Load Campaign portions of the Campaign Manager are used for xref:migrate.adoc#migrating[migrating a campaign].
+* To begin a campaign from a fresh file of Frosthaven Enhanced, select btn:[New Campaign] in the middle of the table as shown below.
+* When you would like to save your progress, use the Tabletop Simulator "Games" menu. To continue, load the save file from the main menu.
+* The btn:[Save Campaign] and Load Campaign portions of the Campaign Manager are used for xref:migrate.adoc#migrating[migrating a campaign].
 
 image::campaign-start.png[]
 
