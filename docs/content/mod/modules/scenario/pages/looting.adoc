@@ -5,7 +5,7 @@
 
 * Generally, there is no need to adjust this deck. This deck contains a copy of every loot card in the physical Frosthaven game. Each scenario makes copies of these cards in creating the loot deck, and the copies are deleted along with the map with btn:[Delete Map].
 * If you are instructed to enhance a loot card with a +1, take a card out of the master loot deck, press F9, select the "+1" decal, apply it to the card, and return the card to the master loot deck. Scripting does handle this enhancement for loot tallies and for campaign migration.
-* If you are looking for information regarding the mechanics of Building 74, click xref:buildings.adoc#building_74[here].
+* If you are looking for information regarding the mechanics of Building 74, click xref:campaign:buildings.adoc#building_74[here].
 
 == Version 2.3.0 and Forward
 
