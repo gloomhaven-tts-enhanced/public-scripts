@@ -124,6 +124,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../campaign/migrate.html">Migrating a Campaign</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../campaign/buildings.html">Envelope/Building Mechanics</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -154,10 +157,13 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Frosthaven Outpost</span>
+    <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../frosthaven/missingFeatures.html">Missing/Upcoming Features &amp; Known Bugs</a>
+    <a class="nav-link" href="../frosthaven/missingFeatures.html">Missing/Upcoming Features</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../frosthaven/knownBugs.html">Known bugs and workarounds</a>
   </li>
 </ul>
   </li>
@@ -238,8 +244,68 @@
 <article class="doc">
 <h1 class="page">Looting</h1>
 <div class="sect1">
-<h2 id="_currently_scripted"><a class="anchor" href="#_currently_scripted"></a>Currently Scripted</h2>
+<h2 id="master_loot_deck"><a class="anchor" href="#master_loot_deck"></a>IMPORTANT: MASTER LOOT DECK</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Generally, there is no need to adjust this deck. This deck contains a copy of every loot card in the physical Frosthaven game. Each scenario makes copies of these cards in creating the loot deck, and the copies are deleted along with the map with <b class="button">Delete Map</b>.</p>
+</li>
+<li>
+<p>If you are instructed to enhance a loot card with a +1, take a card out of the master loot deck, press F9, select the "+1" decal, apply it to the card, and return the card to the master loot deck. Scripting does handle this enhancement for loot tallies and for campaign migration.</p>
+</li>
+<li>
+<p>If you are looking for information regarding the mechanics of Building 74, click <a href="../campaign/buildings.html#building_74" class="xref page">here</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_2_3_0_and_forward"><a class="anchor" href="#_version_2_3_0_and_forward"></a>Version 2.3.0 and Forward</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>The loot deck for the scenario is randomized and placed on a mat near the monster and ally modifier decks.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/loot-deck.png" alt="loot deck">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How to add a loot card to a player</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Press <b class="button">Loot</b> and the active player will add one loot card. This is particularly useful for chests that give loot cards.</p>
+</li>
+<li>
+<p>When the active player highlights a loot token and hits the <a href="../engine/feature/cleanupAction.html" class="xref page">Cleanup Action</a> Game Key. That token is moved to their player mat and a loot card is drawn for them.</p>
+</li>
+<li>
+<p>When a character ends their turn in the Initiative Tracker by turning their line from black to red, all loot tokens in their current hex are moved to their player mat and the appropriate number of loot cards are drawn from the loot deck.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If a Random Item is looted, a random Random Item is added to their item pool on their player mat.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prior_to_version_2_3_0"><a class="anchor" href="#_prior_to_version_2_3_0"></a>Prior to Version 2.3.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_scripted"><a class="anchor" href="#_scripted"></a>Scripted</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -271,10 +337,8 @@ any loot tokens under them are moved to their character mat.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_not_currently_scripted"><a class="anchor" href="#_not_currently_scripted"></a>Not Currently Scripted</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_not_scripted"><a class="anchor" href="#_not_scripted"></a>Not Scripted</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -284,6 +348,7 @@ any loot tokens under them are moved to their character mat.</p>
 <p>Adding looted cards to appropriate character sheets at the end of a scenario</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
