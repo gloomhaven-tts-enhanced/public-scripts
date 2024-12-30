@@ -93,7 +93,7 @@ When you unlock the following envelopes, take note of the corresponding informat
 [%collapsible]
 ====
 * A mat for the Trials deck is added next to the Town Guard deck.
-** Be sure the Trials deck is in order. First card out of the bag should be Trial of W_______.
+** Be sure the Trials deck is in order. First card out of the bag should be Trial of W_______. If it is not, the deck is in reverse order.
 * Adds PQ #18
 * Additionally, if you are playing solo, PQ #23 is placed near the envelope's former location. Add this to the PQ deck. If not, this can be added to the Completed PQ button bag. 
 ====
