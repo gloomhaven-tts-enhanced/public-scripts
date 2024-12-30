@@ -1,63 +1,8 @@
-= Missing/Upcoming Features & Known Bugs
-
-.Looting
-* For each scenario, the loot deck is prepared correctly per the scenario book
-* If a character ends their turn in the Initiative Tracker while occupying a hex with a loot token, the token is sent to the character's mat
-* Loot cards must be drawn manually
-* Loot must be calculated and tallied at the end of a scenario manually
-* Loot cards will be removed when "Delete Map" button is clicked in Game Setup
+= Missing/Upcoming Features
 
 .Other Missing/Upcoming Features
 * New Initiative Tracker UI is in the works!
-* Lockout stickers for scenario flowchart
 * Condition expiration (in discussion)
-* Inspiration automatically tallying 
-* Campaign stickers (the ones for the Campaign Sheet)
-* Enhancements on loot cards do not transfer when using the Campaign Manager.
 * New Puzzle Book tools
+* See the xref:campaign:buildings.adoc[Envelopes] page for missing information regarding Envelope 24, A, and B.
 
-.Scenario 77
-[%collapsible]
-====
-* Dark Fog overlays show up as walls instead of obstacles.
-====
-
-.Envelope A
-[%collapsible]
-====
-* Unlocking it will always be built the Hall of Revelry level 2, although in solo mode you would need to pay its upgrade cost first.
-====
-
-[#envelope_24]
-.Envelope 24
-[%collapsible]
-====
-* There's no build in way to mark the planted crops.
-* Planted crops does not transfer using the Campaign Manager.
-====
-
-.Workshop after building the boat
-[%collapsible]
-====
-* The name of the boat can not be entered and is not shown in event cards.
-* The name of the boat does not transfer using the Campaign Manager.
-====
-
-[#known-bugs]
-== Known bugs and workarounds
-
-[#invalid-sort-order]
-=== Error `invalid order function for sorting` during campaign migration
-
-This error can show up in versions prior to 2.3 when trying to migrate the campaign to a newer version.
-It will prevent some parts of the campaign to be migrated.
-The following steps can be done to work around this problem:
-
-* Find your TTS save file on your hard drive (check https://kb.tabletopsimulator.com/getting-started/technical-info/#save-game-data-location[the knowledge base] to find the location for your system).
-* Open the file with a text editor (any editor that supports a find and replace function is enough).
-* Search for the following text `a.index \<= b.index` and replace it with `a.index < b.index`.
-The search should show up 3 matches.
-* Search for the text `a.name \<= b.name` and replace it with `a.name < b.name`.
-The search should show up 1 match.
-* Save the TTS save file and load it again in TTS
-* The migration will all information is now possible.

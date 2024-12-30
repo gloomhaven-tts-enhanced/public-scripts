@@ -1,5 +1,3 @@
-* Frosthaven Outpost
-+
---
-include::partial$nav.adoc[]
---
+* Troubleshooting
+** xref:missingFeatures.adoc[]
+** xref:knownBugs.adoc[]

@@ -1,3 +1,0 @@
-= Frosthaven
-
-include::partial$nav.adoc[]
