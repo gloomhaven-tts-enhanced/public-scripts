@@ -1,4 +1,4 @@
-= Scenario Setup
+= Game Setup
 
 Be sure to review xref:campaign:start.adoc[Starting a Scenario] for any pre-scenario steps.
 
