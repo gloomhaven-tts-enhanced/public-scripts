@@ -1,0 +1,63 @@
+= Campaign Unlocks Information 
+
+== Unlocking Classes
+
+The currently available classes can be found on the left side of the table.
+They are tightly placed together into their envelopes.
+By using xref:start.adoc#add_players[drag and drop] on the envelope, you can pull out a fresh character of the class to place on a player mat.
+
+image::class-boxes.png[]
+
+Next to the envelopes, there's a small tile with a seal on it.
+This tile is used to add a new class envelope to the already existing ones.
+
+image::classs-unlock.png[]
+
+Clicking the seal on the tile will open an on-screen list of all available classes in the played mod.
+The list will use the class icon as well as the official spoiler name for the class.
+
+image::class-list.png[]
+
+Clicking an entry in the list will then place the new envelope to the left of the existing ones.
+
+NOTE: The tile with the seal is actually a regular bag.
+If for some reason you need to actually access the bag to remove or add stuff manually, right-click it (while not hovering the seal) and use the "Search" menu entry to get the basic TTS container search window.
+
+== Unlocking Envelopes
+
+At the bottom of the Outpost area is a "Sealed Envelopes" object, which contains 17 envelopes inside.
+To unlock a specific envelope, first remove it from the bag by right-clicking the object, select "search", and click-and-drag that envelope out.
+Once on the table, there is a button to unlock its contents. The chat log and xref:buildings.adoc[buildings page] will tell you what is added by unlocking a given envelope.
+
+image::campaign-starting-pieces.png[]
+
+[#items]
+== Unlocking Items
+
+Now that a new campaign has xref:begin.adoc#items[items], and they can be sorted at the xref:engine:interface/shop.adoc[Item Shop], information on the other two bags shown here:
+
+image::items.png[]
+
+Random Blueprints and Items:: This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
+Click btn:[Unlock] and select between btn:[Random Blueprint] and [Random Item].
+Note for v2.2 and before that xref:scenario:looting.adoc#random_item[Random Items] are assigned by clicking the button on the loot card drawn.
+
+Locked Items:: This is where all other locked items are kept.
+Click btn:[Unlock] to bring up an input box.
+Enter an item's number or name to unlock it.
+
+Additionally, as the Craftsman is upgraded, the items it unlocks can be added by clicking btn:[Unlock] at the bottom right of each upgraded Craftsman card.
+At this time, no other buildings that add items to the available supply have scripting to add any items.
+
+== Unlocking Events
+
+image::events.png[]
+
+An event mat for each event type is shown in the campaign area, all events of each type have 3 button bags. All events of each season + location are stored in one of the three button bags.
+When the campaign starts, event numbers 1-20 of each season + location are shuffled into the active decks.
+
+Active:: This bag contains the current deck. When you click btn:[New Event], the card at the top of this bag will be pulled out and revealed on the mat. If the option for the event shows the "return to the deck" icon, this button moves the event on the mat to the bottom of the bag.
+Inactive:: This bag contains all remaining event cards that have not been removed. At the start of the campaign, this is all remaining events not in the active bag.
+Removed:: Completed events or any events that are removed go here. When the torn card icon is clicked while a card is on the event mat, the event is moved here.
+
+When you are instructed to add event(s) to a given deck, right-click the Inactive bag, select search, and enter the number in the text box at the top. Remove the card and deposit it into the Active bag, right-click on the active bag and select shuffle.
