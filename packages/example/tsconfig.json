@@ -1,0 +1,44 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    /**
+     * Type Checking
+     */
+    "strict": true,
+    // "exactOptionalPropertyTypes": true, // not sure about that one yet
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    // "noUncheckedIndexedAccess": true, // maybe useful
+    /**
+     * Modules
+     */
+    "baseUrl": "${configDir}/src",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true,
+    // "typeRoots": ["${configDir}/node_modules/@types", "${configDir}/src/@types"],
+    /**
+     * Emit
+     */
+    "declaration": true,
+    "outDir": "${configDir}/dist",
+    "sourceMap": true,
+    /**
+     * Interop Constraints
+     */
+    "allowSyntheticDefaultImports": true, // default
+    "esModuleInterop": true, // default
+    "isolatedModules": true,
+    /**
+     * Language and Environment
+     */
+    "lib": ["ESNext", "dom"],
+    "target": "es2022", // node 20 (https://github.com/tsconfig/bases#centralized-recommendations-for-tsconfig-bases)
+    /**
+     * Completeness
+     */
+    "skipLibCheck": true
+  }
+}
