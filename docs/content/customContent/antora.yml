@@ -6,3 +6,4 @@ nav:
   - modules/ROOT/nav.adoc
   - modules/scenario/nav.adoc
   - modules/tools/nav.adoc
+  - modules/library/nav.adoc
