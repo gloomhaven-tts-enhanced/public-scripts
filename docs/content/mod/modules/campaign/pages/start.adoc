@@ -3,6 +3,7 @@
 == Characters
 Before starting a scenario, make sure you have xref:campaign:begin.adoc#add_players[added] all of your characters to the play area, and their character sheet is updated to the correct level.
 
+[#scenario_level]
 == Scenario Level
 On the left side of the table, there is a chart which calculates the appropriate Scenario Level based on the average level of the characters in the play area.
 Based on the Scenario Level, the appropriate Gold Conversion, Trap Damage, Hazardous Terrain Damage, and Bonus XP for scenario completion are shown.
@@ -22,21 +23,22 @@ Here you can select the scenario you'd like to spawn.
 == Scenario Scripting
 Once you select a scenario, all necessary materials for the scenario will be spawned.
 
-== Monsters
-Every enemy type will have a sleeve where you can see its stats and can spawn more of them manually.
-Each monster will also have a mat for managing their ability cards.
-
-image::algox-archer-sleeve.png[]
-image::archer-abilities.png[]
-
 == Books and Loot
 Scenario Book:: The scenario book will spawn, opened to the first page of the scenario. 
 Section Book:: The section book will spawn, closed, with shortcuts to the sections you will need throughout the scenario.
 Loot Deck:: The xref:scenario:looting.adoc[loot deck] will spawn, but take note of the current scripting limitations for looting while playing the scenario.
 
-Finally, the first room will be generated. All overlay tiles, appropriate enemies for the number of active player mats, and icons signifying the starting hexes will spawn.
-When you're ready to begin, the starting hexes can all be removed by clicking one instance of btn:[Start].
+== Monsters and Loot
+
+Additionally, the xref:scenario:looting.adoc[Loot Deck] and xref:scenario:monsters.adoc[Monster Mats] will spawn in according to the Scenario you selected.
+
+== What To Do Next
+
+Finally, the first room will be generated. All overlay tiles, appropriate enemies for the number of active player mats, and blue and white arrow icons signifying the starting hexes will spawn.
+When you're ready to begin, the starting hexes can all be removed by clicking one instance of the arrow buttons.
 
 image::room-one.png[]
 
 Now it's time to begin xref:scenario:basics.adoc[Playing a Scenario]!
+
+Once you are done with a scenario, check out how to xref:complete.adoc[Complete a Scenario].

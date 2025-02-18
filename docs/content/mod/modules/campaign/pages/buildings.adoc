@@ -1,0 +1,157 @@
+= Envelope/Building Mechanics
+
+When you unlock the following envelopes, take note of the corresponding information.
+
+[#building_21]
+.Building 21
+[%collapsible]
+====
+* Adds PQ #11
+====
+
+[#building_24]
+.Building 24
+[%collapsible]
+====
+* Adds PQ #12
+* Adds Rule sticker 10 (page 62)
+* There's no built in way to mark the planted crops. Common workarounds:
+** Click Objects from the top menu, select Components > Tools > Notecard, and keep a notecard near the building to mark crop(s) and orientation if you'd like
+** Open the xref:scenario:looting.adoc#master_loot_deck[Master Loot Deck] and retrieve a copy of the appropriate herb(s). BE SURE TO RETURN A COPY TO THE MASTER LOOT DECK.
+** Unlock the Garden card and flip its orientation using "E" or "Q" to track its state of growth.
+* Planted crops do not transfer using the Campaign Manager.
+====
+
+[#building_37]
+.Building 37
+[%collapsible]
+====
+* Adds PQ #13
+* Adds Rule sticker 11 (page 62) and 13 (page 67)
+====
+
+[#building_39]
+.Building 39
+[%collapsible]
+====
+* Adds PQ #14
+====
+
+[#building_42]
+.Building 42
+[%collapsible]
+====
+* Adds PQ #15
+====
+
+[#building_44]
+.Building 44
+[%collapsible]
+====
+* Adds PQ #16
+* Adds Rule sticker 12 (page 62) and 14 (page 67)
+* Once constructed, allows you to xref:enhancements.adoc[enhance] your ability cards.
+====
+
+[#building_65]
+.Building 65
+[%collapsible]
+====
+* Adds no PQ or rule sticker
+====
+
+[#building_67]
+.Building 67
+[%collapsible]
+====
+* Adds no PQ or rule sticker
+====
+
+[#building_72]
+.Building 72
+[%collapsible]
+====
+* Adds no PQ or rule sticker
+====
+
+[#building_74]
+.Building 74
+[%collapsible]
+====
+* Adds PQ #17
+* To add loot cards 1418 and/or 1419 to your game
+** Hover on the Frosthaven box in the top right corner of the play area, right-click and select search
+** Retrieve the card and add to the xref:scenario:looting.adoc#master_loot_deck[Master Loot Deck]
+* Once done, all future loot decks will include whichever of these cards are in the xref:scenario:looting.adoc#master_loot_deck[Master Loot Deck]
+* Tracking the check marks on the boxes is not yet supported
+** Anything to accomplish this temporarily will not translate with the xref:migrate[Campaign Manager].
+** Best method is to apply a decal to the card in the master loot deck. Press F9, select the "+1" decal, apply it to the card to cover the appropriate check box, and return the card to the master loot deck.
+====
+
+[#building_81]
+.Building 81
+[%collapsible]
+====
+* A mat for the Trials deck is added next to the Town Guard deck.
+** Be sure the Trials deck is in order. First card out of the bag should be Trial of W_______. If it is not, the deck is in reverse order.
+* Adds PQ #18
+* Additionally, if you are playing solo, PQ #23 is placed near the envelope's former location. Add this to the PQ deck. If not, this can be added to the Completed PQ button bag. 
+====
+
+[#building_83]
+.Building 83
+[%collapsible]
+====
+* Adds PQ #19
+====
+
+[#building_85]
+.Building 85
+[%collapsible]
+====
+* Adds PQ #20
+* Adds Rule sticker 15 (page 68)
+====
+
+[#building_88]
+.Building 88
+[%collapsible]
+====
+* Adds PQ #21
+* Three rule stickers are added:
+** Rule sticker 3 (page 8)
+** Rule sticker 6 (page 33)
+** Rule sticker 7 (page 36)
+* A mat for Pets is added to the play area, with a button bag for available (uncaptured) and a card bag for pets currently in your stables. 
+* Pet cards will not be removed from the play area upon "Delete Map". 
+====
+
+[#building_90]
+.Building 90
+[%collapsible]
+====
+* Adds PQ #22
+* Adds Rule sticker 1 (page 8), 5 (page 17), 8 (page 48), and 9 (page 55)
+* A mat for Challenges is added to the play area, which includes a bag for the active challenge deck and a button bag for the completed challenges.
+* If a challenge needs to be returned to the bottom of the active challenge deck, highlight the card and use the xref:engine:feature/cleanupAction.adoc[Cleanup Action] Game Key
+====
+
+[#Envelope_B]
+.Envelope A
+[%collapsible]
+====
+* Unlocking it will always build the Hall of Revelry level 2, although in solo mode you would need to pay its upgrade cost first.
+* Adds Rule sticker 2 (page 8)
+====
+
+[#Envelope_B]
+.Envelope B
+[%collapsible]
+====
+* Once unlocked:
+** A sticker for the boat is added to the game board
+** A new event mat for the boat events is added to the row of event mats
+** Rule sticker 4 (page 12) is added
+* The name of the boat can not be entered and is not shown in event cards.
+* The name of the boat does not transfer using the Campaign Manager.
+====

@@ -57,11 +57,13 @@ IMPORTANT: Please review the Manual Migration Steps below. At this time, not all
 
 === Manual Migration Steps
 
-* If you've unlocked Building 24, take note of xref:frosthaven:missingFeatures.adoc#envelope_24[the missing information].
-* Any enhanced loot cards
-** Any campaigns saved in v2.1.0 and on will carry enhanced loot cards to future mod versions
-* Item 224 may not be found during migration due to a type fix. You need to unlock it again manually
-* Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.
-* Personal Quests are migrated by name, so make sure the names of unlocked/available PQs match the ones you expect to migrate, not the maybe wrong image.
-* You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
-* Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove invalid ones and then add them via the Add button.
+* Any decals or notes on event cards to mark down progress
+* If you've unlocked xref:buildings.adoc#building_24[Building 24], take note of xref:frosthaven:missingFeatures.adoc#envelope_24[the missing information].
+* xref:buildings.adoc#building_74[Building 74] progress
+* Issues from previous versions. If you are migrating from 2.2 to 2.3 or beyond, these are incorporated in the Campaign Manager.
+** Personal Quests are migrated by name, so make sure the names of unlocked/available PQs match the ones you expect to migrate, not the maybe wrong image.
+** You can copy/paste inactive characters from the previous version to the new one to transfer them for now.
+** Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove invalid ones and then add them via the Add button.
+** Any enhanced loot cards
+** Item 224 may not be found during migration due to a typo. You need to unlock it again manually (Issue when migrating from 2.1 and earlier)
+** Multi-step perks probably show up in the wrong order (bottom to top). Change them to the correct order.

@@ -1,1 +1,5 @@
 = Features
+
+    * xref:feature:cleanupAction.adoc[]
+    * xref:feature:gameKeys.adoc[]
+    * xref:feature:quickMenu.adoc[]

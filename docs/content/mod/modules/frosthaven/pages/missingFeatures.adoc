@@ -4,24 +4,5 @@
 * New Initiative Tracker UI is in the works!
 * Condition expiration (in discussion)
 * New Puzzle Book tools
+* See the xref:campaign:buildings.adoc[Envelopes] page for missing information regarding Envelope 24, A, and B.
 
-.Envelope A
-[%collapsible]
-====
-* Unlocking it will always be built the Hall of Revelry level 2, although in solo mode you would need to pay its upgrade cost first.
-====
-
-[#envelope_24]
-.Envelope 24
-[%collapsible]
-====
-* There's no build in way to mark the planted crops.
-* Planted crops does not transfer using the Campaign Manager.
-====
-
-.Workshop after building the boat
-[%collapsible]
-====
-* The name of the boat can not be entered and is not shown in event cards.
-* The name of the boat does not transfer using the Campaign Manager.
-====

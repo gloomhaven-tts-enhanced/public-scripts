@@ -1,6 +1,8 @@
 * Playing a Campaign
 ** xref:begin.adoc[]
 ** xref:start.adoc[]
-** xref:class.adoc[]
+** xref:complete.adoc[]
+** xref:campaign.adoc[]
+** xref:buildings.adoc[]
 ** xref:enhancements.adoc[]
 ** xref:migrate.adoc[]
