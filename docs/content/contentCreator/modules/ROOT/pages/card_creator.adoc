@@ -1,37 +1,142 @@
-= Card Creator
+= Card Creator Documentation
 :icons: image
 :icontype: svg
+:toc: macro
+:toclevels: 3
 
-On this page, all commands and syntax for the Card Creator will be explained.
+An in-depth guide for using the Card Creator tool to design custom Frosthaven class cards. This documentation covers everything from basic actions to advanced styling and token configuration.
 
-[#Syntax]
+== Navigation
+
+* <<properties, Properties>>
+* <<syntax, Syntax>>
+** <<tab-hierarchy, Tab Hierarchy>>
+** <<basic-actions, Basic Actions>>
+** <<conditions, Conditions>>
+** <<elements, Elements>>
+** <<custom-actions, Custom Actions>>
+** <<sub-blocks, Sub Blocks>>
+** <<optional-blocks, Optional Blocks>>
+** <<mandatory-blocks, Mandatory Blocks>>
+** <<named-abilities, Named Abilities>>
+** <<styles, Styles & Modifiers>>
+*** <<position, Position>>
+** <<special-blocks, Special Blocks>>
+*** <<tokens, Tokens>>
+**** <<token-modifiers, Token Modifiers>>
+
+[[introduction]]
+== Introduction
+
+On this page you will find detailed explanations of all commands and syntax options available in the Card Creator. Whether you're defining basic abilities or tweaking style and position, this guide will help you create clear and dynamic cards for your custom classes.
+
+*Note:* The Card Creator currently has a few issues with rendering certain elements in browsers other than Chrome. If you encounter any problems, please try using Chrome for the best experience.
+
+[[properties]]
+== Properties
+
+Before you begin creating your cards, it's recommended to define some properties. These properties will be used to customise the look of your custom class. This isn't strictly required, but it can help you to reinforce the thematic identity of your class.
+
+[[syntax]]
 == Syntax
 
-[#Base_actions]
-=== Basic Actions
+The syntax of the Card Creator uses simple commands to render icons and values. Commands typically follow this structure:
 
+`- command: [value]`
+
+Modifiers can be added to fine-tune placement, styling, or functionality. Sections below break down each command group. For many examples on card structure, feel free to browse the "Example Syntax" class present in the tool.
+
+[[tab-hierarchy]]
+== Tab Hierarchy
+
+The structure of a card is based on indentation. Every sub-block or modifier must be indented with exactly 2 spaces more than its parent. This tells the system which modifiers belong to which command. For the purposes of this guide, "parent" refers to the block that is one level higher in the hierarchy.
+
+For example:
+[source]
+----
+- attack: 3
+  margin: 5px 0px 0px 0px
+----
+In this example, the "margin" modifier is indented 2 spaces relative to the "- attack: 3" command, indicating that it applies specifically to that action.
+
+Here is a more complex example:
+[source]
+----
+- group:
+  - attack: 3
+  - divider
+    margin: 10px 0px
+  - move: 2
+  - divider
+  - optional:
+    - consume: [dark,light]
+    - heal: 2
+      sub:
+        - range: 3
+        - wild
+    noLine: true
+  flexDirection: column
+----
+In this example, we have utilized a "group" block to contain multiple actions. Each action is indented 2 spaces relative to the "group" command. This indicates that they all belong to that outer block. The hierarchy continues with the "divider" and "optional" blocks, each containing their own sub-blocks.
+
+A more detailed explanation of each block type is provided in the following sections.
+
+Remember: use 2 spaces per level of indentation to maintain the proper hierarchy.
+
+
+[[basic-actions]]
+== Basic Actions
+
+This section covers the core actions used to define a card’s abilities.
+
+[cols="1,1,1,1", options="header"]
 |===
-|{set:cellbgcolor:rgb(180,180,180)} Syntax | Description | Example | Result
+| Syntax | Description | Example | Result
 
-| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:icons/attack.svg[width=20px] 3
+| `- attack: [value]`
+| Creates an attack ability with a value of [value]
+| `- attack: 3`
+| image:icons/attack.svg[width=20px] 3
 
-| - move: [value] | Creates a move ability with a value of [value] | - move: 3 | image:icons/move.svg[width=20px] 3
+| `- move: [value]`
+| Creates a move ability with a value of [value]
+| `- move: 3`
+| image:icons/move.svg[width=20px] 3
 
-| - teleport: [value] | Creates a teleport ability with a value of [value] | - teleport: 3 | image:icons/teleport.svg[width=20px] 3
+| `- teleport: [value]`
+| Creates a teleport ability with a value of [value]
+| `- teleport: 3`
+| image:icons/teleport.svg[width=20px] 3
 
-| - shield: [value] | Creates a shield ability with a value of [value] | - shield: 1 | image:icons/shield.svg[width=20px] 1
+| `- shield: [value]`
+| Creates a shield ability with a value of [value]
+| `- shield: 1`
+| image:icons/shield.svg[width=20px] 1
 
-| - retaliate: [value] | Creates a retaliate ability with a value of [value] | - retaliate: 1 | image:icons/retaliate.svg[width=20px] 1
+| `- retaliate: [value]`
+| Creates a retaliate ability with a value of [value]
+| `- retaliate: 1`
+| image:icons/retaliate.svg[width=20px] 1
 
-| - loot: [value] | Creates a loot ability with a value of [value] | - loot: 1 | image:icons/loot.svg[width=20px] 1
+| `- loot: [value]`
+| Creates a loot ability with a value of [value]
+| `- loot: 1`
+| image:icons/loot.svg[width=20px] 1
 
-| - heal: [value] | Creates a heal ability with a value of [value] | - heal: 1 | image:icons/heal.svg[width=20px] 1
+| `- heal: [value]`
+| Creates a heal ability with a value of [value]
+| `- heal: 1`
+| image:icons/heal.svg[width=20px] 1
 |===
 
-[#Conditions]
-=== Conditions
 
-The [condition] can take any of the following values:
+
+[[modifiers]]
+
+[[conditions]]
+== Conditions
+
+Conditions modify abilities and can be used with or without an associated value. The available conditions include:
 
 - bane
 - bless
@@ -60,22 +165,27 @@ The [condition] can take any of the following values:
 - ward
 - wound
 
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| - [condition] : [value] | Creates a [condition] with the value [value]. +
-If [value] is omitted only [condition] is rendered | - poison +
-- pierce: 1 | image:icons/poison.svg[width=20px] +
-image:icons/pierce.svg[width=20px] 1 +
+| `- [condition]`
+| Renders a condition icon.
+| `- poison`
+| image:icons/poison.svg[width=20px]
 
+| `- [condition]: [value]`
+| Renders a condition icon with an optional value.
+| `- pierce: 1`
+| image:icons/pierce.svg[width=20px] 1
 |===
 
+[[elements]]
+== Elements
 
-[#Elements]
-=== Elements
+Elements represent various thematic or mechanical attributes. They support single values, consumption markers, and infuse modifiers.
 
-
-The [element] in this section can take any of the following values:
+Available elements include:
 
 - earth
 - fire
@@ -84,178 +194,311 @@ The [element] in this section can take any of the following values:
 - light
 - dark
 - wild
-- any combination of elements separated by '/' will generate an or element
 
+Using multiple elements separated by '/' will generate an “or” condition.
+
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| - [element] | Renders the icon for the element [element]. | - earth | image:icons/earth.svg[width=20px]
+| `- [element]`
+| Renders the icon for the given element.
+| `- earth`
+| image:icons/earth.svg[width=20px]
 
-| - [element]: consume | Renders the icon for the element [element] and adds a consume x. This is usually used within an optional block. | - earth: consume | image:icons/earth.svg[width=20px]image:icons/consume.svg[width=10px]
+| `- consume: [ [elements...] ]`
+| Renders a list of element icons with an added consume marker (usually used within an optional block).
+| `- consume: [earth, fire]`
+| image:icons/earth.svg[width=20px] image:icons/consume.svg[width=10px] image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
 
-|   infuse: [ [elements..] ] | This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list. +
- +
-As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] | [!image:icons/earth.svg[width=20px]image:icons/wild.svg[width=20px]]
-
+| `infuse: [ [elements...] ]`
+| Adds a mandatory box with a list of specified elements. (Note: As a modifier, do not prefix with a '-')
+| `infuse: [earth, wild]`
+| [!image:icons/earth.svg[width=20px] image:icons/wild.svg[width=20px]]
 |===
 
-[#styles]
-=== Styles
+*Note:* For infusion, this will only work at the first indentation level. This means that either `bottom:` or `top:` should be it's direct parent.
 
-You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. To use modifiers all blocks need to be an object, this means it needs a ':'' in the block. Single word blocks like - earth will need to add a ':' to use modifiers. - earth: '' Here is a list of styles each block can take:
+[[custom-actions]]
+== Custom Actions
 
+There exists a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don't fit into the predefined categories.
+
+Within these blocks, you are able to insert any of the common icons, such as conditions or elements, to further customize your text. This includes any class tokens that you've linked in the properties section.
+
+The syntax for inserting these icons is: `%iconName%`.
+
+Here are some examples of custom actions:
+
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| margin | Adds a buffer space on all sides of an element. The first value is for spacing on top, then right, bottom and the last one is for spacing to the left. a| 
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text'`
+| Text
+
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %poison% poison'`
+| Text with image:icons/poison.svg[width=20px] poison
+
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %earth% earth and %fire% fire'`
+| Text with image:icons/earth.svg[width=20px] earth and image:icons/fire.svg[width=20px] fire
+
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %classToken0% a custom class token'`
+| Text with image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px] a custom class token
+|===
+
+Any icon that has been inserted also has some special modifiers that can be applied to it. These modifiers are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| 's'
+| Removes the icon's shadow.
+| `%classToken0s%`
+| image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px]
+
+| 'i'
+| Inverts the icon's color.
+| `%poisoni%`
+| image:icons/poison.svg[width=20px]
+
+|===
+
+[[sub-blocks]]
+== Sub Blocks
+
+Sub Blocks are the blocks that house the extra properties of an action. These are things like range, target, and other modifiers that can be applied to an action. These blocks are always indented 2 spaces from their parent action, like so:
+
+[source]
+----
+- attack: 3
+  sub:
+    target: 2
+    range: 3
+    pierce: 1
+----
+
+In this example, the "sub" block contains the "target", "range", and "pierce" modifiers. These are all indented 2 spaces from the "attack" command, indicating that they are all part of that action.
+
+The available attributes you can put in a sub block are:
+
+[[optional-blocks]]
+== Optional Blocks
+
+Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption.
+
+[[mandatory-blocks]]
+== Mandatory Blocks
+
+[[named-abilities]]
+== Named Abilities
+
+[[styles]]
+== Styles & Modifiers
+
+Modifiers allow you to fine-tune the placement, size, and appearance of each block. To apply modifiers, ensure each block is defined as an object (i.e. using a colon after the block name).
+
+Below are some common style options:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| `margin`
+| Adds space on all sides (top, right, bottom, left).
+|
 [source]
 ----
 - earth: ''
   margin: 5px 0px 0px 0px
-----|
+----
+| As specified.
 
-| margin[direction] | Adds a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+| `margin[direction]`
+| Adds space on a specific side. [direction] can be Top, Left, Right, or Bottom.
+|
 [source]
 ----
 - earth: ''
   marginTop: 5px
-----|
+----
+| Adjusted accordingly.
 
-| padding | Include a buffer space on all sides of an element. the first value is for spacing on top, then right, and bottom and the last one is for spacing to the left. a| 
+| `padding`
+| Adds internal spacing (increases the bounding box of the element).
+|
 [source]
 ----
 - earth: ''
   padding: 0px 0px 0px 0px
-----|
+----
+| As specified.
 
-| padding[direction] | Include a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
+| `padding[direction]`
+| Adds padding to a specific side.
+|
 [source]
 ----
 - earth: ''
   paddingTop: 5px
-----|
+----
+| As specified.
 |===
 
-An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also, the margin can take negative values to make the element take less space than the boundingbox of the element.
+Other modifiers include:
 
+[cols="1,1,1,1", options="header"]
 |===
-| Syntax | Description | Example | Result
+| Modifier | Description | Example | Result
 
-| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not always be changed with this. a|
+| `fontSize`
+| Adjusts the text size (icons may have fixed dimensions).
+|
 [source]
 ----
 - custom: 'Text'
   fontSize: 10px
-----|
+----
+| As specified.
 
-| color | Changes the font color of the section, this will not impact icons. a|
+| `color`
+| Changes the font color (does not affect icons).
+|
 [source]
 ----
 - custom: 'Text'
   color: red
-----|
+----
+| As specified.
 
-| background | Changes the background of the block. a|
+| `background`
+| Sets the background color of the block.
+|
 [source]
 ----
 - custom: 'Text'
   background: red
-----|
+----
+| As specified.
 
-| lineHeight | Changes the space between lines to give either more space or make the text more compact. This is usful for adding icons into text where the lines would render different heights. a|
+| `lineHeight`
+| Alters the spacing between lines (useful when mixing text and icons).
+|
 [source]
 ----
-- custom: 'Text to adjust lineheight, should have enought to atleast fill two lines.'
+- custom: 'Text with adjusted line height to fill two lines.'
   lineHeight: 20px
-----|
+----
+| As specified.
 
-| wordSpacing | Changes the space between words relative to the current spacing. a|
+| `wordSpacing`
+| Adjusts spacing between words.
+|
 [source]
 ----
-- custom: 'Text to show wordSpacing'
+- custom: 'Text to show word spacing'
   wordSpacing: 5px
-----|
-
+----
+| As specified.
 |===
 
-[#Position]
-==== Position
+[[position]]
+=== Position
 
-To change a blocks position or orientation or size use these:
+To change a block's position, orientation, or size, use the following modifiers:
 
+[cols="1,1,1,1", options="header"]
 |===
-| Syntax | Description | Example | Result
+| Modifier | Description | Example | Result
 
-| position | To change a blocks position this must be set to either 'relative' or 'absolute'.
-
-relative: will change the position of the element based on its relative position to other elements rendered.
-
-absolute: will change the position of the element based on the parent elements position.
- a|
+| `position`
+| Sets positioning mode: `relative` (based on surrounding elements) or `absolute` (based on the parent element).
+|
 [source]
 ----
 - earth: ''
   position: relative
-----|
+----
+| As specified.
 
-| top | Sets the value of its placement on the card either from its relative postion or from the top of the current action.
- a|
+| `top`
+| Adjusts vertical placement from the top edge of the parent or relative container.
+|
 [source]
 ----
 - earth: ''
   position: relative
   top: 10px
-----|
+----
+| As specified.
 
-| left | Sets the value of its placement on the card either from its relative postion or from the left side of the current action.
- a|
+| `left`
+| Adjusts horizontal placement from the left edge.
+|
 [source]
 ----
 - earth: ''
   position: absolute
   left: 10px
-----|
+----
+| As specified.
 
-| transform | This modifier is more complex and takes a string as input as shown here: https://developer.mozilla.org/en-US/docs/Web/CSS/transform[documentation css transform]
- a|
+| `transform`
+| Applies CSS transformations (e.g., rotate, scale). Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/transform for more info.
+|
 [source]
 ----
 - earth: ''
   transform: rotate(90deg)
-----|
+----
+| As specified.
 |===
 
+[[special-blocks]]
+== Special Blocks
 
-[#Special_blocks]
-== Special blocks
+Special blocks handle more complex card elements. They are designed to encapsulate functionality beyond basic actions.
 
-This section is for explaning different special code blocks.
-
-[#Tokens]
+[[tokens]]
 === Tokens
 
+The tokens block creates token slots. Each number in the provided array represents the XP that the token slot provides.
+
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| - tokens | This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.
- a|
-[source]
-----
-- tokens: [0,1,0,1]
-----|
+| `- tokens: [0,1,0,1]`
+| Creates token slots with XP values as defined in the array.
+| `- tokens: [0,1,0,1]`
+| Renders token slots accordingly.
 |===
 
-[#Token_modifiers]
-==== Token modifiers
+[[token-modifiers]]
+==== Token Modifiers
 
+Modifiers for tokens allow you to control how token slots are arranged.
+
+[cols="1,1,1,1", options="header"]
 |===
-| Syntax | Description | Example | Result
+| Modifier | Description | Example | Result
 
-| lines | This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)
- a|
+| `lines`
+| Forces tokens to render in a specific layout: either 3 or 4 tokens on 1 or 2 lines. Other numbers follow predefined arrangements (1–2 tokens on one line, 5–6 tokens on two lines).
+|
 [source]
 ----
 - tokens: [0,1,0,1]
   lines: 1
-----|
+----
+| Arranged as specified.
 |===
