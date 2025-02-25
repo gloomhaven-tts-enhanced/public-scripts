@@ -294,10 +294,46 @@ The available attributes you can put in a sub block are:
 [[optional-blocks]]
 == Optional Blocks
 
-Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption.
+Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption. This would be represented as follows:
+
+[source]
+----
+- attack: 3
+- optional:
+  - consume: [earth]
+  - custom: '+2 %attack%'
+----
+
+The above will render an attack 3 ability with an optional block that consumes earth and adds +2 attack. Sometimes, an optional block may be used to represent an extra ability, rather than an augment to an ability. An example of this would be:
+
+[source]
+----
+- move: 3
+- divider
+- optional:
+  - consume: [earth]
+  - heal: 2
+  noLine: true
+----
+
+In this example, we have a move 3 ability with an optional block that allows the consumption of earth to perform an additional heal 2. The noLine modifier is used to prevent a line from being drawn between the move and heal abilities, since in this case they are separate abilities.
 
 [[mandatory-blocks]]
 == Mandatory Blocks
+
+Mandatory blocks are used to represent abilities that *must* be performed if that action is being played. Outside elemental infusion (which is created automatically with the infuse modifier), mandatory blocks are most often used to force a negative action to occur. An example of this would be:
+
+[source]
+----
+- attack: 3
+- divider
+- mandatory:
+  - curse:
+  sub:
+    - self
+----
+
+In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.
 
 [[named-abilities]]
 == Named Abilities
