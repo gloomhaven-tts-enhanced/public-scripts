@@ -8,7 +8,15 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 
 == Navigation
 
-* <<properties, Properties>>
+* <<getting-started, Getting Started>>
+** <<base-info, Base Info>>
+** <<creating-a-deck, Creating a Deck>>
+** <<deck-building, Deck Building>>
+*** <<show-properties, Show Properties>>
+*** <<show-color-properties, Show Color Properties>>
+*** <<change-base-card, Change Base Card>>
+*** <<deck-elements, Elements>>
+*** <<adding-cards, Adding Cards>>
 * <<syntax, Syntax>>
 ** <<tab-hierarchy, Tab Hierarchy>>
 ** <<basic-actions, Basic Actions>>
@@ -19,23 +27,144 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 ** <<optional-blocks, Optional Blocks>>
 ** <<mandatory-blocks, Mandatory Blocks>>
 ** <<named-abilities, Named Abilities>>
+** <<other-common-card-properties, Other Common Card Properties>>
 ** <<styles, Styles & Modifiers>>
 *** <<position, Position>>
 ** <<special-blocks, Special Blocks>>
 *** <<tokens, Tokens>>
 **** <<token-modifiers, Token Modifiers>>
+* <<tts-mod, Tabletop Simulator Mod>>
 
 [[introduction]]
 == Introduction
 
-On this page you will find detailed explanations of all commands and syntax options available in the Card Creator. Whether you're defining basic abilities or tweaking style and position, this guide will help you create clear and dynamic cards for your custom classes.
+On this page you will find detailed explanations of all commands and syntax options available in the Card Creator.
 
 *Note:* The Card Creator currently has a few issues with rendering certain elements in browsers other than Chrome. If you encounter any problems, please try using Chrome for the best experience.
 
-[[properties]]
-== Properties
+[[getting-started]]
+== Getting Started
 
-Before you begin creating your cards, it's recommended to define some properties. These properties will be used to customise the look of your custom class. This isn't strictly required, but it can help you to reinforce the thematic identity of your class.
+Before you begin creating your cards, it's recommended to set up some base info, and define some properties. These properties will be used to customise the look of your custom class. These steps aren't strictly required, but it can help you to reinforce the thematic identity of your class.
+
+[[base-info]]
+=== Base Info
+
+The base info section is where you can define all the aspects of your class that don't involve the cards themselves, such as the info presented on the class mat.
+
+Here is a brief overview of the properties you can define:
+
+[cols="1,1", options="header"]
+|===
+| Property | Description
+
+| `Name`
+| The name of your custom class.
+
+| `Race`
+| The race of your class.
+
+| `HP Track`
+| The HP level of your class. This can be set to Low, Medium, or High.
+
+| `Spoiler Name`
+| The name of your class given to it based on its icon.
+
+| `Complexity`
+| The complexity of your class. This can be set to any number between 1 and 5.
+
+| `Melee`
+| The melee value of your class. This can be set to any number between 1 and 5.
+
+| `Ranged`
+| The ranged value of your class. This can be set to any number between 1 and 5.
+
+| `Mobility`
+| The mobility value of your class. This can be set to any number between 1 and 5.
+
+| `Support`
+| The support value of your class. This can be set to any number between 1 and 5.
+
+| `Defense`
+| The defense value of your class. This can be set to any number between 1 and 5.
+
+| `Control`
+| The control value of your class. This can be set to any number between 1 and 5.
+
+| `Elemental Affinities`
+| The elemental affinities of your class. This can be set to a comma-separated list of elements that your class is proficient in, or none.
+
+| `Background Size`
+| The size of the background image for your class on the banner in the class list. This banner can also be seen at the top of the page. This is set to a pixel amount. *Note:* The image that this uses will be set later, when making a TTS mod.
+
+| `Background Position`
+| The position of the background image for your class on the banner in the class list. This is based from the top left corner, and is set to two pixel amounts, one for the x-axis and one for the y-axis.
+
+| `CCUG Development Status`
+| The development status of your class. This can be set to any of the following: "Concept", "Alpha", "Beta", "Released".
+
+| `Discord Link`
+| A link to the Discord channel for your class.
+
+| `Public`
+| Whether your class is public or not. This can be set to true or false.
+
+| `Add User`
+| You can enter discord user IDs here to add them to the class. This is useful for collaborative projects.
+
+|===
+
+[[creating-a-deck]]
+=== Creating a Deck
+
+To create a deck, head to the "Decks" tab in the Card Creator, and click the "Add" button. This will create a new deck for your class. You can then add cards to this deck by clicking the "Add" button on the deck you want to add cards to.
+
+[[deck-building]]
+=== Deck Building
+
+Once a deck is created, and you have opening it by either clicking on it, or clicking the "Cards" button next to it, you'll be brought to the screen you'll be spending the majority of your time in. This is the deck building screen.
+
+Immediately, you'll be able to see two buttons, "Show starting deck" and "Show advanced deck". Once you've started creating cards, you can use these buttons to see the entire level 1/X spread, and the entire level 2-9 spread, respectively.
+
+Below that are 4 more buttons, "Show properties", "Show color properties", "Change base card", and "Elements". Clicking on any of these will show the respective section, which can be closed by clicking the button again. If it doesn't seem like clicking a button is showing anything, try scrolling down, as the section may be below the another section.
+
+One thing to note about the following sections is that for some of the options (especially the color properties), it'll be easier to see what they do once you've actually started creating cards. You can either skip to the <<adding-cards, Adding Cards>> section to start creating cards, or continue reading to see what each section does.
+
+[[show-properties]]
+==== Show Properties
+
+The "Show properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <<basic-actions, Basic Actions>>, and the <<custom-actions, Custom Actions>> section), and a link to the background image for the class. You can also set the position of this background image, the opacity, and the size of it. This will be much easier to see once you've actually started creating cards.
+
+[[show-color-properties]]
+==== Show Color Properties
+
+The "Show color properties" section is where you can set the color of various parts of the card. This is split into two sections, the colors for the card itself, and the colors for the various bits that go on the card.
+
+The top line of colors are for the various parts that go onto the card. Most of these will usually want to remain default, except for the "Line color", but you can experiment with these to see what you like. The top bars are for transparency, and the bottom bars are for the colors themselves.
+
+The actual card colors are controlled a bit differently. Here, each section of the card has access to a range of sliders, "Sepia", "Saturate", "Hue-rotation", and "Brightness". These sliders can be used to adjust the color of the card, and the various parts of the card. The "Brightness" slider is particularly useful for making the text on the card more readable. The "Hue-rotation" slider can be used to change the color of the card, and the "Saturate" slider can be used to make the card more, or less, colorful. The "Sepia" slider can be used to make the card more, or less, sepia-toned.
+
+It can be a bit tricky to get the colors you want, but with a bit of experimentation, you should be able to settle on something like what you envisioned.
+
+To the right of each of the rows of sliders, you'll see a checkbox on all but the first row. Any rows that have this checkbox checked will change automatically as you change the sliders on the first row. This can be useful for keeping the colors of the card and the elements on the card in sync. If you want to change certain parts of the card, but not others, you can uncheck the checkbox on the row you want to change, and then adjust the sliders as needed.
+
+[[change-base-card]]
+==== Change Base Card
+
+The "Change base card" section is where you can change the base card that all the cards in the deck are based on. This is useful if you want to change the base visuals of the card, outside changing colors. Most people won't need to change this, but it's there if you want to.
+
+Every part of the card can be changed, and this change will be reflected across this entire deck.
+
+[[deck-elements]]
+==== Elements
+
+The "Elements" section shows a quick overview of the elements that are present in the deck. This is useful for keeping track of how many infusions, and consumptions, are in the deck. This can be useful for balancing the deck, and making sure that you have the right amount of elements in the deck.
+
+[[adding-cards]]
+==== Adding Cards
+
+Once you have created a deck, and opened it by clicking on it, you can add cards to it by clicking the "Add Card" button. This will create a new card in the deck. You can then edit this card by clicking on it. This will bring it into focus next to the text box containing its code.
+
 
 [[syntax]]
 == Syntax
@@ -44,10 +173,10 @@ The syntax of the Card Creator uses simple commands to render icons and values. 
 
 `- command: [value]`
 
-Modifiers can be added to fine-tune placement, styling, or functionality. Sections below break down each command group. For many examples on card structure, feel free to browse the "Example Syntax" class present in the tool.
+Modifiers can be added to fine-tune placement, styling, or functionality. Sections below break down each command group. For many examples on card structure, including all the examples shown in this documentation, feel free to browse the "Example Syntax" class present in the tool.
 
 [[tab-hierarchy]]
-== Tab Hierarchy
+=== Tab Hierarchy
 
 The structure of a card is based on indentation. Every sub-block or modifier must be indented with exactly 2 spaces more than its parent. This tells the system which modifiers belong to which command. For the purposes of this guide, "parent" refers to the block that is one level higher in the hierarchy.
 
@@ -85,7 +214,7 @@ Remember: use 2 spaces per level of indentation to maintain the proper hierarchy
 
 
 [[basic-actions]]
-== Basic Actions
+=== Basic Actions
 
 This section covers the core actions used to define a card’s abilities.
 
@@ -134,7 +263,7 @@ This section covers the core actions used to define a card’s abilities.
 [[modifiers]]
 
 [[conditions]]
-== Conditions
+=== Conditions
 
 Conditions modify abilities and can be used with or without an associated value. The available conditions include:
 
@@ -181,7 +310,7 @@ Conditions modify abilities and can be used with or without an associated value.
 |===
 
 [[elements]]
-== Elements
+=== Elements
 
 Elements represent various thematic or mechanical attributes. They support single values, consumption markers, and infuse modifiers.
 
@@ -217,10 +346,10 @@ Using multiple elements separated by '/' will generate an “or” condition.
 | [!image:icons/earth.svg[width=20px] image:icons/wild.svg[width=20px]]
 |===
 
-*Note:* For infusion, this will only work at the first indentation level. This means that either `bottom:` or `top:` should be it's direct parent.
+*Note:* For infusion, this will only work at the first indentation level. This means that either `bottom:` or `top:` should be its direct parent.
 
 [[custom-actions]]
-== Custom Actions
+=== Custom Actions
 
 There exists a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don't fit into the predefined categories.
 
@@ -274,7 +403,7 @@ Any icon that has been inserted also has some special modifiers that can be appl
 |===
 
 [[sub-blocks]]
-== Sub Blocks
+=== Sub Blocks
 
 Sub Blocks are the blocks that house the extra properties of an action. These are things like range, target, and other modifiers that can be applied to an action. These blocks are always indented 2 spaces from their parent action, like so:
 
@@ -292,18 +421,44 @@ In this example, the "sub" block contains the "target", "range", and "pierce" mo
 The available attributes you can put in a sub block are:
 
 [[optional-blocks]]
-== Optional Blocks
+=== Optional Blocks
 
 Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption.
 
 [[mandatory-blocks]]
-== Mandatory Blocks
+=== Mandatory Blocks
 
 [[named-abilities]]
-== Named Abilities
+=== Named Abilities
+
+[[other-common-card-properties]]
+=== Other Common Card Properties
+
+Before we get into more advanced styling options, here are some common properties for an action and how they can be used. Do note that all of these properties should be a direct child of the "bottom:" or "top:" block, just like the "infuse:" block.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Syntax | Description | Example | Result
+
+| `duration: [value]`
+| Sets the duration of the action. This can be either "round" or "persistent".
+| `duration: round`
+| The round symbol will appear in a mandatory box in the bottom right corner of the card.
+
+| `lost: [value]`
+| Sets the lost value of the action. This can be either "true" or "false".
+| `lost: true`
+| The action will have a "lost" icon in a mandatory box in the bottom right corner of the card.
+
+| `xp: [value]`
+| Sets the XP value of the action. This can be any number.
+| `xp: 1`
+| The XP value will appear in a mandatory box in the bottom right corner of the card.
+
+|===
 
 [[styles]]
-== Styles & Modifiers
+=== Styles & Modifiers
 
 Modifiers allow you to fine-tune the placement, size, and appearance of each block. To apply modifiers, ensure each block is defined as an object (i.e. using a colon after the block name).
 
@@ -412,7 +567,7 @@ Other modifiers include:
 |===
 
 [[position]]
-=== Position
+==== Position
 
 To change a block's position, orientation, or size, use the following modifiers:
 
@@ -464,7 +619,7 @@ To change a block's position, orientation, or size, use the following modifiers:
 |===
 
 [[special-blocks]]
-== Special Blocks
+=== Special Blocks
 
 Special blocks handle more complex card elements. They are designed to encapsulate functionality beyond basic actions.
 
@@ -502,3 +657,6 @@ Modifiers for tokens allow you to control how token slots are arranged.
 ----
 | Arranged as specified.
 |===
+
+[[tts-mod]]
+== Tabletop Simulator Mod
