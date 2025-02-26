@@ -259,12 +259,17 @@ This section covers the core actions used to define a card’s abilities.
 | Creates a heal ability with a value of [value]
 | `- heal: 1`
 | image:icons/heal.svg[width=20px] 1
+
+| `- classToken: [index]`
+| Creates a class token ability using the token linked to the specified index.
+| `- classToken: 0`
+| image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px]
 |===
 
 [[conditions]]
 === link:#nav-menu[Conditions]
 
-Conditions modify abilities and can be used with or without an associated value. The available conditions include:
+Conditions modify abilities and can be used with or without an associated value. The available conditions are:
 
 - bane
 - bless
@@ -331,13 +336,13 @@ Using multiple elements separated by '/' will generate an “or” condition.
 
 | `- [element]`
 | Renders the icon for the given element.
-| `- earth`
-| image:icons/earth.svg[width=20px]
+| `- air`
+| image:icons/wind.svg[width=20px]
 
 | `- consume: [ [elements...] ]`
 | Renders a list of element icons with an added consume marker (usually used within an optional block).
-| `- consume: [earth, fire]`
-| image:icons/earth.svg[width=20px] image:icons/consume.svg[width=10px] image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
+| `- consume: [wind, fire]`
+| image:icons/wind.svg[width=20px] image:icons/consume.svg[width=10px] image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
 
 | `infuse: [ [elements...] ]`
 | Adds a mandatory box with a list of specified elements. (Note: As a modifier, do not prefix with a '-')
@@ -374,8 +379,8 @@ Here are some examples of custom actions:
 
 | `- custom: [text]`
 | Creates a custom action with the specified text.
-| `- custom: 'Text with %earth% earth and %fire% fire'`
-| Text with image:icons/earth.svg[width=20px] earth and image:icons/fire.svg[width=20px] fire
+| `- custom: 'Text with %dark% dark and %fire% fire'`
+| Text with image:icons/dark.svg[width=20px] dark and image:icons/fire.svg[width=20px] fire
 
 | `- custom: [text]`
 | Creates a custom action with the specified text.
@@ -396,8 +401,8 @@ Any icon that has been inserted also has some special modifiers that can be appl
 
 | 'i'
 | Inverts the icon's color.
-| `%poisoni%`
-| image:icons/poison.svg[width=20px]
+| `%banei%`
+| image:icons/bane.svg[width=20px]
 
 |===
 
