@@ -111,7 +111,7 @@ Here is a brief overview of the properties you can define:
 | Whether your class is public or not. This can be set to true or false.
 
 | `Add User`
-| You can enter discord user IDs here to add them to the class. This is useful for collaborative projects.
+| You can enter discord user IDs here to allow those users to edit the class. This is useful for collaborative projects.
 
 |===
 
@@ -134,7 +134,7 @@ One thing to note about the following sections is that for some of the options (
 [[show-properties]]
 ==== link:#nav-menu[Show Properties]
 
-The "Show properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <<basic-actions, Basic Actions>>, and the <<custom-actions, Custom Actions>> section), and a link to the background image for the class. You can also set the position of this background image, the opacity, and the size of it. This will be much easier to see once you've actually started creating cards.
+The "Show properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <<basic-actions, Basic Actions>>, and the <<custom-actions, Custom Actions>> section), and a link to the background image for the cards in this deck. You can also set the position of this background image, the opacity, and the size of it. This will be much easier to see once you've actually started creating cards.
 
 [[show-color-properties]]
 ==== link:#nav-menu[Show Color Properties]
@@ -339,16 +339,18 @@ Using multiple elements separated by '/' will generate an “or” condition.
 | `- air`
 | image:icons/wind.svg[width=20px]
 
-| `- consume: [ [elements...] ]`
+| `- consume: [ elements... ]`
 | Renders a list of element icons with an added consume marker (usually used within an optional block).
-| `- consume: [wind, fire]`
-| image:icons/wind.svg[width=20px] image:icons/consume.svg[width=10px] image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
+| `- consume: [wind/fire]`
+| image:icons/wind.svg[width=20px]image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
 
-| `infuse: [ [elements...] ]`
+| `infuse: [ elements... ]`
 | Adds a mandatory box with a list of specified elements. (Note: As a modifier, do not prefix with a '-')
-| `infuse: [earth, wild]`
-| [!image:icons/earth.svg[width=20px] image:icons/wild.svg[width=20px]]
+| `infuse: [earth/wild]`
+| [!image:icons/earth.svg[width=20px]image:icons/wild.svg[width=20px]]
 |===
+
+*Note:* The square brackets in the consume and infuse examples are required in the syntax.
 
 *Note:* For infusion, this will only work at the first indentation level. This means that either `bottom:` or `top:` should be its direct parent.
 
@@ -422,7 +424,10 @@ Sub Blocks are the blocks that house the extra properties of an action. These ar
 
 In this example, the "sub" block contains the "target", "range", and "pierce" modifiers. These are all indented 2 spaces from the "attack" command, indicating that they are all part of that action.
 
-The available attributes you can put in a sub block are:
+Alongside all existing conditions, the available attributes you can put in a sub block are:
+
+- target
+- range
 
 [[optional-blocks]]
 === link:#nav-menu[Optional Blocks]
@@ -468,8 +473,50 @@ Mandatory blocks are used to represent abilities that *must* be performed if tha
 
 In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.
 
+[[summons]]
+=== link:#nav-menu[Summons]
+
+Summons are a special type of action that can be created using the "summon" block. This is one of the more complex blocks, as it has a lot of properties that can be set. Here is an example of a basic summon block:
+
+[source]
+----
+- custom: 'Summon Example Summon'
+- summon:
+  name: 'Example Summon'
+  stats: [5,2,3,'-']
+  image:
+    image:
+      url: "https://example.com/image.png"
+      size: 100%
+      position: '0px 0px'
+----
+
+In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.
+
+Here are all of the properties that can be set for a summon:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `name`
+| The name of the summon.
+| `name: 'Example Summon'`
+| The summon will be called "Example Summon" in TTS.
+
 [[named-abilities]]
 === link:#nav-menu[Named Abilities]
+
+Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the banner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<special-blocks, Special Blocks>> section.
+
+In order to use this block, it should be placed at the base level of the action, with only "top:" or "bottom:" as a parent. Here is an example:
+
+[source]
+----
+- top:
+  namedAbility:
+    name: Augment
+----
 
 [[other-common-card-properties]]
 === link:#nav-menu[Other Common Card Properties]
@@ -483,17 +530,22 @@ Before we get into more advanced styling options, here are some common propertie
 | `duration: [value]`
 | Sets the duration of the action. This can be either "round" or "persistent".
 | `duration: round`
-| The round symbol will appear in a mandatory box in the bottom right corner of the card.
+| The image:icons/round.svg[width=20px] symbol will appear in the mandatory box in the bottom right corner of the card.
 
 | `lost: [value]`
-| Sets the lost value of the action. This can be either "true" or "false".
+| Sets if the card is lost or not. This can be either "true" or "false".
 | `lost: true`
-| The action will have a "lost" icon in a mandatory box in the bottom right corner of the card.
+| The action will have a image:icons/lost.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
+
+| `remove: [value]`
+| Sets whether the card is unrecoverable or not. This can be either "true" or "false".
+| `remove: true`
+| The action will have a image:icons/remove-loss.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
 
 | `xp: [value]`
 | Sets the XP value of the action. This can be any number.
 | `xp: 1`
-| The XP value will appear in a mandatory box in the bottom right corner of the card.
+| The XP value image:icons/xp.svg[width=20px] will appear in the mandatory box in the bottom right corner of the card.
 
 |===
 
