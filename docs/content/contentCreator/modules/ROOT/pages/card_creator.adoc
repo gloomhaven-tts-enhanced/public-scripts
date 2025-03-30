@@ -493,7 +493,7 @@ Summons are a special type of action that can be created using the "summon" bloc
 
 In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.
 
-Here are all of the properties that can be set for a summon:
+Here are all the properties that can be set for a summon:
 
 [cols="1,1,1,1", options="header"]
 |===
@@ -503,6 +503,79 @@ Here are all of the properties that can be set for a summon:
 | The name of the summon.
 | `name: 'Example Summon'`
 | The summon will be called "Example Summon" in TTS.
+
+| `stats`
+| The stats of the summon. This should be an array of 4 numbers, in the order of health, move, attack, range.
+| `stats: [5,2,3,'-']`
+| The summon will have 5 health, 2 move, 3 attack, and no range.
+
+| `image`
+| The image of the summon. This should be an object with the properties "url", "size", and "position". This will also be used for the TTS standee.
+| `image: +
+&nbsp;&nbsp;url: "https://example.com/image.png" +
+&nbsp;&nbsp;size: 100% +
+&nbsp;&nbsp;position: '0px 0px'`
+| The summon will have an image from the URL "https://example.com/image.png", with a size of 100%, and a position of 0px 0px.
+
+| `enhancement`
+| The possible enhancements on the summon. This should be an array of the possible enhancements, or "none" if there is no enhancement for that attribute. The array follows the same order as the stats array.
+| `enhancement: [square,none,square,none]`
+| The summon will have a square enhancement for health and attack, and no enhancement for move and range.
+
+| `special`
+| The special abilities of the summon. These are things like shield, retaliate, or other abilities that the summon performs. It will show up to the right of the stats.
+| `special: +
+&nbsp;&nbsp;- shield: 1`
+| The summon will have a shield 1 ability.
+
+| `background`
+| The background color of the special area. This should be in rgb form as shown in the example.
+| `background: 'rgb(255,0,0,50%)'`
+| The background of the special area will be red with 50% opacity.
+
+| `width`
+| The width of the special area. This should be in pixels.
+| `width: 100px`
+| The special area will be 100 pixels wide.
+|===
+
+There are further properties that can be set for a summon. These extra properties won't change the appearance of the card, but will change the behavior of the summon in TTS. These properties are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `attributes`
+| The attributes of the summon. This is something like if the summon is flying, or if it has a shield. Setting this will make the attributes appear under the standees health.
+| `attributes: 'Shield = 1'`
+| The summon will have a shield value of 1.
+
+| `effects`
+| The effects of the summon. This is something like if the summon wounds on their attacks. Setting this will make the effects appear under the standees health.
+| `effects: '"Wound"'`
+| The summon standee will show that they wound on their attacks.
+
+| `text`
+| The text that appears on the summon standee. This can be anything you want, and will appear under the effects. This text can include icons like range and attack, but the syntax is different. To include an icon, include {e.IconName} in the text, where "iconName" is the name of the icon you want to include.
+| `text: 'This is some example text with {e.Range} range and {e.Attack} attack.'`
+| The summon standee will show "This is some example text with image:icons/range.svg[width=20px] range and image:icons/attack.svg[width=20px] attack."
+
+| `immunities`
+| The immunities of the summon. This is something like if the summon is immune to poison.
+| `immunities: 'Poison'`
+| The summon will be immune to poison.
+
+| `hpColor`
+| The color of the health bar on the summon standee. This should be in hex code form as shown in the example.
+| `hpColor: '#ff0000'`
+| The health bar on the summon standee will be red.
+
+| `hpColorText`
+| The color of the health text on the summon standee. This should be in hex code form as shown in the example.
+| `hpColorText: '#ffffff'`
+| The health text on the summon standee will be white.
+
+|===
 
 [[named-abilities]]
 === link:#nav-menu[Named Abilities]
