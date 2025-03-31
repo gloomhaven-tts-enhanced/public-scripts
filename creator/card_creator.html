@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Card Creator :: Frosthaven Enhanced</title>
+    <title>Card Creator Documentation :: Frosthaven Enhanced</title>
     <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="stylesheet" href="../_/css/gh-site.css">
@@ -121,19 +121,416 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Card Creator</h1>
+<h1 class="page">Card Creator Documentation</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>On this page, all commands and syntax for the Card Creator will be explained.</p>
+<p>An in-depth guide for using the Card Creator tool to design custom Frosthaven class cards. This documentation covers everything from basic actions to advanced styling and token configuration.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Syntax"><a class="anchor" href="#Syntax"></a>Syntax</h2>
+<h2 id="nav-menu"><a class="anchor" href="#nav-menu"></a>Navigation</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#getting-started">Getting Started</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#base-info">Base Info</a></p>
+</li>
+<li>
+<p><a href="#creating-a-deck">Creating a Deck</a></p>
+</li>
+<li>
+<p><a href="#deck-building">Deck Building</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#show-properties">Show Properties</a></p>
+</li>
+<li>
+<p><a href="#show-color-properties">Show Color Properties</a></p>
+</li>
+<li>
+<p><a href="#change-base-card">Change Base Card</a></p>
+</li>
+<li>
+<p><a href="#deck-elements">Elements</a></p>
+</li>
+<li>
+<p><a href="#adding-cards">Adding Cards</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#syntax">Syntax</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tab-hierarchy">Tab Hierarchy</a></p>
+</li>
+<li>
+<p><a href="#basic-actions">Basic Actions</a></p>
+</li>
+<li>
+<p><a href="#conditions">Conditions</a></p>
+</li>
+<li>
+<p><a href="#elements">Elements</a></p>
+</li>
+<li>
+<p><a href="#custom-actions">Custom Actions</a></p>
+</li>
+<li>
+<p><a href="#sub-blocks">Sub Blocks</a></p>
+</li>
+<li>
+<p><a href="#optional-blocks">Optional Blocks</a></p>
+</li>
+<li>
+<p><a href="#mandatory-blocks">Mandatory Blocks</a></p>
+</li>
+<li>
+<p><a href="#tokens">Tokens</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#token-modifiers">Token Modifiers</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#summons">Summons</a></p>
+</li>
+<li>
+<p><a href="#named-abilities">Named Abilities</a></p>
+</li>
+<li>
+<p><a href="#mode-blocks">Mode Blocks</a></p>
+</li>
+<li>
+<p><a href="#other-common-card-properties">Other Common Card Properties</a></p>
+</li>
+<li>
+<p><a href="#styles">Styles &amp; Modifiers</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#common-style-modifiers">Common Style Modifiers</a></p>
+</li>
+<li>
+<p><a href="#more-style-modifiers">More Style Modifiers</a></p>
+</li>
+<li>
+<p><a href="#position">Position</a></p>
+</li>
+<li>
+<p><a href="#advanced-styling">Advanced Styling</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#tts-mod">Tabletop Simulator Mod</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tts-assets">TTS Assets</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#tts-assets-starting-deck">Starting Deck</a></p>
+</li>
+<li>
+<p><a href="#tts-assets-advanced-deck">Advanced Deck</a></p>
+</li>
+<li>
+<p><a href="#tts-assets-easy-stuff">Rest of the Easy Stuff</a></p>
+</li>
+<li>
+<p><a href="#tts-assets-manual">Manually Linked Assets</a></p>
+</li>
+<li>
+<p><a href="#tts-assets-extra">Final Options</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#tts-import">Importing into TTS</a></p>
+</li>
+<li>
+<p><a href="#third-party-card-spread">Third Party Card Spreads</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#finish">Finished!</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On this page you will find detailed explanations of all commands and syntax options available in the Card Creator.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> The Card Creator currently has a few issues with rendering certain elements in browsers other than Chrome. If you encounter any problems, please try using Chrome for the best experience.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="anchor" href="#getting-started"></a><a href="#nav-menu">Getting Started</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you begin creating your cards, it&#8217;s recommended to set up some base info, and define some properties. These properties will be used to customise the look of your custom class. These steps aren&#8217;t strictly required, but it can help you to reinforce the thematic identity of your class.</p>
+</div>
 <div class="sect2">
-<h3 id="Base_actions"><a class="anchor" href="#Base_actions"></a>Basic Actions</h3>
+<h3 id="base-info"><a class="anchor" href="#base-info"></a><a href="#nav-menu">Base Info</a></h3>
+<div class="paragraph">
+<p>The base info section is where you can define all the aspects of your class that don&#8217;t involve the cards themselves, such as the info presented on the class mat.</p>
+</div>
+<div class="paragraph">
+<p>Here is a brief overview of the properties you can define:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of your custom class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Race</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The race of your class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HP Track</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The HP level of your class. This can be set to Low, Medium, or High.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Spoiler Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of your class given to it based on its icon.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Complexity</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The complexity of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Melee</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The melee value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ranged</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ranged value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Mobility</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The mobility value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The support value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Defense</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The defense value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Control</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The control value of your class. This can be set to any number between 1 and 5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Elemental Affinities</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The elemental affinities of your class. This can be set to a comma-separated list of elements that your class is proficient in, or none.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Background Size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the background image for your class on the banner in the class list. This banner can also be seen at the top of the page. This is set to a pixel amount. <strong>Note:</strong> The image that this uses will be set later, when making a TTS mod.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Background Position</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position of the background image for your class on the banner in the class list. This is based from the top left corner, and is set to two pixel amounts, one for the x-axis and one for the y-axis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CCUG Development Status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The development status of your class. This can be set to any of the following: "Concept", "Alpha", "Beta", "Released".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Discord Link</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to the Discord channel for your class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Public</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether your class is public or not. This can be set to true or false.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add User</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can enter discord user IDs here to allow those users to edit the class. This is useful for collaborative projects.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="creating-a-deck"><a class="anchor" href="#creating-a-deck"></a><a href="#nav-menu">Creating a Deck</a></h3>
+<div class="paragraph">
+<p>To create a deck, head to the "Decks" tab in the Card Creator, and click the "Add" button. This will create a new deck for your class. You can then open this deck by clicking it&#8217;s name in the list, or the "Cards" button next to the deck.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deck-building"><a class="anchor" href="#deck-building"></a><a href="#nav-menu">Deck Building</a></h3>
+<div class="paragraph">
+<p>Once a deck is created, and you have opened it by either clicking on it, or clicking the "Cards" button next to it, you&#8217;ll be brought to the screen you&#8217;ll be spending the majority of your time in. This is the deck building screen.</p>
+</div>
+<div class="paragraph">
+<p>Immediately, you&#8217;ll be able to see two buttons, "Show starting deck" and "Show advanced deck". Once you&#8217;ve started creating cards, you can use these buttons to see the entire level 1/X spread, and the entire level 2-9 spread, respectively.</p>
+</div>
+<div class="paragraph">
+<p>Below that are 4 more buttons, "Show properties", "Show color properties", "Change base card", and "Elements". Clicking on any of these will show the respective section, which can be closed by clicking the button again. If it doesn&#8217;t seem like clicking a button is showing anything, try scrolling down, as the section may be below another section.</p>
+</div>
+<div class="paragraph">
+<p>One thing to note about the following sections is that for some of the options (especially the color properties), it&#8217;ll be easier to see what they do once you&#8217;ve actually started creating cards. You can either skip to the <a href="#adding-cards">Adding Cards</a> section to start creating cards, or continue reading to see what each section does.</p>
+</div>
+<div class="sect3">
+<h4 id="show-properties"><a class="anchor" href="#show-properties"></a><a href="#nav-menu">Show Properties</a></h4>
+<div class="paragraph">
+<p>The "Show properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <a href="#basic-actions">Basic Actions</a>, and the <a href="#custom-actions">Custom Actions</a> section), and a link to the background image for the cards in this deck. You can also set the position of this background image, the opacity, and the size of it. This will be much easier to see once you&#8217;ve actually started creating cards.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="show-color-properties"><a class="anchor" href="#show-color-properties"></a><a href="#nav-menu">Show Color Properties</a></h4>
+<div class="paragraph">
+<p>The "Show color properties" section is where you can set the color of various parts of the card. This is split into two sections, the colors for the card itself, and the colors for the various bits that go on the card.</p>
+</div>
+<div class="paragraph">
+<p>The top line of colors are for the various parts that go onto the card. Most of these will usually want to remain default, except for the "Line color", but you can experiment with these to see what you like. The top bars are for transparency, and the bottom bars are for the colors themselves.</p>
+</div>
+<div class="paragraph">
+<p>The actual card colors are controlled a bit differently. Here, each section of the card has access to a range of sliders, "Sepia", "Saturate", "Hue-rotation", and "Brightness". These sliders can be used to adjust the color of the card, and the various parts of the card. The "Brightness" slider is particularly useful for making the text on the card more readable. The "Hue-rotation" slider can be used to change the color of the card, and the "Saturate" slider can be used to make the card more, or less, colorful. The "Sepia" slider can be used to make the card more, or less, sepia-toned.</p>
+</div>
+<div class="paragraph">
+<p>It can be a bit tricky to get the colors you want, but with a bit of experimentation, you should be able to settle on something like what you envisioned.</p>
+</div>
+<div class="paragraph">
+<p>To the right of each of the rows of sliders, you&#8217;ll see a checkbox on all but the first row. Any rows that have this checkbox checked will change automatically as you change the sliders on the first row. This can be useful for keeping the colors of the card and the elements on the card in sync. If you want to change certain parts of the card, but not others, you can uncheck the checkbox on the row you want to change, and then adjust the sliders as needed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-base-card"><a class="anchor" href="#change-base-card"></a><a href="#nav-menu">Change Base Card</a></h4>
+<div class="paragraph">
+<p>The "Change base card" section is where you can change the base card that all the cards in the deck are based on. This is useful if you want to change the base visuals of the card, outside changing colors. Most people won&#8217;t need to change this, but it&#8217;s there if you want to.</p>
+</div>
+<div class="paragraph">
+<p>Every part of the card can be changed, and this change will be reflected across the entire deck.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deck-elements"><a class="anchor" href="#deck-elements"></a><a href="#nav-menu">Elements</a></h4>
+<div class="paragraph">
+<p>The "Elements" section shows a quick overview of the elements that are present in the deck. This is useful for keeping track of how many infusions, and consumptions, are in the deck. This can be helpful for balancing the deck, and making sure that you have a balanced amount of elements in the deck.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-cards"><a class="anchor" href="#adding-cards"></a><a href="#nav-menu">Adding Cards</a></h4>
+<div class="paragraph">
+<p>While inside the deck building screen, you can add cards to the deck by clicking the "Add Card" button. This will create a new card in the deck. You can then edit this card by clicking on it. This will bring it into focus next to the text box containing its code.</p>
+</div>
+<div class="paragraph">
+<p>This state, where the card is in focus, doubles as the best way to see the changes you&#8217;re making in the previous properties sections. This is because the card will update in real time as you change the properties of the card.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax"><a class="anchor" href="#syntax"></a><a href="#nav-menu">Syntax</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The syntax of the Card Creator uses simple commands to render icons and values. Commands typically follow this structure:</p>
+</div>
+<div class="paragraph">
+<p><code>- command: [value]</code></p>
+</div>
+<div class="paragraph">
+<p>Modifiers can be added to fine-tune placement, styling, or functionality. Sections below break down each command group. For many examples on card structure, including all the examples shown in this documentation, feel free to browse the "Example Syntax" class present in the tool.</p>
+</div>
+<div class="sect2">
+<h3 id="tab-hierarchy"><a class="anchor" href="#tab-hierarchy"></a><a href="#nav-menu">Tab Hierarchy</a></h3>
+<div class="paragraph">
+<p>The structure of a card is based on indentation. Every sub-block or modifier must be indented with exactly 2 spaces more than its parent. This tells the system which modifiers belong to which command. For the purposes of this guide, "parent" refers to the block that is one level higher in the hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: 3
+  margin: 5px 0px 0px 0px</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the "margin" modifier is indented 2 spaces relative to the "- attack: 3" command, indicating that it applies specifically to that action.</p>
+</div>
+<div class="paragraph">
+<p>Here is a more complex example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- group:
+  - attack: 3
+  - divider
+    margin: 10px 0px
+  - move: 2
+  - divider
+  - optional:
+    - consume: [dark,light]
+    - heal: 2
+      sub:
+        - range: 3
+        - wild
+    noLine: true
+  flexDirection: column</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have utilized a "group" block to contain multiple actions. Each action is indented 2 spaces relative to the "group" command. This indicates that they all belong to that outer block. The hierarchy continues with the "divider" and "optional" blocks, each containing their own sub-blocks.</p>
+</div>
+<div class="paragraph">
+<p>A more detailed explanation of each block type is provided in the following sections.</p>
+</div>
+<div class="paragraph">
+<p><strong>Remember:</strong> use 2 spaces per level of indentation to maintain the proper hierarchy.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="basic-actions"><a class="anchor" href="#basic-actions"></a><a href="#nav-menu">Basic Actions</a></h3>
+<div class="paragraph">
+<p>This section covers the core actions used to define a card’s abilities.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -143,62 +540,68 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"> Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- attack: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates an attack ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- attack: 3</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/attack.svg" alt="attack" width="20px"></span> 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- attack: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates an attack ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- attack: 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/attack.svg" alt="attack" width="20px"></span> 3</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- move: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a move ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- move: 3</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/move.svg" alt="move" width="20px"></span> 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- move: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a move ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- move: 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/move.svg" alt="move" width="20px"></span> 3</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- teleport: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a teleport ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- teleport: 3</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/teleport.svg" alt="teleport" width="20px"></span> 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- teleport: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a teleport ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- teleport: 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/teleport.svg" alt="teleport" width="20px"></span> 3</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- shield: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a shield ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- shield: 1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/shield.svg" alt="shield" width="20px"></span> 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- shield: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a shield ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- shield: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/shield.svg" alt="shield" width="20px"></span> 1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- retaliate: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a retaliate ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- retaliate: 1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/retaliate.svg" alt="retaliate" width="20px"></span> 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- retaliate: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a retaliate ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- retaliate: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/retaliate.svg" alt="retaliate" width="20px"></span> 1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- loot: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a loot ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- loot: 1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/loot.svg" alt="loot" width="20px"></span> 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- loot: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a loot ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- loot: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/loot.svg" alt="loot" width="20px"></span> 1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- heal: [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a heal ability with a value of [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- heal: 1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/heal.svg" alt="heal" width="20px"></span> 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- heal: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a heal ability with a value of [value]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- heal: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/heal.svg" alt="heal" width="20px"></span> 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- classToken: [index]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a class token ability using the token linked to the specified index.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- classToken: 0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png" alt="hearth token" width="20px"></span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="Conditions"><a class="anchor" href="#Conditions"></a>Conditions</h3>
+<h3 id="conditions"><a class="anchor" href="#conditions"></a><a href="#nav-menu">Conditions</a></h3>
 <div class="paragraph">
-<p>The [condition] can take any of the following values:</p>
+<p>Conditions modify abilities and can be used with or without an associated value. The available conditions are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -291,29 +694,35 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- [condition] : [value]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Creates a [condition] with the value [value].<br>
-If [value] is omitted only [condition] is rendered</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- poison<br>
-- pierce: 1</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/poison.svg" alt="poison" width="20px"></span><br>
-<span class="image"><img src="_images/icons/pierce.svg" alt="pierce" width="20px"></span> 1<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- [condition]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders a condition icon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- poison</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/poison.svg" alt="poison" width="20px"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- [condition]: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders a condition icon with an optional value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- pierce: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/pierce.svg" alt="pierce" width="20px"></span> 1</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="Elements"><a class="anchor" href="#Elements"></a>Elements</h3>
+<h3 id="elements"><a class="anchor" href="#elements"></a><a href="#nav-menu">Elements</a></h3>
 <div class="paragraph">
-<p>The [element] in this section can take any of the following values:</p>
+<p>Elements represent various thematic or mechanical attributes. They support single values, consumption markers, and infuse modifiers.</p>
+</div>
+<div class="paragraph">
+<p>Available elements include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -338,10 +747,10 @@ If [value] is omitted only [condition] is rendered</p></td>
 <li>
 <p>wild</p>
 </li>
-<li>
-<p>any combination of elements separated by '/' will generate an or element</p>
-</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Using multiple elements separated by '/' will generate an “or” condition.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -352,40 +761,214 @@ If [value] is omitted only [condition] is rendered</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- [element]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Renders the icon for the element [element].</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- earth</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/earth.svg" alt="earth" width="20px"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- [element]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders the icon for the given element.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- air</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/wind.svg" alt="wind" width="20px"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- [element]: consume</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Renders the icon for the element [element] and adds a consume x. This is usually used within an optional block.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- earth: consume</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock"><span class="image"><img src="_images/icons/earth.svg" alt="earth" width="20px"></span><span class="image"><img src="_images/icons/consume.svg" alt="consume" width="10px"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- consume: [ elements&#8230;&#8203; ]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders a list of element icons with an added consume marker (usually used within an optional block).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- consume: [wind/fire]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/wind.svg" alt="wind" width="20px"></span><span class="image"><img src="_images/icons/fire.svg" alt="fire" width="20px"></span> <span class="image"><img src="_images/icons/consume.svg" alt="consume" width="10px"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">infuse: [ [elements..] ]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list.<br>
-<br>
-As a modifier, this does not use a '-' in front of it</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">infuse: [earth, wild]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">[!<span class="image"><img src="_images/icons/earth.svg" alt="earth" width="20px"></span><span class="image"><img src="_images/icons/wild.svg" alt="wild" width="20px"></span>]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>infuse: [ elements&#8230;&#8203; ]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds a mandatory box with a list of specified elements. (Note: As a modifier, do not prefix with a '-')</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>infuse: [earth/wild]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[!<span class="image"><img src="_images/icons/earth.svg" alt="earth" width="20px"></span><span class="image"><img src="_images/icons/wild.svg" alt="wild" width="20px"></span>]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Note:</strong> The square brackets in the consume and infuse examples are required in the syntax.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> For infusion, this will only work at the first indentation level. This means that either <code>bottom:</code> or <code>top:</code> should be its direct parent.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom-actions"><a class="anchor" href="#custom-actions"></a><a href="#nav-menu">Custom Actions</a></h3>
+<div class="paragraph">
+<p>There exists a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don&#8217;t fit into the predefined categories.</p>
+</div>
+<div class="paragraph">
+<p>Within these blocks, you are able to insert any of the common icons, such as conditions or elements, to further customize your text. This includes any class tokens that you&#8217;ve linked in the properties section.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for inserting these icons is: <code>%iconName%</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here are some examples of custom actions:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: [text]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a custom action with the specified text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: 'Text'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: [text]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a custom action with the specified text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: 'Text with %poison% poison'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text with <span class="image"><img src="_images/icons/poison.svg" alt="poison" width="20px"></span> poison</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: [text]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a custom action with the specified text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: 'Text with %dark% dark and %fire% fire'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text with <span class="image"><img src="_images/icons/dark.svg" alt="dark" width="20px"></span> dark and <span class="image"><img src="_images/icons/fire.svg" alt="fire" width="20px"></span> fire</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: [text]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a custom action with the specified text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- custom: 'Text with %classToken0% a custom class token'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text with <span class="image"><img src="https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png" alt="hearth token" width="20px"></span> a custom class token</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Any icon that has been inserted also has some special modifiers that can be applied to it. These modifiers are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'s'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes the icon&#8217;s shadow.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%classToken0s%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png" alt="hearth token" width="20px"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'i'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inverts the icon&#8217;s color.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%banei%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="_images/icons/bane.svg" alt="bane" width="20px"></span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="styles"><a class="anchor" href="#styles"></a>Styles</h3>
+<h3 id="sub-blocks"><a class="anchor" href="#sub-blocks"></a><a href="#nav-menu">Sub Blocks</a></h3>
 <div class="paragraph">
-<p>You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. To use modifiers all blocks need to be an object, this means it needs a ':'' in the block. Single word blocks like - earth will need to add a ':' to use modifiers. - earth: '' Here is a list of styles each block can take:</p>
+<p>Sub Blocks are the blocks that house the extra properties of an action. These are things like range, target, and other modifiers that can be applied to an action. These blocks are always indented 2 spaces from their parent action, like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: 3
+  sub:
+    target: 2
+    range: 3
+    pierce: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the "sub" block contains the "target", "range", and "pierce" modifiers. These are all indented 2 spaces from the "attack" command, indicating that they are all part of that action.</p>
+</div>
+<div class="paragraph">
+<p>Alongside all existing conditions, the available attributes you can put in a sub block are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>target</p>
+</li>
+<li>
+<p>range</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="optional-blocks"><a class="anchor" href="#optional-blocks"></a><a href="#nav-menu">Optional Blocks</a></h3>
+<div class="paragraph">
+<p>Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption. This would be represented as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: 3
+- optional:
+  - consume: [earth]
+  - custom: '+2 %attack%'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above will render an attack 3 ability with an optional block that consumes earth and adds +2 attack. Sometimes, an optional block may be used to represent an extra ability, rather than an augment to an ability. An example of this would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- move: 3
+- divider
+- optional:
+  - consume: [earth]
+  - heal: 2
+  noLine: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have a move 3 ability with an optional block that allows the consumption of earth to perform an additional heal 2. The noLine modifier is used to prevent a line from being drawn between the move and heal abilities, since in this case they are separate abilities.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mandatory-blocks"><a class="anchor" href="#mandatory-blocks"></a><a href="#nav-menu">Mandatory Blocks</a></h3>
+<div class="paragraph">
+<p>Mandatory blocks are used to represent abilities that <strong>must</strong> be performed if that action is being played. Outside elemental infusion (which is created automatically with the infuse modifier), mandatory blocks are most often used to force a negative action to occur. An example of this would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: 3
+- divider
+- mandatory:
+  - curse:
+  sub:
+    - self</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tokens"><a class="anchor" href="#tokens"></a><a href="#nav-menu">Tokens</a></h3>
+<div class="paragraph">
+<p>The tokens block creates token slots. Each number in the provided array represents the XP that the token slot provides.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -396,139 +979,25 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">margin</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Adds a buffer space on all sides of an element. The first value is for spacing on top, then right, bottom and the last one is for spacing to the left.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  margin: 5px 0px 0px 0px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">margin[direction]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Adds a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  marginTop: 5px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">padding</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Include a buffer space on all sides of an element. the first value is for spacing on top, then right, and bottom and the last one is for spacing to the left.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  padding: 0px 0px 0px 0px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">padding[direction]</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Include a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  paddingTop: 5px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also, the margin can take negative values to make the element take less space than the boundingbox of the element.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">fontSize</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not always be changed with this.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
-  fontSize: 10px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">color</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the font color of the section, this will not impact icons.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
-  color: red</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">background</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the background of the block.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text'
-  background: red</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lineHeight</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the space between lines to give either more space or make the text more compact. This is usful for adding icons into text where the lines would render different heights.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text to adjust lineheight, should have enought to atleast fill two lines.'
-  lineHeight: 20px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">wordSpacing</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Changes the space between words relative to the current spacing.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Text to show wordSpacing'
-  wordSpacing: 5px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- tokens: [0,1,0,1]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates token slots with XP values as defined in the array.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>- tokens: [0,1,0,1]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders token slots accordingly.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="Position"><a class="anchor" href="#Position"></a>Position</h4>
+<h4 id="token-modifiers"><a class="anchor" href="#token-modifiers"></a><a href="#nav-menu">Token Modifiers</a></h4>
 <div class="paragraph">
-<p>To change a blocks position or orientation or size use these:</p>
+<p>Modifiers for tokens allow you to control how token slots are arranged.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -539,135 +1008,738 @@ As a modifier, this does not use a '-' in front of it</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">position</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">To change a blocks position this must be set to either 'relative' or 'absolute'.</p>
-<p class="tableblock">relative: will change the position of the element based on its relative position to other elements rendered.</p>
-<p class="tableblock">absolute: will change the position of the element based on the parent elements position.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  position: relative</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">top</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Sets the value of its placement on the card either from its relative postion or from the top of the current action.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  position: relative
-  top: 10px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">left</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">Sets the value of its placement on the card either from its relative postion or from the left side of the current action.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  position: absolute
-  left: 10px</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">transform</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This modifier is more complex and takes a string as input as shown here: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">documentation css transform</a></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- earth: ''
-  transform: rotate(90deg)</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lines</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forces tokens to render in a specific layout: either 3 or 4 tokens on 1 or 2 lines. Other numbers follow predefined arrangements (1–2 tokens on one line, 5–6 tokens on two lines).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- tokens: [0,1,0,1]<br>
+  lines: 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renders tokens in a single line.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="summons"><a class="anchor" href="#summons"></a><a href="#nav-menu">Summons</a></h3>
+<div class="paragraph">
+<p>Summons are a special type of action that can be created using the "summon" block. This is one of the more complex blocks, as it has a lot of properties that can be set. Here is an example of a basic summon block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Summon Example Summon'
+- summon:
+  name: 'Example Summon'
+  stats: [5,2,3,'-']
+  image:
+    image:
+      url: "https://example.com/image.png"
+      size: 100%
+      position: '0px 0px'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.</p>
+</div>
+<div class="paragraph">
+<p>Here are all the properties that can be set for a summon:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the summon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name: 'Example Summon'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will be called "Example Summon" in TTS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stats</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stats of the summon. This should be an array of 4 numbers, in the order of health, move, attack, range.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stats: [5,2,3,'-']</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will have 5 health, 2 move, 3 attack, and no range.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>image</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The image of the summon. This should be an object with the properties "url", "size", and "position". This will also be used for the TTS standee.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>image:<br>
+&nbsp;&nbsp;url: "https://example.com/image.png"<br>
+&nbsp;&nbsp;size: 100%<br>
+&nbsp;&nbsp;position: '0px 0px'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will have an image from the URL "https://example.com/image.png", with a size of 100%, and a position of 0px 0px.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>enhancement</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The possible enhancements on the summon. This should be an array of the possible enhancements, or "none" if there is no enhancement for that attribute. The array follows the same order as the stats array.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>enhancement: [square,none,square,none]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will have a square enhancement for health and attack, and no enhancement for move and range.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>special</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The special abilities of the summon. These are things like shield, retaliate, or other abilities that the summon performs. It will show up to the right of the stats.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>special:<br>
+&nbsp;&nbsp;- shield: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will have a shield 1 ability.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background color of the special area. This should be in rgb form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background: 'rgb(255,0,0,50%)'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background of the special area will be red with 50% opacity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The width of the special area. This should be in pixels.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>width: 100px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The special area will be 100 pixels wide.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>There are further properties that can be set for a summon. These extra properties won&#8217;t change the appearance of the card, but will change the behavior of the summon in TTS. These properties are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>attributes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The attributes of the summon. This is something like if the summon is flying, or if it has a shield. Setting this will make the attributes appear under the standees health.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>attributes: 'Shield = 1'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will have a shield value of 1.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>effects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The effects of the summon. This is something like if the summon wounds on their attacks. Setting this will make the effects appear under the standees health.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>effects: '"Wound"'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon standee will show that they wound on their attacks.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text that appears on the summon standee. This can be anything you want, and will appear under the effects. This text can include icons like range and attack, but the syntax is different. To include an icon, include {e.IconName} in the text, where "iconName" is the name of the icon you want to include.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>text: 'This is some example text with {e.Range} range and {e.Attack} attack.'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon standee will show "This is some example text with <span class="image"><img src="_images/icons/range.svg" alt="range" width="20px"></span> range and <span class="image"><img src="_images/icons/attack.svg" alt="attack" width="20px"></span> attack."</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>immunities</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The immunities of the summon. This is something like if the summon is immune to poison.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>immunities: 'Poison'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The summon will be immune to poison.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hpColor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The color of the health bar on the summon standee. This should be in hex code form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hpColor: '#ff0000'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The health bar on the summon standee will be red.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hpColorText</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The color of the health text on the summon standee. This should be in hex code form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hpColorText: '#ffffff'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The health text on the summon standee will be white.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="named-abilities"><a class="anchor" href="#named-abilities"></a><a href="#nav-menu">Named Abilities</a></h3>
+<div class="paragraph">
+<p>Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. <strong>Note:</strong> this block only refers to the corner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <a href="#advanced-styling">Advanced Styling</a> section.</p>
+</div>
+<div class="paragraph">
+<p>In order to use this block, it should be placed at the base level of the action, with only "top:" or "bottom:" as a parent. Here is an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- top:
+  namedAbility:
+    name: Augment</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mode-blocks"><a class="anchor" href="#mode-blocks"></a><a href="#nav-menu">Mode Blocks</a></h3>
+<div class="paragraph">
+<p>The mode block can be used to create something akin to Blinkblade&#8217;s fast or slow abilities. Here is an example of how to use the mode block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- mode:
+  - attack: 2
+  icon: '%classToken0%'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have a mode block that contains an attack 2 ability, and an icon of the class token.</p>
+</div>
+<div class="paragraph">
+<p>The mode block has a couple of special properties that can be set. These are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>icon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stuff that appears in the smalller box of the mode.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>icon: '%classToken0%'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The icon of the class token will appear in the smaller box of the mode.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reverse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set to true, the mode will be reversed. This means that the smaller box will be on the right, and the larger box will be on the left.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reverse: true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The mode will be reversed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>leftBg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background color of the left box. This will usually be in rgb form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>leftBg: 'rgb(255,0,0,50%)'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The left box will have a red background with 50% opacity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rightBg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background color of the right box. This will usually be in rgb form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rightBg: 'rgb(0,255,0,50%)'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The right box will have a green background with 50% opacity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>borderBg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background color of the border between the two boxes. This will usually be in rgb form as shown in the example.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>borderBg: 'rgb(0,0,255,50%)'</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The border between the two boxes will be blue with 50% opacity.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="other-common-card-properties"><a class="anchor" href="#other-common-card-properties"></a><a href="#nav-menu">Other Common Card Properties</a></h3>
+<div class="paragraph">
+<p>Before we get into more advanced styling options, here are some common properties for an action and how they can be used. Do note that all of these properties should be a direct child of the "bottom:" or "top:" block, just like the "infuse:" block.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>duration: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the duration of the action. This can be either "round" or "persistent".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>duration: round</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <span class="image"><img src="_images/icons/round.svg" alt="round" width="20px"></span> symbol will appear in the mandatory box in the bottom right corner of the card.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lost: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets if the card is lost or not. This can be either "true" or "false".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lost: true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The action will have a <span class="image"><img src="_images/icons/lost.svg" alt="lost" width="20px"></span> icon in the mandatory box in the bottom right corner of the card.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>remove: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether the card is unrecoverable or not. This can be either "true" or "false".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>remove: true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The action will have a <span class="image"><img src="_images/icons/remove-loss.svg" alt="remove loss" width="20px"></span> icon in the mandatory box in the bottom right corner of the card.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xp: [value]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the XP value of the action. This can be any number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xp: 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The XP value <span class="image"><img src="_images/icons/xp.svg" alt="xp" width="20px"></span> will appear in the mandatory box in the bottom right corner of the card.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="styles"><a class="anchor" href="#styles"></a><a href="#nav-menu">Styles &amp; Modifiers</a></h3>
+<div class="paragraph">
+<p>Modifiers allow you to fine-tune the placement, size, and appearance of each block. To apply modifiers, ensure each block is defined as an object (i.e. using a colon after the block name).</p>
+</div>
+<div class="paragraph">
+<p>These style modifiers can be applied to any block, and should not have a hyphen in front of them. For example, to apply a modifier to an attack action, you would write:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: 3
+  margin: 5px 0px 0px 0px
+  fontSize: 10px</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="common-style-modifiers"><a class="anchor" href="#common-style-modifiers"></a><a href="#nav-menu">Common Style Modifiers</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>margin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the margin around the block. This has a variety of ways to be set, as shown in the following examples.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>margin: 5px 0px 0px 5px<br>
+margin: 5px 0px 10px<br>
+margin: 5px 0px<br>
+margin: 5px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The first example will set the margin to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the margin to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the margin to 5px on the top and bottom, and 0px on the sides. The last example will set the margin to 5px on all sides.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the padding around the block. This has a variety of ways to be set, as shown in the following examples.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padding: 5px 0px 0px 5px<br>
+padding: 5px 0px 10px<br>
+padding: 5px 0px<br>
+padding: 5px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The first example will set the padding to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the padding to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the padding to 5px on the top and bottom, and 0px on the sides. The last example will set the padding to 5px on all sides.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Note:</strong> Padding is similar to margin, but they have separate use cases. Taking an optional block as an example, setting padding on the block will increase the amount of space that the block itself takes up, while setting margin will increase the space between the block and the action above it. You can think of padding as the space inside the block, while margin is the space outside the block.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="more-style-modifiers"><a class="anchor" href="#more-style-modifiers"></a><a href="#nav-menu">More Style Modifiers</a></h4>
+<div class="paragraph">
+<p>There are many more style modifiers that can be applied to blocks. Here are the rest of them:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fontSize</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the font size of the text in the block. This can be any number, and will be set in pixels.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fontSize: 10px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The font size of the text in the block will be 10px.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>height</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the height of the block. This can be any number, and will be set in pixels.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>height: 10px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The height of the block will be 10px.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>display</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the display type of the block. This can be set to anything that is valid in CSS, but in almost every case, you don&#8217;t want to change this.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>display: flex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The block will be set to display as a flexbox.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flexDirection</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the direction that the content in the block will follow. This can be set to "row" or "column". Row will put the content in a row, while column will put the content in a column.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flexDirection: column</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The content in the block will be set to display in a column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the background color of the block. This can be set to any color that is valid in CSS, including rgb, and rgba.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>background: rgb(255,0,0,50%)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The background color of the block will be set to red with 50% opacity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>color</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the color of the text in the block. This can be set to any color that is valid in CSS, including rgb, and rgba.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>color: rgb(255,0,0,50%)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The color of the text in the block will be set to red with 50% opacity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>wordSpacing</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the spacing between words in the block. This can be set to any number, and will be set in pixels.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>wordSpacing: 5px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The spacing between words in the block will be set to 5px.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lineHeight</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the height of each line in the block. This can be set to any number, and will be set in pixels. This is useful for making the text more readable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lineHeight: 5px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The height of each line in the block will be set to 5px.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gap</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the gap between the items in the block. This can be set to any number, and will be set in pixels. This is useful for more advanced blocks that we&#8217;ll get into later.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gap: 5px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The gap between the items in the block will be set to 5px.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="position"><a class="anchor" href="#position"></a><a href="#nav-menu">Position</a></h4>
+<div class="paragraph">
+<p>To change a block&#8217;s position, orientation, or size, use the following modifiers:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Modifier</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+<th class="tableblock halign-left valign-top">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>position</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets positioning mode: <code>relative</code> (based on surrounding elements) or <code>absolute</code> (based on the parent element).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>position: absolute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The block will be positioned absolutely.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>top</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjusts vertical placement from the top edge of the parent or relative container.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>top: 10px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjusts vertical placement from the top edge, placing the block 10px down.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>left</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjusts horizontal placement from the left edge.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>left: 10px</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjusts horizontal placement from the left edge, placing the block 10px to the right.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transform</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies CSS transformations (e.g., rotate, scale). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" class="bare">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a> for more info.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transform: scale(2)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Doubles the size of the block.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="advanced-styling"><a class="anchor" href="#advanced-styling"></a><a href="#nav-menu">Advanced Styling</a></h3>
+<div class="paragraph">
+<p>This section will be dedicated to more advanced styling, to achieve the desired look for your cards. This includes things like the ability to create a banner, or a group of actions that are all part of the same action.</p>
+</div>
+<div class="paragraph">
+<p>The main block we care about here is the "group" block. This block is used to group actions together, allowing horizontal stacking, or easy positioning of multiple actions at once. One of the easiest examples to show this off is the aforementioned banner. On official cards, there are sometimes a group of actions at the top of the card in a separate "banner" area. Here&#8217;s an advanced example of how we can recreate something like that using the group block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">top:
+  namedAbility:
+    name: Grenade
+    padding: 10px 10px
+  actions:
+    - group:
+      - attack: 2
+        sub:
+          - custom: '%range% 2, advantage'
+        margin: 0px -10px 0px 10px
+      - hex: ett_ttt_ett
+      marginTop: -40px
+      paddingTop: 20px
+      background: rgba(0,0,0,50%)
+
+    - regenerate:
+      marginTop: 10px
+      sub:
+        - self
+  duration: persistent</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have a group block that contains two actions, an attack and a AoE hex pattern. Group blocks default to a flexDirection of row, so the two actions will be placed next to each other. The group block also has a marginTop of -40px, which will pull the group up into the top area of the card. The paddingTop of 20px will add some space between the top of the group and the top of the card, allowing the darker background to extend seamlessly to the edge of the card. Finally, you can see the Named Ability block at the top, which is used to create the iconography in the corner of the banner group we&#8217;ve just created.</p>
+</div>
+<div class="paragraph">
+<p>The principles shown here can be applied to many different scenarios, and using a combination of everything shown so far, there is a lot of freedom available to you to create the card you want. Remember, you are able to access the example syntax class to see some examples of how to use these blocks, and how they can be combined to create the desired effect. Otherwise, experiment a little with the blocks, and see what you can come up with!</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Special_blocks"><a class="anchor" href="#Special_blocks"></a>Special blocks</h2>
+<h2 id="tts-mod"><a class="anchor" href="#tts-mod"></a><a href="#nav-menu">Tabletop Simulator Mod</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section is for explaning different special code blocks.</p>
+<p>When the time has come to export your class to Tabletop Simulator, there are a couple of things you need to do to make sure that your class works as intended. This section will cover the steps you need to take to make sure that your class works in Tabletop Simulator.</p>
+</div>
+<div class="paragraph">
+<p>The very first step will be to create a mod for your class on the "TTS Mods" page. This page works very similarly to the "Decks" page, but instead of creating cards, you&#8217;re creating mods for your class.</p>
 </div>
 <div class="sect2">
-<h3 id="Tokens"><a class="anchor" href="#Tokens"></a>Tokens</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">- tokens</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]</code></pre>
+<h3 id="tts-assets"><a class="anchor" href="#tts-assets"></a><a href="#nav-menu">Assets</a></h3>
+<div class="paragraph">
+<p>Once you have created and opened a new mod, the main brunt of the work comes down to getting the various assets for your class sorted. This is all done within the mod that you created on the site.</p>
 </div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>At the top of the mod page, there are a few things to fill in before getting to the assets.</p>
+</div>
+<div class="paragraph">
+<p>The first thing to do is to switch on the "Active Mod" toggle. This toggle is how TTS will know which mod to use when importing the class. In some cases, you&#8217;ll have multiple mods for the same class (for example if the class has two decks), and you&#8217;ll be able to import both decks by importing one, and then changing the active mod to the other.</p>
+</div>
+<div class="paragraph">
+<p>After this you have the Mod Name and the Deck Index. The mod name can be set to anything you want, it&#8217;s just so you know which mod is which in the list of mods on the class creator website. The deck index is the index of the deck you want to import. This is usually 0, but if you have multiple decks, you can set this to the index of the deck you want to import.</p>
+</div>
+<div class="paragraph">
+<p>Some people like to make a new deck for every version of the class they make, so they can keep track of changes, and if you&#8217;re doing this, you&#8217;ll need to change the deck index to the index of the deck you want to import. This starts at 0, and goes up by 1 for every new deck you make, so if you have 3 decks, you&#8217;ll have deck indexes 0, 1, and 2 (in the order they appear on the "Decks" page).</p>
+</div>
+<div class="paragraph">
+<p>Now come the assets themselves.</p>
+</div>
 <div class="sect3">
-<h4 id="Token_modifiers"><a class="anchor" href="#Token_modifiers"></a>Token modifiers</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Syntax</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Description</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Example</th>
-<th class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">lines</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><p class="tableblock">This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"><div class="content"><div class="listingblock">
+<h4 id="tts-assets-starting-deck"><a class="anchor" href="#tts-assets-starting-deck"></a><a href="#nav-menu">Starting Deck</a></h4>
+<div class="paragraph">
+<p>The first thing to do is to add the starting deck to the mod. This can be done in two ways, but the second way will be covered in <a href="#third-party-card-spread">Third Party Card Spreads</a>. For those who have created their class on the site, the starting deck will be created for you, and automatically saved. All you have to do is click the "Upload Image" button in the starting deck section. If you want to download an image of the starting deck, you can do so by clicking the "Download Image" button.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> Downloading an image of the deck can be done without uploading it first, if you want to download an image of the deck before uploading it.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll notice beneath the image of the card spread two input boxes for the number of cards in each row and the number of rows. If you&#8217;re using the site to create your class, these will be filled in for you, but if you&#8217;re using a third party card spread, you&#8217;ll need to fill these in yourself.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the last input box allows you to manually set snap points on the cards. This is an advanced feature, and will not need to be used often. In order to set these, click the "Add snap" button. This will begin the process of adding snap points. From there, just click the image of the spread in the locations where you want snap points to exist. You&#8217;ll be able to see them show up as red dots. When done, click "Close add".</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> Snap points are automatically generated for token tracks, you do not need to add these yourself.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tts-assets-advanced-deck"><a class="anchor" href="#tts-assets-advanced-deck"></a><a href="#nav-menu">Advanced Deck</a></h4>
+<div class="paragraph">
+<p>The advanced deck section is for the level 2-9 cards of the class. All the instructions for the starting deck apply here.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tts-assets-easy-stuff"><a class="anchor" href="#tts-assets-easy-stuff"></a><a href="#nav-menu">The Rest of the Easy Stuff</a></h4>
+<div class="paragraph">
+<p>There are a few more assets that are as simple to add as clicking "Upload Image". These are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The ability card back</p>
+</li>
+<li>
+<p>The character token bag</p>
+</li>
+<li>
+<p>The character token</p>
+</li>
+<li>
+<p>The tuckbox</p>
+</li>
+<li>
+<p>The class envelope</p>
+</li>
+<li>
+<p>The icon for the classlist</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These can also be linked to manually, if you have the URLs for the images.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tts-assets-manual"><a class="anchor" href="#tts-assets-manual"></a><a href="#nav-menu">Manually Linked Assets</a></h4>
+<div class="paragraph">
+<p>There are a few assets that need to be manually linked to. These are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The class mat front</p>
+</li>
+<li>
+<p>The class mat back</p>
+</li>
+<li>
+<p>The standee</p>
+</li>
+<li>
+<p>The character sheet</p>
+</li>
+<li>
+<p>The attack modifier deck</p>
+</li>
+<li>
+<p>The perk reminder deck</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the case of the character sheet and the perks, you can use Sammy&#8217;s tool to create these. This is linked to underneath their input boxes. For the rest, you&#8217;ll need to upload the images to a hosting site, and then link to them in the input boxes.</p>
+</div>
+<div class="paragraph">
+<p>With the perks (both the AMD and the reminders), a list of the perks is needed. The AMD list should look something like the following, but in order of left to right reading through your specific perk cards:</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">- tokens: [0,1,0,1]
-  lines: 1</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Attack Modifier (+0)
+Attack Modifier (+1) (Wound)
+Attack Modifier (+1) (Poison)
+Attack Modifier (+1) (Muddle) rolling
+Attack Modifer (ice-earth) rolling</code></pre>
 </div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(180,180,180);"></td>
-</tr>
-</tbody>
-</table>
 </div>
+<div class="paragraph">
+<p>The "Attack Modifier" part is required, as is the "rolling" part if the perk is a rolling modifier. The rest is up to you, but it should communicate clearly to the player what the perk does.</p>
+</div>
+<div class="paragraph">
+<p>The perk reminder list should look something like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Perk Reminder long rest
+Perk Reminder short rest
+Perk Reminder refresh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The "Perk Reminder" part is required, but the rest is up to you. This should communicate clearly to the player what the perk reminder does.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tts-assets-extra"><a class="anchor" href="#tts-assets-extra"></a><a href="#nav-menu">Final Options</a></h4>
+<div class="paragraph">
+<p>There are a few final options that can be changed.</p>
+</div>
+<div class="paragraph">
+<p>First we have the HP bar color, HP bar text color, and HP bar placement. These are all pretty self explanatory, and are used to change the color of the health bar on the standee, the color of the text on the health bar, and the placement of the health bar on the standee. The colors can be set using hex codes, and the placement is set to a number, with the default being 320.</p>
+</div>
+<div class="paragraph">
+<p>Then there are all the character sheet and perk LUA scripts. These can be gotten from Sammy&#8217;s tool when you make the character sheet and the perks. They should just be copy and pasted into the input boxes.</p>
+</div>
+<div class="paragraph">
+<p>Finally, there is the option to add a custom standee script. This is for any extra scripting you want to add to the standee, such as a second HP bar. This is an advanced feature, and will not be needed for most classes.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tts-import"><a class="anchor" href="#tts-import"></a><a href="#nav-menu">Importing</a></h3>
+<div class="paragraph">
+<p>In order to import the class into TTS, you will first need to subscribe to the following mod on the Steam Workshop: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3163711044" class="bare">https://steamcommunity.com/sharedfiles/filedetails/?id=3163711044</a></p>
+</div>
+<div class="paragraph">
+<p>Once you have subscribed to the mod, you can open TTS, and create a new game. In the game, you&#8217;ll need to go to the "Workshop" tab, and search for the mod you just subscribed to. Once you&#8217;ve found it, click the "Load" button, and the mod will be loaded into your game. Within this you will see a tile that allows you to enter a class name and generate the bag.</p>
+</div>
+<div class="paragraph">
+<p>Enter the name of the class you want to import, and click the button. This will create a bag with all the assets you need to play the class in TTS.</p>
+</div>
+<div class="paragraph">
+<p>To upload this bag as your own Steam Workshop mod so that others can download and play your class, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Delete the class import tile</p>
+</li>
+<li>
+<p>Go to the "Modding" tab and then "Workshop Upload"</p>
+</li>
+<li>
+<p>Fill in the details for your mod, including the name, and thumbnail image</p>
+</li>
+<li>
+<p>Click "Upload"</p>
+</li>
+<li>
+<p>This will give you a big long number, which is the ID of your mod. You can use this to share your mod with others. The link to your mod will just be <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=" class="bare">https://steamcommunity.com/sharedfiles/filedetails/?id=</a> followed by the ID of your mod.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="third-party-card-spread"><a class="anchor" href="#third-party-card-spread"></a><a href="#nav-menu">Third Party Card Spreads</a></h3>
+<div class="paragraph">
+<p>If you&#8217;re not using the site to create your class, and instead just want to use it to import your class into TTS, you can still do this. Rather than using the "Upload Image" buttons, you&#8217;ll need to manually link to the images of your assets. Ensure that the level 1/X cards are separate from the level 2-9 cards, and that you&#8217;ve inputted the correct number of rows and columns for each card spread.</p>
+</div>
+<div class="paragraph">
+<p>Once this is done, there is one extra step needed, that normally would be done for you. This is naming all the cards for import into TTS. Next to each image of the card spread, you&#8217;ll see a large input box. This is where you need to input the name of the card. This should be the name of the card, followed by the initiative value in brackets, and then the level of the card, in square brackets. For example, "Mighty Attack (48) [1]". This should just be in a list, with each card on a new line, similar to the perk list.</p>
+</div>
+<div class="paragraph">
+<p>Other than having to manually link all the images, and name all the cards, the process is the same as if you were using the site to create your class.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="finish"><a class="anchor" href="#finish"></a><a href="#nav-menu">Finish</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>And that&#8217;s it! You&#8217;ve now created a class, and imported it into Tabletop Simulator. If you have any questions, feel free to ask in the Discord, and someone will be able to help you out. Have fun playing your new class!</p>
 </div>
 </div>
 </div>
