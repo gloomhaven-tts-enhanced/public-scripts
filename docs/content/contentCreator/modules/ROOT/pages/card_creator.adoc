@@ -27,13 +27,16 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 ** <<sub-blocks, Sub Blocks>>
 ** <<optional-blocks, Optional Blocks>>
 ** <<mandatory-blocks, Mandatory Blocks>>
+** <<tokens, Tokens>>
+*** <<token-modifiers, Token Modifiers>>
+** <<summons, Summons>>
 ** <<named-abilities, Named Abilities>>
 ** <<other-common-card-properties, Other Common Card Properties>>
 ** <<styles, Styles & Modifiers>>
+*** <<common-style-modifiers, Common Style Modifiers>>
+*** <<more-style-modifiers, More Style Modifiers>>
 *** <<position, Position>>
-** <<special-blocks, Special Blocks>>
-*** <<tokens, Tokens>>
-**** <<token-modifiers, Token Modifiers>>
+*** <<special-blocks, Special Blocks>>
 * <<tts-mod, Tabletop Simulator Mod>>
 
 [[introduction]]
@@ -213,7 +216,7 @@ In this example, we have utilized a "group" block to contain multiple actions. E
 
 A more detailed explanation of each block type is provided in the following sections.
 
-Remember: use 2 spaces per level of indentation to maintain the proper hierarchy.
+*Remember:* use 2 spaces per level of indentation to maintain the proper hierarchy.
 
 
 [[basic-actions]]
@@ -473,6 +476,37 @@ Mandatory blocks are used to represent abilities that *must* be performed if tha
 
 In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.
 
+[[tokens]]
+=== link:#nav-menu[Tokens]
+
+The tokens block creates token slots. Each number in the provided array represents the XP that the token slot provides.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Syntax | Description | Example | Result
+
+| `- tokens: [0,1,0,1]`
+| Creates token slots with XP values as defined in the array.
+| `- tokens: [0,1,0,1]`
+| Renders token slots accordingly.
+|===
+
+[[token-modifiers]]
+==== link:#nav-menu[Token Modifiers]
+
+Modifiers for tokens allow you to control how token slots are arranged.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| `lines`
+| Forces tokens to render in a specific layout: either 3 or 4 tokens on 1 or 2 lines. Other numbers follow predefined arrangements (1–2 tokens on one line, 5–6 tokens on two lines).
+|- tokens: [0,1,0,1] +
+  lines: 1
+| Renders tokens in a single line.
+|===
+
 [[summons]]
 === link:#nav-menu[Summons]
 
@@ -580,7 +614,7 @@ There are further properties that can be set for a summon. These extra propertie
 [[named-abilities]]
 === link:#nav-menu[Named Abilities]
 
-Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the banner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<special-blocks, Special Blocks>> section.
+Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the corner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<special-blocks, Special Blocks>> section.
 
 In order to use this block, it should be placed at the base level of the action, with only "top:" or "bottom:" as a parent. Here is an example:
 
@@ -627,108 +661,95 @@ Before we get into more advanced styling options, here are some common propertie
 
 Modifiers allow you to fine-tune the placement, size, and appearance of each block. To apply modifiers, ensure each block is defined as an object (i.e. using a colon after the block name).
 
-Below are some common style options:
+These style modifiers can be applied to any block, and should not have a hyphen in front of them. For example, to apply a modifier to an attack action, you would write:
+
+[source]
+----
+- attack: 3
+  margin: 5px 0px 0px 0px
+  fontSize: 10px
+----
+
+[[common-style-modifiers]]
+==== link:#nav-menu[Common Style Modifiers]
 
 [cols="1,1,1,1", options="header"]
 |===
 | Modifier | Description | Example | Result
 
 | `margin`
-| Adds space on all sides (top, right, bottom, left).
-|
-[source]
-----
-- earth: ''
-  margin: 5px 0px 0px 0px
-----
-| As specified.
-
-| `margin[direction]`
-| Adds space on a specific side. [direction] can be Top, Left, Right, or Bottom.
-|
-[source]
-----
-- earth: ''
-  marginTop: 5px
-----
-| Adjusted accordingly.
+| Sets the margin around the block. This has a variety of ways to be set, as shown in the following examples.
+| `margin: 5px 0px 0px 5px +
+margin: 5px 0px 10px +
+margin: 5px 0px +
+margin: 5px`
+| The first example will set the margin to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the margin to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the margin to 5px on the top and bottom, and 0px on the sides. The last example will set the margin to 5px on all sides.
 
 | `padding`
-| Adds internal spacing (increases the bounding box of the element).
-|
-[source]
-----
-- earth: ''
-  padding: 0px 0px 0px 0px
-----
-| As specified.
-
-| `padding[direction]`
-| Adds padding to a specific side.
-|
-[source]
-----
-- earth: ''
-  paddingTop: 5px
-----
-| As specified.
+| Sets the padding around the block. This has a variety of ways to be set, as shown in the following examples.
+| `padding: 5px 0px 0px 5px +
+padding: 5px 0px 10px +
+padding: 5px 0px +
+padding: 5px`
+| The first example will set the padding to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the padding to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the padding to 5px on the top and bottom, and 0px on the sides. The last example will set the padding to 5px on all sides.
 |===
 
-Other modifiers include:
+*Note:* Padding is similar to margin, but they have separate use cases. Taking an optional block as an example, setting padding on the block will increase the amount of space that the block itself takes up, while setting margin will increase the space between the block and the action above it. You can think of padding as the space inside the block, while margin is the space outside the block.
+
+[[more-style-modifiers]]
+==== link:#nav-menu[More Style Modifiers]
+
+There are many more style modifiers that can be applied to blocks. Here are the rest of them:
 
 [cols="1,1,1,1", options="header"]
 |===
 | Modifier | Description | Example | Result
 
 | `fontSize`
-| Adjusts the text size (icons may have fixed dimensions).
-|
-[source]
-----
-- custom: 'Text'
-  fontSize: 10px
-----
-| As specified.
+| Sets the font size of the text in the block. This can be any number, and will be set in pixels.
+| `fontSize: 10px`
+| The font size of the text in the block will be 10px.
 
-| `color`
-| Changes the font color (does not affect icons).
-|
-[source]
-----
-- custom: 'Text'
-  color: red
-----
-| As specified.
+| `height`
+| Sets the height of the block. This can be any number, and will be set in pixels.
+| `height: 10px`
+| The height of the block will be 10px.
+
+| `display`
+| Sets the display type of the block. This can be set to anything that is valid in CSS, but in almost every case, you don't want to change this.
+| `display: flex`
+| The block will be set to display as a flexbox.
+
+| `flexDirection`
+| Sets the direction that the content in the block will follow. This can be set to "row" or "column". Row will put the content in a row, while column will put the content in a column.
+| `flexDirection: column`
+| The content in the block will be set to display in a column.
 
 | `background`
-| Sets the background color of the block.
-|
-[source]
-----
-- custom: 'Text'
-  background: red
-----
-| As specified.
+| Sets the background color of the block. This can be set to any color that is valid in CSS, including rgb, and rgba.
+| `background: rgb(255,0,0,50%)`
+| The background color of the block will be set to red with 50% opacity.
 
-| `lineHeight`
-| Alters the spacing between lines (useful when mixing text and icons).
-|
-[source]
-----
-- custom: 'Text with adjusted line height to fill two lines.'
-  lineHeight: 20px
-----
-| As specified.
+| `color`
+| Sets the color of the text in the block. This can be set to any color that is valid in CSS, including rgb, and rgba.
+| `color: rgb(255,0,0,50%)`
+| The color of the text in the block will be set to red with 50% opacity.
 
 | `wordSpacing`
-| Adjusts spacing between words.
-|
-[source]
-----
-- custom: 'Text to show word spacing'
-  wordSpacing: 5px
-----
-| As specified.
+| Sets the spacing between words in the block. This can be set to any number, and will be set in pixels.
+| `wordSpacing: 5px`
+| The spacing between words in the block will be set to 5px.
+
+| `lineHeight`
+| Sets the height of each line in the block. This can be set to any number, and will be set in pixels. This is useful for making the text more readable.
+| `lineHeight: 5px`
+| The height of each line in the block will be set to 5px.
+
+| `gap`
+| Sets the gap between the items in the block. This can be set to any number, and will be set in pixels. This is useful for more advanced blocks that we'll get into later.
+| `gap: 5px`
+| The gap between the items in the block will be set to 5px.
+
 |===
 
 [[position]]
@@ -742,86 +763,59 @@ To change a block's position, orientation, or size, use the following modifiers:
 
 | `position`
 | Sets positioning mode: `relative` (based on surrounding elements) or `absolute` (based on the parent element).
-|
-[source]
-----
-- earth: ''
-  position: relative
-----
-| As specified.
+| `position: absolute`
+| The block will be positioned absolutely.
 
 | `top`
 | Adjusts vertical placement from the top edge of the parent or relative container.
-|
-[source]
-----
-- earth: ''
-  position: relative
-  top: 10px
-----
-| As specified.
+| `top: 10px`
+| Adjusts vertical placement from the top edge, placing the block 10px down.
 
 | `left`
 | Adjusts horizontal placement from the left edge.
-|
-[source]
-----
-- earth: ''
-  position: absolute
-  left: 10px
-----
-| As specified.
+| `left: 10px`
+| Adjusts horizontal placement from the left edge, placing the block 10px to the right.
 
 | `transform`
 | Applies CSS transformations (e.g., rotate, scale). Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/transform for more info.
-|
-[source]
-----
-- earth: ''
-  transform: rotate(90deg)
-----
-| As specified.
+| `transform: scale(2)`
+| Doubles the size of the block.
 |===
 
 [[special-blocks]]
 === link:#nav-menu[Special Blocks]
 
-Special blocks handle more complex card elements. They are designed to encapsulate functionality beyond basic actions.
+This section will be dedicated to more advanced styling, to achieve the desired look for your cards. This includes things like the ability to create a banner, or a group of actions that are all part of the same action.
 
-[[tokens]]
-=== link:#nav-menu[Tokens]
+The main block we care about here is the "group" block. This block is used to group actions together, allowing horizontal stacking, or easy positioning of multiple actions at once. One of the easiest examples to show this off is the aforementioned banner. On official cards, there are sometimes a group of actions at the top of the card in a separate "banner" area. Here's an advanced example of how we can recreate something like that using the group block:
 
-The tokens block creates token slots. Each number in the provided array represents the XP that the token slot provides.
-
-[cols="1,1,1,1", options="header"]
-|===
-| Syntax | Description | Example | Result
-
-| `- tokens: [0,1,0,1]`
-| Creates token slots with XP values as defined in the array.
-| `- tokens: [0,1,0,1]`
-| Renders token slots accordingly.
-|===
-
-[[token-modifiers]]
-==== link:#nav-menu[Token Modifiers]
-
-Modifiers for tokens allow you to control how token slots are arranged.
-
-[cols="1,1,1,1", options="header"]
-|===
-| Modifier | Description | Example | Result
-
-| `lines`
-| Forces tokens to render in a specific layout: either 3 or 4 tokens on 1 or 2 lines. Other numbers follow predefined arrangements (1–2 tokens on one line, 5–6 tokens on two lines).
-|
 [source]
 ----
-- tokens: [0,1,0,1]
-  lines: 1
+top:
+  namedAbility:
+    name: Grenade
+    padding: 10px 10px
+  actions:
+    - group:
+      - attack: 2
+        sub:
+          - custom: '%range% 2, advantage'
+        margin: 0px -10px 0px 10px
+      - hex: ett_ttt_ett
+      marginTop: -40px
+      paddingTop: 20px
+      background: rgba(0,0,0,50%)
+
+    - regenerate:
+      marginTop: 10px
+      sub:
+        - self
+  duration: persistent
 ----
-| Arranged as specified.
-|===
+
+In this example, we have a group block that contains two actions, an attack and a AoE hex pattern. Group blocks default to a flexDirection of row, so the two actions will be placed next to each other. The group block also has a marginTop of -40px, which will pull the group up into the top area of the card. The paddingTop of 20px will add some space between the top of the group and the top of the card, allowing the darker background to extend seamlessly to the edge of the card. Finally, you can see the Named Ability block at the top, which is used to create the iconography in the corner of the banner group we've just created.
+
+The principles shown here can be applied to many different scenarios, and using a combination of everything shown so far, there is a lot of freedom available to you to create the card you want. Remember, you are able to access the example syntax class to see some examples of how to use these blocks, and how they can be combined to create the desired effect. Otherwise, experiment a little with the blocks, and see what you can come up with!
 
 [[tts-mod]]
 == link:#nav-menu[Tabletop Simulator Mod]
