@@ -31,12 +31,13 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 *** <<token-modifiers, Token Modifiers>>
 ** <<summons, Summons>>
 ** <<named-abilities, Named Abilities>>
+** <<mode-blocks, Mode Blocks>>
 ** <<other-common-card-properties, Other Common Card Properties>>
 ** <<styles, Styles & Modifiers>>
 *** <<common-style-modifiers, Common Style Modifiers>>
 *** <<more-style-modifiers, More Style Modifiers>>
 *** <<position, Position>>
-*** <<special-blocks, Special Blocks>>
+*** <<advanced-styling, Advanced Styling>>
 * <<tts-mod, Tabletop Simulator Mod>>
 ** <<tts-assets, TTS Assets>>
 *** <<tts-assets-starting-deck, Starting Deck>>
@@ -623,7 +624,7 @@ There are further properties that can be set for a summon. These extra propertie
 [[named-abilities]]
 === link:#nav-menu[Named Abilities]
 
-Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the corner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<special-blocks, Special Blocks>> section.
+Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the corner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<advanced-styling, Advanced Styling>> section.
 
 In order to use this block, it should be placed at the base level of the action, with only "top:" or "bottom:" as a parent. Here is an example:
 
@@ -633,6 +634,54 @@ In order to use this block, it should be placed at the base level of the action,
   namedAbility:
     name: Augment
 ----
+
+[[mode-blocks]]
+=== link:#nav-menu[Mode Blocks]
+
+The mode block can be used to create something akin to Blinkblade's fast or slow abilities. Here is an example of how to use the mode block:
+
+[source]
+----
+- mode:
+  - attack: 2
+  icon: '%classToken0%'
+----
+
+In this example, we have a mode block that contains an attack 2 ability, and an icon of the class token.
+
+The mode block has a couple of special properties that can be set. These are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `icon`
+| The stuff that appears in the smalller box of the mode.
+| `icon: '%classToken0%'`
+| The icon of the class token will appear in the smaller box of the mode.
+
+| `reverse`
+| If set to true, the mode will be reversed. This means that the smaller box will be on the right, and the larger box will be on the left.
+| `reverse: true`
+| The mode will be reversed.
+
+| `leftBg`
+| The background color of the left box. This will usually be in rgb form as shown in the example.
+| `leftBg: 'rgb(255,0,0,50%)'`
+| The left box will have a red background with 50% opacity.
+
+| `rightBg`
+| The background color of the right box. This will usually be in rgb form as shown in the example.
+| `rightBg: 'rgb(0,255,0,50%)'`
+| The right box will have a green background with 50% opacity.
+
+| `borderBg`
+| The background color of the border between the two boxes. This will usually be in rgb form as shown in the example.
+| `borderBg: 'rgb(0,0,255,50%)'`
+| The border between the two boxes will be blue with 50% opacity.
+|===
+
+
 
 [[other-common-card-properties]]
 === link:#nav-menu[Other Common Card Properties]
@@ -791,8 +840,8 @@ To change a block's position, orientation, or size, use the following modifiers:
 | Doubles the size of the block.
 |===
 
-[[special-blocks]]
-=== link:#nav-menu[Special Blocks]
+[[advanced-styling]]
+=== link:#nav-menu[Advanced Styling]
 
 This section will be dedicated to more advanced styling, to achieve the desired look for your cards. This includes things like the ability to create a banner, or a group of actions that are all part of the same action.
 
