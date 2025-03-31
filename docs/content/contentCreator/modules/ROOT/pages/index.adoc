@@ -1,4 +1,4 @@
 = Custom Class Creator
 
-This documentation will describe the use and available features of the https://gloomhaven-party-tracker.herokuapp.com/[Custom Class Creator] (CCC). The CCC is a tool to create custom class cards and other assets, as well as add other assets to make a complete functional Mod for both GHE and FHE automatically.
+This documentation will describe how to use, and the available features of the https://gloomhaven-party-tracker.herokuapp.com/[Custom Class Creator] (CCC). The CCC is a tool allowing the creation of custom class cards and other assets, as well as add other assets to make a fully functioning mod for both GHE and FHE automatically.
 
