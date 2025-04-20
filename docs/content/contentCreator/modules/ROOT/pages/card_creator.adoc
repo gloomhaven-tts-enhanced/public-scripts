@@ -68,7 +68,7 @@ Before you begin creating your cards, it's recommended to set up some base info,
 The base info section is where you can define all the aspects of your class that don't involve the cards themselves, such as the info presented on the class mat.
 
 Here is a brief overview of the properties you can define:
-
+{set:cellbgcolor:rgb(180, 180, 180)}
 [cols="1,1", options="header"]
 |===
 | Property | Description
