@@ -208,6 +208,9 @@
 </div>
 </li>
 <li>
+<p><a href="#area-of-effect">Area of Effect</a></p>
+</li>
+<li>
 <p><a href="#summons">Summons</a></p>
 </li>
 <li>
@@ -1027,6 +1030,45 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="area-of-effect"><a class="anchor" href="#area-of-effect"></a><a href="#nav-menu">Area of Effect</a></h3>
+<div class="paragraph">
+<p>The area of effect block is used to create a hex pattern. This takes the following form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- hex: et_st</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, we have an area of effect block that creates a hex pattern of two hexes in front of the player. Each letter in the string represents a hex, and the order of the letters determines the order of the hexes. The letters are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>e: no hex rendered (used for positioning other hexes)</p>
+</li>
+<li>
+<p>t: target</p>
+</li>
+<li>
+<p>s: self</p>
+</li>
+<li>
+<p>a: ally</p>
+</li>
+<li>
+<p>b: blank</p>
+</li>
+<li>
+<p>x: enhancement dot hex</p>
+</li>
+<li>
+<p>_: start new row</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="summons"><a class="anchor" href="#summons"></a><a href="#nav-menu">Summons</a></h3>
 <div class="paragraph">
 <p>Summons are a special type of action that can be created using the "summon" block. This is one of the more complex blocks, as it has a lot of properties that can be set. Here is an example of a basic summon block:</p>
@@ -1035,14 +1077,16 @@
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">- custom: 'Summon Example Summon'
 - summon:
-  name: 'Example Summon'
-  stats: [5,2,3,'-']
-  image:
+    name: 'Example Summon'
+    stats: [5,2,3,'-']
     image:
       url: "https://example.com/image.png"
       size: 100%
       position: '0px 0px'</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> This specific block&#8217;s properties require a double indentation (4 spaces).</p>
 </div>
 <div class="paragraph">
 <p>In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.</p>
