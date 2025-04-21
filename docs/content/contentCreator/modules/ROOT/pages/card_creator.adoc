@@ -29,6 +29,7 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 ** <<mandatory-blocks, Mandatory Blocks>>
 ** <<tokens, Tokens>>
 *** <<token-modifiers, Token Modifiers>>
+** <<area-of-effect, Area of Effect>>
 ** <<summons, Summons>>
 ** <<named-abilities, Named Abilities>>
 ** <<mode-blocks, Mode Blocks>>
@@ -517,6 +518,26 @@ Modifiers for tokens allow you to control how token slots are arranged.
 | Renders tokens in a single line.
 |===
 
+[[area-of-effect]]
+=== link:#nav-menu[Area of Effect]
+
+The area of effect block is used to create a hex pattern. This takes the following form:
+
+[source]
+----
+- hex: et_st
+----
+
+In this example, we have an area of effect block that creates a hex pattern of two hexes in front of the player. Each letter in the string represents a hex, and the order of the letters determines the order of the hexes. The letters are as follows:
+
+- e: no hex rendered (used for positioning other hexes)
+- t: target
+- s: self
+- a: ally
+- b: blank
+- x: enhancement dot hex
+- _: start new row
+
 [[summons]]
 === link:#nav-menu[Summons]
 
@@ -526,14 +547,15 @@ Summons are a special type of action that can be created using the "summon" bloc
 ----
 - custom: 'Summon Example Summon'
 - summon:
-  name: 'Example Summon'
-  stats: [5,2,3,'-']
-  image:
+    name: 'Example Summon'
+    stats: [5,2,3,'-']
     image:
       url: "https://example.com/image.png"
       size: 100%
       position: '0px 0px'
 ----
+
+*Note:* This specific block's properties require a double indentation (4 spaces).
 
 In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.
 
