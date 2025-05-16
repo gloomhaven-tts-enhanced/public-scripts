@@ -37,6 +37,22 @@ The effected players either need to disable mod caching in TTS to it downloads t
 Or they can xref:guide:preDownload.adoc[pre download] all the mod's assets and replaced their current cached files.
 Afterward, mod caching can be enabled again to improve performance.
 
+== Version 2.3
+
+[#locked-solo]
+=== Solo scenarios for unlocked classes show up as locked in the scenario overview
+
+Solo scenarios only show up when using the "Show Locked" toggle in the scenario setup.
+This spoilers class names as all other solo scenarios are also in that list.
+To fix this, you can enter the following command into the chat window in TTS:
+
+[source]
+----
+/execute Global.call("api_scenario_unlockScenario", { "Banner Spear" })
+----
+
+Replace `Banner Spear` with the actual name of the class you want to unlock.
+
 == Version 2.2
 
 [#town-guard-empty]
