@@ -298,6 +298,27 @@ Afterward, mod caching can be enabled again to improve performance.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_version_2_3"><a class="anchor" href="#_version_2_3"></a>Version 2.3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="locked-solo"><a class="anchor" href="#locked-solo"></a>Solo scenarios for unlocked classes show up as locked in the scenario overview</h3>
+<div class="paragraph">
+<p>Solo scenarios only show up when using the "Show Locked" toggle in the scenario setup.
+This spoilers class names as all other solo scenarios are also in that list.
+To fix this, you can enter the following command into the chat window in TTS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">/execute Global.call("api_scenario_unlockScenario", { "Banner Spear" })</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <code>Banner Spear</code> with the actual name of the class you want to unlock.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_version_2_2"><a class="anchor" href="#_version_2_2"></a>Version 2.2</h2>
 <div class="sectionbody">
 <div class="sect2">
