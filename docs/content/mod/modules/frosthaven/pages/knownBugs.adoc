@@ -39,6 +39,21 @@ Afterward, mod caching can be enabled again to improve performance.
 
 == Version 2.3
 
+[#accidentally-unlocked]
+=== Can not lock accidentally unlocked scenarios on the flowchart
+
+In 2.3 there's now in-game way to lock a scenario again, once it's unlocked on the flowchart.
+There's a workaround by manually changing the save file:
+
+* Open the .json save file in a text editor like VSC or Notepad++,
+* Search for `"GUID": "scenario-flowchart"`
+* About 60 lines below that you'll see `"LuaScriptState":` with a bunch of data after it
+* Look for the scenario you need to fix by index #, you'll see a string like this (ex: Scenario 6) `{\"index\":\"6\",\"unlocked\":true,\"completed\":false,\"treasures\":{}}`
+* Change `\"unlocked\":true,` to `\"unlocked\":false`
+* Save the file and reload it in TTS
+
+NOTE: This does not remove the sticker for the scenario from the map.
+
 [#locked-solo]
 === Solo scenarios for unlocked classes show up as locked in the scenario overview
 
