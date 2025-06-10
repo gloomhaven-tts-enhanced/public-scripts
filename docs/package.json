@@ -7,8 +7,8 @@
     "build:local": "antora generate --clean antora-playbook-local.yml"
   },
   "devDependencies": {
-    "@antora/cli": "^3.0.1",
-    "@antora/lunr-extension": "1.0.0-alpha.8",
-    "@antora/site-generator": "^3.0.1"
+    "@antora/cli": "catalog:",
+    "@antora/lunr-extension": "catalog:",
+    "@antora/site-generator": "catalog:"
   }
 }

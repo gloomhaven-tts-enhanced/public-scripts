@@ -8,10 +8,10 @@
     "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "@gloomhaven-enhanced/data": "^0.1.0"
+    "@gloomhaven-enhanced/data": "catalog:"
   },
   "devDependencies": {
-    "tsx": "^4.19.0",
-    "typescript": "^5.7.2"
+    "tsx": "catalog:",
+    "typescript": "catalog:"
   }
 }
