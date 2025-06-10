@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Unlocking Classes :: Frosthaven Enhanced</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <title>Completing a Scenario :: Frosthaven Enhanced</title>
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
   </head>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="mod" data-version="2.4">
+<div class="nav-container" data-component="mod" data-version="2.5">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -65,7 +65,7 @@
     <a class="nav-link" href="../engine/interface/interfaces.html">Interfaces</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../engine/interface/scenarioSetup.html">Scenario Setup</a>
+    <a class="nav-link" href="../engine/interface/scenarioSetup.html">Game Setup</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../engine/interface/monsterSetup.html">Monster Setup</a>
@@ -116,16 +116,19 @@
     <a class="nav-link" href="start.html">Starting a Scenario</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="class.html">Unlocking Classes</a>
+    <a class="nav-link" href="complete.html">Completing a Scenario</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="campaign.html">Campaign Unlocks Information</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="buildings.html">Envelope/Building Mechanics</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="enhancements.html">Enhancing Abilities</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migrate.html">Migrating a Campaign</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="buildings.html">Envelope/Building Mechanics</a>
   </li>
 </ul>
   </li>
@@ -175,7 +178,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Frosthaven Enhanced</span>
-    <span class="version">2.4 next</span>
+    <span class="version">2.5 next</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -185,10 +188,10 @@
       <div class="title"><a href="../../../custom/latest/index.html">Custom Content</a></div>
       <ul class="versions">
         <li class="version">
-          <a href="../../../custom/next/index.html">2.4 next</a>
+          <a href="../../../custom/next/index.html">2.5 next</a>
         </li>
         <li class="version is-latest">
-          <a href="../../../custom/latest/index.html">2.3</a>
+          <a href="../../../custom/latest/index.html">2.4</a>
         </li>
         <li class="version">
           <a href="../../../custom/1.3/index.html">1.3</a>
@@ -202,10 +205,10 @@
       <div class="title"><a href="../../latest/index.html">Frosthaven Enhanced</a></div>
       <ul class="versions">
         <li class="version is-current">
-          <a href="../index.html">2.4 next</a>
+          <a href="../index.html">2.5 next</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">2.3</a>
+          <a href="../../latest/index.html">2.4</a>
         </li>
         <li class="version">
           <a href="../../1.3/index.html">1.3</a>
@@ -224,68 +227,56 @@
   <ul>
     <li><a href="../index.html">Frosthaven Enhanced</a></li>
     <li>Playing a Campaign</li>
-    <li><a href="class.html">Unlocking Classes</a></li>
+    <li><a href="complete.html">Completing a Scenario</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.4 next</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.5 next</button>
   <div class="version-menu">
-    <a class="version is-current" href="class.html">2.4 next</a>
-    <a class="version is-missing" href="../../latest/index.html">2.3</a>
+    <a class="version is-current" href="complete.html">2.5 next</a>
+    <a class="version" href="../../latest/campaign/complete.html">2.4</a>
     <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/next/docs/content/mod/modules/campaign/pages/class.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/next/docs/content/mod/modules/campaign/pages/complete.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Unlocking Classes</h1>
+<h1 class="page">Completing a Scenario</h1>
 <div class="paragraph">
-<p>The currently available classes can be found on the left side of the table.
-They are tightly placed together into their envelopes.
-By using <a href="start.html#add_players" class="xref page">drag and drop</a> on the envelope, you can pull out a fresh character of the class to place on a player mat.</p>
+<p>When a scenario is complete, open the <a href="../engine/interface/scenarioSetup.html" class="xref page">Game Setup</a> box once again and select <b class="button">Scenario Won</b> or <b class="button">Scenario Lost</b> to do the following:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/class-boxes.png" alt="class boxes">
+<div class="ulist">
+<ul>
+<li>
+<p>Character standees/minis return to their respective player mats and are reset to full health.</p>
+</li>
+<li>
+<p>XP is tallied based on the XP earned from the "dial" plus the bonus XP for the scenario level</p>
+</li>
+<li>
+<p><a href="../scenario/looting.html" class="xref page">Loot</a> is automatically tallied and added to the character sheet</p>
+</li>
+<li>
+<p>Curses and Blesses from all attack modifier decks are returned to their homes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Note that any -1s from scenario or item effects are not removed, as the scripting is not yet set up to handle item effects. Instead of having anyone with heavy items add their -1s every scenario, the decision was that -1s not be removed.</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="paragraph">
-<p>Next to the envelopes, there&#8217;s a small tile with a seal on it.
-This tile is used to add a new class envelope to the already existing ones.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/classs-unlock.png" alt="classs unlock">
-</div>
-</div>
-<div class="paragraph">
-<p>Clicking the seal on the tile will open an on-screen list of all available classes in the played mod.
-The list will use the class icon as well as the official spoiler name for the class.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/class-list.png" alt="class list">
-</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Clicking an entry in the list will then place the new envelope to the left of the existing ones.</p>
+<p>Be sure to review the scenario conclusion, adjust the scenario flowchart, gain any party rewards (items, gold, resources, XP, prosperity, inspiration, morale, campaign stickers), check and return your battle goals, or any unlocked mechanics from <a href="buildings.html" class="xref page">Buildings</a>.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The tile with the seal is actually a regular bag.
-If for some reason you need to actually access the bag to remove or add stuff manually, right-click it (while not hovering the seal) and use the "Search" menu entry to get the basic TTS container search window.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Once the above is complete, you can select <b class="button">Game Setup</b> again and click <b class="button">Delete Map</b> to remove everything from the table for the scenario you just completed. If you are replaying the scenario, you will have to go through all these steps and re-select this scenario.</p>
 </div>
 </article>
   </div>

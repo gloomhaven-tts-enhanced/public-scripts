@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Pre-Downloading Assets :: Frosthaven Enhanced</title>
+    <title>Campaign Unlocks Information :: Frosthaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="mod" data-version="2.4">
+<div class="nav-container" data-component="mod" data-version="2.5">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -110,25 +110,25 @@
     <span class="nav-text">Playing a Campaign</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/begin.html">Beginning of Campaign</a>
+    <a class="nav-link" href="begin.html">Beginning of Campaign</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/start.html">Starting a Scenario</a>
+    <a class="nav-link" href="start.html">Starting a Scenario</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/complete.html">Completing a Scenario</a>
+    <a class="nav-link" href="complete.html">Completing a Scenario</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="campaign.html">Campaign Unlocks Information</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/campaign.html">Campaign Unlocks Information</a>
+    <a class="nav-link" href="buildings.html">Envelope/Building Mechanics</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/buildings.html">Envelope/Building Mechanics</a>
+    <a class="nav-link" href="enhancements.html">Enhancing Abilities</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/enhancements.html">Enhancing Abilities</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../campaign/migrate.html">Migrating a Campaign</a>
+    <a class="nav-link" href="migrate.html">Migrating a Campaign</a>
   </li>
 </ul>
   </li>
@@ -178,7 +178,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Frosthaven Enhanced</span>
-    <span class="version">2.4</span>
+    <span class="version">2.5 next</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -202,13 +202,13 @@
       <div class="title"><a href="../../../dev/index.html">Development</a></div>
     </li>
     <li class="component is-current">
-      <div class="title"><a href="../index.html">Frosthaven Enhanced</a></div>
+      <div class="title"><a href="../../latest/index.html">Frosthaven Enhanced</a></div>
       <ul class="versions">
-        <li class="version">
-          <a href="../../next/index.html">2.5 next</a>
+        <li class="version is-current">
+          <a href="../index.html">2.5 next</a>
         </li>
-        <li class="version is-current is-latest">
-          <a href="../index.html">2.4</a>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">2.4</a>
         </li>
         <li class="version">
           <a href="../../1.3/index.html">1.3</a>
@@ -226,58 +226,155 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Frosthaven Enhanced</a></li>
-    <li><a href="preDownload.html">Pre-Downloading Assets</a></li>
+    <li>Playing a Campaign</li>
+    <li><a href="campaign.html">Campaign Unlocks Information</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.4</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.5 next</button>
   <div class="version-menu">
-    <a class="version" href="../../next/guide/preDownload.html">2.5 next</a>
-    <a class="version is-current" href="preDownload.html">2.4</a>
+    <a class="version is-current" href="campaign.html">2.5 next</a>
+    <a class="version" href="../../latest/campaign/campaign.html">2.4</a>
     <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/mod/modules/guide/pages/preDownload.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/next/docs/content/mod/modules/campaign/pages/campaign.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Pre-Downloading Assets</h1>
+<h1 class="page">Campaign Unlocks Information</h1>
+<div class="sect1">
+<h2 id="_unlocking_classes"><a class="anchor" href="#_unlocking_classes"></a>Unlocking Classes</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s recommended to pre-download all the assets from the mod before starting the game, especially if you are playing multiplayer.
-Otherwise, TTS will download assets when you first encounter them.
-This is typically a bit slower than downloading an asset manually, and can lead to de-syncs or weird behavior in multiplayer games Each player downloads the assets individually, but players that already finished downloading can interact with the game pieces which may make things for the loading players not working correctly afterward.
-By pre-downloading the assets this problem can be circumvented and loading new content (like encountering new monsters, unlocking classes, etc.) is a bit smoother in general.
-The whole assets of the mod are around 4GB in total.</p>
+<p>The currently available classes can be found on the left side of the table.
+They are tightly placed together into their envelopes.
+By using <a href="start.html#add_players" class="xref page">drag and drop</a> on the envelope, you can pull out a fresh character of the class to place on a player mat.</p>
 </div>
-<div class="paragraph">
-<p>To pre-download the assets, go to <a href="https://drive.google.com/drive/folders/1I136KhBufKiaWh8nCGrk-gxLIBnMhNSO" class="bare">https://drive.google.com/drive/folders/1I136KhBufKiaWh8nCGrk-gxLIBnMhNSO</a> and download all files there by downloading the individual directories.
-Visit the <a href="https://kb.tabletopsimulator.com/getting-started/technical-info/#configuration-files-location">TTS knowledge base</a> to find the directory path where TTS stores its game data for your system and navigate to that directory.
-Open the directory <code>Mods</code>, this is where TTS stores its file cache, based on the object type (e.g. <code>Images</code> contains all cards, textures, etc.) Copy the content of each downloaded directory into the same one inside the <code>Mods</code> directory, to put the assets directly into the TTS cache.</p>
-</div>
-<div class="paragraph">
-<p>So, in the end the final directory structure looks like this:</p>
-</div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">TTS directory
-└─ Mods/
-   ├─ Images/
-   │  ├─ httpssteamusercontentaakamaihdnetugc83721958669665131CDB9DDDBF02571C13143E28E25F3971C5E1F00E7.jpg
-   │  ├─ ...
-   │  └─ httpssteamusercontentaakamaihdnetugc1719786285766650742006AE5584AEB4E7E7343E14C0749B0B8F5D0CF62.jpg
-   ├─ Models/
-   │  └── ...
-   ├─ ...
-   └─ PDF/
-      └── ...</code></pre>
+<img src="_images/class-boxes.png" alt="class boxes">
 </div>
 </div>
 <div class="paragraph">
-<p>There are probably already lots of files inside there (and additional directories) if you used TTS before and played other mods.
-Just make sure the downloaded assets up in the correct directories.</p>
+<p>Next to the envelopes, there&#8217;s a small tile with a seal on it.
+This tile is used to add a new class envelope to the already existing ones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/classs-unlock.png" alt="classs unlock">
+</div>
+</div>
+<div class="paragraph">
+<p>Clicking the seal on the tile will open an on-screen list of all available classes in the played mod.
+The list will use the class icon as well as the official spoiler name for the class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/class-list.png" alt="class list">
+</div>
+</div>
+<div class="paragraph">
+<p>Clicking an entry in the list will then place the new envelope to the left of the existing ones.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The tile with the seal is actually a regular bag.
+If for some reason you need to actually access the bag to remove or add stuff manually, right-click it (while not hovering the seal) and use the "Search" menu entry to get the basic TTS container search window.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unlocking_envelopes"><a class="anchor" href="#_unlocking_envelopes"></a>Unlocking Envelopes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the bottom of the Outpost area is a "Sealed Envelopes" object, which contains 17 envelopes inside.
+To unlock a specific envelope, first remove it from the bag by right-clicking the object, select "search", and click-and-drag that envelope out.
+Once on the table, there is a button to unlock its contents. The chat log and <a href="buildings.html" class="xref page">buildings page</a> will tell you what is added by unlocking a given envelope.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/campaign-starting-pieces.png" alt="campaign starting pieces">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="items"><a class="anchor" href="#items"></a>Unlocking Items</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that a new campaign has <a href="begin.html#items" class="xref page">items</a>, and they can be sorted at the <a href="../engine/interface/shop.html" class="xref page">Item Shop</a>, information on the other two bags shown here:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/items.png" alt="items">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Random Blueprints and Items</dt>
+<dd>
+<p>This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
+Click <b class="button">Unlock</b> and select between <b class="button">Random Blueprint</b> and [Random Item].
+Note for v2.2 and before that <a href="../scenario/looting.html#random_item" class="xref page">Random Items</a> are assigned by clicking the button on the loot card drawn.</p>
+</dd>
+<dt class="hdlist1">Locked Items</dt>
+<dd>
+<p>This is where all other locked items are kept.
+Click <b class="button">Unlock</b> to bring up an input box.
+Enter an item&#8217;s number or name to unlock it.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Additionally, as the Craftsman is upgraded, the items it unlocks can be added by clicking <b class="button">Unlock</b> at the bottom right of each upgraded Craftsman card.
+At this time, no other buildings that add items to the available supply have scripting to add any items.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unlocking_events"><a class="anchor" href="#_unlocking_events"></a>Unlocking Events</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/events.png" alt="events">
+</div>
+</div>
+<div class="paragraph">
+<p>An event mat for each event type is shown in the campaign area, all events of each type have 3 button bags. All events of each season + location are stored in one of the three button bags.
+When the campaign starts, event numbers 1-20 of each season + location are shuffled into the active decks.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Active</dt>
+<dd>
+<p>This bag contains the current deck. When you click <b class="button">New Event</b>, the card at the top of this bag will be pulled out and revealed on the mat. If the option for the event shows the "return to the deck" icon, this button moves the event on the mat to the bottom of the bag.</p>
+</dd>
+<dt class="hdlist1">Inactive</dt>
+<dd>
+<p>This bag contains all remaining event cards that have not been removed. At the start of the campaign, this is all remaining events not in the active bag.</p>
+</dd>
+<dt class="hdlist1">Removed</dt>
+<dd>
+<p>Completed events or any events that are removed go here. When the torn card icon is clicked while a card is on the event mat, the event is moved here.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>When you are instructed to add event(s) to a given deck, right-click the Inactive bag, select search, and enter the number in the text box at the top. Remove the card and deposit it into the Active bag, right-click on the active bag and select shuffle.</p>
+</div>
+</div>
 </div>
 </article>
   </div>

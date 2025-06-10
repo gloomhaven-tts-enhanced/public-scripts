@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Beginning of Campaign :: Frosthaven Enhanced</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
   </head>
@@ -39,7 +39,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="mod" data-version="2.4">
+<div class="nav-container" data-component="mod" data-version="2.5">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -65,7 +65,7 @@
     <a class="nav-link" href="../engine/interface/interfaces.html">Interfaces</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../engine/interface/scenarioSetup.html">Scenario Setup</a>
+    <a class="nav-link" href="../engine/interface/scenarioSetup.html">Game Setup</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../engine/interface/monsterSetup.html">Monster Setup</a>
@@ -116,16 +116,19 @@
     <a class="nav-link" href="start.html">Starting a Scenario</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="class.html">Unlocking Classes</a>
+    <a class="nav-link" href="complete.html">Completing a Scenario</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="campaign.html">Campaign Unlocks Information</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="buildings.html">Envelope/Building Mechanics</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="enhancements.html">Enhancing Abilities</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="migrate.html">Migrating a Campaign</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="buildings.html">Envelope/Building Mechanics</a>
   </li>
 </ul>
   </li>
@@ -175,7 +178,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Frosthaven Enhanced</span>
-    <span class="version">2.4 next</span>
+    <span class="version">2.5 next</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -185,10 +188,10 @@
       <div class="title"><a href="../../../custom/latest/index.html">Custom Content</a></div>
       <ul class="versions">
         <li class="version">
-          <a href="../../../custom/next/index.html">2.4 next</a>
+          <a href="../../../custom/next/index.html">2.5 next</a>
         </li>
         <li class="version is-latest">
-          <a href="../../../custom/latest/index.html">2.3</a>
+          <a href="../../../custom/latest/index.html">2.4</a>
         </li>
         <li class="version">
           <a href="../../../custom/1.3/index.html">1.3</a>
@@ -202,10 +205,10 @@
       <div class="title"><a href="../../latest/index.html">Frosthaven Enhanced</a></div>
       <ul class="versions">
         <li class="version is-current">
-          <a href="../index.html">2.4 next</a>
+          <a href="../index.html">2.5 next</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">2.3</a>
+          <a href="../../latest/index.html">2.4</a>
         </li>
         <li class="version">
           <a href="../../1.3/index.html">1.3</a>
@@ -228,10 +231,10 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.4 next</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.5 next</button>
   <div class="version-menu">
-    <a class="version is-current" href="begin.html">2.4 next</a>
-    <a class="version" href="../../latest/campaign/begin.html">2.3</a>
+    <a class="version is-current" href="begin.html">2.5 next</a>
+    <a class="version" href="../../latest/campaign/begin.html">2.4</a>
     <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
 </div>
@@ -292,19 +295,15 @@ Check out the <a href="../engine/interface/shop.html" class="xref page">Item Sho
 Be sure to right-click <b class="button">Unpack/Recall</b> when you are done shopping to recall the items to the item storage bag.
 This allows for fewer images to load and allows the mod to perform better.</p>
 </dd>
-<dt class="hdlist1">Random Blueprints and Items</dt>
-<dd>
-<p>This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
-Click <b class="button">Unlock</b> and select between <b class="button">Random Blueprint</b> and [Random Item].
-Note that <a href="../scenario/looting.html#random_item" class="xref page">Random Items</a> are assigned by clicking the button on the loot card drawn.</p>
-</dd>
-<dt class="hdlist1">Locked Items</dt>
-<dd>
-<p>This is where all other locked items are kept.
-Click <b class="button">Unlock</b> to bring up an input box.
-Enter an item&#8217;s number or name to unlock it.</p>
-</dd>
 </dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/starting-shop.png" alt="starting shop">
+</div>
+</div>
+<div class="paragraph">
+<p>For information regarding locked items and random items/blueprints, click <a href="campaign.html#items" class="xref page">here</a>.</p>
 </div>
 </div>
 <div class="sect2">
