@@ -23,13 +23,9 @@ Check out the xref:engine:interface/shop.adoc[Item Shop] for sorting the availab
 Be sure to right-click btn:[Unpack/Recall] when you are done shopping to recall the items to the item storage bag.
 This allows for fewer images to load and allows the mod to perform better.
 
-Random Blueprints and Items:: This is where all locked random items (purple backs) and blueprints (blue backs) are kept.
-Click btn:[Unlock] and select between btn:[Random Blueprint] and [Random Item].
-Note that xref:scenario:looting.adoc#random_item[Random Items] are assigned by clicking the button on the loot card drawn.
+image::starting-shop.png[]
 
-Locked Items:: This is where all other locked items are kept.
-Click btn:[Unlock] to bring up an input box.
-Enter an item's number or name to unlock it.
+For information regarding locked items and random items/blueprints, click xref:campaign.adoc#items[here].
 
 [#add_players]
 === Add Players

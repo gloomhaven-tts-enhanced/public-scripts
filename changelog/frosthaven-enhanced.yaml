@@ -1,3 +1,71 @@
+- version: 2.4.0
+  release: 2025-10-06
+  change:
+    - "Some bags with multiple objects inside are now considered infinite.
+      Dragging an object out of them immediately places a copy back into them.
+      It also prevents adding new objects there manually.
+      Removing the tag 'Infinite' from them allows adding objects again.
+      Adding the tag 'Infinite' adds this behavior to any container in the mod.
+      Currently those bags are considered infinite:
+      - The overlay tiles
+      - The rulebooks and guides
+      "
+  add:
+    - Dropping an overlay terrain tile onto a figure will move the tile below the figure.
+      This includes things like Deathwalkers Shadows.
+    - You can lock entries from the scenario flowchart again.
+      Right-click on the scenario completion checkmark to hide the scenario again.
+      This will also remove the scenario sticker from the map.
+      It will _not_ remove additional map stickers that may be unlocked by certain scenarios (e.g. sticker Y).
+    - "Building 24: ||Planted herbs can now be tracked on the garden building card.
+      Click the plots to select the herb to plan.
+      For level 1 and 2, click the arrow circle icon to flip the garden card.||"
+    - There are now both options for sticker G available when using the 'Add Sticker' button on the map.
+      Also see migration information part.
+  fix:
+    - Looting a random item while the random item deck is empty now moves the loot card to the player mat.
+      It will be counted as 3 coins at the end of the scenario.
+    - Monster ability cards show correct descriptions.
+    - Loading a saved scenario or reloading a monster figure doesn't result in duplicate monster numbers anymore.
+    - Defense can be set to a negative number using the campaign sheet.
+    - Cards from the townguard deck are now saved and loaded more precisely so that they contain the information about which special card is used.
+    - The selected background color persists between saves.
+    - The 'Items' part of the notes field on the back of character sheets is persisted through packing/unpacking/migrating a character.
+    - The random item loot card isn't added to the loot deck if it was already was looted in a previous scenario attempt.
+    - Items with gold costs have their cost in the data, so sorting by item costs in the shop now works.
+      Items without gold costs are sorted at the end.
+    - Solo scenarios are shown as unlocked in the Game Setup menu once the class is unlocked.
+    - "Deathwalker: Rest in the Shade enhancement costs account for multi-target."
+    - "Geminate: ||Luminous Descent enhancement costs account for multi-target.||"
+    - "Meteor: ||Deep Fury bottom enhancement mark corrected to use diamond plus shape.||"
+    - "Prism: ||Shield Spider summon shows correct effect.||"
+    - "Abeal Herder: Fixes preview for monster ability cards missing some actions"
+    - "Algox Icespeaker: ||Raised HP bar offset to include immunities for higher difficulties.||"
+    - "Flaming Bladespinner: Fixes stats for level 7 elite."
+    - "Snow Imp: Fixes movement value for level 0 elite."
+    - "Building 81: ||The building is not automatically upgraded to level 2 when you unlock envelope A. Downgrading the building to level 1 doesn't prevent upgrading it again.||"
+    - "Building 81: ||The order of the trial deck is now correct according to the FAQ.||"
+    - "Item 214: ||Fixes it's name to 'Cup of Ventillion'.||"
+    - "Scenario 6: ||Map tiles use the correct side.||"
+    - "Scenario 10: ||The Ice Pillars in the second room of the correct HP and the map tile is 16-A instead of 16-B.||"
+    - "Scenario 15: ||Chaos Lieutenant shows immunities.||"
+    - "Scenario 27: ||Altars are set up correctly based on character count.||"
+    - "Scenario 42: ||Add missing difficult terrain.||"
+    - "Scenario 60: ||Lurkers add +1 to their attack value.||"
+    - "Scenario 76: ||Adds missing section links.||"
+    - "Scenario 76: ||Figh King has correct HP.||"
+    - "Scenario 93: ||Scawbit has its movement reduced correctly.||"
+    - "Scenario 109: ||The boss deck is now correctly removed at the end of the scenario.||"
+    - "Scenario 132: ||Added Missing escape hex markers.||"
+    - "Coral Solo: ||The second boss has its movement reduced correctly.||"
+  migration:
+    - "Building 81: ||If the bottom card of your current trial deck is 'Trial of Weakness', the whole deck will get reverted to match the intended order.||"
+    - Check the town guard deck for the correct cards (the ones with special symbols on them).
+      Loading a previous campaign doesn't know which card was unlocked so it just tries to guess and load the correct card.
+      Change the cards to the intended ones if there are mistakes.
+      The cards are now saved correctly.
+    - Sticker G is removed when loading the campaign.
+      You have to reapply it, which you can now with the correct color.
 - version: 2.3.1
   release: 2024-12-19
   add:

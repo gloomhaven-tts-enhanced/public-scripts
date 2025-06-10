@@ -1,0 +1,17 @@
+{
+  "name": "@gloomhaven-enhanced/example",
+  "version": "0.1.0",
+  "description": "Example usage for usage of GHE libraries.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@gloomhaven-enhanced/data": "catalog:"
+  },
+  "devDependencies": {
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  }
+}

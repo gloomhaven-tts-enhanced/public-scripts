@@ -1,37 +1,289 @@
-= Card Creator
+= Card Creator Documentation
 :icons: image
 :icontype: svg
+:toc: macro
+:toclevels: 3
 
-On this page, all commands and syntax for the Card Creator will be explained.
+An in-depth guide for using the Card Creator tool to design custom Frosthaven class cards. This documentation covers everything from basic actions to advanced styling and token configuration.
 
-[#Syntax]
-== Syntax
+[[nav-menu]]
+== Navigation
 
-[#Base_actions]
-=== Basic Actions
+* <<getting-started, Getting Started>>
+** <<base-info, Base Info>>
+** <<creating-a-deck, Creating a Deck>>
+** <<deck-building, Deck Building>>
+*** <<show-properties, Show Properties>>
+*** <<show-color-properties, Show Color Properties>>
+*** <<change-base-card, Change Base Card>>
+*** <<deck-elements, Elements>>
+*** <<adding-cards, Adding Cards>>
+* <<syntax, Syntax>>
+** <<tab-hierarchy, Tab Hierarchy>>
+** <<basic-actions, Basic Actions>>
+** <<conditions, Conditions>>
+** <<elements, Elements>>
+** <<custom-actions, Custom Actions>>
+** <<sub-blocks, Sub Blocks>>
+** <<optional-blocks, Optional Blocks>>
+** <<mandatory-blocks, Mandatory Blocks>>
+** <<tokens, Tokens>>
+*** <<token-modifiers, Token Modifiers>>
+** <<area-of-effect, Area of Effect>>
+** <<summons, Summons>>
+** <<named-abilities, Named Abilities>>
+** <<mode-blocks, Mode Blocks>>
+** <<other-common-card-properties, Other Common Card Properties>>
+** <<styles, Styles & Modifiers>>
+*** <<common-style-modifiers, Common Style Modifiers>>
+*** <<more-style-modifiers, More Style Modifiers>>
+*** <<position, Position>>
+*** <<advanced-styling, Advanced Styling>>
+* <<tts-mod, Tabletop Simulator Mod>>
+** <<tts-assets, TTS Assets>>
+*** <<tts-assets-starting-deck, Starting Deck>>
+*** <<tts-assets-advanced-deck, Advanced Deck>>
+*** <<tts-assets-easy-stuff, Rest of the Easy Stuff>>
+*** <<tts-assets-manual, Manually Linked Assets>>
+*** <<tts-assets-extra, Final Options>>
+** <<tts-import, Importing into TTS>>
+** <<third-party-card-spread, Third Party Card Spreads>>
+* <<finish, Finished!>>
+
+[[introduction]]
+== Introduction
+
+On this page you will find detailed explanations of all commands and syntax options available in the Card Creator.
+
+*Note:* The Card Creator currently has a few issues with rendering certain elements in browsers other than Chrome. If you encounter any problems, please try using Chrome for the best experience.
+
+[[getting-started]]
+== link:#nav-menu[Getting Started]
+
+Before you begin creating your cards, it's recommended to set up some base info, and define some properties. These properties will be used to customise the look of your custom class. These steps aren't strictly required, but it can help you to reinforce the thematic identity of your class.
+
+[[base-info]]
+=== link:#nav-menu[Base Info]
+
+The base info section is where you can define all the aspects of your class that don't involve the cards themselves, such as the info presented on the class mat.
+
+Here is a brief overview of the properties you can define:
+{set:cellbgcolor:rgb(180, 180, 180)}
+[cols="1,1", options="header"]
+|===
+| Property | Description
+
+| `Name`
+| The name of your custom class.
+
+| `Race`
+| The race of your class.
+
+| `HP Track`
+| The HP level of your class. This can be set to Low, Medium, or High.
+
+| `Spoiler Name`
+| The name of your class given to it based on its icon.
+
+| `Complexity`
+| The complexity of your class. This can be set to any number between 1 and 5.
+
+| `Melee`
+| The melee value of your class. This can be set to any number between 1 and 5.
+
+| `Ranged`
+| The ranged value of your class. This can be set to any number between 1 and 5.
+
+| `Mobility`
+| The mobility value of your class. This can be set to any number between 1 and 5.
+
+| `Support`
+| The support value of your class. This can be set to any number between 1 and 5.
+
+| `Defense`
+| The defense value of your class. This can be set to any number between 1 and 5.
+
+| `Control`
+| The control value of your class. This can be set to any number between 1 and 5.
+
+| `Elemental Affinities`
+| The elemental affinities of your class. This can be set to a comma-separated list of elements that your class is proficient in, or none.
+
+| `Background Size`
+| The size of the background image for your class on the banner in the class list. This banner can also be seen at the top of the page. This is set to a pixel amount. *Note:* The image that this uses will be set later, when making a TTS mod.
+
+| `Background Position`
+| The position of the background image for your class on the banner in the class list. This is based from the top left corner, and is set to two pixel amounts, one for the x-axis and one for the y-axis.
+
+| `CCUG Development Status`
+| The development status of your class. This can be set to any of the following: "Concept", "Alpha", "Beta", "Released".
+
+| `Discord Link`
+| A link to the Discord channel for your class.
+
+| `Public`
+| Whether your class is public or not. This can be set to true or false.
+
+| `Add User`
+| You can enter discord user IDs here to allow those users to edit the class. This is useful for collaborative projects.
 
 |===
-|{set:cellbgcolor:rgb(180,180,180)} Syntax | Description | Example | Result
 
-| - attack: [value] | Creates an attack ability with a value of [value] | - attack: 3 | image:icons/attack.svg[width=20px] 3
+[[creating-a-deck]]
+=== link:#nav-menu[Creating a Deck]
 
-| - move: [value] | Creates a move ability with a value of [value] | - move: 3 | image:icons/move.svg[width=20px] 3
+To create a deck, head to the "Decks" tab in the Card Creator, and click the "Add" button. This will create a new deck for your class. You can then open this deck by clicking it's name in the list, or the "Cards" button next to the deck.
 
-| - teleport: [value] | Creates a teleport ability with a value of [value] | - teleport: 3 | image:icons/teleport.svg[width=20px] 3
+[[deck-building]]
+=== link:#nav-menu[Deck Building]
 
-| - shield: [value] | Creates a shield ability with a value of [value] | - shield: 1 | image:icons/shield.svg[width=20px] 1
+Once a deck is created, and you have opened it by either clicking on it, or clicking the "Cards" button next to it, you'll be brought to the screen you'll be spending the majority of your time in. This is the deck building screen.
 
-| - retaliate: [value] | Creates a retaliate ability with a value of [value] | - retaliate: 1 | image:icons/retaliate.svg[width=20px] 1
+Immediately, you'll be able to see two buttons, "Show starting deck" and "Show advanced deck". Once you've started creating cards, you can use these buttons to see the entire level 1/X spread, and the entire level 2-9 spread, respectively.
 
-| - loot: [value] | Creates a loot ability with a value of [value] | - loot: 1 | image:icons/loot.svg[width=20px] 1
+Below that are 4 more buttons, "Show properties", "Show color properties", "Change base card", and "Elements". Clicking on any of these will show the respective section, which can be closed by clicking the button again. If it doesn't seem like clicking a button is showing anything, try scrolling down, as the section may be below another section.
 
-| - heal: [value] | Creates a heal ability with a value of [value] | - heal: 1 | image:icons/heal.svg[width=20px] 1
+One thing to note about the following sections is that for some of the options (especially the color properties), it'll be easier to see what they do once you've actually started creating cards. You can either skip to the <<adding-cards, Adding Cards>> section to start creating cards, or continue reading to see what each section does.
+
+[[show-properties]]
+==== link:#nav-menu[Show Properties]
+
+The "Show properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <<basic-actions, Basic Actions>>, and the <<custom-actions, Custom Actions>> section), and a link to the background image for the cards in this deck. You can also set the position of this background image, the opacity, and the size of it. This will be much easier to see once you've actually started creating cards.
+
+[[show-color-properties]]
+==== link:#nav-menu[Show Color Properties]
+
+The "Show color properties" section is where you can set the color of various parts of the card. This is split into two sections, the colors for the card itself, and the colors for the various bits that go on the card.
+
+The top line of colors are for the various parts that go onto the card. Most of these will usually want to remain default, except for the "Line color", but you can experiment with these to see what you like. The top bars are for transparency, and the bottom bars are for the colors themselves.
+
+The actual card colors are controlled a bit differently. Here, each section of the card has access to a range of sliders, "Sepia", "Saturate", "Hue-rotation", and "Brightness". These sliders can be used to adjust the color of the card, and the various parts of the card. The "Brightness" slider is particularly useful for making the text on the card more readable. The "Hue-rotation" slider can be used to change the color of the card, and the "Saturate" slider can be used to make the card more, or less, colorful. The "Sepia" slider can be used to make the card more, or less, sepia-toned.
+
+It can be a bit tricky to get the colors you want, but with a bit of experimentation, you should be able to settle on something like what you envisioned.
+
+To the right of each of the rows of sliders, you'll see a checkbox on all but the first row. Any rows that have this checkbox checked will change automatically as you change the sliders on the first row. This can be useful for keeping the colors of the card and the elements on the card in sync. If you want to change certain parts of the card, but not others, you can uncheck the checkbox on the row you want to change, and then adjust the sliders as needed.
+
+[[change-base-card]]
+==== link:#nav-menu[Change Base Card]
+
+The "Change base card" section is where you can change the base card that all the cards in the deck are based on. This is useful if you want to change the base visuals of the card, outside changing colors. Most people won't need to change this, but it's there if you want to.
+
+Every part of the card can be changed, and this change will be reflected across the entire deck.
+
+[[deck-elements]]
+==== link:#nav-menu[Elements]
+
+The "Elements" section shows a quick overview of the elements that are present in the deck. This is useful for keeping track of how many infusions, and consumptions, are in the deck. This can be helpful for balancing the deck, and making sure that you have a balanced amount of elements in the deck.
+
+[[adding-cards]]
+==== link:#nav-menu[Adding Cards]
+
+While inside the deck building screen, you can add cards to the deck by clicking the "Add Card" button. This will create a new card in the deck. You can then edit this card by clicking on it. This will bring it into focus next to the text box containing its code.
+
+This state, where the card is in focus, doubles as the best way to see the changes you're making in the previous properties sections. This is because the card will update in real time as you change the properties of the card.
+
+
+[[syntax]]
+== link:#nav-menu[Syntax]
+
+The syntax of the Card Creator uses simple commands to render icons and values. Commands typically follow this structure:
+
+`- command: [value]`
+
+Modifiers can be added to fine-tune placement, styling, or functionality. Sections below break down each command group. For many examples on card structure, including all the examples shown in this documentation, feel free to browse the "Example Syntax" class present in the tool.
+
+[[tab-hierarchy]]
+=== link:#nav-menu[Tab Hierarchy]
+
+The structure of a card is based on indentation. Every sub-block or modifier must be indented with exactly 2 spaces more than its parent. This tells the system which modifiers belong to which command. For the purposes of this guide, "parent" refers to the block that is one level higher in the hierarchy.
+
+For example:
+[source]
+----
+- attack: 3
+  margin: 5px 0px 0px 0px
+----
+In this example, the "margin" modifier is indented 2 spaces relative to the "- attack: 3" command, indicating that it applies specifically to that action.
+
+Here is a more complex example:
+[source]
+----
+- group:
+  - attack: 3
+  - divider
+    margin: 10px 0px
+  - move: 2
+  - divider
+  - optional:
+    - consume: [dark,light]
+    - heal: 2
+      sub:
+        - range: 3
+        - wild
+    noLine: true
+  flexDirection: column
+----
+In this example, we have utilized a "group" block to contain multiple actions. Each action is indented 2 spaces relative to the "group" command. This indicates that they all belong to that outer block. The hierarchy continues with the "divider" and "optional" blocks, each containing their own sub-blocks.
+
+A more detailed explanation of each block type is provided in the following sections.
+
+*Remember:* use 2 spaces per level of indentation to maintain the proper hierarchy.
+
+
+[[basic-actions]]
+=== link:#nav-menu[Basic Actions]
+
+This section covers the core actions used to define a card’s abilities.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Syntax | Description | Example | Result
+
+| `- attack: [value]`
+| Creates an attack ability with a value of [value]
+| `- attack: 3`
+| image:icons/attack.svg[width=20px] 3
+
+| `- move: [value]`
+| Creates a move ability with a value of [value]
+| `- move: 3`
+| image:icons/move.svg[width=20px] 3
+
+| `- teleport: [value]`
+| Creates a teleport ability with a value of [value]
+| `- teleport: 3`
+| image:icons/teleport.svg[width=20px] 3
+
+| `- shield: [value]`
+| Creates a shield ability with a value of [value]
+| `- shield: 1`
+| image:icons/shield.svg[width=20px] 1
+
+| `- retaliate: [value]`
+| Creates a retaliate ability with a value of [value]
+| `- retaliate: 1`
+| image:icons/retaliate.svg[width=20px] 1
+
+| `- loot: [value]`
+| Creates a loot ability with a value of [value]
+| `- loot: 1`
+| image:icons/loot.svg[width=20px] 1
+
+| `- heal: [value]`
+| Creates a heal ability with a value of [value]
+| `- heal: 1`
+| image:icons/heal.svg[width=20px] 1
+
+| `- classToken: [index]`
+| Creates a class token ability using the token linked to the specified index.
+| `- classToken: 0`
+| image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px]
 |===
 
-[#Conditions]
-=== Conditions
+[[conditions]]
+=== link:#nav-menu[Conditions]
 
-The [condition] can take any of the following values:
+Conditions modify abilities and can be used with or without an associated value. The available conditions are:
 
 - bane
 - bless
@@ -60,22 +312,27 @@ The [condition] can take any of the following values:
 - ward
 - wound
 
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| - [condition] : [value] | Creates a [condition] with the value [value]. +
-If [value] is omitted only [condition] is rendered | - poison +
-- pierce: 1 | image:icons/poison.svg[width=20px] +
-image:icons/pierce.svg[width=20px] 1 +
+| `- [condition]`
+| Renders a condition icon.
+| `- poison`
+| image:icons/poison.svg[width=20px]
 
+| `- [condition]: [value]`
+| Renders a condition icon with an optional value.
+| `- pierce: 1`
+| image:icons/pierce.svg[width=20px] 1
 |===
 
+[[elements]]
+=== link:#nav-menu[Elements]
 
-[#Elements]
-=== Elements
+Elements represent various thematic or mechanical attributes. They support single values, consumption markers, and infuse modifiers.
 
-
-The [element] in this section can take any of the following values:
+Available elements include:
 
 - earth
 - fire
@@ -84,178 +341,692 @@ The [element] in this section can take any of the following values:
 - light
 - dark
 - wild
-- any combination of elements separated by '/' will generate an or element
 
+Using multiple elements separated by '/' will generate an “or” condition.
+
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| - [element] | Renders the icon for the element [element]. | - earth | image:icons/earth.svg[width=20px]
+| `- [element]`
+| Renders the icon for the given element.
+| `- air`
+| image:icons/wind.svg[width=20px]
 
-| - [element]: consume | Renders the icon for the element [element] and adds a consume x. This is usually used within an optional block. | - earth: consume | image:icons/earth.svg[width=20px]image:icons/consume.svg[width=10px]
+| `- consume: [ elements... ]`
+| Renders a list of element icons with an added consume marker (usually used within an optional block).
+| `- consume: [wind/fire]`
+| image:icons/wind.svg[width=20px]image:icons/fire.svg[width=20px] image:icons/consume.svg[width=10px]
 
-|   infuse: [ [elements..] ] | This is a modifier of the actions block, and will create a mandatory box with the specified [elements..]-list. +
- +
-As a modifier, this does not use a '-' in front of it |   infuse: [earth, wild] | [!image:icons/earth.svg[width=20px]image:icons/wild.svg[width=20px]]
-
+| `infuse: [ elements... ]`
+| Adds a mandatory box with a list of specified elements. (Note: As a modifier, do not prefix with a '-')
+| `infuse: [earth/wild]`
+| [!image:icons/earth.svg[width=20px]image:icons/wild.svg[width=20px]]
 |===
 
-[#styles]
-=== Styles
+*Note:* The square brackets in the consume and infuse examples are required in the syntax.
 
-You can add modifieres to help with fineplacement, relocation, manipulating the element and much more. To use modifiers all blocks need to be an object, this means it needs a ':'' in the block. Single word blocks like - earth will need to add a ':' to use modifiers. - earth: '' Here is a list of styles each block can take:
+*Note:* For infusion, this will only work at the first indentation level. This means that either `bottom:` or `top:` should be its direct parent.
 
-|===
-| Syntax | Description | Example | Result
+[[custom-actions]]
+=== link:#nav-menu[Custom Actions]
 
-| margin | Adds a buffer space on all sides of an element. The first value is for spacing on top, then right, bottom and the last one is for spacing to the left. a| 
-[source]
-----
-- earth: ''
-  margin: 5px 0px 0px 0px
-----|
+There exists a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don't fit into the predefined categories.
 
-| margin[direction] | Adds a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
-[source]
-----
-- earth: ''
-  marginTop: 5px
-----|
+Within these blocks, you are able to insert any of the common icons, such as conditions or elements, to further customize your text. This includes any class tokens that you've linked in the properties section.
 
-| padding | Include a buffer space on all sides of an element. the first value is for spacing on top, then right, and bottom and the last one is for spacing to the left. a| 
-[source]
-----
-- earth: ''
-  padding: 0px 0px 0px 0px
-----|
+The syntax for inserting these icons is: `%iconName%`.
 
-| padding[direction] | Include a buffer space on the specified side of an element. [direction] can be either Top, Left, Right or Bottom a| 
-[source]
-----
-- earth: ''
-  paddingTop: 5px
-----|
-|===
+Here are some examples of custom actions:
 
-An important difference between padding and margin is that padding extends the boundingbox of the element, while a margin moves the element by adding a space outside the element. Also, the margin can take negative values to make the element take less space than the boundingbox of the element.
-
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| fontSize | Change the fontSize of the text in the block modified. Icons tend to have a fixed size in different boxes and may not always be changed with this. a|
-[source]
-----
-- custom: 'Text'
-  fontSize: 10px
-----|
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text'`
+| Text
 
-| color | Changes the font color of the section, this will not impact icons. a|
-[source]
-----
-- custom: 'Text'
-  color: red
-----|
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %poison% poison'`
+| Text with image:icons/poison.svg[width=20px] poison
 
-| background | Changes the background of the block. a|
-[source]
-----
-- custom: 'Text'
-  background: red
-----|
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %dark% dark and %fire% fire'`
+| Text with image:icons/dark.svg[width=20px] dark and image:icons/fire.svg[width=20px] fire
 
-| lineHeight | Changes the space between lines to give either more space or make the text more compact. This is usful for adding icons into text where the lines would render different heights. a|
-[source]
-----
-- custom: 'Text to adjust lineheight, should have enought to atleast fill two lines.'
-  lineHeight: 20px
-----|
+| `- custom: [text]`
+| Creates a custom action with the specified text.
+| `- custom: 'Text with %classToken0% a custom class token'`
+| Text with image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px] a custom class token
+|===
 
-| wordSpacing | Changes the space between words relative to the current spacing. a|
-[source]
-----
-- custom: 'Text to show wordSpacing'
-  wordSpacing: 5px
-----|
+Any icon that has been inserted also has some special modifiers that can be applied to it. These modifiers are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| 's'
+| Removes the icon's shadow.
+| `%classToken0s%`
+| image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px]
+
+| 'i'
+| Inverts the icon's color.
+| `%banei%`
+| image:icons/bane.svg[width=20px]
 
 |===
 
-[#Position]
-==== Position
+[[sub-blocks]]
+=== link:#nav-menu[Sub Blocks]
 
-To change a blocks position or orientation or size use these:
+Sub Blocks are the blocks that house the extra properties of an action. These are things like range, target, and other modifiers that can be applied to an action. These blocks are always indented 2 spaces from their parent action, like so:
 
+[source]
+----
+- attack: 3
+  sub:
+    target: 2
+    range: 3
+    pierce: 1
+----
+
+In this example, the "sub" block contains the "target", "range", and "pierce" modifiers. These are all indented 2 spaces from the "attack" command, indicating that they are all part of that action.
+
+Alongside all existing conditions, the available attributes you can put in a sub block are:
+
+- target
+- range
+
+[[optional-blocks]]
+=== link:#nav-menu[Optional Blocks]
+
+Optional blocks represent abilities, or augments to abilities that come with a cost. The most frequent example of an optional block is an elemental consumption. This would be represented as follows:
+
+[source]
+----
+- attack: 3
+- optional:
+  - consume: [earth]
+  - custom: '+2 %attack%'
+----
+
+The above will render an attack 3 ability with an optional block that consumes earth and adds +2 attack. Sometimes, an optional block may be used to represent an extra ability, rather than an augment to an ability. An example of this would be:
+
+[source]
+----
+- move: 3
+- divider
+- optional:
+  - consume: [earth]
+  - heal: 2
+  noLine: true
+----
+
+In this example, we have a move 3 ability with an optional block that allows the consumption of earth to perform an additional heal 2. The noLine modifier is used to prevent a line from being drawn between the move and heal abilities, since in this case they are separate abilities.
+
+[[mandatory-blocks]]
+=== link:#nav-menu[Mandatory Blocks]
+
+Mandatory blocks are used to represent abilities that *must* be performed if that action is being played. Outside elemental infusion (which is created automatically with the infuse modifier), mandatory blocks are most often used to force a negative action to occur. An example of this would be:
+
+[source]
+----
+- attack: 3
+- divider
+- mandatory:
+  - curse:
+  sub:
+    - self
+----
+
+In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.
+
+[[tokens]]
+=== link:#nav-menu[Tokens]
+
+The tokens block creates token slots. Each number in the provided array represents the XP that the token slot provides.
+
+[cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
-| position | To change a blocks position this must be set to either 'relative' or 'absolute'.
-
-relative: will change the position of the element based on its relative position to other elements rendered.
-
-absolute: will change the position of the element based on the parent elements position.
- a|
-[source]
-----
-- earth: ''
-  position: relative
-----|
-
-| top | Sets the value of its placement on the card either from its relative postion or from the top of the current action.
- a|
-[source]
-----
-- earth: ''
-  position: relative
-  top: 10px
-----|
-
-| left | Sets the value of its placement on the card either from its relative postion or from the left side of the current action.
- a|
-[source]
-----
-- earth: ''
-  position: absolute
-  left: 10px
-----|
-
-| transform | This modifier is more complex and takes a string as input as shown here: https://developer.mozilla.org/en-US/docs/Web/CSS/transform[documentation css transform]
- a|
-[source]
-----
-- earth: ''
-  transform: rotate(90deg)
-----|
+| `- tokens: [0,1,0,1]`
+| Creates token slots with XP values as defined in the array.
+| `- tokens: [0,1,0,1]`
+| Renders token slots accordingly.
 |===
 
+[[token-modifiers]]
+==== link:#nav-menu[Token Modifiers]
 
-[#Special_blocks]
-== Special blocks
+Modifiers for tokens allow you to control how token slots are arranged.
 
-This section is for explaning different special code blocks.
-
-[#Tokens]
-=== Tokens
-
+[cols="1,1,1,1", options="header"]
 |===
-| Syntax | Description | Example | Result
+| Modifier | Description | Example | Result
 
-| - tokens | This block creates token slots. It takes an array of numbers as input, where each number is how much xp that token slot gives.
- a|
-[source]
-----
-- tokens: [0,1,0,1]
-----|
-|===
-
-[#Token_modifiers]
-==== Token modifiers
-
-|===
-| Syntax | Description | Example | Result
-
-| lines | This is a special modifier for tokens block. Forcing either 3 or 4 tokens to render on 1 or 2 lines. The others are predefined. (1 and 2 tokens on 1 line and 5 and 6 tokens on 2 lines.)
- a|
-[source]
-----
-- tokens: [0,1,0,1]
+| `lines`
+| Forces tokens to render in a specific layout: either 3 or 4 tokens on 1 or 2 lines. Other numbers follow predefined arrangements (1–2 tokens on one line, 5–6 tokens on two lines).
+|- tokens: [0,1,0,1] +
   lines: 1
-----|
+| Renders tokens in a single line.
 |===
+
+[[area-of-effect]]
+=== link:#nav-menu[Area of Effect]
+
+The area of effect block is used to create a hex pattern. This takes the following form:
+
+[source]
+----
+- hex: et_st
+----
+
+In this example, we have an area of effect block that creates a hex pattern of two hexes in front of the player. Each letter in the string represents a hex, and the order of the letters determines the order of the hexes. The letters are as follows:
+
+- e: no hex rendered (used for positioning other hexes)
+- t: target
+- s: self
+- a: ally
+- b: blank
+- x: enhancement dot hex
+- _: start new row
+
+[[summons]]
+=== link:#nav-menu[Summons]
+
+Summons are a special type of action that can be created using the "summon" block. This is one of the more complex blocks, as it has a lot of properties that can be set. Here is an example of a basic summon block:
+
+[source]
+----
+- custom: 'Summon Example Summon'
+- summon:
+    name: 'Example Summon'
+    stats: [5,2,3,'-']
+    image:
+      url: "https://example.com/image.png"
+      size: 100%
+      position: '0px 0px'
+----
+
+*Note:* This specific block's properties require a double indentation (4 spaces).
+
+In this example, we have a custom action that creates a summon called "Example Summon". This summon has 5 health, 2 move, 3 attack, and no range. The summon also has an image, which is set to a URL, and has various properties to position the image in the image box.
+
+Here are all the properties that can be set for a summon:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `name`
+| The name of the summon.
+| `name: 'Example Summon'`
+| The summon will be called "Example Summon" in TTS.
+
+| `stats`
+| The stats of the summon. This should be an array of 4 numbers, in the order of health, move, attack, range.
+| `stats: [5,2,3,'-']`
+| The summon will have 5 health, 2 move, 3 attack, and no range.
+
+| `image`
+| The image of the summon. This should be an object with the properties "url", "size", and "position". This will also be used for the TTS standee.
+| `image: +
+&nbsp;&nbsp;url: "https://example.com/image.png" +
+&nbsp;&nbsp;size: 100% +
+&nbsp;&nbsp;position: '0px 0px'`
+| The summon will have an image from the URL "https://example.com/image.png", with a size of 100%, and a position of 0px 0px.
+
+| `enhancement`
+| The possible enhancements on the summon. This should be an array of the possible enhancements, or "none" if there is no enhancement for that attribute. The array follows the same order as the stats array.
+| `enhancement: [square,none,square,none]`
+| The summon will have a square enhancement for health and attack, and no enhancement for move and range.
+
+| `special`
+| The special abilities of the summon. These are things like shield, retaliate, or other abilities that the summon performs. It will show up to the right of the stats.
+| `special: +
+&nbsp;&nbsp;- shield: 1`
+| The summon will have a shield 1 ability.
+
+| `background`
+| The background color of the special area. This should be in rgb form as shown in the example.
+| `background: 'rgb(255,0,0,50%)'`
+| The background of the special area will be red with 50% opacity.
+
+| `width`
+| The width of the special area. This should be in pixels.
+| `width: 100px`
+| The special area will be 100 pixels wide.
+|===
+
+There are further properties that can be set for a summon. These extra properties won't change the appearance of the card, but will change the behavior of the summon in TTS. These properties are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `attributes`
+| The attributes of the summon. This is something like if the summon is flying, or if it has a shield. Setting this will make the attributes appear under the standees health.
+| `attributes: 'Shield = 1'`
+| The summon will have a shield value of 1.
+
+| `effects`
+| The effects of the summon. This is something like if the summon wounds on their attacks. Setting this will make the effects appear under the standees health.
+| `effects: '"Wound"'`
+| The summon standee will show that they wound on their attacks.
+
+| `text`
+| The text that appears on the summon standee. This can be anything you want, and will appear under the effects. This text can include icons like range and attack, but the syntax is different. To include an icon, include {e.IconName} in the text, where "iconName" is the name of the icon you want to include.
+| `text: 'This is some example text with {e.Range} range and {e.Attack} attack.'`
+| The summon standee will show "This is some example text with image:icons/range.svg[width=20px] range and image:icons/attack.svg[width=20px] attack."
+
+| `immunities`
+| The immunities of the summon. This is something like if the summon is immune to poison.
+| `immunities: 'Poison'`
+| The summon will be immune to poison.
+
+| `hpColor`
+| The color of the health bar on the summon standee. This should be in hex code form as shown in the example.
+| `hpColor: '#ff0000'`
+| The health bar on the summon standee will be red.
+
+| `hpColorText`
+| The color of the health text on the summon standee. This should be in hex code form as shown in the example.
+| `hpColorText: '#ffffff'`
+| The health text on the summon standee will be white.
+
+|===
+
+[[named-abilities]]
+=== link:#nav-menu[Named Abilities]
+
+Named ability blocks are used to create a small banner in the top left corner of the card. This is useful when you have certain keyword abilities that have special rules defined on the class mat. A starter class that uses this is Mindthief, with its "augment" abilities. *Note:* this block only refers to the corner containing the keyword, not the banner containing the abilities. For help with the abilities banner, see the <<advanced-styling, Advanced Styling>> section.
+
+In order to use this block, it should be placed at the base level of the action, with only "top:" or "bottom:" as a parent. Here is an example:
+
+[source]
+----
+- top:
+  namedAbility:
+    name: Augment
+----
+
+[[mode-blocks]]
+=== link:#nav-menu[Mode Blocks]
+
+The mode block can be used to create something akin to Blinkblade's fast or slow abilities. Here is an example of how to use the mode block:
+
+[source]
+----
+- mode:
+  - attack: 2
+  icon: '%classToken0%'
+----
+
+In this example, we have a mode block that contains an attack 2 ability, and an icon of the class token.
+
+The mode block has a couple of special properties that can be set. These are:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Property | Description | Example | Result
+
+| `icon`
+| The stuff that appears in the smalller box of the mode.
+| `icon: '%classToken0%'`
+| The icon of the class token will appear in the smaller box of the mode.
+
+| `reverse`
+| If set to true, the mode will be reversed. This means that the smaller box will be on the right, and the larger box will be on the left.
+| `reverse: true`
+| The mode will be reversed.
+
+| `leftBg`
+| The background color of the left box. This will usually be in rgb form as shown in the example.
+| `leftBg: 'rgb(255,0,0,50%)'`
+| The left box will have a red background with 50% opacity.
+
+| `rightBg`
+| The background color of the right box. This will usually be in rgb form as shown in the example.
+| `rightBg: 'rgb(0,255,0,50%)'`
+| The right box will have a green background with 50% opacity.
+
+| `borderBg`
+| The background color of the border between the two boxes. This will usually be in rgb form as shown in the example.
+| `borderBg: 'rgb(0,0,255,50%)'`
+| The border between the two boxes will be blue with 50% opacity.
+|===
+
+
+
+[[other-common-card-properties]]
+=== link:#nav-menu[Other Common Card Properties]
+
+Before we get into more advanced styling options, here are some common properties for an action and how they can be used. Do note that all of these properties should be a direct child of the "bottom:" or "top:" block, just like the "infuse:" block.
+
+[cols="1,1,1,1", options="header"]
+|===
+| Syntax | Description | Example | Result
+
+| `duration: [value]`
+| Sets the duration of the action. This can be either "round" or "persistent".
+| `duration: round`
+| The image:icons/round.svg[width=20px] symbol will appear in the mandatory box in the bottom right corner of the card.
+
+| `lost: [value]`
+| Sets if the card is lost or not. This can be either "true" or "false".
+| `lost: true`
+| The action will have a image:icons/lost.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
+
+| `remove: [value]`
+| Sets whether the card is unrecoverable or not. This can be either "true" or "false".
+| `remove: true`
+| The action will have a image:icons/remove-loss.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
+
+| `xp: [value]`
+| Sets the XP value of the action. This can be any number.
+| `xp: 1`
+| The XP value image:icons/xp.svg[width=20px] will appear in the mandatory box in the bottom right corner of the card.
+
+|===
+
+[[styles]]
+=== link:#nav-menu[Styles & Modifiers]
+
+Modifiers allow you to fine-tune the placement, size, and appearance of each block. To apply modifiers, ensure each block is defined as an object (i.e. using a colon after the block name).
+
+These style modifiers can be applied to any block, and should not have a hyphen in front of them. For example, to apply a modifier to an attack action, you would write:
+
+[source]
+----
+- attack: 3
+  margin: 5px 0px 0px 0px
+  fontSize: 10px
+----
+
+[[common-style-modifiers]]
+==== link:#nav-menu[Common Style Modifiers]
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| `margin`
+| Sets the margin around the block. This has a variety of ways to be set, as shown in the following examples.
+| `margin: 5px 0px 0px 5px +
+margin: 5px 0px 10px +
+margin: 5px 0px +
+margin: 5px`
+| The first example will set the margin to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the margin to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the margin to 5px on the top and bottom, and 0px on the sides. The last example will set the margin to 5px on all sides.
+
+| `padding`
+| Sets the padding around the block. This has a variety of ways to be set, as shown in the following examples.
+| `padding: 5px 0px 0px 5px +
+padding: 5px 0px 10px +
+padding: 5px 0px +
+padding: 5px`
+| The first example will set the padding to 5px on the top, 0px on the right, 0px on the bottom, and 5px on the left. The second example will set the padding to 5px on the top, 0px on the sides, and 10px on the bottom. The third example will set the padding to 5px on the top and bottom, and 0px on the sides. The last example will set the padding to 5px on all sides.
+|===
+
+*Note:* Padding is similar to margin, but they have separate use cases. Taking an optional block as an example, setting padding on the block will increase the amount of space that the block itself takes up, while setting margin will increase the space between the block and the action above it. You can think of padding as the space inside the block, while margin is the space outside the block.
+
+[[more-style-modifiers]]
+==== link:#nav-menu[More Style Modifiers]
+
+There are many more style modifiers that can be applied to blocks. Here are the rest of them:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| `fontSize`
+| Sets the font size of the text in the block. This can be any number, and will be set in pixels.
+| `fontSize: 10px`
+| The font size of the text in the block will be 10px.
+
+| `height`
+| Sets the height of the block. This can be any number, and will be set in pixels.
+| `height: 10px`
+| The height of the block will be 10px.
+
+| `display`
+| Sets the display type of the block. This can be set to anything that is valid in CSS, but in almost every case, you don't want to change this.
+| `display: flex`
+| The block will be set to display as a flexbox.
+
+| `flexDirection`
+| Sets the direction that the content in the block will follow. This can be set to "row" or "column". Row will put the content in a row, while column will put the content in a column.
+| `flexDirection: column`
+| The content in the block will be set to display in a column.
+
+| `background`
+| Sets the background color of the block. This can be set to any color that is valid in CSS, including rgb, and rgba.
+| `background: rgb(255,0,0,50%)`
+| The background color of the block will be set to red with 50% opacity.
+
+| `color`
+| Sets the color of the text in the block. This can be set to any color that is valid in CSS, including rgb, and rgba.
+| `color: rgb(255,0,0,50%)`
+| The color of the text in the block will be set to red with 50% opacity.
+
+| `wordSpacing`
+| Sets the spacing between words in the block. This can be set to any number, and will be set in pixels.
+| `wordSpacing: 5px`
+| The spacing between words in the block will be set to 5px.
+
+| `lineHeight`
+| Sets the height of each line in the block. This can be set to any number, and will be set in pixels. This is useful for making the text more readable.
+| `lineHeight: 5px`
+| The height of each line in the block will be set to 5px.
+
+| `gap`
+| Sets the gap between the items in the block. This can be set to any number, and will be set in pixels. This is useful for more advanced blocks that we'll get into later.
+| `gap: 5px`
+| The gap between the items in the block will be set to 5px.
+
+|===
+
+[[position]]
+==== link:#nav-menu[Position]
+
+To change a block's position, orientation, or size, use the following modifiers:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Modifier | Description | Example | Result
+
+| `position`
+| Sets positioning mode: `relative` (based on surrounding elements) or `absolute` (based on the parent element).
+| `position: absolute`
+| The block will be positioned absolutely.
+
+| `top`
+| Adjusts vertical placement from the top edge of the parent or relative container.
+| `top: 10px`
+| Adjusts vertical placement from the top edge, placing the block 10px down.
+
+| `left`
+| Adjusts horizontal placement from the left edge.
+| `left: 10px`
+| Adjusts horizontal placement from the left edge, placing the block 10px to the right.
+
+| `transform`
+| Applies CSS transformations (e.g., rotate, scale). Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/transform for more info.
+| `transform: scale(2)`
+| Doubles the size of the block.
+|===
+
+[[advanced-styling]]
+=== link:#nav-menu[Advanced Styling]
+
+This section will be dedicated to more advanced styling, to achieve the desired look for your cards. This includes things like the ability to create a banner, or a group of actions that are all part of the same action.
+
+The main block we care about here is the "group" block. This block is used to group actions together, allowing horizontal stacking, or easy positioning of multiple actions at once. One of the easiest examples to show this off is the aforementioned banner. On official cards, there are sometimes a group of actions at the top of the card in a separate "banner" area. Here's an advanced example of how we can recreate something like that using the group block:
+
+[source]
+----
+top:
+  namedAbility:
+    name: Grenade
+    padding: 10px 10px
+  actions:
+    - group:
+      - attack: 2
+        sub:
+          - custom: '%range% 2, advantage'
+        margin: 0px -10px 0px 10px
+      - hex: ett_ttt_ett
+      marginTop: -40px
+      paddingTop: 20px
+      background: rgba(0,0,0,50%)
+
+    - regenerate:
+      marginTop: 10px
+      sub:
+        - self
+  duration: persistent
+----
+
+In this example, we have a group block that contains two actions, an attack and a AoE hex pattern. Group blocks default to a flexDirection of row, so the two actions will be placed next to each other. The group block also has a marginTop of -40px, which will pull the group up into the top area of the card. The paddingTop of 20px will add some space between the top of the group and the top of the card, allowing the darker background to extend seamlessly to the edge of the card. Finally, you can see the Named Ability block at the top, which is used to create the iconography in the corner of the banner group we've just created.
+
+The principles shown here can be applied to many different scenarios, and using a combination of everything shown so far, there is a lot of freedom available to you to create the card you want. Remember, you are able to access the example syntax class to see some examples of how to use these blocks, and how they can be combined to create the desired effect. Otherwise, experiment a little with the blocks, and see what you can come up with!
+
+[[tts-mod]]
+== link:#nav-menu[Tabletop Simulator Mod]
+
+When the time has come to export your class to Tabletop Simulator, there are a couple of things you need to do to make sure that your class works as intended. This section will cover the steps you need to take to make sure that your class works in Tabletop Simulator.
+
+The very first step will be to create a mod for your class on the "TTS Mods" page. This page works very similarly to the "Decks" page, but instead of creating cards, you're creating mods for your class.
+
+[[tts-assets]]
+=== link:#nav-menu[Assets]
+
+Once you have created and opened a new mod, the main brunt of the work comes down to getting the various assets for your class sorted. This is all done within the mod that you created on the site.
+
+At the top of the mod page, there are a few things to fill in before getting to the assets.
+
+The first thing to do is to switch on the "Active Mod" toggle. This toggle is how TTS will know which mod to use when importing the class. In some cases, you'll have multiple mods for the same class (for example if the class has two decks), and you'll be able to import both decks by importing one, and then changing the active mod to the other.
+
+After this you have the Mod Name and the Deck Index. The mod name can be set to anything you want, it's just so you know which mod is which in the list of mods on the class creator website. The deck index is the index of the deck you want to import. This is usually 0, but if you have multiple decks, you can set this to the index of the deck you want to import.
+
+Some people like to make a new deck for every version of the class they make, so they can keep track of changes, and if you're doing this, you'll need to change the deck index to the index of the deck you want to import. This starts at 0, and goes up by 1 for every new deck you make, so if you have 3 decks, you'll have deck indexes 0, 1, and 2 (in the order they appear on the "Decks" page).
+
+Now come the assets themselves.
+
+[[tts-assets-starting-deck]]
+==== link:#nav-menu[Starting Deck]
+
+The first thing to do is to add the starting deck to the mod. This can be done in two ways, but the second way will be covered in <<third-party-card-spread, Third Party Card Spreads>>. For those who have created their class on the site, the starting deck will be created for you, and automatically saved. All you have to do is click the "Upload Image" button in the starting deck section. If you want to download an image of the starting deck, you can do so by clicking the "Download Image" button.
+
+*Note:* Downloading an image of the deck can be done without uploading it first, if you want to download an image of the deck before uploading it.
+
+You'll notice beneath the image of the card spread two input boxes for the number of cards in each row and the number of rows. If you're using the site to create your class, these will be filled in for you, but if you're using a third party card spread, you'll need to fill these in yourself.
+
+Finally, the last input box allows you to manually set snap points on the cards. This is an advanced feature, and will not need to be used often. In order to set these, click the "Add snap" button. This will begin the process of adding snap points. From there, just click the image of the spread in the locations where you want snap points to exist. You'll be able to see them show up as red dots. When done, click "Close add".
+
+*Note:* Snap points are automatically generated for token tracks, you do not need to add these yourself.
+
+[[tts-assets-advanced-deck]]
+==== link:#nav-menu[Advanced Deck]
+
+The advanced deck section is for the level 2-9 cards of the class. All the instructions for the starting deck apply here.
+
+[[tts-assets-easy-stuff]]
+==== link:#nav-menu[The Rest of the Easy Stuff]
+
+There are a few more assets that are as simple to add as clicking "Upload Image". These are:
+
+- The ability card back
+- The character token bag
+- The character token
+- The tuckbox
+- The class envelope
+- The icon for the classlist
+
+These can also be linked to manually, if you have the URLs for the images.
+
+[[tts-assets-manual]]
+==== link:#nav-menu[Manually Linked Assets]
+
+There are a few assets that need to be manually linked to. These are:
+
+- The class mat front
+- The class mat back
+- The standee
+- The character sheet
+- The attack modifier deck
+- The perk reminder deck
+
+In the case of the character sheet and the perks, you can use Sammy's tool to create these. This is linked to underneath their input boxes. For the rest, you'll need to upload the images to a hosting site, and then link to them in the input boxes.
+
+With the perks (both the AMD and the reminders), a list of the perks is needed. The AMD list should look something like the following, but in order of left to right reading through your specific perk cards:
+
+[source]
+----
+Attack Modifier (+0)
+Attack Modifier (+1) (Wound)
+Attack Modifier (+1) (Poison)
+Attack Modifier (+1) (Muddle) rolling
+Attack Modifer (ice-earth) rolling
+----
+
+The "Attack Modifier" part is required, as is the "rolling" part if the perk is a rolling modifier. The rest is up to you, but it should communicate clearly to the player what the perk does.
+
+The perk reminder list should look something like the following:
+
+[source]
+----
+Perk Reminder long rest
+Perk Reminder short rest
+Perk Reminder refresh
+----
+
+The "Perk Reminder" part is required, but the rest is up to you. This should communicate clearly to the player what the perk reminder does.
+
+[[tts-assets-extra]]
+==== link:#nav-menu[Final Options]
+
+There are a few final options that can be changed.
+
+First we have the HP bar color, HP bar text color, and HP bar placement. These are all pretty self explanatory, and are used to change the color of the health bar on the standee, the color of the text on the health bar, and the placement of the health bar on the standee. The colors can be set using hex codes, and the placement is set to a number, with the default being 320.
+
+Then there are all the character sheet and perk LUA scripts. These can be gotten from Sammy's tool when you make the character sheet and the perks. They should just be copy and pasted into the input boxes.
+
+Finally, there is the option to add a custom standee script. This is for any extra scripting you want to add to the standee, such as a second HP bar. This is an advanced feature, and will not be needed for most classes.
+
+[[tts-import]]
+=== link:#nav-menu[Importing]
+
+In order to import the class into TTS, you will first need to subscribe to the following mod on the Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3163711044
+
+Once you have subscribed to the mod, you can open TTS, and create a new game. In the game, you'll need to go to the "Workshop" tab, and search for the mod you just subscribed to. Once you've found it, click the "Load" button, and the mod will be loaded into your game. Within this you will see a tile that allows you to enter a class name and generate the bag.
+
+Enter the name of the class you want to import, and click the button. This will create a bag with all the assets you need to play the class in TTS.
+
+To upload this bag as your own Steam Workshop mod so that others can download and play your class, follow these steps:
+
+1. Delete the class import tile
+2. Go to the "Modding" tab and then "Workshop Upload"
+3. Fill in the details for your mod, including the name, and thumbnail image
+4. Click "Upload"
+5. This will give you a big long number, which is the ID of your mod. You can use this to share your mod with others. The link to your mod will just be https://steamcommunity.com/sharedfiles/filedetails/?id= followed by the ID of your mod.
+
+[[third-party-card-spread]]
+=== link:#nav-menu[Third Party Card Spreads]
+
+If you're not using the site to create your class, and instead just want to use it to import your class into TTS, you can still do this. Rather than using the "Upload Image" buttons, you'll need to manually link to the images of your assets. Ensure that the level 1/X cards are separate from the level 2-9 cards, and that you've inputted the correct number of rows and columns for each card spread.
+
+Once this is done, there is one extra step needed, that normally would be done for you. This is naming all the cards for import into TTS. Next to each image of the card spread, you'll see a large input box. This is where you need to input the name of the card. This should be the name of the card, followed by the initiative value in brackets, and then the level of the card, in square brackets. For example, "Mighty Attack (48) [1]". This should just be in a list, with each card on a new line, similar to the perk list.
+
+Other than having to manually link all the images, and name all the cards, the process is the same as if you were using the site to create your class.
+
+[[finish]]
+== link:#nav-menu[Finish]
+
+And that's it! You've now created a class, and imported it into Tabletop Simulator. If you have any questions, feel free to ask in the Discord, and someone will be able to help you out. Have fun playing your new class!

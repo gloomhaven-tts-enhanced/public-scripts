@@ -122,7 +122,6 @@ When you unlock the following envelopes, take note of the corresponding informat
 ** Rule sticker 3 (page 8)
 ** Rule sticker 6 (page 33)
 ** Rule sticker 7 (page 36)
-* PQ #21 is added to the PQ Deck.
 * A mat for Pets is added to the play area, with a button bag for available (uncaptured) and a card bag for pets currently in your stables. 
 * Pet cards will not be removed from the play area upon "Delete Map". 
 ====

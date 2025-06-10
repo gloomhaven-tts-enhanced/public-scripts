@@ -1,7 +1,7 @@
 = Looting
 
 [#master_loot_deck]
-== IMPORTANT: MASTER LOOT DECK
+== Master Loot Deck (IMPORTANT NOTES!)
 
 * Generally, there is no need to adjust this deck. This deck contains a copy of every loot card in the physical Frosthaven game. Each scenario makes copies of these cards in creating the loot deck, and the copies are deleted along with the map with btn:[Delete Map].
 * If you are instructed to enhance a loot card with a +1, take a card out of the master loot deck, press F9, select the "+1" decal, apply it to the card, and return the card to the master loot deck. Scripting does handle this enhancement for loot tallies and for campaign migration.
@@ -18,6 +18,11 @@ image::loot-deck.png[]
 ** When the active player highlights a loot token and hits the xref:engine:feature/cleanupAction.adoc[Cleanup Action] Game Key. That token is moved to their player mat and a loot card is drawn for them.
 ** When a character ends their turn in the Initiative Tracker by turning their line from black to red, all loot tokens in their current hex are moved to their player mat and the appropriate number of loot cards are drawn from the loot deck.
 * If a Random Item is looted, a random Random Item is added to their item pool on their player mat.
+
+Once a scenario is xref:campaign:complete.adoc[completed], loot will be automatically tallied to their respective character sheets. As noted above, any enhanced loot cards will be counted correctly.
+
+NOTE: Return to Frosthaven is the default calculation for loot post-scenario. Review page 47 of the rulebook if you have any questions.
+The chat log will note what loot was tallied, so if you'd like to replay without returning to Frosthaven: review the chat logs and adjust your character sheets accordingly.
 
 == Prior to Version 2.3.0
 

@@ -37,6 +37,37 @@ The effected players either need to disable mod caching in TTS to it downloads t
 Or they can xref:guide:preDownload.adoc[pre download] all the mod's assets and replaced their current cached files.
 Afterward, mod caching can be enabled again to improve performance.
 
+== Version 2.3
+
+[#accidentally-unlocked]
+=== Can not lock accidentally unlocked scenarios on the flowchart
+
+In 2.3 there's now in-game way to lock a scenario again, once it's unlocked on the flowchart.
+There's a workaround by manually changing the save file:
+
+* Open the .json save file in a text editor like VSC or Notepad++,
+* Search for `"GUID": "scenario-flowchart"`
+* About 60 lines below that you'll see `"LuaScriptState":` with a bunch of data after it
+* Look for the scenario you need to fix by index #, you'll see a string like this (ex: Scenario 6) `{\"index\":\"6\",\"unlocked\":true,\"completed\":false,\"treasures\":{}}`
+* Change `\"unlocked\":true,` to `\"unlocked\":false`
+* Save the file and reload it in TTS
+
+NOTE: This does not remove the sticker for the scenario from the map.
+
+[#locked-solo]
+=== Solo scenarios for unlocked classes show up as locked in the scenario overview
+
+Solo scenarios only show up when using the "Show Locked" toggle in the scenario setup.
+This spoilers class names as all other solo scenarios are also in that list.
+To fix this, you can enter the following command into the chat window in TTS:
+
+[source]
+----
+/execute Global.call("api_scenario_unlockScenario", { "Banner Spear" })
+----
+
+Replace `Banner Spear` with the actual name of the class you want to unlock.
+
 == Version 2.2
 
 [#town-guard-empty]

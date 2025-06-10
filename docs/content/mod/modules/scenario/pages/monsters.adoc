@@ -1,23 +1,24 @@
 = Monsters
 
-[#_monster_mats]
-== Monster Mats
+Every monster type that is present will have a sleeve where you can see its stats and can spawn more of them manually.
+Each monster will also have a mat for managing their ability cards.
 
-Every monster type that is present in a scenario is represented by their monster mat.
-This mat contains all the information and material for this monster type like their stats and ability deck.
+image::algox-archer-sleeve.png[]
 
-image::monsterMat.png[]
 
 The current stats of a monster is shown in the center of the mat.
-Below the stats image, the current monster level is shown according to the scenario level set in the Party Sheet optionally adjusted by whatever the scenario specifies for that monster type.
+Below the stats image, the current monster level is shown according to the scenario level set on the xref:campaign:start.adoc#scenario_level[Scenario Level Mat].
 You can use the +/- buttons to increase/decrease the current monster level.
-This will not change the level of any existing monsters, but only the monster spawn after changing the level.
+This will not change the level of any existing monsters, but only the monsters that are spawned after changing the level.
 
 To spawn new monster of that type, use the btn:[Normal] or btn:[Elite] button on the left of the stat sheet.
 This will spawn a new figure above the monster mat that then can be placed anywhere on the table.
 
-To the right of the stat sheet the ability deck for the monster type is placed.
-You can draw additional ability cards using the btn:[Draw] button here.
+In a different portion of the play area are ability card mats for each monster type present.
+
+image::archer-abilities.png[]
+
+You can draw additional ability cards using the btn:[Draw] button here. This button is most useful for adding enemies to the xref:engine:interface/initiativeTracker.adoc[Initiative Tracker] when revealing a new room during a round.
 Alternatively there's also a menu for this in the Enemy Interface, as well as a xref:engine:feature/gameKeys.adoc#_draw_monster_attack_modifier[Game Key].
 
 The btn:[Shuffle] button moves all ability cards from the discard pile into the ability deck and shuffles it.
