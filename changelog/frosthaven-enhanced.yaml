@@ -1,5 +1,5 @@
 - version: 2.4.0
-  release:
+  release: 2025-10-06
   change:
     - "Some bags with multiple objects inside are now considered infinite.
       Dragging an object out of them immediately places a copy back into them.
@@ -34,6 +34,7 @@
     - The random item loot card isn't added to the loot deck if it was already was looted in a previous scenario attempt.
     - Items with gold costs have their cost in the data, so sorting by item costs in the shop now works.
       Items without gold costs are sorted at the end.
+    - Solo scenarios are shown as unlocked in the Game Setup menu once the class is unlocked.
     - "Deathwalker: Rest in the Shade enhancement costs account for multi-target."
     - "Geminate: ||Luminous Descent enhancement costs account for multi-target.||"
     - "Meteor: ||Deep Fury bottom enhancement mark corrected to use diamond plus shape.||"
@@ -64,7 +65,7 @@
       Change the cards to the intended ones if there are mistakes.
       The cards are now saved correctly.
     - Sticker G is removed when loading the campaign.
-      You have reapply it, which you can now with the correct color.
+      You have to reapply it, which you can now with the correct color.
 - version: 2.3.1
   release: 2024-12-19
   add:
