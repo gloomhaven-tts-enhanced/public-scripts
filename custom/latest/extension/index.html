@@ -209,10 +209,8 @@ This event is propagated to all extensions that registered for this event.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ExtensionApi = require("api.ExtensionApi")
-
-function onLoad()
-  ExtensionApi.registerExtensions()
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCharacterLevelChange(character, level)
+  print(character.class, " changed to level ", level)
 end</code></pre>
 </div>
 </div>
@@ -223,9 +221,11 @@ Extension points are globally defined functions on the object, just like regular
 <div class="listingblock">
 <div class="title">Example extension usage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCharacterLevelChange(player, level)
-  print(player, " changed to level ", level)
-end</code></pre>
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">-- tag::levelChange[]
+function onCharacterLevelChange(character, level)
+  print(character.class, " changed to level ", level)
+end
+-- end::levelChange[]</code></pre>
 </div>
 </div>
 </div>

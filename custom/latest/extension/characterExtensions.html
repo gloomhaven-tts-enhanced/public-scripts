@@ -197,8 +197,47 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_oncharacterlevelchange"><a class="anchor" href="#_oncharacterlevelchange"></a><code>onCharacterLevelChange</code></h2>
+<h2 id="_data_types"><a class="anchor" href="#_data_types"></a>Data types</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="characterIdentification"><a class="anchor" href="#characterIdentification"></a>CharacterIdentification</h3>
+<div class="paragraph">
+<p>Information about the affected character of extension events.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">player</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The affected player number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The class name of the character.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extension_points"><a class="anchor" href="#_extension_points"></a>Extension points</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_oncharacterlevelchange"><a class="anchor" href="#_oncharacterlevelchange"></a><code>onCharacterLevelChange</code></h3>
 <div class="paragraph">
 <p>Called when a character changes its level.</p>
 </div>
@@ -217,13 +256,13 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>player</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The player number of the affected character.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">character</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#characterIdentification">CharacterIdentification</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the affected character of extension events.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>level</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The new level for the character.</p></td>
 </tr>
 </tbody>
@@ -233,9 +272,10 @@
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCharacterLevelChange(player, level)
-  print(player, " changed to level ", level)
+<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCharacterLevelChange(character, level)
+  print(character.class, " changed to level ", level)
 end</code></pre>
+</div>
 </div>
 </div>
 </div>
