@@ -2,15 +2,32 @@
 
 Extensions related to characters.
 
-== `onCharacterLevelChange`
+== Data types
+
+[#characterIdentification]
+=== CharacterIdentification
+
+Information about the affected character of extension events.
+
+[cols="1,1m,2"]
+|===
+| Attribute | Type | Description
+
+| player | number | The affected player number.
+| class | string | The class name of the character.
+|===
+
+== Extension points
+
+=== `onCharacterLevelChange`
 
 Called when a character changes its level.
 
-[cols="1m,1,2"]
+[cols="1,1m,2"]
 |===
 | Parameter | Type | Description
 
-include::partial$param/player.adoc[]
+include::partial$param/character.adoc[]
 | level | number | The new level for the character.
 |===
 
@@ -18,8 +35,6 @@ include::partial$param/player.adoc[]
 ====
 [source,lua]
 ----
-function onCharacterLevelChange(player, level)
-  print(player, " changed to level ", level)
-end
+include::example$character.lua[tags=levelChange]
 ----
 ====

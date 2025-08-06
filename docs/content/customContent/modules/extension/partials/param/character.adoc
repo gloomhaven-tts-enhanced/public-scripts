@@ -1,0 +1,1 @@
+| character | <<characterIdentification>> | Information about the affected character of extension events.

@@ -13,11 +13,7 @@ In order to use the extension mechanism, the `ExtensionApi` must be used by the 
 
 [source,lua]
 ----
-local ExtensionApi = require("api.ExtensionApi")
-
-function onLoad()
-  ExtensionApi.registerExtensions()
-end
+include::example$character.lua[tags=levelChange]
 ----
 
 This registered all extension points that are defined on the object.
@@ -26,9 +22,7 @@ Extension points are globally defined functions on the object, just like regular
 .Example extension usage
 [source,lua]
 ----
-function onCharacterLevelChange(player, level)
-  print(player, " changed to level ", level)
-end
+include::example$character.lua[]
 ----
 
 == Available extension points
