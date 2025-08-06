@@ -1,0 +1,39 @@
+= Extensions
+
+Extensions are a mechanism to hook into different gameplay relevant parts of the mod.
+Whenever a relevant gameplay event happens, all registered extensions are informed about that event so that they can handle it accordingly.
+This is similar to how TTS works in general with their event mechanism, e.g. like `onLoad`, `onPlayerAction`, `onObjectEnterContainer`, etc.
+
+E.g. when a player clicks on the level checkmark on their character sheet, an `onCharacterLevelChange` event is created.
+This event is propagated to all extensions that registered for this event.
+
+== Usage
+
+In order to use the extension mechanism, the `ExtensionApi` must be used by the object script that handles the incoming extension calls.
+
+[source,lua]
+----
+local ExtensionApi = require("api.ExtensionApi")
+
+function onLoad()
+  ExtensionApi.registerExtensions()
+end
+----
+
+This registered all extension points that are defined on the object.
+Extension points are globally defined functions on the object, just like regular TTS event functions.
+
+.Example extension usage
+[source,lua]
+----
+function onCharacterLevelChange(player, level)
+  print(player, " changed to level ", level)
+end
+----
+
+== Available extension points
+
+Extension points are grouped into different extensions.
+Checkout the documentation for the available extension points:
+
+include::partial$nav.adoc[]

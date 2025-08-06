@@ -1,0 +1,25 @@
+= Character Extensions
+
+Extensions related to characters.
+
+== `onCharacterLevelChange`
+
+Called when a character changes its level.
+
+[cols="1m,1,2"]
+|===
+| Parameter | Type | Description
+
+include::partial$param/player.adoc[]
+| level | number | The new level for the character.
+|===
+
+.Example usage
+====
+[source,lua]
+----
+function onCharacterLevelChange(player, level)
+  print(player, " changed to level ", level)
+end
+----
+====

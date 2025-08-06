@@ -1,0 +1,1 @@
+| player | number | The player number of the affected character.
