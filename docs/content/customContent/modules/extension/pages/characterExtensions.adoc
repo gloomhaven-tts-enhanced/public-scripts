@@ -9,10 +9,7 @@ Extensions related to characters.
 
 Information about the affected character of extension events.
 
-[cols="1,1m,2"]
-|===
-| Attribute | Type | Description
-
+include::partial$table/dataType.adoc[]
 | player | number | The affected player number.
 | class | string | The class name of the character.
 |===
@@ -23,10 +20,7 @@ Information about the affected character of extension events.
 
 Called when a character changes its level.
 
-[cols="1,1m,2"]
-|===
-| Parameter | Type | Description
-
+include::partial$table/extension.adoc[]
 include::partial$param/character.adoc[]
 | level | number | The new level for the character.
 |===
