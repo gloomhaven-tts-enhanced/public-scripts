@@ -4,7 +4,7 @@ Extensions are a mechanism to hook into different gameplay relevant parts of the
 Whenever a relevant gameplay event happens, all registered extensions are informed about that event so that they can handle it accordingly.
 This is similar to how TTS works in general with their event mechanism, e.g. like `onLoad`, `onPlayerAction`, `onObjectEnterContainer`, etc.
 
-E.g. when a player clicks on the level checkmark on their character sheet, an `onCharacterLevelChange` event is created.
+E.g. when a player clicks on the level checkmark on their character sheet, an `onCharacterChangeLevel` event is created.
 This event is propagated to all extensions that registered for this event.
 
 == Usage
@@ -13,7 +13,7 @@ In order to use the extension mechanism, the `ExtensionApi` must be used by the 
 
 [source,lua]
 ----
-include::example$extensionApi.lua[]
+include::example$extension/extensionApi.lua[]
 ----
 
 This registered all extension points that are defined on the object.
@@ -22,7 +22,7 @@ Extension points are globally defined functions on the object, just like regular
 .Example extension usage
 [source,lua]
 ----
-include::example$character.lua[tags=levelChange]
+include::example$extension/character.lua[tags=changeLevel]
 ----
 
 == Available extension points
@@ -30,4 +30,4 @@ include::example$character.lua[tags=levelChange]
 Extension points are grouped into different extensions.
 Checkout the documentation for the available extension points:
 
-include::partial$nav.adoc[]
+include::partial$nav/extension.adoc[]

@@ -1,0 +1,45 @@
+= Character API
+
+== `changePerk`
+
+Changes a perk for the given player.
+
+include::partial$table/argument.adoc[]
+
+| perk | number | The perk number on the character sheet.
+| unlocked | boolean | Whether the perk was unlocked or locked.
+
+include::partial$param/player.adoc[]
+
+|===
+
+If the perk also has a name, calling this API will result in the xref:extension/characterExtensions.adoc#onCharacterChangePerk[onCharacterChangePerk] extension to be called.
+
+.Example usage
+====
+[source,lua]
+----
+include::example$api/character.lua[tags=changePerk]
+----
+====
+
+== `setLevel`
+
+Changes the level of the given player.
+
+include::partial$table/argument.adoc[]
+include::partial$param/player.adoc[]
+
+| level | number | The new level number.
+
+|===
+
+Calling this API will result in the xref:extension/characterExtensions.adoc#onCharacterChangeLevel[] extension to be called.
+
+.Example usage
+====
+[source,lua]
+----
+include::example$api/character.lua[tags=setLevel]
+----
+====

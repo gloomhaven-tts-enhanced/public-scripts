@@ -1,0 +1,1 @@
+| character | xref:scripting:data/characterInformation.adoc[] | Information about the affected character of extension events.

@@ -1,5 +1,0 @@
-* xref:extension:index.adoc[]
-+
---
-include::partial$nav.adoc[]
---

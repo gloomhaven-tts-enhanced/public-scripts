@@ -1,0 +1,16 @@
+* xref:index.adoc[]
+** xref:api/index.adoc[]
++
+--
+include::partial$nav/api.adoc[]
+--
+** xref:extension/index.adoc[]
++
+--
+include::partial$nav/extension.adoc[]
+--
+** xref:data/index.adoc[]
++
+--
+include::partial$nav/data.adoc[]
+--

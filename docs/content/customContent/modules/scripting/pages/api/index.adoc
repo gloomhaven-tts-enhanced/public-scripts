@@ -1,0 +1,8 @@
+= APIs
+
+== Available APIs
+
+APIs are grouped by their gameplay related functions.
+Checkout the documentation for the available APIs:
+
+include::partial$nav/api.adoc[]

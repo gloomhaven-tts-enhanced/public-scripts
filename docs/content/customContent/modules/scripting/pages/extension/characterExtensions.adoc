@@ -1,0 +1,42 @@
+= Character Extensions
+
+Extensions related to characters.
+
+[#onCharacterChangeLevel]
+== `onCharacterChangeLevel`
+
+Called when a character changes its level.
+
+include::partial$table/argument.adoc[]
+include::partial$param/character.adoc[]
+| level | number | The new level for the character.
+|===
+
+.Example usage
+====
+[source,lua]
+----
+include::example$extension/character.lua[tags=changeLevel]
+----
+====
+
+[#onCharacterChangePerk]
+== `onCharacterChangePerk`
+
+Called when a character unlocks or locks a perk with a special effect (e.g. one that has a perk reminder card).
+
+include::partial$table/argument.adoc[]
+include::partial$param/character.adoc[]
+
+| perk | string | The name of the perk.
+| unlocked | boolean | `true` if the perk was unlocked, `false` if the previously unlocked perk was locked again.
+
+|===
+
+.Example usage
+====
+[source,lua]
+----
+include::example$extension/character.lua[tags=changePerk]
+----
+====

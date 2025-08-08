@@ -1,0 +1,12 @@
+= CharacterInformation
+
+Information about the affected character of extension events.
+
+include::partial$table/dataType.adoc[]
+
+| player | number | The affected player number.
+| class | string | The class name of the character.
+| level | number | The current level of the character.
+| perks | string[] | The list of named perks the character currently has unlocked.
+
+|===
