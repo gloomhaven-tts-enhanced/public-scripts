@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Extensions :: Frosthaven Enhanced</title>
+    <title>Scripting :: Frosthaven Enhanced</title>
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/gh-site.css">
@@ -74,19 +74,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../scenario/expressions.html">Expressions</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Extensions</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="characterExtensions.html">Character Extensions</a>
   </li>
 </ul>
   </li>
@@ -169,7 +156,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Custom Content</a></li>
-    <li><a href="index.html">Extensions</a></li>
+    <li><a href="index.html">Scripting</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -180,72 +167,15 @@
     <a class="version is-missing" href="../../1.3/index.html">1.3</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/extension/pages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/gloomhaven-tts-enhanced/public-scripts/edit/main/docs/content/customContent/modules/scripting/pages/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Extensions</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Extensions are a mechanism to hook into different gameplay relevant parts of the mod.
-Whenever a relevant gameplay event happens, all registered extensions are informed about that event so that they can handle it accordingly.
-This is similar to how TTS works in general with their event mechanism, e.g. like <code>onLoad</code>, <code>onPlayerAction</code>, <code>onObjectEnterContainer</code>, etc.</p>
-</div>
-<div class="paragraph">
-<p>E.g. when a player clicks on the level checkmark on their character sheet, an <code>onCharacterLevelChange</code> event is created.
-This event is propagated to all extensions that registered for this event.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to use the extension mechanism, the <code>ExtensionApi</code> must be used by the object script that handles the incoming extension calls.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">local ExtensionApi = require("api.ExtensionApi")
+<h1 class="page">Scripting</h1>
 
-function onLoad()
-  ExtensionApi.registerExtensions()
-end</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This registered all extension points that are defined on the object.
-Extension points are globally defined functions on the object, just like regular TTS event functions.</p>
-</div>
-<div class="listingblock">
-<div class="title">Example extension usage</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lua hljs" data-lang="lua">function onCharacterLevelChange(character, level)
-  print(character.class, " changed to level ", level)
-end</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_available_extension_points"><a class="anchor" href="#_available_extension_points"></a>Available extension points</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Extension points are grouped into different extensions.
-Checkout the documentation for the available extension points:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="characterExtensions.html" class="xref page">Character Extensions</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </article>
   </div>
 </main>
