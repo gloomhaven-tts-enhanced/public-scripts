@@ -1,8 +1,26 @@
 - version: 2.5.0
   release:
+  change:
+    - Dropping a token on a figure (e.g. Deathwalker's Shadows) will place the token below other tokens as well.
+      E.g. if the figure is standing on a loot token, the dropped token will be placed below the look token.
   add:
+    - Adds 3D minis for all characters thanks to the scans by AgileJohn!
     - Changing a characters' level automatically sets their max HP to the new value.
+    - Adds the Game Key "Use Persistent Ability" which advances the tracker on a persistent ability.
+      It also automatically adds XP if the tracker leaves a slot giving XP this way.
+    - Adds the Game Key "Draw Ally Attack Modifier" to draw an attack modifier card from the ally deck.
     - "Shackles: ||The extra 5 HP from the 'Scar Tissue' perk are automatically applied after unlocking it.||"
+  fix:
+    - Fixes Quick Menu preview images not showing for spawnable overlays.
+    - Removes dummy debug messages when starting a new round.
+    - Fixes typo on Banner of Doom effect
+    - "Kelp: ||Fixes enhancement positions for Lacerating Stabs.||"
+    - "Building 90: ||Challenges will not be lost when using the Cleanup Action with an empty challenge deck.||"
+    - "Scenario 21: Fixes amount of Snowthistles in the loot deck."
+    - "Scenario 92: ||Fixes missing figure for HE-RO-IC-S.||"
+    - "Scenario 119: ||Fixes HP bar offset for Infuser figure.||"
+    - "Scenario 120: ||Treasure chest checkmark doesn't show on the flowchart anymore.||"
+    - "Scenario 132: ||Force Link shows at the correct location on the flowchart.||
 - version: 2.4.0
   release: 2025-10-06
   change:
