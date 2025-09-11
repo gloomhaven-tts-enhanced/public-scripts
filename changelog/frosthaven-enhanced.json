@@ -1,5 +1,32 @@
 [
   {
+    "version": "2.5.0",
+    "release": "2025-09-11",
+    "change": [
+      "Dropping a token on a figure (e.g. Deathwalker's Shadows) will place the token below other tokens as well. E.g. if the figure is standing on a loot token, the dropped token will be placed below the look token."
+    ],
+    "add": [
+      "Adds 3D minis for all characters thanks to the scans by AgileJohn!",
+      "Changing a characters' level automatically sets their max HP to the new value.",
+      "Adds the Game Key \"Use Persistent Ability\" which advances the tracker on a persistent ability. It also automatically adds XP if the tracker leaves a slot giving XP this way.",
+      "Adds the Game Key \"Draw Ally Attack Modifier\" to draw an attack modifier card from the ally deck.",
+      "Shackles: xxx-spoiler-xxx",
+      "The Gloomhaven (1st edition) classes are now compatible with FHE. Check the workshop description to find the link to the GH mod you need to add for them."
+    ],
+    "fix": [
+      "Fixes Quick Menu preview images not showing for spawnable overlays.",
+      "Removes dummy debug messages when starting a new round.",
+      "Fixes typo on Banner of Doom effect",
+      "Kelp: xxx-spoiler-xxx",
+      "Building 90: xxx-spoiler-xxx",
+      "Scenario 21: Fixes amount of Snowthistles in the loot deck.",
+      "Scenario 92: xxx-spoiler-xxx",
+      "Scenario 119: xxx-spoiler-xxx",
+      "Scenario 120: xxx-spoiler-xxx",
+      "Scenario 132: xxx-spoiler-xxx"
+    ]
+  },
+  {
     "version": "2.4.0",
     "release": "2025-10-06",
     "change": [
