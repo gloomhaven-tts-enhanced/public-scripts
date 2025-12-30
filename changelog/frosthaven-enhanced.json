@@ -1,5 +1,18 @@
 [
   {
+    "version": "2.5.1",
+    "release": "2025-12-30",
+    "add": [
+      "Adds Game Key to move character tokens on persistent abilities backwards.",
+      "Adds Game Key to draw AM card for non-GM players."
+    ],
+    "fix": [
+      "Character sheets don't show duplicate entries for all their UI elements anymore.",
+      "Monsters are not set up multiple times during scenario setup.",
+      "Item cards not show their item number at the back again."
+    ]
+  },
+  {
     "version": "2.5.0",
     "release": "2025-09-11",
     "change": [
@@ -10,20 +23,20 @@
       "Changing a characters' level automatically sets their max HP to the new value.",
       "Adds the Game Key \"Use Persistent Ability\" which advances the tracker on a persistent ability. It also automatically adds XP if the tracker leaves a slot giving XP this way.",
       "Adds the Game Key \"Draw Ally Attack Modifier\" to draw an attack modifier card from the ally deck.",
-      "Shackles: xxx-spoiler-xxx",
+      "Shackles: ||The extra 5 HP from the 'Scar Tissue' perk are automatically applied after unlocking it.||",
       "The Gloomhaven (1st edition) classes are now compatible with FHE. Check the workshop description to find the link to the GH mod you need to add for them."
     ],
     "fix": [
       "Fixes Quick Menu preview images not showing for spawnable overlays.",
       "Removes dummy debug messages when starting a new round.",
       "Fixes typo on Banner of Doom effect",
-      "Kelp: xxx-spoiler-xxx",
-      "Building 90: xxx-spoiler-xxx",
+      "Kelp: ||Fixes enhancement positions for Lacerating Stabs.||",
+      "Building 90: ||Challenges will not be lost when using the Cleanup Action with an empty challenge deck.||",
       "Scenario 21: Fixes amount of Snowthistles in the loot deck.",
-      "Scenario 92: xxx-spoiler-xxx",
-      "Scenario 119: xxx-spoiler-xxx",
-      "Scenario 120: xxx-spoiler-xxx",
-      "Scenario 132: xxx-spoiler-xxx"
+      "Scenario 92: ||Fixes missing figure for HE-RO-IC-S.||",
+      "Scenario 119: ||Fixes HP bar offset for Infuser figure.||",
+      "Scenario 120: ||Treasure chest checkmark doesn't show on the flowchart anymore.||",
+      "Scenario 132: ||Force Link shows at the correct location on the flowchart.||"
     ]
   },
   {
@@ -35,7 +48,7 @@
     "add": [
       "Dropping an overlay terrain tile onto a figure will move the tile below the figure. This includes things like Deathwalkers Shadows.",
       "You can lock entries from the scenario flowchart again. Right-click on the scenario completion checkmark to hide the scenario again. This will also remove the scenario sticker from the map. It will _not_ remove additional map stickers that may be unlocked by certain scenarios (e.g. sticker Y).",
-      "Building 24: xxx-spoiler-xxx",
+      "Building 24: ||Planted herbs can now be tracked on the garden building card. Click the plots to select the herb to plan. For level 1 and 2, click the arrow circle icon to flip the garden card.||",
       "There are now both options for sticker G available when using the 'Add Sticker' button on the map. Also see migration information part."
     ],
     "fix": [
@@ -50,31 +63,31 @@
       "Items with gold costs have their cost in the data, so sorting by item costs in the shop now works. Items without gold costs are sorted at the end.",
       "Solo scenarios are shown as unlocked in the Game Setup menu once the class is unlocked.",
       "Deathwalker: Rest in the Shade enhancement costs account for multi-target.",
-      "Geminate: xxx-spoiler-xxx",
-      "Meteor: xxx-spoiler-xxx",
-      "Prism: xxx-spoiler-xxx",
+      "Geminate: ||Luminous Descent enhancement costs account for multi-target.||",
+      "Meteor: ||Deep Fury bottom enhancement mark corrected to use diamond plus shape.||",
+      "Prism: ||Shield Spider summon shows correct effect.||",
       "Abeal Herder: Fixes preview for monster ability cards missing some actions",
-      "Algox Icespeaker: xxx-spoiler-xxx",
+      "Algox Icespeaker: ||Raised HP bar offset to include immunities for higher difficulties.||",
       "Flaming Bladespinner: Fixes stats for level 7 elite.",
       "Snow Imp: Fixes movement value for level 0 elite.",
-      "Building 81: xxx-spoiler-xxx",
-      "Building 81: xxx-spoiler-xxx",
-      "Item 214: xxx-spoiler-xxx",
-      "Scenario 6: xxx-spoiler-xxx",
-      "Scenario 10: xxx-spoiler-xxx",
-      "Scenario 15: xxx-spoiler-xxx",
-      "Scenario 27: xxx-spoiler-xxx",
-      "Scenario 42: xxx-spoiler-xxx",
-      "Scenario 60: xxx-spoiler-xxx",
-      "Scenario 76: xxx-spoiler-xxx",
-      "Scenario 76: xxx-spoiler-xxx",
-      "Scenario 93: xxx-spoiler-xxx",
-      "Scenario 109: xxx-spoiler-xxx",
-      "Scenario 132: xxx-spoiler-xxx",
-      "Coral Solo: xxx-spoiler-xxx"
+      "Building 81: ||The building is not automatically upgraded to level 2 when you unlock envelope A. Downgrading the building to level 1 doesn't prevent upgrading it again.||",
+      "Building 81: ||The order of the trial deck is now correct according to the FAQ.||",
+      "Item 214: ||Fixes it's name to 'Cup of Ventillion'.||",
+      "Scenario 6: ||Map tiles use the correct side.||",
+      "Scenario 10: ||The Ice Pillars in the second room of the correct HP and the map tile is 16-A instead of 16-B.||",
+      "Scenario 15: ||Chaos Lieutenant shows immunities.||",
+      "Scenario 27: ||Altars are set up correctly based on character count.||",
+      "Scenario 42: ||Add missing difficult terrain.||",
+      "Scenario 60: ||Lurkers add +1 to their attack value.||",
+      "Scenario 76: ||Adds missing section links.||",
+      "Scenario 76: ||Figh King has correct HP.||",
+      "Scenario 93: ||Scawbit has its movement reduced correctly.||",
+      "Scenario 109: ||The boss deck is now correctly removed at the end of the scenario.||",
+      "Scenario 132: ||Added Missing escape hex markers.||",
+      "Coral Solo: ||The second boss has its movement reduced correctly.||"
     ],
     "migration": [
-      "Building 81: xxx-spoiler-xxx",
+      "Building 81: ||If the bottom card of your current trial deck is 'Trial of Weakness', the whole deck will get reverted to match the intended order.||",
       "Check the town guard deck for the correct cards (the ones with special symbols on them). Loading a previous campaign doesn't know which card was unlocked so it just tries to guess and load the correct card. Change the cards to the intended ones if there are mistakes. The cards are now saved correctly.",
       "Sticker G is removed when loading the campaign. You have to reapply it, which you can now with the correct color."
     ]
@@ -92,16 +105,18 @@
       "Treasure cards spawn higher so they should collide with figures.",
       "Fixes missing overlay image for Coral.",
       "'Repair' has been renamed to 'Rebuild' on the buildings mat.",
-      "Building 81: xxx-spoiler-xxx",
+      "Building 81: ||The name of the cards match their image again and the order of the deck is fixed.||",
       "Figures and overlays with a HP bar react to the \"Add/Remove Health\" Game Keys.",
       "Figures and overlays react to the Cleanup Action.",
       "Figures and overlays can be used with Quick Menu.",
       "Traps show their damage number.",
       "Setting character HP during unpack is based on actual level checkmarks instead of current XP value.",
       "Trap: The figure has the correct collider, so clicking the HP bar is possible.",
-      "Meteor: xxx-spoiler-xxx"
+      "Meteor: ||The animated variant (2nd state) of the lava token matches the size of the non-animated one||"
     ],
-    "migration": ["Building 81: xxx-spoiler-xxx"]
+    "migration": [
+      "Building 81: ||When migrating the trials deck the mod goes by the name of the card, regardless of what is actually shown on the card. So when migrating from 2.3.0 (where the wrong name is given to the cards) make sure you check for the correct name on the object instead of the one on the image.||"
+    ]
   },
   {
     "version": "2.3.0",
@@ -118,12 +133,12 @@
       "Overlays now also have a 3D variant.",
       "Scenarios can now be marked as locked out by clicking at the center position on the scenario tracker for this scenario.",
       "The books are now saved from being deleted during \"Delete Map\". You can also add any other object from being deleted this way by giving them the \"Permanent\" tag.",
-      "Building 90: xxx-spoiler-xxx",
+      "Building 90: ||The Challenge deck bag isn't randomized anymore. The Cleanup Action now puts Challenge Cards at the bottom of the deck bag. There's also a right-click context menu on Challenge Cards to do the same thing.||",
       "The loot deck mat has a button to draw a loot card.",
       "Looting with the Cleanup Action automatically draws a loot card for the looting player. If it's a random item the item will automatically be drawn and added to the player mat. At the end of a scenario, loot is automatically added to the player's character sheets.",
       "No more crate dummies! All placeholders have been replaced with actual figures.",
       "The summons from GH items are now included.",
-      "Building 88: xxx-spoiler-xxx"
+      "Building 88: ||Pet cards are not removed by map cleanup.||"
     ],
     "fix": [
       "Using the cleanup action on a deck of Battle Goals will split it into individual cards just like putting the deck manually.",
@@ -156,13 +171,15 @@
       "Quick Menu usage information doesn't show for all players anymore.",
       "Fixes Shard Seeker sticker name.",
       "Fixes Shards AM name.",
-      "Scenario 109: xxx-spoiler-xxx",
+      "Scenario 109: ||Boss deck is drawn regardless of which room is opened first.||",
       "Switching to other player colors using the Game Keys works again.",
       "The loot deck will be created if Loot Cards 1418 or 1419 are present.",
       "Classes show a preview image in the Quick Menu for overlays they can spawn.",
       "The Brummix campaign sticker can now be added multiple times and shows the section link information."
     ],
-    "migation": ["You have to manually add the Brummix stickers."],
+    "migation": [
+      "You have to manually add the Brummix stickers."
+    ],
     "custom": [
       "The tag \"Gloomhaven Custom Content\" is deprecated now and it's handling will be removed in the next version. Instead use the new tag \"Content Box\" now. The content in the bag functions the same, but the bag itself has some additional requirements (checkout the [documentation](https://gloomhaven-tts-enhanced.github.io/public-scripts/custom/latest/contentbox.html#metadata).)",
       "Adding a content box into the game will now override most content if there's already one with the same name instead of raising a warning.",
@@ -237,12 +254,16 @@
       "You can copy/paste inactive characters from the previous version to the new one to transfer them for now.",
       "Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button."
     ],
-    "custom": ["Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."]
+    "custom": [
+      "Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."
+    ]
   },
   {
     "version": "2.0.1",
     "release": "2024-08-25",
-    "fix": ["Treasure cards are placed in their deck again so treasures can be looted."]
+    "fix": [
+      "Treasure cards are placed in their deck again so treasures can be looted."
+    ]
   },
   {
     "version": "2.0.0",

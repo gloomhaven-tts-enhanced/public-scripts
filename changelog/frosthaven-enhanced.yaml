@@ -1,3 +1,12 @@
+- version: 2.5.1
+  release: 2025-12-30
+  add:
+    - Adds Game Key to move character tokens on persistent abilities backwards.
+    - Adds Game Key to draw AM card for non-GM players.
+  fix:
+    - Character sheets don't show duplicate entries for all their UI elements anymore.
+    - Monsters are not set up multiple times during scenario setup.
+    - Item cards not show their item number at the back again.
 - version: 2.5.0
   release: 2025-09-11
   change:
