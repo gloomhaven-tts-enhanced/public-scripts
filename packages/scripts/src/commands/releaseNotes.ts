@@ -66,6 +66,7 @@ const writeChanges = (contentName: string, changes: ChangeVersion) => {
 
   createSteamNotes(changes, dir);
   createDiscordNotes(changes, dir);
+  createGithubNotes(changes, dir);
 };
 
 const createSteamNotes = (change: ChangeVersion, dir: string) => {
@@ -109,4 +110,25 @@ const createDiscordNotes = (change: ChangeVersion, dir: string) => {
   CATEGORY_NAMES.forEach(([category, name]) => appendCategory(name, category));
 
   writeFileSync(`${dir}/discord.md`, text.trim(), { encoding: "utf-8" });
+};
+
+const createGithubNotes = (change: ChangeVersion, dir: string) => {
+  let text = `# ${change.version}\n\n`;
+
+  const appendCategory = (name: string, key: ChangeCategory) => {
+    const entries = change[key];
+    if (entries) {
+      text += `__${name}__\n`;
+
+      for (const entry of entries) {
+        text += `- ${entry}\n`;
+      }
+
+      text += "\n";
+    }
+  };
+
+  CATEGORY_NAMES.forEach(([category, name]) => appendCategory(name, category));
+
+  writeFileSync(`${dir}/github.md`, text.trim(), { encoding: "utf-8" });
 };

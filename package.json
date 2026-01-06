@@ -2,7 +2,8 @@
   "name": "@gloomhaven-enhanced/public",
   "version": "1.3.0",
   "scripts": {
-    "release-notes": "pnpm --filter @gloomhaven-enhanced/scripts start release-notes -c \"%INIT_CWD%\\changelog\""
+    "release-notes": "pnpm --filter @gloomhaven-enhanced/scripts start release-notes -c \"%INIT_CWD%\\changelog\"",
+    "changelog": "pnpm release-notes"
   },
   "devDependencies": {}
 }
