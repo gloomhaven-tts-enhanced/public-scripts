@@ -211,7 +211,26 @@
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Comparison operators</caption>
+<caption class="title">Table 2. Boolean operators</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>!</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Negates a boolean expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Comparison operators</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -373,6 +392,14 @@ Rounds to the lower integer if the decimal value is .5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>roundUp(number): number</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rounds the given number to the nearest integer.
 Rounds to the higher integer if the decimal value is .5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isUnlocked(string, string): boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Takes the type and name of an unlockable campaign element (e.g. <code>campaign-sticker</code> and <code>Friends of the Fish King</code>) and returns <code>true</code> if this element is currently unlocked in the campaign and <code>false</code> otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isRoomOpen(string): boolean</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns <code>true</code> if the room with the given index is open in the current running scenario and <code>false</code> if not.</p></td>
 </tr>
 </tbody>
 </table>
