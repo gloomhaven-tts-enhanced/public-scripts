@@ -1,5 +1,5 @@
 - version: 2.5.2
-  release:
+  release: 2026-01-08
   fix:
     - Fixes monster having duplicate monster numbers during scenario setup.
     - Fixes gaining inspiration for solo scenarios.

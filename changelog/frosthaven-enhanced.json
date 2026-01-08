@@ -1,7 +1,7 @@
 [
   {
     "version": "2.5.2",
-    "release": null,
+    "release": "2026-01-08",
     "fix": [
       "Fixes monster having duplicate monster numbers during scenario setup.",
       "Fixes gaining inspiration for solo scenarios.",
@@ -195,9 +195,7 @@
       "Classes show a preview image in the Quick Menu for overlays they can spawn.",
       "The Brummix campaign sticker can now be added multiple times and shows the section link information."
     ],
-    "migation": [
-      "You have to manually add the Brummix stickers."
-    ],
+    "migation": ["You have to manually add the Brummix stickers."],
     "custom": [
       "The tag \"Gloomhaven Custom Content\" is deprecated now and it's handling will be removed in the next version. Instead use the new tag \"Content Box\" now. The content in the bag functions the same, but the bag itself has some additional requirements (checkout the [documentation](https://gloomhaven-tts-enhanced.github.io/public-scripts/custom/latest/contentbox.html#metadata).)",
       "Adding a content box into the game will now override most content if there's already one with the same name instead of raising a warning.",
@@ -272,16 +270,12 @@
       "You can copy/paste inactive characters from the previous version to the new one to transfer them for now.",
       "Campaign Stickers might show up as an empty space if the entered text doesn't match the one the mod now expects. Use the Remove Button to remove and invalid ones and then add them via the Add button."
     ],
-    "custom": [
-      "Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."
-    ]
+    "custom": ["Custom condition tokens need the new tag \"Condition\" in order apply conditions on token collisions."]
   },
   {
     "version": "2.0.1",
     "release": "2024-08-25",
-    "fix": [
-      "Treasure cards are placed in their deck again so treasures can be looted."
-    ]
+    "fix": ["Treasure cards are placed in their deck again so treasures can be looted."]
   },
   {
     "version": "2.0.0",
