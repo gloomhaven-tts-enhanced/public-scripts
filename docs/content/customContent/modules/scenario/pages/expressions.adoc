@@ -13,6 +13,14 @@
 | / | Division of numerical values.
 |===
 
+.Boolean operators
+[cols="m,4"]
+|===
+| Operator | Description
+
+| ! | Negates a boolean expression.
+|===
+
 .Comparison operators
 [cols="m,4"]
 |===
@@ -76,6 +84,12 @@ Rounds to the lower integer if the decimal value is .5.
 | roundUp(number): number
 | Rounds the given number to the nearest integer.
 Rounds to the higher integer if the decimal value is .5.
+
+| isUnlocked(string, string): boolean
+| Takes the type and name of an unlockable campaign element (e.g. `campaign-sticker` and `Friends of the Fish King`) and returns `true` if this element is currently unlocked in the campaign and `false` otherwise.
+
+| isRoomOpen(string): boolean
+| Returns `true` if the room with the given index is open in the current running scenario and `false` if not.
 |===
 
 == Examples

@@ -1,3 +1,18 @@
+- version: 2.5.2
+  release:
+  fix:
+    - Fixes monster having duplicate monster numbers during scenario setup.
+    - Fixes gaining inspiration for solo scenarios.
+    - Dropping a token (e.g. Shadows) on a figure only moves the token below the figure and possible loot/aid tokens, not below any other tiles.
+    - Increases the size of the shop area so that the item deck doesn't "explode" anymore when unpacking too many items.
+    - Fixes typo in Jeweler card name.
+    - "Meteor: ||Fixes a typo in the AM deck.||"
+    - "Prism: ||Fixes ability text for Shield Spider.||"
+    - "Scenario 41: Fixes the number of aid tokens."
+    - "Scenario 52: Fixes offset of tile 11-C."
+    - "Scenario 81: ||All doors are now correctly markes as objectives with their HP bars.||"
+    - "Scenario 91: ||Fixes position of Lurker Clawcrushser on tile 2.||"
+    - "Scenario 106: ||Adds missing health bar to Blacksmith. The special end of round effect doesn't show on the figure yet, though.||"
 - version: 2.5.1
   release: 2025-12-30
   add:
@@ -6,7 +21,7 @@
   fix:
     - Character sheets don't show duplicate entries for all their UI elements anymore.
     - Monsters are not set up multiple times during scenario setup.
-    - Item cards not show their item number at the back again.
+    - Item cards now show their item number at the back again.
 - version: 2.5.0
   release: 2025-09-11
   change:

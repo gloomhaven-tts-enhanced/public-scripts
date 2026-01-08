@@ -113,7 +113,7 @@ const createDiscordNotes = (change: ChangeVersion, dir: string) => {
 };
 
 const createGithubNotes = (change: ChangeVersion, dir: string) => {
-  let text = `# ${change.version}\n\n`;
+  let text = "";
 
   const appendCategory = (name: string, key: ChangeCategory) => {
     const entries = change[key];
