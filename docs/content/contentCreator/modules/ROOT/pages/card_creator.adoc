@@ -18,8 +18,11 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 **** <<base-colors, Base Colors>>
 **** <<detail-colors, Detail Colors>>
 **** <<card-back-colors, Card Back Colors>>
+*** <<templates, Templates>>
 *** <<deck-stats, Deck Stats>>
 *** <<adding-cards, Adding Cards>>
+** <<exporting-cards, Exporting Cards>>
+*** <<pnp-bleed, Print and Play with Bleed>>
 * <<syntax, Syntax>>
 ** <<tab-hierarchy, Tab Hierarchy>>
 ** <<general-structure-overview, General Structure Overview>>
@@ -43,6 +46,7 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 *** <<position, Position>>
 *** <<other-controls, Other Controls>>
 *** <<advanced-styling, Advanced Styling>>
+**** <<banners-and-object-grouping, Banners and Object Grouping>>
 * <<tts-mod, Tabletop Simulator Mod>>
 ** <<tts-assets, TTS Assets>>
 *** <<tts-assets-starting-deck, Starting Deck>>
@@ -64,7 +68,7 @@ On this page you will find detailed explanations of all commands and syntax opti
 [[getting-started]]
 == link:#nav-menu[Getting Started]
 
-Before you begin creating your cards, it's recommended to set up some base info, and define some properties. These properties will be used to customise the look of your custom class. These steps aren't strictly required, but it can help you to reinforce the thematic identity of your class.
+Before you begin creating your cards, it's recommended to set up some base info and define some properties. These properties will be used to customize the look of your custom class. These steps aren't strictly required, but they can help reinforce the thematic identity of your class.
 
 [[base-info]]
 === link:#nav-menu[Base Info]
@@ -145,32 +149,31 @@ Once a deck is created, and you have opened it by either clicking on it, or clic
 
 Immediately, you'll be able to see two buttons, "Show starting deck" and "Show advanced deck". Once you've started creating cards, you can use these buttons to see the entire level 1/X spread, and the entire level 2-9 spread, respectively.
 
-Below that are 3 more buttons, "Deck Properties", "Deck Stats", and "Card Style". Clicking on any of these will open their respective window.
+Below that are four more buttons: "Deck Properties", "Deck Stats", "Card Style", and "Templates". Clicking any of these will open its respective window.
 
 One thing to note about the following sections is that for some of the options (especially the color properties), it'll be easier to see what they do once you've actually started creating cards. You can either skip to the <<adding-cards, Adding Cards>> section to start creating cards, or continue reading to see what each section does.
 
 [[deck-properties]]
 ==== link:#nav-menu[Deck Properties]
 
-The "Deck Properties" section is where you can see, and set, various properties for the deck. This includes the name of the deck, a link to the icon of the class, and various links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in the <<basic-actions, Basic Actions>>, and the <<custom-actions, Custom Actions>> section). The custom class tokens can also be adjusted in scale, each having two separate scale properties, one for inline size and one for main action as will be explained in the <<syntax, Syntax>> section.
+The "Deck Properties" section is where you can view and set various properties for the deck. This includes the name of the deck, a link to the class icon, and links to different class tokens, allowing you to add custom images to cards (this is explained in more detail in <<basic-actions, Basic Actions>> and <<custom-actions, Custom Actions>>). Custom class icons can also be scaled with two separate properties: one for inline size and one for main action size, as explained in <<syntax, Syntax>>.
 
 [[card-style]]
 ==== link:#nav-menu[Card Style]
 The "Card Style Editor" section is where you can modify how your cards look. This editor window is split into 3 main sections: <<base-colors, Base Colors>>, <<detail-colors, Detail Colors>>, and <<card-back-colors, Card Back Colors>>.
 
-Before delving into the specifics of each, you might notice that there is also an option at the top to choose whether you would like to use Frosthaven's or Gloomhaven's (2nd edition) template as your card base. You might also notice that you can add more card styles to your deck by pressing the `+` button and cycling between them with the `←` and `→` buttons, allowing you to style multiple variants for the same deck separately. We will elaborate on how to use a specific style later in <<syntax, Syntax>>.
-
-
-
+Before delving into the specifics of each, you might notice an option at the top to choose whether you want to use the Frosthaven or Gloomhaven (2nd edition) template as your card base. You might also notice that you can add more card styles to your deck by pressing the `+` button and cycling between them with the `←` and `→` buttons, allowing you to style multiple variants for the same deck separately. We will elaborate on how to use a specific style later in <<syntax, Syntax>>.
 
 [[base-colors]]
 ===== link:#nav-menu[Base Colors]
 
 In the Base Colors sub-menu, you have access to several core card styling options, and for most projects, you will not need much more than that. You can adjust the color of the background texture that overlays the background image, the colors of the top banner where the card name appears, and the side banners. You can also change the color of the outer frame, the lines that separate objects, and the backgrounds of boxes such as optional text blocks and element consumptions. If you are using a Frosthaven-based template, you can also modify the color of the runes on the sides of the card.
 
-When using the color picker, pressing the label at the bottom where it says `RGB` will cycle through different color definitions: `RGB` -> `HSL` -> `HEX` -> `RGB`. This can be useful depending on which color format you prefer to work with.
+When using the color picker, pressing the label at the bottom where it says `RGB` will cycle through different color definitions: `RGB` -> `HSL` -> `HEX` -> `RGB`. This can be useful depending on which color format you prefer to work with. Note that this behavior is browser-dependent, and not all of these options may be available in every browser.
 
 Most of these visual elements also have an `Img` button that allows you to upload a custom design for that element, replacing the default one. You can always return to the default asset by pressing the `Default` button.
+
+*Warning:* Using `Img` to change the card's main background is *not* the recommended workflow. For background changes, use the method in <<detail-colors, Detail Colors>>.
 
 [[detail-colors]]
 ===== link:#nav-menu[Detail Colors]
@@ -184,6 +187,34 @@ There is also granular control over how the class icon sits in the top-right cor
 In the Card Back Colors section, you can adjust the background texture color on the back of the card, the colors of the top and side banners, the color of the decorative element, and the color of the outer frame. You can also adjust the color of the class icon, although you will only see that change if you linked an image for it in the <<deck-properties, Deck Properties>> menu.
 If you are using a Frosthaven-based template, you can also modify the color of the runes on the sides of the card.
 
+[[templates]]
+==== link:#nav-menu[Templates]
+
+The "Templates" section is intended to make complex layouts reusable. Instead of rewriting the same advanced object structure each time, you can define it once and reference it later by keyword.
+
+For example, the advanced banner/grouping pattern shown in <<banners-and-object-grouping, Banners and Object Grouping>> can be represented as a reusable object call in your card script:
+
+[source]
+----
+- banner:
+  - bannerContent:
+    # put content for the banner here
+  - otherContent:
+    # put content for the rest of the action here
+----
+
+When you open the Templates page, you will see 3 columns:
+
+- Left: all templates you have already defined.
+- Middle: a live preview of how the selected template appears on a card.
+- Right: the editor where you define and modify the template code.
+
+To add a new template, use the button at the bottom-left of the Templates page. After pressing it, choose the template name/keyword. This keyword is what you will use in other scripts when referencing that template.
+
+Template edits in the right-side editor are saved automatically. By default, a template object is shared between top and bottom actions. If your layout needs different implementations for each half (as shown in <<banners-and-object-grouping, Banners and Object Grouping>>), disable "Object is same on top and bottom" and edit each version separately.
+
+*Variables:* Templates support injected variables using the notation `!<variable-name>`. This lets a template expose placeholders that you fill at the call site. In the <<banners-and-object-grouping, Banners and Object Grouping>> advanced example, the two comment areas (`put any content supposed to be in the banner in here` and `put content for the rest of the action here`) are the exact spots replaced by variables in the short template-call example above: `!bannerContent` replaces the banner content area, and `!otherContent` replaces the rest-of-action area.
+
 [[deck-stats]]
 ==== link:#nav-menu[Deck Stats]
 
@@ -194,7 +225,43 @@ The "Deck Stats" section shows a quick overview of the elements that are present
 
 While inside the deck building screen, you can add cards to the deck by clicking the "Add Card" button. This will create a new card in the deck. You can then edit this card by clicking on it. This will bring it into focus next to the text box containing its code.
 
-This state, where the card is in focus, doubles as the best way to see the changes you're making in the previous properties sections. This is because the card will update in real time as you change the properties of the card.
+This state, where the card is in focus, is also the best way to see the changes you make in the previous properties sections, because the card updates in real time.
+
+[[exporting-cards]]
+=== link:#nav-menu[Exporting Cards]
+
+To export a high-quality spread image of your cards:
+
+. Head to the <<tts-mod, TTS Mods>> section (even if you are only interested in exporting cards and not creating a full mod) and create a new mod linked to the deck you are working on.
+. In the mod, find the *Starting Deck* section under Assets and click *Upload* on the Ability Cards image. If your deck has level 2–9 cards, do the same for the *Advanced Deck* section.
+. Once uploaded, a high-quality spread image will be generated and displayed on the right side of the page. This image can be copied or downloaded and used anywhere.
+
+[[pnp-bleed]]
+==== link:#nav-menu[Print and Play (PnP) with Bleed]
+
+For high-quality Print and Play exports with bleed, you can use your browser's developer tools to capture individual cards or the full spread. This is an advanced workflow that requires a little familiarity with browser dev tools.
+
+*Steps:*
+
+. Open the deck in the Card Creator and navigate to the Starting Deck (or Advanced Deck) spread view.
+. Open your browser's developer tools by pressing *F12*.
+. Right-click the frame of any card on the spread and choose *Inspect*. This will highlight that element in the dev tools panel.
+. In the element tree, look *1 or 2 levels above* the inspected element for the element with class `test0 bleed`. Select it.
+. In the *Styles* panel on the right:
+  - *Disable* the `width` property.
+  - Set `height` to `563px`.
+  - *Disable* the `overflow` property.
+. Now select the `ccWrapper` element that sits *directly below* `test0 bleed` in the tree.
+. In its styles, *disable* both the `left` and `top` properties.
+. You are now ready to capture. Decide what you want to export:
+  - To capture a *single card*, inspect any card frame and find its `base` class element.
+  - To capture the *entire spread*, find the `puppeteerWrapper` element instead.
+. With your target element selected in the dev tools, press *Ctrl+Shift+P* and type `Node`. Select *Capture node screenshot* from the list. The image will be downloaded automatically.
+
+*Tips for better quality:*
+
+* In the dev tools toolbar at the top, set the *Dimensions* field to your native screen resolution.
+* Set *DPR* (Device Pixel Ratio) to *3 or higher* for a sharper output. Going above 3 may require some extra fiddling depending on your browser.
 
 
 [[syntax]]
@@ -265,6 +332,17 @@ bottom:
     - ''
 ----
 
+If you want to change the base actions (the attack 2 for top and move 2 for bottom), you can modify the following parameters:
+[source]
+----
+baseAttack:
+  actions:
+    - ''
+baseMove:
+  actions:
+    - ''
+----
+
 As you can see, there are already a few things you can control. Changing the name of the card, its level, or its initiative is as easy as modifying the value.
 There are also a few modifiers outside the main action block:
 
@@ -298,44 +376,44 @@ These modifiers and/or icons go before the `actions` block, since they apply to 
 [[basic-actions]]
 === link:#nav-menu[Basic Actions]
 
-This section covers the core actions used to define a card’s abilities.
+This section covers the core actions used to define a card's abilities.
 
 [cols="1,1,1,1", options="header"]
 |===
 | Syntax | Description | Example | Result
 
 | `- attack: [value]`
-| Creates an attack ability with a value of [value]
+| Creates an attack ability with a value of [value].
 | `- attack: 3`
 | image:icons/attack.svg[width=20px] 3
 
 | `- move: [value]`
-| Creates a move ability with a value of [value]
+| Creates a move ability with a value of [value].
 | `- move: 3`
 | image:icons/move.svg[width=20px] 3
 
 | `- teleport: [value]`
-| Creates a teleport ability with a value of [value]
+| Creates a teleport ability with a value of [value].
 | `- teleport: 3`
 | image:icons/teleport.svg[width=20px] 3
 
 | `- shield: [value]`
-| Creates a shield ability with a value of [value]
+| Creates a shield ability with a value of [value].
 | `- shield: 1`
 | image:icons/shield.svg[width=20px] 1
 
 | `- retaliate: [value]`
-| Creates a retaliate ability with a value of [value]
+| Creates a retaliate ability with a value of [value].
 | `- retaliate: 1`
 | image:icons/retaliate.svg[width=20px] 1
 
 | `- loot: [value]`
-| Creates a loot ability with a value of [value]
+| Creates a loot ability with a value of [value].
 | `- loot: 1`
 | image:icons/loot.svg[width=20px] 1
 
 | `- heal: [value]`
-| Creates a heal ability with a value of [value]
+| Creates a heal ability with a value of [value].
 | `- heal: 1`
 | image:icons/heal.svg[width=20px] 1
 
@@ -351,6 +429,7 @@ This section covers the core actions used to define a card’s abilities.
 Conditions modify abilities and can be used with or without an associated value. The available conditions are:
 
 - bane
+- blind
 - bless
 - brittle
 - chill
@@ -374,6 +453,7 @@ Conditions modify abilities and can be used with or without an associated value.
 - strengthen
 - stun
 - swing
+- taunt
 - ward
 - wound
 
@@ -396,6 +476,8 @@ Conditions modify abilities and can be used with or without an associated value.
 === link:#nav-menu[Elements]
 
 Elements represent various thematic or mechanical attributes. They support single values, consumption markers, and infuse modifiers.
+
+*Tip:* You can write a consume icon inline by appending `c` to the element name, e.g. `firec` will render a consume fire icon. This works for any element (e.g. `icec`, `windc`).
 
 Available elements include:
 
@@ -442,9 +524,9 @@ Using multiple elements separated by '/' will generate an “or” condition.
 [[custom-actions]]
 === link:#nav-menu[Custom Actions]
 
-There exists a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don't fit into the predefined categories.
+There is a special block for custom actions, which allows you to write any text you want. This block is useful for creating unique abilities or actions that don't fit into the predefined categories.
 
-Within these blocks, you are able to insert any of the common icons, such as conditions or elements, to further customize your text. This includes any class tokens that you've linked in the properties section.
+Within these blocks, you can insert any of the common icons, such as conditions or elements, to further customize your text. This includes any class tokens that you've linked in the properties section.
 
 The syntax for inserting these icons is: `%iconName%`.
 
@@ -513,7 +595,7 @@ Alongside all existing conditions, the available attributes you can put in a sub
 
 - target
 - range
-- customn
+- custom
 
 [[optional-blocks]]
 === link:#nav-menu[Optional Blocks]
@@ -540,7 +622,7 @@ The above will render an attack 3 ability with an optional block that consumes e
   noLine: true
 ----
 
-In this example, we have a move 3 ability with an optional block that allows the consumption of earth to perform an additional heal 2. The noLine modifier is used to prevent a line from being drawn between the move and heal abilities, since in this case they are separate abilities.
+In this example, we have a move 3 ability with an optional block that allows consuming earth to perform an additional heal 2. The `noLine` modifier is used to prevent a line from being drawn between the move and heal abilities, since in this case they are separate abilities.
 
 [[mandatory-blocks]]
 === link:#nav-menu[Mandatory Blocks]
@@ -559,7 +641,7 @@ Mandatory blocks are used to represent abilities that *must* be performed if tha
 
 In this example, we have an attack 3 ability with a mandatory block that means the player has to curse themselves.
 
-An extension of the mandatory block is the <<mode-blocks, Mode block>>.
+An extension of the mandatory block is the <<mode-blocks, Mode Blocks>> section.
 
 [[tokens]]
 === link:#nav-menu[Tokens]
@@ -599,7 +681,7 @@ The area of effect block is used to create a hex pattern. This takes the followi
 
 [source]
 ----
-- hex: et_st
+- hex: et_st_eh
   h: invert(0.28) sepia(1) saturate(9.5) hue-rotate(340deg) brightness(0.82) contrast(1.1)
 ----
 
@@ -613,7 +695,7 @@ In this example, we have an area of effect block that creates a hex pattern of t
 - x: enhancement dot hex
 - _: start new row
 
-You may also use some letters for custom colored hexes, which you may color using css styling as used in the example. These letters include 'd', 'h', 'f' and 'c'.
+You may also use some letters for custom colored hexes, which you can color using CSS styling as shown in the example. These letters include `d`, `h`, `f`, and `c`.
 
 [[summons]]
 === link:#nav-menu[Summons]
@@ -692,12 +774,12 @@ There are further properties that can be set for a summon. These extra propertie
 | Property | Description | Example | Result
 
 | `attributes`
-| The attributes of the summon. This is something like if the summon is flying, or if it has a shield. Setting this will make the attributes appear under the standees health.
+| The attributes of the summon. This is used for things like whether the summon is flying or has a shield. Setting this will make the attributes appear under the standee's health.
 | `attributes: 'Shield = 1'`
 | The summon will have a shield value of 1.
 
 | `effects`
-| The effects of the summon. This is something like if the summon wounds on their attacks. Setting this will make the effects appear under the standees health.
+| The effects of the summon. This is used for things like whether the summon wounds on attacks. Setting this will make the effects appear under the standee's health.
 | `effects: '"Wound"'`
 | The summon standee will show that they wound on their attacks.
 
@@ -712,16 +794,35 @@ There are further properties that can be set for a summon. These extra propertie
 | The summon will be immune to poison.
 
 | `hpColor`
-| The color of the health bar on the summon standee. This should be in hex code form as shown in the example.
+| The color of the health bar on the summon standee. This should be in hex form as shown in the example.
 | `hpColor: '#ff0000'`
 | The health bar on the summon standee will be red.
 
 | `hpColorText`
-| The color of the health text on the summon standee. This should be in hex code form as shown in the example.
+| The color of the health text on the summon standee. This should be in hex form as shown in the example.
 | `hpColorText: '#ffffff'`
 | The health text on the summon standee will be white.
 
 |===
+
+For a summon to operate correctly in TTS, it needs a detailed `stats` block in addition to its name. This block uses a nested object format and allows you to define richer stat information than the simple array, including attack effects and movement type:
+
+[source]
+----
+- summon:
+    name: 'Example Summon'
+    stats:
+      health: 2
+      attack:
+        value: 1
+        effects:
+          - "Muddle"
+      movement: 2
+      movementType: "Fly"
+      range: 3
+----
+
+In this example, the summon has 2 health, a move of 2, a range of 3, and an attack of 1 that inflicts Muddle. The `movementType` is set to `"Fly"`, which means the summon will be treated as a flying unit in TTS. The `effects` array inside `attack` accepts condition name strings and will display them on the standee in TTS.
 
 [[named-abilities]]
 === link:#nav-menu[Named Abilities]
@@ -758,7 +859,7 @@ The mode block has a couple of special properties that can be set. These are:
 | Property | Description | Example | Result
 
 | `icon`
-| The stuff that appears in the smalller box of the mode.
+| The stuff that appears in the smaller box of the mode.
 | `icon: '%classToken0%'`
 | The icon of the class token will appear in the smaller box of the mode.
 
@@ -766,6 +867,11 @@ The mode block has a couple of special properties that can be set. These are:
 | If set to true, the mode will be reversed. This means that the smaller box will be on the right, and the larger box will be on the left.
 | `reverse: true`
 | The mode will be reversed.
+
+| `bg`
+| Sets the background color of the mode block. Accepts any valid CSS `rgb(...)` value. Respects default alpha relative to the frame's outline color.
+| `bg: rgb(23,137,155)`
+| The mode block background will be marine-blue.
 
 | `leftBg`
 | The background color of the left box. This will usually be in rgb form as shown in the example.
@@ -786,8 +892,12 @@ The mode block has a couple of special properties that can be set. These are:
 | Moves the divider between the icon segment and the content segment by [value].
 | `dividerIndent: 27pt`
 | The divider between the icon segment and the content segment will be moved by 27pt.
-|===
 
+| `iconWidth`
+| same as dividerIndent.
+| `iconWidth: 40px`
+| The icon segment will be 40px wide.
+|===
 
 
 [[other-common-card-properties]]
@@ -805,19 +915,24 @@ Before we get into more advanced styling options, here are some common propertie
 | The image:icons/round.svg[width=20px] symbol will appear in the mandatory box in the bottom right corner of the card.
 
 | `lost: [value]`
-| Sets if the card is lost or not. This can be either "true" or "false".
+| Sets whether the card is lost. This can be either "true" or "false".
 | `lost: true`
-| The action will have a image:icons/lost.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
+| The action will have an image:icons/lost.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
 
 | `remove: [value]`
 | Sets whether the card is unrecoverable or not. This can be either "true" or "false".
 | `remove: true`
-| The action will have a image:icons/remove-loss.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
+| The action will have an image:icons/remove-loss.svg[width=20px] icon in the mandatory box in the bottom right corner of the card.
 
 | `xp: [value]`
 | Sets the XP value of the action. This can be any number.
 | `xp: 1`
 | The XP value image:icons/xp.svg[width=20px] will appear in the mandatory box in the bottom right corner of the card.
+
+| `snap: [x], [y]`
+| *(TTS only)* Adds a custom snap point at the given coordinates. Place it as a direct child of `top:` or `bottom:`. Repeat the entry to add multiple points.
+| `- snap: 326px, 159px`
+| A snap point will be placed at coordinates 326px, 159px on the card in TTS.
 
 |===
 
@@ -864,8 +979,7 @@ padding: 5px`
 [[more-style-modifiers]]
 ==== link:#nav-menu[More Style Modifiers]
 
-There are many more style modifiers that can be applied to blocks. Here are the rest of them:
-
+There are many more style modifiers that can be applied to blocks. Here are the remaining ones:
 [cols="1,1,1,1", options="header"]
 |===
 | Modifier | Description | Example | Result
@@ -958,6 +1072,9 @@ To change a block's position, orientation, or size, use the following modifiers:
 | Doubles the size of the block.
 |===
 
+You can also use additional CSS properties beyond the list above. Viable options include `background`, `display`, `clipPath`, `opacity`, `zIndex`, `filter`, `alignContent`, `justifyContent`, `alignItems`, and `textAlign`.
+Refer to https://developer.mozilla.org/en-US/docs/Web/CSS for more info.
+
 [[other-controls]]
 === link:#nav-menu[Other Controls]
 
@@ -999,7 +1116,7 @@ This section covers two advanced styling topics: special text styling inside tex
 
 ==== Special Text Styling
 
-Inside text-based blocks such as `custom`, you can use a few special formatting helpers. `%nbsp:X%` inserts multiple spaces, where `X` is the number of spaces to add, and `%lf%` inserts a line break.
+Inside text-based blocks such as `custom`, you can use a few special formatting helpers. `%nbspX%` inserts multiple spaces, where `X` is the number of spaces to add, and `%lf%` inserts a line break.
 
 In addition, within `- custom:` text blocks, you can also wrap parts of a line (or the full line) in a `%p_% <your text> %p%` block to apply CSS paragraph styles. On its own, this block does nothing, but when paired with style settings it can modify the selected text segment. Separate each CSS setting with `;`. For valid style properties, see Mozilla's CSS reference: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 
@@ -1009,36 +1126,81 @@ Example:
   - custom: 'This is a normal text followed by %p_font-weight:bold;font-size:20pt;color:#ff0000%a red bold text that is 20pt.%p%'
 ----
 
-==== Banners and Object Grouping
+**Shorthand for bold and italic:**
+You can quickly make text bold or italic without using the `%p_%` block. Wrap your text with `%b%...%be%` for bold and `%i%...%ie%` for italic. For example: `%b%Bold text%be%` and `%i%Italic text%ie%`.
+
+[[banners-and-object-grouping]]
+==== link:#nav-menu[Banners and Object Grouping]
 
 A banner is a styled area of the card, usually near the top, that visually groups related actions or information into a separate section. On official cards, this is often used to make a cluster of actions stand out from the rest of the card. The main block we use to create this kind of layout is the `group` block, which lets you place actions together for horizontal stacking or easier positioning. Here's an advanced example of how we can recreate a banner-like layout using the group block:
 
 [source]
 ----
 top:
-  duration: persistent
-  namedAbility:
-    name: Grenade
-    padding: 10px 10px
   actions:
     - group:
-      - attack: 2
-        sub:
-          - custom: '%range% 2, advantage'
-        margin: 0px -10px 0px 10px
-      - hex: ett_ttt_ett
-      marginTop: -40px
-      paddingTop: 20px
-      background: rgba(0,0,0,50%)
+      - group:
+        - group:
+          #-----------------------
+          # put any content supposed to be in the banner in here
+          #-----------------------
+          flexDirection: column
+        # - divider: # <===== Optional divider line that spans across the bottom of the banner
+        # position: absolute
+        # bottom: -5px
+        # transform: scaleX(300)
+        background: rgba(0,0,0,50%)
+        position: relative
+        left: 0px
+        paddingTop: 30px
+        paddingBottom: 10px
+        marginBottom: 5px
+      #-----------------------
+      # put content for the rest of the action here
+      #-----------------------
+      flexDirection: column
+      position: absolute
+      top: -20px
 
-    - regenerate:
-      marginTop: 10px
-      sub:
-        - self
- 
+bottom:
+  actions:
+    - group:
+      - group:
+        - group:
+          #-----------------------
+          # put any content supposed to be in the banner in here
+          #-----------------------
+          flexDirection: column
+        - divider:
+          position: absolute
+          bottom: -5px
+          transform: scaleX(300)
+        background: rgba(0,0,0,50%)
+        clipPath: polygon(0% 0%, 0% 100%, 100% 100%, 100% 21px, calc(100% - 68px) 21px, calc(100% - 60px) 0, 60% 0%, 57% 20px, 56% 23px, 44.5% 23px, 43% 20px, 40.2% 0)
+        position: relative
+        left: 0px
+        paddingTop: 30px
+        paddingBottom: 10px
+        marginBottom: 5px
+      #-----------------------
+      # put content for the rest of the action here
+      #-----------------------
+      flexDirection: column
+      position: absolute
+      top: -23px
 ----
 
-In this example, we have a group block that contains two actions, an attack and a AoE hex pattern. Group blocks default to a `flexDirection: row` (but it can be also set to 'column'), so the two actions will be placed next to each other. The group block also has a marginTop of -40px, which will pull the group up into the top area of the card. The paddingTop of 20px will add some space between the top of the group and the top of the card, allowing the darker background to extend seamlessly to the edge of the card. Finally, you can see the Named Ability block at the top, which is used to create the iconography in the corner of the banner group we've just created.
+In this example, the layout is split into separate `top:` and `bottom:` implementations so each half can have an independent banner shape and alignment:
+
+- The outer `group` acts as the container for both the banner region and the non-banner action content.
+- The nested `group -> group` structure creates a dedicated banner wrapper, while the innermost `group` is where banner content should be placed.
+- `flexDirection: column` is used on the inner content groups so banner content stacks vertically instead of the default row behavior.
+- `background: rgba(0,0,0,50%)` applies the translucent banner fill.
+- `paddingTop` and `paddingBottom` control the internal vertical spacing inside the banner, and `marginBottom` separates banner content from the rest of the action.
+- In the `top:` example, `position: absolute` with `top: -20px` aligns the banner cleanly behind the frame.
+- In the `bottom:` example, the `divider` (with `position: absolute`, `bottom: -5px`, and `transform: scaleX(300)`) creates a long separator line at the lower edge of the banner (this is commented out in the top part but can be used there too).
+- Also in the `bottom:` example, `clipPath` defines a custom polygon silhouette for the banner to not overlap with the initiative box and the base move box.
+- The final `top: -23px` on the non-banner content in the `bottom:` half compensates for the custom clipped banner geometry and aligns the banner to the card separator line cleanly.
 
 The principles shown here can be applied to many different scenarios, and using a combination of everything shown so far, there is a lot of freedom available to you to create the card you want. Remember, you are able to access the example syntax class to see some examples of how to use these blocks, and how they can be combined to create the desired effect. Otherwise, experiment a little with the blocks, and see what you can come up with!
 
