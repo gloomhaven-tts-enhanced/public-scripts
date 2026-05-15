@@ -19,6 +19,7 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 **** <<detail-colors, Detail Colors>>
 **** <<card-back-colors, Card Back Colors>>
 *** <<templates, Templates>>
+**** <<variables, Variables>>
 *** <<deck-stats, Deck Stats>>
 *** <<adding-cards, Adding Cards>>
 ** <<exporting-cards, Exporting Cards>>
@@ -30,6 +31,7 @@ An in-depth guide for using the Card Creator tool to design custom Frosthaven cl
 ** <<conditions, Conditions>>
 ** <<elements, Elements>>
 ** <<custom-actions, Custom Actions>>
+*** <<icon-modifiers, Icon Modifiers>>
 ** <<sub-blocks, Sub Blocks>>
 ** <<optional-blocks, Optional Blocks>>
 ** <<mandatory-blocks, Mandatory Blocks>>
@@ -213,7 +215,30 @@ To add a new template, use the button at the bottom-left of the Templates page. 
 
 Template edits in the right-side editor are saved automatically. By default, a template object is shared between top and bottom actions. If your layout needs different implementations for each half (as shown in <<banners-and-object-grouping, Banners and Object Grouping>>), disable "Object is same on top and bottom" and edit each version separately.
 
-*Variables:* Templates support injected variables using the notation `!<variable-name>`. This lets a template expose placeholders that you fill at the call site. In the <<banners-and-object-grouping, Banners and Object Grouping>> advanced example, the two comment areas (`put any content supposed to be in the banner in here` and `put content for the rest of the action here`) are the exact spots replaced by variables in the short template-call example above: `!bannerContent` replaces the banner content area, and `!otherContent` replaces the rest-of-action area.
+[[variables]]
+===== link:#nav-menu[Variables]
+
+Templates support injected variables using the notation `!<variable-name>`. This lets a template expose placeholders that you fill at the call site. In the <<banners-and-object-grouping, Banners and Object Grouping>> advanced example, the two comment areas (`put any content supposed to be in the banner in here` and `put content for the rest of the action here`) are the exact spots replaced by variables in the short template-call example above: `!bannerContent` replaces the banner content area, and `!otherContent` replaces the rest of action area.
+
+Templates also support inline variables with the syntax `@{variableName}` or `@{variableName:defaultValue}`. These can be used anywhere inside the template to inject a value, and the default is used when the card does not provide one.
+
+For example, a template could contain:
+
+[source]
+----
+- attack: @{attackValue:2}
+- custom: 'If this attack does more than %damage%@{attackValue:2}, die.'
+  color: @{tint:red}
+----
+
+And then a card could use that template like this:
+
+[source]
+----
+- template1:
+  attackValue: 6
+  tint: rgb(100, 100, 100)
+----
 
 [[deck-stats]]
 ==== link:#nav-menu[Deck Stats]
@@ -557,20 +582,23 @@ Here are some examples of custom actions:
 | Text with image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px] a custom class token
 |===
 
-Any icon that has been inserted also has some special modifiers that can be applied to it. These modifiers are:
+[[icon-modifiers]]
+==== link:#nav-menu[Icon Modifiers]
+
+These suffix modifiers can be applied to any icon name. Add the modifier to the end of the icon name, for example `%move-s%`.
 
 [cols="1,1,1,1", options="header"]
 |===
 | Modifier | Description | Example | Result
 
-| 's'
+| `-s`
 | Removes the icon's shadow.
-| `%classToken0s%`
-| image:https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png[width=20px]
+| `%move-s%`
+| image:icons/move.svg[width=20px]
 
-| 'i'
+| `-i`
 | Inverts the icon's color.
-| `%banei%`
+| `%bane-i%`
 | image:icons/bane.svg[width=20px]
 
 |===
@@ -696,6 +724,26 @@ In this example, we have an area of effect block that creates a hex pattern of t
 - _: start new row
 
 You may also use some letters for custom colored hexes, which you can color using CSS styling as shown in the example. These letters include `d`, `h`, `f`, and `c`.
+
+To place icons on hexes, use the `hexIcons` modifier on the `hex` object. You can target any visible hex letter in the pattern, including `a` (ally), `b` (blank), `t` (target), `s` (self), and custom hexes such as `h`, `c`, `d`, and `f`. When placing an icon on a hex, it is usually best to remove the default shadow; see <<icon-modifiers, Icon Modifiers>>. You can do that by adding `-s` to the icon name, as in `classToken0-s`. The simplest form maps a hex letter directly to an icon name:
+
+[source]
+----
+- hex: a
+  hexIcons:
+    a: classToken0-s
+----
+
+If you need more control, you can use an object instead. This gives the same result by default, but also lets you adjust the icon with `dx`, `dy`, and `scale`:
+
+[source]
+----
+- hex: a
+  hexIcons:
+    a: {icon: classToken0-s, dx: 0, dy: 0, scale: 1}
+----
+
+Any of those extra properties can be omitted, and the default values will be used.
 
 [[summons]]
 === link:#nav-menu[Summons]
