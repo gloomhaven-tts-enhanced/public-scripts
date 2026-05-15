@@ -169,6 +169,13 @@
 </li>
 <li>
 <p><a href="#templates">Templates</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#variables">Variables</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><a href="#deck-stats">Deck Stats</a></p>
@@ -213,6 +220,13 @@
 </li>
 <li>
 <p><a href="#custom-actions">Custom Actions</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#icon-modifiers">Icon Modifiers</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><a href="#sub-blocks">Sub Blocks</a></p>
@@ -537,8 +551,34 @@ If you are using a Frosthaven-based template, you can also modify the color of t
 <div class="paragraph">
 <p>Template edits in the right-side editor are saved automatically. By default, a template object is shared between top and bottom actions. If your layout needs different implementations for each half (as shown in <a href="#banners-and-object-grouping">Banners and Object Grouping</a>), disable "Object is same on top and bottom" and edit each version separately.</p>
 </div>
+<div class="sect4">
+<h5 id="variables"><a class="anchor" href="#variables"></a><a href="#nav-menu">Variables</a></h5>
 <div class="paragraph">
-<p><strong>Variables:</strong> Templates support injected variables using the notation <code>!&lt;variable-name&gt;</code>. This lets a template expose placeholders that you fill at the call site. In the <a href="#banners-and-object-grouping">Banners and Object Grouping</a> advanced example, the two comment areas (<code>put any content supposed to be in the banner in here</code> and <code>put content for the rest of the action here</code>) are the exact spots replaced by variables in the short template-call example above: <code>!bannerContent</code> replaces the banner content area, and <code>!otherContent</code> replaces the rest-of-action area.</p>
+<p>Templates support injected variables using the notation <code>!&lt;variable-name&gt;</code>. This lets a template expose placeholders that you fill at the call site. In the <a href="#banners-and-object-grouping">Banners and Object Grouping</a> advanced example, the two comment areas (<code>put any content supposed to be in the banner in here</code> and <code>put content for the rest of the action here</code>) are the exact spots replaced by variables in the short template-call example above: <code>!bannerContent</code> replaces the banner content area, and <code>!otherContent</code> replaces the rest of action area.</p>
+</div>
+<div class="paragraph">
+<p>Templates also support inline variables with the syntax <code>@{variableName}</code> or <code>@{variableName:defaultValue}</code>. These can be used anywhere inside the template to inject a value, and the default is used when the card does not provide one.</p>
+</div>
+<div class="paragraph">
+<p>For example, a template could contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- attack: @{attackValue:2}
+- custom: 'If this attack does more than %damage%@{attackValue:2}, die.'
+  color: @{tint:red}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then a card could use that template like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- template1:
+  attackValue: 6
+  tint: rgb(100, 100, 100)</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1151,8 +1191,10 @@ bottom:
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="icon-modifiers"><a class="anchor" href="#icon-modifiers"></a><a href="#nav-menu">Icon Modifiers</a></h4>
 <div class="paragraph">
-<p>Any icon that has been inserted also has some special modifiers that can be applied to it. These modifiers are:</p>
+<p>These suffix modifiers can be applied to any icon name. Add the modifier to the end of the icon name, for example <code>%move-s%</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1171,19 +1213,20 @@ bottom:
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock">'s'</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>-s</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock">Removes the icon&#8217;s shadow.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>%classToken0s%</code></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><span class="image"><img src="https://raw.githubusercontent.com/NathanHarper02/hearthkeeper/refs/heads/main/hearth_token.png" alt="hearth token" width="20px"></span></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>%move-s%</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><span class="image"><img src="_images/icons/move.svg" alt="move" width="20px"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock">'i'</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>-i</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock">Inverts the icon&#8217;s color.</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>%banei%</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><code>%bane-i%</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: rgb(120,120,120);"><p class="tableblock"><span class="image"><img src="_images/icons/bane.svg" alt="bane" width="20px"></span></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="sub-blocks"><a class="anchor" href="#sub-blocks"></a><a href="#nav-menu">Sub Blocks</a></h3>
@@ -1373,6 +1416,29 @@ bottom:
 </div>
 <div class="paragraph">
 <p>You may also use some letters for custom colored hexes, which you can color using CSS styling as shown in the example. These letters include <code>d</code>, <code>h</code>, <code>f</code>, and <code>c</code>.</p>
+</div>
+<div class="paragraph">
+<p>To place icons on hexes, use the <code>hexIcons</code> modifier on the <code>hex</code> object. You can target any visible hex letter in the pattern, including <code>a</code> (ally), <code>b</code> (blank), <code>t</code> (target), <code>s</code> (self), and custom hexes such as <code>h</code>, <code>c</code>, <code>d</code>, and <code>f</code>. When placing an icon on a hex, it is usually best to remove the default shadow; see <a href="#icon-modifiers">Icon Modifiers</a>. You can do that by adding <code>-s</code> to the icon name, as in <code>classToken0-s</code>. The simplest form maps a hex letter directly to an icon name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- hex: a
+  hexIcons:
+    a: classToken0-s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you need more control, you can use an object instead. This gives the same result by default, but also lets you adjust the icon with <code>dx</code>, <code>dy</code>, and <code>scale</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">- hex: a
+  hexIcons:
+    a: {icon: classToken0-s, dx: 0, dy: 0, scale: 1}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Any of those extra properties can be omitted, and the default values will be used.</p>
 </div>
 </div>
 <div class="sect2">
